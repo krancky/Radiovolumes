@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UCaseCatalog>
+    <LRTCTVUCase>Langue mobile 1
+        <CaseName>Langue MobileG</CaseName>
+        <Identifier>1</Identifier>
+        <TVolumes>
+            <TVolume>Langue Mobile G</TVolume>
+            <TVolume>Plancher G</TVolume>
+            <TVolume>HTE </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Plancher 1
+        <CaseName>PlancherG</CaseName>
+        <Identifier>4</Identifier>
+        <Modifiers>
+            <BigII>1</BigII>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>Base de Langue G</TVolume>
+            <TVolume>Plancher G</TVolume>
+            <TVolume>Sinus G</TVolume>
+            <TVolume>Sinus D</TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+</UCaseCatalog>

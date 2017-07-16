@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UCaseCatalog>
+    <CTV56NUCase>Languemobile 0
+        <CaseName>Langue MobileG</CaseName>
+        <Identifier>0</Identifier>
+        <SVolumes>
+        </SVolumes>
+        <TVolumes>
+            <TargetIAG>1</TargetIAG>
+        </TVolumes>
+    </CTV56NUCase>
+    <CTV56NUCase>Languemobile 1
+        <CaseName>Langue MobileG</CaseName>
+        <Identifier>1</Identifier>
+        <SVolumes>
+            <SpreadIAG>1</SpreadIAG>
+        </SVolumes>
+        <TVolumes>
+            <TargetIAG>1</TargetIAG>
+            <TargetIBG>1</TargetIBG>
+        </TVolumes>
+    </CTV56NUCase>
+    <CTV56NUCase>Languemobile 2
+        <CaseName>Langue MobileD</CaseName>
+        <Identifier>4</Identifier>
+        <SVolumes>
+            <SpreadIIBG>1</SpreadIIBG>
+        </SVolumes>
+        <Modifiers>
+            <BigII>1</BigII>
+        </Modifiers>
+        <TVolumes>
+            <TargetIAG>1</TargetIAG>
+            <TargetIIID>1</TargetIIID>
+            <TargetIVAG>1</TargetIVAG>
+            <TargetIVAD>1</TargetIVAD>
+        </TVolumes>
+    </CTV56NUCase>
+    <CTV56NUCase>Plancher 1
+        <CaseName>PlancherG</CaseName>
+        <Identifier>4</Identifier>
+        <SVolumes>
+            <SpreadIIBG>1</SpreadIIBG>
+        </SVolumes>
+        <Modifiers>
+            <BigII>1</BigII>
+        </Modifiers>
+        <TVolumes>
+            <TargetIAG>1</TargetIAG>
+            <TargetIIID>1</TargetIIID>
+            <TargetIVAG>1</TargetIVAG>
+            <TargetIVAD>1</TargetIVAD>
+        </TVolumes>
+    </CTV56NUCase>
+</UCaseCatalog>
+ 

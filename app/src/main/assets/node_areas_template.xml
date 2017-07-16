@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeAreasTemplate>
+    <Volume>IA</Volume>
+    <Volume>IB</Volume>
+    <Volume>II</Volume>
+    <Volume>III</Volume>
+    <Volume>IVab</Volume>
+    <Volume>Vab</Volume>
+    <Volume>Vc</Volume>
+    <Volume>VI</Volume>
+    <Volume>VII</Volume>
+    <Volume>VIII</Volume>
+    <Volume>IX</Volume>
+    <Volume>X</Volume>
+</nodeAreasTemplate>
