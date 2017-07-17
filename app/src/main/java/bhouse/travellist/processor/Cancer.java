@@ -14,15 +14,6 @@ public class Cancer {
     private HashMap<String, Integer> cancerTVolumes = new HashMap<String, Integer>();
 
     /**
-     * Test.
-     * Creates spread lymph nodes data
-     */
-    public void test(){
-        cancerNVolumes.put("SpreadIAG", 1);
-        cancerNVolumes.put("SpreadIBG", 1);
-    }
-
-    /**
      * Add n volume from NodeTemplate
      *
      * @param spreadVolume the spread volume

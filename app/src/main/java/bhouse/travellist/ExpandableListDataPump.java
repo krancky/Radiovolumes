@@ -9,7 +9,7 @@ package bhouse.travellist;
         import bhouse.travellist.processor.TumorAreaTemplate;
 
 public class ExpandableListDataPump {
-    public static LinkedHashMap<String, List<String>> getData(List<NodeAreaTemplate> nodeAreaTemplateList, List<TumorAreaTemplate> tumorAreaTemplateList) {
+    public static LinkedHashMap<String, List<String>> getNData(List<NodeAreaTemplate> nodeAreaTemplateList) {
         LinkedHashMap<String, List<String>> expandableListDetail = new LinkedHashMap<String, List<String>>();
 
 
@@ -17,15 +17,23 @@ public class ExpandableListDataPump {
         for (NodeAreaTemplate nodeAreaTemplate : nodeAreaTemplateList){
             nList.add(nodeAreaTemplate.getTitle());
         }
+        expandableListDetail.clear();
+        expandableListDetail.put("N EXTENSION", nList);
+        return expandableListDetail;
+    }
+
+    public static LinkedHashMap<String, List<String>> getTData(List<TumorAreaTemplate> tumorAreaTemplateList) {
+        LinkedHashMap<String, List<String>> expandableListDetail = new LinkedHashMap<String, List<String>>();
+
 
         List<String> tList = new ArrayList<String>();
         for (TumorAreaTemplate tumorAreaTemplate : tumorAreaTemplateList){
             tList.add(tumorAreaTemplate.getTitle());
         }
-
+        expandableListDetail.clear();
         expandableListDetail.put("T EXTENSION", tList);
-        expandableListDetail.put("N EXTENSION", nList);
-
         return expandableListDetail;
     }
+
+
 }

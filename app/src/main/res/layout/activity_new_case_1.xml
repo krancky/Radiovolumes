@@ -84,7 +84,15 @@
         android:textColor="@android:color/white" />
 
     <ExpandableListView
-        android:id="@+id/expandableListView"
+        android:id="@+id/tExpandableListView"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="0.5dp" />
+
+    <ExpandableListView
+        android:id="@+id/nExpandableListView"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"

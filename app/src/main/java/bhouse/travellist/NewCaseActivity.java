@@ -40,6 +40,8 @@ import bhouse.travellist.processor.TumorAreaTemplate;
 
 import android.widget.ImageView;
 
+import static bhouse.travellist.R.id.expandableListView;
+
 public class NewCaseActivity extends Activity {
 
 
@@ -63,10 +65,14 @@ public class NewCaseActivity extends Activity {
 
 
 
-    ExpandableListView expandableListView;
-    ExpandableListAdapter expandableListAdapter;
-    List<String> expandableListTitle;
-    LinkedHashMap<String, List<String>> expandableListDetail;
+    ExpandableListView nExpandableListView;
+    ExpandableListView tExpandableListView;
+    ExpandableListAdapter nExpandableListAdapter;
+    ExpandableListAdapter tExpandableListAdapter;
+    List<String> texpandableListTitle;
+    List<String> nexpandableListTitle;
+    LinkedHashMap<String, List<String>> texpandableListDetail;
+    LinkedHashMap<String, List<String>> nexpandableListDetail;
     private ImageView mImageView;
     private TextView mTitle;
     private TextView headerText1;
@@ -173,15 +179,18 @@ public class NewCaseActivity extends Activity {
         hashMapOperator.cTV56TCase(ctv56TUCaseList, cancer, ctv56TCase);
         Log.i("End of onCreate() ", "... Done");
 
-        expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
-        expandableListDetail = ExpandableListDataPump.getData(nodeAreaTemplateList, tumorAreaTemplateList);
-        expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
-        expandableListAdapter = new CustomExpandableListAdapter(this, expandableListTitle, expandableListDetail, nodeAreaTemplateList, tumorAreaTemplateList);
-        //ViewGroup headerView = (ViewGroup) getLayoutInflater().inflate(R.layout.list_header, expandableListView, false);
-        //expandableListView.addHeaderView(headerView);
+        nExpandableListView = (ExpandableListView) findViewById(R.id.nExpandableListView);
+        nexpandableListDetail = ExpandableListDataPump.getNData(nodeAreaTemplateList);
+        nexpandableListTitle = new ArrayList<String>(nexpandableListDetail.keySet());
+        nExpandableListAdapter = new NCustomExpandableListAdapter(this, nexpandableListTitle, nexpandableListDetail, nodeAreaTemplateList);
+        tExpandableListView = (ExpandableListView) findViewById(R.id.tExpandableListView);
+        texpandableListDetail = ExpandableListDataPump.getTData(tumorAreaTemplateList);
+        texpandableListTitle = new ArrayList<String>(texpandableListDetail.keySet());
+        tExpandableListAdapter = new TCustomExpandableListAdapter(this, texpandableListTitle, texpandableListDetail, tumorAreaTemplateList);
 
 
-        expandableListView.setAdapter(expandableListAdapter);
+        nExpandableListView.setAdapter(nExpandableListAdapter);
+        tExpandableListView.setAdapter(tExpandableListAdapter);
         mAddButton.animate().alpha(1.0f);
 
         tButton.setOnClickListener(new View.OnClickListener() {
@@ -238,43 +247,81 @@ public class NewCaseActivity extends Activity {
         });
 
         
-        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+        nExpandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
             @Override
             public void onGroupExpand(int groupPosition) {
                 Toast.makeText(getApplicationContext(),
-                        expandableListTitle.get(groupPosition) + " List Expanded.",
+                        nexpandableListTitle.get(groupPosition) + " List Expanded.",
                         Toast.LENGTH_SHORT).show();
             }
         });
 
-        expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
+        tExpandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+
+            @Override
+            public void onGroupExpand(int groupPosition) {
+                Toast.makeText(getApplicationContext(),
+                        texpandableListTitle.get(groupPosition) + " List Expanded.",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        nExpandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
 
             @Override
             public void onGroupCollapse(int groupPosition) {
                 Toast.makeText(getApplicationContext(),
-                        expandableListTitle.get(groupPosition) + " List Collapsed.",
+                        nexpandableListTitle.get(groupPosition) + " List Collapsed.",
                         Toast.LENGTH_SHORT).show();
 
             }
         });
 
-        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+        tExpandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
+
+            @Override
+            public void onGroupCollapse(int groupPosition) {
+                Toast.makeText(getApplicationContext(),
+                        texpandableListTitle.get(groupPosition) + " List Collapsed.",
+                        Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        nExpandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
                 Toast.makeText(
                         getApplicationContext(),
-                        expandableListTitle.get(groupPosition)
+                        nexpandableListTitle.get(groupPosition)
                                 + " -> "
-                                + expandableListDetail.get(
-                                expandableListTitle.get(groupPosition)).get(
+                                + nexpandableListDetail.get(
+                                nexpandableListTitle.get(groupPosition)).get(
+                                childPosition), Toast.LENGTH_SHORT
+                ).show();
+                return false;
+            }
+        });
+
+        tExpandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v,
+                                        int groupPosition, int childPosition, long id) {
+                Toast.makeText(
+                        getApplicationContext(),
+                        texpandableListTitle.get(groupPosition)
+                                + " -> "
+                                + texpandableListDetail.get(
+                                texpandableListTitle.get(groupPosition)).get(
                                 childPosition), Toast.LENGTH_SHORT
                 ).show();
                 return false;
             }
         });
     }
+
 
 
 }
