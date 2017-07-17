@@ -9,7 +9,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/placeImage"
+            android:id="@+id/NewCaseImage"
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:scaleType="centerCrop"
@@ -22,7 +22,7 @@
             android:background="#95000000">
 
             <EditText
-                android:id="@+id/etTodo"
+                android:id="@+id/etTextName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

@@ -4,18 +4,23 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Transition;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import bhouse.travellist.processor.CTV56NCase;
@@ -28,10 +33,12 @@ import bhouse.travellist.processor.HashMapOperator;
 import bhouse.travellist.processor.NUCaseXMLHandler;
 import bhouse.travellist.processor.NodeAreaTemplate;
 import bhouse.travellist.processor.NodeAreasTemplateXMLHandler;
+import bhouse.travellist.processor.TumorAreasTemplateXMLHandler;
 import bhouse.travellist.processor.TCustomListAdapter;
 import bhouse.travellist.processor.TUCaseXMLHandler;
 import bhouse.travellist.processor.TumorAreaTemplate;
-import bhouse.travellist.processor.TumorAreasTemplateXMLHandler;
+
+import android.widget.ImageView;
 
 public class NewCaseActivity extends Activity {
 
@@ -59,7 +66,14 @@ public class NewCaseActivity extends Activity {
     ExpandableListView expandableListView;
     ExpandableListAdapter expandableListAdapter;
     List<String> expandableListTitle;
-    HashMap<String, List<String>> expandableListDetail;
+    LinkedHashMap<String, List<String>> expandableListDetail;
+    private ImageView mImageView;
+    private TextView mTitle;
+    private TextView headerText1;
+    private TextView headerText2;
+    private TextView headerText3;
+    private ImageButton mAddButton;
+    private EditText mEditTextName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,8 +88,16 @@ public class NewCaseActivity extends Activity {
         spreadNInputListView = (ListView) findViewById(R.id.spreadNvolumesListView);
         targetVolumesView = (ListView) findViewById(R.id.targetNVolumesView);
 
-
-
+        mImageView = (ImageView) findViewById(R.id.NewCaseImage);
+        mTitle = (TextView) findViewById(R.id.textView);
+        mTitle.setText("New Case");
+        //mImageView.setImageResource(mPlace.getImageResourceId(this));
+        mImageView.setImageResource(R.drawable.newcase);
+        mAddButton = (ImageButton) findViewById(R.id.btn_add);
+        //mRevealView = (LinearLayout) findViewById(R.id.llEditTextHolder);
+        mEditTextName = (EditText) findViewById(R.id.etTextName);
+        mAddButton = (ImageButton) findViewById(R.id.btn_add);
+        mAddButton.setImageResource(R.drawable.icn_morph_reverse);
 
 
         // Generates elementary N cases (CTV56NUCase) catalog and
@@ -155,7 +177,12 @@ public class NewCaseActivity extends Activity {
         expandableListDetail = ExpandableListDataPump.getData(nodeAreaTemplateList, tumorAreaTemplateList);
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
         expandableListAdapter = new CustomExpandableListAdapter(this, expandableListTitle, expandableListDetail, nodeAreaTemplateList, tumorAreaTemplateList);
+        //ViewGroup headerView = (ViewGroup) getLayoutInflater().inflate(R.layout.list_header, expandableListView, false);
+        //expandableListView.addHeaderView(headerView);
+
+
         expandableListView.setAdapter(expandableListAdapter);
+        mAddButton.animate().alpha(1.0f);
 
         tButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -202,7 +229,14 @@ public class NewCaseActivity extends Activity {
 
             }
         });
-        
+
+        mAddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(),"Saving", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         
         expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
@@ -241,7 +275,6 @@ public class NewCaseActivity extends Activity {
             }
         });
     }
-
 
 
 }

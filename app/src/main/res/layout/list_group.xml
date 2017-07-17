@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -11,4 +10,44 @@
         android:textColor="@android:color/black"
         android:paddingTop="10dp"
         android:paddingBottom="10dp" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/headerList">
+
+
+        <TextView
+            android:id="@+id/headerText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loc"
+            android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
+            android:layout_marginRight="38dp"
+            android:layout_marginEnd="38dp">
+        </TextView>
+
+
+        <TextView
+            android:id="@+id/headerText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Left"
+            android:layout_toLeftOf="@+id/headerText3"
+            android:layout_marginLeft="27dp"
+            android:layout_marginRight="27dp"
+            android:layout_marginStart="27dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/headerText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Right"
+            android:layout_marginLeft="27dp"
+            android:layout_marginRight="27dp"
+            android:layout_marginEnd="27dp"
+            android:layout_alignParentRight="true">
+        </TextView>
+    </RelativeLayout>
 </LinearLayout>
