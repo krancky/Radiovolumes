@@ -2,14 +2,14 @@
 <TumorsAreasTemplate>
     <Volume>
         <Area>Cavite Buccale</Area>
-        <name>Langue Mobile</name>
+        <Location>Langue Mobile</Location>
     </Volume>
     <Volume>
         <Area>Cavite Buccale</Area>
-        <name>Plancher</name>
+        <Location>Plancher</Location>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>
-        <name>Base de Langue</name>
+        <Location>Base de Langue</Location>
     </Volume>
 </TumorsAreasTemplate>

@@ -3,6 +3,7 @@ package bhouse.travellist.processor;
 import android.util.Log;
 
 import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -16,7 +17,7 @@ public class CTV56TCase {
     private int identifier;
 
     // Stores in Hashmap the target lymph node volumes associated to spread volume
-    private HashMap<String, Integer> cTV56TTarVolumes = new HashMap<String, Integer>();
+    private HashMap<String, List<String>> cTV56TTarVolumes = new HashMap<String, List<String>>();
 
 
     /**
@@ -24,7 +25,7 @@ public class CTV56TCase {
      *
      * @return the case t volumes
      */
-    public HashMap<String, Integer> getCaseTTarVolumes() {
+    public HashMap<String, List<String>> getCaseTTarVolumes() {
         return cTV56TTarVolumes;
     }
 
@@ -88,7 +89,7 @@ public class CTV56TCase {
      *
      * @param TVolumes the t volumes
      */
-    public void addAllTVolumeToMap(HashMap<String, Integer> TVolumes){
+    public void addAllTVolumeToMap(HashMap<String, List<String>> TVolumes){
         this.cTV56TTarVolumes.putAll(TVolumes);
         Log.i("chargement","stuff");
     }

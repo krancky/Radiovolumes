@@ -1,7 +1,11 @@
 package bhouse.travellist.processor;
 
+import android.util.Log;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * The type Cancer.
@@ -9,10 +13,10 @@ import java.util.HashMap;
  * Provided by Template cases after user input
  */
 public class Cancer implements Serializable{
-    private String area;
+    //private String area;
     // Private hashmaps store cancer data
     private HashMap<String, Integer> cancerNVolumes = new HashMap<String, Integer>();
-    private HashMap<String, String> cancerTVolumes = new HashMap<String, String>();
+    private HashMap<String, List<String>> cancerTVolumes = new HashMap<String, List<String>>();
 
     /**
      * Add n volume from NodeTemplate
@@ -31,9 +35,14 @@ public class Cancer implements Serializable{
      *
      * @param spreadTVolume the spread t volume
      */
-    public void addTVolume (String spreadTAreaVolume, String spreadTVolume){
-        if (spreadTVolume != "0"){
-            cancerTVolumes.put(spreadTVolume,spreadTAreaVolume);
+    public void addTVolume (TumorAreaTemplate tumorAreaTemplate){
+        if (tumorAreaTemplate.getContent() != "0"){
+            List<String> tList = new ArrayList<String>();
+            tList.add(tumorAreaTemplate.getSide());
+            tList.add(tumorAreaTemplate.getArea());
+            Log.i("contenu area", tumorAreaTemplate.getArea() );
+            cancerTVolumes.put(tumorAreaTemplate.getLocation(),tList);
+            Log.i("contenu bizarre", cancerTVolumes.get(tumorAreaTemplate.getLocation()).toString());
         }
 
     }
@@ -52,7 +61,7 @@ public class Cancer implements Serializable{
      *
      * @return the cancer t volumes
      */
-    public HashMap<String, String> getCancerTVolumes() {
+    public HashMap<String, List<String>> getCancerTVolumes() {
         return cancerTVolumes;
     }
 

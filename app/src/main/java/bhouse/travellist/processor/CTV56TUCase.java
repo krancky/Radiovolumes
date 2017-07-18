@@ -1,6 +1,7 @@
 package bhouse.travellist.processor;
 
 import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -10,12 +11,22 @@ import java.util.HashMap;
 public class CTV56TUCase {
 
     // Name and identifier of elementary case
-    private String caseName;
+    private String location;
+
+    public String getSide() {
+        return side;
+    }
+
+    public void setSide(String side) {
+        this.side = side;
+    }
+
+    private String side;
     private int identifier;
     // Stores in Hashmap one and only one spread volume
     private HashMap<String, Integer> uCaseSVolumes = new HashMap<String, Integer>();
     // Stores in Hashmap the target lymph node volumes associated to spread volume
-    private HashMap<String, Integer> uCaseTVolumes = new HashMap<String, Integer>();
+    private HashMap<String, List<String>> uCaseTVolumes = new HashMap<String, List<String>>();
 
     /**
      * Gets case s volumes.
@@ -31,7 +42,7 @@ public class CTV56TUCase {
      *
      * @return the case t volumes
      */
-    public HashMap<String, Integer> getuCaseTVolumes() {
+    public HashMap<String, List<String>> getuCaseTVolumes() {
         return uCaseTVolumes;
     }
 
@@ -57,10 +68,10 @@ public class CTV56TUCase {
     /**
      * Sets case name.
      *
-     * @param caseName the case name
+     * @param location the case name
      */
-    public void setCaseName(String caseName) {
-        this.caseName = caseName;
+    public void setLocation(String location) {
+        this.location = location;
 
     }
 
@@ -70,8 +81,8 @@ public class CTV56TUCase {
      *
      * @return the string
      */
-    public String getCaseName(){
-        return caseName;
+    public String getLocation(){
+        return location;
     }
 
     /**
@@ -90,13 +101,13 @@ public class CTV56TUCase {
      * @param volume the volume
      * @param token  the token
      */
-    public void addTVolumeToMap(String volume, Integer token){
-        this.uCaseTVolumes.put(volume, token);
+    public void addTVolumeToMap(String location, List<String> tList){
+        this.uCaseTVolumes.put(location, tList);
     }
 
     @Override
     public String toString() {
-        return  "Case: " + caseName + "\n" + identifier + "-" + uCaseTVolumes.toString()  ;
+        return  "Case: " + location + "\n" + identifier + "-" + uCaseTVolumes.toString()  ;
     }
 }
 

@@ -78,14 +78,14 @@ public class TumorAreasTemplateXMLHandler {
                             break;
 
                         case XmlPullParser.END_TAG:
-                            if (tagname.equalsIgnoreCase("name")) {
+                            if (tagname.equalsIgnoreCase("Volume")) {
                                 // add CTV56NUCase object to catalog
-                                tumorAreaTemplate.setTitle(text);
+
                                 tumorAreaTemplate.setContent("0");
                                 tumorAreaTemplateList.add(tumorAreaTemplate);
                             }
-                            else if (tagname.equalsIgnoreCase("CaseName")) {
-
+                            else if (tagname.equalsIgnoreCase("Location")) {
+                                tumorAreaTemplate.setLocation(text);
                             }
                             else if (tagname.equalsIgnoreCase("Area")) {
                                 tumorAreaTemplate.setArea(text);

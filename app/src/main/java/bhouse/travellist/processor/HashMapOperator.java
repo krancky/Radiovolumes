@@ -25,7 +25,7 @@ public class HashMapOperator {
         // Sets the name of structure holding the lymph nodes to irradiate
         cTV56NCase.setCaseName("Lymph nodes to irradiate");
         // Iterates on all elementary cases to associate to spread volumes in actual cancer, then computes linear combination of target volumes and returns final CTV56NCase
-        for (HashMap.Entry<String, String> cancerTVolumes: cancer.getCancerTVolumes().entrySet()){
+        for (HashMap.Entry<String, List<String>> cancerTVolumes: cancer.getCancerTVolumes().entrySet()){
 
             for (CTV56NUCase ctv56NUCase:ctv56NUCaseList) {
                 if (cancer.getCancerNVolumes().isEmpty()) {
@@ -78,11 +78,9 @@ public class HashMapOperator {
 
         for (CTV56TUCase ctv56TUCase:ctv56TUCaseList){
 
-                for (HashMap.Entry<String, String> cancerTVolumes : cancer.getCancerTVolumes().entrySet()){
-                    if (cancerTVolumes.getKey().equals(ctv56TUCase.getCaseName()) ){
+                for (HashMap.Entry<String, List<String>> cancerTVolumes : cancer.getCancerTVolumes().entrySet()){
+                    if (cancerTVolumes.getKey().equals(ctv56TUCase.getLocation()) && cancerTVolumes.getValue().get(0).equals(ctv56TUCase.getSide())){
                         cTV56TCase.addAllTVolumeToMap(ctv56TUCase.getuCaseTVolumes());
-                        Log.i("touche", "coule");
-
                     }
                 }
 

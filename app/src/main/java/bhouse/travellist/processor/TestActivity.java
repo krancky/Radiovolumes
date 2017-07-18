@@ -145,7 +145,7 @@ public class TestActivity extends Activity {
                     TestActivity.this.cancer.addNVolume(nodeAreaTemplate.getContent(), 1);
                 }
                 for (TumorAreaTemplate tumorAreaTemplate : tumorAreaTemplateList) {
-                    TestActivity.this.cancer.addTVolume(tumorAreaTemplate.getArea(), tumorAreaTemplate.getContent());
+                    TestActivity.this.cancer.addTVolume(tumorAreaTemplate);
                 }
                 TestActivity.this.ctv56TCaseList.clear();
                 CTV56TCase ctv56TCase = new CTV56TCase();

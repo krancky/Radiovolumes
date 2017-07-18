@@ -6,7 +6,7 @@ package bhouse.travellist.processor;
  */
 public class TumorAreaTemplate {
 
-    String title,content, area;
+    String location,content, area, side;
     int color;
 
     public int getColor() {
@@ -17,12 +17,12 @@ public class TumorAreaTemplate {
         this.color = color;
     }
 
-    public String getTitle() {
-        return title;
+    public String getLocation() {
+        return this.location;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getContent() {
@@ -39,6 +39,14 @@ public class TumorAreaTemplate {
 
     public String getArea() {
         return this.area;
+    }
+
+    public void setSide(String side) {
+        this.side = side;
+    }
+
+    public String getSide() {
+        return this.side;
     }
 
 }

@@ -96,9 +96,9 @@ public class NewCaseDialog extends Activity {
 
     }
     public void prepareCancerData(HashMap<String, List<String>> cancerTData, HashMap<String, List<String>> cancerNData, Cancer cancer) {
-        for (HashMap.Entry<String, String> cancerTVolumes: cancer.getCancerTVolumes().entrySet()){
+        for (HashMap.Entry<String, List<String>> cancerTVolumes: cancer.getCancerTVolumes().entrySet()){
             if (!cancerTData.containsKey(cancerTVolumes.getValue())){
-                cancerTData.put(cancerTVolumes.getValue(), new ArrayList<String>());
+                //cancerTData.put(cancerTVolumes.getValue(), new ArrayList<String>());
             }
             cancerTData.get(cancerTVolumes.getValue()).add(cancerTVolumes.getKey());
             Log.i("youpi","youpi");

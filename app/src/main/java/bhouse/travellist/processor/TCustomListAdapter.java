@@ -56,7 +56,7 @@ public class TCustomListAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         TumorAreaTemplate h = list.get(position);
-        holder.tv.setText(h.getTitle());
+        holder.tv.setText(h.getLocation());
         holder.b.setText(h.getContent());
         holder.b.setTextColor(h.getColor());
         holder.b.setOnClickListener(mClickListener);
@@ -90,7 +90,7 @@ public class TCustomListAdapter extends BaseAdapter {
             TumorAreaTemplate h = (TumorAreaTemplate) list.get(pos);
             CheckBox checkBox = (CheckBox)v;
             if(checkBox.isChecked()){
-                h.setContent(h.getTitle() + "G");}
+                h.setContent(h.getLocation() + "G");}
             else{
                 h.setContent("0");
             }
@@ -109,12 +109,12 @@ public class TCustomListAdapter extends BaseAdapter {
         public void onClick(View v) {
             int pos = (Integer) v.getTag();
             TumorAreaTemplate h = (TumorAreaTemplate) list.get(pos);
-            h.setContent(h.getTitle() + "D");
+            h.setContent(h.getLocation() + "D");
             h.setColor(Color.YELLOW);
             TCustomListAdapter.this.notifyDataSetChanged();
             CheckBox checkBox = (CheckBox)v;
             if(checkBox.isChecked()){
-                h.setContent(h.getTitle() + "D");}
+                h.setContent(h.getLocation() + "D");}
             else{
                 h.setContent("0");}
         }

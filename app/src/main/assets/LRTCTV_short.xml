@@ -1,25 +1,64 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <UCaseCatalog>
     <LRTCTVUCase>Langue mobile 1
-        <CaseName>Langue MobileG</CaseName>
+        <Location>Langue Mobile</Location>
+        <Side>Gauche</Side>
+        <Area>Cavite Buccale</Area>
         <Identifier>1</Identifier>
         <TVolumes>
-            <TVolume>Langue Mobile G</TVolume>
-            <TVolume>Plancher G</TVolume>
-            <TVolume>HTE </TVolume>
+            <TVolume>
+                <TLocation>Base de Langue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Base de Langue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Sinus</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Sinus</TLocation>
+                <TSide>Droit</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
         </TVolumes>
     </LRTCTVUCase>
+
+
     <LRTCTVUCase>Plancher 1
-        <CaseName>PlancherG</CaseName>
+        <Location>Plancher</Location>
+        <Side>Gauche</Side>
+        <Area>Cavite Buccale</Area>
         <Identifier>4</Identifier>
         <Modifiers>
             <BigII>1</BigII>
         </Modifiers>
         <TVolumes>
-            <TVolume>Base de Langue G</TVolume>
-            <TVolume>Plancher G</TVolume>
-            <TVolume>Sinus G</TVolume>
-            <TVolume>Sinus D</TVolume>
+            <TVolume>
+                <TLocation>Base de Langue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Base de Langue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Plancher</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Plancher</TLocation>
+                <TSide>Droit</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
         </TVolumes>
     </LRTCTVUCase>
 </UCaseCatalog>

@@ -71,7 +71,7 @@ public class TCustomExpandableListAdapter extends BaseExpandableListAdapter {
                 .findViewById(R.id.textView1);
         expandedListTextView.setText(expandedListText);
         TumorAreaTemplate h = tList.get(expandedListPosition);
-        holder.tv.setText(h.getTitle());
+        holder.tv.setText(h.getLocation());
         holder.cbLeft.setTag(expandedListPosition);
         holder.cbRight.setTag(expandedListPosition);
         holder.cbLeft.setOnClickListener(cbLeftClickListener);
@@ -89,7 +89,8 @@ public class TCustomExpandableListAdapter extends BaseExpandableListAdapter {
             TumorAreaTemplate h = (TumorAreaTemplate) tList.get(pos);
             CheckBox checkBox = (CheckBox)v;
             if(checkBox.isChecked()){
-                h.setContent(h.getTitle() + "G");
+                h.setContent("1");
+                h.setSide("Gauche");
                 Log.i("Tag", String.valueOf(pos) + h.getContent());
             }
             else{
@@ -108,7 +109,8 @@ public class TCustomExpandableListAdapter extends BaseExpandableListAdapter {
             TumorAreaTemplate h = (TumorAreaTemplate) tList.get(pos);
             CheckBox checkBox = (CheckBox)v;
             if(checkBox.isChecked()){
-                h.setContent(h.getTitle() + "D");
+                h.setContent("1");
+                h.setSide("Droit");
                 Log.i("Tag", String.valueOf(pos));
             }
             else{

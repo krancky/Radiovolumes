@@ -28,7 +28,7 @@ public class ExpandableListDataPump {
 
         List<String> tList = new ArrayList<String>();
         for (TumorAreaTemplate tumorAreaTemplate : tumorAreaTemplateList){
-            tList.add(tumorAreaTemplate.getTitle());
+            tList.add(tumorAreaTemplate.getLocation());
         }
         expandableListDetail.clear();
         expandableListDetail.put("T EXTENSION", tList);
