@@ -1,5 +1,6 @@
 package bhouse.travellist;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
@@ -172,7 +173,8 @@ public class NewCaseActivity extends Activity {
         ListView spreadTInputListView = (ListView) findViewById(R.id.spreadTvolumesListView);
         //TCustomListAdapter spreadTInputListViewAdapter = new TCustomListAdapter(this, tumorAreaTemplateList);
         //spreadTInputListView.setAdapter(spreadTInputListViewAdapter);
-        Button tButton = (Button) findViewById(R.id.tButton);
+        Button saveButton = (Button) findViewById(R.id.saveButton);
+        Button displayButton = (Button) findViewById(R.id.displayButton);
 
         // Generates list of T locations to be irradiated
         CTV56TCase ctv56TCase = new CTV56TCase();
@@ -193,7 +195,17 @@ public class NewCaseActivity extends Activity {
         tExpandableListView.setAdapter(tExpandableListAdapter);
         mAddButton.animate().alpha(1.0f);
 
-        tButton.setOnClickListener(new View.OnClickListener() {
+        displayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(),"Display Dialog", Toast.LENGTH_SHORT).show();
+                Intent transitionIntent = new Intent(NewCaseActivity.this, NewCaseDialog.class);
+                transitionIntent.putExtra("cancer", cancer);
+                startActivity(transitionIntent);
+            }
+        });
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Pareil pour T
@@ -206,7 +218,7 @@ public class NewCaseActivity extends Activity {
                     NewCaseActivity.this.cancer.addNVolume(nodeAreaTemplate.getContent(), 1);
                 }
                 for (TumorAreaTemplate tumorAreaTemplate : tumorAreaTemplateList) {
-                    NewCaseActivity.this.cancer.addTVolume(tumorAreaTemplate.getContent(), 1);
+                    NewCaseActivity.this.cancer.addTVolume(tumorAreaTemplate.getArea(), tumorAreaTemplate.getContent());
                 }
                 NewCaseActivity.this.ctv56TCaseList.clear();
                 CTV56TCase ctv56TCase = new CTV56TCase();

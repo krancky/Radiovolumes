@@ -1,5 +1,6 @@
 package bhouse.travellist.processor;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
@@ -7,11 +8,11 @@ import java.util.HashMap;
  * Harbors cancer input information.
  * Provided by Template cases after user input
  */
-public class Cancer {
+public class Cancer implements Serializable{
     private String area;
     // Private hashmaps store cancer data
     private HashMap<String, Integer> cancerNVolumes = new HashMap<String, Integer>();
-    private HashMap<String, Integer> cancerTVolumes = new HashMap<String, Integer>();
+    private HashMap<String, String> cancerTVolumes = new HashMap<String, String>();
 
     /**
      * Add n volume from NodeTemplate
@@ -29,11 +30,10 @@ public class Cancer {
      * Add t volume from TumorTemplate
      *
      * @param spreadTVolume the spread t volume
-     * @param integer       the integer
      */
-    public void addTVolume (String spreadTVolume, Integer integer){
+    public void addTVolume (String spreadTAreaVolume, String spreadTVolume){
         if (spreadTVolume != "0"){
-            cancerTVolumes.put(spreadTVolume, integer);
+            cancerTVolumes.put(spreadTVolume,spreadTAreaVolume);
         }
 
     }
@@ -52,7 +52,7 @@ public class Cancer {
      *
      * @return the cancer t volumes
      */
-    public HashMap<String, Integer> getCancerTVolumes() {
+    public HashMap<String, String> getCancerTVolumes() {
         return cancerTVolumes;
     }
 

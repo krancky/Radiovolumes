@@ -8,4 +8,5 @@
     <string name="choose_n">Choisir N envahi</string>
     <string name="choose_t">Choisir T envahi</string>
     <string name="title_activity_new_case">NewCaseActivity</string>
+    <string name="title_activity_new_case_dialog">NewCaseDialog</string>
 </resources>

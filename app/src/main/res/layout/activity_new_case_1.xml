@@ -99,12 +99,28 @@
         android:divider="@android:color/darker_gray"
         android:dividerHeight="0.5dp" />
 
-    <Button
-        android:id="@+id/tButton"
-        android:layout_width="fill_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/expandableListView"
-        android:text="T OK" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/expandableListView"
+            android:text="Save" />
+
+        <Button
+            android:id="@+id/displayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/expandableListView"
+            android:text="Display" />
+
+    </LinearLayout>
+
+
 
     <ListView
         android:id="@+id/targetTVolumesView"

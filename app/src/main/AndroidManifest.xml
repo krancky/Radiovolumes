@@ -19,13 +19,16 @@
         </activity>
         <activity
             android:name=".DetailActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".processor.TestActivity"
-            android:label="YourAppName"></activity>
+            android:label="YourAppName" />
         <activity
             android:name=".NewCaseActivity"
-            android:label="NewCase"></activity>
+            android:label="NewCase" />
+        <activity
+            android:name=".NewCaseDialog"
+            android:label="@string/title_activity_new_case_dialog"></activity>
     </application>
 
 </manifest>
