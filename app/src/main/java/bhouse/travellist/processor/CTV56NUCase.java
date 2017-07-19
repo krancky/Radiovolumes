@@ -1,5 +1,7 @@
 package bhouse.travellist.processor;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -10,25 +12,23 @@ public class CTV56NUCase {
 
     // Name and identifier of elementary case
 
-    private String location;
+    private String location ;
     private String side;
-    public String spreadLocation;
+    public String spreadLocation = new String();
     public String spreadSide;
 
     private int identifier;
     // Stores in Hashmap one and only one spread volume
-    private HashMap<String, Integer> uCaseSVolumes = new HashMap<String, Integer>();
+    //private HashMap<String, Integer> uCaseSVolumes = new HashMap<String, Integer>();
     // Stores in Hashmap the target lymph node volumes associated to spread volume
-    private HashMap<String, String> uCaseTVolumes = new HashMap<String, String>();
+    private List<LRNodeTargetVolume> uCaseTVolumes = new ArrayList<LRNodeTargetVolume>();
 
     /**
      * Gets case s volumes.
      *
      * @return the case s volumes
      */
-    public HashMap<String, Integer> getuCaseSVolumes() {
-        return uCaseSVolumes;
-    }
+
 
     public String getSide() {
         return side;
@@ -66,7 +66,7 @@ public class CTV56NUCase {
      *
      * @return the case t volumes
      */
-    public HashMap<String, String> getuCaseTVolumes() {
+    public List<LRNodeTargetVolume> getuCaseTVolumes() {
         return uCaseTVolumes;
     }
 
@@ -95,9 +95,6 @@ public class CTV56NUCase {
      * @param volume the volume
      * @param token  the token
      */
-    public void addSVolumeToMap(String volume, Integer token){
-        this.uCaseSVolumes.put(volume, token);
-    }
 
     /**
      * Add t volume to map. Called by parser
@@ -105,8 +102,8 @@ public class CTV56NUCase {
      * @param volume the volume
      * @param token  the token
      */
-    public void addTVolumeToMap(String volume, String side){
-        this.uCaseTVolumes.put(volume, side);
+    public void addTVolumeToMap(LRNodeTargetVolume lrNodeTargetVolume){
+        this.uCaseTVolumes.add(lrNodeTargetVolume);
     }
 
 

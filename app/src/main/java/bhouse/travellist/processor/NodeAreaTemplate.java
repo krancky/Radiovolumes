@@ -1,10 +1,12 @@
 package bhouse.travellist.processor;
 
+import java.io.Serializable;
+
 /**
  * The type Node area template.
  * Content stores the String used for N definition
  */
-public class NodeAreaTemplate {
+public class NodeAreaTemplate implements Serializable {
 
     String title;
     String content;

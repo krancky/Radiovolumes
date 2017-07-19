@@ -29,7 +29,7 @@ public class HashMapOperator {
 
             for (CTV56NUCase ctv56NUCase:ctv56NUCaseList) {
                 if (cancer.getCancerNVolumes().isEmpty()) {
-                    if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && cancerTVolumes.getSide().equals(ctv56NUCase.getSide()) && ctv56NUCase.getuCaseSVolumes().isEmpty()) {
+                    if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && cancerTVolumes.getSide().equals(ctv56NUCase.getSide()) && ctv56NUCase.getSpreadLocation().isEmpty()) {
                         cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
                         Log.i("touche", "coule");
                     }

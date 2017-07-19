@@ -52,8 +52,7 @@ public class NUCaseXMLHandler {
             XmlPullParserFactory factory = null;
             XmlPullParser parser = null;
             try {
-                String tLN = new String();
-                String tLNSide = new String();
+                LRNodeTargetVolume lrNodeTargetVolume = new LRNodeTargetVolume();
                 // Creates parser
                 factory = XmlPullParserFactory.newInstance();
                 factory.setNamespaceAware(true);
@@ -74,8 +73,7 @@ public class NUCaseXMLHandler {
                             }
                             if (tagname.equalsIgnoreCase("TVolume")) {
                                 // Creates a new instance of the two strings defining Target LN Volume
-                                tLN = new String();
-                                tLNSide = new String();
+                                lrNodeTargetVolume =new LRNodeTargetVolume();
                             }
                             break;
 
@@ -98,11 +96,11 @@ public class NUCaseXMLHandler {
                             } else if (tagname.equalsIgnoreCase("SLNSide")) {
                                 cTV56NUCase.setSpreadSide(text);
                             } else if (tagname.equalsIgnoreCase("TLN")) {
-                                tLN = text;
+                                lrNodeTargetVolume.setLocation(text);
                             } else if (tagname.equalsIgnoreCase("TLNSIDE")) {
-                                tLNSide = text;
+                                lrNodeTargetVolume.setSide(text);
                             } else if (tagname.equalsIgnoreCase("TVolume")) {
-                                cTV56NUCase.addTVolumeToMap(tLN, tLNSide);
+                                cTV56NUCase.addTVolumeToMap(lrNodeTargetVolume);
                             }
                             break;
 

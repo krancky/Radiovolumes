@@ -1,7 +1,11 @@
 package bhouse.travellist.processor;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -15,7 +19,7 @@ public class CTV56NCase implements Serializable{
     private int identifier;
 
     // Stores in Hashmap the target lymph node volumes associated to spread volume
-    private HashMap<String, String> cTV56NTarVolumes = new HashMap<String, String>();
+    private List<LRNodeTargetVolume> cTV56NTarVolumes = new ArrayList<>();
 
 
     /**
@@ -23,7 +27,7 @@ public class CTV56NCase implements Serializable{
      *
      * @return the case t volumes
      */
-    public HashMap<String, String> getCaseNTarVolumes() {
+    public List<LRNodeTargetVolume> getCaseNTarVolumes() {
         return cTV56NTarVolumes;
     }
 
@@ -73,8 +77,17 @@ public class CTV56NCase implements Serializable{
      *
      * @param TVolumes the t volumes
      */
-    public void addAllTVolumeToMap(HashMap<String, String> TVolumes){
-        this.cTV56NTarVolumes.putAll(TVolumes);
+    public void addAllTVolumeToMap(List<LRNodeTargetVolume> TVolumes){
+        this.cTV56NTarVolumes.addAll(TVolumes);
+    }
+
+    public void removeTarVolumesDuplicates() {
+        Set<LRNodeTargetVolume> s = new HashSet<>();
+        s.addAll(this.getCaseNTarVolumes());
+        this.cTV56NTarVolumes.clear();
+        List<LRNodeTargetVolume> list = new ArrayList<LRNodeTargetVolume>();
+        list.addAll(s);
+        this.addAllTVolumeToMap(list);
     }
 
     @Override

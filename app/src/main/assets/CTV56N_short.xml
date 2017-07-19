@@ -35,10 +35,10 @@
     <CTV56NUCase>Languemobile 2
         <Location>Langue Mobile</Location>
         <Area>Cavite Buccale</Area>
-        <Side>Droite</Side>
+        <Side>Gauche</Side>
         <Identifier>4</Identifier>
         <SVolumes>
-            <SLN>IIB</SLN>
+            <SLN>IB</SLN>
             <SLNSide>Gauche</SLNSide>
         </SVolumes>
         <Modifiers>
