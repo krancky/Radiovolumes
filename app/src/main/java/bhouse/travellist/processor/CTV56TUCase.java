@@ -1,5 +1,6 @@
 package bhouse.travellist.processor;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -26,7 +27,8 @@ public class CTV56TUCase {
     // Stores in Hashmap one and only one spread volume
     private HashMap<String, Integer> uCaseSVolumes = new HashMap<String, Integer>();
     // Stores in Hashmap the target lymph node volumes associated to spread volume
-    private HashMap<String, List<String>> uCaseTVolumes = new HashMap<String, List<String>>();
+    private List<LRTumorTargetVolume> uCaseTVolumes = new ArrayList<LRTumorTargetVolume>() {
+    };
 
     /**
      * Gets case s volumes.
@@ -42,7 +44,7 @@ public class CTV56TUCase {
      *
      * @return the case t volumes
      */
-    public HashMap<String, List<String>> getuCaseTVolumes() {
+    public List<LRTumorTargetVolume> getuCaseTVolumes() {
         return uCaseTVolumes;
     }
 
@@ -101,8 +103,8 @@ public class CTV56TUCase {
      * @param volume the volume
      * @param token  the token
      */
-    public void addTVolumeToMap(String location, List<String> tList){
-        this.uCaseTVolumes.put(location, tList);
+    public void addTVolumeToMap(LRTumorTargetVolume lrTumorTargetVolume){
+        this.uCaseTVolumes.add(lrTumorTargetVolume);
     }
 
     @Override

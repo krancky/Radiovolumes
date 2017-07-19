@@ -52,9 +52,7 @@ public class TUCaseXMLHandler {
             XmlPullParserFactory factory = null;
             XmlPullParser parser = null;
             try {
-                String tLocation ="0";
-                String tArea = "0";
-                String tSide = "0";
+                LRTumorTargetVolume lrTumorTargetVolume = new LRTumorTargetVolume();
                 // Creates parser
                 factory = XmlPullParserFactory.newInstance();
                 factory.setNamespaceAware(true);
@@ -91,27 +89,15 @@ public class TUCaseXMLHandler {
                             } else if (tagname.equalsIgnoreCase("Identifier")) {
                                 ctv56TUCase.setIdentifier(Integer.parseInt(text));
                             } else if (tagname.equalsIgnoreCase("TLocation")) {
-                                tLocation = text;
+                                lrTumorTargetVolume.setLocation(text);
                             } else if (tagname.equalsIgnoreCase("TArea")) {
-                                tArea = text;
+                                lrTumorTargetVolume.setArea(text);
                             } else if (tagname.equalsIgnoreCase("TSide")) {
-                                tSide = text;
+                                lrTumorTargetVolume.setSide(text);
                             } else if (tagname.equalsIgnoreCase("TVolume")) {
-                                // Adds unique spread volume of CTV56NU cases
-                                List<String> tList = new ArrayList<String>();
-                                tList.add(tSide);
-                                tList.add(tArea);
-                                if (!ctv56TUCase.getuCaseTVolumes().containsKey(tLocation)){
-                                    ctv56TUCase.addTVolumeToMap(tLocation, tList);
+                                // Adds unique target volume of CTV56NU cases
+                                    ctv56TUCase.addTVolumeToMap(lrTumorTargetVolume);
                                 }
-                                else{
-                                    tList = ctv56TUCase.getuCaseTVolumes().get(tLocation);
-                                    tList.add(tSide);
-                                    ctv56TUCase.addTVolumeToMap(tLocation, tList);
-                                }
-
-                                Log.i("hop","New TarVolume added");
-                            }
                             break;
 
                         default:
