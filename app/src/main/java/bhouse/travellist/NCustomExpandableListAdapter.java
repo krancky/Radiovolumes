@@ -74,7 +74,7 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
                 .findViewById(R.id.textView1);
         expandedListTextView.setText(expandedListText);
         NodeAreaTemplate h = nList.get(expandedListPosition);
-        holder.tv.setText(h.getTitle());
+        holder.tv.setText(h.getNodeLocation());
         holder.cbLeft.setTag(expandedListPosition);
         holder.cbRight.setTag(expandedListPosition);
         holder.cbLeft.setOnClickListener(cbLeftClickListener);
@@ -92,8 +92,8 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
             NodeAreaTemplate h = (NodeAreaTemplate) nList.get(pos);
             CheckBox checkBox = (CheckBox)v;
             if(checkBox.isChecked()){
-                h.setContent("Spread"+h.getTitle() + "G");
-                Log.i("Tag", String.valueOf(pos) + h.getContent());
+                h.setContent("1");
+                h.setSide("Gauche");
             }
             else{
                 h.setContent("0");
@@ -111,8 +111,8 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
             NodeAreaTemplate h = (NodeAreaTemplate) nList.get(pos);
             CheckBox checkBox = (CheckBox)v;
             if(checkBox.isChecked()){
-                h.setContent("Spread"+h.getTitle() + "D");
-                Log.i("Tag", String.valueOf(pos));
+                h.setContent("1");
+                h.setSide("Droit");
             }
             else{
             h.setContent("0");

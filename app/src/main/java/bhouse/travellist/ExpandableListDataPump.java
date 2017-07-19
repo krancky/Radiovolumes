@@ -15,7 +15,7 @@ public class ExpandableListDataPump {
 
         List<String> nList = new ArrayList<String>();
         for (NodeAreaTemplate nodeAreaTemplate : nodeAreaTemplateList){
-            nList.add(nodeAreaTemplate.getTitle());
+            nList.add(nodeAreaTemplate.getNodeLocation());
         }
         expandableListDetail.clear();
         expandableListDetail.put("N EXTENSION", nList);

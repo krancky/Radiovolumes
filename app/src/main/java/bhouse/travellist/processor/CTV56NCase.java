@@ -1,5 +1,6 @@
 package bhouse.travellist.processor;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 
@@ -7,14 +8,14 @@ import java.util.HashMap;
  * The type Ctv 56 N case.
  * Stores CTV56 lymph node target volumes after computation of necessary volumes
  */
-public class CTV56NCase {
+public class CTV56NCase implements Serializable{
 
     // Name and identifier of elementary case
     private String caseName;
     private int identifier;
 
     // Stores in Hashmap the target lymph node volumes associated to spread volume
-    private HashMap<String, Integer> cTV56NTarVolumes = new HashMap<String, Integer>();
+    private HashMap<String, String> cTV56NTarVolumes = new HashMap<String, String>();
 
 
     /**
@@ -22,7 +23,7 @@ public class CTV56NCase {
      *
      * @return the case t volumes
      */
-    public HashMap<String, Integer> getCaseNTarVolumes() {
+    public HashMap<String, String> getCaseNTarVolumes() {
         return cTV56NTarVolumes;
     }
 
@@ -72,7 +73,7 @@ public class CTV56NCase {
      *
      * @param TVolumes the t volumes
      */
-    public void addAllTVolumeToMap(HashMap<String, Integer> TVolumes){
+    public void addAllTVolumeToMap(HashMap<String, String> TVolumes){
         this.cTV56NTarVolumes.putAll(TVolumes);
     }
 

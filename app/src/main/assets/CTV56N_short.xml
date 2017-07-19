@@ -1,55 +1,97 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <UCaseCatalog>
     <CTV56NUCase>Languemobile 0
-        <CaseName>Langue MobileG</CaseName>
+        <Location>Langue Mobile</Location>
+        <Area>Cavite Buccale</Area>
+        <Side>Gauche</Side>
         <Identifier>0</Identifier>
-        <SVolumes>
-        </SVolumes>
         <TVolumes>
-            <TargetIAG>1</TargetIAG>
+            <TVolume>
+                <TLN>IA</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
         </TVolumes>
     </CTV56NUCase>
     <CTV56NUCase>Languemobile 1
-        <CaseName>Langue MobileG</CaseName>
+        <Location>Langue Mobile</Location>
+        <Area>Cavite Buccale</Area>
+        <Side>Gauche</Side>
         <Identifier>1</Identifier>
         <SVolumes>
-            <SpreadIAG>1</SpreadIAG>
+            <SLN>IA</SLN>
+            <SLNSide>Gauche</SLNSide>
         </SVolumes>
         <TVolumes>
-            <TargetIAG>1</TargetIAG>
-            <TargetIBG>1</TargetIBG>
+            <TVolume>
+                <TLN>IA</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IB</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
         </TVolumes>
     </CTV56NUCase>
     <CTV56NUCase>Languemobile 2
-        <CaseName>Langue MobileD</CaseName>
+        <Location>Langue Mobile</Location>
+        <Area>Cavite Buccale</Area>
+        <Side>Droite</Side>
         <Identifier>4</Identifier>
         <SVolumes>
-            <SpreadIIBG>1</SpreadIIBG>
+            <SLN>IIB</SLN>
+            <SLNSide>Gauche</SLNSide>
         </SVolumes>
         <Modifiers>
             <BigII>1</BigII>
         </Modifiers>
         <TVolumes>
-            <TargetIAG>1</TargetIAG>
-            <TargetIIID>1</TargetIIID>
-            <TargetIVAG>1</TargetIVAG>
-            <TargetIVAD>1</TargetIVAD>
+            <TVolume>
+                <TLN>IA</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droit</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IV</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IV</TLN>
+                <TLNSide>Droit</TLNSide>
+            </TVolume>
         </TVolumes>
     </CTV56NUCase>
     <CTV56NUCase>Plancher 1
-        <CaseName>PlancherG</CaseName>
+        <Location>Plancher</Location>
+        <Area>Cavite Buccale</Area>
+        <Side>Gauche</Side>
         <Identifier>4</Identifier>
         <SVolumes>
-            <SpreadIIBG>1</SpreadIIBG>
+            <SLN>IIB</SLN>
+            <SLNSide>Gauche</SLNSide>
         </SVolumes>
         <Modifiers>
             <BigII>1</BigII>
         </Modifiers>
         <TVolumes>
-            <TargetIAG>1</TargetIAG>
-            <TargetIIID>1</TargetIIID>
-            <TargetIVAG>1</TargetIVAG>
-            <TargetIVAD>1</TargetIVAD>
+            <TVolume>
+                <TLN>IA</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droit</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IV</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IV</TLN>
+                <TLNSide>Droit</TLNSide>
+            </TVolume>
         </TVolumes>
     </CTV56NUCase>
 </UCaseCatalog>

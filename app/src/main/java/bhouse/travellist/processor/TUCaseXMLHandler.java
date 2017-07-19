@@ -17,7 +17,8 @@ import java.util.List;
  * The type Xml pull parser handler.
  * Handles Xml parsing for Tumor uCases
  */
-public class TUCaseXMLHandler {
+public class
+TUCaseXMLHandler {
     /**
      * The Ctv 56 nu case catalog.
      * Stores all elementary CTV56N cases
@@ -70,6 +71,10 @@ public class TUCaseXMLHandler {
                                 // Creates a new instance of CTV56NUCase
                                 ctv56TUCase = new CTV56TUCase();
                                 Log.i("hop","New TV56NUCase");
+                            }
+                            if (tagname.equalsIgnoreCase("TVolume")) {
+                                // Creates a new instance of CTV56NUCase
+                                lrTumorTargetVolume = new LRTumorTargetVolume();
                             }
                             break;
 

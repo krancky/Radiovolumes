@@ -80,7 +80,7 @@ public class NodeAreasTemplateXMLHandler {
                         case XmlPullParser.END_TAG:
                             if (tagname.equalsIgnoreCase("Volume")) {
                                 // add CTV56NUCase object to catalog
-                                nodeAreaTemplate.setTitle(text);
+                                nodeAreaTemplate.setNodeLocation(text);
                                 nodeAreaTemplate.setContent("0");
                                 NodeAreaTemplateList.add(nodeAreaTemplate);
 

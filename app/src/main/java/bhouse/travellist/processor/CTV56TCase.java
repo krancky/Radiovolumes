@@ -2,16 +2,19 @@ package bhouse.travellist.processor;
 
 import android.util.Log;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 /**
  * The type Ctv 56 T case.
  * Stores CTV56 tumor target volumes after computation of necessary volumes
  */
-public class CTV56TCase {
+public class CTV56TCase implements Serializable{
 
     // Name and identifier of elementary case
     private String caseName;
@@ -92,7 +95,17 @@ public class CTV56TCase {
      */
     public void addAllTVolumeToMap(List<LRTumorTargetVolume> TVolumes){
         this.cTV56TTarVolumes.addAll(TVolumes);
-        Log.i("chargement","stuff");
+        Log.i("chargement",this.getCaseTTarVolumes().toString());
+    }
+
+    public void removeTarVolumesDuplicates(){
+        Set<LRTumorTargetVolume> s = new HashSet<LRTumorTargetVolume>();
+        s.addAll(this.getCaseTTarVolumes());
+        this.cTV56TTarVolumes.clear();
+        List<LRTumorTargetVolume> list = new ArrayList<LRTumorTargetVolume>();
+        list.addAll(s);
+        this.addAllTVolumeToMap(list);
+
     }
 
     @Override

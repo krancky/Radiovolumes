@@ -9,12 +9,17 @@ import java.util.HashMap;
 public class CTV56NUCase {
 
     // Name and identifier of elementary case
-    private String caseName;
+
+    private String location;
+    private String side;
+    public String spreadLocation;
+    public String spreadSide;
+
     private int identifier;
     // Stores in Hashmap one and only one spread volume
     private HashMap<String, Integer> uCaseSVolumes = new HashMap<String, Integer>();
     // Stores in Hashmap the target lymph node volumes associated to spread volume
-    private HashMap<String, Integer> uCaseTVolumes = new HashMap<String, Integer>();
+    private HashMap<String, String> uCaseTVolumes = new HashMap<String, String>();
 
     /**
      * Gets case s volumes.
@@ -25,12 +30,43 @@ public class CTV56NUCase {
         return uCaseSVolumes;
     }
 
+    public String getSide() {
+        return side;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getSpreadLocation() {
+        return spreadLocation;
+    }
+
+    public void setSpreadLocation(String spreadLocation) {
+        this.spreadLocation = spreadLocation;
+    }
+
+    public String getSpreadSide() {
+        return spreadSide;
+    }
+
+    public void setSpreadSide(String spreadSide) {
+        this.spreadSide = spreadSide;
+    }
+
+    public void setSide(String side) {
+        this.side = side;
+    }
     /**
      * Gets case t volumes.
      *
      * @return the case t volumes
      */
-    public HashMap<String, Integer> getuCaseTVolumes() {
+    public HashMap<String, String> getuCaseTVolumes() {
         return uCaseTVolumes;
     }
 
@@ -54,26 +90,6 @@ public class CTV56NUCase {
 
 
     /**
-     * Sets case name.
-     *
-     * @param caseName the case name
-     */
-    public void setCaseName(String caseName) {
-        this.caseName = caseName;
-
-    }
-
-    /**
-     * Get case name string.
-     *
-     *
-     * @return the string
-     */
-    public String getCaseName(){
-        return caseName;
-    }
-
-    /**
      * Add s volume to map. Called by parser.
      *
      * @param volume the volume
@@ -89,14 +105,14 @@ public class CTV56NUCase {
      * @param volume the volume
      * @param token  the token
      */
-    public void addTVolumeToMap(String volume, Integer token){
-        this.uCaseTVolumes.put(volume, token);
+    public void addTVolumeToMap(String volume, String side){
+        this.uCaseTVolumes.put(volume, side);
     }
 
 
     @Override
     public String toString() {
-        return  "Case: " + caseName + "\n" + identifier + "-" + uCaseTVolumes.toString()  ;
+        return  "Case: "  + "\n" + identifier + "-" + uCaseTVolumes.toString()  ;
     }
 }
 

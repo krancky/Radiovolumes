@@ -1,10 +1,12 @@
 package bhouse.travellist.processor;
 
+import java.io.Serializable;
+
 /**
  * The type Tumor area template.
  *
  */
-public class TumorAreaTemplate {
+public class TumorAreaTemplate implements Serializable{
 
     String location,content, area, side;
     int color;

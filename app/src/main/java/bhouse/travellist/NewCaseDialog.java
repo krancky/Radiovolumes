@@ -15,11 +15,16 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import bhouse.travellist.R;
+import bhouse.travellist.processor.CTV56NCase;
+import bhouse.travellist.processor.CTV56TCase;
 import bhouse.travellist.processor.Cancer;
+import bhouse.travellist.processor.LRTumorTargetVolume;
+import bhouse.travellist.processor.TumorAreaTemplate;
 
 public class NewCaseDialog extends Activity {
 
-    private HashMap<String, List<String>> cancerTData;
+    private HashMap<String, HashMap<String, List<String>>> cancerTData;
+    private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     private HashMap<String, List<String>> cancerNData;
 
     @Override
@@ -29,8 +34,11 @@ public class NewCaseDialog extends Activity {
 
         Intent i = getIntent();
         Cancer cancer = (Cancer)i.getSerializableExtra("cancer");
+        CTV56TCase ctv56TCase = (CTV56TCase) i.getSerializableExtra("CTV56TCase");
+        CTV56NCase ctv56NCase = (CTV56NCase) i.getSerializableExtra("CTV56NCase");
 
-        cancerTData = new HashMap<String, List<String>>();
+        cancerTData = new HashMap<String, HashMap<String, List<String>>>();
+        cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
         cancerNData = new HashMap<String, List<String>>();
 
         TextView txtT = (TextView) findViewById(R.id.txtT);
@@ -55,32 +63,38 @@ public class NewCaseDialog extends Activity {
 
         Button cancelButton = (Button) findViewById(R.id.cancelButton);
 
-        prepareCancerData(cancerTData, cancerNData, cancer);
-        Log.i("cancerdata", cancerTData.toString());
+        prepareCancerData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase);
 
-        int j = 0;
-        for (HashMap.Entry<String, List<String>> cancerTAreaData: cancerTData.entrySet()){
-            final TextView titleRowTextView = new TextView(this);
-            titleRowTextView.setText(cancerTAreaData.getKey());
-            final TextView contentRowTextView = new TextView(this);
-            contentRowTextView.setText(cancerTAreaData.getValue().toString());
 
-            tLinearLayout.addView(titleRowTextView);
-            tLinearLayout.addView(contentRowTextView);
-            mTextViews[0] = titleRowTextView;
-            j=j+1;
+        for (HashMap.Entry<String, HashMap<String, List<String>>> cancerTAreaData: cancerTData.entrySet()){
+            final TextView titleAreaRowTextView = new TextView(this);
+            titleAreaRowTextView.setText(cancerTAreaData.getKey());
+            HashMap<String, List<String>> sideMap = cancerTAreaData.getValue();
+            tLinearLayout.addView(titleAreaRowTextView);
+            for(HashMap.Entry<String, List<String>> map : sideMap.entrySet()){
+                final TextView titleSideRowTextView = new TextView(this);
+                titleSideRowTextView.setText(map.getKey());
+                tLinearLayout.addView(titleSideRowTextView);
+                final TextView contentRowTextView = new TextView(this);
+                contentRowTextView.setText(map.getValue().toString());
+                tLinearLayout.addView(contentRowTextView);
+            }
         }
 
-        for (HashMap.Entry<String, List<String>> cancerTAreaData: cancerTData.entrySet()){
-            final TextView titleRowTextView = new TextView(this);
-            titleRowTextView.setText(cancerTAreaData.getKey());
-            final TextView contentRowTextView = new TextView(this);
-            contentRowTextView.setText(cancerTAreaData.getValue().toString());
 
-            tLinearLayout.addView(titleRowTextView);
-            tLinearLayout.addView(contentRowTextView);
-            mTextViews[0] = titleRowTextView;
-            j=j+1;
+        for (HashMap.Entry<String, HashMap<String, List<String>>> cancerTTarAreaData: cancerTTarData.entrySet()){
+            final TextView titleAreaRowTextView = new TextView(this);
+            titleAreaRowTextView.setText(cancerTTarAreaData.getKey());
+            HashMap<String, List<String>> sideMap = cancerTTarAreaData.getValue();
+            tTargetLinearLayout.addView(titleAreaRowTextView);
+            for(HashMap.Entry<String, List<String>> map : sideMap.entrySet()){
+                final TextView titleSideRowTextView = new TextView(this);
+                titleSideRowTextView.setText(map.getKey());
+                tTargetLinearLayout.addView(titleSideRowTextView);
+                final TextView contentRowTextView = new TextView(this);
+                contentRowTextView.setText(map.getValue().toString());
+                tTargetLinearLayout.addView(contentRowTextView);
+            }
         }
 
 
@@ -95,23 +109,59 @@ public class NewCaseDialog extends Activity {
 
 
     }
-    public void prepareCancerData(HashMap<String, List<String>> cancerTData, HashMap<String, List<String>> cancerNData, Cancer cancer) {
-        for (HashMap.Entry<String, List<String>> cancerTVolumes: cancer.getCancerTVolumes().entrySet()){
-            if (!cancerTData.containsKey(cancerTVolumes.getValue())){
-                //cancerTData.put(cancerTVolumes.getValue(), new ArrayList<String>());
+    public void prepareCancerData(HashMap<String, HashMap<String, List<String>>> cancerTData, HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNData, Cancer cancer, CTV56TCase ctv56TCase) {
+        for (TumorAreaTemplate cancerTVolumes : cancer.getCancerTVolumes()) {
+            if (!cancerTData.containsKey(cancerTVolumes.getArea())) {
+                HashMap<String, List<String>> map = new HashMap<String, List<String>>();
+                List<String> list = new ArrayList<String>();
+                list.add(cancerTVolumes.getLocation());
+                map.put(cancerTVolumes.getSide(), list);
+                cancerTData.put(cancerTVolumes.getArea(), map);
+            } else if (!cancerTData.get(cancerTVolumes.getArea()).containsKey(cancerTVolumes.getSide())) {
+                List<String> list = new ArrayList<String>();
+                HashMap<String, List<String>> map = new HashMap<String, List<String>>();
+                map = cancerTData.get(cancerTVolumes.getArea());
+                list.add(cancerTVolumes.getLocation());
+                map.put(cancerTVolumes.getSide(), list);
+                cancerTData.put(cancerTVolumes.getArea(), map);
+            } else {
+                List<String> list = new ArrayList<String>();
+                HashMap<String, List<String>> map = new HashMap<String, List<String>>();
+                map = cancerTData.get(cancerTVolumes.getArea());
+                list = map.get(cancerTVolumes.getSide());
+                list.add(cancerTVolumes.getLocation());
+                map.put(cancerTVolumes.getSide(), list);
+                cancerTData.put(cancerTVolumes.getArea(), map);
             }
-            cancerTData.get(cancerTVolumes.getValue()).add(cancerTVolumes.getKey());
-            Log.i("youpi","youpi");
         }
 
-        for (HashMap.Entry<String, Integer> cancerNVolumes: cancer.getCancerNVolumes().entrySet()){
-            if (!cancerNData.containsKey(cancerNVolumes.getValue())){
-                //cancerTData.put(cancerNVolumes.getValue(), new ArrayList<String>());
+
+        for (LRTumorTargetVolume lrTumorTargetVolume: ctv56TCase.getCaseTTarVolumes()) {
+            if (!cancerTTarData.containsKey(lrTumorTargetVolume.getArea())) {
+                HashMap<String, List<String>> map = new HashMap<String, List<String>>();
+                List<String> list = new ArrayList<String>();
+                list.add(lrTumorTargetVolume.getLocation());
+                map.put(lrTumorTargetVolume.getSide(), list);
+                cancerTTarData.put(lrTumorTargetVolume.getArea(), map);
+            } else if (!cancerTTarData.get(lrTumorTargetVolume.getArea()).containsKey(lrTumorTargetVolume.getSide())) {
+                List<String> list = new ArrayList<String>();
+                HashMap<String, List<String>> map = new HashMap<String, List<String>>();
+                map = cancerTTarData.get(lrTumorTargetVolume.getArea());
+                list.add(lrTumorTargetVolume.getLocation());
+                map.put(lrTumorTargetVolume.getSide(), list);
+                cancerTTarData.put(lrTumorTargetVolume.getArea(), map);
+            } else {
+                List<String> list = new ArrayList<String>();
+                HashMap<String, List<String>> map = new HashMap<String, List<String>>();
+                map = cancerTTarData.get(lrTumorTargetVolume.getArea());
+                list = map.get(lrTumorTargetVolume.getSide());
+                list.add(lrTumorTargetVolume.getLocation());
+                map.put(lrTumorTargetVolume.getSide(), list);
+                cancerTTarData.put(lrTumorTargetVolume.getArea(), map);
             }
-            cancerTData.get(cancerNVolumes.getValue()).add(cancerNVolumes.getKey());
-            Log.i("youpi","youpi");
         }
     }
-
-
 }
+
+
+

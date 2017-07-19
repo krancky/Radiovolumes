@@ -52,6 +52,8 @@ public class NUCaseXMLHandler {
             XmlPullParserFactory factory = null;
             XmlPullParser parser = null;
             try {
+                String tLN = new String();
+                String tLNSide = new String();
                 // Creates parser
                 factory = XmlPullParserFactory.newInstance();
                 factory.setNamespaceAware(true);
@@ -70,6 +72,11 @@ public class NUCaseXMLHandler {
                                 cTV56NUCase = new CTV56NUCase();
                                 Log.i("hop","New TV56NUCase");
                             }
+                            if (tagname.equalsIgnoreCase("TVolume")) {
+                                // Creates a new instance of the two strings defining Target LN Volume
+                                tLN = new String();
+                                tLNSide = new String();
+                            }
                             break;
 
                         case XmlPullParser.TEXT:
@@ -79,20 +86,23 @@ public class NUCaseXMLHandler {
 
                         case XmlPullParser.END_TAG:
                             if (tagname.equalsIgnoreCase("CTV56NUCase")) {
-                                // add CTV56NUCase object to catalog
                                 CTV56NUCaseCatalog.add(cTV56NUCase);
-                            } else if (tagname.equalsIgnoreCase("CaseName")) {
-                                cTV56NUCase.setCaseName(text);
+                            } else if (tagname.equalsIgnoreCase("Location")) {
+                                cTV56NUCase.setLocation(text);
                             } else if (tagname.equalsIgnoreCase("Identifier")) {
                                 cTV56NUCase.setIdentifier(Integer.parseInt(text));
-                            } else if (tagname.matches("Spread(.*)")) {
-                                // Adds unique spread volume of CTV56NU case.
-                                cTV56NUCase.addSVolumeToMap(tagname, Integer.parseInt(text));
-                                Log.i("hop","New SVolume added");
-                            } else if (tagname.matches("Target(.*)")) {
-                                // Adds new target volume to CTV56NU case
-                                cTV56NUCase.addTVolumeToMap(tagname, Integer.parseInt(text));
-                                Log.i("hop", "New TVolume added");
+                            } else if (tagname.equalsIgnoreCase("Side")) {
+                                cTV56NUCase.setSide(text);
+                            } else if (tagname.equalsIgnoreCase("SLN")) {
+                                cTV56NUCase.setSpreadLocation(text);
+                            } else if (tagname.equalsIgnoreCase("SLNSide")) {
+                                cTV56NUCase.setSpreadSide(text);
+                            } else if (tagname.equalsIgnoreCase("TLN")) {
+                                tLN = text;
+                            } else if (tagname.equalsIgnoreCase("TLNSIDE")) {
+                                tLNSide = text;
+                            } else if (tagname.equalsIgnoreCase("TVolume")) {
+                                cTV56NUCase.addTVolumeToMap(tLN, tLNSide);
                             }
                             break;
 

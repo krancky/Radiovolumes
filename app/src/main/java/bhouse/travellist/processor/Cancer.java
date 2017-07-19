@@ -15,8 +15,8 @@ import java.util.List;
 public class Cancer implements Serializable{
     //private String area;
     // Private hashmaps store cancer data
-    private HashMap<String, Integer> cancerNVolumes = new HashMap<String, Integer>();
-    private HashMap<String, List<String>> cancerTVolumes = new HashMap<String, List<String>>();
+    private List<NodeAreaTemplate> cancerNVolumes = new ArrayList<NodeAreaTemplate>();
+    private List<TumorAreaTemplate> cancerTVolumes = new ArrayList<TumorAreaTemplate>();
 
     /**
      * Add n volume from NodeTemplate
@@ -24,9 +24,9 @@ public class Cancer implements Serializable{
      * @param spreadVolume the spread volume
      * @param integer      the integer
      */
-    public void addNVolume (String spreadVolume, Integer integer) {
-        if (spreadVolume != "0") {
-            cancerNVolumes.put(spreadVolume, integer);
+    public void addNVolume (NodeAreaTemplate nodeAreaTemplate) {
+        if (nodeAreaTemplate.getContent() != "0") {
+            cancerNVolumes.add(nodeAreaTemplate);
         }
     }
 
@@ -37,12 +37,7 @@ public class Cancer implements Serializable{
      */
     public void addTVolume (TumorAreaTemplate tumorAreaTemplate){
         if (tumorAreaTemplate.getContent() != "0"){
-            List<String> tList = new ArrayList<String>();
-            tList.add(tumorAreaTemplate.getSide());
-            tList.add(tumorAreaTemplate.getArea());
-            Log.i("contenu area", tumorAreaTemplate.getArea() );
-            cancerTVolumes.put(tumorAreaTemplate.getLocation(),tList);
-            Log.i("contenu bizarre", cancerTVolumes.get(tumorAreaTemplate.getLocation()).toString());
+            cancerTVolumes.add(tumorAreaTemplate);
         }
 
     }
@@ -52,7 +47,7 @@ public class Cancer implements Serializable{
      *
      * @return the cancer n volumes
      */
-    public HashMap<String, Integer> getCancerNVolumes() {
+    public List<NodeAreaTemplate> getCancerNVolumes() {
         return cancerNVolumes;
     }
 
@@ -61,7 +56,7 @@ public class Cancer implements Serializable{
      *
      * @return the cancer t volumes
      */
-    public HashMap<String, List<String>> getCancerTVolumes() {
+    public List<TumorAreaTemplate> getCancerTVolumes() {
         return cancerTVolumes;
     }
 

@@ -25,49 +25,27 @@ public class HashMapOperator {
         // Sets the name of structure holding the lymph nodes to irradiate
         cTV56NCase.setCaseName("Lymph nodes to irradiate");
         // Iterates on all elementary cases to associate to spread volumes in actual cancer, then computes linear combination of target volumes and returns final CTV56NCase
-        for (HashMap.Entry<String, List<String>> cancerTVolumes: cancer.getCancerTVolumes().entrySet()){
+        for (TumorAreaTemplate cancerTVolumes : cancer.getCancerTVolumes()){
 
             for (CTV56NUCase ctv56NUCase:ctv56NUCaseList) {
                 if (cancer.getCancerNVolumes().isEmpty()) {
-                    if (cancerTVolumes.getKey().equals(ctv56NUCase.getCaseName()) && ctv56NUCase.getuCaseSVolumes().isEmpty()) {
+                    if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && cancerTVolumes.getSide().equals(ctv56NUCase.getSide()) && ctv56NUCase.getuCaseSVolumes().isEmpty()) {
                         cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
                         Log.i("touche", "coule");
                     }
                 } else {
-                    for (HashMap.Entry<String, Integer> cancerNVolumes : cancer.getCancerNVolumes().entrySet()) {
-                        for (HashMap.Entry<String, Integer> uCaseSVolumes : ctv56NUCase.getuCaseSVolumes().entrySet()) {
-                            if (cancerNVolumes.getKey().equals(uCaseSVolumes.getKey()) && cancerNVolumes.getValue().equals(uCaseSVolumes.getValue()) && cancerNVolumes.getValue().equals(1) && cancerTVolumes.getKey().equals(ctv56NUCase.getCaseName())) {
+                    for (NodeAreaTemplate nodeAreaTemplate : cancer.getCancerNVolumes()) {
+                            if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && nodeAreaTemplate.getNodeLocation().equals(ctv56NUCase.getSpreadLocation()) && cancerTVolumes.getSide().equals(ctv56NUCase.getSide()) && nodeAreaTemplate.getSide().equals(ctv56NUCase.getSpreadSide())) {
                                 cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
                                 Log.i("touche", "coule");
                             }
-                        }
+
                     }
 
                 }
             }
         }
-/**
-        for (CTV56NUCase ctv56NUCase:ctv56NUCaseList){
-            for (HashMap.Entry<String, Integer> uCaseSVolumes : ctv56NUCase.getuCaseSVolumes().entrySet()){
-                for (HashMap.Entry<String, Integer> cancerTVolumes: cancer.getCancerTVolumes().entrySet()){
-                    if(cancer.getCancerNVolumes().isEmpty()) {
-                        HashMap<String, Integer> tempor = ctv56NUCase.getuCaseSVolumes();
-                        if (cancerTVolumes.getKey().equals(ctv56NUCase.getCaseName()) && tempor.isEmpty()) {
-                            cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
-                            Log.i("touche", "coule");
-                        }
-                    }
-                    else {
-                        for (HashMap.Entry<String, Integer> cancerNVolumes : cancer.getCancerNVolumes().entrySet()) {
-                            if (cancerNVolumes.getKey().equals(uCaseSVolumes.getKey()) && cancerNVolumes.getValue().equals(uCaseSVolumes.getValue()) && cancerNVolumes.getValue().equals(1) && cancerTVolumes.getKey().equals(ctv56NUCase.getCaseName())) {
-                                cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
-                                Log.i("touche", "coule");
-                            }
-                        }
-                    }
-                }
-            }
-        }**/
+
 
     }
 
@@ -77,9 +55,8 @@ public class HashMapOperator {
         // Iterates on all elementary cases to associate to spread volumes in actual cancer, then computes linear combination of target volumes and returns final CTV56NCase
 
         for (CTV56TUCase ctv56TUCase:ctv56TUCaseList){
-
-                for (HashMap.Entry<String, List<String>> cancerTVolumes : cancer.getCancerTVolumes().entrySet()){
-                    if (cancerTVolumes.getKey().equals(ctv56TUCase.getLocation()) && cancerTVolumes.getValue().get(0).equals(ctv56TUCase.getSide())){
+                for (TumorAreaTemplate cancerTVolumes : cancer.getCancerTVolumes()){
+                    if (cancerTVolumes.getLocation().equals(ctv56TUCase.getLocation()) && cancerTVolumes.getSide().equals(ctv56TUCase.getSide())){
                         cTV56TCase.addAllTVolumeToMap(ctv56TUCase.getuCaseTVolumes());
                     }
                 }

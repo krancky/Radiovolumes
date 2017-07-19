@@ -50,6 +50,8 @@ public class NewCaseActivity extends Activity {
     ListView spreadNInputListView; // View of N templates selection
     ListView targetVolumesView; // View of target volumes (N and T)
     private Cancer cancer; // Storing current cancer data
+    private CTV56TCase ctv56TCase;
+    private CTV56NCase ctv56NCase;
 
     //Volume lists for N
     List<CTV56NUCase> ctv56NUCaseList;
@@ -86,10 +88,6 @@ public class NewCaseActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_case_1);
-
-
-
-
 
         // Getting elements by Id
         spreadNInputListView = (ListView) findViewById(R.id.spreadNvolumesListView);
@@ -138,7 +136,7 @@ public class NewCaseActivity extends Activity {
         // Stores in list
         // Displays in listView with adapter
         HashMapOperator hashMapOperator = new HashMapOperator();
-        CTV56NCase ctv56NCase = new CTV56NCase();
+        ctv56NCase = new CTV56NCase();
         cancer = new Cancer();
         hashMapOperator.cTV56NCase(ctv56NUCaseList, cancer, ctv56NCase);
         ArrayAdapter<CTV56NCase> target_adapter =
@@ -177,7 +175,7 @@ public class NewCaseActivity extends Activity {
         Button displayButton = (Button) findViewById(R.id.displayButton);
 
         // Generates list of T locations to be irradiated
-        CTV56TCase ctv56TCase = new CTV56TCase();
+        ctv56TCase = new CTV56TCase();
         hashMapOperator.cTV56TCase(ctv56TUCaseList, cancer, ctv56TCase);
         Log.i("End of onCreate() ", "... Done");
 
@@ -201,6 +199,8 @@ public class NewCaseActivity extends Activity {
                 Toast.makeText(v.getContext(),"Display Dialog", Toast.LENGTH_SHORT).show();
                 Intent transitionIntent = new Intent(NewCaseActivity.this, NewCaseDialog.class);
                 transitionIntent.putExtra("cancer", cancer);
+                transitionIntent.putExtra("CTV56TCase", NewCaseActivity.this.ctv56TCase);
+                transitionIntent.putExtra("CTV56NCase", NewCaseActivity.this.ctv56NCase);
                 startActivity(transitionIntent);
             }
         });
@@ -214,19 +214,22 @@ public class NewCaseActivity extends Activity {
                 cancer.tClear();
                 NewCaseActivity.this.ctv56NCaseList.clear();
 
+
+
                 for (NodeAreaTemplate nodeAreaTemplate : nodeAreaTemplateList) {
-                    NewCaseActivity.this.cancer.addNVolume(nodeAreaTemplate.getContent(), 1);
+                    NewCaseActivity.this.cancer.addNVolume(nodeAreaTemplate);
                 }
                 for (TumorAreaTemplate tumorAreaTemplate : tumorAreaTemplateList) {
                     NewCaseActivity.this.cancer.addTVolume(tumorAreaTemplate);
                 }
                 NewCaseActivity.this.ctv56TCaseList.clear();
-                CTV56TCase ctv56TCase = new CTV56TCase();
-                CTV56NCase ctv56NCase = new CTV56NCase();
+                NewCaseActivity.this.ctv56TCase = new CTV56TCase();
+                NewCaseActivity.this.ctv56NCase = new CTV56NCase();
                 HashMapOperator hashMapOperator = new HashMapOperator();
-                hashMapOperator.update(NewCaseActivity.this.ctv56TUCaseList, NewCaseActivity.this.ctv56NUCaseList, NewCaseActivity.this.cancer, ctv56TCase, ctv56NCase);
-                NewCaseActivity.this.ctv56TCaseList.add(ctv56TCase);
-                NewCaseActivity.this.ctv56NCaseList.add(ctv56NCase);
+                hashMapOperator.update(NewCaseActivity.this.ctv56TUCaseList, NewCaseActivity.this.ctv56NUCaseList, NewCaseActivity.this.cancer, NewCaseActivity.this.ctv56TCase, ctv56NCase);
+                ctv56TCase.removeTarVolumesDuplicates();
+                NewCaseActivity.this.ctv56TCaseList.add(NewCaseActivity.this.ctv56TCase);
+                NewCaseActivity.this.ctv56NCaseList.add(NewCaseActivity.this.ctv56NCase);
 
 
 
