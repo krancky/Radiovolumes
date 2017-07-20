@@ -1,26 +1,21 @@
 package bhouse.travellist;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.util.Log;
+
+import java.util.LinkedHashMap;
+import java.util.List;
 
 import bhouse.travellist.processor.NodeAreaTemplate;
-import bhouse.travellist.processor.TumorAreaTemplate;
 
-public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
+public class NCustomExpandableListAdapter_1 extends BaseExpandableListAdapter {
 
     private Context context;
     private List<String> expandableListTitle;
@@ -30,8 +25,8 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
 
 
 
-    public NCustomExpandableListAdapter(Context context, List<String> expandableListTitle,
-                                       LinkedHashMap<String, List<String>> expandableListDetail, List<NodeAreaTemplate> nodeAreaTemplateList) {
+    public NCustomExpandableListAdapter_1(Context context, List<String> expandableListTitle,
+                                          LinkedHashMap<String, List<String>> expandableListDetail, List<NodeAreaTemplate> nodeAreaTemplateList) {
         this.context = context;
         this.nList = nodeAreaTemplateList;
         this.expandableListTitle = expandableListTitle;
@@ -63,6 +58,7 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
             holder = new ViewHolder();
             holder.tv = (TextView) convertView.findViewById(R.id.textView1);
             holder.cbLeft =(CheckBox) convertView.findViewById(R.id.checkLeft);
+            holder.cbLeft.setOnCheckedChangeListener(null);
             holder.cbRight =(CheckBox) convertView.findViewById(R.id.checkRight);
             convertView.setTag(holder);
 
@@ -79,7 +75,9 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
         holder.tv.setText(h.getNodeLocation());
         holder.cbLeft.setTag(expandedListPosition);
         holder.cbRight.setTag(expandedListPosition);
+        holder.cbLeft.setOnCheckedChangeListener(null);
         holder.cbLeft.setOnClickListener(cbLeftClickListener);
+        holder.cbLeft.setOnCheckedChangeListener(null);
         holder.cbRight.setOnClickListener(cbRightClickListener);
         return convertView;
     };
@@ -93,6 +91,7 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
 
             NodeAreaTemplate h = (NodeAreaTemplate) nList.get(pos);
             CheckBox checkBox = (CheckBox)v;
+            //checkBox.setOnCheckedChangeListener(null);
             if(checkBox.isChecked()){
                 h.setContent("1");
                 h.setSide("Gauche");
@@ -100,7 +99,7 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
             else{
                 h.setContent("0");
             }
-            NCustomExpandableListAdapter.this.notifyDataSetChanged();
+            NCustomExpandableListAdapter_1.this.notifyDataSetChanged();
         }
     };
 
@@ -119,7 +118,7 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
             else{
             h.setContent("0");
             }
-            NCustomExpandableListAdapter.this.notifyDataSetChanged();
+            NCustomExpandableListAdapter_1.this.notifyDataSetChanged();
         }
     };
 

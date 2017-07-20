@@ -20,6 +20,7 @@ import bhouse.travellist.processor.CTV56TCase;
 import bhouse.travellist.processor.Cancer;
 import bhouse.travellist.processor.LRNodeTargetVolume;
 import bhouse.travellist.processor.LRTumorTargetVolume;
+import bhouse.travellist.processor.NodeAreaTemplate;
 import bhouse.travellist.processor.TumorAreaTemplate;
 
 public class NewCaseDialog extends Activity {
@@ -181,6 +182,19 @@ public class NewCaseDialog extends Activity {
             }
         }
 
+
+        for (NodeAreaTemplate nodeAreaTemplate : cancer.getCancerNVolumes()){
+            if (!cancerNData.containsKey(nodeAreaTemplate.getSide())) {
+                List<String> list = new ArrayList<String>();
+                list.add(nodeAreaTemplate.getNodeLocation());
+                cancerNData.put(nodeAreaTemplate.getSide(), list);
+            } else  {
+                List<String> list = new ArrayList<String>();
+                list = cancerNData.get(nodeAreaTemplate.getSide());
+                list.add(nodeAreaTemplate.getNodeLocation());
+                cancerNData.put(nodeAreaTemplate.getSide(), list);
+            }
+        }
 
         for (LRNodeTargetVolume lrNodeTargetVolume : ctv56NCase.getCaseNTarVolumes()){
             if (!cancerNTarData.containsKey(lrNodeTargetVolume.getSide())) {
