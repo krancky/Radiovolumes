@@ -1,7 +1,13 @@
 package bhouse.travellist.processor;
 
+import android.content.Context;
 import android.util.Log;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,6 +23,16 @@ public class Cancer implements Serializable{
     // Private hashmaps store cancer data
     private List<NodeAreaTemplate> cancerNVolumes = new ArrayList<NodeAreaTemplate>();
     private List<TumorAreaTemplate> cancerTVolumes = new ArrayList<TumorAreaTemplate>();
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    private String name;
 
     /**
      * Add n volume from NodeTemplate
@@ -77,4 +93,38 @@ public class Cancer implements Serializable{
                 "cancerNVolumes=" + cancerNVolumes +
                 '}';
     }
+
+    public void saveToFile (Context context){
+        try{
+            Log.i("path ecriture", "yo");
+            FileOutputStream fileOutputStream = context.openFileOutput(this.name, Context.MODE_PRIVATE);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(this);
+            objectOutputStream.close();
+            fileOutputStream.close();
+            Log.i("path ecriture", context.getFilesDir().toString());
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static Cancer readFromFile(Context context, String name){
+        Cancer cancer = null;
+        try{
+            FileInputStream fileInputStream = context.openFileInput(name);
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            cancer = (Cancer) objectInputStream.readObject();
+            objectInputStream.close();
+            fileInputStream.close();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return cancer;
+    }
+
 }

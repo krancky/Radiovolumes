@@ -76,6 +76,7 @@ public class NCustomExpandableListAdapter_1 extends BaseExpandableListAdapter {
         holder.cbLeft.setTag(expandedListPosition);
         holder.cbRight.setTag(expandedListPosition);
         holder.cbLeft.setOnCheckedChangeListener(null);
+
         holder.cbLeft.setOnClickListener(cbLeftClickListener);
         holder.cbLeft.setOnCheckedChangeListener(null);
         holder.cbRight.setOnClickListener(cbRightClickListener);
@@ -177,7 +178,7 @@ public class NCustomExpandableListAdapter_1 extends BaseExpandableListAdapter {
 
     @Override
     public boolean isChildSelectable(int listPosition, int expandedListPosition) {
-        return true;
+        return false;
     }
 
     static class ViewHolder

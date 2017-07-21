@@ -1,5 +1,6 @@
 package bhouse.travellist;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +27,7 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
     private Context context;
     private List<String> expandableListTitle;
     private LinkedHashMap<String, List<String>> expandableListDetail;
+    private ArrayList<ArrayList<Boolean>> checkboxStatus = new ArrayList<ArrayList<Boolean>>();
     List<NodeAreaTemplate> nList;
 
 
@@ -36,6 +39,13 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
         this.nList = nodeAreaTemplateList;
         this.expandableListTitle = expandableListTitle;
         this.expandableListDetail =expandableListDetail;
+
+        int groupCount = this.expandableListTitle.get(0).length();
+        ArrayList<Boolean> childStatus = new ArrayList<Boolean>();
+        for (int i = 0; i<groupCount; i++){
+            childStatus.add(false);
+        }
+        checkboxStatus.add(childStatus);
     }
 
     @Override
@@ -64,13 +74,13 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
             holder.tv = (TextView) convertView.findViewById(R.id.textView1);
             holder.cbLeft =(CheckBox) convertView.findViewById(R.id.checkLeft);
             holder.cbRight =(CheckBox) convertView.findViewById(R.id.checkRight);
+            holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
+            holder.cbLeft.setChecked(checkboxStatus.get(listPosition).get(expandedListPosition));
             convertView.setTag(holder);
 
         }
         else {
         holder = (ViewHolder) convertView.getTag();
-            holder.cbLeft.setOnCheckedChangeListener(null);
-            holder.cbRight.setOnCheckedChangeListener(null);
         }
         TextView expandedListTextView = (TextView) convertView
                 .findViewById(R.id.textView1);
@@ -79,49 +89,33 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
         holder.tv.setText(h.getNodeLocation());
         holder.cbLeft.setTag(expandedListPosition);
         holder.cbRight.setTag(expandedListPosition);
-        holder.cbLeft.setOnClickListener(cbLeftClickListener);
-        holder.cbRight.setOnClickListener(cbRightClickListener);
+        holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
+        holder.cbLeft.setChecked(checkboxStatus.get(listPosition).get(expandedListPosition));
+        //holder.cbLeft.setOnClickListener(cbLeftClickListener);
+        //holder.cbRight.setOnClickListener(cbRightClickListener);
         return convertView;
     };
 
 
-    private CheckBox.OnClickListener cbLeftClickListener = new View.OnClickListener() {
 
-        public void onClick(View v) {
-            int pos = (Integer) v.getTag();
-            // Subtle. view is the checkbox. Pos is passed as an argument to refer to the parent listview item in which the checkbox is.
 
-            NodeAreaTemplate h = (NodeAreaTemplate) nList.get(pos);
-            CheckBox checkBox = (CheckBox)v;
-            if(checkBox.isChecked()){
+    private CompoundButton.OnCheckedChangeListener cbLeftChangeListener = new CompoundButton.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(CompoundButton checkBoxView, boolean isChecked) {
+            int position = (Integer) checkBoxView.getTag();
+            checkboxStatus.get(0).set(position, isChecked);
+            NodeAreaTemplate h = (NodeAreaTemplate) nList.get(position);
+            if(checkBoxView.isChecked()){
                 h.setContent("1");
                 h.setSide("Gauche");
             }
             else{
                 h.setContent("0");
             }
-            NCustomExpandableListAdapter.this.notifyDataSetChanged();
         }
     };
 
-    private CheckBox.OnClickListener cbRightClickListener = new View.OnClickListener() {
 
-        public void onClick(View v) {
-            int pos = (Integer) v.getTag();
-            // Subtle. view is the checkbox. Pos is passed as an argument to refer to the parent listview item in which the checkbox is.
-
-            NodeAreaTemplate h = (NodeAreaTemplate) nList.get(pos);
-            CheckBox checkBox = (CheckBox)v;
-            if(checkBox.isChecked()){
-                h.setContent("1");
-                h.setSide("Droit");
-            }
-            else{
-            h.setContent("0");
-            }
-            NCustomExpandableListAdapter.this.notifyDataSetChanged();
-        }
-    };
 
 
 
@@ -173,7 +167,7 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public boolean hasStableIds() {
-        return false;
+        return true;
     }
 
     @Override

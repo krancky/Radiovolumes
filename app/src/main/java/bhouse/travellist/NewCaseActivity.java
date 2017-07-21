@@ -41,6 +41,7 @@ import bhouse.travellist.processor.TumorAreaTemplate;
 
 import android.widget.ImageView;
 
+import static bhouse.travellist.R.id.NewCaseImage;
 import static bhouse.travellist.R.id.expandableListView;
 
 public class NewCaseActivity extends Activity {
@@ -248,6 +249,9 @@ public class NewCaseActivity extends Activity {
                 listView_n.setAdapter(null);
                 listView_n.setAdapter(target_adapter_n);
                 listView_n.getAdapter();
+                NewCaseActivity.this.cancer.setName("test_cancer_essai");
+                NewCaseActivity.this.cancer.saveToFile(NewCaseActivity.this);
+
 
 
 
