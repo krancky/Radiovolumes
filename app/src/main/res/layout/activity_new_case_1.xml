@@ -22,7 +22,7 @@
             android:background="#95000000">
 
             <EditText
-                android:id="@+id/etTextName"
+                android:id="@+id/CaseName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -102,20 +102,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/saveButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/expandableListView"
-            android:text="Save" />
 
         <Button
             android:id="@+id/displayButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/expandableListView"
+
+            android:gravity="center_vertical|right"
             android:text="Display" />
 
     </LinearLayout>

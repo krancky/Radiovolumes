@@ -19,6 +19,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -42,7 +43,9 @@ import bhouse.travellist.processor.TumorAreaTemplate;
 import android.widget.ImageView;
 
 import static bhouse.travellist.R.id.NewCaseImage;
+import static bhouse.travellist.R.id.displayButton;
 import static bhouse.travellist.R.id.expandableListView;
+import static bhouse.travellist.R.id.saveButton;
 
 public class NewCaseActivity extends Activity {
 
@@ -101,7 +104,7 @@ public class NewCaseActivity extends Activity {
         mImageView.setImageResource(R.drawable.newcase);
         mAddButton = (ImageButton) findViewById(R.id.btn_add);
         //mRevealView = (LinearLayout) findViewById(R.id.llEditTextHolder);
-        mEditTextName = (EditText) findViewById(R.id.etTextName);
+        mEditTextName = (EditText) findViewById(R.id.CaseName);
         mAddButton = (ImageButton) findViewById(R.id.btn_add);
         mAddButton.setImageResource(R.drawable.icn_morph_reverse);
 
@@ -172,7 +175,7 @@ public class NewCaseActivity extends Activity {
         ListView spreadTInputListView = (ListView) findViewById(R.id.spreadTvolumesListView);
         //TCustomListAdapter spreadTInputListViewAdapter = new TCustomListAdapter(this, tumorAreaTemplateList);
         //spreadTInputListView.setAdapter(spreadTInputListViewAdapter);
-        Button saveButton = (Button) findViewById(R.id.saveButton);
+        //Button saveButton = (Button) findViewById(saveButton);
         Button displayButton = (Button) findViewById(R.id.displayButton);
 
         // Generates list of T locations to be irradiated
@@ -194,9 +197,12 @@ public class NewCaseActivity extends Activity {
         tExpandableListView.setAdapter(tExpandableListAdapter);
         mAddButton.animate().alpha(1.0f);
 
+
+
         displayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                NewCaseActivity.this.update();
                 Toast.makeText(v.getContext(),"Display Dialog", Toast.LENGTH_SHORT).show();
                 Intent transitionIntent = new Intent(NewCaseActivity.this, NewCaseDialog.class);
                 transitionIntent.putExtra("cancer", cancer);
@@ -206,62 +212,19 @@ public class NewCaseActivity extends Activity {
             }
         });
 
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Pareil pour T
-                Toast.makeText(v.getContext(),"T and N update", Toast.LENGTH_SHORT).show();
-                cancer.nClear();
-                cancer.tClear();
-                NewCaseActivity.this.ctv56NCaseList.clear();
-
-
-
-                for (NodeAreaTemplate nodeAreaTemplate : nodeAreaTemplateList) {
-                    NewCaseActivity.this.cancer.addNVolume(nodeAreaTemplate);
-                }
-                for (TumorAreaTemplate tumorAreaTemplate : tumorAreaTemplateList) {
-                    NewCaseActivity.this.cancer.addTVolume(tumorAreaTemplate);
-                }
-                NewCaseActivity.this.ctv56TCaseList.clear();
-                NewCaseActivity.this.ctv56TCase = new CTV56TCase();
-                NewCaseActivity.this.ctv56NCase = new CTV56NCase();
-                HashMapOperator hashMapOperator = new HashMapOperator();
-                hashMapOperator.update(NewCaseActivity.this.ctv56TUCaseList, NewCaseActivity.this.ctv56NUCaseList, NewCaseActivity.this.cancer, NewCaseActivity.this.ctv56TCase, ctv56NCase);
-                ctv56TCase.removeTarVolumesDuplicates();
-                NewCaseActivity.this.ctv56TCaseList.add(NewCaseActivity.this.ctv56TCase);
-                NewCaseActivity.this.ctv56NCaseList.add(NewCaseActivity.this.ctv56NCase);
-
-
-
-                ArrayAdapter<CTV56TCase> target_adapter =
-                        new ArrayAdapter<CTV56TCase>(NewCaseActivity.this, R.layout.test_target_list_item, NewCaseActivity.this.ctv56TCaseList);
-                ListView listView = (ListView) NewCaseActivity.this.findViewById(R.id.targetTVolumesView);
-                listView.setAdapter(null);
-                listView.setAdapter(target_adapter);
-                listView.getAdapter();
-
-
-                //Displays list with new adapter
-                ArrayAdapter<CTV56NCase> target_adapter_n =
-                        new ArrayAdapter<CTV56NCase>(NewCaseActivity.this, R.layout.test_target_list_item, NewCaseActivity.this.ctv56NCaseList);
-                ListView listView_n = (ListView) NewCaseActivity.this.findViewById(R.id.targetNVolumesView);
-                listView_n.setAdapter(null);
-                listView_n.setAdapter(target_adapter_n);
-                listView_n.getAdapter();
-                NewCaseActivity.this.cancer.setName("test_cancer_essai");
-                NewCaseActivity.this.cancer.saveToFile(NewCaseActivity.this);
-
-
-
-
-            }
-        });
 
         mAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(),"Saving", Toast.LENGTH_SHORT).show();
+                EditText caseName = (EditText) findViewById(R.id.CaseName);
+                String sCaseName = caseName.getText().toString();
+                if (sCaseName.matches("")) {
+                    Toast.makeText(v.getContext(), "Please enter a name for this case", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    NewCaseActivity.this.cancer.setName(sCaseName);
+                }
+
             }
         });
 
@@ -340,6 +303,38 @@ public class NewCaseActivity extends Activity {
             }
         });
     }
+
+    public void update (){
+
+        cancer.nClear();
+        cancer.tClear();
+        NewCaseActivity.this.ctv56NCaseList.clear();
+
+
+
+        for (NodeAreaTemplate nodeAreaTemplate : nodeAreaTemplateList) {
+            NewCaseActivity.this.cancer.addNVolume(nodeAreaTemplate);
+        }
+        for (TumorAreaTemplate tumorAreaTemplate : tumorAreaTemplateList) {
+            NewCaseActivity.this.cancer.addTVolume(tumorAreaTemplate);
+        }
+        NewCaseActivity.this.ctv56TCaseList.clear();
+        NewCaseActivity.this.ctv56TCase = new CTV56TCase();
+        NewCaseActivity.this.ctv56NCase = new CTV56NCase();
+        HashMapOperator hashMapOperator = new HashMapOperator();
+        hashMapOperator.update(NewCaseActivity.this.ctv56TUCaseList, NewCaseActivity.this.ctv56NUCaseList, NewCaseActivity.this.cancer, NewCaseActivity.this.ctv56TCase, ctv56NCase);
+        ctv56TCase.removeTarVolumesDuplicates();
+        NewCaseActivity.this.ctv56TCaseList.add(NewCaseActivity.this.ctv56TCase);
+        NewCaseActivity.this.ctv56NCaseList.add(NewCaseActivity.this.ctv56NCase);
+
+        File file = new File(getFilesDir() +"/" + "stuff");
+        String dir = file.getParent();
+        Log.i("endroit", dir);
+        NewCaseActivity.this.cancer.saveToFile(NewCaseActivity.this);
+
+
+    }
+
 
 
 

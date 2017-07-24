@@ -96,8 +96,7 @@ public class Cancer implements Serializable{
 
     public void saveToFile (Context context){
         try{
-            Log.i("path ecriture", "yo");
-            FileOutputStream fileOutputStream = context.openFileOutput(this.name, Context.MODE_PRIVATE);
+            FileOutputStream fileOutputStream = context.openFileOutput(this.name +".duc", Context.MODE_PRIVATE);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(this);
             objectOutputStream.close();

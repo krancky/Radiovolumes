@@ -28,7 +28,8 @@
             android:label="NewCase" />
         <activity
             android:name=".NewCaseDialog"
-            android:label="activity_new_case_dialog"></activity>
+            android:label="activity_new_case_dialog" />
+        <activity android:name=".LoadCaseActivity"></activity>
     </application>
 
 </manifest>

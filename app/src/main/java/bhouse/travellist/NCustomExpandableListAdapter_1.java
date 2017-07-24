@@ -58,7 +58,7 @@ public class NCustomExpandableListAdapter_1 extends BaseExpandableListAdapter {
             holder = new ViewHolder();
             holder.tv = (TextView) convertView.findViewById(R.id.textView1);
             holder.cbLeft =(CheckBox) convertView.findViewById(R.id.checkLeft);
-            holder.cbLeft.setOnCheckedChangeListener(null);
+            //holder.cbLeft.setOnCheckedChangeListener(null);
             holder.cbRight =(CheckBox) convertView.findViewById(R.id.checkRight);
             convertView.setTag(holder);
 
@@ -84,7 +84,7 @@ public class NCustomExpandableListAdapter_1 extends BaseExpandableListAdapter {
     };
 
 
-    private CheckBox.OnClickListener cbLeftClickListener = new View.OnClickListener() {
+    private CheckBox.OnClickListener cbLeftClickListener = new CheckBox.OnClickListener() {
 
         public void onClick(View v) {
             int pos = (Integer) v.getTag();
@@ -104,7 +104,7 @@ public class NCustomExpandableListAdapter_1 extends BaseExpandableListAdapter {
         }
     };
 
-    private CheckBox.OnClickListener cbRightClickListener = new View.OnClickListener() {
+    private CheckBox.OnClickListener cbRightClickListener = new CheckBox.OnClickListener() {
 
         public void onClick(View v) {
             int pos = (Integer) v.getTag();

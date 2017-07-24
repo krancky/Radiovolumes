@@ -64,19 +64,40 @@ public class MainActivity extends Activity {
         int itemPosition;
         itemPosition = position;
         Toast.makeText(v.getContext(),"position" + position, Toast.LENGTH_SHORT).show();
-        if (itemPosition == 2) {
-          Toast.makeText(v.getContext(),"Launch test", Toast.LENGTH_SHORT).show();
+        if (itemPosition == 3) {
           Intent transitionIntent = new Intent(MainActivity.this, TestActivity.class);
           startActivity(transitionIntent);
           //transitionIntent.putExtra(DetailActivity.EXTRA_PARAM_ID, position);
         }
         else if (itemPosition == 0){
-          Toast.makeText(v.getContext(),"Launch stuff", Toast.LENGTH_SHORT).show();
           Intent transitionIntent = new Intent(MainActivity.this, NewCaseActivity.class);
           startActivity(transitionIntent);
         }
-        else  {
+        else if (itemPosition == 2){
           Intent transitionIntent = new Intent(MainActivity.this, DetailActivity.class);
+          transitionIntent.putExtra(DetailActivity.EXTRA_PARAM_ID, position);
+          ImageView placeImage = (ImageView) v.findViewById(R.id.placeImage);
+          LinearLayout placeNameHolder = (LinearLayout) v.findViewById(R.id.placeNameHolder);
+
+          View navigationBar = findViewById(android.R.id.navigationBarBackground);
+          View statusBar = findViewById(android.R.id.statusBarBackground);
+
+          Pair<View, String> imagePair = Pair.create((View) placeImage, "tImage");
+          Pair<View, String> holderPair = Pair.create((View) placeNameHolder, "tNameHolder");
+          // This code generate app crush when onClick.
+          // TODO: Find out why.
+          //Pair<View, String> navPair = Pair.create(navigationBar, Window.NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME);
+          Pair<View, String> statusPair = Pair.create(statusBar, Window.STATUS_BAR_BACKGROUND_TRANSITION_NAME);
+          Pair<View, String> toolbarPair = Pair.create((View)toolbar, "tActionBar");
+
+          //ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, holderPair, navPair, statusPair, toolbarPair);
+          ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, holderPair, statusPair,toolbarPair);
+          ActivityCompat.startActivity(MainActivity.this, transitionIntent, options.toBundle());
+        }
+
+
+        else if (itemPosition == 1){
+          Intent transitionIntent = new Intent(MainActivity.this, LoadCaseActivity.class);
           transitionIntent.putExtra(DetailActivity.EXTRA_PARAM_ID, position);
           ImageView placeImage = (ImageView) v.findViewById(R.id.placeImage);
           LinearLayout placeNameHolder = (LinearLayout) v.findViewById(R.id.placeNameHolder);
