@@ -12,7 +12,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.RippleDrawable;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.graphics.Palette;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.transition.Fade;
 import android.transition.Transition;
@@ -33,7 +35,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
+
+import bhouse.travellist.processor.Cancer;
 
 /**
  * Created by megha on 15-03-10.
@@ -42,7 +48,7 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
 
     public static final String EXTRA_PARAM_ID = "place_id";
     public static final String NAV_BAR_VIEW_NAME = Window.NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME;
-    private RecyclerView mList;
+    private RecyclerView mListRView;
     private ImageView mImageView;
     private TextView mTitle;
     private LinearLayout mTitleHolder;
@@ -58,6 +64,8 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
     private ArrayAdapter mToDoAdapter;
     int defaultColorForRipple;
 
+    private List<Cancer> cancers;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +73,7 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
 
         mPlace = PlaceData.placeList().get(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
 
-        mList = (RecyclerView) findViewById(R.id.loadList);
+        mListRView = (RecyclerView) findViewById(R.id.loadList);
         mImageView = (ImageView) findViewById(R.id.placeImage);
         mTitle = (TextView) findViewById(R.id.textView);
         mTitleHolder = (LinearLayout) findViewById(R.id.placeNameHolder);
@@ -82,12 +90,40 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
 
         mTodoList = new ArrayList<>();
         mToDoAdapter = new ArrayAdapter(this, R.layout.row_todo, mTodoList);
+
+
+        // Setting recyclerView for CardViews of Loaded Cases
+        LinearLayoutManager llm = new LinearLayoutManager(this); //??
+        mListRView.setLayoutManager(llm);
+
+        cancers = getCancerList();
+
+
         //mList.setAdapter(mToDoAdapter);
+        LoadCaseRViewAdapter rViewAdapter = new LoadCaseRViewAdapter(cancers, this);
+        mListRView.setAdapter(rViewAdapter);
 
         loadPlace();
         windowTransition();
         getPhoto();
 
+    }
+
+    private List<Cancer> getCancerList(){
+        List<Cancer> cancers = new ArrayList<Cancer>();
+        Cancer cancer;
+        List<String> cancerFileList = new ArrayList<>();
+        File f = Environment.getDataDirectory();
+        File[] files =f.listFiles();
+        for(int i=0; i<files.length; i++){
+            File file = files[i];
+            String filePath = file.getPath();
+            if(filePath.endsWith(".ldc"));
+            cancerFileList.add(filePath);
+            cancer = Cancer.readFromFile(this, filePath); // pas sur que ca marche, il faut le nom seul
+            cancers.add(cancer);
+        }
+        return cancers;
     }
 
     private void loadPlace() {

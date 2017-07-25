@@ -16,6 +16,7 @@ import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -87,6 +88,7 @@ public class NewCaseActivity extends Activity {
     private TextView headerText3;
     private ImageButton mAddButton;
     private EditText mEditTextName;
+    private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +110,10 @@ public class NewCaseActivity extends Activity {
         mAddButton = (ImageButton) findViewById(R.id.btn_add);
         mAddButton.setImageResource(R.drawable.icn_morph_reverse);
 
+        spinner = (Spinner) findViewById(R.id.CaseMainAreaSpinner);
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.main_areas_array, android.R.layout.simple_spinner_item);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);// default layouts for now
+        spinner.setAdapter(spinnerAdapter);
 
         // Generates elementary N cases (CTV56NUCase) catalog and
         // Stores in CaseList
@@ -223,6 +229,8 @@ public class NewCaseActivity extends Activity {
                 }
                 else {
                     NewCaseActivity.this.cancer.setName(sCaseName);
+                    NewCaseActivity.this.cancer.setMainArea(spinner.getSelectedItem().toString());
+                    Log.i("Selected Main Area", NewCaseActivity.this.cancer.getMainArea());
                 }
 
             }

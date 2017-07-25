@@ -30,6 +30,7 @@
                 android:layout_marginRight="20dp"
                 android:textColor="@android:color/white" />
 
+
         </LinearLayout>
 
         <include
@@ -47,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@color/primary_dark"
+            android:orientation="vertical"
             android:transitionName="tNameHolder">
 
             <TextView
@@ -56,6 +58,15 @@
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="10dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <Spinner
+                android:id="@+id/CaseMainAreaSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:textColor="@android:color/white" />
 
         </LinearLayout>

@@ -34,6 +34,16 @@ public class Cancer implements Serializable{
 
     private String name;
 
+    private String mainArea;
+
+    public String getMainArea() {
+        return mainArea;
+    }
+
+    public void setMainArea(String mainArea) {
+        this.mainArea = mainArea;
+    }
+
     /**
      * Add n volume from NodeTemplate
      *
@@ -44,6 +54,10 @@ public class Cancer implements Serializable{
         if (nodeAreaTemplate.getContent() != "0") {
             cancerNVolumes.add(nodeAreaTemplate);
         }
+    }
+
+    public int getImageResourceId(Context context) {
+        return context.getResources().getIdentifier(this.mainArea, "drawable", context.getPackageName());
     }
 
     /**
