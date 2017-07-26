@@ -3,6 +3,7 @@ package bhouse.travellist.processor;
 import android.content.Context;
 import android.util.Log;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -57,6 +58,7 @@ public class Cancer implements Serializable{
     }
 
     public int getImageResourceId(Context context) {
+        Log.i("valeur identifiant", String.valueOf(context.getResources().getIdentifier(this.mainArea, "drawable", context.getPackageName())));
         return context.getResources().getIdentifier(this.mainArea, "drawable", context.getPackageName());
     }
 
@@ -125,7 +127,7 @@ public class Cancer implements Serializable{
     public static Cancer readFromFile(Context context, String name){
         Cancer cancer = null;
         try{
-            FileInputStream fileInputStream = context.openFileInput(name);
+            FileInputStream fileInputStream = new FileInputStream(new File(name));
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             cancer = (Cancer) objectInputStream.readObject();
             objectInputStream.close();

@@ -113,12 +113,12 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
         List<Cancer> cancers = new ArrayList<Cancer>();
         Cancer cancer;
         List<String> cancerFileList = new ArrayList<>();
-        File f = Environment.getDataDirectory();
+        File f = getFilesDir();
         File[] files =f.listFiles();
         for(int i=0; i<files.length; i++){
             File file = files[i];
             String filePath = file.getPath();
-            if(filePath.endsWith(".ldc"));
+            if(filePath.endsWith(".duc"));
             cancerFileList.add(filePath);
             cancer = Cancer.readFromFile(this, filePath); // pas sur que ca marche, il faut le nom seul
             cancers.add(cancer);
