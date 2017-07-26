@@ -90,10 +90,27 @@ public class NewCaseActivity extends Activity {
     private EditText mEditTextName;
     private Spinner spinner;
 
+    private String newParam;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_case_1);
+
+        Intent i = getIntent();
+        newParam = "0";
+        newParam = i.getSerializableExtra("newParam");
+
+
+        CTV56TCase ctv56TCase = (CTV56TCase) i.getSerializableExtra("CTV56TCase");
+        CTV56NCase ctv56NCase = (CTV56NCase) i.getSerializableExtra("CTV56NCase");
+
+        if ( newParam == "0"){
+            Cancer cancer = (Cancer) i.getSerializableExtra("cancer");
+        }
+        else{
+            cancer = new Cancer();
+        }
 
         // Getting elements by Id
         spreadNInputListView = (ListView) findViewById(R.id.spreadNvolumesListView);
@@ -147,7 +164,7 @@ public class NewCaseActivity extends Activity {
         // Displays in listView with adapter
         HashMapOperator hashMapOperator = new HashMapOperator();
         ctv56NCase = new CTV56NCase();
-        cancer = new Cancer();
+
         hashMapOperator.cTV56NCase(ctv56NUCaseList, cancer, ctv56NCase);
         ArrayAdapter<CTV56NCase> target_adapter =
                 new ArrayAdapter<CTV56NCase>(this, R.layout.test_target_list_item, ctv56NCaseList);

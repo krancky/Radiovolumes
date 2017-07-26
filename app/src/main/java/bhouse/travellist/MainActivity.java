@@ -71,6 +71,7 @@ public class MainActivity extends Activity {
         }
         else if (itemPosition == 0){
           Intent transitionIntent = new Intent(MainActivity.this, NewCaseActivity.class);
+            transitionIntent.putExtra("newParam", "1");
           startActivity(transitionIntent);
         }
         else if (itemPosition == 2){

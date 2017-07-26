@@ -58,7 +58,9 @@ public class LoadCaseRViewAdapter extends RecyclerView.Adapter<LoadCaseRViewAdap
                 Toast.makeText(v.getContext(),"clicked" + cancer.getName(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(mContext, NewCaseActivity.class);
                 //transitionIntent.putExtra(DetailActivity.EXTRA_PARAM_ID, position);
+                intent.putExtra("cancer", cancer);
                 mContext.startActivity(intent);
+
             }
         });
 

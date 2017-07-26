@@ -118,6 +118,7 @@ public class Cancer implements Serializable{
             objectOutputStream.close();
             fileOutputStream.close();
             Log.i("path ecriture", context.getFilesDir().toString());
+            Log.i("path ecriture", context.getFilesDir().toString());
         }
         catch (IOException e){
             e.printStackTrace();
