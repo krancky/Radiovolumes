@@ -2,15 +2,15 @@
 <resources>
   <color name="primary">#FFFFFF</color>
   <color name="primary_dark">#6C7F91</color>
-  <color name="accent">#6C7F91</color>
+  <color name="accent">#5e92f3</color>
   <color name="light_green">#7ABA34</color>
   <color name="dark_green">#5B852D</color>
 
   <color name="photo_tint">#7f101010</color>
 
-  <color name="colorPrimary">#9fa8da</color>
-  <color name="colorPrimaryDark">#9fa8da</color>
-  <color name="colorAccent">#9fa8da</color>
+  <color name="colorPrimary">#1565c0</color>
+  <color name="colorPrimaryDark">#003c8f</color>
+  <color name="colorAccent">#5e92f3</color>
   <color name="blue">#9fa8da</color>
   <color name="green">#9fa8da</color>
 </resources>

@@ -1,6 +1,8 @@
 package bhouse.travellist;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -52,9 +54,14 @@ public class NewCaseDialog extends Activity {
 
         txtT.setText("Local Tumor Extension");
         txtN.setText("Lymph Nodes Extension");
+        txtT.setBackgroundResource(R.color.primary_dark);
+        txtN.setBackgroundResource(R.color.primary_dark);
+
 
         txtTTarget.setText("Low Risk Tumor Clinical Target Volume");
         txtNTarget.setText("Low Risk Lymph Nodes Clinical Target Volume");
+        txtTTarget.setBackgroundResource(R.color.primary_dark);
+        txtNTarget.setBackgroundResource(R.color.primary_dark);
 
         LinearLayout tLinearLayout = (LinearLayout) findViewById(R.id.tLinearLayout);
         LinearLayout nLinearLayout = (LinearLayout) findViewById(R.id.nLinearLayout);
@@ -73,11 +80,14 @@ public class NewCaseDialog extends Activity {
         for (HashMap.Entry<String, HashMap<String, List<String>>> cancerTAreaData : cancerTData.entrySet()) {
             final TextView titleAreaRowTextView = new TextView(this);
             titleAreaRowTextView.setText(cancerTAreaData.getKey());
+            titleAreaRowTextView.setBackgroundResource(R.color.accent);
+            titleAreaRowTextView.setPadding(15, 0, 0, 0);
             HashMap<String, List<String>> sideMap = cancerTAreaData.getValue();
             tLinearLayout.addView(titleAreaRowTextView);
             for (HashMap.Entry<String, List<String>> map : sideMap.entrySet()) {
                 final TextView titleSideRowTextView = new TextView(this);
                 titleSideRowTextView.setText(map.getKey());
+                titleSideRowTextView.setTypeface(null, Typeface.ITALIC);
                 tLinearLayout.addView(titleSideRowTextView);
                 final TextView contentRowTextView = new TextView(this);
                 contentRowTextView.setText(map.getValue().toString());
@@ -89,11 +99,15 @@ public class NewCaseDialog extends Activity {
         for (HashMap.Entry<String, HashMap<String, List<String>>> cancerTTarAreaData : cancerTTarData.entrySet()) {
             final TextView titleAreaRowTextView = new TextView(this);
             titleAreaRowTextView.setText(cancerTTarAreaData.getKey());
+            titleAreaRowTextView.setBackgroundResource(R.color.accent);
+            titleAreaRowTextView.setPadding(15, 0, 0, 0);
             HashMap<String, List<String>> sideMap = cancerTTarAreaData.getValue();
             tTargetLinearLayout.addView(titleAreaRowTextView);
             for (HashMap.Entry<String, List<String>> map : sideMap.entrySet()) {
                 final TextView titleSideRowTextView = new TextView(this);
                 titleSideRowTextView.setText(map.getKey());
+                titleSideRowTextView.setTypeface(null, Typeface.ITALIC);
+                titleAreaRowTextView.setPadding(50, 0, 0, 0);
                 tTargetLinearLayout.addView(titleSideRowTextView);
                 final TextView contentRowTextView = new TextView(this);
                 contentRowTextView.setText(map.getValue().toString());
@@ -104,7 +118,10 @@ public class NewCaseDialog extends Activity {
         for (HashMap.Entry<String, List<String>> cancerNAreaData : cancerNData.entrySet()) {
             final TextView titleAreaRowTextView = new TextView(this);
             titleAreaRowTextView.setText(cancerNAreaData.getKey());
+            titleAreaRowTextView.setTypeface(null, Typeface.ITALIC);
+            titleAreaRowTextView.setPadding(50, 0, 0, 0);
             nLinearLayout.addView(titleAreaRowTextView);
+            //titleAreaRowTextView.setBackgroundResource(R.color.accent);
             final TextView contentRowTextView = new TextView(this);
             contentRowTextView.setText(cancerNAreaData.getValue().toString());
             nLinearLayout.addView(contentRowTextView);
@@ -113,6 +130,8 @@ public class NewCaseDialog extends Activity {
         for (HashMap.Entry<String, List<String>> cancerNTarAreaData : cancerNTarData.entrySet()) {
             final TextView titleAreaRowTextView = new TextView(this);
             titleAreaRowTextView.setText(cancerNTarAreaData.getKey());
+            titleAreaRowTextView.setTypeface(null, Typeface.ITALIC);
+            titleAreaRowTextView.setPadding(50, 0, 0, 0);
             nTargetLinearLayout.addView(titleAreaRowTextView);
             final TextView contentRowTextView = new TextView(this);
             contentRowTextView.setText(cancerNTarAreaData.getValue().toString());

@@ -8,12 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import bhouse.travellist.processor.Cancer;
 import bhouse.travellist.processor.NodeAreaTemplate;
 import bhouse.travellist.processor.TumorAreaTemplate;
 
@@ -23,16 +26,47 @@ public class TCustomExpandableListAdapter extends BaseExpandableListAdapter {
     private List<String> expandableListTitle;
     private LinkedHashMap<String, List<String>> expandableListDetail;
     List<TumorAreaTemplate> tList;
+    private ArrayList<ArrayList<Boolean>> checkboxStatus_left = new ArrayList<ArrayList<Boolean>>();
+    private ArrayList<ArrayList<Boolean>> checkboxStatus_right = new ArrayList<ArrayList<Boolean>>();
+
 
 
 
 
     public TCustomExpandableListAdapter(Context context, List<String> expandableListTitle,
-                                        LinkedHashMap<String, List<String>> expandableListDetail, List<TumorAreaTemplate> tumorAreaTemplateList) {
+                                        LinkedHashMap<String, List<String>> expandableListDetail, List<TumorAreaTemplate> tumorAreaTemplateList, Cancer cancer) {
         this.context = context;
         this.tList = tumorAreaTemplateList;
         this.expandableListTitle = expandableListTitle;
         this.expandableListDetail =expandableListDetail;
+
+        int groupCount = this.expandableListTitle.get(0).length();
+        ArrayList<Boolean> childStatus_left = new ArrayList<Boolean>();
+        ArrayList<Boolean> childStatus_right = new ArrayList<Boolean>();
+        for (int i = 0; i<groupCount; i++){
+            childStatus_left.add(false);
+            childStatus_right.add(false);
+        }
+
+
+        if (!cancer.getCancerTVolumes().isEmpty()){
+            for (TumorAreaTemplate cancerTumorAreaTemplate :cancer.getCancerTVolumes()){
+                for(TumorAreaTemplate tumorAreaTemplate : tumorAreaTemplateList){
+                    if (cancerTumorAreaTemplate.getLocation().equals(tumorAreaTemplate.getLocation())){
+                        if (cancerTumorAreaTemplate.getSide().equals("Gauche")){
+                            childStatus_left.set(tumorAreaTemplateList.indexOf(tumorAreaTemplate),true);
+                        }
+                        if (cancerTumorAreaTemplate.getSide().equals("Droite")){
+                            childStatus_right.set(tumorAreaTemplateList.indexOf(tumorAreaTemplate),true);
+                        }
+                    }
+                }
+            }
+        }
+
+
+        checkboxStatus_left.add(childStatus_left);
+        checkboxStatus_right.add(childStatus_right);
     }
 
     @Override
@@ -61,6 +95,8 @@ public class TCustomExpandableListAdapter extends BaseExpandableListAdapter {
             holder.tv = (TextView) convertView.findViewById(R.id.textView1);
             holder.cbLeft =(CheckBox) convertView.findViewById(R.id.checkLeft);
             holder.cbRight =(CheckBox) convertView.findViewById(R.id.checkRight);
+            holder.cbLeft.setChecked(checkboxStatus_left.get(listPosition).get(expandedListPosition));
+            holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
             convertView.setTag(holder);
 
         }
@@ -74,49 +110,46 @@ public class TCustomExpandableListAdapter extends BaseExpandableListAdapter {
         holder.tv.setText(h.getLocation());
         holder.cbLeft.setTag(expandedListPosition);
         holder.cbRight.setTag(expandedListPosition);
-        holder.cbLeft.setOnClickListener(cbLeftClickListener);
-        holder.cbRight.setOnClickListener(cbRightClickListener);
+        holder.cbLeft.setChecked(checkboxStatus_left.get(listPosition).get(expandedListPosition));
+        holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
+        holder.cbRight.setChecked(checkboxStatus_right.get(listPosition).get(expandedListPosition));
+        holder.cbRight.setOnCheckedChangeListener(cbRightChangeListener);
+
         return convertView;
     };
 
 
-    private View.OnClickListener cbLeftClickListener = new View.OnClickListener() {
 
-        public void onClick(View v) {
-            int pos = (Integer) v.getTag();
-            // Subtle. view is the checkbox. Pos is passed as an argument to refer to the parent listview item in which the checkbox is.
-
-            TumorAreaTemplate h = (TumorAreaTemplate) tList.get(pos);
-            CheckBox checkBox = (CheckBox)v;
-            if(checkBox.isChecked()){
+    private CompoundButton.OnCheckedChangeListener cbLeftChangeListener = new CompoundButton.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(CompoundButton checkBoxView, boolean isChecked) {
+            int position = (Integer) checkBoxView.getTag();
+            checkboxStatus_left.get(0).set(position, isChecked);
+            TumorAreaTemplate h = (TumorAreaTemplate) tList.get(position);
+            if(checkBoxView.isChecked()){
                 h.setContent("1");
                 h.setSide("Gauche");
-                Log.i("Tag", String.valueOf(pos) + h.getContent());
             }
             else{
                 h.setContent("0");
             }
-            TCustomExpandableListAdapter.this.notifyDataSetChanged();
         }
     };
 
-    private View.OnClickListener cbRightClickListener = new View.OnClickListener() {
 
-        public void onClick(View v) {
-            int pos = (Integer) v.getTag();
-            // Subtle. view is the checkbox. Pos is passed as an argument to refer to the parent listview item in which the checkbox is.
-
-            TumorAreaTemplate h = (TumorAreaTemplate) tList.get(pos);
-            CheckBox checkBox = (CheckBox)v;
-            if(checkBox.isChecked()){
+    private CompoundButton.OnCheckedChangeListener cbRightChangeListener = new CompoundButton.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(CompoundButton checkBoxView, boolean isChecked) {
+            int position = (Integer) checkBoxView.getTag();
+            checkboxStatus_right.get(0).set(position, isChecked);
+            TumorAreaTemplate h = (TumorAreaTemplate) tList.get(position);
+            if(checkBoxView.isChecked()){
                 h.setContent("1");
-                h.setSide("Droit");
-                Log.i("Tag", String.valueOf(pos));
+                h.setSide("Droite");
             }
             else{
-            h.setContent("0");
+                h.setContent("0");
             }
-            TCustomExpandableListAdapter.this.notifyDataSetChanged();
         }
     };
 

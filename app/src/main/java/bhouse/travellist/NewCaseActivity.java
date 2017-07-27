@@ -98,18 +98,12 @@ public class NewCaseActivity extends Activity {
         setContentView(R.layout.activity_new_case_1);
 
         Intent i = getIntent();
-        newParam = "0";
-        newParam = i.getSerializableExtra("newParam");
-
-
-        CTV56TCase ctv56TCase = (CTV56TCase) i.getSerializableExtra("CTV56TCase");
-        CTV56NCase ctv56NCase = (CTV56NCase) i.getSerializableExtra("CTV56NCase");
-
-        if ( newParam == "0"){
-            Cancer cancer = (Cancer) i.getSerializableExtra("cancer");
-        }
-        else{
-            cancer = new Cancer();
+        newParam = "1";
+        newParam = (String) i.getSerializableExtra("newParam");
+        cancer = new Cancer();
+        if ( newParam.equalsIgnoreCase("0")){
+            cancer = (Cancer) i.getSerializableExtra("cancer");
+            Log.i("cancer loaded", cancer.toString());
         }
 
         // Getting elements by Id
@@ -121,9 +115,12 @@ public class NewCaseActivity extends Activity {
         mTitle.setText("New Case");
         //mImageView.setImageResource(mPlace.getImageResourceId(this));
         mImageView.setImageResource(R.drawable.newcase);
+
+
         mAddButton = (ImageButton) findViewById(R.id.btn_add);
         //mRevealView = (LinearLayout) findViewById(R.id.llEditTextHolder);
         mEditTextName = (EditText) findViewById(R.id.CaseName);
+
         mAddButton = (ImageButton) findViewById(R.id.btn_add);
         mAddButton.setImageResource(R.drawable.icn_morph_reverse);
 
@@ -131,6 +128,17 @@ public class NewCaseActivity extends Activity {
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.main_areas_array, android.R.layout.simple_spinner_item);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);// default layouts for now
         spinner.setAdapter(spinnerAdapter);
+
+        if (newParam.equals("1")){
+            //mImageView.setImageDrawable(R.id.);
+        }
+        else{
+            //mImageView
+            mEditTextName.setText(cancer.getName());
+
+            int spinnerPosition = spinnerAdapter.getPosition(cancer.getMainArea());
+            spinner.setSelection(spinnerPosition);
+        }
 
         // Generates elementary N cases (CTV56NUCase) catalog and
         // Stores in CaseList
@@ -154,8 +162,8 @@ public class NewCaseActivity extends Activity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //CustomExpandableListAdapter spreadNInputListViewAdapter = new CustomListAdapter(this, nodeAreaTemplateList);
-        //spreadNInputListView.setAdapter(spreadNInputListViewAdapter);
+
+
 
 
 
@@ -209,11 +217,11 @@ public class NewCaseActivity extends Activity {
         nExpandableListView = (ExpandableListView) findViewById(R.id.nExpandableListView);
         nexpandableListDetail = ExpandableListDataPump.getNData(nodeAreaTemplateList);
         nexpandableListTitle = new ArrayList<String>(nexpandableListDetail.keySet());
-        nExpandableListAdapter = new NCustomExpandableListAdapter(this, nexpandableListTitle, nexpandableListDetail, nodeAreaTemplateList);
+        nExpandableListAdapter = new NCustomExpandableListAdapter(this, nexpandableListTitle, nexpandableListDetail, nodeAreaTemplateList, cancer);
         tExpandableListView = (ExpandableListView) findViewById(R.id.tExpandableListView);
         texpandableListDetail = ExpandableListDataPump.getTData(tumorAreaTemplateList);
         texpandableListTitle = new ArrayList<String>(texpandableListDetail.keySet());
-        tExpandableListAdapter = new TCustomExpandableListAdapter(this, texpandableListTitle, texpandableListDetail, tumorAreaTemplateList);
+        tExpandableListAdapter = new TCustomExpandableListAdapter(this, texpandableListTitle, texpandableListDetail, tumorAreaTemplateList, cancer);
 
 
         nExpandableListView.setAdapter(nExpandableListAdapter);
@@ -331,8 +339,8 @@ public class NewCaseActivity extends Activity {
 
     public void update (){
 
-        cancer.nClear();
-        cancer.tClear();
+        //cancer.nClear();
+        //cancer.tClear();
         NewCaseActivity.this.ctv56NCaseList.clear();
 
 
@@ -354,7 +362,6 @@ public class NewCaseActivity extends Activity {
 
         File file = new File(getFilesDir() +"/" + "stuff");
         String dir = file.getParent();
-        Log.i("endroit", dir);
         NewCaseActivity.this.cancer.saveToFile(NewCaseActivity.this);
 
 
