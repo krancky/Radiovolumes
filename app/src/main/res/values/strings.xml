@@ -9,4 +9,8 @@
     <string name="choose_t">Choisir T envahi</string>
     <string name="title_activity_new_case">NewCaseActivity</string>
     <string name="title_activity_new_case_dialog">NewCaseDialog</string>
+
+    <string name="title_activity_scanner_view">ScannerViewActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

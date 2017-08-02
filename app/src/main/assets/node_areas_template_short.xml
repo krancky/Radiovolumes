@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodeAreasTemplate>
-    <Volume>IA</Volume>
-    <Volume>IB</Volume>
-    <Volume>II</Volume>
-    <Volume>III</Volume>
-    <Volume>IV</Volume>
-    <Volume>V</Volume>
-    <Volume>VI</Volume>
-    <Volume>VII</Volume>
-    <Volume>VIII</Volume>
-    <Volume>IX</Volume>
-    <Volume>X</Volume>
+    <Volume>
+        <Short>IA</Short>
+        <Long>Submental</Long>
+    </Volume>
+    <Volume>
+        <Short>IB</Short>
+        <Long>Submandibular</Long>
+    </Volume>
+    <Volume>
+        <Short>II</Short>
+        <Long>Superior Deep Cervical</Long>
+    </Volume>
+    <Volume>
+        <Short>III</Short>
+        <Long>Median Deep Cervical</Long>
+    </Volume>
+    <Volume>
+        <Short>IVA</Short>
+        <Long>Inferior Deep cervical - I</Long>
+    </Volume>
+    <Volume>
+        <Short>IVB</Short>
+        <Long>Inferior Deep cervical - II</Long>
+    </Volume>
+    <Volume>
+        <Short>VAB</Short>
+        <Long>SupraClavicular - I</Long>
+    </Volume>
+    <Volume>
+        <Short>VC</Short>
+        <Long>SupraClavicular - II</Long>
+    </Volume>
+    <Volume>
+        <Short>VIa</Short>
+        <Long>Visceral space</Long>
+    </Volume>
 </nodeAreasTemplate>

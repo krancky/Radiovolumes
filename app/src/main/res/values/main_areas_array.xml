@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="main_areas_array">
-        <item>oropharynx</item>
-        <item>nasopharynx</item>
-        <item>larynx</item>
+        <item>Oropharynx</item>
+        <item>Nasopharynx</item>
+        <item>Larynx</item>
     </string-array>
 
 </resources>

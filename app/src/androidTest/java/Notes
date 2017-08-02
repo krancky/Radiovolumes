@@ -1,0 +1,20 @@
+Definir proprement Action bar toolbar et titre header footer et leurs relations avec le theme. Relations theme et style.xml
+
+Supprimer toutes les occurences relatives a la classe Detail
+
+En consequence, purifier les layout
+
+Purifier les drawables. Peut on faire des sous folders? QUESTION: plusieurs resolutions ou une simple reduction?
+Bon apparemment va falloir preparer les drawables. On peut en preofiter pour explorer ce que cest qu un DPI
+
+Verifier si il est possible de supprimer ou arranger Place/PlaceData, puisque pas besoin de dymamique
+
+Approfondir la question du material design et des rapports entre theme et specification de couleurs (a imprimer demain si on trouve quelque chose d interessant)
+
+Examiner la raison du crash lorsque on rajoute plus de 10 N dans tunortemplateXML
+
+Examiner ITK SNAP
+
+Examiner les modifiers.
+
+Peut-on supprimer la dataPump?

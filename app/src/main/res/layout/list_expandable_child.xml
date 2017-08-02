@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingTop="16dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:id="@+id/node_photo"
+        android:layout_alignParentLeft="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitCenter"
+        android:paddingRight="30dp"
+        android:paddingLeft="16dp"
+
+        />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/node_photo"
+        android:text="TextView"
+        android:layout_marginRight="38dp"
+        android:layout_marginEnd="38dp" />
+
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:id="@+id/checkLeft"
+        android:layout_width="wrap_content"
+        android:layout_toLeftOf="@+id/checkRight"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginStart="27dp" />
+    <CheckBox
+        android:layout_height="wrap_content"
+        android:id="@+id/checkRight"
+        android:layout_width="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginEnd="27dp"
+        android:layout_alignParentRight="true" />
+
+
+</RelativeLayout>
