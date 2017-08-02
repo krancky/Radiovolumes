@@ -13,7 +13,6 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -23,6 +22,9 @@
         <activity
             android:name=".NewCaseActivity"
             android:label="NewCase" />
+        <activity
+            android:name=".TabbedActivity"
+            android:label="TabbedActivity" />
         <activity
             android:name=".NewCaseDialog"
             android:label="activity_new_case_dialog" />

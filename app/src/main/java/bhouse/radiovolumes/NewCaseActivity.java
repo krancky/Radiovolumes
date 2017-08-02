@@ -231,7 +231,7 @@ public class NewCaseActivity extends Activity {
                     NewCaseActivity.this.cancer.setName(sCaseName);
                     NewCaseActivity.this.cancer.setMainArea(spinner.getSelectedItem().toString());
                     NewCaseActivity.this.update();
-                    Intent transitionIntent = new Intent(NewCaseActivity.this, NewCaseDialog.class);
+                    Intent transitionIntent = new Intent(NewCaseActivity.this, TabbedActivity.class);
                     transitionIntent.putExtra("cancer", cancer);
                     transitionIntent.putExtra("CTV56TCase", NewCaseActivity.this.ctv56TCase);
                     transitionIntent.putExtra("CTV56NCase", NewCaseActivity.this.ctv56NCase);
