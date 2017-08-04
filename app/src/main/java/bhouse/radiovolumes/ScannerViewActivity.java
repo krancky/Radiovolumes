@@ -8,6 +8,9 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 import bhouse.radiovolumes.R;
 
@@ -34,7 +37,9 @@ public class ScannerViewActivity extends Activity {
      */
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
-    private ImageView mContentView;
+    private ListView mContentView;
+    private ArrayList<SliceItem> sliceItems;
+
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
@@ -94,20 +99,25 @@ public class ScannerViewActivity extends Activity {
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
-        mContentView = (ImageView)findViewById(R.id.fullscreen_content);
+        mContentView = (ListView)findViewById(R.id.fullscreen_content);
 
-        mContentView.setImageResource(R.drawable.scan_1);
+        sliceItems = new ArrayList<SliceItem>();
+        prepare_scan_data();
+
+        mContentView.setAdapter(new ScannerListAdapter(this,sliceItems));
+
+        //mContentView.setImageResource(R.drawable.scan_1);
 
 
         // Set up the user interaction to manually show or hide the system UI.
-        mContentView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toggle();
-            }
-        });
-        ImageView vector = (ImageView) findViewById(R.id.fullscreen_content_vector);
-        vector.setImageResource(R.drawable.ic_test_svg);
+        //mContentView.setOnItemClickListener(new View.OnItemClickListener() {
+            //@Override
+            //public void onClick(View view) {
+                //toggle();
+            //}
+        //});
+        //ImageView vector = (ImageView) findViewById(R.id.fullscreen_content_vector);
+        //vector.setImageResource(R.drawable.ic_vector_2);
 
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
@@ -167,4 +177,16 @@ public class ScannerViewActivity extends Activity {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
+
+    public void prepare_scan_data(){
+        int i;
+        for (i =1; i<3; i++ ){
+            SliceItem slice = new SliceItem();
+            slice.setNumber(String.valueOf(i));
+            slice.setStorageLocation("scan_"+String.valueOf(i));
+            slice.setVectorStorageLocation("ic_vector_"+String.valueOf(i));
+            sliceItems.add(slice);
+        }
+    }
+
 }

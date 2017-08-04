@@ -5,11 +5,24 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView_tab_2"
+        android:id="@+id/textView_tab_1_T"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tumor Location"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <ListView
+        android:id="@+id/listView_invaded"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_tab_1_T">
+
+    </ListView>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Tab 2 bas"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:id="@+id/button_to_scan"/>
+
 
 </RelativeLayout>

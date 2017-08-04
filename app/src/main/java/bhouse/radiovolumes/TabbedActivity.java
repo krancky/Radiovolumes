@@ -41,6 +41,7 @@ public class TabbedActivity extends AppCompatActivity {
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     private HashMap<String, List<String>> cancerNData;
     private HashMap<String, List<String>> cancerNTarData;
+    private Cancer cancer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,11 +68,6 @@ public class TabbedActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("To irradiate"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        //Bundle bundle = new Bundle();
-        //bundle.putSerializable("cancerTData", cancerTData);
-        //bundle.putSerializable("cancerNData", cancerNData);
-        //bundle.putSerializable("cancerTTarData", cancerNData);
-        //bundle.putSerializable("cancerNTarData", cancerNData);
 
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
@@ -224,5 +220,9 @@ public class TabbedActivity extends AppCompatActivity {
 
     public void setCancerNTarData(HashMap<String, List<String>> cancerNTarData) {
         this.cancerNTarData = cancerNTarData;
+    }
+
+    public Cancer getCancer() {
+        return cancer;
     }
 }
