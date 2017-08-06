@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 public class TumorAreaTemplate implements Serializable{
 
-    String location,content, area, side;
+    String location,leftContent, rightContent, area, side;
     int color;
 
     public int getColor() {
@@ -29,12 +29,20 @@ public class TumorAreaTemplate implements Serializable{
         this.location = location;
     }
 
-    public String getContent() {
-        return content;
+    public String getLeftContent() {
+        return leftContent;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setLeftContent(String leftContent) {
+        this.leftContent = leftContent;
+    }
+
+    public String getRightContent() {
+        return rightContent;
+    }
+
+    public void setRightContent(String rightContent) {
+        this.rightContent = rightContent;
     }
 
     public void setArea(String area) {
@@ -45,17 +53,13 @@ public class TumorAreaTemplate implements Serializable{
         return this.area;
     }
 
-    public void setSide(String side) {
-        this.side = side;
-    }
-
-    public String getSide() {
-        return this.side;
-    }
-
-    public int getImageResourceId(Context context) {
-        //Log.i("node location", nodeLocation);
-        return context.getResources().getIdentifier("ic_"+ location.replaceAll("\\s+", "").toLowerCase(), "drawable", context.getPackageName());
+    public int getImageResourceId(Context context, boolean isChecked) {
+        if  (isChecked){
+            return context.getResources().getIdentifier("ic_"+ location.replaceAll("\\s+", "").toLowerCase() +"_ok", "drawable", context.getPackageName());
+        }
+        else{
+            return context.getResources().getIdentifier("ic_"+ location.replaceAll("\\s+", "").toLowerCase(), "drawable", context.getPackageName());
+        }
     }
 
 }

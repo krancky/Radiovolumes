@@ -51,7 +51,7 @@
             </TVolume>
             <TVolume>
                 <TLN>III</TLN>
-                <TLNSide>Droit</TLNSide>
+                <TLNSide>Droite</TLNSide>
             </TVolume>
             <TVolume>
                 <TLN>IV</TLN>
@@ -59,7 +59,7 @@
             </TVolume>
             <TVolume>
                 <TLN>IV</TLN>
-                <TLNSide>Droit</TLNSide>
+                <TLNSide>Droite</TLNSide>
             </TVolume>
         </TVolumes>
     </CTV56NUCase>
@@ -82,7 +82,7 @@
             </TVolume>
             <TVolume>
                 <TLN>III</TLN>
-                <TLNSide>Droit</TLNSide>
+                <TLNSide>Droite</TLNSide>
             </TVolume>
             <TVolume>
                 <TLN>IV</TLN>
@@ -90,7 +90,7 @@
             </TVolume>
             <TVolume>
                 <TLN>IV</TLN>
-                <TLNSide>Droit</TLNSide>
+                <TLNSide>Droite</TLNSide>
             </TVolume>
         </TVolumes>
     </CTV56NUCase>

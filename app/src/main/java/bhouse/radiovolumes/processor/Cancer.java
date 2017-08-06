@@ -24,6 +24,7 @@ public class Cancer implements Serializable{
     // Private hashmaps store cancer data
     private List<NodeAreaTemplate> cancerNVolumes = new ArrayList<NodeAreaTemplate>();
     private List<TumorAreaTemplate> cancerTVolumes = new ArrayList<TumorAreaTemplate>();
+    private String mainSide;
 
     public String getName() {
         return name;
@@ -55,6 +56,14 @@ public class Cancer implements Serializable{
         this.mainArea = mainArea;
     }
 
+    public String getMainSide() {
+        return mainSide;
+    }
+
+    public void setMainSide(String mainSide) {
+        this.mainSide = mainSide;
+    }
+
     /**
      * Add n volume from NodeTemplate
      *
@@ -62,7 +71,7 @@ public class Cancer implements Serializable{
      * @param integer      the integer
      */
     public void addNVolume (NodeAreaTemplate nodeAreaTemplate) {
-        if (nodeAreaTemplate.getContent() != "0") {
+        if (nodeAreaTemplate.getLeftContent() != "0" || nodeAreaTemplate.getRightContent()!="0") {
             cancerNVolumes.add(nodeAreaTemplate);
         }
     }
@@ -78,7 +87,7 @@ public class Cancer implements Serializable{
      * @param spreadTVolume the spread t volume
      */
     public void addTVolume (TumorAreaTemplate tumorAreaTemplate){
-        if (tumorAreaTemplate.getContent() != "0"){
+        if (tumorAreaTemplate.getLeftContent() != "0" || tumorAreaTemplate.getRightContent() != "0"){
             cancerTVolumes.add(tumorAreaTemplate);
         }
 

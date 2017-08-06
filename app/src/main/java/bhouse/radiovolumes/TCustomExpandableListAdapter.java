@@ -39,7 +39,7 @@ public class TCustomExpandableListAdapter extends BaseExpandableListAdapter {
         this.expandableListTitle = expandableListTitle;
         this.expandableListDetail =expandableListDetail;
 
-        int groupCount = this.expandableListTitle.get(0).length();
+        int groupCount = tumorAreaTemplateList.size();
         ArrayList<Boolean> childStatus_left = new ArrayList<Boolean>();
         ArrayList<Boolean> childStatus_right = new ArrayList<Boolean>();
         for (int i = 0; i<groupCount; i++){
@@ -52,10 +52,10 @@ public class TCustomExpandableListAdapter extends BaseExpandableListAdapter {
             for (TumorAreaTemplate cancerTumorAreaTemplate :cancer.getCancerTVolumes()){
                 for(TumorAreaTemplate tumorAreaTemplate : tumorAreaTemplateList){
                     if (cancerTumorAreaTemplate.getLocation().equals(tumorAreaTemplate.getLocation())){
-                        if (cancerTumorAreaTemplate.getSide().equals("Gauche")){
+                        if (cancerTumorAreaTemplate.getLeftContent().equals("1")){
                             childStatus_left.set(tumorAreaTemplateList.indexOf(tumorAreaTemplate),true);
                         }
-                        if (cancerTumorAreaTemplate.getSide().equals("Droite")){
+                        if (cancerTumorAreaTemplate.getRightContent().equals("1")){
                             childStatus_right.set(tumorAreaTemplateList.indexOf(tumorAreaTemplate),true);
                         }
                     }
@@ -116,7 +116,13 @@ public class TCustomExpandableListAdapter extends BaseExpandableListAdapter {
         holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
         holder.cbRight.setChecked(checkboxStatus_right.get(listPosition).get(expandedListPosition));
         holder.cbRight.setOnCheckedChangeListener(cbRightChangeListener);
-        tumorPhoto.setImageResource(h.getImageResourceId(this.context));
+        //tumorPhoto.setImageResource(h.getImageResourceId(this.context, ));
+        if(holder.cbLeft.isChecked() || holder.cbRight.isChecked() ){
+            holder.tumorPhoto.setImageResource(h.getImageResourceId(this.context, true));
+        }
+        else{
+            holder.tumorPhoto.setImageResource(h.getImageResourceId(this.context, false));
+        }
 
         return convertView;
     };
@@ -130,12 +136,12 @@ public class TCustomExpandableListAdapter extends BaseExpandableListAdapter {
             checkboxStatus_left.get(0).set(position, isChecked);
             TumorAreaTemplate h = (TumorAreaTemplate) tList.get(position);
             if(checkBoxView.isChecked()){
-                h.setContent("1");
-                h.setSide("Gauche");
+                h.setLeftContent("1");
             }
             else{
-                h.setContent("0");
+                h.setLeftContent("0");
             }
+            notifyDataSetChanged();
         }
     };
 
@@ -147,12 +153,12 @@ public class TCustomExpandableListAdapter extends BaseExpandableListAdapter {
             checkboxStatus_right.get(0).set(position, isChecked);
             TumorAreaTemplate h = (TumorAreaTemplate) tList.get(position);
             if(checkBoxView.isChecked()){
-                h.setContent("1");
-                h.setSide("Droite");
+                h.setRightContent("1");
             }
             else{
-                h.setContent("0");
+                h.setRightContent("0");
             }
+            notifyDataSetChanged();
         }
     };
 

@@ -81,7 +81,8 @@ public class TumorAreasTemplateXMLHandler {
                             if (tagname.equalsIgnoreCase("Volume")) {
                                 // add CTV56NUCase object to catalog
 
-                                tumorAreaTemplate.setContent("0");
+                                tumorAreaTemplate.setLeftContent("0");
+                                tumorAreaTemplate.setRightContent("0");
                                 tumorAreaTemplateList.add(tumorAreaTemplate);
                             }
                             else if (tagname.equalsIgnoreCase("Location")) {

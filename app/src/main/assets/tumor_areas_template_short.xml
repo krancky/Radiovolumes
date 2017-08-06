@@ -9,7 +9,59 @@
         <Location>Plancher</Location>
     </Volume>
     <Volume>
+        <Area>Cavite Buccale</Area>
+        <Location>Face interne de Joue</Location>
+    </Volume>
+    <Volume>
+        <Area>Cavite Buccale</Area>
+        <Location>Gencive Inferieure</Location>
+    </Volume>
+    <Volume>
+        <Area>Cavite Buccale</Area>
+        <Location>Gencive Superieure</Location>
+    </Volume>
+    <Volume>
+        <Area>Cavite Buccale</Area>
+        <Location>Palais Dur</Location>
+    </Volume>
+    <Volume>
+        <Area>Cavite Buccale</Area>
+        <Location>Trigone retromolaire Superieur</Location>
+    </Volume>
+    <Volume>
+        <Area>Cavite Buccale</Area>
+        <Location>Trigone retromolaire Inferieur</Location>
+    </Volume>
+    <Volume>
         <Area>Oropharynx</Area>
         <Location>Base de Langue</Location>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <Location>Pilier Anterieur</Location>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <Location>Amygdale</Location>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <Location>Pilier Posterieur</Location>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <Location>Voile</Location>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <Location>Sillon Amygdaloglosse</Location>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <Location>Vallecule</Location>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <Location>Paroi pharyngee Posterieure</Location>
     </Volume>
 </TumorsAreasTemplate>

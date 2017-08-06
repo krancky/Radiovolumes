@@ -12,7 +12,25 @@ import java.io.Serializable;
 public class NodeAreaTemplate implements Serializable {
 
     String title;
-    String content;
+    String leftContent;
+    String rightContent;
+
+    public String getLeftContent() {
+        return leftContent;
+    }
+
+    public void setLeftContent(String leftContent) {
+        this.leftContent = leftContent;
+    }
+
+    public String getRightContent() {
+        return rightContent;
+    }
+
+    public void setRightContent(String rightContent) {
+        this.rightContent = rightContent;
+    }
+
     String nodeLocation;
     String completeName;
 
@@ -47,21 +65,6 @@ public class NodeAreaTemplate implements Serializable {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getSide() {
-        return side;
-    }
-
-    public void setSide(String side) {
-        this.side = side;
-    }
 
     public String getCompleteName() {
         return completeName;
@@ -71,9 +74,13 @@ public class NodeAreaTemplate implements Serializable {
         this.completeName = completeName;
     }
 
-    public int getImageResourceId(Context context) {
-        Log.i("node location", nodeLocation);
+    public int getImageResourceId(Context context, boolean isChecked) {
+    if  (isChecked){
+        return context.getResources().getIdentifier("ic_"+ nodeLocation.toLowerCase() +"_ok", "drawable", context.getPackageName());
+    }
+    else{
         return context.getResources().getIdentifier("ic_"+ nodeLocation.toLowerCase(), "drawable", context.getPackageName());
+    }
     }
 
 }

@@ -1,21 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<bhouse.radiovolumes.ZoomView
+android:layout_width="match_parent"
+android:layout_height="match_parent"
 
+android:layout_centerInParent="true" >
+
+<FrameLayout
+    android:id="@+id/zoomView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <ImageView
         android:id="@+id/view_scan"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:clickable="true"
+         >
+
     </ImageView>
 
     <ImageView
         android:id="@+id/view_vector"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+         >
     </ImageView>
-
-
 </FrameLayout>
+
+</bhouse.radiovolumes.ZoomView>
+</LinearLayout>
 

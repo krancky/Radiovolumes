@@ -23,8 +23,8 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
     private Context context;
     private List<String> expandableListTitle;
     private LinkedHashMap<String, List<String>> expandableListDetail;
-    private ArrayList<ArrayList<Boolean>> checkboxStatus_left = new ArrayList<ArrayList<Boolean>>();
-    private ArrayList<ArrayList<Boolean>> checkboxStatus_right = new ArrayList<ArrayList<Boolean>>();
+    private ArrayList<Boolean> checkboxStatus_left = new ArrayList();
+    private ArrayList<Boolean> checkboxStatus_right = new ArrayList();
     List<NodeAreaTemplate> nList;
 
 
@@ -38,12 +38,10 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
         this.expandableListDetail =expandableListDetail;
 
 
-        int groupCount = this.expandableListTitle.get(0).length();
-        ArrayList<Boolean> childStatus_left = new ArrayList<Boolean>();
-        ArrayList<Boolean> childStatus_right = new ArrayList<Boolean>();
+        int groupCount = nodeAreaTemplateList.size();
         for (int i = 0; i<groupCount; i++){
-            childStatus_left.add(false);
-            childStatus_right.add(false);
+            checkboxStatus_left.add(false);
+            checkboxStatus_right.add(false);
         }
 
 
@@ -51,21 +49,16 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
             for (NodeAreaTemplate cancerNodeAreaTemplate :cancer.getCancerNVolumes()){
                 for(NodeAreaTemplate nodeAreaTemplate : nodeAreaTemplateList){
                     if (cancerNodeAreaTemplate.getNodeLocation().equals(nodeAreaTemplate.getNodeLocation())){
-                        if (cancerNodeAreaTemplate.getSide().equals("Gauche")){
-                            childStatus_left.set(nodeAreaTemplateList.indexOf(nodeAreaTemplate),true);
+                        if (cancerNodeAreaTemplate.getLeftContent().equals("1")){
+                            checkboxStatus_left.set(nodeAreaTemplateList.indexOf(nodeAreaTemplate),true);
                         }
-                        if (cancerNodeAreaTemplate.getSide().equals("Droite")){
-                            childStatus_right.set(nodeAreaTemplateList.indexOf(nodeAreaTemplate),true);
+                        if (cancerNodeAreaTemplate.getRightContent().equals("1")){
+                            checkboxStatus_right.set(nodeAreaTemplateList.indexOf(nodeAreaTemplate),true);
                         }
                     }
                 }
             }
         }
-
-
-
-        checkboxStatus_left.add(childStatus_left);
-        checkboxStatus_right.add(childStatus_right);
     }
 
     @Override
@@ -89,40 +82,45 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.list_expandable_child, null);
 
-
+            //NodeAreaTemplate h = nList.get(expandedListPosition);
             holder = new ViewHolder();
             holder.nodePhoto = (ImageView) convertView.findViewById(R.id.node_photo);
             holder.tv = (TextView) convertView.findViewById(R.id.textView1);
             holder.cbLeft =(CheckBox) convertView.findViewById(R.id.checkLeft);
             holder.cbRight =(CheckBox) convertView.findViewById(R.id.checkRight);
 
-            holder.cbLeft.setChecked(checkboxStatus_left.get(listPosition).get(expandedListPosition));
+            holder.cbLeft.setChecked(checkboxStatus_left.get(expandedListPosition));
             holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
-            holder.cbRight.setChecked(checkboxStatus_right.get(listPosition).get(expandedListPosition));
+            holder.cbRight.setChecked(checkboxStatus_right.get(expandedListPosition));
             holder.cbRight.setOnCheckedChangeListener(cbRightChangeListener);
-
 
             convertView.setTag(holder);
 
         }
         else {
         holder = (ViewHolder) convertView.getTag();
+
         }
         TextView expandedListTextView = (TextView) convertView
                 .findViewById(R.id.textView1);
         expandedListTextView.setText(expandedListText);
-        ImageView nodePhoto = (ImageView) convertView.findViewById(R.id.node_photo);
+        //ImageView nodePhoto = (ImageView) convertView.findViewById(R.id.node_photo);
 
         NodeAreaTemplate h = nList.get(expandedListPosition);
-        holder.nodePhoto.setImageResource(h.getImageResourceId(this.context));
+        //holder.nodePhoto.setImageResource(h.getImageResourceId(this.context));
         holder.tv.setText(h.getCompleteName());
         holder.cbLeft.setTag(expandedListPosition);
         holder.cbRight.setTag(expandedListPosition);
-        holder.cbLeft.setChecked(checkboxStatus_left.get(listPosition).get(expandedListPosition));
+        holder.cbLeft.setChecked(checkboxStatus_left.get(expandedListPosition));
         holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
-        holder.cbRight.setChecked(checkboxStatus_right.get(listPosition).get(expandedListPosition));
+        holder.cbRight.setChecked(checkboxStatus_right.get(expandedListPosition));
         holder.cbRight.setOnCheckedChangeListener(cbRightChangeListener);
-        nodePhoto.setImageResource(h.getImageResourceId(this.context));
+        if(holder.cbLeft.isChecked() || holder.cbRight.isChecked() ){
+            holder.nodePhoto.setImageResource(h.getImageResourceId(this.context, true));
+        }
+        else{
+            holder.nodePhoto.setImageResource(h.getImageResourceId(this.context, false));
+        }
 
         return convertView;
     };
@@ -134,15 +132,15 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
         @Override
         public void onCheckedChanged(CompoundButton checkBoxView, boolean isChecked) {
             int position = (Integer) checkBoxView.getTag();
-            checkboxStatus_left.get(0).set(position, isChecked);
+            checkboxStatus_left.set(position, isChecked);
             NodeAreaTemplate h = (NodeAreaTemplate) nList.get(position);
             if(checkBoxView.isChecked()){
-                h.setContent("1");
-                h.setSide("Gauche");
+                h.setLeftContent("1");
             }
             else{
-                h.setContent("0");
+                h.setLeftContent("0");
             }
+            notifyDataSetChanged(); //"this" is the adapter
         }
     };
 
@@ -151,15 +149,15 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
         @Override
         public void onCheckedChanged(CompoundButton checkBoxView, boolean isChecked) {
             int position = (Integer) checkBoxView.getTag();
-            checkboxStatus_right.get(0).set(position, isChecked);
+            checkboxStatus_right.set(position, isChecked);
             NodeAreaTemplate h = (NodeAreaTemplate) nList.get(position);
             if(checkBoxView.isChecked()){
-                h.setContent("1");
-                h.setSide("Droite");
+                h.setRightContent("1");
             }
             else{
-                h.setContent("0");
+                h.setRightContent("0");
             }
+            notifyDataSetChanged();
         }
     };
 
@@ -214,12 +212,12 @@ public class NCustomExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public boolean hasStableIds() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isChildSelectable(int listPosition, int expandedListPosition) {
-        return false;
+        return true;
     }
 
     static class ViewHolder

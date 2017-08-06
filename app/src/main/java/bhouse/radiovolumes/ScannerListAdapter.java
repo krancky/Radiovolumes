@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -39,7 +40,8 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem>{
         ViewHolder holder;
 
         if (convertView == null){
-            convertView = inflater.inflate(R.layout.list_view_scan, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.list_view_scan, parent, false);
+            convertView.setMinimumHeight(parent.getMeasuredHeight());
             holder = new ViewHolder();
             holder.scanView = (ImageView)convertView.findViewById(R.id.view_scan);
             holder.vectorView = (ImageView)convertView.findViewById(R.id.view_vector);

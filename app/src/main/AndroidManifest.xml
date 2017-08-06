@@ -25,9 +25,6 @@
         <activity
             android:name=".TabbedActivity"
             android:label="TabbedActivity" />
-        <activity
-            android:name=".NewCaseDialog"
-            android:label="activity_new_case_dialog" />
         <activity android:name=".LoadCaseActivity" />
         <activity
             android:name=".ScannerViewActivity"

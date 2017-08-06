@@ -40,7 +40,7 @@ public class TabFragment2 extends Fragment {
         cancerNTarData = new HashMap<String, List<String>>();
         cancerNTarData = activity.getCancerNTarData();
         cancerTTarData = activity.getCancerTTarData();
-        cancer = activity.getCancer();
+        this.cancer = activity.getCancer();
 
         View view = inflater.inflate(R.layout.tab_fragment_2, container, false);
         perform(view);
@@ -52,9 +52,13 @@ public class TabFragment2 extends Fragment {
     }
 
     public void perform(View v){
-        ListView lv = (ListView)v.findViewById(R.id.listView_invaded);
-        HashAdapter mAdapter = new HashAdapter(cancerTTarData, cancer);
-        lv.setAdapter(mAdapter);
+        ListView lvT = (ListView)v.findViewById(R.id.listView_invaded_T);
+        ListView lvN = (ListView)v.findViewById(R.id.listView_invaded_N);
+        HashAdapter mAdapterT = new HashAdapter(cancerTTarData, this.cancer);
+        HashNAdapter mAdapterN = new HashNAdapter(cancerNTarData, this.cancer);
+        lvT.setAdapter(mAdapterT);
+        lvN.setAdapter(mAdapterN);
+
 
         Button toScan = (Button)v.findViewById(R.id.button_to_scan);
 

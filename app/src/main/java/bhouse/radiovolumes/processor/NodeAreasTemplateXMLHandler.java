@@ -83,7 +83,8 @@ public class NodeAreasTemplateXMLHandler {
                                 NodeAreaTemplateList.add(nodeAreaTemplate);
                             } else if (tagname.equalsIgnoreCase("Short")) {
                                 nodeAreaTemplate.setNodeLocation(text);
-                                nodeAreaTemplate.setContent("0");
+                                nodeAreaTemplate.setLeftContent("0");
+                                nodeAreaTemplate.setRightContent("0");
                             }   else if (tagname.equalsIgnoreCase("Long")) {
                                 nodeAreaTemplate.setCompleteName(text);
                             }

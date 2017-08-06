@@ -6,6 +6,6 @@
     android:textAppearance="?android:attr/textAppearanceMedium"
     android:textColor="@android:color/white"
     android:paddingLeft="10dp"
-    android:ellipsize="marquee">
+    >
 
 </TextView>

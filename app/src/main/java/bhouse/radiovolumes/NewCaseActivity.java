@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -79,6 +80,7 @@ public class NewCaseActivity extends Activity {
     private ImageButton mAddButton;
     private EditText mEditTextName;
     private Spinner spinner;
+    private Spinner spinnerSide;
 
     private String newParam;
 
@@ -121,6 +123,11 @@ public class NewCaseActivity extends Activity {
         spinnerAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);// default layouts for now
         spinner.setAdapter(spinnerAdapter);
 
+        spinnerSide = (Spinner) findViewById(R.id.MainSideSpinner);
+        ArrayAdapter<CharSequence> spinnerAdapterSide = ArrayAdapter.createFromResource(this, R.array.main_side_array, R.layout.spinner_item);
+        spinnerAdapterSide.setDropDownViewResource(R.layout.spinner_dropdown_item);// default layouts for now
+        spinnerSide.setAdapter(spinnerAdapterSide);
+
         if (newParam.equals("1")){
             //mImageView.setImageDrawable(R.id.);
         }
@@ -130,6 +137,8 @@ public class NewCaseActivity extends Activity {
 
             int spinnerPosition = spinnerAdapter.getPosition(cancer.getMainArea());
             spinner.setSelection(spinnerPosition);
+            int spinnerSidePosition = spinnerAdapterSide.getPosition(cancer.getMainSide());
+            spinnerSide.setSelection(spinnerPosition);
         }
 
         // Generates elementary N cases (CTV56NUCase) catalog and
@@ -230,6 +239,7 @@ public class NewCaseActivity extends Activity {
                 else {
                     NewCaseActivity.this.cancer.setName(sCaseName);
                     NewCaseActivity.this.cancer.setMainArea(spinner.getSelectedItem().toString());
+                    NewCaseActivity.this.cancer.setMainSide(spinnerSide.getSelectedItem().toString());
                     NewCaseActivity.this.update();
                     Intent transitionIntent = new Intent(NewCaseActivity.this, TabbedActivity.class);
                     transitionIntent.putExtra("cancer", cancer);
@@ -249,6 +259,9 @@ public class NewCaseActivity extends Activity {
                 Toast.makeText(getApplicationContext(),
                         nexpandableListTitle.get(groupPosition) + " List Expanded.",
                         Toast.LENGTH_SHORT).show();
+                LinearLayout myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
+                myLayout.setVisibility(View.GONE);
+
             }
         });
 
@@ -259,6 +272,8 @@ public class NewCaseActivity extends Activity {
                 Toast.makeText(getApplicationContext(),
                         texpandableListTitle.get(groupPosition) + " List Expanded.",
                         Toast.LENGTH_SHORT).show();
+                LinearLayout myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
+                myLayout.setVisibility(View.GONE);
             }
         });
 
@@ -269,6 +284,8 @@ public class NewCaseActivity extends Activity {
                 Toast.makeText(getApplicationContext(),
                         nexpandableListTitle.get(groupPosition) + " List Collapsed.",
                         Toast.LENGTH_SHORT).show();
+                LinearLayout myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
+                myLayout.setVisibility(View.VISIBLE);
 
             }
         });
@@ -280,6 +297,8 @@ public class NewCaseActivity extends Activity {
                 Toast.makeText(getApplicationContext(),
                         texpandableListTitle.get(groupPosition) + " List Collapsed.",
                         Toast.LENGTH_SHORT).show();
+                LinearLayout myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
+                myLayout.setVisibility(View.VISIBLE);
 
             }
         });
@@ -311,6 +330,7 @@ public class NewCaseActivity extends Activity {
                                 + texpandableListDetail.get(
                                 texpandableListTitle.get(groupPosition)).get(
                                 childPosition), Toast.LENGTH_SHORT
+
                 ).show();
                 return false;
             }
@@ -319,8 +339,8 @@ public class NewCaseActivity extends Activity {
 
     public void update (){
 
-        //cancer.nClear();
-        //cancer.tClear();
+        cancer.nClear();
+        cancer.tClear();
         NewCaseActivity.this.ctv56NCaseList.clear();
 
 

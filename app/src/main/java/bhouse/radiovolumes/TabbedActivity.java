@@ -51,7 +51,7 @@ public class TabbedActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Intent i = getIntent();
-        Cancer cancer = (Cancer) i.getSerializableExtra("cancer");
+        this.cancer = (Cancer) i.getSerializableExtra("cancer");
         CTV56TCase ctv56TCase = (CTV56TCase) i.getSerializableExtra("CTV56TCase");
         CTV56NCase ctv56NCase = (CTV56NCase) i.getSerializableExtra("CTV56NCase");
         cancerTData = new HashMap<String, HashMap<String, List<String>>>();
@@ -114,24 +114,48 @@ public class TabbedActivity extends AppCompatActivity {
         for (TumorAreaTemplate cancerTVolumes : cancer.getCancerTVolumes()) {
             if (!cancerTData.containsKey(cancerTVolumes.getArea())) {
                 HashMap<String, List<String>> map = new HashMap<String, List<String>>();
-                List<String> list = new ArrayList<String>();
-                list.add(cancerTVolumes.getLocation());
-                map.put(cancerTVolumes.getSide(), list);
+                if (cancerTVolumes.getLeftContent().equals("1")){
+                    List<String> list = new ArrayList<String>();
+                    list.add(cancerTVolumes.getLocation());
+                    map.put("Gauche", list);
+                }
+                if (cancerTVolumes.getRightContent().equals("1")){
+                    List<String> list = new ArrayList<String>();
+                    list.add(cancerTVolumes.getLocation());
+                    map.put("Droite", list);
+                }
                 cancerTData.put(cancerTVolumes.getArea(), map);
-            } else if (!cancerTData.get(cancerTVolumes.getArea()).containsKey(cancerTVolumes.getSide())) {
-                List<String> list = new ArrayList<String>();
+
+            } else if (!cancerTData.get(cancerTVolumes.getArea()).containsKey("Gauche")) {
                 HashMap<String, List<String>> map = new HashMap<String, List<String>>();
-                map = cancerTData.get(cancerTVolumes.getArea());
-                list.add(cancerTVolumes.getLocation());
-                map.put(cancerTVolumes.getSide(), list);
+                if (cancerTVolumes.getLeftContent().equals("1")){
+                    map = cancerTData.get(cancerTVolumes.getArea());
+                    List<String> list = new ArrayList<String>();
+                    list.add(cancerTVolumes.getLocation());
+                    map.put("Gauche", list);
+                }
+                if (cancerTVolumes.getRightContent().equals("1")){
+                    map = cancerTData.get(cancerTVolumes.getArea());
+                    List<String> list = new ArrayList<String>();
+                    list.add(cancerTVolumes.getLocation());
+                    map.put("Droite", list);
+                }
                 cancerTData.put(cancerTVolumes.getArea(), map);
+
             } else {
                 List<String> list = new ArrayList<String>();
                 HashMap<String, List<String>> map = new HashMap<String, List<String>>();
                 map = cancerTData.get(cancerTVolumes.getArea());
-                list = map.get(cancerTVolumes.getSide());
-                list.add(cancerTVolumes.getLocation());
-                map.put(cancerTVolumes.getSide(), list);
+                if (cancerTVolumes.getLeftContent().equals("1")){
+                    list = map.get("Gauche");
+                    list.add(cancerTVolumes.getLocation());
+                    map.put("Gauche", list);
+                }
+                if (cancerTVolumes.getRightContent().equals("1")){
+                    list = map.get("Droite");
+                    list.add(cancerTVolumes.getLocation());
+                    map.put("Droite", list);
+                }
                 cancerTData.put(cancerTVolumes.getArea(), map);
             }
         }
@@ -164,15 +188,29 @@ public class TabbedActivity extends AppCompatActivity {
 
 
         for (NodeAreaTemplate nodeAreaTemplate : cancer.getCancerNVolumes()){
-            if (!cancerNData.containsKey(nodeAreaTemplate.getSide())) {
-                List<String> list = new ArrayList<String>();
-                list.add(nodeAreaTemplate.getNodeLocation());
-                cancerNData.put(nodeAreaTemplate.getSide(), list);
-            } else  {
-                List<String> list = new ArrayList<String>();
-                list = cancerNData.get(nodeAreaTemplate.getSide());
-                list.add(nodeAreaTemplate.getNodeLocation());
-                cancerNData.put(nodeAreaTemplate.getSide(), list);
+            if (nodeAreaTemplate.getLeftContent().equals("1")){
+                if (!cancerNData.containsKey("Gauche")) {
+                    List<String> list = new ArrayList<String>();
+                    list.add(nodeAreaTemplate.getNodeLocation());
+                    cancerNData.put("Gauche", list);
+                } else  {
+                    List<String> list = new ArrayList<String>();
+                    list = cancerNData.get("Gauche");
+                    list.add(nodeAreaTemplate.getNodeLocation());
+                    cancerNData.put("Gauche", list);
+                }
+            }
+            if (nodeAreaTemplate.getRightContent().equals("1")){
+                if (!cancerNData.containsKey("Droite")) {
+                    List<String> list = new ArrayList<String>();
+                    list.add(nodeAreaTemplate.getNodeLocation());
+                    cancerNData.put("Droite", list);
+                } else  {
+                    List<String> list = new ArrayList<String>();
+                    list = cancerNData.get("Droite");
+                    list.add(nodeAreaTemplate.getNodeLocation());
+                    cancerNData.put("Droite", list);
+                }
             }
         }
 
@@ -223,6 +261,6 @@ public class TabbedActivity extends AppCompatActivity {
     }
 
     public Cancer getCancer() {
-        return cancer;
+        return this.cancer;
     }
 }

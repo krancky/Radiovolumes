@@ -97,7 +97,7 @@ public class ScannerViewActivity extends Activity {
 
         setContentView(R.layout.activity_scanner_view);
 
-        mVisible = true;
+        mVisible = false;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = (ListView)findViewById(R.id.fullscreen_content);
 

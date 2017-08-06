@@ -5,7 +5,7 @@ android {
     buildToolsVersion '25.0.0'
 
     defaultConfig {
-        applicationId "bhouse.travellist"
+        applicationId "bhouse.radiovolumes"
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 1
@@ -31,4 +31,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:support-v4:23.4.0'
     compile 'com.android.support:design:23.1.1'
+    compile 'com.github.chrisbanes:PhotoView:2.0.0'
 }

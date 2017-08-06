@@ -28,16 +28,51 @@ public class HashMapOperator {
 
             for (CTV56NUCase ctv56NUCase:ctv56NUCaseList) {
                 if (cancer.getCancerNVolumes().isEmpty()) {
-                    if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && cancerTVolumes.getSide().equals(ctv56NUCase.getSide()) && ctv56NUCase.getSpreadLocation().isEmpty()) {
-                        cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
-                        Log.i("touche", "coule");
+                    if (cancerTVolumes.getLeftContent().equals("1")){
+                        if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && ctv56NUCase.getSide().equals("Gauche") && ctv56NUCase.getSpreadLocation().isEmpty()) {
+                            cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
+                            Log.i("touche", "coule");
+                        }
                     }
+                    if (cancerTVolumes.getRightContent().equals("1")){
+                        if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && ctv56NUCase.getSide().equals("Droite") && ctv56NUCase.getSpreadLocation().isEmpty()) {
+                            cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
+                            Log.i("touche", "coule");
+                        }
+                    }
+
                 } else {
                     for (NodeAreaTemplate nodeAreaTemplate : cancer.getCancerNVolumes()) {
-                            if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && nodeAreaTemplate.getNodeLocation().equals(ctv56NUCase.getSpreadLocation()) && cancerTVolumes.getSide().equals(ctv56NUCase.getSide()) && nodeAreaTemplate.getSide().equals(ctv56NUCase.getSpreadSide())) {
-                                cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
-                                Log.i("touche", "coule");
+                        if (nodeAreaTemplate.getLeftContent().equals("1")){
+                            if (cancerTVolumes.getLeftContent().equals("1"))
+                            {
+                                if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && nodeAreaTemplate.getNodeLocation().equals(ctv56NUCase.getSpreadLocation()) && ctv56NUCase.getSide().equals("Gauche") && ctv56NUCase.getSpreadSide().equals("Gauche")) {
+                                    cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
+                                }
                             }
+                            if (cancerTVolumes.getRightContent().equals("1"))
+                            {
+                                if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && nodeAreaTemplate.getNodeLocation().equals(ctv56NUCase.getSpreadLocation()) && ctv56NUCase.getSide().equals("Droite") && ctv56NUCase.getSpreadSide().equals("Gauche")) {
+                                    cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
+                                }
+                            }
+
+
+                        }
+                        if (nodeAreaTemplate.getRightContent().equals("1")){
+                            if (cancerTVolumes.getLeftContent().equals("1"))
+                            {
+                                if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && nodeAreaTemplate.getNodeLocation().equals(ctv56NUCase.getSpreadLocation()) && ctv56NUCase.getSide().equals("Gauche") && ctv56NUCase.getSpreadSide().equals("Droite")) {
+                                    cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
+                                }
+                            }
+                            if (cancerTVolumes.getRightContent().equals("1"))
+                            {
+                                if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && nodeAreaTemplate.getNodeLocation().equals(ctv56NUCase.getSpreadLocation()) && ctv56NUCase.getSide().equals("Droite") && ctv56NUCase.getSpreadSide().equals("Droite")) {
+                                    cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
+                                }
+                            }
+                        }
 
                     }
 
@@ -55,9 +90,17 @@ public class HashMapOperator {
 
         for (CTV56TUCase ctv56TUCase:ctv56TUCaseList){
                 for (TumorAreaTemplate cancerTVolumes : cancer.getCancerTVolumes()){
-                    if (cancerTVolumes.getLocation().equals(ctv56TUCase.getLocation()) && cancerTVolumes.getSide().equals(ctv56TUCase.getSide())){
-                        cTV56TCase.addAllTVolumeToMap(ctv56TUCase.getuCaseTVolumes());
+                    if (cancerTVolumes.getLeftContent().equals("1")){
+                        if (cancerTVolumes.getLocation().equals(ctv56TUCase.getLocation()) && ctv56TUCase.getSide().equals("Gauche")){
+                            cTV56TCase.addAllTVolumeToMap(ctv56TUCase.getuCaseTVolumes());
+                        }
                     }
+                    if (cancerTVolumes.getRightContent().equals("1")){
+                        if (cancerTVolumes.getLocation().equals(ctv56TUCase.getLocation()) && ctv56TUCase.getSide().equals("Droite")){
+                            cTV56TCase.addAllTVolumeToMap(ctv56TUCase.getuCaseTVolumes());
+                        }
+                    }
+
                 }
 
         }

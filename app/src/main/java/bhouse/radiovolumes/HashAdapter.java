@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import bhouse.radiovolumes.processor.Cancer;
 
+import static android.R.attr.value;
+
 
 /**
  * Created by kranck on 8/3/2017.
@@ -63,12 +65,14 @@ public class HashAdapter extends BaseAdapter {
         HashMap<String, List<String>> sideMap = item.getValue();
         for (HashMap.Entry<String, List<String>> map : sideMap.entrySet()) {
             if (map.getKey().equalsIgnoreCase("Gauche")) {
-                ((TextView) result.findViewById(R.id.text_left)).setText(item.getValue().toString());
+                ((TextView) result.findViewById(R.id.text_left)).setText(prepareString(map.getValue()));
                 //int resId = context.getResources().getIdentifier(item.getKey(), "drawable", context.getPackageName());
                 int resId = context.getResources().getIdentifier("ic_"+ item.getKey().replaceAll("\\s+", "").toLowerCase(), "drawable", context.getPackageName());
                 ((ImageView) result.findViewById(R.id.image_photo)).setImageResource(resId);
-            } else {
-                ((TextView) result.findViewById(R.id.text_right)).setText(item.getValue().toString());
+            } else if (map.getKey().equalsIgnoreCase("Droite")) {
+                int resId = context.getResources().getIdentifier("ic_"+ item.getKey().replaceAll("\\s+", "").toLowerCase(), "drawable", context.getPackageName());
+                ((ImageView) result.findViewById(R.id.image_photo)).setImageResource(resId);
+                ((TextView) result.findViewById(R.id.text_right)).setText(prepareString(map.getValue()));
             }
         }
 
@@ -76,10 +80,25 @@ public class HashAdapter extends BaseAdapter {
             ((TextView) result.findViewById(R.id.text_left)).setText("None");
         }
 
-        if (!sideMap.containsKey("Droit")){
+        if (!sideMap.containsKey("Droite")){
             ((TextView) result.findViewById(R.id.text_right)).setText("None");
         }
         return result;
+    }
+
+    private String prepareString (List<String> mapValues){
+        String locString = new String();
+        for (String value : mapValues){
+            locString = locString + value +", ";
+        }
+        locString = removeLastChar(locString);
+        locString = locString + ".";
+
+        return locString;
+    }
+
+    private static String removeLastChar(String str) {
+        return str.substring(0, str.length() - 2);
     }
 }
 

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:padding="5dp"
     android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/image_photo"
         android:layout_width="wrap_content"
+        android:paddingRight="5dp"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/text_main_area"
-        android:layout_toRightOf="@id/image"
+        android:layout_toRightOf="@id/image_photo"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -19,6 +21,7 @@
         android:id="@+id/text_left_static"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/image_photo"
         android:text="Left: "
         android:layout_below="@id/text_main_area"/>
 
@@ -26,6 +29,7 @@
         android:id="@+id/text_right_static"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/image_photo"
         android:text="Right: "
         android:layout_below="@id/text_left_static"/>
 

@@ -38,7 +38,7 @@ public class TabFragment1 extends Fragment {
         cancerNData = new HashMap<String, List<String>>();
         cancerNData = activity.getCancerNData();
         cancerTData = activity.getCancerTData();
-        cancer = activity.getCancer();
+        this.cancer = activity.getCancer();
 
         View view = inflater.inflate(R.layout.tab_fragment_1, container, false);
         perform(view);
@@ -48,9 +48,12 @@ public class TabFragment1 extends Fragment {
     }
 
     public void perform(View v){
-        ListView lv = (ListView)v.findViewById(R.id.listView_invaded);
-        HashAdapter mAdapter = new HashAdapter(cancerTData, cancer);
-        lv.setAdapter(mAdapter);
+        ListView lvT = (ListView)v.findViewById(R.id.listView_invaded_T);
+        ListView lvN = (ListView)v.findViewById(R.id.listView_invaded_N);
+        HashAdapter mAdapterT = new HashAdapter(cancerTData, this.cancer);
+        HashNAdapter mAdapterN = new HashNAdapter(cancerNData, this.cancer);
+        lvT.setAdapter(mAdapterT);
+        lvN.setAdapter(mAdapterN);
 
 
     }
