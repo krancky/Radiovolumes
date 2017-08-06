@@ -72,12 +72,12 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
         mImageView = (ImageView) findViewById(R.id.placeImage);
         mTitle = (TextView) findViewById(R.id.textView);
         mTitleHolder = (LinearLayout) findViewById(R.id.placeNameHolder);
-        mAddButton = (ImageButton) findViewById(R.id.btn_add);
+        //mAddButton = (ImageButton) findViewById(R.id.btn_add);
         mRevealView = (LinearLayout) findViewById(R.id.llEditTextHolder);
         mEditTextTodo = (EditText) findViewById(R.id.etTodo);
 
-        mAddButton.setImageResource(R.drawable.icn_morph_reverse);
-        mAddButton.setOnClickListener(this);
+        //mAddButton.setImageResource(R.drawable.icn_morph_reverse);
+        //mAddButton.setOnClickListener(this);
         defaultColorForRipple = getResources().getColor(R.color.primary_dark);
         mInputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         mRevealView.setVisibility(View.INVISIBLE);
@@ -131,7 +131,7 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
         getWindow().getEnterTransition().addListener(new TransitionAdapter() {
             @Override
             public void onTransitionEnd(Transition transition) {
-                mAddButton.animate().alpha(1.0f);
+                //mAddButton.animate().alpha(1.0f);
                 getWindow().getEnterTransition().removeListener(this);
             }
         });
@@ -156,7 +156,7 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
 
 
     private void applyRippleColor(int bgColor, int tintColor) {
-        colorRipple(mAddButton, bgColor, tintColor);
+        //colorRipple(mAddButton, bgColor, tintColor);
     }
 
     private void colorRipple(ImageButton id, int bgColor, int tintColor) {
@@ -175,18 +175,18 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
                     revealEditText(mRevealView);
                     mEditTextTodo.requestFocus();
                     mInputManager.showSoftInput(mEditTextTodo, InputMethodManager.SHOW_IMPLICIT);
-                    mAddButton.setImageResource(R.drawable.icn_morp);
-                    mAnimatable = (Animatable) (mAddButton).getDrawable();
-                    mAnimatable.start();
+                    //mAddButton.setImageResource(R.drawable.icn_morp);
+                   //mAnimatable = (Animatable) (mAddButton).getDrawable();
+                    //mAnimatable.start();
                     applyRippleColor(getResources().getColor(R.color.light_green), getResources().getColor(R.color.dark_green));
                 } else {
                     addToDo(mEditTextTodo.getText().toString());
                     mToDoAdapter.notifyDataSetChanged();
                     mInputManager.hideSoftInputFromWindow(mEditTextTodo.getWindowToken(), 0);
                     hideEditText(mRevealView);
-                    mAddButton.setImageResource(R.drawable.icn_morph_reverse);
-                    mAnimatable = (Animatable) (mAddButton).getDrawable();
-                    mAnimatable.start();
+                    //mAddButton.setImageResource(R.drawable.icn_morph_reverse);
+                    //mAnimatable = (Animatable) (mAddButton).getDrawable();
+                    //mAnimatable.start();
                     applyRippleColor(mPalette.getVibrantColor(defaultColorForRipple),
                             mPalette.getDarkVibrantColor(defaultColorForRipple));
                 }
@@ -223,7 +223,7 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
     public void onBackPressed() {
         AlphaAnimation alphaAnimation = new AlphaAnimation(1.0f, 0.0f);
         alphaAnimation.setDuration(100);
-        mAddButton.startAnimation(alphaAnimation);
+        //mAddButton.startAnimation(alphaAnimation);
         alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -232,7 +232,7 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                mAddButton.setVisibility(View.GONE);
+                //mAddButton.setVisibility(View.GONE);
                 finishAfterTransition();
             }
 

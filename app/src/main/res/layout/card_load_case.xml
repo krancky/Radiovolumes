@@ -27,6 +27,7 @@
                 android:layout_alignParentLeft="true"
                 android:maxWidth="150dp"
                 android:maxHeight="150dp"
+                android:paddingTop="10dp"
                 android:scaleType="fitCenter"
                 android:layout_marginRight="16dp"
                 />

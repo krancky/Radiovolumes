@@ -2,7 +2,7 @@
 <resources>
     <string-array name="main_areas_array">
         <item>Oropharynx</item>
-        <item>Nasopharynx</item>
+        <item>Cavite Buccale</item>
         <item>Larynx</item>
     </string-array>
 

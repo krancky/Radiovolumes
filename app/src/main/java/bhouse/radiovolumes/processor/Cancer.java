@@ -78,7 +78,7 @@ public class Cancer implements Serializable{
 
     public int getImageResourceId(Context context) {
         Log.i("valeur identifiant", String.valueOf(context.getResources().getIdentifier(this.mainArea, "drawable", context.getPackageName())));
-        return context.getResources().getIdentifier(this.mainArea, "drawable", context.getPackageName());
+        return context.getResources().getIdentifier(this.mainArea.replaceAll("\\s+", "").toLowerCase(), "drawable", context.getPackageName());
     }
 
     /**

@@ -106,8 +106,9 @@ public class MainActivity extends Activity {
           Pair<View, String> toolbarPair = Pair.create((View)toolbar, "tActionBar");
 
           //ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, holderPair, navPair, statusPair, toolbarPair);
-          ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, holderPair, statusPair,toolbarPair);
-          ActivityCompat.startActivity(MainActivity.this, transitionIntent, options.toBundle());
+          //ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, holderPair, statusPair,toolbarPair);
+          //ActivityCompat.startActivity(MainActivity.this, transitionIntent, options.toBundle());
+          startActivity(transitionIntent);
         }
 
       }
