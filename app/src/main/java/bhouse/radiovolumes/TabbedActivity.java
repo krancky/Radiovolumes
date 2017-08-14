@@ -42,6 +42,7 @@ public class TabbedActivity extends AppCompatActivity {
     private HashMap<String, List<String>> cancerNData;
     private HashMap<String, List<String>> cancerNTarData;
     private Cancer cancer;
+    private CTV56NCase ctv56NCase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class TabbedActivity extends AppCompatActivity {
         Intent i = getIntent();
         this.cancer = (Cancer) i.getSerializableExtra("cancer");
         CTV56TCase ctv56TCase = (CTV56TCase) i.getSerializableExtra("CTV56TCase");
-        CTV56NCase ctv56NCase = (CTV56NCase) i.getSerializableExtra("CTV56NCase");
+        ctv56NCase = (CTV56NCase) i.getSerializableExtra("CTV56NCase");
         cancerTData = new HashMap<String, HashMap<String, List<String>>>();
         cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
         cancerNData = new HashMap<String, List<String>>();
@@ -262,5 +263,13 @@ public class TabbedActivity extends AppCompatActivity {
 
     public Cancer getCancer() {
         return this.cancer;
+    }
+
+    public void setCtv56NCase(CTV56NCase ctv56NCase) {
+        this.ctv56NCase = ctv56NCase;
+    }
+
+    public List<String> getCtv56NCase() {
+        return ctv56NCase.getModifier();
     }
 }

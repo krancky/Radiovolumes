@@ -28,6 +28,15 @@ public class CTV56NUCase {
      * @return the case s volumes
      */
 
+    List<String> modifier = new ArrayList<>();
+
+    public List<String> getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier.add(modifier);
+    }
 
     public String getSide() {
         return side;

@@ -94,7 +94,6 @@ public class CTV56TCase implements Serializable{
      */
     public void addAllTVolumeToMap(List<LRTumorTargetVolume> TVolumes){
         this.cTV56TTarVolumes.addAll(TVolumes);
-        Log.i("chargement",this.getCaseTTarVolumes().toString());
     }
 
     public void removeTarVolumesDuplicates(){

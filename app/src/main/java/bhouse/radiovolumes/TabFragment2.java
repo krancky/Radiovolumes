@@ -13,6 +13,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -28,6 +29,7 @@ public class TabFragment2 extends Fragment {
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     private HashMap<String, List<String>> cancerNData;
     private HashMap<String, List<String>> cancerNTarData;
+    private List<String> modifiers;
     private Cancer cancer;
 
     private TabbedActivity activity;
@@ -40,6 +42,7 @@ public class TabFragment2 extends Fragment {
         cancerNTarData = new HashMap<String, List<String>>();
         cancerNTarData = activity.getCancerNTarData();
         cancerTTarData = activity.getCancerTTarData();
+        modifiers = activity.getCtv56NCase();
         this.cancer = activity.getCancer();
 
         View view = inflater.inflate(R.layout.tab_fragment_2, container, false);
@@ -54,10 +57,13 @@ public class TabFragment2 extends Fragment {
     public void perform(View v){
         ListView lvT = (ListView)v.findViewById(R.id.listView_invaded_T);
         ListView lvN = (ListView)v.findViewById(R.id.listView_invaded_N);
+        ListView lvNotes = (ListView)v.findViewById(R.id.listView_additional_notes);
         HashAdapter mAdapterT = new HashAdapter(cancerTTarData, this.cancer);
         HashNAdapter mAdapterN = new HashNAdapter(cancerNTarData, this.cancer);
+        ArrayAdapter<String> notesAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, modifiers);
         lvT.setAdapter(mAdapterT);
         lvN.setAdapter(mAdapterN);
+        lvNotes.setAdapter(notesAdapter);
 
 
         Button toScan = (Button)v.findViewById(R.id.button_to_scan);

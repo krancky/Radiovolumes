@@ -37,6 +37,24 @@
         android:layout_below="@id/textView_tab_1_T">
     </ListView>
 
+    <TextView
+        android:id="@+id/textView_tab_1_Notes"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:gravity="center"
+        android:background="@color/primary"
+        android:text="Additionnal Notes"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <ListView
+        android:id="@+id/listView_additional_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_tab_1_Notes">
+    </ListView>
+
+
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

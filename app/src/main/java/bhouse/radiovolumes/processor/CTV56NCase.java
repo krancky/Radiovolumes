@@ -17,6 +17,16 @@ public class CTV56NCase implements Serializable{
     private String caseName;
     private int identifier;
 
+    List<String> modifier = new ArrayList<>();
+
+    public List<String> getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(List<String> modifier) {
+        this.modifier.addAll(modifier);
+    }
+
     // Stores in Hashmap the target lymph node volumes associated to spread volume
     private List<LRNodeTargetVolume> cTV56NTarVolumes = new ArrayList<>();
 

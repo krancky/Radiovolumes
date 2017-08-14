@@ -13,6 +13,7 @@ public class LRNodeTargetVolume implements Serializable{
     String area = new String();
     String side = new String();
 
+
     public String getLocation() {
         return this.location;
     }
