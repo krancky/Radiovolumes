@@ -20,12 +20,6 @@ android:layout_centerInParent="true" >
 
     </ImageView>
 
-    <ImageView
-        android:id="@+id/view_vector"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-         >
-    </ImageView>
 </FrameLayout>
 
 </bhouse.radiovolumes.ZoomView>

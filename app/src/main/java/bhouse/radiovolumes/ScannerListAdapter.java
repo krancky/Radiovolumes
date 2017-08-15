@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -43,8 +44,15 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem>{
             convertView = LayoutInflater.from(context).inflate(R.layout.list_view_scan, parent, false);
             convertView.setMinimumHeight(parent.getMeasuredHeight());
             holder = new ViewHolder();
+            SliceItem item = getItem(position);
             holder.scanView = (ImageView)convertView.findViewById(R.id.view_scan);
-            holder.vectorView = (ImageView)convertView.findViewById(R.id.view_vector);
+            holder.frameLayout = (FrameLayout) convertView.findViewById(R.id.zoomView);
+            for (int i = 1; i < item.getVectorStorageLocation().size(); i++){
+                ImageView imageView = new ImageView(holder.frameLayout.getContext());
+                int resId = context.getResources().getIdentifier( item.getVectorStorageLocation().get(i), "drawable", context.getPackageName());
+                imageView.setImageResource(resId);
+                holder.frameLayout.addView(imageView);
+            }
             convertView.setTag(holder);
 
         }
@@ -63,16 +71,6 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem>{
                 .error(R.drawable.borabora)
                 .into(holder.scanView);
 
-        int resId_vect = this.context.getResources().getIdentifier(item.getVectorStorageLocation(), "drawable", context.getPackageName());
-
-        //Picasso
-                //.with(context)
-                //.load(resId_vect)
-                //.error(R.drawable.dubai)
-                //.into(holder.vectorView);
-        holder.vectorView.setImageResource(resId_vect);
-
-        Log.i("image chargee",convertView.getResources().toString());
 
         return convertView;
 
@@ -80,8 +78,9 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem>{
 
     static class ViewHolder
     {
+        FrameLayout frameLayout;
         ImageView scanView;
-        ImageView vectorView;
+        ImageView[] vectorView;
         // va falloir en mettre un paquet en dynamique. Ou alors tous les mettre mais des fois null.
 
     }

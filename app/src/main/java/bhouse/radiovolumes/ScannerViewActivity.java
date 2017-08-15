@@ -3,6 +3,7 @@ package bhouse.radiovolumes;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
@@ -11,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import bhouse.radiovolumes.R;
 
@@ -19,6 +22,8 @@ import bhouse.radiovolumes.R;
  * status bar and navigation/system bar) with user interaction.
  */
 public class ScannerViewActivity extends Activity {
+    private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
+    private HashMap<String, List<String>> cancerNTarData;
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -96,6 +101,12 @@ public class ScannerViewActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_scanner_view);
+
+        Intent i = getIntent();
+        //cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
+        //cancerNTarData = new HashMap<String, List<String>>();
+        cancerTTarData = (HashMap<String, HashMap<String, List<String>>>)i.getSerializableExtra("cancerTTarData");
+        cancerNTarData = (HashMap<String, List<String>>) i.getSerializableExtra("cancerNTarData");
 
         mVisible = false;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
@@ -184,7 +195,15 @@ public class ScannerViewActivity extends Activity {
             SliceItem slice = new SliceItem();
             slice.setNumber(String.valueOf(i));
             slice.setStorageLocation("scan_"+String.valueOf(i));
-            slice.setVectorStorageLocation("ic_vector_"+String.valueOf(i));
+            for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()){
+                HashMap<String, List<String>> sideMap = areaMap.getValue();
+                for (HashMap.Entry<String, List<String>> map: sideMap.entrySet()){
+                    for (String location:map.getValue()){
+                        slice.addVectorStorageLocation("ic_vector_"+location.replaceAll("\\s+", "").toLowerCase()+"_"+String.valueOf(i));
+                    }
+                }
+            }
+
             sliceItems.add(slice);
         }
     }

@@ -1,5 +1,8 @@
 package bhouse.radiovolumes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by kranck on 8/3/2017.
  */
@@ -7,14 +10,14 @@ package bhouse.radiovolumes;
 public class SliceItem {
     private String storageLocation;
     private String number;
-    private String vectorStorageLocation;
+    private List<String> vectorStorageLocation = new ArrayList<>();
 
-    public String getVectorStorageLocation() {
+    public List<String> getVectorStorageLocation() {
         return vectorStorageLocation;
     }
 
-    public void setVectorStorageLocation(String vectorStorageLocation) {
-        this.vectorStorageLocation = vectorStorageLocation;
+    public void addVectorStorageLocation(String vectorStorageLocation) {
+        this.vectorStorageLocation.add(vectorStorageLocation);
     }
 
     public String getStorageLocation() {

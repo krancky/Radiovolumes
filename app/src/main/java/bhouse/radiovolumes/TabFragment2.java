@@ -18,10 +18,14 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import bhouse.radiovolumes.processor.Cancer;
+
+import static android.R.attr.mode;
 
 public class TabFragment2 extends Fragment {
 
@@ -55,12 +59,19 @@ public class TabFragment2 extends Fragment {
     }
 
     public void perform(View v){
+
+        List<String> modiferPrint = new ArrayList<String>();
+        Map<String,String> modifiers_label = ModifierHashOperator.getHashMapResource(getContext(), R.xml.map);
+        for (String modifier: modifiers){
+            modiferPrint.add(modifiers_label.get(modifier));
+        }
+
         ListView lvT = (ListView)v.findViewById(R.id.listView_invaded_T);
         ListView lvN = (ListView)v.findViewById(R.id.listView_invaded_N);
         ListView lvNotes = (ListView)v.findViewById(R.id.listView_additional_notes);
         HashAdapter mAdapterT = new HashAdapter(cancerTTarData, this.cancer);
         HashNAdapter mAdapterN = new HashNAdapter(cancerNTarData, this.cancer);
-        ArrayAdapter<String> notesAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, modifiers);
+        ArrayAdapter<String> notesAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, modiferPrint);
         lvT.setAdapter(mAdapterT);
         lvN.setAdapter(mAdapterN);
         lvNotes.setAdapter(notesAdapter);
@@ -71,8 +82,9 @@ public class TabFragment2 extends Fragment {
         toScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("truc", "bidule");
                 Intent i = new Intent(getActivity(), ScannerViewActivity.class);
+                i.putExtra("cancerTTarData", cancerTTarData);
+                i.putExtra("cancerNTarData", cancerNTarData);
                 startActivity(i);
             }
         });

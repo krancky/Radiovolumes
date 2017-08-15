@@ -17,7 +17,7 @@
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>1</Identifier>
-        <Modifier>modif1</Modifier>
+        <Modifier>mod1</Modifier>
         <SVolumes>
             <SLN>IA</SLN>
             <SLNSide>Gauche</SLNSide>
@@ -69,7 +69,7 @@
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>4</Identifier>
-        <Modifier>modif2</Modifier>
+        <Modifier>mod2</Modifier>
         <SVolumes>
             <SLN>IIB</SLN>
             <SLNSide>Gauche</SLNSide>

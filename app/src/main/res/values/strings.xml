@@ -13,4 +13,6 @@
     <string name="title_activity_scanner_view">ScannerViewActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="slice_number">2</string>
+    <string name="contour_number">2</string>
 </resources>
