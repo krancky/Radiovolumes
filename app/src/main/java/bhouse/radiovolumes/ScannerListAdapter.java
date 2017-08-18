@@ -47,13 +47,6 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem>{
             SliceItem item = getItem(position);
             holder.scanView = (ImageView)convertView.findViewById(R.id.view_scan);
             holder.frameLayout = (FrameLayout) convertView.findViewById(R.id.zoomView);
-            for (int i = 1; i < item.getVectorStorageLocation().size(); i++){
-                ImageView imageView = new ImageView(holder.frameLayout.getContext());
-                int resId = context.getResources().getIdentifier( item.getVectorStorageLocation().get(i), "drawable", context.getPackageName());
-                imageView.setImageResource(resId);
-                holder.frameLayout.addView(imageView);
-            }
-            convertView.setTag(holder);
 
         }
         else{
@@ -61,6 +54,16 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem>{
         }
 
         SliceItem item = getItem(position);
+
+        int i;
+        for (i = 0; i < item.getVectorStorageLocation().size(); i++){
+            ImageView imageView = new ImageView(holder.frameLayout.getContext());
+            String truc = item.getVectorStorageLocation().get(i);
+            int resId = context.getResources().getIdentifier( item.getVectorStorageLocation().get(i), "drawable", context.getPackageName());
+            imageView.setImageResource(resId);
+            holder.frameLayout.addView(imageView);
+        }
+        convertView.setTag(holder);
         //ImageView imageView = (ImageView)convertView.findViewById(R.id.slice_item_imageView);
         //imageView.setImageResource(0);
 

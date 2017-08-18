@@ -7,24 +7,9 @@
         <Identifier>1</Identifier>
         <TVolumes>
             <TVolume>
-                <TLocation>Base de Langue</TLocation>
-                <TSide>Gauche</TSide>
-                <TArea>Cavite Buccale</TArea>
-            </TVolume>
-            <TVolume>
-                <TLocation>Base de Langue</TLocation>
+                <TLocation>cylindre__2</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Oropharynx</TArea>
-            </TVolume>
-            <TVolume>
-                <TLocation>Sinus</TLocation>
-                <TSide>Gauche</TSide>
-                <TArea>Cavite Buccale</TArea>
-            </TVolume>
-            <TVolume>
-                <TLocation>Sinus</TLocation>
-                <TSide>Droit</TSide>
-                <TArea>Cavite Buccale</TArea>
             </TVolume>
         </TVolumes>
     </LRTCTVUCase>
@@ -40,7 +25,7 @@
         </Modifiers>
         <TVolumes>
             <TVolume>
-                <TLocation>Base de Langue</TLocation>
+                <TLocation>cube___</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>

@@ -191,7 +191,7 @@ public class ScannerViewActivity extends Activity {
 
     public void prepare_scan_data(){
         int i;
-        for (i =1; i<3; i++ ){
+        for (i =0; i<100; i++ ){
             SliceItem slice = new SliceItem();
             slice.setNumber(String.valueOf(i));
             slice.setStorageLocation("scan_"+String.valueOf(i));
@@ -199,7 +199,8 @@ public class ScannerViewActivity extends Activity {
                 HashMap<String, List<String>> sideMap = areaMap.getValue();
                 for (HashMap.Entry<String, List<String>> map: sideMap.entrySet()){
                     for (String location:map.getValue()){
-                        slice.addVectorStorageLocation("ic_vector_"+location.replaceAll("\\s+", "").toLowerCase()+"_"+String.valueOf(i));
+                        slice.addVectorStorageLocation(location.replaceAll("\\s+", "").toLowerCase()+"___"+String.valueOf(i));
+                        //truc
                     }
                 }
             }
