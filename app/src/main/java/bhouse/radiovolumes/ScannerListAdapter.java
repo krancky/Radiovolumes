@@ -18,16 +18,19 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import static android.view.KeyCharacterMap.load;
+import static com.squareup.picasso.Picasso.with;
+
 /**
  * Created by kranck on 8/3/2017.
  */
 
-public class ScannerListAdapter extends ArrayAdapter<SliceItem>{
+public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
     private Context context;
     private LayoutInflater inflater;
     private ArrayList<SliceItem> slices;
 
-    public ScannerListAdapter(Context context, ArrayList<SliceItem> slices){
+    public ScannerListAdapter(Context context, ArrayList<SliceItem> slices) {
         super(context, R.layout.list_view_scan, slices);
         this.context = context;
         this.slices = slices;
@@ -36,49 +39,48 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem>{
 
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent){
+    public View getView(int position, View convertView, ViewGroup parent) {
 
         ViewHolder holder;
 
-        if (convertView == null){
+        if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.list_view_scan, parent, false);
             convertView.setMinimumHeight(parent.getMeasuredHeight());
             holder = new ViewHolder();
-            SliceItem item = getItem(position);
-            holder.scanView = (ImageView)convertView.findViewById(R.id.view_scan);
+
+            holder.scanView = (ImageView) convertView.findViewById(R.id.view_scan);
             holder.frameLayout = (FrameLayout) convertView.findViewById(R.id.zoomLayout);
-
-            int resIdScan = this.context.getResources().getIdentifier(item.getStorageLocation(), "drawable", context.getPackageName());
-            Picasso
-                    .with(context)
-                    .load(resIdScan)
-                    .error(R.drawable.borabora)
-                    .into(holder.scanView);
-
-
-            for (int i = 0; i < item.getVectorStorageLocation().size(); i++){
-                ImageView imageView = new ImageView(context);
-                String truc = item.getVectorStorageLocation().get(i);
-                //int resId = context.getResources().getIdentifier( item.getVectorStorageLocation().get(i), "drawable", context.getPackageName());
-                String resourceName = "cylindre__2___"+String.valueOf(position);
-                int resId = context.getResources().getIdentifier( resourceName, "drawable", context.getPackageName());
-                    imageView.setImageResource(resId);
-                    holder.frameLayout.addView(imageView);
-            }
             convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
 
         }
-        else{
-            holder = (ViewHolder)convertView.getTag();
 
-            }
+        SliceItem item = getItem(position);
+        holder.frameLayout.removeAllViews();
+        int resIdScan = this.context.getResources().getIdentifier(item.getStorageLocation(), "drawable", context.getPackageName());
+        //Picasso
+                //.with(context)
+                //.load(resIdScan)
+                //.error(R.drawable.borabora)
+                //.into(holder.scanView);
 
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(resIdScan);
+        holder.frameLayout.addView(imageView);
+
+        for (int i = 0; i < item.getVectorStorageLocation().size(); i++) {
+            imageView = new ImageView(context);
+            String resourceName = "cylindre__2___" + String.valueOf(position);
+            int resId = context.getResources().getIdentifier(resourceName, "drawable", context.getPackageName());
+            imageView.setImageResource(resId);
+            holder.frameLayout.addView(imageView);
+        }
         return convertView;
-
     }
 
-    static class ViewHolder
-    {
+
+    static class ViewHolder {
         FrameLayout frameLayout;
         ImageView scanView;
     }
