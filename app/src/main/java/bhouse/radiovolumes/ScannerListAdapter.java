@@ -71,8 +71,10 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
 
         for (int i = 0; i < item.getVectorStorageLocation().size(); i++) {
             imageView = new ImageView(context);
-            String resourceName = "cylindre__2___" + String.valueOf(position);
-            int resId = context.getResources().getIdentifier(resourceName, "drawable", context.getPackageName());
+            String truc = item.getVectorStorageLocation().get(i);
+            int resId = context.getResources().getIdentifier( item.getVectorStorageLocation().get(i), "drawable", context.getPackageName());
+
+            //int resId = context.getResources().getIdentifier(resourceName, "drawable", context.getPackageName());
             imageView.setImageResource(resId);
             holder.frameLayout.addView(imageView);
         }
