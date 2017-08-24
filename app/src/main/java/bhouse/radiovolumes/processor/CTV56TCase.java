@@ -96,6 +96,9 @@ public class CTV56TCase implements Serializable{
         this.cTV56TTarVolumes.addAll(TVolumes);
     }
 
+    /**
+     * Removes duplicates in target volumes
+     */
     public void removeTarVolumesDuplicates(){
         Set<LRTumorTargetVolume> s = new HashSet<LRTumorTargetVolume>();
         s.addAll(this.getCaseTTarVolumes());

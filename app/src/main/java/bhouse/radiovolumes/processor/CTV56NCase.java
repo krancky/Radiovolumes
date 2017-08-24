@@ -80,7 +80,6 @@ public class CTV56NCase implements Serializable{
     }
 
 
-
     /**
      * Add all N Target volumes of selected uCase to TarVolumes
      *
@@ -90,6 +89,9 @@ public class CTV56NCase implements Serializable{
         this.cTV56NTarVolumes.addAll(TVolumes);
     }
 
+    /**
+     * Removes duplicates in computed target volumes
+     */
     public void removeTarVolumesDuplicates() {
         Set<LRNodeTargetVolume> s = new HashSet<>();
         s.addAll(this.getCaseNTarVolumes());

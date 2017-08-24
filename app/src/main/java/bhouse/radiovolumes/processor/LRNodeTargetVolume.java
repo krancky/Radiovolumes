@@ -3,11 +3,13 @@ package bhouse.radiovolumes.processor;
 import java.io.Serializable;
 
 /**
+ * LR Node target volumes are loaded in CTV56NTCase
  * Created by kranck on 7/19/2017.
  */
 
 public class LRNodeTargetVolume implements Serializable{
 
+    // Node date
     String location = new String();
     String content = new String();
     String area = new String();
@@ -50,6 +52,12 @@ public class LRNodeTargetVolume implements Serializable{
         return (this.location + this.side + this.area);
     }
 
+    /**
+     * Serialisation methods
+     *
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

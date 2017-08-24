@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -117,18 +118,15 @@ public class ScannerViewActivity extends Activity {
 
         mContentView.setAdapter(new ScannerListAdapter(this,sliceItems));
 
-        //mContentView.setImageResource(R.drawable.scan_1);
-
 
         // Set up the user interaction to manually show or hide the system UI.
-        //mContentView.setOnItemClickListener(new View.OnItemClickListener() {
-            //@Override
-            //public void onClick(View view) {
-                //toggle();
-            //}
-        //});
-        //ImageView vector = (ImageView) findViewById(R.id.fullscreen_content_vector);
-        //vector.setImageResource(R.drawable.ic_vector_2);
+        mContentView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
+                toggle();
+            }
+        });
+
 
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
@@ -199,12 +197,16 @@ public class ScannerViewActivity extends Activity {
                 HashMap<String, List<String>> sideMap = areaMap.getValue();
                 for (HashMap.Entry<String, List<String>> map: sideMap.entrySet()){
                     for (String location:map.getValue()){
-                        slice.addVectorStorageLocation(location.replaceAll("\\s+", "").toLowerCase()+"___"+String.valueOf(i));
-                        //truc
+                        slice.addVectorStorageLocation(location.replaceAll("\\s+", "").toLowerCase()+ "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() +"___"+String.valueOf(i));
                     }
                 }
             }
-
+            for (HashMap.Entry<String, List<String>> nodeMap : cancerNTarData.entrySet()){
+                List<String> sideMap = nodeMap.getValue();
+                    for (String location:sideMap){
+                        slice.addVectorStorageLocation(location.replaceAll("\\s+", "").toLowerCase()+ "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() +"___"+String.valueOf(i));
+                    }
+                }
             sliceItems.add(slice);
         }
     }

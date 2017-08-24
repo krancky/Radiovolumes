@@ -15,4 +15,6 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="slice_number">2</string>
     <string name="contour_number">2</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
 </resources>

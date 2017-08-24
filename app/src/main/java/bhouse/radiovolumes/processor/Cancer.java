@@ -24,7 +24,19 @@ public class Cancer implements Serializable{
     // Private hashmaps store cancer data
     private List<NodeAreaTemplate> cancerNVolumes = new ArrayList<NodeAreaTemplate>();
     private List<TumorAreaTemplate> cancerTVolumes = new ArrayList<TumorAreaTemplate>();
+
+    // Main side of Cancer
     private String mainSide;
+
+    // Main Area of Cancer
+    private String mainArea;
+
+    //Name of Case
+    private String name;
+
+    // Date of last access
+    private Date time;
+
 
     public String getName() {
         return name;
@@ -33,12 +45,6 @@ public class Cancer implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-
-    private String name;
-
-    private String mainArea;
-
-    private Date time;
 
     public Date getTime() {
         return time;
@@ -65,7 +71,7 @@ public class Cancer implements Serializable{
     }
 
     /**
-     * Add n volume from NodeTemplate
+     * Add n volumes from NodeTemplate
      *
      * @param spreadVolume the spread volume
      * @param integer      the integer
@@ -76,8 +82,14 @@ public class Cancer implements Serializable{
         }
     }
 
+    /**
+     * Returns the identifier of the image associated with the main area
+     * to display within the loading activity
+     *
+     * @param context
+     * @return integer
+     */
     public int getImageResourceId(Context context) {
-        Log.i("valeur identifiant", String.valueOf(context.getResources().getIdentifier(this.mainArea, "drawable", context.getPackageName())));
         return context.getResources().getIdentifier(this.mainArea.replaceAll("\\s+", "").toLowerCase(), "drawable", context.getPackageName());
     }
 
@@ -117,18 +129,16 @@ public class Cancer implements Serializable{
     public void nClear(){
         cancerNVolumes.clear();
     }
-
     public void tClear(){
         cancerTVolumes.clear();
     }
 
-    @Override
-    public String toString() {
-        return "Cancer{" +
-                "cancerNVolumes=" + cancerNVolumes +
-                '}';
-    }
 
+    /**
+     * Saves the cancer to file as a .duc file
+     *
+     * @param context
+     */
     public void saveToFile (Context context){
         try{
             FileOutputStream fileOutputStream = context.openFileOutput(this.name +".duc", Context.MODE_PRIVATE);
@@ -136,14 +146,20 @@ public class Cancer implements Serializable{
             objectOutputStream.writeObject(this);
             objectOutputStream.close();
             fileOutputStream.close();
-            Log.i("path ecriture", context.getFilesDir().toString());
-            Log.i("path ecriture", context.getFilesDir().toString());
         }
         catch (IOException e){
             e.printStackTrace();
         }
     }
 
+    /**
+     * Loads all cancer data from file.
+     * Called when clicking on case in loading activity
+     *
+     * @param context
+     * @param name
+     * @return
+     */
     public static Cancer readFromFile(Context context, String name){
         Cancer cancer = null;
         try{

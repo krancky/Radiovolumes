@@ -13,6 +13,10 @@ public class CTV56TUCase {
 
     // Name and identifier of elementary case
     private String location;
+    private int identifier;
+    //Side of the U case
+    private String side;
+
 
     public String getSide() {
         return side;
@@ -22,10 +26,10 @@ public class CTV56TUCase {
         this.side = side;
     }
 
-    private String side;
-    private int identifier;
+
     // Stores in Hashmap one and only one spread volume
     private HashMap<String, Integer> uCaseSVolumes = new HashMap<String, Integer>();
+
     // Stores in Hashmap the target lymph node volumes associated to spread volume
     private List<LRTumorTargetVolume> uCaseTVolumes = new ArrayList<LRTumorTargetVolume>() {
     };

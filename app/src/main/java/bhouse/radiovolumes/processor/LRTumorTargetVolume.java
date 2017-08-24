@@ -3,11 +3,14 @@ package bhouse.radiovolumes.processor;
 import java.io.Serializable;
 
 /**
+ * LR Tumor Target Volumes are loaded in CTV56TCase
+ *
  * Created by kranck on 7/19/2017.
  */
 
 public class LRTumorTargetVolume implements Serializable{
 
+    // T volume data
     String location,content, area, side;
 
     public String getLocation() {
@@ -46,6 +49,13 @@ public class LRTumorTargetVolume implements Serializable{
         return (this.location + this.side + this.area);
     }
 
+
+    /**
+     * Serialisation methods
+     *
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -25,21 +25,18 @@ public class HashMapOperator {
         cTV56NCase.setCaseName("Lymph nodes to irradiate");
         // Iterates on all elementary cases to associate to spread volumes in actual cancer, then computes linear combination of target volumes and returns final CTV56NCase
         for (TumorAreaTemplate cancerTVolumes : cancer.getCancerTVolumes()){
-
             for (CTV56NUCase ctv56NUCase:ctv56NUCaseList) {
                 if (cancer.getCancerNVolumes().isEmpty()) {
                     if (cancerTVolumes.getLeftContent().equals("1")){
                         if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && ctv56NUCase.getSide().equals("Gauche") && ctv56NUCase.getSpreadLocation().isEmpty()) {
                             cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
                             cTV56NCase.setModifier(ctv56NUCase.getModifier());
-                            Log.i("touche", "coule");
                         }
                     }
                     if (cancerTVolumes.getRightContent().equals("1")){
                         if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && ctv56NUCase.getSide().equals("Droite") && ctv56NUCase.getSpreadLocation().isEmpty()) {
                             cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
                             cTV56NCase.setModifier(ctv56NUCase.getModifier());
-                            Log.i("touche", "coule");
                         }
                     }
 
@@ -89,6 +86,13 @@ public class HashMapOperator {
 
     }
 
+    /**
+     * Computes the List of Tumor Sublevels
+     *
+     * @param ctv56TUCaseList
+     * @param cancer
+     * @param cTV56TCase
+     */
     public void cTV56TCase(List<CTV56TUCase> ctv56TUCaseList, Cancer cancer, CTV56TCase cTV56TCase){
         // Sets the name of structure holding the lymph nodes to irradiate
         cTV56TCase.setCaseName("Prophylactic peritumoral area to irradiate");
@@ -113,6 +117,15 @@ public class HashMapOperator {
 
     }
 
+    /**
+     * Update methods calls the tzo former methods, in order.
+     *
+     * @param ctv56TUCaseList
+     * @param ctv56NUCaseList
+     * @param cancer
+     * @param cTV56TCase
+     * @param cTV56NCase
+     */
     public void update(List<CTV56TUCase> ctv56TUCaseList, List<CTV56NUCase> ctv56NUCaseList, Cancer cancer, CTV56TCase cTV56TCase, CTV56NCase cTV56NCase){
         this.cTV56TCase(ctv56TUCaseList, cancer, cTV56TCase);
         this.cTV56NCase(ctv56NUCaseList, cancer, cTV56NCase);

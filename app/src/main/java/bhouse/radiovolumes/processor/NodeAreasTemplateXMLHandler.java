@@ -68,7 +68,6 @@ public class NodeAreasTemplateXMLHandler {
                             if (tagname.equalsIgnoreCase("Volume")) {
                                 // Creates a new instance of CTV56NUCase
                                 nodeAreaTemplate = new NodeAreaTemplate();
-                                Log.i("hop","New Template Volume");
                             }
                             break;
 
@@ -82,10 +81,13 @@ public class NodeAreasTemplateXMLHandler {
                                 // add CTV56NUCase object to catalog
                                 NodeAreaTemplateList.add(nodeAreaTemplate);
                             } else if (tagname.equalsIgnoreCase("Short")) {
+                                // reads the node name in roman numbers
                                 nodeAreaTemplate.setNodeLocation(text);
+                                // initializes the content
                                 nodeAreaTemplate.setLeftContent("0");
                                 nodeAreaTemplate.setRightContent("0");
                             }   else if (tagname.equalsIgnoreCase("Long")) {
+                                // reads the name of the node
                                 nodeAreaTemplate.setCompleteName(text);
                             }
 
