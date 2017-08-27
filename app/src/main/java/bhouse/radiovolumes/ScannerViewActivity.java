@@ -2,27 +2,29 @@ package bhouse.radiovolumes;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
+import android.app.Dialog;
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import bhouse.radiovolumes.R;
-
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class ScannerViewActivity extends Activity {
+public class ScannerViewActivity extends Activity implements MyDialogFragment.OnCompleteListener {
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     private HashMap<String, List<String>> cancerNTarData;
     /**
@@ -97,6 +99,20 @@ public class ScannerViewActivity extends Activity {
         }
     };
 
+    public void onComplete(HashMap<String, HashMap<String, List<String>>> cancerTTarData) {
+        // After the dialog fragment completes, it calls this callback.
+        // use the string here
+        Toast.makeText(getApplicationContext(),"I got back with new information" + cancerTTarData, Toast.LENGTH_SHORT).show();
+    }
+
+    public HashMap<String, HashMap<String, List<String>>> getCancerTTarData() {
+        return cancerTTarData;
+    }
+
+    public HashMap<String, List<String>> getCancerNTarData() {
+        return cancerNTarData;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,7 +148,26 @@ public class ScannerViewActivity extends Activity {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+
+        mContentView.setLongClickable(true);
+        mContentView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+                                           int pos, long id) {
+                // TODO Auto-generated method stub
+
+                Log.i("long clicked","pos: " + pos);
+                Toast.makeText(getApplicationContext(),"Lon click position" + pos, Toast.LENGTH_SHORT).show();
+                FragmentManager fm = getFragmentManager();
+                MyDialogFragment dialogFragment = MyDialogFragment.newInstance ("Displayed Locations");
+                dialogFragment.show(fm, "Sample Fragment");
+
+                return true;
+            }
+        });
     }
+
+
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -189,7 +224,7 @@ public class ScannerViewActivity extends Activity {
 
     public void prepare_scan_data(){
         int i;
-        for (i =0; i<100; i++ ){
+        for (i =0; i<222; i++ ){
             SliceItem slice = new SliceItem();
             slice.setNumber(String.valueOf(i));
             slice.setStorageLocation("scan_"+String.valueOf(i));

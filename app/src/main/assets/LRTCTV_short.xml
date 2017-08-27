@@ -7,12 +7,28 @@
         <Identifier>1</Identifier>
         <TVolumes>
             <TVolume>
-                <TLocation>cylindre__2</TLocation>
+                <TLocation>amygdale</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Oropharynx</TArea>
             </TVolume>
         </TVolumes>
     </LRTCTVUCase>
+
+
+    <LRTCTVUCase>Langue mobile 2
+        <Location>Langue Mobile</Location>
+        <Side>droite</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <TVolumes>
+            <TVolume>
+                <TLocation>amygdale</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+
 
 
     <LRTCTVUCase>Plancher 1
@@ -25,8 +41,13 @@
         </Modifiers>
         <TVolumes>
             <TVolume>
-                <TLocation>cube</TLocation>
+                <TLocation>amygdale</TLocation>
                 <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>amygdale</TLocation>
+                <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
@@ -35,13 +56,13 @@
                 <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Plancher</TLocation>
+                <TLocation>sillon</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Plancher</TLocation>
-                <TSide>Droit</TSide>
+                <TLocation>mandibule</TLocation>
+                <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
         </TVolumes>
