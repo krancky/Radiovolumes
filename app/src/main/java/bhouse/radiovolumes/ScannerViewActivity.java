@@ -157,7 +157,7 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
                 // TODO Auto-generated method stub
 
                 Log.i("long clicked","pos: " + pos);
-                Toast.makeText(getApplicationContext(),"Lon click position" + pos, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Long click position" + pos, Toast.LENGTH_SHORT).show();
                 FragmentManager fm = getFragmentManager();
                 MyDialogFragment dialogFragment = MyDialogFragment.newInstance ("Displayed Locations");
                 dialogFragment.show(fm, "Sample Fragment");

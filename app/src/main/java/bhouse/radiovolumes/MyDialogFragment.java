@@ -32,7 +32,7 @@ public class MyDialogFragment extends DialogFragment {
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     private HashMap<String, List<String>> cancerNTarData;
     private ScannerViewActivity activity;
-    private List<String> displayedList;
+    private ArrayList<String> displayedList;
 
 
 
@@ -75,11 +75,12 @@ public class MyDialogFragment extends DialogFragment {
 
         prepareCancerData();
         ListView lvChange = (ListView)v.findViewById(R.id.list_display);
-        ArrayAdapter<String> changeAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, displayedList);
+        //ArrayAdapter<String> changeAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, displayedList);
+        UserAdapter changeAdapter = new UserAdapter(this.getContext(), displayedList);
         lvChange.setAdapter(changeAdapter);
-        LinearLayout changeLayout = (LinearLayout) v.findViewById(R.id.change_layout);
-        changeLayout.setBackgroundColor(Color.parseColor("#00ffffff"));
-        lvChange.setBackgroundColor(Color.parseColor("#00ffffff"));
+        //LinearLayout changeLayout = (LinearLayout) v.findViewById(R.id.change_layout);
+        //changeLayout.setBackgroundColor(Color.parseColor("#00ffffff"));
+        //lvChange.setBackgroundColor(Color.parseColor("#00ffffff"));
 
         dismiss.setOnClickListener(new View.OnClickListener() {
 
@@ -91,6 +92,7 @@ public class MyDialogFragment extends DialogFragment {
         });
 
         getDialog().setTitle(getArguments().getString("title"));
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         return v;
     }
