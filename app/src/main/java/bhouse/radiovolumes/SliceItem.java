@@ -20,6 +20,10 @@ public class SliceItem {
         this.vectorStorageLocation.add(vectorStorageLocation);
     }
 
+    public  void removeVectorStorageLocation(String vectorStorageLocation){
+        this.vectorStorageLocation.remove(vectorStorageLocation);
+    }
+
     public String getStorageLocation() {
         return storageLocation;
     }
