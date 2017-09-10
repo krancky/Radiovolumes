@@ -6,10 +6,12 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -33,6 +35,7 @@ public class MyDialogFragment extends DialogFragment {
     private HashMap<String, List<String>> cancerNTarData;
     private ScannerViewActivity activity;
     private ArrayList<String> displayedList;
+    private List<SliceItem> sliceItems;
 
 
 
@@ -60,6 +63,8 @@ public class MyDialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        //getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         View v = inflater.inflate(R.layout.fragment_dialog, container, false);
 
 
@@ -72,15 +77,14 @@ public class MyDialogFragment extends DialogFragment {
         cancerNTarData = activity.getCancerNTarData();
         cancerTTarData = activity.getCancerTTarData();
         displayedList = new ArrayList<String>();
+        sliceItems = activity.getSliceItems();
 
         prepareCancerData();
         ListView lvChange = (ListView)v.findViewById(R.id.list_display);
         //ArrayAdapter<String> changeAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, displayedList);
         UserAdapter changeAdapter = new UserAdapter(this.getContext(), displayedList);
         lvChange.setAdapter(changeAdapter);
-        //LinearLayout changeLayout = (LinearLayout) v.findViewById(R.id.change_layout);
-        //changeLayout.setBackgroundColor(Color.parseColor("#00ffffff"));
-        //lvChange.setBackgroundColor(Color.parseColor("#00ffffff"));
+
 
         dismiss.setOnClickListener(new View.OnClickListener() {
 
@@ -93,8 +97,26 @@ public class MyDialogFragment extends DialogFragment {
 
         getDialog().setTitle(getArguments().getString("title"));
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        getDialog().setCanceledOnTouchOutside(true);
 
         return v;
+    }
+
+
+    public void onResume()
+    {
+        super.onResume();
+        int width = getResources().getDimensionPixelSize(R.dimen.popup_width);
+        int height = getResources().getDimensionPixelSize(R.dimen.popup_height);
+
+        //getDialog().getWindow().setLayout(
+          //      getResources().getDisplayMetrics().widthPixels,
+            //    getResources().getDisplayMetrics().heightPixels
+        //);
+        Window window = getDialog().getWindow();
+        window.setLayout(width, height);
+        window.setGravity(Gravity.CENTER);
+        //TODO:
     }
 
     void prepareCancerData(){

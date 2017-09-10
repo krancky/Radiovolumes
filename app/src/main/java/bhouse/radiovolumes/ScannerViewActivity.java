@@ -48,6 +48,10 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
     private ListView mContentView;
     private ArrayList<SliceItem> sliceItems;
 
+    public ArrayList<SliceItem> getSliceItems() {
+        return sliceItems;
+    }
+
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
@@ -108,6 +112,8 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
     public HashMap<String, HashMap<String, List<String>>> getCancerTTarData() {
         return cancerTTarData;
     }
+
+
 
     public HashMap<String, List<String>> getCancerNTarData() {
         return cancerNTarData;
