@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodeAreasTemplate>
-    <Volume>IA</Volume>
-    <Volume>IB</Volume>
+    <Volume>Ia</Volume>
+    <Volume>Ib</Volume>
     <Volume>II</Volume>
     <Volume>III</Volume>
     <Volume>IVab</Volume>

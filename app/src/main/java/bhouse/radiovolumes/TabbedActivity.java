@@ -34,6 +34,8 @@ import bhouse.radiovolumes.processor.LRTumorTargetVolume;
 import bhouse.radiovolumes.processor.NodeAreaTemplate;
 import bhouse.radiovolumes.processor.TumorAreaTemplate;
 
+import static bhouse.radiovolumes.R.xml.map;
+
 
 public class TabbedActivity extends AppCompatActivity {
 
@@ -127,20 +129,20 @@ public class TabbedActivity extends AppCompatActivity {
                 }
                 cancerTData.put(cancerTVolumes.getArea(), map);
 
-            } else if (!cancerTData.get(cancerTVolumes.getArea()).containsKey("Gauche")) {
+            } else if (!cancerTData.get(cancerTVolumes.getArea()).containsKey("Gauche") && cancerTVolumes.getLeftContent().equals("1")) {
                 HashMap<String, List<String>> map = new HashMap<String, List<String>>();
-                if (cancerTVolumes.getLeftContent().equals("1")){
-                    map = cancerTData.get(cancerTVolumes.getArea());
-                    List<String> list = new ArrayList<String>();
-                    list.add(cancerTVolumes.getLocation());
-                    map.put("Gauche", list);
-                }
-                if (cancerTVolumes.getRightContent().equals("1")){
-                    map = cancerTData.get(cancerTVolumes.getArea());
-                    List<String> list = new ArrayList<String>();
-                    list.add(cancerTVolumes.getLocation());
-                    map.put("Droite", list);
-                }
+                map = cancerTData.get(cancerTVolumes.getArea());
+                List<String> list = new ArrayList<String>();
+                list.add(cancerTVolumes.getLocation());
+                map.put("Gauche", list);
+                cancerTData.put(cancerTVolumes.getArea(), map);
+
+            } else if (!cancerTData.get(cancerTVolumes.getArea()).containsKey("Droite") && cancerTVolumes.getRightContent().equals("1")) {
+                HashMap<String, List<String>> map = new HashMap<String, List<String>>();
+                map = cancerTData.get(cancerTVolumes.getArea());
+                List<String> list = new ArrayList<String>();
+                list.add(cancerTVolumes.getLocation());
+                map.put("Droite", list);
                 cancerTData.put(cancerTVolumes.getArea(), map);
 
             } else {

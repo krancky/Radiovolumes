@@ -2,15 +2,15 @@
 <TumorsAreasTemplate>
     <Volume>
         <Area>Cavite Buccale</Area>
+        <Location>Plancher Buccal</Location>
+    </Volume>
+    <Volume>
+        <Area>Cavite Buccale</Area>
         <Location>Langue Mobile</Location>
     </Volume>
     <Volume>
         <Area>Cavite Buccale</Area>
-        <Location>Plancher</Location>
-    </Volume>
-    <Volume>
-        <Area>Cavite Buccale</Area>
-        <Location>Face interne de Joue</Location>
+        <Location>Face Interne de Joue</Location>
     </Volume>
     <Volume>
         <Area>Cavite Buccale</Area>
@@ -34,10 +34,6 @@
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>
-        <Location>Base de Langue</Location>
-    </Volume>
-    <Volume>
-        <Area>Oropharynx</Area>
         <Location>Pilier Anterieur</Location>
     </Volume>
     <Volume>
@@ -55,6 +51,10 @@
     <Volume>
         <Area>Oropharynx</Area>
         <Location>Sillon Amygdaloglosse</Location>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <Location>Base de Langue</Location>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>

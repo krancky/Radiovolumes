@@ -193,7 +193,7 @@ public class NewCaseActivity extends Activity {
         ctv56TUCaseList = new ArrayList<CTV56TUCase>();
         try {
             TUCaseXMLHandler parser = new TUCaseXMLHandler();
-            ctv56TUCaseList = parser.parse(getAssets().open("LRTCTV_short.xml"));
+            ctv56TUCaseList = parser.parse(getAssets().open("LRTCTV.xml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

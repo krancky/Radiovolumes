@@ -16,6 +16,8 @@ public class CTV56NUCase {
     public String spreadLocation = new String();
     public String spreadSide;
 
+    private List<NodeAreaTemplate> uCaseSVolumes = new ArrayList<NodeAreaTemplate>();
+
     private int identifier;
     // Stores in Hashmap one and only one spread volume
     //private HashMap<String, Integer> uCaseSVolumes = new HashMap<String, Integer>();
@@ -112,6 +114,10 @@ public class CTV56NUCase {
      */
     public void addTVolumeToMap(LRNodeTargetVolume lrNodeTargetVolume){
         this.uCaseTVolumes.add(lrNodeTargetVolume);
+    }
+
+    public void addSVolumeToMap(NodeAreaTemplate lrNodeSpreadVolume){
+        this.uCaseSVolumes.add(lrNodeSpreadVolume);
     }
 
 

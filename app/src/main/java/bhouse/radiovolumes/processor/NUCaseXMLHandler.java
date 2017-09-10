@@ -71,6 +71,10 @@ public class NUCaseXMLHandler {
                                 cTV56NUCase = new CTV56NUCase();
                                 Log.i("hop","New TV56NUCase");
                             }
+                            if (tagname.equalsIgnoreCase("SVolume")) {
+                                // Creates a new instance of the two strings defining Target LN Volume
+                                NodeAreaTemplate nodeAreaTemplate =new NodeAreaTemplate();
+                            }
                             if (tagname.equalsIgnoreCase("TVolume")) {
                                 // Creates a new instance of the two strings defining Target LN Volume
                                 lrNodeTargetVolume =new LRNodeTargetVolume();

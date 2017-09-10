@@ -1,100 +1,163 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <UCaseCatalog>
-    <CTV56NUCase>Languemobile 0
+    <CTV56NUCase>Languemobile 0G
         <Location>Langue Mobile</Location>
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
         <TVolumes>
             <TVolume>
-                <TLN>IB</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
-        </TVolumes>
-    </CTV56NUCase>
-
-
-    <CTV56NUCase>Languemobile 1
-        <Location>Langue Mobile</Location>
-        <Area>Cavite Buccale</Area>
-        <Side>Gauche</Side>
-        <Identifier>1</Identifier>
-        <Modifier>mod1</Modifier>
-        <SVolumes>
-            <SLN>IA</SLN>
-            <SLNSide>Gauche</SLNSide>
-        </SVolumes>
-        <TVolumes>
-            <TVolume>
-                <TLN>IA</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
+            <TLN>IA</TLN>
+            <TLNSide>Gauche</TLNSide>
+        </TVolume>
             <TVolume>
                 <TLN>IB</TLN>
                 <TLNSide>Gauche</TLNSide>
             </TVolume>
-        </TVolumes>
-    </CTV56NUCase>
-
-    <CTV56NUCase>Languemobile 2
-        <Location>Langue Mobile</Location>
-        <Area>Cavite Buccale</Area>
-        <Side>Gauche</Side>
-        <Identifier>4</Identifier>
-        <SVolumes>
-            <SLN>IB</SLN>
-            <SLNSide>Gauche</SLNSide>
-        </SVolumes>
-        <Modifiers>
-            <BigII>1</BigII>
-        </Modifiers>
-        <TVolumes>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
             <TVolume>
                 <TLN>IA</TLN>
-                <TLNSide>Gauche</TLNSide>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IB</TLN>
+                <TLNSide>Droite</TLNSide>
             </TVolume>
             <TVolume>
                 <TLN>II</TLN>
                 <TLNSide>Droite</TLNSide>
             </TVolume>
             <TVolume>
-                <TLN>IV</TLN>
-                <TLNSide>Gauche</TLNSide>
+                <TLN>III</TLN>
+                <TLNSide>Droite</TLNSide>
             </TVolume>
             <TVolume>
-                <TLN>IV</TLN>
+                <TLN>IVa</TLN>
                 <TLNSide>Droite</TLNSide>
             </TVolume>
         </TVolumes>
     </CTV56NUCase>
-    <CTV56NUCase>Plancher 1
-        <Location>Plancher</Location>
+    <CTV56NUCase>Languemobile 0D
+    <Location>Langue Mobile</Location>
+    <Area>Cavite Buccale</Area>
+    <Side>Droite</Side>
+    <Identifier>0</Identifier>
+    <TVolumes>
+        <TVolume>
+            <TLN>IA</TLN>
+            <TLNSide>Gauche</TLNSide>
+        </TVolume>
+        <TVolume>
+            <TLN>IB</TLN>
+            <TLNSide>Gauche</TLNSide>
+        </TVolume>
+        <TVolume>
+            <TLN>II</TLN>
+            <TLNSide>Gauche</TLNSide>
+        </TVolume>
+        <TVolume>
+            <TLN>III</TLN>
+            <TLNSide>Gauche</TLNSide>
+        </TVolume>
+        <TVolume>
+            <TLN>IVA</TLN>
+            <TLNSide>Gauche</TLNSide>
+        </TVolume>
+        <TVolume>
+            <TLN>IA</TLN>
+            <TLNSide>Droite</TLNSide>
+        </TVolume>
+        <TVolume>
+            <TLN>IB</TLN>
+            <TLNSide>Droite</TLNSide>
+        </TVolume>
+        <TVolume>
+            <TLN>II</TLN>
+            <TLNSide>Droite</TLNSide>
+        </TVolume>
+        <TVolume>
+            <TLN>III</TLN>
+            <TLNSide>Droite</TLNSide>
+        </TVolume>
+        <TVolume>
+            <TLN>IVA</TLN>
+            <TLNSide>Droite</TLNSide>
+        </TVolume>
+    </TVolumes>
+</CTV56NUCase>
+    <CTV56NUCase>Languemobile IAG
+        <Location>Langue Mobile</Location>
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
-        <Identifier>4</Identifier>
-        <Modifier>mod2</Modifier>
+        <Identifier>0</Identifier>
         <SVolumes>
-            <SLN>IIB</SLN>
-            <SLNSide>Gauche</SLNSide>
+            <SVolume>
+                <SLN>Ia</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>Ib</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
         </SVolumes>
-        <Modifiers>
-            <BigII>1</BigII>
-        </Modifiers>
         <TVolumes>
             <TVolume>
                 <TLN>IA</TLN>
                 <TLNSide>Gauche</TLNSide>
             </TVolume>
             <TVolume>
+                <TLN>IB</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IA</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IB</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
                 <TLN>III</TLN>
                 <TLNSide>Droite</TLNSide>
             </TVolume>
             <TVolume>
-                <TLN>IV</TLN>
-                <TLNSide>Gauche</TLNSide>
+                <TLN>IVA</TLN>
+                <TLNSide>Droite</TLNSide>
             </TVolume>
             <TVolume>
-                <TLN>IV</TLN>
+                <TLN>Vab</TLN>
                 <TLNSide>Droite</TLNSide>
             </TVolume>
         </TVolumes>
