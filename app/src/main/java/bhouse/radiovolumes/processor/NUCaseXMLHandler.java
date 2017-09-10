@@ -53,6 +53,7 @@ public class NUCaseXMLHandler {
             XmlPullParser parser = null;
             try {
                 LRNodeTargetVolume lrNodeTargetVolume = new LRNodeTargetVolume();
+                NodeAreaTemplate nodeAreaTemplate =new NodeAreaTemplate();
                 // Creates parser
                 factory = XmlPullParserFactory.newInstance();
                 factory.setNamespaceAware(true);
@@ -73,7 +74,7 @@ public class NUCaseXMLHandler {
                             }
                             if (tagname.equalsIgnoreCase("SVolume")) {
                                 // Creates a new instance of the two strings defining Target LN Volume
-                                NodeAreaTemplate nodeAreaTemplate =new NodeAreaTemplate();
+                                nodeAreaTemplate =new NodeAreaTemplate();
                             }
                             if (tagname.equalsIgnoreCase("TVolume")) {
                                 // Creates a new instance of the two strings defining Target LN Volume
@@ -98,9 +99,18 @@ public class NUCaseXMLHandler {
                             } else if (tagname.equalsIgnoreCase("Side")) {
                                 cTV56NUCase.setSide(text);
                             } else if (tagname.equalsIgnoreCase("SLN")) {
+                                nodeAreaTemplate.setNodeLocation(text);
                                 cTV56NUCase.setSpreadLocation(text);
                             } else if (tagname.equalsIgnoreCase("SLNSide")) {
+                                if (text.equals("Gauche")){
+                                    nodeAreaTemplate.setLeftContent("1");
+                                }
+                                else {
+                                    nodeAreaTemplate.setRightContent("1");
+                                }
                                 cTV56NUCase.setSpreadSide(text);
+                            } else if (tagname.equalsIgnoreCase("SVolume")) {
+                                cTV56NUCase.addSVolumeToMap(nodeAreaTemplate);
                             } else if (tagname.equalsIgnoreCase("TLN")) {
                                 lrNodeTargetVolume.setLocation(text);
                             } else if (tagname.equalsIgnoreCase("TLNSIDE")) {

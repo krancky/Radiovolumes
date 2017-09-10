@@ -11,6 +11,10 @@ public class CTV56NUCase {
 
     // Name and identifier of elementary case
 
+    public List<NodeAreaTemplate> getuCaseSVolumes() {
+        return uCaseSVolumes;
+    }
+
     private String location ;
     private String side;
     public String spreadLocation = new String();

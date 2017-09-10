@@ -82,8 +82,8 @@ public class MyDialogFragment extends DialogFragment {
         prepareCancerData();
         ListView lvChange = (ListView)v.findViewById(R.id.list_display);
         //ArrayAdapter<String> changeAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, displayedList);
-        UserAdapter changeAdapter = new UserAdapter(this.getContext(), displayedList);
-        lvChange.setAdapter(changeAdapter);
+        //UserAdapter changeAdapter = new UserAdapter(this.getContext(), displayedList);
+        //lvChange.setAdapter(changeAdapter);
 
 
         dismiss.setOnClickListener(new View.OnClickListener() {
