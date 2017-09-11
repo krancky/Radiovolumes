@@ -106,7 +106,6 @@ public class CTV56TCase implements Serializable{
         List<LRTumorTargetVolume> list = new ArrayList<LRTumorTargetVolume>();
         list.addAll(s);
         this.addAllTVolumeToMap(list);
-
     }
 
     @Override

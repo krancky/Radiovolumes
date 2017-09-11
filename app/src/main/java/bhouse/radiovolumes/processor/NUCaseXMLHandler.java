@@ -75,6 +75,7 @@ public class NUCaseXMLHandler {
                             if (tagname.equalsIgnoreCase("SVolume")) {
                                 // Creates a new instance of the two strings defining Target LN Volume
                                 nodeAreaTemplate =new NodeAreaTemplate();
+                                lrNodeTargetVolume =new LRNodeTargetVolume();
                             }
                             if (tagname.equalsIgnoreCase("TVolume")) {
                                 // Creates a new instance of the two strings defining Target LN Volume
@@ -104,9 +105,12 @@ public class NUCaseXMLHandler {
                             } else if (tagname.equalsIgnoreCase("SLNSide")) {
                                 if (text.equals("Gauche")){
                                     nodeAreaTemplate.setLeftContent("1");
+                                    nodeAreaTemplate.setRightContent("0");
+
                                 }
                                 else {
                                     nodeAreaTemplate.setRightContent("1");
+                                    nodeAreaTemplate.setLeftContent("0");
                                 }
                                 cTV56NUCase.setSpreadSide(text);
                             } else if (tagname.equalsIgnoreCase("SVolume")) {

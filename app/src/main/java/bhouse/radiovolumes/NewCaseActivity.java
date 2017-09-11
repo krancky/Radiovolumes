@@ -361,6 +361,7 @@ public class NewCaseActivity extends Activity {
         HashMapOperator hashMapOperator = new HashMapOperator();
         hashMapOperator.update(NewCaseActivity.this.ctv56TUCaseList, NewCaseActivity.this.ctv56NUCaseList, NewCaseActivity.this.cancer, NewCaseActivity.this.ctv56TCase, ctv56NCase);
         ctv56TCase.removeTarVolumesDuplicates();
+        ctv56NCase.removeTarVolumesDuplicates();
         NewCaseActivity.this.ctv56TCaseList.add(NewCaseActivity.this.ctv56TCase);
         NewCaseActivity.this.ctv56NCaseList.add(NewCaseActivity.this.ctv56NCase);
         Calendar c = Calendar.getInstance();

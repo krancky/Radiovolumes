@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodeAreasTemplate>
     <Volume>
-        <Short>IA</Short>
+        <Short>Ib</Short>
         <Long>Submental</Long>
     </Volume>
     <Volume>
-        <Short>IB</Short>
+        <Short>Ib</Short>
         <Long>Submandibular</Long>
     </Volume>
     <Volume>
@@ -17,19 +17,19 @@
         <Long>Median Deep Cervical</Long>
     </Volume>
     <Volume>
-        <Short>IVA</Short>
+        <Short>IVa</Short>
         <Long>Inferior Deep cervical - I</Long>
     </Volume>
     <Volume>
-        <Short>IVB</Short>
+        <Short>IVb</Short>
         <Long>Inferior Deep cervical - II</Long>
     </Volume>
     <Volume>
-        <Short>VAB</Short>
+        <Short>Vab</Short>
         <Long>SupraClavicular - I</Long>
     </Volume>
     <Volume>
-        <Short>VC</Short>
+        <Short>Vc</Short>
         <Long>SupraClavicular - II</Long>
     </Volume>
     <Volume>
