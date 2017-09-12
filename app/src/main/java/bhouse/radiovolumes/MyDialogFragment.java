@@ -20,13 +20,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 
 public class MyDialogFragment extends DialogFragment {
 
     public static interface OnCompleteListener {
-        public abstract void onComplete(HashMap<String, HashMap<String, List<String>>> cancerTTarData);
+        public abstract void onComplete(HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedList);
     }
 
 
@@ -34,7 +35,7 @@ public class MyDialogFragment extends DialogFragment {
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     private HashMap<String, List<String>> cancerNTarData;
     private ScannerViewActivity activity;
-    private ArrayList<String> displayedList;
+    private LinkedHashMap<String, Integer> displayedList;
     private List<SliceItem> sliceItems;
 
 
@@ -76,21 +77,21 @@ public class MyDialogFragment extends DialogFragment {
         cancerNTarData = new HashMap<String, List<String>>();
         cancerNTarData = activity.getCancerNTarData();
         cancerTTarData = activity.getCancerTTarData();
-        displayedList = new ArrayList<String>();
+        displayedList = new LinkedHashMap<>();
+        displayedList = activity.getDisplayedList();
         sliceItems = activity.getSliceItems();
 
-        prepareCancerData();
         ListView lvChange = (ListView)v.findViewById(R.id.list_display);
         //ArrayAdapter<String> changeAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, displayedList);
-        //UserAdapter changeAdapter = new UserAdapter(this.getContext(), displayedList);
-        //lvChange.setAdapter(changeAdapter);
+        UserAdapter changeAdapter = new UserAdapter(this.getContext(), displayedList, sliceItems);
+        lvChange.setAdapter(changeAdapter);
 
 
         dismiss.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                mListener.onComplete(cancerTTarData);
+                mListener.onComplete(cancerTTarData, cancerNTarData, displayedList);
                 dismiss();
             }
         });
@@ -118,22 +119,5 @@ public class MyDialogFragment extends DialogFragment {
         window.setGravity(Gravity.CENTER);
         //TODO:
     }
-
-    void prepareCancerData(){
-            for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()){
-                HashMap<String, List<String>> sideMap = areaMap.getValue();
-                for (HashMap.Entry<String, List<String>> map: sideMap.entrySet()){
-                    for (String location:map.getValue()){
-                        displayedList.add(location.replaceAll("\\s+", "").toLowerCase()+ " " + map.getKey().replaceAll("\\s+", "").toLowerCase());
-                    }
-                }
-            }
-            for (HashMap.Entry<String, List<String>> nodeMap : cancerNTarData.entrySet()){
-                List<String> sideMap = nodeMap.getValue();
-                for (String location:sideMap){
-                    displayedList.add(location.replaceAll("\\s+", "").toLowerCase()+ " " + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase());
-                }
-            }
-        }
 
 }

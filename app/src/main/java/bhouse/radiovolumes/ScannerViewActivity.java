@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -47,6 +48,8 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
     private final Handler mHideHandler = new Handler();
     private ListView mContentView;
     private ArrayList<SliceItem> sliceItems;
+    private LinkedHashMap<String, Integer> displayedList = new LinkedHashMap<String, Integer>();
+    private ScannerListAdapter scannerListAdapter;
 
     public ArrayList<SliceItem> getSliceItems() {
         return sliceItems;
@@ -103,10 +106,16 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
         }
     };
 
-    public void onComplete(HashMap<String, HashMap<String, List<String>>> cancerTTarData) {
+    public void onComplete(HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedList) {
         // After the dialog fragment completes, it calls this callback.
         // use the string here
+        this.cancerTTarData = cancerTTarData;
+        this.cancerNTarData = cancerNTarData;
+        this.displayedList = displayedList;
         Toast.makeText(getApplicationContext(),"I got back with new information" + cancerTTarData, Toast.LENGTH_SHORT).show();
+        prepare_scan_data();
+        scannerListAdapter.notifyDataSetChanged();
+
     }
 
     public HashMap<String, HashMap<String, List<String>>> getCancerTTarData() {
@@ -136,9 +145,11 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
         mContentView = (ListView)findViewById(R.id.fullscreen_content);
 
         sliceItems = new ArrayList<SliceItem>();
+        prepareDisplayList();
         prepare_scan_data();
 
-        mContentView.setAdapter(new ScannerListAdapter(this,sliceItems));
+        scannerListAdapter = new ScannerListAdapter(this, sliceItems);
+        mContentView.setAdapter(scannerListAdapter);
 
 
         // Set up the user interaction to manually show or hide the system UI.
@@ -167,7 +178,6 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
                 FragmentManager fm = getFragmentManager();
                 MyDialogFragment dialogFragment = MyDialogFragment.newInstance ("Displayed Locations");
                 dialogFragment.show(fm, "Sample Fragment");
-
                 return true;
             }
         });
@@ -228,8 +238,14 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
 
+
+    public LinkedHashMap<String, Integer> getDisplayedList() {
+        return displayedList;
+    }
+
     public void prepare_scan_data(){
         int i;
+        sliceItems.clear();
         for (i =0; i<222; i++ ){
             SliceItem slice = new SliceItem();
             slice.setNumber(String.valueOf(i));
@@ -238,7 +254,10 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
                 HashMap<String, List<String>> sideMap = areaMap.getValue();
                 for (HashMap.Entry<String, List<String>> map: sideMap.entrySet()){
                     for (String location:map.getValue()){
-                        slice.addVectorStorageLocation(location.replaceAll("\\s+", "").toLowerCase()+ "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() +"___"+String.valueOf(i));
+                        String value = location.replaceAll("\\s+", "").toLowerCase()+ " " + map.getKey().replaceAll("\\s+", "").toLowerCase();
+                        if (displayedList.get(value).equals(1)) {
+                            slice.addVectorStorageLocation(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() + "___" + String.valueOf(i));
+                        }
                     }
                 }
             }
@@ -251,5 +270,24 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
             sliceItems.add(slice);
         }
     }
+
+    void prepareDisplayList(){
+        for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()){
+            HashMap<String, List<String>> sideMap = areaMap.getValue();
+            for (HashMap.Entry<String, List<String>> map: sideMap.entrySet()){
+                for (String location:map.getValue()){
+                    displayedList.put(location.replaceAll("\\s+", "").toLowerCase()+ " " + map.getKey().replaceAll("\\s+", "").toLowerCase(),1);
+                }
+            }
+        }
+        for (HashMap.Entry<String, List<String>> nodeMap : cancerNTarData.entrySet()){
+            List<String> sideMap = nodeMap.getValue();
+            for (String location:sideMap){
+                displayedList.put(location.replaceAll("\\s+", "").toLowerCase()+ " " + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase(),1);
+            }
+        }
+    }
+
+
 
 }
