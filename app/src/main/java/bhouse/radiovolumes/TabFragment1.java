@@ -48,8 +48,8 @@ public class TabFragment1 extends Fragment {
     }
 
     public void perform(View v){
-        ListView lvT = (ListView)v.findViewById(R.id.listView_invaded_T);
-        ListView lvN = (ListView)v.findViewById(R.id.listView_invaded_N);
+        NonScrollListView lvT = (NonScrollListView) v.findViewById(R.id.listView_invaded_T);
+        NonScrollListView lvN = (NonScrollListView) v.findViewById(R.id.listView_invaded_N);
         HashAdapter mAdapterT = new HashAdapter(cancerTData, this.cancer);
         HashNAdapter mAdapterN = new HashNAdapter(cancerNData, this.cancer);
         lvT.setAdapter(mAdapterT);

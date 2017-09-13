@@ -22,12 +22,12 @@
         android:text="Low Risk Tumor Location"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    <ListView
+    <bhouse.radiovolumes.NonScrollListView
         android:id="@+id/listView_invaded_T"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_tab_1_T">
-    </ListView>
+    </bhouse.radiovolumes.NonScrollListView>
 
     <TextView
         android:id="@+id/textView_tab_1_N"
@@ -38,12 +38,12 @@
         android:text="Low Risk Node Location"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    <ListView
+    <bhouse.radiovolumes.NonScrollListView
         android:id="@+id/listView_invaded_N"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_tab_1_T">
-    </ListView>
+    </bhouse.radiovolumes.NonScrollListView>
 
     <TextView
         android:id="@+id/textView_tab_1_Notes"
@@ -54,12 +54,12 @@
         android:text="Additionnal Notes"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    <ListView
+    <bhouse.radiovolumes.NonScrollListView
         android:id="@+id/listView_additional_notes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_tab_1_Notes">
-    </ListView>
+    </bhouse.radiovolumes.NonScrollListView>
 
 
 

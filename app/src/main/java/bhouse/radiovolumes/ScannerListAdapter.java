@@ -67,6 +67,7 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
 
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(resIdScan);
+        //imageView.setClickable(false);
         holder.frameLayout.addView(imageView);
 
         for (int i = 0; i < item.getVectorStorageLocation().size(); i++) {
@@ -77,6 +78,7 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
             //int resId = context.getResources().getIdentifier(resourceName, "drawable", context.getPackageName());
             imageView.setImageResource(resId);
             holder.frameLayout.addView(imageView);
+
         }
         return convertView;
     }

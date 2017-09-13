@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class MyDialogFragment extends DialogFragment {
@@ -81,9 +82,11 @@ public class MyDialogFragment extends DialogFragment {
         displayedList = activity.getDisplayedList();
         sliceItems = activity.getSliceItems();
 
+        Map<String,String> colors = ModifierHashOperator.getHashMapResource(getContext(), R.xml.sub_areas_colors);
+
         ListView lvChange = (ListView)v.findViewById(R.id.list_display);
         //ArrayAdapter<String> changeAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, displayedList);
-        UserAdapter changeAdapter = new UserAdapter(this.getContext(), displayedList, sliceItems);
+        UserAdapter changeAdapter = new UserAdapter(this.getContext(), displayedList, sliceItems, colors);
         lvChange.setAdapter(changeAdapter);
 
 

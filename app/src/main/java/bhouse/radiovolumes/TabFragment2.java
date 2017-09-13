@@ -67,15 +67,21 @@ public class TabFragment2 extends Fragment {
             modiferPrint.add(modifiers_label.get(modifier));
         }
 
-        ListView lvT = (ListView)v.findViewById(R.id.listView_invaded_T);
-        ListView lvN = (ListView)v.findViewById(R.id.listView_invaded_N);
-        ListView lvNotes = (ListView)v.findViewById(R.id.listView_additional_notes);
+        NonScrollListView lvT = (NonScrollListView) v.findViewById(R.id.listView_invaded_T);
+
+        NonScrollListView lvN = (NonScrollListView) v.findViewById(R.id.listView_invaded_N);
+
+        NonScrollListView lvNotes = (NonScrollListView) v.findViewById(R.id.listView_additional_notes);
+
         HashAdapter mAdapterT = new HashAdapter(cancerTTarData, this.cancer);
         HashNAdapter mAdapterN = new HashNAdapter(cancerNTarData, this.cancer);
         ArrayAdapter<String> notesAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, modiferPrint);
         lvT.setAdapter(mAdapterT);
         lvN.setAdapter(mAdapterN);
         lvNotes.setAdapter(notesAdapter);
+        lvT.setScrollContainer(false);
+        lvN.setScrollContainer(false);
+        lvNotes.setScrollContainer(false);
 
 
         Button toScan = (Button)v.findViewById(R.id.button_to_scan);

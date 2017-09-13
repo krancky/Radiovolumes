@@ -15,9 +15,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import bhouse.radiovolumes.processor.NodeAreaTemplate;
 
+import static android.R.attr.color;
 import static android.R.attr.data;
 import static bhouse.radiovolumes.R.id.locString;
 
@@ -30,13 +32,15 @@ public class UserAdapter extends BaseAdapter {
     private ArrayList<Boolean> checkboxStatus = new ArrayList();
     private String[] mKeys;
     private List<SliceItem> sliceItems;
+    private Map<String, String> colors;
     private Context context;
 
-    public UserAdapter(Context context, LinkedHashMap<String, Integer> displayedlist, List<SliceItem> sliceItems) {
+    public UserAdapter(Context context, LinkedHashMap<String, Integer> displayedlist, List<SliceItem> sliceItems, Map<String, String> colors) {
         this.displayedList = displayedlist;
         mKeys = displayedlist.keySet().toArray(new String[displayedlist.size()]);
         this.sliceItems = sliceItems;
         this.context = context;
+        this.colors = colors;
 
         int groupCount = displayedlist.size();
         for (int i = 0; i<groupCount; i++) {
@@ -92,7 +96,13 @@ public class UserAdapter extends BaseAdapter {
         holder.locString.setText(mKeys[position]);
         holder.cb.setTag(position);
         holder.cb.setChecked(checkboxStatus.get(position));
-        holder.locString.setTextColor(Color.WHITE);
+        String truc = colors.get(mKeys[position]);
+        try {
+            holder.locString.setTextColor(Color.parseColor(colors.get(mKeys[position])));
+        }
+        catch (Exception e){
+            holder.locString.setTextColor(Color.parseColor("#ffffff"));
+        }
         holder.cb.setOnCheckedChangeListener(cbChangeListener);
         // Return the completed view to render on screen
         return convertView;
