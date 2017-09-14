@@ -15,21 +15,48 @@
         android:layout_height="wrap_content"
         android:text="Displayed areas"
         android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:padding="20dp"/>
 
-    <Button
-        android:id="@+id/dismiss"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Dismiss" />
+
 
     <ListView
         android:id="@+id/list_display"
         android:layout_width="match_parent"
         android:background="#00ffffff"
-        android:layout_height="wrap_content">
+        android:layout_height="0dip"
+        android:layout_weight="1">
 
     </ListView>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <Button
+            android:id="@+id/dismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:text="OK" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@id/dismiss"
+            android:text="Cancel" />
+
+
+
+
+
+    </RelativeLayout>
 
 </LinearLayout>

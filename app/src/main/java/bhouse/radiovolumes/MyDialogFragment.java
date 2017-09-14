@@ -24,6 +24,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import static bhouse.radiovolumes.R.id.dismiss;
+
 
 public class MyDialogFragment extends DialogFragment {
 
@@ -89,8 +91,18 @@ public class MyDialogFragment extends DialogFragment {
         UserAdapter changeAdapter = new UserAdapter(this.getContext(), displayedList, sliceItems, colors);
         lvChange.setAdapter(changeAdapter);
 
+        Button cancel = (Button) v.findViewById(R.id.cancel);
 
-        dismiss.setOnClickListener(new View.OnClickListener() {
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                dismiss();
+            }
+        });
+
+                dismiss.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
