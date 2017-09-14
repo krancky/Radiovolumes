@@ -152,6 +152,7 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
         mContentView.setAdapter(scannerListAdapter);
 
 
+
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -164,7 +165,7 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+
 
         mContentView.setLongClickable(true);
         mContentView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
