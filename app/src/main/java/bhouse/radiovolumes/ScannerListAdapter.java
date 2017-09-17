@@ -5,6 +5,7 @@ import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -49,7 +50,9 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
             holder = new ViewHolder();
 
             holder.scanView = (ImageView) convertView.findViewById(R.id.view_scan);
-            holder.frameLayout = (FrameLayout) convertView.findViewById(R.id.zoomLayout);
+            holder.frameLayout = (ZoomView) convertView.findViewById(R.id.zoomLayout);
+
+
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -85,7 +88,7 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
 
 
     static class ViewHolder {
-        FrameLayout frameLayout;
+        ZoomView frameLayout;
         ImageView scanView;
     }
 }

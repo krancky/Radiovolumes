@@ -144,6 +144,7 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = (ListView)findViewById(R.id.fullscreen_content);
 
+
         sliceItems = new ArrayList<SliceItem>();
         prepareDisplayList();
         prepare_scan_data();

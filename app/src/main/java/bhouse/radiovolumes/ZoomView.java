@@ -51,14 +51,14 @@ public class ZoomView extends FrameLayout {
 
     // zooming
     float zoom = 1.0f;
-    float maxZoom = 2.0f;
+    float maxZoom = 3.0f;
     float smoothZoom = 1.0f;
     float zoomX, zoomY;
     float smoothZoomX, smoothZoomY;
     private boolean scrolling; // NOPMD by karooolek on 29.06.11 11:45
 
     // minimap variables
-    private boolean showMinimap = false;
+    private boolean showMinimap = true;
     private int miniMapColor = Color.WHITE;
     private int miniMapHeight = -1;
     private String miniMapCaption;
@@ -251,6 +251,7 @@ public class ZoomView extends FrameLayout {
                 dy = 0;
                 lx = 0;
                 ly = 0;
+                //this.getParent().requestDisallowInterceptTouchEvent(true);
                 scrolling = false;
                 break;
 
@@ -282,6 +283,7 @@ public class ZoomView extends FrameLayout {
                         }
                         lastTapTime = 0;
                         ev.setAction(MotionEvent.ACTION_CANCEL);
+                        //this.getParent().requestDisallowInterceptTouchEvent(false);
                         super.dispatchTouchEvent(ev);
                         return;
                     }
