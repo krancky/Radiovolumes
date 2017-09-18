@@ -46,7 +46,7 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
      */
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
-    private ListView mContentView;
+    private MyListView mContentView;
     private ArrayList<SliceItem> sliceItems;
     private LinkedHashMap<String, Integer> displayedList = new LinkedHashMap<String, Integer>();
     private ScannerListAdapter scannerListAdapter;
@@ -142,7 +142,7 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
 
         mVisible = false;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
-        mContentView = (ListView)findViewById(R.id.fullscreen_content);
+        mContentView = (MyListView)findViewById(R.id.fullscreen_content);
 
 
         sliceItems = new ArrayList<SliceItem>();
@@ -152,15 +152,11 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
         scannerListAdapter = new ScannerListAdapter(this, sliceItems);
         mContentView.setAdapter(scannerListAdapter);
 
+        //mContentView.setDivider(new ColorDrawable(0x99F10529));   //0xAARRGGBB
+        //mContentView.setDividerHeight(1);
+        mContentView.setFastScrollEnabled(true);
 
 
-        // Set up the user interaction to manually show or hide the system UI.
-        mContentView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
-                toggle();
-            }
-        });
 
 
         // Upon interacting with UI controls, delay any scheduled hide()

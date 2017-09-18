@@ -46,7 +46,7 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
 
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.list_view_scan, parent, false);
-            convertView.setMinimumHeight(parent.getMeasuredHeight());
+
             holder = new ViewHolder();
 
             holder.scanView = (ImageView) convertView.findViewById(R.id.view_scan);
@@ -58,7 +58,7 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
             holder = (ViewHolder) convertView.getTag();
 
         }
-
+        convertView.setMinimumHeight(parent.getMeasuredHeight());
         SliceItem item = getItem(position);
         holder.frameLayout.removeAllViews();
         int resIdScan = this.context.getResources().getIdentifier(item.getStorageLocation(), "drawable", context.getPackageName());

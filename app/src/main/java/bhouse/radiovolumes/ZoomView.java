@@ -14,6 +14,9 @@ import android.widget.FrameLayout;
         import android.view.MotionEvent;
         import android.view.View;
         import android.widget.FrameLayout;
+import android.widget.Toast;
+
+import static android.R.attr.x;
 
 /**
  * Zooming view.
@@ -27,6 +30,7 @@ public class ZoomView extends FrameLayout {
 
     public ZoomView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
         // TODO Auto-generated constructor stub
     }
 
@@ -56,9 +60,10 @@ public class ZoomView extends FrameLayout {
     float zoomX, zoomY;
     float smoothZoomX, smoothZoomY;
     private boolean scrolling; // NOPMD by karooolek on 29.06.11 11:45
+    private boolean isZoomed = false;
 
     // minimap variables
-    private boolean showMinimap = true;
+    private boolean showMinimap = false;
     private int miniMapColor = Color.WHITE;
     private int miniMapHeight = -1;
     private String miniMapCaption;
@@ -204,6 +209,12 @@ public class ZoomView extends FrameLayout {
 
     private void processSingleTouchEvent(final MotionEvent ev) {
 
+        if (isZoomed){
+            showMinimap = true;
+        }
+        else{
+            showMinimap = false;
+        }
         final float x = ev.getX();
         final float y = ev.getY();
 
@@ -241,6 +252,7 @@ public class ZoomView extends FrameLayout {
         touchLastX = x;
         touchLastY = y;
 
+
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 touchStartX = x;
@@ -251,7 +263,10 @@ public class ZoomView extends FrameLayout {
                 dy = 0;
                 lx = 0;
                 ly = 0;
-                //this.getParent().requestDisallowInterceptTouchEvent(true);
+                if (isZoomed){
+                    this.getParent().requestDisallowInterceptTouchEvent(true);
+                }
+
                 scrolling = false;
                 break;
 
@@ -276,14 +291,22 @@ public class ZoomView extends FrameLayout {
                     // check double tap
                     if (System.currentTimeMillis() - lastTapTime < 500) {
                         if (smoothZoom == 1.0f) {
+                            int [] location = new int[2];
+                            this.getLocationOnScreen(location);
+                            //this.setY(0);
+                            //invalidate();
+                            //this.getLocationOnScreen(location);
+                            //this.getParent().getParent().setSelection();
+                            //this.getParent().requestFitSystemWindows();
                             smoothZoomTo(maxZoom, x, y);
+                            isZoomed = true;
                         } else {
                             smoothZoomTo(1.0f, getWidth() / 2.0f,
                                     getHeight() / 2.0f);
+                            isZoomed = false;
                         }
                         lastTapTime = 0;
                         ev.setAction(MotionEvent.ACTION_CANCEL);
-                        //this.getParent().requestDisallowInterceptTouchEvent(false);
                         super.dispatchTouchEvent(ev);
                         return;
                     }
@@ -308,6 +331,7 @@ public class ZoomView extends FrameLayout {
     }
 
     private void processDoubleTouchEvent(final MotionEvent ev) {
+        Toast.makeText(getContext(),"double click position", Toast.LENGTH_SHORT).show();
         final float x1 = ev.getX(0);
         final float dx1 = x1 - lastdx1;
         lastdx1 = x1;
