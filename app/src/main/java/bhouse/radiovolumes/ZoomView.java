@@ -4,16 +4,17 @@ package bhouse.radiovolumes;
 
 import android.widget.FrameLayout;
 
-        import android.content.Context;
-        import android.graphics.Bitmap;
-        import android.graphics.Canvas;
-        import android.graphics.Color;
-        import android.graphics.Matrix;
-        import android.graphics.Paint;
-        import android.util.AttributeSet;
-        import android.view.MotionEvent;
-        import android.view.View;
-        import android.widget.FrameLayout;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import static android.R.attr.x;
@@ -22,20 +23,24 @@ import static android.R.attr.x;
  * Zooming view.
  */
 public class ZoomView extends FrameLayout {
+    private ListView lv;
 
     public ZoomView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        this.lv = lv;
         // TODO Auto-generated constructor stub
     }
 
     public ZoomView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        this.lv = lv;
 
         // TODO Auto-generated constructor stub
     }
 
     public ZoomView(final Context context) {
         super(context);
+        this.lv = lv;
     }
 
     /**
@@ -55,7 +60,7 @@ public class ZoomView extends FrameLayout {
 
     // zooming
     float zoom = 1.0f;
-    float maxZoom = 3.0f;
+    float maxZoom = 2.0f;
     float smoothZoom = 1.0f;
     float zoomX, zoomY;
     float smoothZoomX, smoothZoomY;
@@ -120,6 +125,10 @@ public class ZoomView extends FrameLayout {
         this.miniMapHeight = miniMapHeight;
     }
 
+    public void setLv(ListView lv) {
+        this.lv = lv;
+    }
+
     public int getMiniMapHeight() {
         return miniMapHeight;
     }
@@ -180,6 +189,11 @@ public class ZoomView extends FrameLayout {
         this.listener = listener;
     }
 
+
+    public boolean isZoomed() {
+        return isZoomed;
+    }
+
     public float getZoomFocusX() {
         return zoomX * zoom;
     }
@@ -209,12 +223,6 @@ public class ZoomView extends FrameLayout {
 
     private void processSingleTouchEvent(final MotionEvent ev) {
 
-        if (isZoomed){
-            showMinimap = true;
-        }
-        else{
-            showMinimap = false;
-        }
         final float x = ev.getX();
         final float y = ev.getY();
 
@@ -300,10 +308,16 @@ public class ZoomView extends FrameLayout {
                             //this.getParent().requestFitSystemWindows();
                             smoothZoomTo(maxZoom, x, y);
                             isZoomed = true;
+                            this.setMiniMapEnabled(true);
+                            this.lv.setFastScrollEnabled(false);
+                            //getParent().requestDisallowInterceptTouchEvent(true);
+                            //this.setVerticalScrollBarEnabled(false);
                         } else {
                             smoothZoomTo(1.0f, getWidth() / 2.0f,
                                     getHeight() / 2.0f);
                             isZoomed = false;
+                            this.setMiniMapEnabled(false);
+                            this.lv.setFastScrollEnabled(true);
                         }
                         lastTapTime = 0;
                         ev.setAction(MotionEvent.ACTION_CANCEL);
@@ -450,7 +464,7 @@ public class ZoomView extends FrameLayout {
         // draw minimap
         if (showMinimap) {
             if (miniMapHeight < 0) {
-                miniMapHeight = getHeight() / 4;
+                miniMapHeight = getHeight() / 8;
             }
 
             canvas.translate(10.0f, 10.0f);

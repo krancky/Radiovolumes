@@ -1,21 +1,30 @@
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:longClickable="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<bhouse.radiovolumes.ZoomView
-    android:id="@+id/zoomLayout"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-    android:longClickable="true"
-android:layout_centerInParent="true" >
-    <ImageView
-        android:id="@+id/view_scan"
+    <bhouse.radiovolumes.ZoomView
+        android:id="@+id/zoomView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clickable="false"
-         >
-    </ImageView>
+        android:longClickable="true"
+        android:scrollbarStyle="insideOverlay"
+        android:layout_centerInParent="true" >
 
-</bhouse.radiovolumes.ZoomView>
+        <FrameLayout
+            android:id="@+id/zoomLayout"
+            android:layout_width="match_parent"
+            android:longClickable="true"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/view_scan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:scrollbars="none"
+                >
+            </ImageView>
+        </FrameLayout>
+
+    </bhouse.radiovolumes.ZoomView>
 </LinearLayout>
-

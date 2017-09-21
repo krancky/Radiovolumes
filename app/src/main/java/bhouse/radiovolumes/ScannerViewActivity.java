@@ -2,11 +2,9 @@ package bhouse.radiovolumes;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
-import android.app.Dialog;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -46,7 +44,7 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
      */
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
-    private MyListView mContentView;
+    private SingleScrollListView mContentView;
     private ArrayList<SliceItem> sliceItems;
     private LinkedHashMap<String, Integer> displayedList = new LinkedHashMap<String, Integer>();
     private ScannerListAdapter scannerListAdapter;
@@ -142,19 +140,20 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
 
         mVisible = false;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
-        mContentView = (MyListView)findViewById(R.id.fullscreen_content);
+        mContentView = (SingleScrollListView) findViewById(R.id.fullscreen_content);
 
 
         sliceItems = new ArrayList<SliceItem>();
         prepareDisplayList();
         prepare_scan_data();
 
-        scannerListAdapter = new ScannerListAdapter(this, sliceItems);
+        scannerListAdapter = new ScannerListAdapter(this, sliceItems, mContentView);
         mContentView.setAdapter(scannerListAdapter);
 
         //mContentView.setDivider(new ColorDrawable(0x99F10529));   //0xAARRGGBB
         //mContentView.setDividerHeight(1);
         mContentView.setFastScrollEnabled(true);
+        mContentView.setSingleScroll(true);
 
 
 
@@ -165,6 +164,7 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
 
 
         mContentView.setLongClickable(true);
+        //mContentView.setOverScrollMode(View.OVER_SCROLL_NEVER);
         mContentView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
