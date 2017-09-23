@@ -106,8 +106,19 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tClickTv"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:gravity="left"
+        android:background="@color/primary_light"
+        android:text="T Invaded location"
+        android:clickable="true"
+        android:textColor="@color/white"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    <ExpandableListView
+    <ListView
         android:id="@+id/tExpandableListView"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"

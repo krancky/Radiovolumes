@@ -69,13 +69,18 @@ public class NewCaseActivity extends Activity {
 
 
     ExpandableListView nExpandableListView;
-    ExpandableListView tExpandableListView;
+    //ExpandableListView tExpandableListView;
+    ListView tExpandableListView;
     ExpandableListAdapter nExpandableListAdapter;
-    ExpandableListAdapter tExpandableListAdapter;
+    //ExpandableListAdapter tExpandableListAdapter;
+    CountryAdapter tExpandableListAdapter;
     List<String> texpandableListTitle;
     List<String> nexpandableListTitle;
     LinkedHashMap<String, List<String>> texpandableListDetail;
     LinkedHashMap<String, List<String>> nexpandableListDetail;
+
+    ArrayList<Item> countryList = new ArrayList<Item>();
+
     private ImageView mImageView;
     private TextView mTitle;
     private TextView headerText1;
@@ -85,8 +90,10 @@ public class NewCaseActivity extends Activity {
     private EditText mEditTextName;
     private Spinner spinner;
     private Spinner spinnerSide;
+    private TextView tClickTv;
 
     private String newParam;
+    private boolean isExpanded = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,6 +138,8 @@ public class NewCaseActivity extends Activity {
         ArrayAdapter<CharSequence> spinnerAdapterSide = ArrayAdapter.createFromResource(this, R.array.main_side_array, R.layout.spinner_item);
         spinnerAdapterSide.setDropDownViewResource(R.layout.spinner_dropdown_item);// default layouts for now
         spinnerSide.setAdapter(spinnerAdapterSide);
+
+        tClickTv = (TextView) findViewById(R.id.tClickTv);
 
         if (newParam.equals("1")){
             //mImageView.setImageDrawable(R.id.);
@@ -220,14 +229,20 @@ public class NewCaseActivity extends Activity {
         nexpandableListDetail = ExpandableListDataPump.getNData(nodeAreaTemplateList);
         nexpandableListTitle = new ArrayList<String>(nexpandableListDetail.keySet());
         nExpandableListAdapter = new NCustomExpandableListAdapter(this, nexpandableListTitle, nexpandableListDetail, nodeAreaTemplateList, cancer);
-        tExpandableListView = (ExpandableListView) findViewById(R.id.tExpandableListView);
+        tExpandableListView = (ListView) findViewById(R.id.tExpandableListView);
         texpandableListDetail = ExpandableListDataPump.getTData(tumorAreaTemplateList);
         texpandableListTitle = new ArrayList<String>(texpandableListDetail.keySet());
-        tExpandableListAdapter = new TCustomExpandableListAdapter(this, texpandableListTitle, texpandableListDetail, tumorAreaTemplateList, cancer);
+
+        prepareTData();
+        tExpandableListAdapter = new CountryAdapter(this,countryList, tumorAreaTemplateList, cancer);
+        //tExpandableListAdapter = new TCustomExpandableListAdapter(this, texpandableListTitle, texpandableListDetail, tumorAreaTemplateList, cancer);
 
 
         nExpandableListView.setAdapter(nExpandableListAdapter);
+
+
         tExpandableListView.setAdapter(tExpandableListAdapter);
+        tExpandableListView.setVisibility(View.GONE);
         mAddButton.animate().alpha(1.0f);
 
 
@@ -269,17 +284,7 @@ public class NewCaseActivity extends Activity {
             }
         });
 
-        tExpandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
-            @Override
-            public void onGroupExpand(int groupPosition) {
-                Toast.makeText(getApplicationContext(),
-                        texpandableListTitle.get(groupPosition) + " List Expanded.",
-                        Toast.LENGTH_SHORT).show();
-                LinearLayout myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
-                myLayout.setVisibility(View.GONE);
-            }
-        });
 
         nExpandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
 
@@ -294,18 +299,7 @@ public class NewCaseActivity extends Activity {
             }
         });
 
-        tExpandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
 
-            @Override
-            public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getApplicationContext(),
-                        texpandableListTitle.get(groupPosition) + " List Collapsed.",
-                        Toast.LENGTH_SHORT).show();
-                LinearLayout myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
-                myLayout.setVisibility(View.VISIBLE);
-
-            }
-        });
 
         nExpandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
@@ -323,22 +317,38 @@ public class NewCaseActivity extends Activity {
             }
         });
 
-        tExpandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+        tClickTv.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onChildClick(ExpandableListView parent, View v,
-                                        int groupPosition, int childPosition, long id) {
-                Toast.makeText(
-                        getApplicationContext(),
-                        texpandableListTitle.get(groupPosition)
-                                + " -> "
-                                + texpandableListDetail.get(
-                                texpandableListTitle.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT
-
-                ).show();
-                return false;
+            public void onClick(View v) {
+                LinearLayout myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
+                if (isExpanded){
+                        Toast.makeText(getApplicationContext(),"I will hide" , Toast.LENGTH_SHORT).show();
+                        tExpandableListView.setVisibility(View.GONE);
+                        myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
+                        myLayout.setVisibility(View.VISIBLE);
+                    isExpanded = false;
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"I will hide" , Toast.LENGTH_SHORT).show();
+                    tExpandableListView.setVisibility(View.VISIBLE);
+                    myLayout.setVisibility(View.GONE);
+                    isExpanded = true;
+                }
             }
         });
+
+
+    }
+
+    public void prepareTData(){
+        int sectionNumber = 0;
+        for (LinkedHashMap.Entry<String, List<String>> areaMap: texpandableListDetail.entrySet()){
+            sectionNumber = sectionNumber +1 ;
+            this.countryList.add(new SectionItem(areaMap.getKey(), sectionNumber));
+            for (String areaLocation : areaMap.getValue()){
+                this.countryList.add(new EntryItem(areaLocation, sectionNumber));
+            }
+        }
     }
 
     public void update (){
@@ -374,6 +384,8 @@ public class NewCaseActivity extends Activity {
 
     }
 
+
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -391,5 +403,69 @@ public class NewCaseActivity extends Activity {
         return super.dispatchTouchEvent( event );
     }
 
+    /**
+     * row item
+     */
+    public interface Item {
+        public boolean isSection();
+        public String getTitle();
+        public int getSectionNumber();
+    }
+
+    /**
+     * Section Item
+     */
+    public class SectionItem implements Item {
+        private final String title;
+        public final int sectionNumber;
+
+        public int getSectionNumber() {
+            return sectionNumber;
+        }
+
+
+        public SectionItem(String title, int sectionNumber) {
+            this.title = title;
+            this.sectionNumber = sectionNumber;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        @Override
+        public boolean isSection() {
+            return true;
+        }
+    }
+
+    /**
+     * Entry Item
+     */
+    public class EntryItem implements Item {
+        public final String title;
+        public final int sectionNumber;
+
+        public int getSectionNumber() {
+            return sectionNumber;
+        }
+
+
+        public EntryItem(String title, int sectionNumber) {
+            this.title = title;
+            this.sectionNumber = sectionNumber;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        @Override
+        public boolean isSection() {
+            return false;
+        }
+    }
 
 }
+
+

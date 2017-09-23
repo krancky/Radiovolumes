@@ -2,6 +2,7 @@ package bhouse.radiovolumes;
 
 
         import java.util.ArrayList;
+        import java.util.HashMap;
         import java.util.LinkedHashMap;
         import java.util.List;
 
@@ -25,13 +26,23 @@ public class ExpandableListDataPump {
     public static LinkedHashMap<String, List<String>> getTData(List<TumorAreaTemplate> tumorAreaTemplateList) {
         LinkedHashMap<String, List<String>> expandableListDetail = new LinkedHashMap<String, List<String>>();
 
+        List<List<String>> listofLists = new ArrayList<>();
 
-        List<String> tList = new ArrayList<String>();
         for (TumorAreaTemplate tumorAreaTemplate : tumorAreaTemplateList){
-            tList.add(tumorAreaTemplate.getLocation());
+            if (!expandableListDetail.keySet().contains(tumorAreaTemplate.getArea())){
+                List<String> tList = new ArrayList<String>();
+                tList.add(tumorAreaTemplate.getLocation());
+                expandableListDetail.put(tumorAreaTemplate.getArea(),tList);
+            }
+            else{
+                List<String> tList = new ArrayList<String>();
+                tList = expandableListDetail.get(tumorAreaTemplate.getArea());
+                tList.add(tumorAreaTemplate.getLocation());
+                expandableListDetail.put(tumorAreaTemplate.getArea(),tList);
+            }
+
         }
-        expandableListDetail.clear();
-        expandableListDetail.put("T EXTENSION", tList);
+        //expandableListDetail.clear();
         return expandableListDetail;
     }
 
