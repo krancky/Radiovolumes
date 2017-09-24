@@ -10,7 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
@@ -73,7 +72,7 @@ public class NewCaseActivity extends Activity {
     ListView tExpandableListView;
     ExpandableListAdapter nExpandableListAdapter;
     //ExpandableListAdapter tExpandableListAdapter;
-    CountryAdapter tExpandableListAdapter;
+    TSelectionAdapter tExpandableListAdapter;
     List<String> texpandableListTitle;
     List<String> nexpandableListTitle;
     LinkedHashMap<String, List<String>> texpandableListDetail;
@@ -234,7 +233,7 @@ public class NewCaseActivity extends Activity {
         texpandableListTitle = new ArrayList<String>(texpandableListDetail.keySet());
 
         prepareTData();
-        tExpandableListAdapter = new CountryAdapter(this,countryList, tumorAreaTemplateList, cancer);
+        tExpandableListAdapter = new TSelectionAdapter(this,countryList, tumorAreaTemplateList, cancer);
         //tExpandableListAdapter = new TCustomExpandableListAdapter(this, texpandableListTitle, texpandableListDetail, tumorAreaTemplateList, cancer);
 
 
@@ -326,12 +325,17 @@ public class NewCaseActivity extends Activity {
                         tExpandableListView.setVisibility(View.GONE);
                         myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
                         myLayout.setVisibility(View.VISIBLE);
+                    int imageResource = getResources().getIdentifier("ic_expand_more_black_24dp" , "drawable", getPackageName());
+                    tClickTv.setCompoundDrawablesWithIntrinsicBounds( imageResource, 0, 0, 0);
                     isExpanded = false;
                 }
                 else{
                     Toast.makeText(getApplicationContext(),"I will hide" , Toast.LENGTH_SHORT).show();
                     tExpandableListView.setVisibility(View.VISIBLE);
                     myLayout.setVisibility(View.GONE);
+                    int imageResource = getResources().getIdentifier("ic_expand_less_black_24dp" , "drawable", getPackageName());
+                    //Drawable img = getApplicationContext().getDrawable(R.drawable.ic_expand_less_black_24dp );
+                    tClickTv.setCompoundDrawablesWithIntrinsicBounds( imageResource, 0, 0, 0);
                     isExpanded = true;
                 }
             }

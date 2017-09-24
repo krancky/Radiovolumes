@@ -110,13 +110,15 @@
         android:id="@+id/tClickTv"
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:gravity="left"
+        android:gravity="center_vertical"
         android:background="@color/primary_light"
-        android:text="T Invaded location"
+        android:drawablePadding="10dp"
+        android:text="TUMOR LOCATION"
         android:clickable="true"
         android:textColor="@color/white"
-        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:drawableStart="@drawable/ic_expand_more_black_24dp"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
 
     <ListView
         android:id="@+id/tExpandableListView"
