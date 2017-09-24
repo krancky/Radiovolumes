@@ -150,8 +150,22 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/nClickTv"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:gravity="center_vertical"
+        android:background="@color/primary_light"
+        android:drawablePadding="10dp"
+        android:text="LYMPH NODES LOCATION"
+        android:clickable="true"
+        android:textColor="@color/white"
+        android:drawableStart="@drawable/ic_expand_more_black_24dp"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
 
-    <ExpandableListView
+
+    <ListView
         android:id="@+id/nExpandableListView"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"

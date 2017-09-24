@@ -6,8 +6,10 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -67,10 +69,10 @@ public class NewCaseActivity extends Activity {
 
 
 
-    ExpandableListView nExpandableListView;
+    ListView nExpandableListView;
     //ExpandableListView tExpandableListView;
     ListView tExpandableListView;
-    ExpandableListAdapter nExpandableListAdapter;
+    NCustomExpandableListAdapter nExpandableListAdapter;
     //ExpandableListAdapter tExpandableListAdapter;
     TSelectionAdapter tExpandableListAdapter;
     List<String> texpandableListTitle;
@@ -90,9 +92,11 @@ public class NewCaseActivity extends Activity {
     private Spinner spinner;
     private Spinner spinnerSide;
     private TextView tClickTv;
+    private TextView nClickTv;
 
     private String newParam;
-    private boolean isExpanded = false;
+    private boolean isExpandedT = false;
+    private boolean isExpandedN = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,6 +143,7 @@ public class NewCaseActivity extends Activity {
         spinnerSide.setAdapter(spinnerAdapterSide);
 
         tClickTv = (TextView) findViewById(R.id.tClickTv);
+        nClickTv = (TextView) findViewById(R.id.nClickTv);
 
         if (newParam.equals("1")){
             //mImageView.setImageDrawable(R.id.);
@@ -224,7 +229,7 @@ public class NewCaseActivity extends Activity {
         hashMapOperator.cTV56TCase(ctv56TUCaseList, cancer, ctv56TCase);
         Log.i("End of onCreate() ", "... Done");
 
-        nExpandableListView = (ExpandableListView) findViewById(R.id.nExpandableListView);
+        nExpandableListView = (ListView) findViewById(R.id.nExpandableListView);
         nexpandableListDetail = ExpandableListDataPump.getNData(nodeAreaTemplateList);
         nexpandableListTitle = new ArrayList<String>(nexpandableListDetail.keySet());
         nExpandableListAdapter = new NCustomExpandableListAdapter(this, nexpandableListTitle, nexpandableListDetail, nodeAreaTemplateList, cancer);
@@ -239,9 +244,13 @@ public class NewCaseActivity extends Activity {
 
         nExpandableListView.setAdapter(nExpandableListAdapter);
 
+        LayoutInflater inflater = getLayoutInflater();
+        ViewGroup header = (ViewGroup)inflater.inflate(R.layout.list_expandable_group, tExpandableListView, false);
+        tExpandableListView.addHeaderView(header, null, false);
 
         tExpandableListView.setAdapter(tExpandableListAdapter);
         tExpandableListView.setVisibility(View.GONE);
+        nExpandableListView.setVisibility(View.GONE);
         mAddButton.animate().alpha(1.0f);
 
 
@@ -270,64 +279,46 @@ public class NewCaseActivity extends Activity {
         });
 
         
-        nExpandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
+
+        nClickTv.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onGroupExpand(int groupPosition) {
-                Toast.makeText(getApplicationContext(),
-                        nexpandableListTitle.get(groupPosition) + " List Expanded.",
-                        Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
                 LinearLayout myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
-                myLayout.setVisibility(View.GONE);
-
+                if (isExpandedN){
+                    Toast.makeText(getApplicationContext(),"I will hide" , Toast.LENGTH_SHORT).show();
+                    nExpandableListView.setVisibility(View.GONE);
+                    myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
+                    myLayout.setVisibility(View.VISIBLE);
+                    int imageResource = getResources().getIdentifier("ic_expand_more_black_24dp" , "drawable", getPackageName());
+                    nClickTv.setCompoundDrawablesWithIntrinsicBounds( imageResource, 0, 0, 0);
+                    isExpandedN = false;
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"I will hide" , Toast.LENGTH_SHORT).show();
+                    nExpandableListView.setVisibility(View.VISIBLE);
+                    myLayout.setVisibility(View.GONE);
+                    int imageResource = getResources().getIdentifier("ic_expand_less_black_24dp" , "drawable", getPackageName());
+                    //Drawable img = getApplicationContext().getDrawable(R.drawable.ic_expand_less_black_24dp );
+                    nClickTv.setCompoundDrawablesWithIntrinsicBounds( imageResource, 0, 0, 0);
+                    isExpandedN = true;
+                }
             }
         });
 
-
-
-        nExpandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
-
-            @Override
-            public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getApplicationContext(),
-                        nexpandableListTitle.get(groupPosition) + " List Collapsed.",
-                        Toast.LENGTH_SHORT).show();
-                LinearLayout myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
-                myLayout.setVisibility(View.VISIBLE);
-
-            }
-        });
-
-
-
-        nExpandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v,
-                                        int groupPosition, int childPosition, long id) {
-                Toast.makeText(
-                        getApplicationContext(),
-                        nexpandableListTitle.get(groupPosition)
-                                + " -> "
-                                + nexpandableListDetail.get(
-                                nexpandableListTitle.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT
-                ).show();
-                return false;
-            }
-        });
 
         tClickTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 LinearLayout myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
-                if (isExpanded){
+                if (isExpandedT){
                         Toast.makeText(getApplicationContext(),"I will hide" , Toast.LENGTH_SHORT).show();
                         tExpandableListView.setVisibility(View.GONE);
                         myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
                         myLayout.setVisibility(View.VISIBLE);
                     int imageResource = getResources().getIdentifier("ic_expand_more_black_24dp" , "drawable", getPackageName());
                     tClickTv.setCompoundDrawablesWithIntrinsicBounds( imageResource, 0, 0, 0);
-                    isExpanded = false;
+                    isExpandedT = false;
                 }
                 else{
                     Toast.makeText(getApplicationContext(),"I will hide" , Toast.LENGTH_SHORT).show();
@@ -336,7 +327,7 @@ public class NewCaseActivity extends Activity {
                     int imageResource = getResources().getIdentifier("ic_expand_less_black_24dp" , "drawable", getPackageName());
                     //Drawable img = getApplicationContext().getDrawable(R.drawable.ic_expand_less_black_24dp );
                     tClickTv.setCompoundDrawablesWithIntrinsicBounds( imageResource, 0, 0, 0);
-                    isExpanded = true;
+                    isExpandedT = true;
                 }
             }
         });
