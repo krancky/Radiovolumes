@@ -35,7 +35,7 @@ public class UserAdapter extends BaseAdapter {
     private Map<String, String> colors;
     private Context context;
 
-    public UserAdapter(Context context, LinkedHashMap<String, Integer> displayedlist, List<SliceItem> sliceItems, Map<String, String> colors) {
+    public UserAdapter(Context context, LinkedHashMap<String, Integer> displayedlist, List<SliceItem> sliceItems, Map<String, String> colors, ArrayList<MyDialogFragment.Item> items) {
         this.displayedList = displayedlist;
         mKeys = displayedlist.keySet().toArray(new String[displayedlist.size()]);
         this.sliceItems = sliceItems;

@@ -1,5 +1,7 @@
 package bhouse.radiovolumes;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
@@ -324,6 +326,7 @@ public class NewCaseActivity extends Activity {
                     Toast.makeText(getApplicationContext(),"I will hide" , Toast.LENGTH_SHORT).show();
                     tExpandableListView.setVisibility(View.VISIBLE);
                     myLayout.setVisibility(View.GONE);
+
                     int imageResource = getResources().getIdentifier("ic_expand_less_black_24dp" , "drawable", getPackageName());
                     //Drawable img = getApplicationContext().getDrawable(R.drawable.ic_expand_less_black_24dp );
                     tClickTv.setCompoundDrawablesWithIntrinsicBounds( imageResource, 0, 0, 0);
