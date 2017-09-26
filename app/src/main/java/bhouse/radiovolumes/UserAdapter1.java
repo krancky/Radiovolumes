@@ -95,7 +95,7 @@ public class UserAdapter1 extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        if (items.get(position).isSection()) {
+        if (getItemViewType(position) == 0) {
             holder.tvSectionTitle.setText(((MyDialogFragment.SectionItem) items.get(position)).getTitle());
             Log.i("position", "section");
         } else {

@@ -140,24 +140,26 @@ public class MyDialogFragment extends DialogFragment {
         //TODO:
     }
 
-    public void prepareTData(){
+    public void prepareTData() {
         int sectionNumber = 0;
-    for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()){
-        HashMap<String, List<String>> sideMap = areaMap.getValue();
-        sectionNumber = sectionNumber +1 ;
-        this.countryList.add(new SectionItem(areaMap.getKey(), sectionNumber));
-        for (HashMap.Entry<String, List<String>> map : sideMap.entrySet()) {
-            for (String subLocation: map.getValue()){
-                this.countryList.add(new EntryItem(subLocation, sectionNumber));
+        for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()) {
+            HashMap<String, List<String>> sideMap = areaMap.getValue();
+            sectionNumber = sectionNumber + 1;
+            this.countryList.add(new SectionItem(areaMap.getKey(), sectionNumber));
+            for (HashMap.Entry<String, List<String>> map : sideMap.entrySet()) {
+                for (String subLocation : map.getValue()) {
+                    this.countryList.add(new EntryItem(subLocation, sectionNumber));
+                }
             }
         }
-    }
-        this.countryList.add(new SectionItem("Lymph Nodes Areas", sectionNumber));
-    for (HashMap.Entry<String, List<String>> nodemap : cancerNTarData.entrySet()){
-        for (String nodeLocation: nodemap.getValue()){
-            this.countryList.add(new EntryItem(nodeLocation, sectionNumber));
+        if (!cancerNTarData.isEmpty()) {
+            this.countryList.add(new SectionItem("Lymph Nodes Areas", sectionNumber));
+            for (HashMap.Entry<String, List<String>> nodemap : cancerNTarData.entrySet()) {
+                for (String nodeLocation : nodemap.getValue()) {
+                    this.countryList.add(new EntryItem(nodeLocation, sectionNumber));
+                }
+            }
         }
-    }
     }
 
     /**

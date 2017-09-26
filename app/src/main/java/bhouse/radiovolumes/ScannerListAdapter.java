@@ -1,10 +1,13 @@
 package bhouse.radiovolumes;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -13,6 +16,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -70,6 +74,8 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
         //.into(holder.scanView);
 
         ImageView imageView = new ImageView(context);
+        imageView.setTag(resIdScan);
+
         imageView.setImageResource(resIdScan);
         //imageView.setClickable(false);
         holder.frameLayout.addView(imageView);
@@ -81,6 +87,19 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
 
             //int resId = context.getResources().getIdentifier(resourceName, "drawable", context.getPackageName());
             imageView.setImageResource(resId);
+            imageView.setTag(truc);
+            imageView.setClickable(true);
+            imageView.setDrawingCacheEnabled(true);
+            imageView.setOnTouchListener(changeColorListener);
+            imageView.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context,"click view" + v.toString(), Toast.LENGTH_SHORT).show();
+                    Log.i("View", v.toString());
+                    // do whatever stuff you wanna do here
+                }
+            });
             holder.frameLayout.addView(imageView);
 
         }
@@ -93,6 +112,24 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
         //}
         return convertView;
     }
+
+    private final View.OnTouchListener changeColorListener = new View.OnTouchListener() {
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            Bitmap bmp = Bitmap.createBitmap(v.getDrawingCache());
+            int color = bmp.getPixel((int) event.getX(), (int) event.getY());
+            if (color == Color.TRANSPARENT)
+                return false;
+            else {
+                if(event.getAction()==MotionEvent.ACTION_UP){
+                    Toast.makeText(context,"click view" + v.toString(), Toast.LENGTH_SHORT).show();
+                    /*code to execute*/}
+                //code to execute
+                return true;
+            }
+        }
+    };
 
 
     static class ViewHolder {
