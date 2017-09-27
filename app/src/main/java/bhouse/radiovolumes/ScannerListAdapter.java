@@ -1,5 +1,6 @@
 package bhouse.radiovolumes;
 
+import android.app.FragmentManager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -77,30 +78,27 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
         imageView.setTag(resIdScan);
 
         imageView.setImageResource(resIdScan);
+        imageView.setOnTouchListener(changeColorListener);
         //imageView.setClickable(false);
         holder.frameLayout.addView(imageView);
 
         for (int i = 0; i < item.getVectorStorageLocation().size(); i++) {
             imageView = new ImageView(context);
             String truc = item.getVectorStorageLocation().get(i);
-            int resId = context.getResources().getIdentifier( item.getVectorStorageLocation().get(i), "drawable", context.getPackageName());
+            int resId = context.getResources().getIdentifier(item.getVectorStorageLocation().get(i), "drawable", context.getPackageName());
 
             //int resId = context.getResources().getIdentifier(resourceName, "drawable", context.getPackageName());
-            imageView.setImageResource(resId);
-            imageView.setTag(truc);
-            imageView.setClickable(true);
-            imageView.setDrawingCacheEnabled(true);
-            imageView.setOnTouchListener(changeColorListener);
-            imageView.setOnClickListener(new View.OnClickListener() {
+            if (resId != 0) {
+                imageView.setImageResource(resId);
+                imageView.setTag(truc);
+                imageView.setClickable(true);
+                imageView.setDrawingCacheEnabled(true);
+                imageView.setOnTouchListener(changeColorListener);
 
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(context,"click view" + v.toString(), Toast.LENGTH_SHORT).show();
-                    Log.i("View", v.toString());
-                    // do whatever stuff you wanna do here
-                }
-            });
-            holder.frameLayout.addView(imageView);
+                holder.frameLayout.addView(imageView);
+            }
+
+
 
         }
         holder.zoomview.setLv(this.lv);
@@ -117,17 +115,26 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
 
         @Override
         public boolean onTouch(View v, MotionEvent event) {
-            Bitmap bmp = Bitmap.createBitmap(v.getDrawingCache());
-            int color = bmp.getPixel((int) event.getX(), (int) event.getY());
-            if (color == Color.TRANSPARENT)
-                return false;
-            else {
-                if(event.getAction()==MotionEvent.ACTION_UP){
-                    Toast.makeText(context,"click view" + v.toString(), Toast.LENGTH_SHORT).show();
-                    /*code to execute*/}
-                //code to execute
-                return true;
+            try {
+                Bitmap bmp = Bitmap.createBitmap(v.getDrawingCache());
+                int color = bmp.getPixel((int) event.getX(), (int) event.getY());
+                if (color == Color.TRANSPARENT)
+                    return false;
+                else {
+                    if (event.getAction() == MotionEvent.ACTION_UP) {
+                        Toast.makeText(context, "touch view" + v.toString(), Toast.LENGTH_SHORT).show();
+                        FragmentManager fm = ((ScannerViewActivity)context).getFragmentManager();
+                        AreaDialog dialogFragment = AreaDialog.newInstance ("Displayed Locations");
+                        dialogFragment.show(fm, "Displayed Locations");
+                    /*code to execute*/
+                    }
+                    //code to execute
+                    return false;
+                }
+            } catch (Exception e) {
+                Log.i("zut", "zut");
             }
+            return false;
         }
     };
 
