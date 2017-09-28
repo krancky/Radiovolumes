@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 import static android.view.KeyCharacterMap.load;
 import static com.squareup.picasso.Picasso.with;
@@ -35,12 +36,14 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
     private LayoutInflater inflater;
     private ArrayList<SliceItem> slices;
     private ListView lv;
+    private LinkedHashMap<String, ArrayList<String>> oLimits;
 
-    public ScannerListAdapter(Context context, ArrayList<SliceItem> slices, ListView lv) {
+    public ScannerListAdapter(Context context, ArrayList<SliceItem> slices, ListView lv, LinkedHashMap<String, ArrayList<String>> oLimits) {
         super(context, R.layout.list_view_scan, slices);
         this.lv = lv;
         this.context = context;
         this.slices = slices;
+        this.oLimits = oLimits;
         inflater = LayoutInflater.from(context);
     }
 
@@ -124,8 +127,9 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
                     if (event.getAction() == MotionEvent.ACTION_UP) {
                         Toast.makeText(context, "touch view" + v.toString(), Toast.LENGTH_SHORT).show();
                         FragmentManager fm = ((ScannerViewActivity)context).getFragmentManager();
-                        AreaDialog dialogFragment = AreaDialog.newInstance ("Displayed Locations");
-                        dialogFragment.show(fm, "Displayed Locations");
+                        AreaDialog dialogFragment = AreaDialog.newInstance (String.valueOf(v.getTag()));
+
+                        dialogFragment.show(fm, String.valueOf(v.getTag()));
                     /*code to execute*/
                     }
                     //code to execute

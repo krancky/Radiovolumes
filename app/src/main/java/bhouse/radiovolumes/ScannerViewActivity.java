@@ -14,10 +14,13 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+
+import bhouse.radiovolumes.processor.OLimitsXMLHandler;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -48,6 +51,8 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
     private ArrayList<SliceItem> sliceItems;
     private LinkedHashMap<String, Integer> displayedList = new LinkedHashMap<String, Integer>();
     private ScannerListAdapter scannerListAdapter;
+
+    private LinkedHashMap<String, ArrayList<String>> oLimits;
 
     public ArrayList<SliceItem> getSliceItems() {
         return sliceItems;
@@ -132,6 +137,7 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
 
         setContentView(R.layout.activity_scanner_view);
 
+        prepareOLimitsData();
         Intent i = getIntent();
         //cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
         //cancerNTarData = new HashMap<String, List<String>>();
@@ -147,7 +153,7 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
         prepareDisplayList();
         prepare_scan_data();
 
-        scannerListAdapter = new ScannerListAdapter(this, sliceItems, mContentView);
+        scannerListAdapter = new ScannerListAdapter(this, sliceItems, mContentView, this.oLimits);
         mContentView.setAdapter(scannerListAdapter);
 
         //mContentView.setDivider(new ColorDrawable(0x99F10529));   //0xAARRGGBB
@@ -287,5 +293,17 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
     }
 
 
+    public void prepareOLimitsData(){
+        try {
+            OLimitsXMLHandler oLimitsXMLHandler = new OLimitsXMLHandler();
+            this.oLimits = oLimitsXMLHandler.parse(getAssets().open("Olimits.xml"));
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 
+    public LinkedHashMap<String, ArrayList<String>> getoLimits() {
+        return oLimits;
+    }
 }

@@ -1,11 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
-</LinearLayout>
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"/>
+
+
+
+        <TextView
+            android:id="@+id/tvCranialL_static"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_below="@id/tvName"
+            android:text="Cranial limit: "/>
+
+        <TextView
+            android:id="@+id/tvCranialL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/tvName"
+            android:layout_toRightOf="@id/tvCranialL_static"/>
+
+
+        <TextView
+            android:id="@+id/tvCaudal_static"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_below="@id/tvCranialL_static"
+            android:text="Caudal limit: "/>
+
+        <TextView
+            android:id="@+id/tvCaudalL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_below="@id/tvCranialL"
+            android:layout_toRightOf="@id/tvCaudal_static"
+            android:textColor="@android:color/white" />
+
+
+        <TextView
+            android:id="@+id/tvAnteriorL_static"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="9dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_below="@id/tvCaudal_static"
+            android:text="Anterior limit: "/>
+
+        <TextView
+            android:id="@+id/tvAnteriorL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_toRightOf="@id/tvAnteriorL_static"
+            android:layout_below="@id/tvCaudalL"
+            android:textColor="@android:color/white" />
+
+
+        <TextView
+            android:id="@+id/tvPosteriorL_static"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="2dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_below="@id/tvAnteriorL_static"
+            android:text="Posterior limit: "/>
+
+        <TextView
+            android:id="@+id/tvPosteriorL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_toRightOf="@id/tvPosteriorL_static"
+            android:layout_below="@id/tvAnteriorL"
+            android:textColor="@android:color/white"/>
+
+
+    <TextView
+        android:id="@+id/tvMedialL_static"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="17dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_below="@id/tvPosteriorL_static"
+        android:text="Medial limit: "/>
+
+    <TextView
+        android:id="@+id/tvMedialL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_toRightOf="@id/tvMedialL_static"
+        android:layout_below="@id/tvPosteriorL"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tvLateralL_static"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="16dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_below="@id/tvMedialL_static"
+        android:text="Lateral limit: "/>
+
+
+    <TextView
+        android:id="@+id/tvLateralL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_toRightOf="@id/tvLateralL_static"
+        android:layout_below="@id/tvMedialL"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tvComment_static"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="19dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_below="@id/tvLateralL_static"
+        android:text="Comments : "/>
+
+    <TextView
+        android:id="@+id/tvComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_toRightOf="@id/tvComment_static"
+        android:layout_below="@id/tvLateralL"
+        android:textColor="@android:color/white" />
+
+
+</RelativeLayout>

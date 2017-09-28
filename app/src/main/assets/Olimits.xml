@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+    <Organ>
+    <Name>amygdale gauche</Name>
+    <CranialL>The cranial limit of the tonsil is...</CranialL>
+    <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+    <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+    <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+    <MedialL>The medial limit of the tonsil is</MedialL>
+    <LateralL>The lateral limit of the tonsil is...</LateralL>
+    <Comment>A witty comment</Comment>
+</Organ>
