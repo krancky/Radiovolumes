@@ -19,7 +19,7 @@
         android:layout_height="90dp"
         android:gravity="center"
         android:background="@color/primary"
-        android:text="Low Risk Tumor Location"
+        android:text="@string/lRtumorLocation"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <bhouse.radiovolumes.NonScrollListView
@@ -35,7 +35,7 @@
         android:layout_height="90dp"
         android:gravity="center"
         android:background="@color/primary"
-        android:text="Low Risk Node Location"
+        android:text="@string/lRnodeLocation"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <bhouse.radiovolumes.NonScrollListView
@@ -51,7 +51,7 @@
         android:layout_height="90dp"
         android:gravity="center"
         android:background="@color/primary"
-        android:text="Additionnal Notes"
+        android:text="@string/additionnal"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <bhouse.radiovolumes.NonScrollListView

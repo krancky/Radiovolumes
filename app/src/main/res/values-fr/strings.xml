@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Radiovolumes</string>
+    <string name="main_title">Radiovolumes</string>
+    <string name="tClickTv">SOUS-LOCALISATIONS TUMORALES</string>
+    <string name="nClickTv">AIRES GANGLIONNAIRES ENVAHIES</string>
+    <string name="addSwitch">Advanced tumor</string>
+    <string name="tumorLocation">SOUS-LOCALISATION TUMORALE</string>
+    <string name="nodeLocation">AIRES GANGLIONNAIRES ENVAHIES</string>
+    <string name="lRtumorLocation">IRRADIATION TUMORALE A BAS RISQUE</string>
+    <string name="lRnodeLocation">IRRADIATION GANGLIONNAIRE A BAS RISQUE</string>
+    <string name="dialogTitle">Volumes à irradier</string>
+    <string name="additionnal">Notes additionnelles</string>
+
+</resources>

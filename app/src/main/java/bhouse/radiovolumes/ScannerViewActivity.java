@@ -26,7 +26,7 @@ import bhouse.radiovolumes.processor.OLimitsXMLHandler;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class ScannerViewActivity extends Activity implements MyDialogFragment.OnCompleteListener {
+public class ScannerViewActivity extends Activity implements MyDialogFragment.OnCompleteListener, AreaDialog.OnCancelListener  {
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     private HashMap<String, List<String>> cancerNTarData;
     /**
@@ -120,6 +120,7 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
         scannerListAdapter.notifyDataSetChanged();
 
     }
+
 
     public HashMap<String, HashMap<String, List<String>>> getCancerTTarData() {
         return cancerTTarData;
@@ -290,6 +291,12 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
                 displayedList.put(location.replaceAll("\\s+", "").toLowerCase()+ " " + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase(),1);
             }
         }
+    }
+
+    @Override
+    public void onCancel(String tag, int imageID){
+        this.scannerListAdapter.notifyDataSetChanged();
+
     }
 
 

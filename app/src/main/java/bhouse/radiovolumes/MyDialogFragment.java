@@ -5,7 +5,6 @@ import android.app.DialogFragment;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -107,7 +106,7 @@ public class MyDialogFragment extends DialogFragment {
             }
         });
 
-                dismiss.setOnClickListener(new View.OnClickListener() {
+        dismiss.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {

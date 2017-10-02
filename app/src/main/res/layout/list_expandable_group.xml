@@ -1,16 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/listTitle"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
-        android:textColor="@android:color/white"
-        android:paddingTop="30dp"
-        android:paddingBottom="30dp" />
-
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -52,10 +40,8 @@
             android:text="Left"
             android:layout_toLeftOf="@+id/headerText3"
 
-            android:layout_marginLeft="27dp"
-            android:layout_marginRight="27dp"
-            android:textColor="@android:color/white"
-            android:layout_marginStart="27dp">
+            android:layout_marginRight="10dp"
+            android:textColor="@android:color/white">
         </TextView>
 
         <TextView
@@ -63,11 +49,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Right"
-            android:layout_marginLeft="27dp"
-            android:layout_marginRight="27dp"
-            android:layout_marginEnd="27dp"
+            android:layout_marginRight="20dp"
             android:textColor="@android:color/white"
             android:layout_alignParentRight="true">
         </TextView>
     </RelativeLayout>
-</LinearLayout>

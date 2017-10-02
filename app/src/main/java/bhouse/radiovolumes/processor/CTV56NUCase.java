@@ -20,6 +20,8 @@ public class CTV56NUCase {
     public String spreadLocation = new String();
     public String spreadSide;
 
+
+
     private List<NodeAreaTemplate> uCaseSVolumes = new ArrayList<NodeAreaTemplate>();
 
     private int identifier;
@@ -101,6 +103,8 @@ public class CTV56NUCase {
     public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
+
+
 
 
     /**

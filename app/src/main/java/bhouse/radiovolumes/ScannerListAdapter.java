@@ -2,9 +2,16 @@ package bhouse.radiovolumes;
 
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,6 +31,10 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+import static android.R.attr.radius;
+import static android.R.attr.tag;
+import static android.R.attr.x;
+import static android.R.attr.y;
 import static android.view.KeyCharacterMap.load;
 import static com.squareup.picasso.Picasso.with;
 
@@ -31,7 +42,7 @@ import static com.squareup.picasso.Picasso.with;
  * Created by kranck on 8/3/2017.
  */
 
-public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
+public class ScannerListAdapter extends ArrayAdapter<SliceItem> implements AreaDialog.OnCancelListener {
     private Context context;
     private LayoutInflater inflater;
     private ArrayList<SliceItem> slices;
@@ -47,7 +58,12 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
         inflater = LayoutInflater.from(context);
     }
 
+    @Override
+    public void onCancel(String tag, int imageID){
+        int resID = context.getResources().getIdentifier(tag, "drawable", context.getPackageName());
+        notifyDataSetChanged();
 
+    }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -114,11 +130,12 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
         return convertView;
     }
 
-    private final View.OnTouchListener changeColorListener = new View.OnTouchListener() {
+    private final ImageView.OnTouchListener changeColorListener = new ImageView.OnTouchListener() {
 
         @Override
         public boolean onTouch(View v, MotionEvent event) {
             try {
+                ImageView imageView = (ImageView) v;
                 Bitmap bmp = Bitmap.createBitmap(v.getDrawingCache());
                 int color = bmp.getPixel((int) event.getX(), (int) event.getY());
                 if (color == Color.TRANSPARENT)
@@ -127,8 +144,14 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> {
                     if (event.getAction() == MotionEvent.ACTION_UP) {
                         Toast.makeText(context, "touch view" + v.toString(), Toast.LENGTH_SHORT).show();
                         FragmentManager fm = ((ScannerViewActivity)context).getFragmentManager();
-                        AreaDialog dialogFragment = AreaDialog.newInstance (String.valueOf(v.getTag()));
 
+                        //imageView.setColorFilter(ContextCompat.getColor(context, R.color.blue), android.graphics.PorterDuff.Mode.MULTIPLY);
+                        String tag = v.getTag().toString();
+                        int resID = context.getResources().getIdentifier(tag + "_ok", "drawable", context.getPackageName());
+                        imageView.setImageResource(resID);
+                        // Autre solution: load     nother resourceID
+
+                        AreaDialog dialogFragment = AreaDialog.newInstance (String.valueOf(v.getTag()), v.getId());
                         dialogFragment.show(fm, String.valueOf(v.getTag()));
                     /*code to execute*/
                     }

@@ -93,6 +93,8 @@ TUCaseXMLHandler {
                                 ctv56TUCase.setSide(text);
                             } else if (tagname.equalsIgnoreCase("Identifier")) {
                                 ctv56TUCase.setIdentifier(Integer.parseInt(text));
+                            } else if (tagname.equalsIgnoreCase("Advanced")) {
+                                ctv56TUCase.setAdvanced(Boolean.valueOf(text));
                             } else if (tagname.equalsIgnoreCase("TLocation")) {
                                 lrTumorTargetVolume.setLocation(text);
                             } else if (tagname.equalsIgnoreCase("TArea")) {

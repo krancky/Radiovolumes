@@ -87,6 +87,7 @@ public class NewCaseActivity extends Activity {
     ArrayList<Item> countryList = new ArrayList<Item>();
 
     private ImageView mImageView;
+    private ImageView headerView;
     private TextView mTitle;
     private TextView headerText1;
     private TextView headerText2;
@@ -120,8 +121,7 @@ public class NewCaseActivity extends Activity {
         //AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
 
         // Getting elements by Id
-        spreadNInputListView = (ListView) findViewById(R.id.spreadNvolumesListView);
-        targetVolumesView = (ListView) findViewById(R.id.targetNVolumesView);
+
 
         mImageView = (ImageView) findViewById(R.id.NewCaseImage);
         mTitle = (TextView) findViewById(R.id.textView);
@@ -169,6 +169,8 @@ public class NewCaseActivity extends Activity {
         try {
             NUCaseXMLHandler parser = new NUCaseXMLHandler();
             ctv56NUCaseList = parser.parse(getAssets().open("CTV56N_short.xml"));
+            String truc = getString(R.string.ctv56n);
+            ctv56NUCaseList = parser.parse(getAssets().open(getString(R.string.ctv56n)));
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -226,7 +228,7 @@ public class NewCaseActivity extends Activity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        ListView spreadTInputListView = (ListView) findViewById(R.id.spreadTvolumesListView);
+
 
 
         // Generates list of T locations to be irradiated
@@ -250,8 +252,17 @@ public class NewCaseActivity extends Activity {
         nExpandableListView.setAdapter(nExpandableListAdapter);
 
         LayoutInflater inflater = getLayoutInflater();
-        ViewGroup header = (ViewGroup)inflater.inflate(R.layout.list_expandable_group, tExpandableListView, false);
-        tExpandableListView.addHeaderView(header, null, false);
+        ViewGroup tHeader = (ViewGroup)inflater.inflate(R.layout.list_expandable_group, tExpandableListView, false);
+        headerView = (ImageView) tHeader.findViewById(R.id.header_photo);
+        headerView.setImageResource(R.drawable.ic_t);
+
+
+        ViewGroup nHeader = (ViewGroup)inflater.inflate(R.layout.list_expandable_group, tExpandableListView, false);
+        headerView = (ImageView) nHeader.findViewById(R.id.header_photo);
+        headerView.setImageResource(R.drawable.ic_n);
+
+        tExpandableListView.addHeaderView(tHeader, null, false);
+        nExpandableListView.addHeaderView(nHeader, null, false);
 
         tExpandableListView.setAdapter(tExpandableListAdapter);
         tExpandableListView.setVisibility(View.GONE);

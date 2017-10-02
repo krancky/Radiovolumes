@@ -16,6 +16,8 @@ public class CTV56TUCase {
     private int identifier;
     //Side of the U case
     private String side;
+    public boolean advanced;
+    public boolean sided;
 
 
     public String getSide() {
@@ -89,6 +91,22 @@ public class CTV56TUCase {
      */
     public String getLocation(){
         return location;
+    }
+
+    public boolean isAdvanced() {
+        return advanced;
+    }
+
+    public void setAdvanced(boolean advanced) {
+        this.advanced = advanced;
+    }
+
+    public boolean isSided() {
+        return sided;
+    }
+
+    public void setSided(boolean sided) {
+        this.sided = sided;
     }
 
     /**

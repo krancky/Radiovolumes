@@ -1,20 +1,14 @@
 <resources>
     <string name="app_name">Radiovolumes</string>
     <string name="main_title">Radiovolumes</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="nom">Nom : </string>
-    <string name="prenom">Prénom : </string>
-    <string name="choose_n">Choisir N envahi</string>
-    <string name="choose_t">Choisir T envahi</string>
-    <string name="title_activity_new_case">NewCaseActivity</string>
-    <string name="title_activity_new_case_dialog">NewCaseDialog</string>
-
-    <string name="title_activity_scanner_view">ScannerViewActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="slice_number">2</string>
-    <string name="contour_number">2</string>
-
-    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="tClickTv">TUMOR SUBLOCATIONS</string>
+    <string name="nClickTv">INVADED LYMPH NODES</string>
+    <string name="addSwitch">Advanced tumor</string>
+    <string name="tumorLocation">TUMOR LOCATION</string>
+    <string name="nodeLocation">NODE LOCATION</string>
+    <string name="lRtumorLocation">LOW RISK TUMOR LOCATION</string>
+    <string name="lRnodeLocation">LOW RISK NODE LOCATION</string>
+    <string name="dialogTitle">Extension and Volumes to irradiate</string>
+    <string name="additionnal">Additional notes</string>
+    <string name="ctv56n">CTV56N_short</string>
 </resources>

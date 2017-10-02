@@ -11,7 +11,7 @@
         android:layout_height="90dp"
         android:gravity="center"
         android:background="@color/primary"
-        android:text="Tumor Location"
+        android:text="@string/tumorLocation"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <bhouse.radiovolumes.NonScrollListView
@@ -27,7 +27,7 @@
         android:layout_height="90dp"
         android:gravity="center"
         android:background="@color/primary"
-        android:text="Node Location"
+        android:text="@string/nodeLocation"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <bhouse.radiovolumes.NonScrollListView
