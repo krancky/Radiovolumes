@@ -168,7 +168,7 @@ public class NewCaseActivity extends Activity {
         ctv56NCaseList = new ArrayList<CTV56NCase>();
         try {
             NUCaseXMLHandler parser = new NUCaseXMLHandler();
-            ctv56NUCaseList = parser.parse(getAssets().open("CTV56N_short.xml"));
+            ctv56NUCaseList = parser.parse(getAssets().open("CTV56N_short_1.xml"));
             String truc = getString(R.string.ctv56n);
             ctv56NUCaseList = parser.parse(getAssets().open(getString(R.string.ctv56n)));
 
