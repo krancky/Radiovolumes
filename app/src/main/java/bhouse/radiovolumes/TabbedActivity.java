@@ -67,8 +67,8 @@ public class TabbedActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 
-        tabLayout.addTab(tabLayout.newTab().setText("Invaded"));
-        tabLayout.addTab(tabLayout.newTab().setText("To irradiate"));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.invaded)));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.toIrradiate)));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
 

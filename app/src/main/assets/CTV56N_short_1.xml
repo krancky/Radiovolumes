@@ -2,8 +2,8 @@
 
 <UCaseCatalog>
 
-    <CTV56NUCase>LangueMobile N0
-        <Location>LangueMobile</Location>
+    <CTV56NUCase>Langue Mobile N0
+        <Location>Langue Mobile</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -55,8 +55,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>LangueMobile13G123D
-        <Location>LangueMobile</Location>
+    <CTV56NUCase>Langue Mobile13G123D
+        <Location>Langue Mobile</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -144,8 +144,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>LangueMobile2G
-        <Location>LangueMobile</Location>
+    <CTV56NUCase>Langue Mobile2G
+        <Location>Langue Mobile</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -210,8 +210,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>LangueMobile4ab5abcG
-        <Location>LangueMobile</Location>
+    <CTV56NUCase>Langue Mobile4ab5abcG
+        <Location>Langue Mobile</Location>
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -295,8 +295,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>LangueMobile6
-        <Location>LangueMobile</Location>
+    <CTV56NUCase>Langue Mobile6
+        <Location>Langue Mobile</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -372,8 +372,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>LangueMobile7abG
-        <Location>LangueMobile</Location>
+    <CTV56NUCase>Langue Mobile7abG
+        <Location>Langue Mobile</Location>
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -449,8 +449,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>LangueMobile9G
-        <Location>LangueMobile</Location>
+    <CTV56NUCase>Langue Mobile9G
+        <Location>Langue Mobile</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -519,8 +519,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>LangueMobile4abVabcD
-        <Location>LangueMobile</Location>
+    <CTV56NUCase>Langue Mobile4abVabcD
+        <Location>Langue Mobile</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -604,8 +604,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>LangueMobile9D
-        <Location>LangueMobile</Location>
+    <CTV56NUCase>Langue Mobile9D
+        <Location>Langue Mobile</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -673,8 +673,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>LangueMobile7abD
-        <Location>LangueMobile</Location>
+    <CTV56NUCase>Langue Mobile7abD
+        <Location>Langue Mobile</Location>
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -760,8 +760,514 @@
 
 
 
-    <CTV56NUCase>GenciveInf_Joue N0
-        <Location>GenciveInf_Joue</Location>
+
+
+
+
+
+
+
+    <CTV56NUCase>Plancher buccal N0
+        <Location>Plancher buccal</Location>
+        <Area>CaviteBuccale</Area>
+        <Side>Gauche</Side>
+        <Identifier>0</Identifier>
+        <SVolumes>
+        </SVolumes>
+        <TVolumes>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+        </TVolumes>
+        <Notifications>
+            <Notification>Traitement unilatéralisé à discuter si la tumeur est latéralisée</Notification>
+        </Notifications>
+    </CTV56NUCase>
+
+    <CTV56NUCase>Plancher buccal13G
+        <Location>Plancher buccal</Location>
+        <Area>CaviteBuccale</Area>
+        <Side>Gauche</Side>
+        <Identifier>0</Identifier>
+        <SVolumes>
+            <SVolume>
+                <SLN>Ia</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>Ib</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>III</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+        </SVolumes>
+        <TVolumes>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+        </TVolumes>
+        <Notifications>
+            <Notification>Traitement unilatéralisé à discuter si la tumeur est latéralisée</Notification>
+        </Notifications>
+    </CTV56NUCase>
+
+    <CTV56NUCase>Plancher buccal2G
+        <Location>Plancher buccal</Location>
+        <Area>CaviteBuccale</Area>
+        <Side>Gauche</Side>
+        <Identifier>0</Identifier>
+        <SVolumes>
+            <SVolume>
+                <SLN>II</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+        </SVolumes>
+        <TVolumes>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+        </TVolumes>
+        <Notifications>
+            <Notification>Traitement unilatéralisé à discuter si la tumeur est latéralisée</Notification>
+            <Notification>Si volumineuse ADP au niveau II : niveau VIIb</Notification>
+        </Notifications>
+    </CTV56NUCase>
+
+    <CTV56NUCase>Plancher buccal4ab5abcG
+        <Location>Plancher buccal</Location>
+        <Area>Cavite Buccale</Area>
+        <Side>Gauche</Side>
+        <Identifier>0</Identifier>
+        <SVolumes>
+            <SVolume>
+                <SLN>IVa</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>IVb</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>Vab</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>Vc</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+        </SVolumes>
+        <TVolumes>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVb</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vc</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+        </TVolumes>
+        <Notifications>
+        </Notifications>
+    </CTV56NUCase>
+
+    <CTV56NUCase>Plancher buccal6
+        <Location>Plancher buccal</Location>
+        <Area>CaviteBuccale</Area>
+        <Side>Gauche</Side>
+        <Identifier>0</Identifier>
+        <SVolumes>
+            <SVolume>
+                <SLN>VI</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>VI</SLN>
+                <SLNSide>Droite</SLNSide>
+            </SVolume>
+        </SVolumes>
+        <TVolumes>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>VI</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>VI</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+        </TVolumes>
+        <Notifications>
+        </Notifications>
+    </CTV56NUCase>
+
+    <CTV56NUCase>Plancher buccal7abG
+        <Location>Plancher buccal</Location>
+        <Area>Cavite Buccale</Area>
+        <Side>Gauche</Side>
+        <Identifier>0</Identifier>
+        <SVolumes>
+            <SVolume>
+                <SLN>VIIa</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>VIIb</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+        </SVolumes>
+        <TVolumes>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>VIIa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>VIIb</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+        </TVolumes>
+        <Notifications>
+            <Notification>Traitement unilatéralisé à discuter si la tumeur est latéralisée</Notification>
+        </Notifications>
+    </CTV56NUCase>
+
+    <CTV56NUCase>Plancher buccal9G
+        <Location>Plancher buccal</Location>
+        <Area>CaviteBuccale</Area>
+        <Side>Gauche</Side>
+        <Identifier>0</Identifier>
+        <SVolumes>
+            <SVolume>
+                <SLN>IX</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+        </SVolumes>
+        <TVolumes>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IX</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+        </TVolumes>
+        <Notifications>
+            <Notification>Traitement unilatéralisé à discuter si la tumeur est latéralisée</Notification>
+        </Notifications>
+    </CTV56NUCase>
+
+
+
+    <CTV56NUCase>Gencive inferieure N0
+        <Location>Gencive inferieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -810,8 +1316,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveInf_Joue139G
-        <Location>GenciveInf_Joue</Location>
+    <CTV56NUCase>Gencive inferieure139G
+        <Location>Gencive inferieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -888,8 +1394,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveInf_Joue2G
-        <Location>GenciveInf_Joue</Location>
+    <CTV56NUCase>Gencive inferieure2G
+        <Location>Gencive inferieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -959,8 +1465,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveInf_Joue4ab5abcG
-        <Location>GenciveInf_Joue</Location>
+    <CTV56NUCase>Gencive inferieure4ab5abcG
+        <Location>Gencive inferieure</Location>
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -1048,8 +1554,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveInf_Joue6
-        <Location>GenciveInf_Joue</Location>
+    <CTV56NUCase>Gencive inferieure6
+        <Location>Gencive inferieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -1129,8 +1635,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveInf_Joue7abG
-        <Location>GenciveInf_Joue</Location>
+    <CTV56NUCase>Gencive inferieure7abG
+        <Location>Gencive inferieure</Location>
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -1211,8 +1717,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveInf_Joue123D
-        <Location>GenciveInf_Joue</Location>
+    <CTV56NUCase>Gencive inferieure123D
+        <Location>Gencive inferieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -1292,8 +1798,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveInf_Joue4abVabcD
-        <Location>GenciveInf_Joue</Location>
+    <CTV56NUCase>Gencive inferieure4abVabcD
+        <Location>Gencive inferieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -1381,8 +1887,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveInf_Joue9D
-        <Location>GenciveInf_Joue</Location>
+    <CTV56NUCase>Gencive inferieure9D
+        <Location>Gencive inferieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -1454,8 +1960,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveInf_Joue7abD
-        <Location>GenciveInf_Joue</Location>
+    <CTV56NUCase>Gencive inferieure7abD
+        <Location>Gencive inferieure</Location>
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -1544,8 +2050,11 @@
     </CTV56NUCase>
 
 
-    <CTV56NUCase>GenciveSup N0
-        <Location>GenciveSup</Location>
+
+
+
+    <CTV56NUCase>Gencive superieure N0
+        <Location>Gencive superieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -1586,8 +2095,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveSup1AGD
-        <Location>GenciveSup</Location>
+    <CTV56NUCase>Gencive superieure1AGD
+        <Location>Gencive superieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -1663,8 +2172,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveSup1b39G
-        <Location>GenciveSup</Location>
+    <CTV56NUCase>Gencive superieure1b39G
+        <Location>Gencive superieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -1733,8 +2242,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveSup2G
-        <Location>GenciveSup</Location>
+    <CTV56NUCase>Gencive superieure2G
+        <Location>Gencive superieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -1796,8 +2305,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveSup4ab5abcG
-        <Location>GenciveSup</Location>
+    <CTV56NUCase>Gencive superieure4ab5abcG
+        <Location>Gencive superieure</Location>
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -1877,8 +2386,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveSup6
-        <Location>GenciveSup</Location>
+    <CTV56NUCase>Gencive superieure6
+        <Location>Gencive superieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -1950,8 +2459,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveSup7abG
-        <Location>GenciveSup</Location>
+    <CTV56NUCase>Gencive superieure7abG
+        <Location>Gencive superieure</Location>
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -2024,8 +2533,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveSup123D
-        <Location>GenciveSup</Location>
+    <CTV56NUCase>Gencive superieure123D
+        <Location>Gencive superieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -2093,8 +2602,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveSup4abVabcD
-        <Location>GenciveSup</Location>
+    <CTV56NUCase>Gencive superieure4abVabcD
+        <Location>Gencive superieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -2174,8 +2683,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>GenciveSup9D
-        <Location>GenciveSup</Location>
+    <CTV56NUCase>Gencive superieure9D
+        <Location>Gencive superieure</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -2239,10 +2748,8 @@
         </Notifications>
     </CTV56NUCase>
 
-
-
-    <CTV56NUCase>GenciveSup7abD
-        <Location>GenciveSup</Location>
+    <CTV56NUCase>Gencive superieure7abD
+        <Location>Gencive superieure</Location>
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -2322,15 +2829,28 @@
         </Notifications>
     </CTV56NUCase>
 
-
-
-
-    <CTV56NUCase>PlancherBuccal N0
-        <Location>PlancherBuccal</Location>
+    <CTV56NUCase>Plancher buccal123D
+        <Location>Plancher buccal</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
         <SVolumes>
+            <SVolume>
+                <SLN>Ia</SLN>
+                <SLNSide>Droite</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>Ib</SLN>
+                <SLNSide>Droite</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>II</SLN>
+                <SLNSide>Droite</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>III</SLN>
+                <SLNSide>Droite</SLNSide>
+            </SVolume>
         </SVolumes>
         <TVolumes>
             <TVolume>
@@ -2350,8 +2870,302 @@
                 <TLNSide>Gauche</TLNSide>
             </TVolume>
             <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
                 <TLN>Ia</TLN>
                 <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+        </TVolumes>
+        <Notifications>
+        </Notifications>
+    </CTV56NUCase>
+
+    <CTV56NUCase>Plancher buccal4abVabcD
+        <Location>Plancher buccal</Location>
+        <Area>CaviteBuccale</Area>
+        <Side>Gauche</Side>
+        <Identifier>0</Identifier>
+        <SVolumes>
+            <SVolume>
+                <SLN>IVa</SLN>
+                <SLNSide>Droite</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>IVb</SLN>
+                <SLNSide>Droite</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>Vab</SLN>
+                <SLNSide>Droite</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>VC</SLN>
+                <SLNSide>Droite</SLNSide>
+            </SVolume>
+        </SVolumes>
+        <TVolumes>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVb</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vc</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+        </TVolumes>
+        <Notifications>
+        </Notifications>
+    </CTV56NUCase>
+
+    <CTV56NUCase>Plancher buccal9D
+        <Location>Plancher buccal</Location>
+        <Area>CaviteBuccale</Area>
+        <Side>Gauche</Side>
+        <Identifier>0</Identifier>
+        <SVolumes>
+            <SVolume>
+                <SLN>IX</SLN>
+                <SLNSide>Droite</SLNSide>
+            </SVolume>
+        </SVolumes>
+        <TVolumes>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IX</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+        </TVolumes>
+        <Notifications>
+        </Notifications>
+    </CTV56NUCase>
+
+    <CTV56NUCase>Plancher buccal7abD
+        <Location>Plancher buccal</Location>
+        <Area>Cavite Buccale</Area>
+        <Side>Gauche</Side>
+        <Identifier>0</Identifier>
+        <SVolumes>
+            <SVolume>
+                <SLN>VIIa</SLN>
+                <SLNSide>Droite</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>VIIb</SLN>
+                <SLNSide>Droite</SLNSide>
+            </SVolume>
+        </SVolumes>
+        <TVolumes>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>VIIa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>VIIb</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ia</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>VIIa</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>VIIb</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+        </TVolumes>
+        <Notifications>
+        </Notifications>
+    </CTV56NUCase>
+
+
+
+    <CTV56NUCase>Palais dur N0
+        <Location>Palais dur</Location>
+        <Area>CaviteBuccale</Area>
+        <Side>Gauche</Side>
+        <Identifier>0</Identifier>
+        <SVolumes>
+        </SVolumes>
+        <TVolumes>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
             </TVolume>
             <TVolume>
                 <TLN>Ib</TLN>
@@ -2371,8 +3185,8 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>PlancherBuccal13G
-        <Location>PlancherBuccal</Location>
+    <CTV56NUCase>Palais dur1AGD
+        <Location>Palais dur</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -2382,8 +3196,8 @@
                 <SLNSide>Gauche</SLNSide>
             </SVolume>
             <SVolume>
-                <SLN>Ib</SLN>
-                <SLNSide>Gauche</SLNSide>
+                <SLN>Ia</SLN>
+                <SLNSide>Droite</SLNSide>
             </SVolume>
             <SVolume>
                 <SLN>III</SLN>
@@ -2441,26 +3255,26 @@
             </TVolume>
         </TVolumes>
         <Notifications>
-            <Notification>Traitement unilatéralisé à discuter si la tumeur est latéralisée</Notification>
+            <Notification>Le niveau VIIa est à discuter</Notification>
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>PlancherBuccal2G
-        <Location>PlancherBuccal</Location>
+    <CTV56NUCase>Palais dur1b3G
+        <Location>Palais dur</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
         <SVolumes>
             <SVolume>
-                <SLN>II</SLN>
+                <SLN>Ib</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>III</SLN>
                 <SLNSide>Gauche</SLNSide>
             </SVolume>
         </SVolumes>
         <TVolumes>
-            <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
             <TVolume>
                 <TLN>Ib</TLN>
                 <TLNSide>Gauche</TLNSide>
@@ -2482,8 +3296,63 @@
                 <TLNSide>Gauche</TLNSide>
             </TVolume>
             <TVolume>
-                <TLN>Ia</TLN>
+                <TLN>Ib</TLN>
                 <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+        </TVolumes>
+        <Notifications>
+            <Notification>Traitement unilatéralisé à discuter si la tumeur est latéralisée</Notification>
+            <Notification>Le niveau VIIa est à discuter</Notification>
+        </Notifications>
+    </CTV56NUCase>
+
+    <CTV56NUCase>Palais dur2G
+        <Location>Palais dur</Location>
+        <Area>CaviteBuccale</Area>
+        <Side>Gauche</Side>
+        <Identifier>0</Identifier>
+        <SVolumes>
+            <SVolume>
+                <SLN>II</SLN>
+                <SLNSide>Gauche</SLNSide>
+            </SVolume>
+        </SVolumes>
+        <TVolumes>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Gauche</TLNSide>
             </TVolume>
             <TVolume>
                 <TLN>Ib</TLN>
@@ -2509,11 +3378,12 @@
         <Notifications>
             <Notification>Traitement unilatéralisé à discuter si la tumeur est latéralisée</Notification>
             <Notification>Si volumineuse ADP au niveau II : niveau VIIb</Notification>
+            <Notification>Le niveau VIIa est à discuter</Notification>
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>PlancherBuccal4ab5abcG
-        <Location>PlancherBuccal</Location>
+    <CTV56NUCase>Palais dur4ab5abcG
+        <Location>Palais dur</Location>
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -2537,10 +3407,6 @@
         </SVolumes>
         <TVolumes>
             <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
-            <TVolume>
                 <TLN>Ib</TLN>
                 <TLNSide>Gauche</TLNSide>
             </TVolume>
@@ -2569,10 +3435,6 @@
                 <TLNSide>Gauche</TLNSide>
             </TVolume>
             <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Droite</TLNSide>
-            </TVolume>
-            <TVolume>
                 <TLN>Ib</TLN>
                 <TLNSide>Droite</TLNSide>
             </TVolume>
@@ -2594,11 +3456,12 @@
             </TVolume>
         </TVolumes>
         <Notifications>
+            <Notification>Le niveau VIIa est à discuter</Notification>
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>PlancherBuccal6
-        <Location>PlancherBuccal</Location>
+    <CTV56NUCase>Palais dur6
+        <Location>Palais dur</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -2614,10 +3477,6 @@
         </SVolumes>
         <TVolumes>
             <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
-            <TVolume>
                 <TLN>Ib</TLN>
                 <TLNSide>Gauche</TLNSide>
             </TVolume>
@@ -2640,10 +3499,6 @@
             <TVolume>
                 <TLN>VI</TLN>
                 <TLNSide>Gauche</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Droite</TLNSide>
             </TVolume>
             <TVolume>
                 <TLN>Ib</TLN>
@@ -2671,11 +3526,12 @@
             </TVolume>
         </TVolumes>
         <Notifications>
+            <Notification>Le niveau VIIa est à discuter</Notification>
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>PlancherBuccal7abG
-        <Location>PlancherBuccal</Location>
+    <CTV56NUCase>Palais dur7abG
+        <Location>Palais dur</Location>
         <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -2690,10 +3546,6 @@
             </SVolume>
         </SVolumes>
         <TVolumes>
-            <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
             <TVolume>
                 <TLN>Ib</TLN>
                 <TLNSide>Gauche</TLNSide>
@@ -2723,10 +3575,6 @@
                 <TLNSide>Gauche</TLNSide>
             </TVolume>
             <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Droite</TLNSide>
-            </TVolume>
-            <TVolume>
                 <TLN>Ib</TLN>
                 <TLNSide>Droite</TLNSide>
             </TVolume>
@@ -2752,8 +3600,9 @@
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>PlancherBuccal9G
-        <Location>PlancherBuccal</Location>
+
+    <CTV56NUCase>Palais dur9G
+        <Location>Palais dur</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -2764,10 +3613,6 @@
             </SVolume>
         </SVolumes>
         <TVolumes>
-            <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
             <TVolume>
                 <TLN>Ib</TLN>
                 <TLNSide>Gauche</TLNSide>
@@ -2793,10 +3638,6 @@
                 <TLNSide>Gauche</TLNSide>
             </TVolume>
             <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Droite</TLNSide>
-            </TVolume>
-            <TVolume>
                 <TLN>Ib</TLN>
                 <TLNSide>Droite</TLNSide>
             </TVolume>
@@ -2819,20 +3660,16 @@
         </TVolumes>
         <Notifications>
             <Notification>Traitement unilatéralisé à discuter si la tumeur est latéralisée</Notification>
+            <Notification>Le niveau VIIa est à discuter</Notification>
         </Notifications>
     </CTV56NUCase>
 
-
-    <CTV56NUCase>PlancherBuccal123D
-        <Location>PlancherBuccal</Location>
+    <CTV56NUCase>Palais dur123D
+        <Location>Palais dur</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
         <SVolumes>
-            <SVolume>
-                <SLN>Ia</SLN>
-                <SLNSide>Droite</SLNSide>
-            </SVolume>
             <SVolume>
                 <SLN>Ib</SLN>
                 <SLNSide>Droite</SLNSide>
@@ -2847,10 +3684,6 @@
             </SVolume>
         </SVolumes>
         <TVolumes>
-            <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
             <TVolume>
                 <TLN>Ib</TLN>
                 <TLNSide>Gauche</TLNSide>
@@ -2870,10 +3703,6 @@
             <TVolume>
                 <TLN>Vab</TLN>
                 <TLNSide>Gauche</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Droite</TLNSide>
             </TVolume>
             <TVolume>
                 <TLN>Ib</TLN>
@@ -2897,11 +3726,12 @@
             </TVolume>
         </TVolumes>
         <Notifications>
+            <Notification>Le niveau VIIa est à discuter</Notification>
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>PlancherBuccal4abVabcD
-        <Location>PlancherBuccal</Location>
+    <CTV56NUCase>Palais dur4abVabcD
+        <Location>Palais dur</Location>
         <Area>CaviteBuccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
@@ -2925,10 +3755,6 @@
         </SVolumes>
         <TVolumes>
             <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
-            <TVolume>
                 <TLN>Ib</TLN>
                 <TLNSide>Gauche</TLNSide>
             </TVolume>
@@ -2947,10 +3773,6 @@
             <TVolume>
                 <TLN>Vab</TLN>
                 <TLNSide>Gauche</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Droite</TLNSide>
             </TVolume>
             <TVolume>
                 <TLN>Ib</TLN>
@@ -2982,25 +3804,26 @@
             </TVolume>
         </TVolumes>
         <Notifications>
+            <Notification>Le niveau VIIa est à discuter</Notification>
         </Notifications>
     </CTV56NUCase>
 
-    <CTV56NUCase>PlancherBuccal9D
-        <Location>PlancherBuccal</Location>
-        <Area>CaviteBuccale</Area>
+    <CTV56NUCase>Palais dur7abD
+        <Location>Palais dur</Location>
+        <Area>Cavite Buccale</Area>
         <Side>Gauche</Side>
         <Identifier>0</Identifier>
         <SVolumes>
             <SVolume>
-                <SLN>IX</SLN>
+                <SLN>VIIa</SLN>
+                <SLNSide>Droite</SLNSide>
+            </SVolume>
+            <SVolume>
+                <SLN>VIIb</SLN>
                 <SLNSide>Droite</SLNSide>
             </SVolume>
         </SVolumes>
         <TVolumes>
-            <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
             <TVolume>
                 <TLN>Ib</TLN>
                 <TLNSide>Gauche</TLNSide>
@@ -3022,8 +3845,77 @@
                 <TLNSide>Gauche</TLNSide>
             </TVolume>
             <TVolume>
-                <TLN>Ia</TLN>
+                <TLN>VIIa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>VIIb</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Ib</TLN>
                 <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>VIIa</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>VIIb</TLN>
+                <TLNSide>Droite</TLNSide>
+            </TVolume>
+        </TVolumes>
+        <Notifications>
+        </Notifications>
+    </CTV56NUCase>
+
+    <CTV56NUCase>Palais dur9D
+        <Location>Palais dur</Location>
+        <Area>CaviteBuccale</Area>
+        <Side>Gauche</Side>
+        <Identifier>0</Identifier>
+        <SVolumes>
+            <SVolume>
+                <SLN>IX</SLN>
+                <SLNSide>Droite</SLNSide>
+            </SVolume>
+        </SVolumes>
+        <TVolumes>
+            <TVolume>
+                <TLN>Ib</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>II</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>III</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>IVa</TLN>
+                <TLNSide>Gauche</TLNSide>
+            </TVolume>
+            <TVolume>
+                <TLN>Vab</TLN>
+                <TLNSide>Gauche</TLNSide>
             </TVolume>
             <TVolume>
                 <TLN>Ib</TLN>
@@ -3051,95 +3943,10 @@
             </TVolume>
         </TVolumes>
         <Notifications>
+            <Notification>Le niveau VIIa est à discuter</Notification>
         </Notifications>
     </CTV56NUCase>
 
-
-
-    <CTV56NUCase>PlancherBuccal7abD
-        <Location>PlancherBuccal</Location>
-        <Area>Cavite Buccale</Area>
-        <Side>Gauche</Side>
-        <Identifier>0</Identifier>
-        <SVolumes>
-            <SVolume>
-                <SLN>VIIa</SLN>
-                <SLNSide>Droite</SLNSide>
-            </SVolume>
-            <SVolume>
-                <SLN>VIIb</SLN>
-                <SLNSide>Droite</SLNSide>
-            </SVolume>
-        </SVolumes>
-        <TVolumes>
-            <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>Ib</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>II</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>III</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>IVa</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>Vab</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>VIIa</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>VIIb</TLN>
-                <TLNSide>Gauche</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>Ia</TLN>
-                <TLNSide>Droite</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>Ib</TLN>
-                <TLNSide>Droite</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>II</TLN>
-                <TLNSide>Droite</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>III</TLN>
-                <TLNSide>Droite</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>IVa</TLN>
-                <TLNSide>Droite</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>Vab</TLN>
-                <TLNSide>Droite</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>VIIa</TLN>
-                <TLNSide>Droite</TLNSide>
-            </TVolume>
-            <TVolume>
-                <TLN>VIIb</TLN>
-                <TLNSide>Droite</TLNSide>
-            </TVolume>
-        </TVolumes>
-        <Notifications>
-        </Notifications>
-    </CTV56NUCase>
 
 
 

@@ -88,6 +88,12 @@ public class TumorAreasTemplateXMLHandler {
                             else if (tagname.equalsIgnoreCase("Location")) {
                                 tumorAreaTemplate.setLocation(text);
                             }
+                            else if (tagname.equalsIgnoreCase("LocationLocale")) {
+                                tumorAreaTemplate.setLocationLocale(text);
+                            }
+                            else if (tagname.equalsIgnoreCase("AreaLocale")) {
+                                tumorAreaTemplate.setAreaLocale(text);
+                            }
                             else if (tagname.equalsIgnoreCase("Area")) {
                                 tumorAreaTemplate.setArea(text);
                             }

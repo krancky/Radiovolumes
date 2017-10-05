@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 public class TumorAreaTemplate implements Serializable{
 
-    String location,leftContent, rightContent, area, side;
+    String location,leftContent, rightContent, area, side; String locationLocale; String areaLocale;
     int color;
 
     public int getColor() {
@@ -51,6 +51,22 @@ public class TumorAreaTemplate implements Serializable{
 
     public String getArea() {
         return this.area;
+    }
+
+    public String getLocationLocale() {
+        return locationLocale;
+    }
+
+    public String getAreaLocale() {
+        return areaLocale;
+    }
+
+    public void setAreaLocale(String areaLocale) {
+        this.areaLocale = areaLocale;
+    }
+
+    public void setLocationLocale(String locationLocale) {
+        this.locationLocale = locationLocale;
     }
 
     public int getImageResourceId(Context context, boolean isChecked) {

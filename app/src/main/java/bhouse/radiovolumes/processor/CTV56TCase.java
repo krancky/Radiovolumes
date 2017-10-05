@@ -5,6 +5,7 @@ import android.util.Log;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -100,7 +101,7 @@ public class CTV56TCase implements Serializable{
      * Removes duplicates in target volumes
      */
     public void removeTarVolumesDuplicates(){
-        Set<LRTumorTargetVolume> s = new HashSet<LRTumorTargetVolume>();
+        Set<LRTumorTargetVolume> s = new LinkedHashSet<LRTumorTargetVolume>();
         s.addAll(this.getCaseTTarVolumes());
         this.cTV56TTarVolumes.clear();
         List<LRTumorTargetVolume> list = new ArrayList<LRTumorTargetVolume>();

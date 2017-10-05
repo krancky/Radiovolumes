@@ -126,7 +126,7 @@ public class TSelectionAdapter extends BaseAdapter {
             ImageView tumorPhoto = (ImageView) convertView.findViewById(R.id.node_photo);
             int sectionNumber = items.get(position).getSectionNumber();
             TumorAreaTemplate h = tList.get(position-sectionNumber);
-            holder.tv.setText(h.getLocation());
+            holder.tv.setText(h.getLocationLocale());
             holder.cbLeft.setTag(position - sectionNumber);
             holder.cbRight.setTag(position - sectionNumber);
             holder.cbLeft.setChecked(checkboxStatus_left.get(position- sectionNumber));

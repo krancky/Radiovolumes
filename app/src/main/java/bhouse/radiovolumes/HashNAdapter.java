@@ -66,28 +66,28 @@ public class HashNAdapter extends BaseAdapter {
                 //int resId = context.getResources().getIdentifier(item.getKey(), "drawable", context.getPackageName());
                 int resId = context.getResources().getIdentifier("ic_"+ cancer.getMainSide().replaceAll("\\s+", "").toLowerCase() + "_ok", "drawable", context.getPackageName());
                 ((ImageView) result.findViewById(R.id.image_photo)).setImageResource(resId);
-                ((TextView) result.findViewById(R.id.text_side)).setText("Ipsilateral");
+                ((TextView) result.findViewById(R.id.text_side)).setText(R.string.ipsilateral);
 
             } else if ((item.getKey().equalsIgnoreCase("Droite") && this.cancer.getMainSide().equalsIgnoreCase("Right"))) {
                 ((TextView) result.findViewById(R.id.text_static)).setText(cancer.getMainSide()+ ": ");
                 int resId = context.getResources().getIdentifier("ic_"+ cancer.getMainSide().replaceAll("\\s+", "").toLowerCase() + "_ok", "drawable", context.getPackageName());
                 ((ImageView) result.findViewById(R.id.image_photo)).setImageResource(resId);
                 ((TextView) result.findViewById(R.id.text)).setText(prepareString(sideMap));
-                ((TextView) result.findViewById(R.id.text_side)).setText("Ipsilateral");
+                ((TextView) result.findViewById(R.id.text_side)).setText(R.string.ipsilateral);
 
             } else if ((item.getKey().equalsIgnoreCase("Droite") && this.cancer.getMainSide().equalsIgnoreCase("Left"))) {
-                ((TextView) result.findViewById(R.id.text_static)).setText("Right: ");
+                ((TextView) result.findViewById(R.id.text_static)).setText(R.string.right);
                 int resId = context.getResources().getIdentifier("ic_"+ "Right".replaceAll("\\s+", "").toLowerCase() + "_ok", "drawable", context.getPackageName());
                 ((ImageView) result.findViewById(R.id.image_photo)).setImageResource(resId);
                 ((TextView) result.findViewById(R.id.text)).setText(prepareString(sideMap));
-                ((TextView) result.findViewById(R.id.text_side)).setText("Contralateral");
+                ((TextView) result.findViewById(R.id.text_side)).setText(R.string.contralateral);
 
             } else if ((item.getKey().equalsIgnoreCase("Gauche") && this.cancer.getMainSide().equalsIgnoreCase("Right"))) {
-                ((TextView) result.findViewById(R.id.text_static)).setText("Left: ");
+                ((TextView) result.findViewById(R.id.text_static)).setText(R.string.left);
                 int resId = context.getResources().getIdentifier("ic_"+ "Left".replaceAll("\\s+", "").toLowerCase() + "_ok", "drawable", context.getPackageName());
                 ((ImageView) result.findViewById(R.id.image_photo)).setImageResource(resId);
                 ((TextView) result.findViewById(R.id.text)).setText(prepareString(sideMap));
-                ((TextView) result.findViewById(R.id.text_side)).setText("Contralateral");
+                ((TextView) result.findViewById(R.id.text_side)).setText(R.string.contralateral);
             }
 
 

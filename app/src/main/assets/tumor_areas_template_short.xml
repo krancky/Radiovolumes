@@ -1,67 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TumorsAreasTemplate>
     <Volume>
-        <Area>Cavite Buccale</Area>
+        <Area>Cavité Buccale</Area>
+        <AreaLocale>Cavité Buccale</AreaLocale>
         <Location>Plancher Buccal</Location>
+        <LocationLocale>Plancher Buccal</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavite Buccale</Area>
+        <Area>Cavité Buccale</Area>
+        <AreaLocale>Cavité Buccale</AreaLocale>
         <Location>Langue Mobile</Location>
+        <LocationLocale>Langue Mobile</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavite Buccale</Area>
+        <Area>Cavité Buccale</Area>
+        <AreaLocale>Cavité Buccale</AreaLocale>
         <Location>Face Interne de Joue</Location>
+        <LocationLocale>Face Interne de Joue</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavite Buccale</Area>
+        <Area>Cavité Buccale</Area>
+        <AreaLocale>Cavité Buccale</AreaLocale>
         <Location>Gencive Inferieure</Location>
+        <LocationLocale>Gencive Inférieure</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavite Buccale</Area>
+        <Area>Cavité Buccale</Area>
+        <AreaLocale>Cavité Buccale</AreaLocale>
         <Location>Gencive Superieure</Location>
+        <LocationLocale>Gencive Supérieure</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavite Buccale</Area>
+        <Area>Cavité Buccale</Area>
+        <AreaLocale>Cavité Buccale</AreaLocale>
         <Location>Palais Dur</Location>
+        <LocationLocale>Palais dur</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavite Buccale</Area>
+        <Area>Cavité Buccale</Area>
+        <AreaLocale>Cavité Buccale</AreaLocale>
         <Location>Trigone retromolaire Superieur</Location>
+        <LocationLocale>Trigone Rétromolaire Supérieur</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavite Buccale</Area>
+        <Area>Cavité Buccale</Area>
+        <AreaLocale>Cavité Buccale</AreaLocale>
         <Location>Trigone retromolaire Inferieur</Location>
+        <LocationLocale>Trigone Rétromolaire Inférieur</LocationLocale>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
         <Location>Pilier Anterieur</Location>
+        <LocationLocale>Pilier Antérieur</LocationLocale>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
         <Location>Amygdale</Location>
+        <LocationLocale>Amygdale</LocationLocale>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
         <Location>Pilier Posterieur</Location>
+        <LocationLocale>Pilier Postérieur</LocationLocale>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
         <Location>Voile</Location>
+        <LocationLocale>Voile</LocationLocale>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
         <Location>Sillon Amygdaloglosse</Location>
+        <LocationLocale>Sillon Amygdalo-Glosse</LocationLocale>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
         <Location>Base de Langue</Location>
+        <LocationLocale>Base de Langue</LocationLocale>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
         <Location>Vallecule</Location>
+        <LocationLocale>Vallécule</LocationLocale>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
         <Location>Paroi pharyngee Posterieure</Location>
+        <LocationLocale>Paroi Pharyngée Postérieure</LocationLocale>
     </Volume>
 </TumorsAreasTemplate>

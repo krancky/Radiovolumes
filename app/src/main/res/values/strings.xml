@@ -1,14 +1,23 @@
 <resources>
     <string name="app_name">Radiovolumes</string>
     <string name="main_title">Radiovolumes</string>
-    <string name="tClickTv">TUMOR SUBLOCATIONS</string>
-    <string name="nClickTv">INVADED LYMPH NODES</string>
+    <string name="tClickTv">Tumor Sublocation</string>
+    <string name="nClickTv">Invaded Lymph Nodes</string>
     <string name="addSwitch">Advanced tumor</string>
-    <string name="tumorLocation">TUMOR LOCATION</string>
-    <string name="nodeLocation">NODE LOCATION</string>
-    <string name="lRtumorLocation">LOW RISK TUMOR LOCATION</string>
-    <string name="lRnodeLocation">LOW RISK NODE LOCATION</string>
+    <string name="tumorLocation">Tumor Location</string>
+    <string name="nodeLocation">Node Location</string>
+    <string name="lRtumorLocation">Low Risk Tumor Location</string>
+    <string name="lRnodeLocation">Low Risk Node Location</string>
     <string name="dialogTitle">Extension and Volumes to irradiate</string>
     <string name="additionnal">Additional notes</string>
     <string name="ctv56n">CTV56N_short</string>
+    <string name="left">Left: </string>
+    <string name="right">Right: </string>
+    <string name="invaded">INVADED</string>
+    <string name="toIrradiate">TO IRRADIATE</string>
+    <string name="newCase">New Case</string>
+    <string name="load">Load</string>
+    <string name="atlas">Contour Atlas</string>
+    <string name="ipsilateral">Ipsilateral</string>
+    <string name="contralateral">Contralateral</string>
 </resources>

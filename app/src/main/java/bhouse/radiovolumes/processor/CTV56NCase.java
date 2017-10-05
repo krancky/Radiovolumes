@@ -3,6 +3,7 @@ package bhouse.radiovolumes.processor;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -93,7 +94,7 @@ public class CTV56NCase implements Serializable{
      * Removes duplicates in computed target volumes
      */
     public void removeTarVolumesDuplicates() {
-        Set<LRNodeTargetVolume> s = new HashSet<>();
+        Set<LRNodeTargetVolume> s = new LinkedHashSet<>();
         s.addAll(this.getCaseNTarVolumes());
         this.cTV56NTarVolumes.clear();
         List<LRNodeTargetVolume> list = new ArrayList<LRNodeTargetVolume>();
