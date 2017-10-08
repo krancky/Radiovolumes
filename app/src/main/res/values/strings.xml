@@ -103,6 +103,8 @@
     <string name="oropharynx">Oropharynx</string>
     <string name="cavitebuccale">Buccal Cavity</string>
     <string name="larynx">Larynx</string>
+    <string name="left_alone">Left</string>
+    <string name="right_alone">Right</string>
 
 
 </resources>

@@ -122,7 +122,7 @@ public class NewCaseActivity extends Activity {
 
         mImageView = (ImageView) findViewById(R.id.NewCaseImage);
         mTitle = (TextView) findViewById(R.id.textView);
-        mTitle.setText("New Case");
+        mTitle.setText(R.string.newCase);
         //mImageView.setImageResource(mPlace.getImageResourceId(this));
         mImageView.setImageResource(R.drawable.newcase);
 

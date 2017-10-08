@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ADARO</string>
     <string name="main_title">Radiovolumes</string>
-    <string name="tClickTv">Sous-Localisations Tomorales</string>
+    <string name="tClickTv">Sous-Localisations Tumorales</string>
     <string name="nClickTv">Aires Ganglionnaires Envahies</string>
     <string name="addSwitch">Oropharynx</string>
     <string name="tumorLocation">Sous Localisation Tumorale</string>
@@ -106,6 +106,8 @@
     <string name="oropharynx">Oropharynx</string>
     <string name="cavitebuccale">Cavité Buccale</string>
     <string name="larynx">Larynx</string>
+    <string name="left_alone">Gauche</string>
+    <string name="right_alone">Droite</string>
 
 
 </resources>

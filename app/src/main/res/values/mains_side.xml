@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="main_side_array">
-        <item>Left</item>
-        <item>Right</item>
+        <item>@string/left_alone</item>
+        <item>@string/right_alone</item>
     </string-array>
 
 </resources>
