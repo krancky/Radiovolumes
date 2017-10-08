@@ -2,54 +2,36 @@ package bhouse.radiovolumes;
 
 import android.app.FragmentManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
-import static android.R.attr.radius;
 import static android.R.attr.tag;
-import static android.R.attr.x;
-import static android.R.attr.y;
-import static android.view.KeyCharacterMap.load;
-import static com.squareup.picasso.Picasso.with;
 
 /**
  * Created by kranck on 8/3/2017.
  */
 
-public class ScannerListAdapter extends ArrayAdapter<SliceItem> implements AreaDialog.OnCancelListener {
+public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialog.OnCancelListener {
     private Context context;
     private LayoutInflater inflater;
-    private ArrayList<SliceItem> slices;
+    private ArrayList<Slice> slices;
     private ListView lv;
     private LinkedHashMap<String, ArrayList<String>> oLimits;
 
-    public ScannerListAdapter(Context context, ArrayList<SliceItem> slices, ListView lv, LinkedHashMap<String, ArrayList<String>> oLimits) {
+    public ScannerListAdapter(Context context, ArrayList<Slice> slices, ListView lv, LinkedHashMap<String, ArrayList<String>> oLimits) {
         super(context, R.layout.list_view_scan, slices);
         this.lv = lv;
         this.context = context;
@@ -59,8 +41,8 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> implements AreaD
     }
 
     @Override
-    public void onCancel(String tag, int imageID){
-        int resID = context.getResources().getIdentifier(tag, "drawable", context.getPackageName());
+    public void onCancel(SliceVectorItem tag, int imageID){
+        int resID = context.getResources().getIdentifier(tag.getFilename(), "drawable", context.getPackageName());
         notifyDataSetChanged();
 
     }
@@ -84,9 +66,9 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> implements AreaD
 
         }
         convertView.setMinimumHeight(parent.getMeasuredHeight());
-        SliceItem item = getItem(position);
+        Slice item = getItem(position);
         holder.frameLayout.removeAllViews();
-        int resIdScan = this.context.getResources().getIdentifier(item.getStorageLocation(), "drawable", context.getPackageName());
+        int resIdScan = this.context.getResources().getIdentifier(item.getScanStorageLocation(), "drawable", context.getPackageName());
         //Picasso
         //.with(context)
         //.load(resIdScan)
@@ -103,13 +85,13 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> implements AreaD
 
         for (int i = 0; i < item.getVectorStorageLocation().size(); i++) {
             imageView = new ImageView(context);
-            String truc = item.getVectorStorageLocation().get(i);
-            int resId = context.getResources().getIdentifier(item.getVectorStorageLocation().get(i), "drawable", context.getPackageName());
+            String truc = item.getVectorStorageLocation().get(i).getFilename();
+            int resId = context.getResources().getIdentifier(item.getVectorStorageLocation().get(i).getFilename(), "drawable", context.getPackageName());
 
             //int resId = context.getResources().getIdentifier(resourceName, "drawable", context.getPackageName());
             if (resId != 0) {
                 imageView.setImageResource(resId);
-                imageView.setTag(truc);
+                imageView.setTag(item.getVectorStorageLocation().get(i));
                 imageView.setClickable(true);
                 imageView.setDrawingCacheEnabled(true);
                 imageView.setOnTouchListener(changeColorListener);
@@ -136,22 +118,22 @@ public class ScannerListAdapter extends ArrayAdapter<SliceItem> implements AreaD
         public boolean onTouch(View v, MotionEvent event) {
             try {
                 ImageView imageView = (ImageView) v;
+                SliceVectorItem sliceVectorItem = (SliceVectorItem) v.getTag();
                 Bitmap bmp = Bitmap.createBitmap(v.getDrawingCache());
                 int color = bmp.getPixel((int) event.getX(), (int) event.getY());
                 if (color == Color.TRANSPARENT)
                     return false;
                 else {
                     if (event.getAction() == MotionEvent.ACTION_UP) {
-                        Toast.makeText(context, "touch view" + v.toString(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(context, "touch view" + v.toString(), Toast.LENGTH_SHORT).show();
                         FragmentManager fm = ((ScannerViewActivity)context).getFragmentManager();
-
                         //imageView.setColorFilter(ContextCompat.getColor(context, R.color.blue), android.graphics.PorterDuff.Mode.MULTIPLY);
-                        String tag = v.getTag().toString();
-                        int resID = context.getResources().getIdentifier(tag + "_ok", "drawable", context.getPackageName());
+                        //String tag = v.getTag().toString();
+                        int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_ok", "drawable", context.getPackageName());
                         imageView.setImageResource(resID);
                         // Autre solution: load     nother resourceID
 
-                        AreaDialog dialogFragment = AreaDialog.newInstance (String.valueOf(v.getTag()), v.getId());
+                        AreaDialog dialogFragment = AreaDialog.newInstance ((SliceVectorItem) v.getTag(), v.getId());
                         dialogFragment.show(fm, String.valueOf(v.getTag()));
                     /*code to execute*/
                     }

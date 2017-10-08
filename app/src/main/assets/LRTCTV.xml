@@ -20,7 +20,7 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Glande sous-maxillaire</TLocation>
+                <TLocation>Glande sousmaxillaire</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -30,7 +30,7 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>mandibule</TLocation>
+                <TLocation>Mandibule</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -56,7 +56,7 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>glande sous-maxillaire</TLocation>
+                <TLocation>glande sousmaxillaire</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -66,7 +66,7 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>mandibule</TLocation>
+                <TLocation>Mandibule</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -102,24 +102,24 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Glande sous-maxillaire</TLocation>
+                <TLocation>Glande sousmaxillaire</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Glande sous-maxillaire</TLocation>
+                <TLocation>Glande sousmaxillaire</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Sillon amygdalo-glosse</TLocation>
+                <TLocation>Sillon amygdaloglosse</TLocation>
                 <TSide>Gauche</TSide>
-                <TArea>Cavite Buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Pilier anterieur</TLocation>
                 <TSide>Gauche</TSide>
-                <TArea>Cavite Buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
         </TVolumes>
     </LRTCTVUCase>
@@ -153,24 +153,24 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Glande sous-maxillaire</TLocation>
+                <TLocation>Glande sousmaxillaire</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Glande sous-maxillaire</TLocation>
+                <TLocation>Glande sousmaxillaire</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Sillon amygdalo-glosse</TLocation>
+                <TLocation>Sillon amygdaloglosse</TLocation>
                 <TSide>Droite</TSide>
-                <TArea>Cavite Buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Pilier anterieur</TLocation>
                 <TSide>Droite</TSide>
-                <TArea>Cavite Buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
         </TVolumes>
     </LRTCTVUCase>
@@ -189,7 +189,7 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Glande sous-maxillaire</TLocation>
+                <TLocation>Glande sousmaxillaire</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -235,7 +235,7 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Glande sous-maxillaire</TLocation>
+                <TLocation>Glande sousmaxillaire</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -281,7 +281,7 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Glande sous-maxillaire</TLocation>
+                <TLocation>Glande sousmaxillaire</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -316,22 +316,22 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Espace parotidien homolateral</TLocation>
+                <TLocation>Espace parotidien</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Pterigoidien medial</TLocation>
+                <TLocation>Pterygoidien medial</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Fosse pterygo-maxillaire</TLocation>
+                <TLocation>Fosse pterygomaxillaire</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Gasser</TLocation>
+                <TLocation>Ganglion de Gasser</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -352,7 +352,7 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Glande sous-maxillaire</TLocation>
+                <TLocation>Glande sousmaxillaire</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -387,22 +387,22 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Espace parotidien homolateral</TLocation>
+                <TLocation>Espace parotidien</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Pterigoidien medial</TLocation>
+                <TLocation>Pterygoidien medial</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Fosse pterygo-maxillaire</TLocation>
+                <TLocation>Fosse pterygomaxillaire</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Gasser</TLocation>
+                <TLocation>Ganglion de Gasser</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -433,7 +433,7 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Glande sous-maxillaire</TLocation>
+                <TLocation>Glande sousmaxillaire</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -474,7 +474,7 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Glande sous-maxillaire</TLocation>
+                <TLocation>Glande sousmaxillaire</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -687,12 +687,12 @@
         <TVolume>
             <TLocation>Pilier anterieur</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Amygdale</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Voile</TLocation>
@@ -700,7 +700,7 @@
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Pterigoidien medial</TLocation>
+            <TLocation>Pterygoidien medial</TLocation>
             <TSide>Gauche</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -748,12 +748,12 @@
         <TVolume>
             <TLocation>Pilier anterieur</TLocation>
             <TSide>Droite</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Amygdale</TLocation>
             <TSide>Droite</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Voile</TLocation>
@@ -761,7 +761,7 @@
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Pterigoidien medial</TLocation>
+            <TLocation>Pterygoidien medial</TLocation>
             <TSide>Droite</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -801,7 +801,7 @@
                 <TArea>Cavite buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Glande sous-maxillaire</TLocation>
+                <TLocation>Glande sousmaxillaire</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -819,12 +819,12 @@
         <TVolume>
             <TLocation>Pilier anterieur</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Amygdale</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Voile</TLocation>
@@ -857,7 +857,7 @@
                 <TArea>Cavite buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Glande sous-maxillaire</TLocation>
+                <TLocation>Glande sousmaxillaire</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -875,12 +875,12 @@
         <TVolume>
             <TLocation>Pilier anterieur</TLocation>
             <TSide>Droite</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Amygdale</TLocation>
             <TSide>Droite</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Voile</TLocation>
@@ -913,7 +913,7 @@
                 <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Sillon amygdalo-glosse</TLocation>
+                <TLocation>Sillon amygdaloglosse</TLocation>
                 <TSide>droite</TSide>
                 <TArea>Oropharynx</TArea>
             </TVolume>
@@ -934,7 +934,7 @@
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Glande sous-maxillaire</TLocation>
+            <TLocation>Glande sousmaxillaire</TLocation>
             <TSide>Gauche</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -949,7 +949,7 @@
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Trigone retromolaire</TLocation>
+            <TLocation>Trigone retromolaire inferieur</TLocation>
             <TSide>Gauche</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -959,7 +959,7 @@
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Pterigoidien medial</TLocation>
+            <TLocation>Pterygoidien medial</TLocation>
             <TSide>Gauche</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -989,7 +989,7 @@
                 <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Sillon amygdalo-glosse</TLocation>
+                <TLocation>Sillon amygdaloglosse</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Oropharynx</TArea>
             </TVolume>
@@ -1010,7 +1010,7 @@
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Glande sous-maxillaire</TLocation>
+            <TLocation>Glande sousmaxillaire</TLocation>
             <TSide>Droite</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -1025,7 +1025,7 @@
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Trigone retromolaire</TLocation>
+            <TLocation>Trigone retromolaire inferieur</TLocation>
             <TSide>Droite</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -1035,7 +1035,7 @@
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Pterigoidien medial</TLocation>
+            <TLocation>Pterygoidien medial</TLocation>
             <TSide>Droite</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -1065,7 +1065,7 @@
                 <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Sillon amygdalo-glosse</TLocation>
+                <TLocation>Sillon amygdaloglosse</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Oropharynx</TArea>
             </TVolume>
@@ -1088,7 +1088,7 @@
         <TVolume>
             <TLocation>Carrefour des trois replis</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Larynx</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Espace parapharynge</TLocation>
@@ -1128,12 +1128,12 @@
             <TVolume>
                 <TLocation>Pilier anterieur</TLocation>
                 <TSide>droite</TSide>
-                <TArea>Cavite buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Sillon amygdalo-glosse</TLocation>
+                <TLocation>Sillon amygdaloglosse</TLocation>
                 <TSide>droite</TSide>
-                <TArea>Cavite Buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
         </TVolumes>
         <TVolume>
@@ -1154,7 +1154,7 @@
         <TVolume>
             <TLocation>Carrefour des trois replis</TLocation>
             <TSide>droite</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Espace parapharynge</TLocation>
@@ -1197,7 +1197,7 @@
                 <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Sillon amygdalo-glosse</TLocation>
+                <TLocation>Sillon amygdaloglosse</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Oropharynx</TArea>
             </TVolume>
@@ -1220,7 +1220,7 @@
         <TVolume>
             <TLocation>Carrefour des trois replis</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Larynx</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Espace parapharynge</TLocation>
@@ -1238,7 +1238,7 @@
             <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Pterydoidien medial</TLocation>
+            <TLocation>Pterygoidien medial</TLocation>
             <TSide>Gauche</TSide>
             <TArea>Oropharynx</TArea>
         </TVolume>
@@ -1291,12 +1291,12 @@
             <TVolume>
                 <TLocation>Pilier anterieur</TLocation>
                 <TSide>droite</TSide>
-                <TArea>Cavite buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Sillon amygdalo-glosse</TLocation>
+                <TLocation>Sillon amygdaloglosse</TLocation>
                 <TSide>droite</TSide>
-                <TArea>Cavite Buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
         </TVolumes>
         <TVolume>
@@ -1317,7 +1317,7 @@
         <TVolume>
             <TLocation>Carrefour des trois replis</TLocation>
             <TSide>droite</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Espace parapharynge</TLocation>
@@ -1357,7 +1357,7 @@
             <TVolume>
                 <TLocation>Amygdale</TLocation>
                 <TSide>Gauche</TSide>
-                <TArea>Cavite buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Voile</TLocation>
@@ -1376,14 +1376,14 @@
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Repli pharyngo-epiglottique</TLocation>
+            <TLocation>Repli pharyngoepiglottique</TLocation>
             <TSide>Gauche</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Carrefour des trois replis</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Larynx</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Espace parapharynge</TLocation>
@@ -1413,7 +1413,7 @@
             <TVolume>
                 <TLocation>Amygdale</TLocation>
                 <TSide>droite</TSide>
-                <TArea>Cavite buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Voile</TLocation>
@@ -1432,14 +1432,14 @@
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Repli pharyngo-epiglottique</TLocation>
+            <TLocation>Repli pharyngoepiglottique</TLocation>
             <TSide>droite</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Carrefour des trois replis</TLocation>
             <TSide>droite</TSide>
-            <TArea>Larynx</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Espace parapharynge</TLocation>
@@ -1469,12 +1469,12 @@
             <TVolume>
                 <TLocation>Amygdale</TLocation>
                 <TSide>Gauche</TSide>
-                <TArea>Cavite buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Amygdale</TLocation>
                 <TSide>Droite</TSide>
-                <TArea>Cavite Buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
         </TVolumes>
         <TVolume>
@@ -1485,17 +1485,17 @@
         <TVolume>
             <TLocation>Pilier anterieur</TLocation>
             <TSide>Droite</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Pilier posterieur</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Pilier posterieur</TLocation>
             <TSide>Droite</TSide>
-            <TArea>Larynx</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Cavum</TLocation>
@@ -1505,7 +1505,7 @@
         <TVolume>
             <TLocation>Trigone retromolaire superieur</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Oropharynx</TArea>
+            <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Espace parapharynge</TLocation>
@@ -1535,12 +1535,12 @@
             <TVolume>
                 <TLocation>Amygdale</TLocation>
                 <TSide>Gauche</TSide>
-                <TArea>Cavite buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Amygdale</TLocation>
                 <TSide>Droite</TSide>
-                <TArea>Cavite Buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
         </TVolumes>
         <TVolume>
@@ -1551,17 +1551,17 @@
         <TVolume>
             <TLocation>Pilier anterieur</TLocation>
             <TSide>Droite</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Pilier posterieur</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Pilier posterieur</TLocation>
             <TSide>Droite</TSide>
-            <TArea>Larynx</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Cavum</TLocation>
@@ -1571,7 +1571,7 @@
         <TVolume>
             <TLocation>Trigone retromolaire superieur</TLocation>
             <TSide>Droite</TSide>
-            <TArea>Oropharynx</TArea>
+            <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Espace parapharynge</TLocation>
@@ -1579,8 +1579,8 @@
             <TArea>Oropharynx</TArea>
         </TVolume>
     </LRTCTVUCase>
-    <LRTCTVUCase>Sillon amygdalo-glosse 1
-        <Location>Sillon amygdalo-glosse</Location>
+    <LRTCTVUCase>Sillon amygdaloglosse 1
+        <Location>Sillon amygdaloglosse</Location>
         <Side>Gauche</Side>
         <Area>Oropharynx</Area>
         <Identifier>1</Identifier>
@@ -1589,7 +1589,7 @@
         </Modifiers>
         <TVolumes>
             <TVolume>
-                <TLocation>Sillon amygdalo-glosse</TLocation>
+                <TLocation>Sillon amygdaloglosse</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Oropharynx</TArea>
             </TVolume>
@@ -1601,12 +1601,12 @@
             <TVolume>
                 <TLocation>Amygdale</TLocation>
                 <TSide>Gauche</TSide>
-                <TArea>Cavite buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Pilier posterieur</TLocation>
                 <TSide>Gauche</TSide>
-                <TArea>Cavite Buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
         </TVolumes>
         <TVolume>
@@ -1615,7 +1615,7 @@
             <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Lanque</TLocation>
+            <TLocation>Langue</TLocation>
             <TSide>Gauche</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -1632,21 +1632,21 @@
         <TVolume>
             <TLocation>Carrefour des trois replis</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Larynx</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Face de l'epiglotte</TLocation>
+            <TLocation>Face de l epiglotte</TLocation>
             <TSide>Gauche</TSide>
             <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Espace pre-epiglottique</TLocation>
+            <TLocation>Espace preepiglottique</TLocation>
             <TSide>Droite</TSide>
             <TArea>Oropharynx</TArea>
         </TVolume>
     </LRTCTVUCase>
-    <LRTCTVUCase>Sillon amygdalo-glosse 2
-        <Location>Sillon amygdalo-glosse</Location>
+    <LRTCTVUCase>Sillon amygdaloglosse 2
+        <Location>Sillon amygdaloglosse</Location>
         <Side>Droite</Side>
         <Area>Oropharynx</Area>
         <Identifier>1</Identifier>
@@ -1655,7 +1655,7 @@
         </Modifiers>
         <TVolumes>
             <TVolume>
-                <TLocation>Sillon amygdalo-glosse</TLocation>
+                <TLocation>Sillon amygdaloglosse</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Oropharynx</TArea>
             </TVolume>
@@ -1667,12 +1667,12 @@
             <TVolume>
                 <TLocation>Amygdale</TLocation>
                 <TSide>Droite</TSide>
-                <TArea>Cavite buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Pilier posterieur</TLocation>
                 <TSide>Droite</TSide>
-                <TArea>Cavite Buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
         </TVolumes>
         <TVolume>
@@ -1681,7 +1681,7 @@
             <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Lanque</TLocation>
+            <TLocation>Langue</TLocation>
             <TSide>Droite</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -1698,15 +1698,15 @@
         <TVolume>
             <TLocation>Carrefour des trois replis</TLocation>
             <TSide>Droite</TSide>
-            <TArea>Larynx</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Face de l'epiglotte</TLocation>
+            <TLocation>Face de l epiglotte</TLocation>
             <TSide>Droite</TSide>
             <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Espace pre-epiglottique</TLocation>
+            <TLocation>Espace preepiglottique</TLocation>
             <TSide>Droite</TSide>
             <TArea>Oropharynx</TArea>
         </TVolume>
@@ -1742,29 +1742,29 @@
             </TVolume>
         </TVolumes>
         <TVolume>
-            <TLocation>Sillon amygdalo-glosse</TLocation>
+            <TLocation>Sillon amygdaloglosse</TLocation>
             <TSide>Gauche</TSide>
             <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Amygdale</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Amygdale</TLocation>
             <TSide>Droite</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Pilier anterieur</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Larynx</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Pilier anterieur</TLocation>
             <TSide>Droite</TSide>
-            <TArea>Larynx</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Pilier posterieur</TLocation>
@@ -1808,29 +1808,29 @@
             </TVolume>
         </TVolumes>
         <TVolume>
-            <TLocation>Sillon amygdalo-glosse</TLocation>
+            <TLocation>Sillon amygdaloglosse</TLocation>
             <TSide>Droite</TSide>
             <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Amygdale</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Amygdale</TLocation>
             <TSide>Droite</TSide>
-            <TArea>Cavite Buccale</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Pilier anterieur</TLocation>
             <TSide>Gauche</TSide>
-            <TArea>Larynx</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Pilier anterieur</TLocation>
             <TSide>Droite</TSide>
-            <TArea>Larynx</TArea>
+            <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
             <TLocation>Pilier posterieur</TLocation>
@@ -1875,7 +1875,7 @@
             <TVolume>
                 <TLocation>Carrefour des trois replis</TLocation>
                 <TSide>Gauche</TSide>
-                <TArea>Cavite Buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
         </TVolumes>
         <TVolume>
@@ -1884,17 +1884,17 @@
             <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Face linguale de l'epiglotte</TLocation>
+            <TLocation>Face linguale de l epiglotte</TLocation>
             <TSide>Gauche</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Espace pre-epiglottique</TLocation>
+            <TLocation>Espace preepiglottique</TLocation>
             <TSide>Gauche</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Espace pre-epiglottique</TLocation>
+            <TLocation>Espace preepiglottique</TLocation>
             <TSide>Droite</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -1931,7 +1931,7 @@
             <TVolume>
                 <TLocation>Carrefour des trois replis</TLocation>
                 <TSide>Droite</TSide>
-                <TArea>Cavite Buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
         </TVolumes>
         <TVolume>
@@ -1940,17 +1940,17 @@
             <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Face linguale de l'epiglotte</TLocation>
+            <TLocation>Face linguale de l epiglotte</TLocation>
             <TSide>Droite</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Espace pre-epiglottique</TLocation>
+            <TLocation>Espace preepiglottique</TLocation>
             <TSide>Droite</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Espace pre-epiglottique</TLocation>
+            <TLocation>Espace preepiglottique</TLocation>
             <TSide>Droite</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -1977,12 +1977,12 @@
             <TVolume>
                 <TLocation>Pilier posterieur</TLocation>
                 <TSide>Gauche</TSide>
-                <TArea>Cavite buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Pilier posterieur</TLocation>
                 <TSide>Droite</TSide>
-                <TArea>Cavite buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Espace parapharynge</TLocation>
@@ -2033,12 +2033,12 @@
             <TVolume>
                 <TLocation>Pilier posterieur</TLocation>
                 <TSide>Gauche</TSide>
-                <TArea>Cavite buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Pilier posterieur</TLocation>
                 <TSide>Droite</TSide>
-                <TArea>Cavite buccale</TArea>
+                <TArea>Oropharynx</TArea>
             </TVolume>
         </TVolumes>
         <TVolume>

@@ -1,7 +1,10 @@
 package bhouse.radiovolumes;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -18,6 +21,8 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import java.util.Locale;
+
 
 public class MainActivity extends Activity {
 
@@ -33,6 +38,8 @@ public class MainActivity extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+
 
     toolbar = (Toolbar) findViewById(R.id.toolbar);
     setUpActionBar();
@@ -139,7 +146,18 @@ public class MainActivity extends Activity {
       toggle();
       return true;
     }
+    if (id == R.id.set_english){
+      LocaleHelper.setLocale(this, "en");
+    }
+    if (id == R.id.set_french){
+      LocaleHelper.setLocale(this, "fr");
+    }
     return super.onOptionsItemSelected(item);
+  }
+
+  @Override
+  protected void attachBaseContext(Context base) {
+    super.attachBaseContext(LocaleHelper.onAttach(base));
   }
 
   private void toggle() {

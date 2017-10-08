@@ -8,24 +8,16 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
-import static bhouse.radiovolumes.R.id.dismiss;
-import static bhouse.radiovolumes.R.xml.map;
 
 
 public class MyDialogFragment extends DialogFragment {
@@ -40,7 +32,7 @@ public class MyDialogFragment extends DialogFragment {
     private HashMap<String, List<String>> cancerNTarData;
     private ScannerViewActivity activity;
     private LinkedHashMap<String, Integer> displayedList;
-    private List<SliceItem> sliceItems;
+    private List<Slice> slices;
     ArrayList<Item> countryList = new ArrayList<Item>();
 
 
@@ -84,7 +76,7 @@ public class MyDialogFragment extends DialogFragment {
         cancerTTarData = activity.getCancerTTarData();
         displayedList = new LinkedHashMap<>();
         displayedList = activity.getDisplayedList();
-        sliceItems = activity.getSliceItems();
+        slices = activity.getSlices();
 
 
         Map<String,String> colors = ModifierHashOperator.getHashMapResource(getContext(), R.xml.sub_areas_colors);
@@ -92,7 +84,7 @@ public class MyDialogFragment extends DialogFragment {
         ListView lvChange = (ListView)v.findViewById(R.id.list_display);
         prepareTData();
         //ArrayAdapter<String> changeAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, displayedList);
-        UserAdapter1 changeAdapter = new UserAdapter1(this.getContext(), displayedList, sliceItems, colors, countryList);
+        UserAdapter1 changeAdapter = new UserAdapter1(this.getContext(), displayedList, slices, colors, countryList);
         lvChange.setAdapter(changeAdapter);
 
         Button cancel = (Button) v.findViewById(R.id.cancel);

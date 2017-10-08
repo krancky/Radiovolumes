@@ -17,8 +17,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import static bhouse.radiovolumes.R.id.locString;
-
 /**
  * Created by kranck on 8/27/2017.
  */
@@ -27,15 +25,15 @@ public class UserAdapter1 extends BaseAdapter {
     private LinkedHashMap displayedList;
     private ArrayList<Boolean> checkboxStatus = new ArrayList();
     private String[] mKeys;
-    private List<SliceItem> sliceItems;
+    private List<Slice> slices;
     private Map<String, String> colors;
     private Context context;
     private ArrayList<MyDialogFragment.Item> items;
 
-    public UserAdapter1(Context context, LinkedHashMap<String, Integer> displayedlist, List<SliceItem> sliceItems, Map<String, String> colors, ArrayList<MyDialogFragment.Item> items) {
+    public UserAdapter1(Context context, LinkedHashMap<String, Integer> displayedlist, List<Slice> slices, Map<String, String> colors, ArrayList<MyDialogFragment.Item> items) {
         this.displayedList = displayedlist;
         mKeys = displayedlist.keySet().toArray(new String[displayedlist.size()]);
-        this.sliceItems = sliceItems;
+        this.slices = slices;
         this.context = context;
         this.colors = colors;
         this.items = items;

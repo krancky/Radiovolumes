@@ -20,6 +20,8 @@ import java.util.Locale;
 import bhouse.radiovolumes.processor.Cancer;
 import bhouse.radiovolumes.processor.TumorAreaTemplate;
 
+import static android.R.attr.value;
+
 /**
  * Adapter
  */
@@ -119,14 +121,16 @@ public class TSelectionAdapter extends BaseAdapter {
         }
 
         if (items.get(position).isSection()) {
-            holder.tvSectionTitle.setText(((NewCaseActivity.SectionItem) items.get(position)).getTitle());
-            Log.i("position", "section");
+            String locationLocale = context.getString(context.getResources().getIdentifier(items.get(position).getTitle().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
+            holder.tvSectionTitle.setText(locationLocale);
         }
         else{
             ImageView tumorPhoto = (ImageView) convertView.findViewById(R.id.node_photo);
             int sectionNumber = items.get(position).getSectionNumber();
             TumorAreaTemplate h = tList.get(position-sectionNumber);
-            holder.tv.setText(h.getLocationLocale());
+            int truc = context.getResources().getIdentifier(h.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
+            String locationLocale = context.getString(context.getResources().getIdentifier(h.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
+            holder.tv.setText(locationLocale);
             holder.cbLeft.setTag(position - sectionNumber);
             holder.cbRight.setTag(position - sectionNumber);
             holder.cbLeft.setChecked(checkboxStatus_left.get(position- sectionNumber));

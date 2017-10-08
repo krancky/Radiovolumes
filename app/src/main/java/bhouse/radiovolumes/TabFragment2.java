@@ -73,8 +73,8 @@ public class TabFragment2 extends Fragment {
 
         NonScrollListView lvNotes = (NonScrollListView) v.findViewById(R.id.listView_additional_notes);
 
-        HashAdapter mAdapterT = new HashAdapter(cancerTTarData, this.cancer);
-        HashNAdapter mAdapterN = new HashNAdapter(cancerNTarData, this.cancer);
+        HashAdapter mAdapterT = new HashAdapter(getActivity(), cancerTTarData, this.cancer);
+        HashNAdapter mAdapterN = new HashNAdapter(getContext(), cancerNTarData, this.cancer);
         ArrayAdapter<String> notesAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, modiferPrint);
         lvT.setAdapter(mAdapterT);
         lvN.setAdapter(mAdapterN);

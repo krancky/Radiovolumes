@@ -31,11 +31,13 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import static android.R.attr.value;
+
 
 public class AreaDialog extends DialogFragment {
 
     public static interface OnCancelListener {
-        public void onCancel(String tag, int resID);
+        public void onCancel(SliceVectorItem tag, int resID);
     }
 
 
@@ -52,17 +54,26 @@ public class AreaDialog extends DialogFragment {
     TextView tvLateralL;
     TextView tvComment;
     private OnCancelListener mListener;
+    private SliceVectorItem slice;
 
 
 
 
-    public static AreaDialog newInstance(String title, int resID) {
+    public static AreaDialog newInstance(SliceVectorItem slice, int resID) {
         AreaDialog dialog = new AreaDialog();
         Bundle args = new Bundle();
-        args.putString("title", title);
+        //args.putString("title", title);
+        //args.putBundle("sliceVectorItem", slice);
         args.putInt("resID", resID);
         dialog.setArguments(args);
+        dialog.setSliceVectorItem(slice);
         return dialog;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
     }
 
     @Override
@@ -115,10 +126,14 @@ public class AreaDialog extends DialogFragment {
 
     @Override
     public void onCancel(DialogInterface dialog) {
-        mListener.onCancel(this.title, this.resID);
+        mListener.onCancel(this.slice, this.resID);
         //When you touch outside of dialog bounds,
         //the dialog gets canceled and this method executes.
 
+    }
+
+    public void setSliceVectorItem(SliceVectorItem sliceVectorItem){
+        this.slice = sliceVectorItem;
     }
 
     @Override
@@ -132,12 +147,16 @@ public class AreaDialog extends DialogFragment {
         }
     }
     public void chooseDisplay(){
+        this.title = this.slice.getLocation();
         Map<String,String> colors = ModifierHashOperator.getHashMapResource(getContext(), R.xml.sub_areas_colors);
         for (HashMap.Entry<String, ArrayList<String>> entry: oLimits.entrySet()){
+            //if (this.title.toLowerCase().replaceAll("\\s+", "").replaceAll("_", "").contains(entry.getKey().toLowerCase().replaceAll("\\s+", "").replaceAll("_", ""))){
             if (this.title.toLowerCase().replaceAll("\\s+", "").replaceAll("_", "").contains(entry.getKey().toLowerCase().replaceAll("\\s+", "").replaceAll("_", ""))){
                 String name  = entry.getValue().get(0);
                 name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
-                tvName.setText(name);
+                //int truc = context.getResources().getIdentifier(value.replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
+                String locationLocale = getActivity().getString(getActivity().getResources().getIdentifier(name.replaceAll("\\s+", "").toLowerCase(), "string", getActivity().getPackageName()));
+                tvName.setText(locationLocale);
                 tvCranialL.setText(entry.getValue().get(1));
                 tvCaudalL.setText(entry.getValue().get(2));
                 tvAnteriorL.setText(entry.getValue().get(3));

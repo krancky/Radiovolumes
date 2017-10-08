@@ -1,5 +1,6 @@
 package bhouse.radiovolumes;
 
+import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.view.Menu;
 
@@ -25,6 +26,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 import bhouse.radiovolumes.processor.CTV56NCase;
 import bhouse.radiovolumes.processor.CTV56TCase;
@@ -78,6 +80,7 @@ public class TabbedActivity extends AppCompatActivity {
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        Locale current = getResources().getConfiguration().locale;
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -95,6 +98,12 @@ public class TabbedActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

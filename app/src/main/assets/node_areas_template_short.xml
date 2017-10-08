@@ -10,55 +10,55 @@
     </Volume>
     <Volume>
         <Short>II</Short>
-        <Long>Superior Deep Cervical</Long>
+        <Long>Upper Jugular</Long>
     </Volume>
     <Volume>
         <Short>III</Short>
-        <Long>Median Deep Cervical</Long>
+        <Long>Middle Jugular</Long>
     </Volume>
     <Volume>
         <Short>IVa</Short>
-        <Long>Inferior Deep cervical - I</Long>
+        <Long>Lower Jugular</Long>
     </Volume>
     <Volume>
         <Short>IVb</Short>
-        <Long>Inferior Deep cervical - II</Long>
+        <Long>Medial SupraClavicular</Long>
     </Volume>
     <Volume>
         <Short>Vab</Short>
-        <Long>SupraClavicular - I</Long>
+        <Long>Posterior Triangle</Long>
     </Volume>
     <Volume>
         <Short>Vc</Short>
-        <Long>SupraClavicular - II</Long>
+        <Long>Lateral SupraClavicular</Long>
     </Volume>
     <Volume>
         <Short>VIa</Short>
-        <Long>Visceral space (superficial)</Long>
+        <Long>Anterior Jugular</Long>
     </Volume>
     <Volume>
     <Short>VIb</Short>
-    <Long>Visceral space (deep)</Long>
+    <Long>PreLaryngeal</Long>
 </Volume>
     <Volume>
         <Short>VIIa</Short>
-        <Long>test</Long>
+        <Long>RetroPharyngeal</Long>
     </Volume>
     <Volume>
         <Short>VIIb</Short>
-        <Long>test1</Long>
+        <Long>RetroStyloid</Long>
     </Volume>
     <Volume>
         <Short>VIII</Short>
-        <Long>Parotidian</Long>
+        <Long>Parotid</Long>
     </Volume>
     <Volume>
         <Short>IX</Short>
-        <Long>what</Long>
+        <Long>BuccoFacial</Long>
     </Volume>
     <Volume>
         <Short>X</Short>
-        <Long>else</Long>
+        <Long>Posterior Skull</Long>
     </Volume>
 
 

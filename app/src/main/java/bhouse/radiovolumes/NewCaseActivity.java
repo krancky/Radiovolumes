@@ -1,7 +1,5 @@
 package bhouse.radiovolumes;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
@@ -15,12 +13,11 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,7 +37,6 @@ import bhouse.radiovolumes.processor.HashMapOperator;
 import bhouse.radiovolumes.processor.NUCaseXMLHandler;
 import bhouse.radiovolumes.processor.NodeAreaTemplate;
 import bhouse.radiovolumes.processor.NodeAreasTemplateXMLHandler;
-import bhouse.radiovolumes.processor.OLimitsXMLHandler;
 import bhouse.radiovolumes.processor.TumorAreasTemplateXMLHandler;
 import bhouse.radiovolumes.processor.TUCaseXMLHandler;
 import bhouse.radiovolumes.processor.TumorAreaTemplate;
@@ -71,12 +67,12 @@ public class NewCaseActivity extends Activity {
     List<CTV56TCase> ctv56TCaseList;
 
 
-
+    Switch itemListSwitch;
 
     ListView nExpandableListView;
     //ExpandableListView tExpandableListView;
     ListView tExpandableListView;
-    NCustomExpandableListAdapter nExpandableListAdapter;
+    NSelectionAdapter nExpandableListAdapter;
     //ExpandableListAdapter tExpandableListAdapter;
     TSelectionAdapter tExpandableListAdapter;
     List<String> texpandableListTitle;
@@ -102,6 +98,7 @@ public class NewCaseActivity extends Activity {
     private String newParam;
     private boolean isExpandedT = false;
     private boolean isExpandedN = false;
+    private boolean isAdvanced = false;
 
 
     @Override
@@ -129,6 +126,7 @@ public class NewCaseActivity extends Activity {
         //mImageView.setImageResource(mPlace.getImageResourceId(this));
         mImageView.setImageResource(R.drawable.newcase);
 
+        itemListSwitch = (Switch) findViewById(R.id.itemListSwitch);
 
         mAddButton = (ImageButton) findViewById(R.id.btn_add);
         //mRevealView = (LinearLayout) findViewById(R.id.llEditTextHolder);
@@ -233,13 +231,13 @@ public class NewCaseActivity extends Activity {
 
         // Generates list of T locations to be irradiated
         ctv56TCase = new CTV56TCase();
-        hashMapOperator.cTV56TCase(ctv56TUCaseList, cancer, ctv56TCase);
+        hashMapOperator.cTV56TCase(ctv56TUCaseList, cancer, ctv56TCase, isAdvanced);
         Log.i("End of onCreate() ", "... Done");
 
         nExpandableListView = (ListView) findViewById(R.id.nExpandableListView);
         nexpandableListDetail = ExpandableListDataPump.getNData(nodeAreaTemplateList);
         nexpandableListTitle = new ArrayList<String>(nexpandableListDetail.keySet());
-        nExpandableListAdapter = new NCustomExpandableListAdapter(this, nexpandableListTitle, nexpandableListDetail, nodeAreaTemplateList, cancer);
+        nExpandableListAdapter = new NSelectionAdapter(this, nexpandableListTitle, nexpandableListDetail, nodeAreaTemplateList, cancer);
         tExpandableListView = (ListView) findViewById(R.id.tExpandableListView);
         texpandableListDetail = ExpandableListDataPump.getTData(tumorAreaTemplateList);
         texpandableListTitle = new ArrayList<String>(texpandableListDetail.keySet());
@@ -369,7 +367,7 @@ public class NewCaseActivity extends Activity {
         cancer.tClear();
         NewCaseActivity.this.ctv56NCaseList.clear();
 
-
+        this.isAdvanced = itemListSwitch.isChecked();
 
         for (NodeAreaTemplate nodeAreaTemplate : nodeAreaTemplateList) {
             NewCaseActivity.this.cancer.addNVolume(nodeAreaTemplate);
@@ -381,7 +379,7 @@ public class NewCaseActivity extends Activity {
         NewCaseActivity.this.ctv56TCase = new CTV56TCase();
         NewCaseActivity.this.ctv56NCase = new CTV56NCase();
         HashMapOperator hashMapOperator = new HashMapOperator();
-        hashMapOperator.update(NewCaseActivity.this.ctv56TUCaseList, NewCaseActivity.this.ctv56NUCaseList, NewCaseActivity.this.cancer, NewCaseActivity.this.ctv56TCase, ctv56NCase);
+        hashMapOperator.update(NewCaseActivity.this.ctv56TUCaseList, NewCaseActivity.this.ctv56NUCaseList, NewCaseActivity.this.cancer, NewCaseActivity.this.ctv56TCase, ctv56NCase, this.isAdvanced);
         ctv56TCase.removeTarVolumesDuplicates();
         ctv56NCase.removeTarVolumesDuplicates();
         NewCaseActivity.this.ctv56TCaseList.add(NewCaseActivity.this.ctv56TCase);
@@ -396,6 +394,10 @@ public class NewCaseActivity extends Activity {
 
     }
 
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {

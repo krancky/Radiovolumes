@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TumorsAreasTemplate>
     <Volume>
-        <Area>Cavité Buccale</Area>
-        <AreaLocale>Cavité Buccale</AreaLocale>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
         <Location>Plancher Buccal</Location>
         <LocationLocale>Plancher Buccal</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavité Buccale</Area>
-        <AreaLocale>Cavité Buccale</AreaLocale>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
         <Location>Langue Mobile</Location>
         <LocationLocale>Langue Mobile</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavité Buccale</Area>
-        <AreaLocale>Cavité Buccale</AreaLocale>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
         <Location>Face Interne de Joue</Location>
         <LocationLocale>Face Interne de Joue</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavité Buccale</Area>
-        <AreaLocale>Cavité Buccale</AreaLocale>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
         <Location>Gencive Inferieure</Location>
         <LocationLocale>Gencive Inférieure</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavité Buccale</Area>
-        <AreaLocale>Cavité Buccale</AreaLocale>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
         <Location>Gencive Superieure</Location>
         <LocationLocale>Gencive Supérieure</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavité Buccale</Area>
-        <AreaLocale>Cavité Buccale</AreaLocale>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
         <Location>Palais Dur</Location>
         <LocationLocale>Palais dur</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavité Buccale</Area>
-        <AreaLocale>Cavité Buccale</AreaLocale>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
         <Location>Trigone retromolaire Superieur</Location>
         <LocationLocale>Trigone Rétromolaire Supérieur</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavité Buccale</Area>
-        <AreaLocale>Cavité Buccale</AreaLocale>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
         <Location>Trigone retromolaire Inferieur</Location>
         <LocationLocale>Trigone Rétromolaire Inférieur</LocationLocale>
     </Volume>

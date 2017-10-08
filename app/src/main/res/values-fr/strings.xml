@@ -1,14 +1,111 @@
 <resources>
-    <string name="app_name">Radiovolumes</string>
+    <string name="app_name">ADARO</string>
     <string name="main_title">Radiovolumes</string>
-    <string name="tClickTv">SOUS-LOCALISATIONS TUMORALES</string>
-    <string name="nClickTv">AIRES GANGLIONNAIRES ENVAHIES</string>
-    <string name="addSwitch">Advanced tumor</string>
-    <string name="tumorLocation">SOUS-LOCALISATION TUMORALE</string>
-    <string name="nodeLocation">AIRES GANGLIONNAIRES ENVAHIES</string>
-    <string name="lRtumorLocation">IRRADIATION TUMORALE A BAS RISQUE</string>
-    <string name="lRnodeLocation">IRRADIATION GANGLIONNAIRE A BAS RISQUE</string>
+    <string name="tClickTv">Sous-Localisations Tomorales</string>
+    <string name="nClickTv">Aires Ganglionnaires Envahies</string>
+    <string name="addSwitch">Oropharynx</string>
+    <string name="tumorLocation">Sous Localisation Tumorale</string>
+    <string name="nodeLocation">Aires Ganglionnaires Envahies</string>
+    <string name="lRtumorLocation">Irradiation Tumorale à Bas Risque</string>
+    <string name="lRnodeLocation">Irradiation Ganglionnaire à Bas Risque</string>
     <string name="dialogTitle">Volumes à irradier</string>
     <string name="additionnal">Notes additionnelles</string>
+
+
+
+    <string name="ctv56n">CTV56N_short</string>
+    <string name="left">"Gauche :  "</string>
+    <string name="right">"Droite : "</string>
+    <string name="invaded">Envahi</string>
+    <string name="toIrradiate">A IRRADIER</string>
+    <string name="newCase">Nouveau Cas</string>
+    <string name="load">Chargement</string>
+    <string name="atlas">Atlas de contourage</string>
+    <string name="ipsilateral">Ipsilateral</string>
+    <string name="contralateral">Controlatéral</string>
+
+
+    <string name="ia">Ia</string>
+    <string name="ib">Ib</string>
+    <string name="ii">II</string>
+    <string name="iii">III</string>
+    <string name="iva">IVa</string>
+    <string name="ivb">IVb</string>
+    <string name="vab">Vab</string>
+    <string name="vc">Vc</string>
+    <string name="via">VIa</string>
+    <string name="vib">VIb</string>
+    <string name="viia">VIIa</string>
+    <string name="viib">VIIb</string>
+    <string name="viii">VIII</string>
+    <string name="ix">IX</string>
+
+
+
+
+    <string name="amygdale">Amygdale</string>
+    <string name="pilierposterieur">Pilier Postérieur</string>
+    <string name="pilieranterieur">Pilier Antérieur</string>
+    <string name="basedelangue">Base de Langue</string>
+    <string name="sillonamygdaloglosse">Sillon Amygdalo-glosse</string>
+    <string name="espaceparapharynge">Espace Parapharyngé</string>
+    <string name="foramenovale">Foramen Ovale</string>
+    <string name="gangliondegasser">Ganglion de Gasser</string>
+    <string name="pterygoidienmedial">Ptérygoïdien Médial</string>
+    <string name="branchemontantedemandibule">Branche Montante de la Mandibule</string>
+    <string name="espacecarotidien">Espace Carotidien</string>
+    <string name="sinuscaverneux">Sinus Caverneux</string>
+    <string name="espaceretropharynge">Espace rétro-pharyngé</string>
+    <string name="cavum">Cavum</string>
+    <string name="paroipharyngeeposterieure">Paroi Pharyngée Postérieure</string>
+    <string name="voile">Voile</string>
+    <string name="trigoneretromolairesuperieur">Trigone Rétromolaire Inférieur</string>
+    <string name="carrefourdestroisreplis">Carrefour des Trois replis</string>
+    <string name="racinedelangue">Racine de de Langue</string>
+    <string name="glandesousmaxillaire">Glande Sous-Maxillaire</string>
+    <string name="gencive">Gencive</string>
+    <string name="mandibule">Mandibule</string>
+    <string name="langue">Langue</string>
+    <string name="joue">IX</string>
+    <string name="trigoneretromolaireinferieur">Trigone rétromolaire Inférieur</string>
+    <string name="espacegraisseux">Espace Graisseux</string>
+    <string name="gencivesuperieure">Gencive Supérieure</string>
+    <string name="espaceparotidien">Espace Parotidien</string>
+    <string name="fossepterygomaxillaire">Fosse Pterygo-Maxillaire</string>
+    <string name="plancherposterieur">Planche Postérieur</string>
+    <string name="langueposterieure">Langue Postérieure</string>
+    <string name="replipharyngoepiglottique">Repli Pharyngo-épiglottique</string>
+    <string name="facelingualedelepiglotte">Face linguale de l\'épiglotte</string>
+    <string name="espacepreepiglottique">Espace pré-épiglottique</string>
+    <string name="palaisdur">Palais Dur</string>
+    <string name="vallecule">Vallécule</string>
+    <string name="languemobile">Langue Mobile</string>
+    <string name="plancherbuccal">Plancher buccal</string>
+    <string name="faceinternedejoue">Face interne de joue</string>
+    <string name="genciveinferieure">Gencive Inférieure</string>
+    <string name="genciveposterieure">Gencive Postérieure</string>
+    <string name="facedelepiglotte">Face de l\'épiglotte</string>
+    <string name="english">Anglais</string>
+    <string name="french">Français</string>
+    <string name="anteriorjugular">Jugulaires Antérieurs</string>
+    <string name="buccofacial">Bucco-Faciaux</string>
+    <string name="lateralsupraclavicular">Supraclavicualires Latéraux</string>
+    <string name="lowerjugular">Jugulaires Inférieurs</string>
+    <string name="medialsupraclavicular">Sus-Clavicualires Medians</string>
+    <string name="parotid">Parotidiens</string>
+    <string name="posteriorskull">Crâne Postérieur?</string>
+    <string name="posteriortriangle">Triangle Postérieur</string>
+    <string name="prelaryngeal">Prélaryngés, Prétrachéaux, Paratrachéaux</string>
+    <string name="retropharyngeal">Rétropharyngés</string>
+    <string name="retrostyloid">Rétrostyloïdiens</string>
+    <string name="submandibular">Sous-Mandibulaires</string>
+    <string name="submental">Sous-Mentonniers</string>
+    <string name="upperjugular">Jugulaires Supérieurs</string>
+    <string name="middlejugular">Jugulaires Moyens</string>
+    <string name="invaded_location">Envahissement</string>
+    <string name="oropharynx">Oropharynx</string>
+    <string name="cavitebuccale">Cavité Buccale</string>
+    <string name="larynx">Larynx</string>
+
 
 </resources>

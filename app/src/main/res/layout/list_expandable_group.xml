@@ -25,7 +25,7 @@
             android:id="@+id/headerText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Invaded Location"
+            android:text="@string/invaded_location"
             android:paddingLeft="70dp"
             android:layout_marginRight="38dp"
             android:textColor="@android:color/white"
@@ -37,7 +37,7 @@
             android:id="@+id/headerText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Left"
+            android:text="@string/left"
             android:layout_toLeftOf="@+id/headerText3"
 
             android:layout_marginRight="10dp"
@@ -48,7 +48,7 @@
             android:id="@+id/headerText3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Right"
+            android:text="@string/right"
             android:layout_marginRight="20dp"
             android:textColor="@android:color/white"
             android:layout_alignParentRight="true">

@@ -101,7 +101,7 @@ public class HashMapOperator {
      * @param cancer
      * @param cTV56TCase
      */
-    public void cTV56TCase(List<CTV56TUCase> ctv56TUCaseList, Cancer cancer, CTV56TCase cTV56TCase){
+    public void cTV56TCase(List<CTV56TUCase> ctv56TUCaseList, Cancer cancer, CTV56TCase cTV56TCase, boolean isAdvanced){
         // Sets the name of structure holding the lymph nodes to irradiate
         cTV56TCase.setCaseName("Prophylactic peritumoral area to irradiate");
         // Iterates on all elementary cases to associate to spread volumes in actual cancer, then computes linear combination of target volumes and returns final CTV56NCase
@@ -109,12 +109,12 @@ public class HashMapOperator {
         for (CTV56TUCase ctv56TUCase:ctv56TUCaseList){
                 for (TumorAreaTemplate cancerTVolumes : cancer.getCancerTVolumes()){
                     if (cancerTVolumes.getLeftContent().equals("1")){
-                        if (cancerTVolumes.getLocation().equalsIgnoreCase(ctv56TUCase.getLocation()) && ctv56TUCase.getSide().equalsIgnoreCase("Gauche")){
+                        if (cancerTVolumes.getLocation().equalsIgnoreCase(ctv56TUCase.getLocation()) && ctv56TUCase.getSide().equalsIgnoreCase("Gauche") && ctv56TUCase.isAdvanced()==isAdvanced){
                             cTV56TCase.addAllTVolumeToMap(ctv56TUCase.getuCaseTVolumes());
                         }
                     }
                     if (cancerTVolumes.getRightContent().equals("1")){
-                        if (cancerTVolumes.getLocation().equalsIgnoreCase(ctv56TUCase.getLocation()) && ctv56TUCase.getSide().equalsIgnoreCase("Droite")){
+                        if (cancerTVolumes.getLocation().equalsIgnoreCase(ctv56TUCase.getLocation()) && ctv56TUCase.getSide().equalsIgnoreCase("Droite") && ctv56TUCase.isAdvanced()==isAdvanced){
                             cTV56TCase.addAllTVolumeToMap(ctv56TUCase.getuCaseTVolumes());
                         }
                     }
@@ -134,8 +134,8 @@ public class HashMapOperator {
      * @param cTV56TCase
      * @param cTV56NCase
      */
-    public void update(List<CTV56TUCase> ctv56TUCaseList, List<CTV56NUCase> ctv56NUCaseList, Cancer cancer, CTV56TCase cTV56TCase, CTV56NCase cTV56NCase){
-        this.cTV56TCase(ctv56TUCaseList, cancer, cTV56TCase);
+    public void update(List<CTV56TUCase> ctv56TUCaseList, List<CTV56NUCase> ctv56NUCaseList, Cancer cancer, CTV56TCase cTV56TCase, CTV56NCase cTV56NCase, boolean isAdvanced){
+        this.cTV56TCase(ctv56TUCaseList, cancer, cTV56TCase, isAdvanced);
         this.cTV56NCase(ctv56NUCaseList, cancer, cTV56NCase);
 
 

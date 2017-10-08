@@ -58,8 +58,9 @@ public class DetailActivity extends Activity implements View.OnClickListener {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_detail);
+    MainPageItemsData mainPageItemsData = new MainPageItemsData(getApplicationContext());
 
-    mMainPageItem = MainPageItemsData.placeList().get(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
+    mMainPageItem = mainPageItemsData.placeList().get(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
 
     mList = (ListView) findViewById(R.id.list);
     mImageView = (ImageView) findViewById(R.id.placeImage);

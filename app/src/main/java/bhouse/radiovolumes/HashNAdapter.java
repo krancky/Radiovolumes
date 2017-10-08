@@ -14,6 +14,8 @@ import java.util.List;
 
 import bhouse.radiovolumes.processor.Cancer;
 
+import static bhouse.radiovolumes.R.xml.map;
+
 
 /**
  * Created by kranck on 8/3/2017.
@@ -22,11 +24,13 @@ import bhouse.radiovolumes.processor.Cancer;
 public class HashNAdapter extends BaseAdapter {
     private final ArrayList mData;
     private Cancer cancer;
+    private Context context;
 
-    public HashNAdapter(HashMap<String,  List<String>> map, Cancer cancer) {
+    public HashNAdapter(Context context, HashMap<String,  List<String>> map, Cancer cancer) {
         mData = new ArrayList();
         mData.addAll(map.entrySet());
         this.cancer = cancer;
+        this.context = context;
     }
 
     @Override
@@ -105,6 +109,8 @@ public class HashNAdapter extends BaseAdapter {
     private String prepareString (List<String> mapValues){
         String locString = new String();
         for (String value : mapValues){
+            //int locale = context.getResources().getIdentifier(value.replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
+            String locationLocale = context.getString(context.getResources().getIdentifier(value.replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
             locString = locString + value +", ";
         }
         locString = removeLastChar(locString);

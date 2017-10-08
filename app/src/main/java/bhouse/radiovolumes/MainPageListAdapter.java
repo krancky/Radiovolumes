@@ -34,7 +34,7 @@ public class MainPageListAdapter extends RecyclerView.Adapter<MainPageListAdapte
 
   @Override
   public void onBindViewHolder(final ViewHolder holder, final int position) {
-    final MainPageItem mainPageItem = new MainPageItemsData().placeList().get(position);
+    final MainPageItem mainPageItem = new MainPageItemsData(mContext).placeList().get(position);
 
     holder.placeName.setText(mainPageItem.name);
     Picasso.with(mContext).load(mainPageItem.getImageResourceId(mContext)).into(holder.placeImage);
@@ -52,7 +52,7 @@ public class MainPageListAdapter extends RecyclerView.Adapter<MainPageListAdapte
 
   @Override
   public int getItemCount() {
-    return new MainPageItemsData().placeList().size();
+    return new MainPageItemsData(mContext).placeList().size();
   }
 
   public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,7 +12,6 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -21,6 +21,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import bhouse.radiovolumes.processor.OLimitsXMLHandler;
+
+import static bhouse.radiovolumes.R.xml.map;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -48,14 +50,14 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
     private SingleScrollListView mContentView;
-    private ArrayList<SliceItem> sliceItems;
+    private ArrayList<Slice> slices;
     private LinkedHashMap<String, Integer> displayedList = new LinkedHashMap<String, Integer>();
     private ScannerListAdapter scannerListAdapter;
 
     private LinkedHashMap<String, ArrayList<String>> oLimits;
 
-    public ArrayList<SliceItem> getSliceItems() {
-        return sliceItems;
+    public ArrayList<Slice> getSlices() {
+        return slices;
     }
 
     private final Runnable mHidePart2Runnable = new Runnable() {
@@ -115,7 +117,7 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
         this.cancerTTarData = cancerTTarData;
         this.cancerNTarData = cancerNTarData;
         this.displayedList = displayedList;
-        Toast.makeText(getApplicationContext(),"I got back with new information" + cancerTTarData, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"I got back with new information" + cancerTTarData, Toast.LENGTH_SHORT).show();
         prepare_scan_data();
         scannerListAdapter.notifyDataSetChanged();
 
@@ -150,11 +152,11 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
         mContentView = (SingleScrollListView) findViewById(R.id.fullscreen_content);
 
 
-        sliceItems = new ArrayList<SliceItem>();
+        slices = new ArrayList<Slice>();
         prepareDisplayList();
         prepare_scan_data();
 
-        scannerListAdapter = new ScannerListAdapter(this, sliceItems, mContentView, this.oLimits);
+        scannerListAdapter = new ScannerListAdapter(this, slices, mContentView, this.oLimits);
         mContentView.setAdapter(scannerListAdapter);
 
         //mContentView.setDivider(new ColorDrawable(0x99F10529));   //0xAARRGGBB
@@ -250,9 +252,9 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
 
     public void prepare_scan_data(){
         int i;
-        sliceItems.clear();
+        slices.clear();
         for (i =0; i<222; i++ ){
-            SliceItem slice = new SliceItem();
+            Slice slice = new Slice();
             slice.setNumber(String.valueOf(i));
             slice.setStorageLocation("scan_"+String.valueOf(i));
             for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()){
@@ -261,7 +263,12 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
                     for (String location:map.getValue()){
                         String value = location.replaceAll("\\s+", "").toLowerCase()+ " " + map.getKey().replaceAll("\\s+", "").toLowerCase();
                         if (displayedList.get(value).equals(1)) {
-                            slice.addVectorStorageLocation(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() + "___" + String.valueOf(i));
+                            SliceVectorItem sliceVectorItem = new SliceVectorItem();
+                            sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() + "___" + String.valueOf(i));
+                            sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
+                            sliceVectorItem.setSide(map.getKey());
+                            slice.addVectorStorageLocation(sliceVectorItem);
+                            //slice.addVectorStorageLocation(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() + "___" + String.valueOf(i));
                         }
                     }
                 }
@@ -269,10 +276,15 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
             for (HashMap.Entry<String, List<String>> nodeMap : cancerNTarData.entrySet()){
                 List<String> sideMap = nodeMap.getValue();
                     for (String location:sideMap){
-                        slice.addVectorStorageLocation(location.replaceAll("\\s+", "").toLowerCase()+ "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() +"___"+String.valueOf(i));
+                        SliceVectorItem sliceVectorItem = new SliceVectorItem();
+                        sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() + "___" + String.valueOf(i));
+                        sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
+                        sliceVectorItem.setSide(nodeMap.getKey());
+                        slice.addVectorStorageLocation(sliceVectorItem);
+                        //slice.addVectorStorageLocation(location.replaceAll("\\s+", "").toLowerCase()+ "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() +"___"+String.valueOf(i));
                     }
                 }
-            sliceItems.add(slice);
+            slices.add(slice);
         }
     }
 
@@ -294,9 +306,14 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
     }
 
     @Override
-    public void onCancel(String tag, int imageID){
+    public void onCancel(SliceVectorItem tag, int imageID){
         this.scannerListAdapter.notifyDataSetChanged();
 
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 
 

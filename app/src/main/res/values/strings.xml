@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Radiovolumes</string>
+    <string name="app_name">ADARO</string>
     <string name="main_title">Radiovolumes</string>
     <string name="tClickTv">Tumor Sublocation</string>
     <string name="nClickTv">Invaded Lymph Nodes</string>
@@ -13,11 +13,96 @@
     <string name="ctv56n">CTV56N_short</string>
     <string name="left">Left: </string>
     <string name="right">Right: </string>
-    <string name="invaded">INVADED</string>
+    <string name="invaded">Invaded</string>
     <string name="toIrradiate">TO IRRADIATE</string>
     <string name="newCase">New Case</string>
     <string name="load">Load</string>
     <string name="atlas">Contour Atlas</string>
     <string name="ipsilateral">Ipsilateral</string>
     <string name="contralateral">Contralateral</string>
+
+
+    <string name="ia">Ia</string>
+    <string name="ib">Ib</string>
+    <string name="ii">II</string>
+    <string name="iii">III</string>
+    <string name="iva">IVa</string>
+    <string name="ivb">IVb</string>
+    <string name="vab">Vab</string>
+    <string name="vc">Vc</string>
+    <string name="via">VIa</string>
+    <string name="vib">VIb</string>
+    <string name="viia">VIIa</string>
+    <string name="viib">VIIb</string>
+    <string name="viii">VIII</string>
+    <string name="ix">IX</string>
+
+
+
+
+    <string name="amygdale">Palatine Tonsil</string>
+    <string name="pilierposterieur">Pharyngopalatine Arch</string>
+    <string name="pilieranterieur">Glossopalatine Arch</string>
+    <string name="basedelangue">Base of Tongue</string>
+    <string name="sillonamygdaloglosse">Inconnu</string>
+    <string name="espaceparapharynge">Parapharyngeal Space</string>
+    <string name="foramenovale">Foramen Ovale</string>
+    <string name="gangliondegasser">Trigeminal ganglia</string>
+    <string name="pterygoidienmedial">Medial Pterygoid Muscle</string>
+    <string name="branchemontantedemandibule">Posterior Mandibular Arch</string>
+    <string name="espacecarotidien">Carotid space</string>
+    <string name="sinuscaverneux">Cavernous Sinus</string>
+    <string name="espaceretropharynge">Retropharyngeal space</string>
+    <string name="cavum">Nasopharynx</string>
+    <string name="paroipharyngeeposterieure">Posterior Pharyngeal Wall</string>
+    <string name="voile">Soft Palate</string>
+    <string name="trigoneretromolairesuperieur">Upper Retromolar Triangle</string>
+    <string name="carrefourdestroisreplis">Inconnu</string>
+    <string name="racinedelangue">Root of Tongue</string>
+    <string name="glandesousmaxillaire">Sub-Maxillary gland</string>
+    <string name="gencive">Gingiva</string>
+    <string name="mandibule">Mandible</string>
+    <string name="joue">IX</string>
+    <string name="trigoneretromolaireinferieur">Lower Retromolar Triangle</string>
+    <string name="espacegraisseux">Bichat\'s fat pad</string>
+    <string name="gencivesuperieure">Upper Gingiva</string>
+    <string name="espaceparotidien">Parotid Space</string>
+    <string name="fossepterygomaxillaire">Pterygomaxillary Fossa</string>
+    <string name="plancherposterieur">Posterior Floor</string>
+    <string name="langueposterieure">Posterior Tongue</string>
+    <string name="replipharyngoepiglottique">Epiglotticopalatine Fold</string>
+    <string name="facelingualedelepiglotte">Inconnu</string>
+    <string name="espacepreepiglottique">Inconnu</string>
+    <string name="palaisdur">Hard Palate</string>
+    <string name="vallecule">Vallecula</string>
+    <string name="languemobile">Mobile Tongue</string>
+    <string name="plancherbuccal">Tongue Floor</string>
+    <string name="faceinternedejoue">Inner Face of Cheek</string>
+    <string name="genciveinferieure">Lower Gingiva</string>
+    <string name="genciveposterieure">Posterior Gingiva</string>
+    <string name="facedelepiglotte">Inconnu</string>
+    <string name="langue">Tongue</string>
+    <string name="english">English</string>
+    <string name="french">French</string>
+    <string name="submental">Submental</string>
+    <string name="submandibular">Submandibular</string>
+    <string name="upperjugular">Upper Jugular</string>
+    <string name="middlejugular">Middle Jugular</string>
+    <string name="lowerjugular">Lower Jugular</string>
+    <string name="medialsupraclavicular">Medial SupraClavicular</string>
+    <string name="posteriortriangle">Posterior Triangle</string>
+    <string name="lateralsupraclavicular">Lateral SupraClavicular</string>
+    <string name="anteriorjugular">Anterior Jugular</string>
+    <string name="prelaryngeal">PreLaryngeal, PreTRacheal, ParaTracheal</string>
+    <string name="retropharyngeal">RetroPharyngeal</string>
+    <string name="retrostyloid">Retro-Styloid</string>
+    <string name="parotid">Parotid</string>
+    <string name="buccofacial">Bucco-Facial</string>
+    <string name="posteriorskull">Posterior Skull</string>
+    <string name="invaded_location">Invaded Location</string>
+    <string name="oropharynx">Oropharynx</string>
+    <string name="cavitebuccale">Buccal Cavity</string>
+    <string name="larynx">Larynx</string>
+
+
 </resources>

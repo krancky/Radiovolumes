@@ -1,12 +1,26 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  tools:context=".MainActivity">
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/set_locale"
+        android:icon="@drawable/ic_language_black_24dp"
+        android:orderInCategory="100"
+        android:showAsAction="always" >
+        <!-- "file" submenu -->
+        <menu>
+            <item
+                android:id="@+id/set_english"
+                android:title="@string/english" />
+            <item
+                android:id="@+id/set_french"
+                android:title="@string/french" />
+        </menu>
+    </item>
 
-  <item
-    android:id="@+id/action_toggle"
-    android:icon="@drawable/ic_action_grid"
-    android:showAsAction="always"
-    android:orderInCategory="100"
-    android:title="Show as grid" />
+    <item
+        android:id="@+id/action_toggle"
+        android:icon="@drawable/ic_action_grid"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Show as grid" />
 
 </menu>

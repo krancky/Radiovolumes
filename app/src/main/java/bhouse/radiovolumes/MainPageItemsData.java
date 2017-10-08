@@ -1,5 +1,7 @@
 package bhouse.radiovolumes;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 
 /**
@@ -7,14 +9,26 @@ import java.util.ArrayList;
  */
 public class MainPageItemsData {
 
-  public static String[] placeNameArray = {"New case", "Load", "Test"};
+  private ArrayList<String> placeNameArray;
 
-  public static ArrayList<MainPageItem> placeList() {
+  public MainPageItemsData(Context context){
+    this.placeNameArray = new ArrayList<>();
+    String newCase = context.getString(R.string.newCase);
+    String load = context.getString(R.string.load);
+    String atlas = context.getString(R.string.atlas);
+    this.placeNameArray.add(newCase);
+    this.placeNameArray.add(load);
+    this.placeNameArray.add(atlas);
+  }
+
+  //public String[] placeNameArray = {"New case", "Load", "Test"};
+
+  public ArrayList<MainPageItem> placeList() {
     ArrayList<MainPageItem> list = new ArrayList<>();
-    for (int i = 0; i < placeNameArray.length; i++) {
+    for (int i = 0; i < placeNameArray.size(); i++) {
       MainPageItem mainPageItem = new MainPageItem();
-      mainPageItem.name = placeNameArray[i];
-      mainPageItem.imageName = placeNameArray[i].replaceAll("\\s+", "").toLowerCase();
+      mainPageItem.name = placeNameArray.get(i);
+      mainPageItem.imageName = placeNameArray.get(i).replaceAll("\\s+", "").toLowerCase();
       if (i == 2 || i == 5) {
         mainPageItem.isFav = true;
       }
@@ -23,7 +37,7 @@ public class MainPageItemsData {
     return (list);
   }
 
-  public static MainPageItem getItem(String _id) {
+  public MainPageItem getItem(String _id) {
     for (MainPageItem mainPageItem : placeList()) {
       if (mainPageItem.id.equals(_id)) {
         return mainPageItem;

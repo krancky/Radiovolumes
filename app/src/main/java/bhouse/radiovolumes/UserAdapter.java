@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -17,10 +16,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import bhouse.radiovolumes.processor.NodeAreaTemplate;
-
-import static android.R.attr.color;
-import static android.R.attr.data;
 import static bhouse.radiovolumes.R.id.locString;
 
 /**
@@ -31,14 +26,14 @@ public class UserAdapter extends BaseAdapter {
     private LinkedHashMap displayedList;
     private ArrayList<Boolean> checkboxStatus = new ArrayList();
     private String[] mKeys;
-    private List<SliceItem> sliceItems;
+    private List<Slice> slices;
     private Map<String, String> colors;
     private Context context;
 
-    public UserAdapter(Context context, LinkedHashMap<String, Integer> displayedlist, List<SliceItem> sliceItems, Map<String, String> colors, ArrayList<MyDialogFragment.Item> items) {
+    public UserAdapter(Context context, LinkedHashMap<String, Integer> displayedlist, List<Slice> slices, Map<String, String> colors, ArrayList<MyDialogFragment.Item> items) {
         this.displayedList = displayedlist;
         mKeys = displayedlist.keySet().toArray(new String[displayedlist.size()]);
-        this.sliceItems = sliceItems;
+        this.slices = slices;
         this.context = context;
         this.colors = colors;
 
