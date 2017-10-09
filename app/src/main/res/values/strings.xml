@@ -3,7 +3,7 @@
     <string name="main_title">Radiovolumes</string>
     <string name="tClickTv">Tumor Sublocation</string>
     <string name="nClickTv">Invaded Lymph Nodes</string>
-    <string name="addSwitch">Advanced tumor</string>
+    <string name="addSwitch">Advanced Tumor</string>
     <string name="tumorLocation">Tumor Location</string>
     <string name="nodeLocation">Node Location</string>
     <string name="lRtumorLocation">Low Risk Tumor Location</string>
@@ -105,6 +105,7 @@
     <string name="larynx">Larynx</string>
     <string name="left_alone">Left</string>
     <string name="right_alone">Right</string>
+    <string name="decisionnal">Required Additional Information</string>
 
 
 </resources>

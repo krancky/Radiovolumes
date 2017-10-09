@@ -3,7 +3,7 @@
     <string name="main_title">Radiovolumes</string>
     <string name="tClickTv">Sous-Localisations Tumorales</string>
     <string name="nClickTv">Aires Ganglionnaires Envahies</string>
-    <string name="addSwitch">Oropharynx</string>
+    <string name="addSwitch">Tumeur Avancée</string>
     <string name="tumorLocation">Sous Localisation Tumorale</string>
     <string name="nodeLocation">Aires Ganglionnaires Envahies</string>
     <string name="lRtumorLocation">Irradiation Tumorale à Bas Risque</string>
@@ -108,6 +108,7 @@
     <string name="larynx">Larynx</string>
     <string name="left_alone">Gauche</string>
     <string name="right_alone">Droite</string>
+    <string name="decisionnal">Eléments de Décision Complémentaires</string>
 
 
 </resources>
