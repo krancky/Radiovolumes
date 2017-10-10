@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ui_to_hide"
+        android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/NewCaseImage"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
+            android:transitionName="tImage" />
+
+        <LinearLayout
+            android:id="@+id/llEditTextHolder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#95000000">
+
+            <EditText
+                android:id="@+id/CaseName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@android:color/white" />
+
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_detail"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/placeNameHolder"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/primary"
+            android:orientation="vertical"
+            android:transitionName="tNameHolder">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:paddingLeft="10dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    android:id="@+id/CaseMainAreaSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ms_multiline="false"
+                    app:ms_dropDownHintView="@layout/spinner_dropdown_item"
+                    app:ms_hintView="@layout/hint_dropdown_item"
+                    app:ms_hint="Select a Location"
+                    app:ms_enableFloatingLabel="false"
+                    app:ms_enableErrorLabel="false"
+                    app:ms_floatingLabelText="floating label"
+                    app:ms_baseColor="@color/primary_light"
+                    app:ms_highlightColor="@color/secondary_light"
+                    app:ms_errorColor="@color/secondary"
+                    app:ms_thickness="2dp"
+                    app:ms_hintColor="@color/light_green"
+                    app:ms_arrowColor="@color/blue"
+                    app:ms_arrowSize="16dp"
+                    app:ms_alignLabels="true"
+                    android:minWidth="200dp"
+                    app:ms_floatingLabelColor="@color/blue"/>
+
+
+            <Spinner
+                android:id="@+id/MainSideSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <ImageButton
+            android:id="@+id/btn_add"
+            android:layout_width="@dimen/floating_button_size"
+            android:layout_height="@dimen/floating_button_size"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="55dp"
+            android:alpha="0.0"
+            android:background="@drawable/btn_background"
+            android:contentDescription="@null"
+            android:elevation="@dimen/button_elevation" />
+
+    </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/LvLayout"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tClickTv"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:gravity="center_vertical"
+        android:background="@color/primary_light"
+        android:drawablePadding="10dp"
+        android:text="@string/tClickTv"
+        android:clickable="true"
+        android:textColor="@color/white"
+        android:drawableStart="@drawable/ic_expand_more_black_24dp"
+        android:textStyle="bold"
+        android:elevation="30dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+
+
+        <ListView
+        android:id="@+id/tExpandableListView"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:divider="@android:color/darker_gray"
+        android:background="@color/primary_light"
+        android:dividerHeight="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:layout_height="2dp">
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/primary"
+        android:layout_height="4dp">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="2dp">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nClickTv"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:gravity="center_vertical"
+        android:background="@color/primary_light"
+        android:drawablePadding="10dp"
+        android:text="@string/nClickTv"
+        android:clickable="true"
+        android:textColor="@color/white"
+        android:drawableStart="@drawable/ic_expand_more_black_24dp"
+        android:textStyle="bold"
+        android:elevation="30dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+
+    <ListView
+        android:id="@+id/nExpandableListView"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:divider="@android:color/darker_gray"
+        android:descendantFocusability="blocksDescendants"
+        android:background="@color/primary_light"
+        android:dividerHeight="1dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:layout_height="2dp">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/primary"
+            android:layout_height="4dp">
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:layout_height="2dp">
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:background="@color/primary_light"
+            android:text="@string/decisionnal"
+            android:clickable="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:paddingLeft="34dp"
+            android:elevation="30dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+        <Switch
+            android:id="@+id/itemListSwitch"
+            android:layout_width="wrap_content"
+            android:text="@string/addSwitch"
+            android:layout_gravity="right"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
+

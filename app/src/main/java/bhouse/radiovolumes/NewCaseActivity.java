@@ -40,6 +40,7 @@ import bhouse.radiovolumes.processor.NodeAreasTemplateXMLHandler;
 import bhouse.radiovolumes.processor.TumorAreasTemplateXMLHandler;
 import bhouse.radiovolumes.processor.TUCaseXMLHandler;
 import bhouse.radiovolumes.processor.TumorAreaTemplate;
+import fr.ganfra.materialspinner.MaterialSpinner;
 
 import android.widget.ImageView;
 
@@ -90,7 +91,7 @@ public class NewCaseActivity extends Activity {
     private TextView headerText3;
     private ImageButton mAddButton;
     private EditText mEditTextName;
-    private Spinner spinner;
+    private MaterialSpinner spinner;
     private Spinner spinnerSide;
     private TextView tClickTv;
     private TextView nClickTv;
@@ -104,7 +105,7 @@ public class NewCaseActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_case_1);
+        setContentView(R.layout.activity_new_case_2);
 
         Intent i = getIntent();
         newParam = "1";
@@ -135,14 +136,17 @@ public class NewCaseActivity extends Activity {
         mAddButton = (ImageButton) findViewById(R.id.btn_add);
         mAddButton.setImageResource(R.drawable.icn_morph_reverse);
 
-        spinner = (Spinner) findViewById(R.id.CaseMainAreaSpinner);
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.main_areas_array, R.layout.spinner_item);
         spinnerAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);// default layouts for now
+        spinner = (MaterialSpinner) findViewById(R.id.CaseMainAreaSpinner);
+
         spinner.setAdapter(spinnerAdapter);
 
-        spinnerSide = (Spinner) findViewById(R.id.MainSideSpinner);
+
+
         ArrayAdapter<CharSequence> spinnerAdapterSide = ArrayAdapter.createFromResource(this, R.array.main_side_array, R.layout.spinner_item);
         spinnerAdapterSide.setDropDownViewResource(R.layout.spinner_dropdown_item);// default layouts for now
+        spinnerSide = (Spinner) findViewById(R.id.MainSideSpinner);
         spinnerSide.setAdapter(spinnerAdapterSide);
 
         tClickTv = (TextView) findViewById(R.id.tClickTv);
