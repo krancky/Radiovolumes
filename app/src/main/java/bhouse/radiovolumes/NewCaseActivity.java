@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -100,6 +102,8 @@ public class NewCaseActivity extends Activity {
     private boolean isExpandedT = false;
     private boolean isExpandedN = false;
     private boolean isAdvanced = false;
+
+
 
 
     @Override
@@ -290,7 +294,12 @@ public class NewCaseActivity extends Activity {
                     transitionIntent.putExtra("cancer", cancer);
                     transitionIntent.putExtra("CTV56TCase", NewCaseActivity.this.ctv56TCase);
                     transitionIntent.putExtra("CTV56NCase", NewCaseActivity.this.ctv56NCase);
-                    startActivity(transitionIntent);
+
+                    if(!((Activity) v.getContext()).isFinishing())
+                    {
+                        startActivity(transitionIntent);//show dialog
+                    }
+
                 }
 
             }

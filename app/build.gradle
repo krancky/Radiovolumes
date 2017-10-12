@@ -1,15 +1,21 @@
 apply plugin: 'com.android.application'
 
 android {
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+    }
     compileSdkVersion 26
     buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "bhouse.radiovolumes"
-        minSdkVersion 25
+        minSdkVersion 24
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true //important
 
     }
     buildTypes {
@@ -35,3 +41,4 @@ dependencies {
     compile 'de.halfbit:pinned-section-listview:1.0.0'
     compile 'com.github.ganfra:material-spinner:2.0.0'
 }
+

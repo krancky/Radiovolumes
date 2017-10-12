@@ -264,7 +264,7 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
                         String value = location.replaceAll("\\s+", "").toLowerCase()+ " " + map.getKey().replaceAll("\\s+", "").toLowerCase();
                         if (displayedList.get(value).equals(1)) {
                             SliceVectorItem sliceVectorItem = new SliceVectorItem();
-                            sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() + "___" + String.valueOf(i));
+                            sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(i));
                             sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
                             sliceVectorItem.setSide(map.getKey());
                             slice.addVectorStorageLocation(sliceVectorItem);
