@@ -77,12 +77,12 @@
 
                 <fr.ganfra.materialspinner.MaterialSpinner
                     android:id="@+id/CaseMainAreaSpinner"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:ms_multiline="false"
                     app:ms_dropDownHintView="@layout/spinner_dropdown_item"
                     app:ms_hintView="@layout/hint_dropdown_item"
-                    app:ms_hint="Select a Location"
+                    app:ms_hint="@string/selectLoc"
                     app:ms_enableFloatingLabel="false"
                     app:ms_enableErrorLabel="false"
                     app:ms_floatingLabelText="floating label"
@@ -91,18 +91,36 @@
                     app:ms_errorColor="@color/secondary"
                     app:ms_thickness="2dp"
                     app:ms_hintColor="@color/light_green"
-                    app:ms_arrowColor="@color/blue"
+                    app:ms_arrowColor="@color/black_overlay"
                     app:ms_arrowSize="16dp"
                     app:ms_alignLabels="true"
                     android:minWidth="200dp"
                     app:ms_floatingLabelColor="@color/blue"/>
 
 
-            <Spinner
-                android:id="@+id/MainSideSpinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    android:id="@+id/MainSideSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:ms_multiline="false"
+                    app:ms_dropDownHintView="@layout/spinner_dropdown_item"
+                    app:ms_hintView="@layout/hint_dropdown_item"
+                    app:ms_hint="@string/side"
+                    app:ms_enableFloatingLabel="false"
+                    app:ms_enableErrorLabel="false"
+                    app:ms_floatingLabelText="floating label"
+                    app:ms_baseColor="@color/primary_light"
+                    app:ms_highlightColor="@color/secondary_light"
+                    app:ms_errorColor="@color/secondary"
+                    app:ms_thickness="2dp"
+                    app:ms_hintColor="@color/light_green"
+                    app:ms_arrowColor="@color/black_overlay"
+                    app:ms_arrowSize="16dp"
+                    app:ms_alignLabels="true"
+                    android:minWidth="100dp"
+                    app:ms_floatingLabelColor="@color/blue"/>
+
+
             </LinearLayout>
 
         </LinearLayout>

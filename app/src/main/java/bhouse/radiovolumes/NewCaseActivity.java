@@ -94,7 +94,7 @@ public class NewCaseActivity extends Activity {
     private ImageButton mAddButton;
     private EditText mEditTextName;
     private MaterialSpinner spinner;
-    private Spinner spinnerSide;
+    private MaterialSpinner spinnerSide;
     private TextView tClickTv;
     private TextView nClickTv;
 
@@ -150,7 +150,7 @@ public class NewCaseActivity extends Activity {
 
         ArrayAdapter<CharSequence> spinnerAdapterSide = ArrayAdapter.createFromResource(this, R.array.main_side_array, R.layout.spinner_item);
         spinnerAdapterSide.setDropDownViewResource(R.layout.spinner_dropdown_item);// default layouts for now
-        spinnerSide = (Spinner) findViewById(R.id.MainSideSpinner);
+        spinnerSide = (MaterialSpinner) findViewById(R.id.MainSideSpinner);
         spinnerSide.setAdapter(spinnerAdapterSide);
 
         tClickTv = (TextView) findViewById(R.id.tClickTv);
@@ -282,8 +282,9 @@ public class NewCaseActivity extends Activity {
             public void onClick(View v) {
                 EditText caseName = (EditText) findViewById(R.id.CaseName);
                 String sCaseName = caseName.getText().toString();
-                if (sCaseName.matches("")) {
-                    Toast.makeText(v.getContext(), "Please enter a name for this case", Toast.LENGTH_SHORT).show();
+                int truc = spinner.getLastVisiblePosition();
+                if (sCaseName.matches("") || spinner.getLastVisiblePosition() == 0 ) {
+                    Toast.makeText(v.getContext(), "Please enter a name and basic information about this case", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     NewCaseActivity.this.cancer.setName(sCaseName);

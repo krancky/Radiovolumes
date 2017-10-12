@@ -28,17 +28,20 @@ public class TabFragment1 extends Fragment {
     private HashMap<String, List<String>> cancerNData;
     private HashMap<String, List<String>> cancerNTarData;
     private Cancer cancer;
+    private Context context;
+    private TabbedActivity activity;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        TabbedActivity activity = (TabbedActivity) getActivity();
+        this.activity = (TabbedActivity) getActivity();
         cancerTData = new HashMap<String, HashMap<String, List<String>>>();
         cancerNData = new HashMap<String, List<String>>();
         cancerNData = activity.getCancerNData();
         cancerTData = activity.getCancerTData();
         this.cancer = activity.getCancer();
+
 
         View view = inflater.inflate(R.layout.tab_fragment_1, container, false);
         perform(view);

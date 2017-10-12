@@ -106,6 +106,8 @@
     <string name="left_alone">Left</string>
     <string name="right_alone">Right</string>
     <string name="decisionnal">Required Additional Information</string>
+    <string name="selectLoc">Select Location</string>
+    <string name="side">Side</string>
 
 
 </resources>
