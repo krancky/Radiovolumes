@@ -283,8 +283,8 @@ public class NewCaseActivity extends Activity {
                 EditText caseName = (EditText) findViewById(R.id.CaseName);
                 String sCaseName = caseName.getText().toString();
                 int truc = spinner.getLastVisiblePosition();
-                if (sCaseName.matches("") || spinner.getLastVisiblePosition() == 0 ) {
-                    Toast.makeText(v.getContext(), "Please enter a name and basic information about this case", Toast.LENGTH_SHORT).show();
+                if (sCaseName.matches("") || spinner.getLastVisiblePosition() == 0 || spinnerSide.getLastVisiblePosition() == 0) {
+                    Toast.makeText(v.getContext(), "Enter a name and basic information about this case", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     NewCaseActivity.this.cancer.setName(sCaseName);

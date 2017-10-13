@@ -94,7 +94,9 @@
                     app:ms_arrowColor="@color/black_overlay"
                     app:ms_arrowSize="16dp"
                     app:ms_alignLabels="true"
-                    android:minWidth="200dp"
+                    android:minWidth="180dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="5dp"
                     app:ms_floatingLabelColor="@color/blue"/>
 
 
@@ -117,7 +119,7 @@
                     app:ms_arrowColor="@color/black_overlay"
                     app:ms_arrowSize="16dp"
                     app:ms_alignLabels="true"
-                    android:minWidth="100dp"
+                    android:minWidth="110dp"
                     app:ms_floatingLabelColor="@color/blue"/>
 
 

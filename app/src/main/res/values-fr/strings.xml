@@ -109,8 +109,8 @@
     <string name="left_alone">Gauche</string>
     <string name="right_alone">Droite</string>
     <string name="decisionnal">Eléments de Décision Complémentaires</string>
-    <string name="side">Cote</string>
-    <string name="selectLoc">Selectionner Aire</string>
+    <string name="side">Côté</string>
+    <string name="selectLoc">Select. Aire</string>
 
 
 </resources>

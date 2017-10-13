@@ -256,7 +256,8 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
         for (i =0; i<222; i++ ){
             Slice slice = new Slice();
             slice.setNumber(String.valueOf(i));
-            slice.setStorageLocation("scan_"+String.valueOf(i));
+            String formatted = String.format("%05d", i+1);
+            slice.setStorageLocation("scan_"+String.valueOf(formatted));
             for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()){
                 HashMap<String, List<String>> sideMap = areaMap.getValue();
                 for (HashMap.Entry<String, List<String>> map: sideMap.entrySet()){
