@@ -124,7 +124,7 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
                 if (color == Color.TRANSPARENT)
                     return false;
                 else {
-                    if (event.getAction() == MotionEvent.ACTION_UP) {
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         //Toast.makeText(context, "touch view" + v.toString(), Toast.LENGTH_SHORT).show();
                         FragmentManager fm = ((ScannerViewActivity)context).getFragmentManager();
                         //imageView.setColorFilter(ContextCompat.getColor(context, R.color.blue), android.graphics.PorterDuff.Mode.MULTIPLY);
