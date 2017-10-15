@@ -117,17 +117,18 @@ public class NewCaseActivity extends Activity {
         cancer = new Cancer();
         if ( newParam.equalsIgnoreCase("0")){
             cancer = (Cancer) i.getSerializableExtra("cancer");
-            Log.i("cancer loaded", cancer.toString());
         }
-
-        //AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
-
-        // Getting elements by Id
 
 
         mImageView = (ImageView) findViewById(R.id.NewCaseImage);
         mTitle = (TextView) findViewById(R.id.textView);
-        mTitle.setText(R.string.newCase);
+        if ( newParam.equalsIgnoreCase("0")){
+            mTitle.setText(R.string.loadedCase);
+        }
+        else{
+            mTitle.setText(R.string.newCase);
+        }
+
         //mImageView.setImageResource(mPlace.getImageResourceId(this));
         mImageView.setImageResource(R.drawable.newcase);
 
@@ -163,10 +164,12 @@ public class NewCaseActivity extends Activity {
             //mImageView
             mEditTextName.setText(cancer.getName());
 
+            //int spinnerPosition = spinnerAdapter.getPosition("Oropharynx");
             int spinnerPosition = spinnerAdapter.getPosition(cancer.getMainArea());
-            spinner.setSelection(spinnerPosition);
+            //CharSequence truc = spinnerAdapter.getItem(0);
+            spinner.setSelection(spinnerPosition+1);
             int spinnerSidePosition = spinnerAdapterSide.getPosition(cancer.getMainSide());
-            spinnerSide.setSelection(spinnerPosition);
+            spinnerSide.setSelection(spinnerSidePosition+1);
         }
 
         // Generates elementary N cases (CTV56NUCase) catalog and
@@ -252,7 +255,7 @@ public class NewCaseActivity extends Activity {
 
         prepareTData();
         tExpandableListAdapter = new TSelectionAdapter(this,countryList, tumorAreaTemplateList, cancer);
-        //tExpandableListAdapter = new TCustomExpandableListAdapter(this, texpandableListTitle, texpandableListDetail, tumorAreaTemplateList, cancer);
+
 
 
         nExpandableListView.setAdapter(nExpandableListAdapter);
@@ -282,13 +285,14 @@ public class NewCaseActivity extends Activity {
             public void onClick(View v) {
                 EditText caseName = (EditText) findViewById(R.id.CaseName);
                 String sCaseName = caseName.getText().toString();
-                int truc = spinner.getLastVisiblePosition();
                 if (sCaseName.matches("") || spinner.getLastVisiblePosition() == 0 || spinnerSide.getLastVisiblePosition() == 0) {
                     Toast.makeText(v.getContext(), "Enter a name and basic information about this case", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     NewCaseActivity.this.cancer.setName(sCaseName);
                     NewCaseActivity.this.cancer.setMainArea(spinner.getSelectedItem().toString());
+                    Object truc = spinner.getSelectedItem();
+                    Object bivule = getResources().getIdentifier(spinner.getSelectedItem().toString().toLowerCase(), "string", getPackageName());
                     NewCaseActivity.this.cancer.setMainSide(spinnerSide.getSelectedItem().toString());
                     NewCaseActivity.this.update();
                     Intent transitionIntent = new Intent(NewCaseActivity.this, TabbedActivity.class);
@@ -314,7 +318,6 @@ public class NewCaseActivity extends Activity {
             public void onClick(View v) {
                 LinearLayout myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
                 if (isExpandedN){
-                    Toast.makeText(getApplicationContext(),"I will hide" , Toast.LENGTH_SHORT).show();
                     nExpandableListView.setVisibility(View.GONE);
                     myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
                     myLayout.setVisibility(View.VISIBLE);
@@ -323,7 +326,6 @@ public class NewCaseActivity extends Activity {
                     isExpandedN = false;
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),"I will hide" , Toast.LENGTH_SHORT).show();
                     nExpandableListView.setVisibility(View.VISIBLE);
                     myLayout.setVisibility(View.GONE);
                     int imageResource = getResources().getIdentifier("ic_expand_less_black_24dp" , "drawable", getPackageName());
@@ -340,7 +342,6 @@ public class NewCaseActivity extends Activity {
             public void onClick(View v) {
                 LinearLayout myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
                 if (isExpandedT){
-                        Toast.makeText(getApplicationContext(),"I will hide" , Toast.LENGTH_SHORT).show();
                         tExpandableListView.setVisibility(View.GONE);
                         myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
                         myLayout.setVisibility(View.VISIBLE);
@@ -349,7 +350,6 @@ public class NewCaseActivity extends Activity {
                     isExpandedT = false;
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),"I will hide" , Toast.LENGTH_SHORT).show();
                     tExpandableListView.setVisibility(View.VISIBLE);
                     myLayout.setVisibility(View.GONE);
 

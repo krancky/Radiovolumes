@@ -88,7 +88,7 @@ public class AreaDialog extends DialogFragment {
         window.setDimAmount(0);
 
         // set "origin" to top left corner, so to speak
-        window.setGravity(Gravity.TOP|Gravity.LEFT);
+        window.setGravity(Gravity.BOTTOM|Gravity.LEFT);
 
         // after that, setting values for x and y works "naturally"
         WindowManager.LayoutParams params = window.getAttributes();

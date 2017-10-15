@@ -51,7 +51,6 @@ public class LoadCaseRViewAdapter extends RecyclerView.Adapter<LoadCaseRViewAdap
         cancerViewHolder.cv.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(v.getContext(),"clicked" + cancer.getName(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(mContext, NewCaseActivity.class);
                 //transitionIntent.putExtra(DetailActivity.EXTRA_PARAM_ID, position);
                 intent.putExtra("cancer", cancer);

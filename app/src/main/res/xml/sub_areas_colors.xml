@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <map linked="true">
-    <entry key="amygdale">#FF0000</entry>
-    <entry key="basedelangue gauche">#CC00FF</entry>
-    <entry key="voile">#0066FF</entry>
+    <entry key="amygdale">#1400FF</entry>
+    <entry key="basedelangue">#52FF00</entry>
+    <entry key="espacegraisseux">#FF007A</entry>
+    <entry key="espaceparapharynge">#FF0000</entry>
+    <entry key="glandesousmaxillaire">#00FF29</entry>
+    <entry key="joue">#8F00FF</entry>
+    <entry key="languemobile">#8F00FF</entry>
+    <entry key="mandibule">#FFF500</entry>
+    <entry key="palaisdur">#00FFE0</entry>
+    <entry key="pilieranterieur">#00FFA3</entry>
+    <entry key="pilierposterieur">#0029FF</entry>
+    <entry key="plancher">#1400FF</entry>
+    <entry key="pterygoidienmedial">#5200FF</entry>
+    <entry key="sillonamygdaloglosse">#8FFF00</entry>
+    <entry key="trigoneretromolaireinferieur">#0029FF</entry>
+    <entry key="trigoneretromolairesuperieur">#0029FF</entry>
+    <entry key="voile">#FFF500</entry>
 </map>

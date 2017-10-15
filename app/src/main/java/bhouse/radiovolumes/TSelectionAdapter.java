@@ -57,9 +57,11 @@ public class TSelectionAdapter extends BaseAdapter {
                     if (cancerTumorAreaTemplate.getLocation().equals(tumorAreaTemplate.getLocation())){
                         if (cancerTumorAreaTemplate.getLeftContent().equals("1")){
                             checkboxStatus_left.set(tumorAreaTemplateList.indexOf(tumorAreaTemplate),true);
+                            tumorAreaTemplate.setLeftContent("1");
                         }
                         if (cancerTumorAreaTemplate.getRightContent().equals("1")){
                             checkboxStatus_right.set(tumorAreaTemplateList.indexOf(tumorAreaTemplate),true);
+                            tumorAreaTemplate.setRightContent("1");
                         }
                     }
                 }

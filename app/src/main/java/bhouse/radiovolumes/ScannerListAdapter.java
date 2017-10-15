@@ -50,7 +50,7 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        ViewHolder holder;
+        final ViewHolder holder;
 
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.list_view_scan, parent, false);
@@ -58,6 +58,7 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
             holder = new ViewHolder();
 
             holder.scanView = (ImageView) convertView.findViewById(R.id.view_scan);
+            holder.scanView.setTag("scan");
             holder.zoomview = (ZoomView) convertView.findViewById(R.id.zoomView);
             holder.frameLayout = (FrameLayout) convertView.findViewById(R.id.zoomLayout);
             convertView.setTag(holder);
@@ -68,6 +69,35 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
         convertView.setMinimumHeight(parent.getMeasuredHeight());
         Slice item = getItem(position);
         holder.frameLayout.removeAllViews();
+        holder.frameLayout.setClickable(true);
+        holder.frameLayout.setOnTouchListener(new FrameLayout.OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                Log.d("MOTION_EVENT", "getAction(): " + motionEvent.getAction());
+                ImageView child;
+                for (int i = 1; i<=holder.frameLayout.getChildCount()-1;i++){
+                    child = (ImageView) holder.frameLayout.getChildAt(i);
+                    if(!child.getTag().equals("scan")) {
+                        SliceVectorItem sliceVectorItem = (SliceVectorItem) child.getTag();
+                        Bitmap bmp = Bitmap.createBitmap(child.getDrawingCache());
+                        int color = bmp.getPixel((int) motionEvent.getX(), (int) motionEvent.getY());
+                        if (color == Color.TRANSPARENT) {
+                        } else {
+                            if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                                FragmentManager fm = ((ScannerViewActivity) context).getFragmentManager();
+                                int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_ok", "drawable", context.getPackageName());
+                                child.setImageResource(resID);
+                                AreaDialog dialogFragment = AreaDialog.newInstance((SliceVectorItem) child.getTag(), child.getId());
+                                dialogFragment.show(fm, String.valueOf(child.getTag()));
+                            }
+                            return true;
+                        }
+                    }
+                }
+                return true;
+            }
+        });
         int resIdScan = this.context.getResources().getIdentifier(item.getScanStorageLocation(), "drawable", context.getPackageName());
         //Picasso
         //.with(context)
@@ -79,8 +109,8 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
         imageView.setTag(resIdScan);
 
         imageView.setImageResource(resIdScan);
-        imageView.setOnTouchListener(changeColorListener);
-        //imageView.setClickable(false);
+        //imageView.setOnTouchListener(changeColorListener);
+        //imageView.setClickable(true);
         holder.frameLayout.addView(imageView);
 
         for (int i = 0; i < item.getVectorStorageLocation().size(); i++) {
@@ -92,9 +122,34 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
             if (resId != 0) {
                 imageView.setImageResource(resId);
                 imageView.setTag(item.getVectorStorageLocation().get(i));
-                imageView.setClickable(true);
+                imageView.setClickable(false);
                 imageView.setDrawingCacheEnabled(true);
-                imageView.setOnTouchListener(changeColorListener);
+                imageView.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        try {
+                            ImageView imageView = (ImageView) v;
+                            SliceVectorItem sliceVectorItem = (SliceVectorItem) v.getTag();
+                            Bitmap bmp = Bitmap.createBitmap(v.getDrawingCache());
+                            int color = bmp.getPixel((int) event.getX(), (int) event.getY());
+                            if (color == Color.TRANSPARENT)
+                                return false;
+                            else {
+                                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                                    FragmentManager fm = ((ScannerViewActivity)context).getFragmentManager();
+                                    int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_selected", "drawable", context.getPackageName());
+                                    imageView.setImageResource(resID);
+                                    AreaDialog dialogFragment = AreaDialog.newInstance ((SliceVectorItem) v.getTag(), v.getId());
+                                    dialogFragment.show(fm, String.valueOf(v.getTag()));
+                                }
+                                return true;
+                            }
+                        } catch (Exception e) {
+                            Log.i("Touch", "error");
+                        }
+                        return false;
+                    }
+                });
 
                 holder.frameLayout.addView(imageView);
             }
@@ -103,49 +158,9 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
 
         }
         holder.zoomview.setLv(this.lv);
-        //if (holder.zoomview.isZoomed()){
-            //lv.setFastScrollEnabled(false);
-        //}
-        //else{
-            //lv.setFastScrollEnabled(true);
-        //}
         return convertView;
     }
 
-    private final ImageView.OnTouchListener changeColorListener = new ImageView.OnTouchListener() {
-
-        @Override
-        public boolean onTouch(View v, MotionEvent event) {
-            try {
-                ImageView imageView = (ImageView) v;
-                SliceVectorItem sliceVectorItem = (SliceVectorItem) v.getTag();
-                Bitmap bmp = Bitmap.createBitmap(v.getDrawingCache());
-                int color = bmp.getPixel((int) event.getX(), (int) event.getY());
-                if (color == Color.TRANSPARENT)
-                    return false;
-                else {
-                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                        //Toast.makeText(context, "touch view" + v.toString(), Toast.LENGTH_SHORT).show();
-                        FragmentManager fm = ((ScannerViewActivity)context).getFragmentManager();
-                        //imageView.setColorFilter(ContextCompat.getColor(context, R.color.blue), android.graphics.PorterDuff.Mode.MULTIPLY);
-                        //String tag = v.getTag().toString();
-                        int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_ok", "drawable", context.getPackageName());
-                        imageView.setImageResource(resID);
-                        // Autre solution: load     nother resourceID
-
-                        AreaDialog dialogFragment = AreaDialog.newInstance ((SliceVectorItem) v.getTag(), v.getId());
-                        dialogFragment.show(fm, String.valueOf(v.getTag()));
-                    /*code to execute*/
-                    }
-                    //code to execute
-                    return false;
-                }
-            } catch (Exception e) {
-                Log.i("zut", "zut");
-            }
-            return false;
-        }
-    };
 
 
     static class ViewHolder {

@@ -52,9 +52,11 @@ public class NSelectionAdapter extends BaseAdapter {
                     if (cancerNodeAreaTemplate.getNodeLocation().equals(nodeAreaTemplate.getNodeLocation())){
                         if (cancerNodeAreaTemplate.getLeftContent().equals("1")){
                             checkboxStatus_left.set(nodeAreaTemplateList.indexOf(nodeAreaTemplate),true);
+                            nodeAreaTemplate.setLeftContent("1");
                         }
                         if (cancerNodeAreaTemplate.getRightContent().equals("1")){
                             checkboxStatus_right.set(nodeAreaTemplateList.indexOf(nodeAreaTemplate),true);
+                            nodeAreaTemplate.setRightContent("1");
                         }
                     }
                 }

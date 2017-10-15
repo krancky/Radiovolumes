@@ -82,12 +82,12 @@
         </Modifiers>
         <TVolumes>
             <TVolume>
-                <TLocation>Langue</TLocation>
+                <TLocation>Langue Mobile</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Langue</TLocation>
+                <TLocation>Langue Mobile</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -133,12 +133,12 @@
         </Modifiers>
         <TVolumes>
             <TVolume>
-                <TLocation>Langue</TLocation>
+                <TLocation>Langue Mobile</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Langue</TLocation>
+                <TLocation>Langue Mobile</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -1615,7 +1615,7 @@
             <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Langue</TLocation>
+            <TLocation>Langue Mobile</TLocation>
             <TSide>Gauche</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -1681,7 +1681,7 @@
             <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Langue</TLocation>
+            <TLocation>Langue Mobile</TLocation>
             <TSide>Droite</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -1736,7 +1736,7 @@
                 <TArea>Cavite buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Langue</TLocation>
+                <TLocation>Langue Mobile</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -1802,7 +1802,7 @@
                 <TArea>Cavite buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Langue</TLocation>
+                <TLocation>Langue Mobile</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>

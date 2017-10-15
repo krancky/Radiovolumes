@@ -67,7 +67,7 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_load_case);
         MainPageItemsData mainPageItemsData = new MainPageItemsData(getApplicationContext());
 
-        //mMainPageItem = mainPageItemsData.placeList().get(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
+        mMainPageItem = mainPageItemsData.placeList().get(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
 
         mListRView = (RecyclerView) findViewById(R.id.loadList);
         mImageView = (ImageView) findViewById(R.id.placeImage);
@@ -218,29 +218,5 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
         });
         isEditTextVisible = false;
         anim.start();
-    }
-
-    @Override
-    public void onBackPressed() {
-        AlphaAnimation alphaAnimation = new AlphaAnimation(1.0f, 0.0f);
-        alphaAnimation.setDuration(100);
-        //mAddButton.startAnimation(alphaAnimation);
-        alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                //mAddButton.setVisibility(View.GONE);
-                finishAfterTransition();
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
     }
 }

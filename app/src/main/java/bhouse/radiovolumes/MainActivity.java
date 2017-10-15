@@ -63,7 +63,6 @@ public class MainActivity extends Activity {
       public void onItemClick(View v, int position) {
         int itemPosition;
         itemPosition = position;
-        Toast.makeText(v.getContext(),"position" + position, Toast.LENGTH_SHORT).show();
         if (itemPosition == 3) {
 
         }
@@ -148,10 +147,17 @@ public class MainActivity extends Activity {
     }
     if (id == R.id.set_english){
       LocaleHelper.setLocale(this, "en");
+      Context context = LocaleHelper.setLocale(this, "en");
+      this.recreate();
+      LocaleHelper.getLanguage(this);
     }
     if (id == R.id.set_french){
       LocaleHelper.setLocale(this, "fr");
+      mAdapter = new MainPageListAdapter(this);
+      this.recreate();
+      LocaleHelper.getLanguage(this);
     }
+
     return super.onOptionsItemSelected(item);
   }
 

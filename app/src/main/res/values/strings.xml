@@ -81,7 +81,7 @@
     <string name="genciveinferieure">Lower Gingiva</string>
     <string name="genciveposterieure">Posterior Gingiva</string>
     <string name="facedelepiglotte">Inconnu</string>
-    <string name="langue">Tongue</string>
+    <string name="langue">Mobile Tongue</string>
     <string name="english">English</string>
     <string name="french">French</string>
     <string name="submental">Submental</string>
@@ -108,6 +108,7 @@
     <string name="decisionnal">Required Additional Information</string>
     <string name="selectLoc">Select Location</string>
     <string name="side">Side</string>
+    <string name="loadedCase">Loaded Case</string>
 
 
 </resources>
