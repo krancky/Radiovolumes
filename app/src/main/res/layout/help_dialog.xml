@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/black_overlay">
+
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/adaro"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:background="@color/primary"
+        android:textColor="@android:color/white" />
+
+
+    <TextView
+        android:id="@+id/leduc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvName"
+        android:text="@string/leduc"
+        android:paddingLeft="5dp"
+        android:textColor="@android:color/white"
+        android:background="@color/primary_light"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+
+    <TextView
+        android:id="@+id/dupin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dupin"
+        android:background="@color/primary_light"
+        android:paddingRight="5dp"
+        android:gravity="right"
+        android:textAlignment="gravity"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/tvName"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/leduc" />
+
+
+    <TextView
+        android:id="@+id/explanation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/leduc"
+        android:text="@string/explanation"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/bibliography_static"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/explanation"
+        android:text="@string/bibliography_static"
+        android:background="@color/primary_light"
+        android:paddingLeft="5dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/bibliography"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bibliography_static"
+        android:text="@string/bibliography"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/copyright_static"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bibliography"
+        android:text="@string/copyright_static"
+        android:background="@color/primary_light"
+        android:paddingLeft="5dp"
+
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/copyright_static"
+        android:text="@string/copyright"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

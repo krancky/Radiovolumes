@@ -1,6 +1,7 @@
 package bhouse.radiovolumes;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -22,6 +23,8 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 import java.util.Locale;
+
+import bhouse.radiovolumes.processor.HelpFragment;
 
 
 public class MainActivity extends Activity {
@@ -141,6 +144,8 @@ public class MainActivity extends Activity {
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     int id = item.getItemId();
+    FragmentManager fm = getFragmentManager();
+    HelpFragment helpFragment = HelpFragment.newInstance ();
     if (id == R.id.action_toggle) {
       toggle();
       return true;
@@ -157,6 +162,8 @@ public class MainActivity extends Activity {
       this.recreate();
       LocaleHelper.getLanguage(this);
     }
+    if (id == R.id.action_splash)
+      helpFragment.show(fm, "none");
 
     return super.onOptionsItemSelected(item);
   }

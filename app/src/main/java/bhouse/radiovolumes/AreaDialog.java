@@ -12,26 +12,17 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 
-        import android.os.Bundle;
-        import android.app.DialogFragment;
+import android.app.DialogFragment;
         import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.View.OnClickListener;
-        import android.view.ViewGroup;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextClock;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
-
-import static android.R.attr.value;
 
 
 public class AreaDialog extends DialogFragment {
@@ -41,7 +32,7 @@ public class AreaDialog extends DialogFragment {
     }
 
 
-    private ScannerViewActivity activity;
+    private ScannerViewActivity_simple activity;
     private LinkedHashMap<String, ArrayList<String>> oLimits;
     private String title;
     private int resID;
@@ -97,7 +88,7 @@ public class AreaDialog extends DialogFragment {
         window.setAttributes(params);
 
 
-        this.activity = (ScannerViewActivity) getActivity();
+        this.activity = (ScannerViewActivity_simple) getActivity();
         this.oLimits = this.activity.getoLimits();
         this.title = getArguments().getString("title");
         this.resID = getArguments().getInt("resId");

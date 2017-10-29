@@ -11,7 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
 import java.util.List;
+import java.util.Locale;
 
 import bhouse.radiovolumes.processor.Cancer;
 
@@ -44,8 +46,14 @@ public class LoadCaseRViewAdapter extends RecyclerView.Adapter<LoadCaseRViewAdap
     public void onBindViewHolder(CancerViewHolder cancerViewHolder, int i){
         final Cancer cancer = cancerCases.get(i);
         cancerViewHolder.name.setText(cancerCases.get(i).getName());
-        cancerViewHolder.main_area.setText(cancerCases.get(i).getMainArea());
-        cancerViewHolder.date.setText(cancerCases.get(i).getTime().toString());
+        String[] mainAreaArray = mContext.getResources().getStringArray(R.array.main_areas_array);
+        String[] mainSideArray = mContext.getResources().getStringArray(R.array.main_side_array);
+        cancerViewHolder.main_area.setText(mainAreaArray[Integer.valueOf(cancerCases.get(i).getMainArea())] + " (" + mainSideArray[Integer.valueOf(cancerCases.get(i).getMainSide())] + ")");
+
+        //java.text.DateFormat dateFormat =
+        DateFormat f = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, Locale.getDefault());
+        String date = f.format(cancerCases.get(i).getTime());
+        cancerViewHolder.date.setText(date);
         int truc = cancerCases.get(i).getImageResourceId(mContext);
         cancerViewHolder.case_photo.setImageResource(cancerCases.get(i).getImageResourceId(mContext));
         cancerViewHolder.cv.setOnClickListener(new View.OnClickListener(){

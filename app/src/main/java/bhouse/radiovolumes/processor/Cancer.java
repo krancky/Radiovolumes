@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import bhouse.radiovolumes.R;
+
 /**
  * The type Cancer.
  * Harbors cancer input information.
@@ -90,7 +92,8 @@ public class Cancer implements Serializable{
      * @return integer
      */
     public int getImageResourceId(Context context) {
-        return context.getResources().getIdentifier(this.mainArea.replaceAll("\\s+", "").toLowerCase(), "drawable", context.getPackageName());
+        String[] mainSideArray = context.getResources().getStringArray(R.array.main_areas_array);
+        return context.getResources().getIdentifier(mainSideArray[Integer.valueOf(this.mainArea)].replaceAll("\\s+", "").replaceAll("é","e").toLowerCase(), "drawable", context.getPackageName());
     }
 
     /**
@@ -176,6 +179,15 @@ public class Cancer implements Serializable{
             e.printStackTrace();
         }
         return cancer;
+    }
+
+    public void removeCancer (Context context){
+
+
+        File dir = context.getFilesDir();
+        File file = new File(dir, this.getName() + ".duc");
+        boolean deleted = file.delete();
+
     }
 
 }

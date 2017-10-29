@@ -4,19 +4,29 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.RippleDrawable;
+import android.media.Image;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.transition.Fade;
 import android.transition.Transition;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.Window;
@@ -29,6 +39,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -57,6 +68,11 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
     private MainPageItem mMainPageItem;
     private ArrayList<String> mTodoList;
     private ArrayAdapter mToDoAdapter;
+
+    LoadCaseRViewAdapter rViewAdapter;
+
+    private ImageButton eraseAll;
+
     int defaultColorForRipple;
 
     private List<Cancer> cancers;
@@ -87,6 +103,22 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
         mTodoList = new ArrayList<>();
         mToDoAdapter = new ArrayAdapter(this, R.layout.row_todo, mTodoList);
 
+        eraseAll = (ImageButton) findViewById(R.id.btn_erase_all);
+
+        eraseAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (Cancer cancer : cancers) {
+                    cancer.removeCancer(getApplicationContext());
+                    //rViewAdapter.notifyItemRemoved(0);
+                }
+                cancers = getCancerList();
+                rViewAdapter = new LoadCaseRViewAdapter(cancers,getApplicationContext());
+                mListRView.setAdapter(rViewAdapter);
+                //rViewAdapter.notifyDataSetChanged();
+            }
+        });
+
 
         // Setting recyclerView for CardViews of Loaded Cases
         LinearLayoutManager llm = new LinearLayoutManager(this); //??
@@ -96,13 +128,103 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
 
 
         //mList.setAdapter(mToDoAdapter);
-        LoadCaseRViewAdapter rViewAdapter = new LoadCaseRViewAdapter(cancers, this);
+        rViewAdapter = new LoadCaseRViewAdapter(cancers, this);
         mListRView.setAdapter(rViewAdapter);
 
         loadPlace();
         windowTransition();
         getPhoto();
 
+        ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            public static final float ALPHA_FULL = 1.0f;
+
+            public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
+                if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
+
+                    View itemView = viewHolder.itemView;
+
+                    Paint p = new Paint();
+                    Bitmap icon;
+
+                    if (dX > 0) {
+
+                        //color : left side (swiping towards right)
+                        p.setARGB(255, 255, 0, 0);
+                        int myColor = getApplication().getResources().getColor(R.color.secondary);
+                        p.setColor(myColor);
+                        c.drawRect((float) itemView.getLeft(), (float) itemView.getTop(), dX,
+                                (float) itemView.getBottom(), p);
+
+                        // icon : left side (swiping towards right)
+                        icon = getBitmapFromVectorDrawable(getApplicationContext(), R.drawable.ic_delete_sweep_black_24dp);
+                        //icon = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.ic_delete_black_24dp);
+                        c.drawBitmap(icon,
+                                (float) itemView.getLeft() + convertDpToPx(30),
+                                (float) itemView.getTop() + ((float) itemView.getBottom() - (float) itemView.getTop() - icon.getHeight())/2,
+                                p);
+                    } else {
+
+                        //color : right side (swiping towards left)
+                        p.setARGB(255, 0, 255, 0);
+
+                        c.drawRect((float) itemView.getRight() + dX, (float) itemView.getTop(),
+                                (float) itemView.getRight(), (float) itemView.getBottom(), p);
+
+                        //icon : left side (swiping towards right)
+                        icon = getBitmapFromVectorDrawable(getApplicationContext(), R.drawable.ic_delete_sweep_black_24dp);
+                        //icon = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.ic_delete_black_24dp);
+                        c.drawBitmap(icon,
+                                (float) itemView.getRight() - convertDpToPx(30) - icon.getWidth(),
+                                (float) itemView.getTop() + ((float) itemView.getBottom() - (float) itemView.getTop() - icon.getHeight())/2,
+                                p);
+                    }
+
+                    // Fade out the view when it is swiped out of the parent
+                    final float alpha = ALPHA_FULL - Math.abs(dX) / (float) viewHolder.itemView.getWidth();
+                    viewHolder.itemView.setAlpha(alpha);
+                    viewHolder.itemView.setTranslationX(dX);
+
+                } else {
+                    super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+                }
+            }
+
+            private int convertDpToPx(int dp){
+                return Math.round(dp * (getResources().getDisplayMetrics().xdpi / DisplayMetrics.DENSITY_DEFAULT));
+            }
+
+            @Override
+            public void onSwiped(final RecyclerView.ViewHolder viewHolder, int direction) {
+                final int position = viewHolder.getAdapterPosition(); //swiped position
+
+                if (direction == ItemTouchHelper.LEFT) { //swipe left
+
+                    cancers.get(position).removeCancer(getApplicationContext());
+
+                    cancers.remove(position);
+                    rViewAdapter.notifyItemRemoved(position);
+
+                    Toast.makeText(getApplicationContext(),"Swipped to left",Toast.LENGTH_SHORT).show();
+
+                }else if(direction == ItemTouchHelper.RIGHT){//swipe right
+
+                    cancers.remove(position);
+                    rViewAdapter.notifyItemRemoved(position);
+
+                    Toast.makeText(getApplicationContext(),"Swipped to right",Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        };
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(mListRView);
     }
 
     private List<Cancer> getCancerList(){
@@ -116,7 +238,7 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
             String filePath = file.getPath();
             if(filePath.endsWith(".duc"));
             cancerFileList.add(filePath);
-            cancer = Cancer.readFromFile(this, filePath); // pas sur que ca marche, il faut le nom seul
+            cancer = Cancer.readFromFile(this, filePath);
             cancers.add(cancer);
         }
         return cancers;
@@ -167,6 +289,11 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
         rippleBackground.setColor(bgColor);
         ripple.setColor(ColorStateList.valueOf(tintColor));
     }
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
+
 
     @Override
     public void onClick(View v) {
@@ -190,6 +317,13 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
                     //mAnimatable.start();
                     applyRippleColor(mPalette.getVibrantColor(defaultColorForRipple),
                             mPalette.getDarkVibrantColor(defaultColorForRipple));
+                }
+            case R.id.btn_erase_all:
+                for (Cancer cancer:cancers){
+                    cancer.removeCancer(getApplicationContext());
+                    cancers = getCancerList();
+                    rViewAdapter.notifyDataSetChanged();
+
                 }
         }
     }
@@ -218,5 +352,21 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
         });
         isEditTextVisible = false;
         anim.start();
+    }
+
+
+    public static Bitmap getBitmapFromVectorDrawable(Context context, int drawableId) {
+        Drawable drawable = ContextCompat.getDrawable(context, drawableId);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            drawable = (DrawableCompat.wrap(drawable)).mutate();
+        }
+
+        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(),
+                drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        drawable.draw(canvas);
+
+        return bitmap;
     }
 }

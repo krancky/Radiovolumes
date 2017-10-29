@@ -109,6 +109,10 @@ public class CTV56TCase implements Serializable{
         this.addAllTVolumeToMap(list);
     }
 
+    public List<LRTumorTargetVolume> getcTV56TTarVolumes() {
+        return cTV56TTarVolumes;
+    }
+
     @Override
     public String toString() {
         return  "Case: " + caseName + "\n" + identifier + "-" + cTV56TTarVolumes.toString()  ;

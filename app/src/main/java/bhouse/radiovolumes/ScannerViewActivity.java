@@ -22,8 +22,6 @@ import java.util.List;
 
 import bhouse.radiovolumes.processor.OLimitsXMLHandler;
 
-import static bhouse.radiovolumes.R.xml.map;
-
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
@@ -164,7 +162,8 @@ public class ScannerViewActivity extends Activity implements MyDialogFragment.On
         mContentView.setFastScrollEnabled(true);
         mContentView.setSingleScroll(true);
 
-
+        //mContentView.setSelection(150);
+        //mContentView.smoothScrollToPosition(2);
 
 
         // Upon interacting with UI controls, delay any scheduled hide()

@@ -30,7 +30,7 @@ public class MyDialogFragment extends DialogFragment {
     private OnCompleteListener mListener;
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     private HashMap<String, List<String>> cancerNTarData;
-    private ScannerViewActivity activity;
+    private ScannerViewActivity_simple activity;
     private LinkedHashMap<String, Integer> displayedList;
     private List<Slice> slices;
     ArrayList<Item> countryList = new ArrayList<Item>();
@@ -69,7 +69,7 @@ public class MyDialogFragment extends DialogFragment {
         Button dismiss = (Button) v.findViewById(R.id.dismiss);
 
 
-        this.activity = (ScannerViewActivity) getActivity();
+        this.activity = (ScannerViewActivity_simple) getActivity();
         cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
         cancerNTarData = new HashMap<String, List<String>>();
         cancerNTarData = activity.getCancerNTarData();

@@ -1,23 +1,14 @@
 package bhouse.radiovolumes;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,8 +16,6 @@ import java.util.List;
 import java.util.Map;
 
 import bhouse.radiovolumes.processor.Cancer;
-
-import static android.R.attr.mode;
 
 public class TabFragment2 extends Fragment {
 
@@ -83,13 +72,16 @@ public class TabFragment2 extends Fragment {
         lvN.setScrollContainer(false);
         lvNotes.setScrollContainer(false);
 
+        ImageButton toScan = (ImageButton) v.findViewById(R.id.button_to_scan);
+        toScan.setImageResource(R.drawable.ic_camera_front_black_24dp);
+        toScan.animate().alpha(1.0f);
 
-        Button toScan = (Button)v.findViewById(R.id.button_to_scan);
+        //Button toScan = (Button)v.findViewById(R.id.button_to_scan);
 
         toScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), ScannerViewActivity.class);
+                Intent i = new Intent(getActivity(), ScannerViewActivity_simple.class);
                 i.putExtra("cancerTTarData", cancerTTarData);
                 i.putExtra("cancerNTarData", cancerNTarData);
                 startActivity(i);

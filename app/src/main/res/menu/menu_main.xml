@@ -23,4 +23,11 @@
         android:showAsAction="always"
         android:title="Show as grid" />
 
+    <item
+        android:id="@+id/action_splash"
+        android:icon="@drawable/ic_help_black_24dp"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Show as grid" />
+
 </menu>

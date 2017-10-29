@@ -63,7 +63,8 @@ public class HashAdapter extends BaseAdapter {
         }
 
         HashMap.Entry<String, HashMap<String, List<String>>> item = getItem(position);
-        ((TextView) result.findViewById(R.id.text_main_area)).setText(item.getKey());
+        String locationLocale = context.getString(context.getResources().getIdentifier(item.getKey().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
+        ((TextView) result.findViewById(R.id.text_main_area)).setText(locationLocale);
 
         HashMap<String, List<String>> sideMap = item.getValue();
         for (HashMap.Entry<String, List<String>> map : sideMap.entrySet()) {

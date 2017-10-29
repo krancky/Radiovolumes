@@ -165,11 +165,11 @@ public class NewCaseActivity extends Activity {
             mEditTextName.setText(cancer.getName());
 
             //int spinnerPosition = spinnerAdapter.getPosition("Oropharynx");
-            int spinnerPosition = spinnerAdapter.getPosition(cancer.getMainArea());
+            //int spinnerPosition = spinnerAdapter.getPosition(cancer.getMainArea());
             //CharSequence truc = spinnerAdapter.getItem(0);
-            spinner.setSelection(spinnerPosition+1);
-            int spinnerSidePosition = spinnerAdapterSide.getPosition(cancer.getMainSide());
-            spinnerSide.setSelection(spinnerSidePosition+1);
+            spinner.setSelection(Integer.valueOf(cancer.getMainArea())+1);
+            //int spinnerSidePosition = spinnerAdapterSide.getPosition(cancer.getMainSide());
+            spinnerSide.setSelection(Integer.valueOf(cancer.getMainSide())+1);
         }
 
         // Generates elementary N cases (CTV56NUCase) catalog and
@@ -243,7 +243,6 @@ public class NewCaseActivity extends Activity {
         // Generates list of T locations to be irradiated
         ctv56TCase = new CTV56TCase();
         hashMapOperator.cTV56TCase(ctv56TUCaseList, cancer, ctv56TCase, isAdvanced);
-        Log.i("End of onCreate() ", "... Done");
 
         nExpandableListView = (ListView) findViewById(R.id.nExpandableListView);
         nexpandableListDetail = ExpandableListDataPump.getNData(nodeAreaTemplateList);
@@ -285,20 +284,20 @@ public class NewCaseActivity extends Activity {
             public void onClick(View v) {
                 EditText caseName = (EditText) findViewById(R.id.CaseName);
                 String sCaseName = caseName.getText().toString();
-                if (sCaseName.matches("") || spinner.getLastVisiblePosition() == 0 || spinnerSide.getLastVisiblePosition() == 0) {
-                    Toast.makeText(v.getContext(), "Enter a name and basic information about this case", Toast.LENGTH_SHORT).show();
+                NewCaseActivity.this.update();
+                if (sCaseName.matches("") || spinner.getLastVisiblePosition() == 0 || spinnerSide.getLastVisiblePosition() == 0 || ctv56TCase.getCaseTTarVolumes().isEmpty()) {
+                    Toast.makeText(v.getContext(), getResources().getString(R.string.enterInfo), Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    NewCaseActivity.this.cancer.setName(sCaseName);
-                    NewCaseActivity.this.cancer.setMainArea(spinner.getSelectedItem().toString());
-                    Object truc = spinner.getSelectedItem();
-                    Object bivule = getResources().getIdentifier(spinner.getSelectedItem().toString().toLowerCase(), "string", getPackageName());
-                    NewCaseActivity.this.cancer.setMainSide(spinnerSide.getSelectedItem().toString());
-                    NewCaseActivity.this.update();
+                    NewCaseActivity.this.cancer.setName(sCaseName.substring(0,1).toUpperCase()+sCaseName.substring(1));
+                    NewCaseActivity.this.cancer.setMainArea(String.valueOf(spinner.getSelectedItemPosition()-1));
+                    NewCaseActivity.this.cancer.setMainSide(String.valueOf(spinnerSide.getSelectedItemPosition()-1));
+                    save();
                     Intent transitionIntent = new Intent(NewCaseActivity.this, TabbedActivity.class);
                     transitionIntent.putExtra("cancer", cancer);
                     transitionIntent.putExtra("CTV56TCase", NewCaseActivity.this.ctv56TCase);
                     transitionIntent.putExtra("CTV56NCase", NewCaseActivity.this.ctv56NCase);
+                    String Truc = spinner.getSelectedItem().toString();
 
                     if(!((Activity) v.getContext()).isFinishing())
                     {
@@ -398,14 +397,18 @@ public class NewCaseActivity extends Activity {
         ctv56NCase.removeTarVolumesDuplicates();
         NewCaseActivity.this.ctv56TCaseList.add(NewCaseActivity.this.ctv56TCase);
         NewCaseActivity.this.ctv56NCaseList.add(NewCaseActivity.this.ctv56NCase);
+
+
+
+    }
+
+    public void save(){
         Calendar c = Calendar.getInstance();
         NewCaseActivity.this.cancer.setTime(c.getTime());
 
         File file = new File(getFilesDir() +"/" + "stuff");
         String dir = file.getParent();
         NewCaseActivity.this.cancer.saveToFile(NewCaseActivity.this);
-
-
     }
 
     @Override

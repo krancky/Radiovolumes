@@ -15,7 +15,7 @@
 
     <string name="ctv56n">CTV56N_short</string>
     <string name="left">"Gauche :  "</string>
-    <string name="right">"Droite : "</string>
+    <string name="right">"Droite :     "</string>
     <string name="invaded">Envahi</string>
     <string name="toIrradiate">A IRRADIER</string>
     <string name="newCase">Nouveau Cas</string>
@@ -95,7 +95,7 @@
     <string name="parotid">Parotidiens</string>
     <string name="posteriorskull">Crâne Postérieur?</string>
     <string name="posteriortriangle">Triangle Postérieur</string>
-    <string name="prelaryngeal">Prélaryngés, Prétrachéaux, Paratrachéaux</string>
+    <string name="prelaryngeal">Prélaryngés, Pré- et  Para-trachéaux</string>
     <string name="retropharyngeal">Rétropharyngés</string>
     <string name="retrostyloid">Rétrostyloïdiens</string>
     <string name="submandibular">Sous-Mandibulaires</string>
@@ -112,6 +112,15 @@
     <string name="side">Côté</string>
     <string name="selectLoc">Select. Aire</string>
     <string name="loadedCase">Chargement du Cas Clinique</string>
+    <string name="enterInfo">Entrez un nom et les quelques informations nécessaires au calcul</string>
+    <string name="adaro">ADARO</string>
+    <string name="dupin">C. Dupin</string>
+    <string name="leduc">N. Leduc</string>
+    <string name="explanation">L\' application ADARO permet aux utilisateurs le calcul ainsi que la visualisation des volumes cibles de l\'irradiation des zones prophylactiques a bas risque des cancers de l\'oropharynx et de la cavite buccale.</string>
+    <string name="bibliography">Lapeyre 2005 Cancer/Radiotherapie</string>
+    <string name="copyright">Tous droits reserves C.  Dupin et N. Leduc</string>
+    <string name="bibliography_static">Bibliographie</string>
+    <string name="copyright_static">Droits de propriete intellectuelle</string>
 
 
 </resources>

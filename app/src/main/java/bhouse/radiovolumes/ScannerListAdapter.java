@@ -13,12 +13,9 @@ import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
-
-import static android.R.attr.tag;
 
 /**
  * Created by kranck on 8/3/2017.
@@ -54,7 +51,7 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
 
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.list_view_scan, parent, false);
-            //convertView.setMinimumHeight(parent.getMeasuredHeight());
+            convertView.setMinimumHeight(parent.getMeasuredHeight());
             holder = new ViewHolder();
 
             holder.scanView = (ImageView) convertView.findViewById(R.id.view_scan);
@@ -66,15 +63,16 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
             holder = (ViewHolder) convertView.getTag();
 
         }
-        convertView.setMinimumHeight(parent.getMeasuredHeight());
+
         Slice item = getItem(position);
         holder.frameLayout.removeAllViews();
+
         holder.frameLayout.setClickable(true);
         holder.frameLayout.setOnTouchListener(new FrameLayout.OnTouchListener()
         {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                Log.d("MOTION_EVENT", "getAction(): " + motionEvent.getAction());
+
                 ImageView child;
                 for (int i = 1; i<=holder.frameLayout.getChildCount()-1;i++){
                     child = (ImageView) holder.frameLayout.getChildAt(i);
@@ -85,17 +83,17 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
                         if (color == Color.TRANSPARENT) {
                         } else {
                             if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-                                FragmentManager fm = ((ScannerViewActivity) context).getFragmentManager();
+                                FragmentManager fm = ((ScannerViewActivity_simple) context).getFragmentManager();
                                 int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_ok", "drawable", context.getPackageName());
                                 child.setImageResource(resID);
                                 AreaDialog dialogFragment = AreaDialog.newInstance((SliceVectorItem) child.getTag(), child.getId());
                                 dialogFragment.show(fm, String.valueOf(child.getTag()));
                             }
-                            return true;
+                            return false;
                         }
                     }
                 }
-                return true;
+                return false;
             }
         });
         int resIdScan = this.context.getResources().getIdentifier(item.getScanStorageLocation(), "drawable", context.getPackageName());
@@ -109,8 +107,7 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
         imageView.setTag(resIdScan);
 
         imageView.setImageResource(resIdScan);
-        //imageView.setOnTouchListener(changeColorListener);
-        //imageView.setClickable(true);
+
         holder.frameLayout.addView(imageView);
 
         for (int i = 0; i < item.getVectorStorageLocation().size(); i++) {
@@ -118,7 +115,7 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
             String truc = item.getVectorStorageLocation().get(i).getFilename();
             int resId = context.getResources().getIdentifier(item.getVectorStorageLocation().get(i).getFilename(), "drawable", context.getPackageName());
 
-            //int resId = context.getResources().getIdentifier(resourceName, "drawable", context.getPackageName());
+
             if (resId != 0) {
                 imageView.setImageResource(resId);
                 imageView.setTag(item.getVectorStorageLocation().get(i));

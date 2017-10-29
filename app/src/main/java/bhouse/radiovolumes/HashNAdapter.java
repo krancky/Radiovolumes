@@ -61,32 +61,47 @@ public class HashNAdapter extends BaseAdapter {
         }
 
         HashMap.Entry<String, List<String>> item = getItem(position);
+        String[] mainAreaArray = context.getResources().getStringArray(R.array.main_side_array);
+
+        // Putting "ipsilatera" first
+        if (position == 0){
+        if (!((item.getKey().equals("Gauche") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.left_alone))) || ((item.getKey().equals("Droite") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.right_alone)))))){
+            item = getItem(position+1);
+            }
+        }
+        if (position == 1){
+            if ((item.getKey().equals("Gauche") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.left_alone))) || ((item.getKey().equals("Droite") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.right_alone))))){
+                item = getItem(position-1);
+            }
+        }
+
 
         List<String> sideMap = item.getValue();
-
-            if (item.getKey().equalsIgnoreCase("Gauche") && this.cancer.getMainSide().equalsIgnoreCase(context.getString(R.string.left_alone)))  {
-                ((TextView) result.findViewById(R.id.text_static)).setText(cancer.getMainSide() + ": ");
+        mainAreaArray = context.getResources().getStringArray(R.array.main_side_array);
+            if (item.getKey().equalsIgnoreCase("Gauche") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.left_alone)))  {
+                ((TextView) result.findViewById(R.id.text_static)).setText(R.string.left);
                 ((TextView) result.findViewById(R.id.text)).setText(prepareString(sideMap));
                 //int resId = context.getResources().getIdentifier(item.getKey(), "drawable", context.getPackageName());
                 int resId = context.getResources().getIdentifier("ic_"+ "Left".replaceAll("\\s+", "").toLowerCase() + "_ok", "drawable", context.getPackageName());
                 ((ImageView) result.findViewById(R.id.image_photo)).setImageResource(resId);
                 ((TextView) result.findViewById(R.id.text_side)).setText(R.string.ipsilateral);
 
-            } else if ((item.getKey().equalsIgnoreCase("Droite") && this.cancer.getMainSide().equalsIgnoreCase(context.getString(R.string.right_alone)))) {
-                ((TextView) result.findViewById(R.id.text_static)).setText(cancer.getMainSide()+ ": ");
+
+            } else if ((item.getKey().equalsIgnoreCase("Droite") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.right_alone)))) {
+                ((TextView) result.findViewById(R.id.text_static)).setText(R.string.right);
                 int resId = context.getResources().getIdentifier("ic_"+ "Right".replaceAll("\\s+", "").toLowerCase() + "_ok", "drawable", context.getPackageName());
                 ((ImageView) result.findViewById(R.id.image_photo)).setImageResource(resId);
                 ((TextView) result.findViewById(R.id.text)).setText(prepareString(sideMap));
                 ((TextView) result.findViewById(R.id.text_side)).setText(R.string.ipsilateral);
 
-            } else if ((item.getKey().equalsIgnoreCase("Droite") && this.cancer.getMainSide().equalsIgnoreCase(context.getString(R.string.left_alone)))) {
+            } else if ((item.getKey().equalsIgnoreCase("Droite") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.left_alone)))) {
                 ((TextView) result.findViewById(R.id.text_static)).setText(R.string.right);
                 int resId = context.getResources().getIdentifier("ic_"+ "Right".replaceAll("\\s+", "").toLowerCase() + "_ok", "drawable", context.getPackageName());
                 ((ImageView) result.findViewById(R.id.image_photo)).setImageResource(resId);
                 ((TextView) result.findViewById(R.id.text)).setText(prepareString(sideMap));
                 ((TextView) result.findViewById(R.id.text_side)).setText(R.string.contralateral);
 
-            } else if ((item.getKey().equalsIgnoreCase("Gauche") && this.cancer.getMainSide().equalsIgnoreCase(context.getString(R.string.right_alone)))) {
+            } else if ((item.getKey().equalsIgnoreCase("Gauche") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.right_alone)))) {
                 ((TextView) result.findViewById(R.id.text_static)).setText(R.string.left);
                 int resId = context.getResources().getIdentifier("ic_"+ "Left".replaceAll("\\s+", "").toLowerCase() + "_ok", "drawable", context.getPackageName());
                 ((ImageView) result.findViewById(R.id.image_photo)).setImageResource(resId);

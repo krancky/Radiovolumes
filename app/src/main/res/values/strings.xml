@@ -11,7 +11,7 @@
     <string name="dialogTitle">Extension and Volumes to irradiate</string>
     <string name="additionnal">Additional notes</string>
     <string name="ctv56n">CTV56N_short</string>
-    <string name="left">Left: </string>
+    <string name="left">"Left:   "</string>
     <string name="right">Right: </string>
     <string name="invaded">Invaded</string>
     <string name="toIrradiate">TO IRRADIATE</string>
@@ -93,7 +93,7 @@
     <string name="posteriortriangle">Posterior Triangle</string>
     <string name="lateralsupraclavicular">Lateral SupraClavicular</string>
     <string name="anteriorjugular">Anterior Jugular</string>
-    <string name="prelaryngeal">PreLaryngeal, PreTRacheal, ParaTracheal</string>
+    <string name="prelaryngeal">PreLaryngeal, Pre- and Para-Tracheal</string>
     <string name="retropharyngeal">RetroPharyngeal</string>
     <string name="retrostyloid">Retro-Styloid</string>
     <string name="parotid">Parotid</string>
@@ -109,6 +109,15 @@
     <string name="selectLoc">Select Location</string>
     <string name="side">Side</string>
     <string name="loadedCase">Loaded Case</string>
+    <string name="enterInfo">Enter a name and basic information about this case</string>
+    <string name="adaro">ADARO</string>
+    <string name="leduc">N. Leduc</string>
+    <string name="dupin">C. Dupin</string>
+    <string name="explanation">The ADARO software allows users to compute and visualize Low Risk Target Volume for the irradiation of Oropharynx and Buccal Cavity cancers.</string>
+    <string name="bibliography">Lapeyre 2005 Cancer/Radiotherapie</string>
+    <string name="copyright">All rights reserved C. Dupin and N. Leduc</string>
+    <string name="bibliography_static">Bibliography</string>
+    <string name="copyright_static">Copyright</string>
 
 
 </resources>
