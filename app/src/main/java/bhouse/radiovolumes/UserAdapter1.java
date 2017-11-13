@@ -52,12 +52,12 @@ public class UserAdapter1 extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return displayedList.size();
+        return items.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return mKeys[position];
+        return items.get(position);
     }
 
     @Override
@@ -85,9 +85,7 @@ public class UserAdapter1 extends BaseAdapter {
                 holder.cb.setChecked(checkboxStatus.get(position));
             }
             convertView.setTag(holder);
-            //TextView tvItemTitle = (TextView) convertView.findViewById(R.id.tvItemTitle);
 
-            //tvItemTitle.setText(((NewCaseActivity.EntryItem) item.get(position)).getTitle());
 
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -100,20 +98,36 @@ public class UserAdapter1 extends BaseAdapter {
 
             // Populate the data into the template view using the data object
             int sectionNumber = items.get(position).getSectionNumber();
-            holder.locString.setText(mKeys[position-sectionNumber]);
-            holder.cb.setTag(position-sectionNumber);
-            holder.cb.setChecked(checkboxStatus.get(position-sectionNumber));
-            String truc = colors.get(mKeys[position-sectionNumber]);
-            try {
-                holder.locString.setTextColor(Color.parseColor(colors.get(mKeys[position-sectionNumber])));
-            } catch (Exception e) {
+            holder.locString.setText(mKeys[position - sectionNumber]);
+            holder.cb.setTag(position - sectionNumber);
+            holder.cb.setChecked(checkboxStatus.get(position - sectionNumber));
+            String truc = colors.get(mKeys[position - sectionNumber]);
+            //try {
+                //holder.locString.setTextColor(Color.parseColor(colors.get(mKeys[position - sectionNumber])));
+            //} catch (Exception e) {
                 holder.locString.setTextColor(Color.parseColor("#ffffff"));
-            }
+            //}
             holder.cb.setOnCheckedChangeListener(cbChangeListener);
             // Return the completed
         }
 
         return convertView;
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        return 2; // Count of different layouts
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (items.get(position).isSection()){
+            return 0;
+        }
+        else{
+            return 1;
+        }
+        // Define a way to determine which layout to use, here it's just evens and odds.
     }
 
 
@@ -131,8 +145,7 @@ public class UserAdapter1 extends BaseAdapter {
         }
     };
 
-    static class ViewHolder
-    {
+    static class ViewHolder {
         TextView locString;
         ImageView nodePhoto;
         TextView tvSectionTitle;

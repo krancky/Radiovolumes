@@ -143,15 +143,15 @@ public class MyDialogFragment extends DialogFragment {
                 }
             }
         }
-        //if (!cancerNTarData.isEmpty()) {
-          //  sectionNumber = sectionNumber +1;
-            //this.countryList.add(new SectionItem("Lymph Nodes Areas", sectionNumber));
-            //for (HashMap.Entry<String, List<String>> nodemap : cancerNTarData.entrySet()) {
-              //  for (String nodeLocation : nodemap.getValue()) {
-                //    this.countryList.add(new EntryItem(nodeLocation, sectionNumber));
-                //}
-            //}
-        //}
+        if (!cancerNTarData.isEmpty()) {
+            sectionNumber = sectionNumber +1;
+            this.countryList.add(new SectionItem("Lymph Nodes Areas", sectionNumber));
+            for (HashMap.Entry<String, List<String>> nodemap : cancerNTarData.entrySet()) {
+                for (String nodeLocation : nodemap.getValue()) {
+                    this.countryList.add(new EntryItem(nodeLocation, sectionNumber));
+                }
+            }
+        }
     }
 
     /**

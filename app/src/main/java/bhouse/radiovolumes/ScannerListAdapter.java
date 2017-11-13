@@ -133,7 +133,7 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
                                 return false;
                             else {
                                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                                    FragmentManager fm = ((ScannerViewActivity)context).getFragmentManager();
+                                    FragmentManager fm = ((ScannerViewActivity_simple)context).getFragmentManager();
                                     int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_selected", "drawable", context.getPackageName());
                                     imageView.setImageResource(resID);
                                     AreaDialog dialogFragment = AreaDialog.newInstance ((SliceVectorItem) v.getTag(), v.getId());

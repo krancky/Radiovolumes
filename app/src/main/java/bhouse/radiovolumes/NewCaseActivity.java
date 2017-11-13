@@ -39,6 +39,7 @@ import bhouse.radiovolumes.processor.HashMapOperator;
 import bhouse.radiovolumes.processor.NUCaseXMLHandler;
 import bhouse.radiovolumes.processor.NodeAreaTemplate;
 import bhouse.radiovolumes.processor.NodeAreasTemplateXMLHandler;
+import bhouse.radiovolumes.processor.OLimitsXMLHandler;
 import bhouse.radiovolumes.processor.TumorAreasTemplateXMLHandler;
 import bhouse.radiovolumes.processor.TUCaseXMLHandler;
 import bhouse.radiovolumes.processor.TumorAreaTemplate;
@@ -104,7 +105,7 @@ public class NewCaseActivity extends Activity {
     private boolean isAdvanced = false;
 
 
-
+    private LinkedHashMap<String, ArrayList<String>> oLimits;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -196,9 +197,6 @@ public class NewCaseActivity extends Activity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-
 
 
         // Generates list of lymph nodes to be irradiated

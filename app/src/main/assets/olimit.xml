@@ -1,11 +1,11 @@
-﻿﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Organs>
     <Organ>
         <Name>amygdale</Name>
         <CranialL>Caudal limit of the veil</CranialL>
         <CaudalL>Cranial part of the three-fold crossroad</CaudalL>
-        <AnteriorL>Posterior limit of the anterior pilar</AnteriorL>
-        <PosteriorL>Anterior limit of the posterior pilar</PosteriorL>
+        <AnteriorL>Post. limit of the anterior pilar</AnteriorL>
+        <PosteriorL>Ant. limit of the post. pilar</PosteriorL>
         <MedialL>Luminal pharynx</MedialL>
         <LateralL>Medial part of the parapharyngeal space</LateralL>
         <Comment>None</Comment>

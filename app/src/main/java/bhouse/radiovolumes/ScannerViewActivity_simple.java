@@ -203,7 +203,7 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
     public void prepareOLimitsData(){
         try {
             OLimitsXMLHandler oLimitsXMLHandler = new OLimitsXMLHandler();
-            this.oLimits = oLimitsXMLHandler.parse(getAssets().open("Olimits.xml"));
+            this.oLimits = oLimitsXMLHandler.parse(getAssets().open("olimit.xml"));
         }
         catch (IOException e){
             e.printStackTrace();
