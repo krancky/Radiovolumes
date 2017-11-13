@@ -71,7 +71,7 @@ public class UserAdapter1 extends BaseAdapter {
             holder = new ViewHolder();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            if (getItemViewType(position) == 0) {
+            if (items.get(position).isSection()) {
                 convertView = inflater.inflate(R.layout.layout_section, parent, false);
                 holder.tvSectionTitle = (TextView) convertView.findViewById(R.id.tvSectionTitle);
 
@@ -93,7 +93,7 @@ public class UserAdapter1 extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        if (getItemViewType(position) == 0) {
+        if (items.get(position).isSection()) {
             holder.tvSectionTitle.setText(((MyDialogFragment.SectionItem) items.get(position)).getTitle());
             Log.i("position", "section");
         } else {
@@ -113,18 +113,7 @@ public class UserAdapter1 extends BaseAdapter {
             // Return the completed
         }
 
-            return convertView;
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        if (items.get(position).isSection()){
-            return 0;
-        }
-        else{
-            return 1;
-        }
-        // Define a way to determine which layout to use, here it's just evens and odds.
+        return convertView;
     }
 
 

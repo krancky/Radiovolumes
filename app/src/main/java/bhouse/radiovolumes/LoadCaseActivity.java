@@ -236,10 +236,11 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
         for(int i=0; i<files.length; i++){
             File file = files[i];
             String filePath = file.getPath();
-            if(filePath.endsWith(".duc"));
-            cancerFileList.add(filePath);
-            cancer = Cancer.readFromFile(this, filePath);
-            cancers.add(cancer);
+            if(filePath.endsWith(".duc")){
+                cancerFileList.add(filePath);
+                cancer = Cancer.readFromFile(this, filePath);
+                cancers.add(cancer);
+            }
         }
         return cancers;
     }

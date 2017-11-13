@@ -2,13 +2,13 @@
 <Organs>
     <Organ>
     <Name>amygdale</Name>
-    <CranialL>The cranial limit of the tonsil is...</CranialL>
-    <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-    <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-    <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-    <MedialL>The medial limit of the tonsil is</MedialL>
-    <LateralL>The lateral limit of the tonsil is...</LateralL>
-    <Comment>A witty comment</Comment>
+    <CranialL>Caudal limit of the veil</CranialL>
+    <CaudalL>Cranial part of the three-fold crossroad</CaudalL>
+    <AnteriorL>Posterior limit of the anterior pilar</AnteriorL>
+    <PosteriorL>Anterior limit of the posterior pilar</PosteriorL>
+    <MedialL>Luminal pharynx</MedialL>
+    <LateralL>Medial part of the parapharyngeal space</LateralL>
+    <Comment>None</Comment>
 </Organ>
     <Organ>
         <Name>basedelangue</Name>
