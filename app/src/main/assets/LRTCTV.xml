@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <UCaseCatalog>
+    <Plancher>
     <LRTCTVUCase>Plancher 1
         <Location>Plancher buccal</Location>
         <Side>Gauche</Side>
@@ -72,6 +73,8 @@
             </TVolume>
         </TVolumes>
     </LRTCTVUCase>
+    </Plancher>
+    <LangueM>
     <LRTCTVUCase>Langue Mobile 1
         <Location>Langue Mobile</Location>
         <Side>Gauche</Side>
@@ -174,6 +177,8 @@
             </TVolume>
         </TVolumes>
     </LRTCTVUCase>
+    </LangueM>
+    <FIJ>
     <LRTCTVUCase>Face interne de joue 1
         <Location>Face interne de joue</Location>
         <Side>Gauche</Side>
@@ -408,6 +413,8 @@
             </TVolume>
         </TVolumes>
     </LRTCTVUCase>
+    </FIJ>
+    <Genciveinf>
     <LRTCTVUCase>Gencive inferieure 1
         <Location>Gencive inferieure</Location>
         <Side>Gauche</Side>
@@ -552,6 +559,8 @@
             </TVolume>
         </TVolumes>
     </LRTCTVUCase>
+    </Genciveinf>
+    <Palais>
     <LRTCTVUCase>Palais dur 1
         <Location>Palais dur</Location>
         <Side>Gauche</Side>
@@ -654,6 +663,8 @@
             <TArea>Cavite Buccale</TArea>
         </TVolume>
     </LRTCTVUCase>
+    </Palais>
+    <Trigonesup>
     <LRTCTVUCase>Trigone retromolaire superieur 1
         <Location>Trigone retromolaire superieur</Location>
         <Side>Gauche</Side>
@@ -776,6 +787,7 @@
             <TArea>Cavite Buccale</TArea>
         </TVolume>
     </LRTCTVUCase>
+    </Trigonesup>
     <LRTCTVUCase>Trigone retromolaire inferieur 1
         <Location>Trigone retromolaire superieur</Location>
         <Side>Gauche</Side>
