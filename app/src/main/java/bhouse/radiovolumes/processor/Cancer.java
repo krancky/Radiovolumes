@@ -12,6 +12,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import bhouse.radiovolumes.R;
@@ -26,6 +27,10 @@ public class Cancer implements Serializable{
     // Private hashmaps store cancer data
     private List<NodeAreaTemplate> cancerNVolumes = new ArrayList<NodeAreaTemplate>();
     private List<TumorAreaTemplate> cancerTVolumes = new ArrayList<TumorAreaTemplate>();
+
+    private HashMap<String, HashMap<String, List<String>>> cancerTTarData =  new HashMap<String, HashMap<String, List<String>>>();
+    private HashMap<String, List<String>> cancerNTarData = new HashMap<String, List<String>>();
+
 
     // Main side of Cancer
     private String mainSide;
@@ -134,6 +139,14 @@ public class Cancer implements Serializable{
     }
     public void tClear(){
         cancerTVolumes.clear();
+    }
+
+    public void setCancerTTarData(HashMap<String, HashMap<String, List<String>>> cancerTTarData){
+        this.cancerTTarData = cancerTTarData;
+    }
+
+    public void setCancerNTarData(HashMap<String, List<String>> cancerNTarData){
+        this.cancerNTarData = cancerNTarData;
     }
 
 

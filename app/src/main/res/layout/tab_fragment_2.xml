@@ -4,80 +4,119 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scrollView1"
     android:layout_width="match_parent"
-    android:fillViewport="true"
-    android:layout_height="match_parent" >
-
-<LinearLayout
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:fillViewport="true">
 
-
-    <TextView
-        android:id="@+id/textView_tab_1_T"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:gravity="center"
-        android:background="@color/primary"
-        android:text="@string/lRtumorLocation"
-        android:elevation="3dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-    <bhouse.radiovolumes.NonScrollListView
-        android:id="@+id/listView_invaded_T"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_tab_1_T">
-    </bhouse.radiovolumes.NonScrollListView>
-
-    <TextView
-        android:id="@+id/textView_tab_1_N"
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:gravity="center"
-        android:background="@color/primary"
-        android:text="@string/lRnodeLocation"
-        android:elevation="3dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-    <bhouse.radiovolumes.NonScrollListView
-        android:id="@+id/listView_invaded_N"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_tab_1_T">
-    </bhouse.radiovolumes.NonScrollListView>
-
-    <TextView
-        android:id="@+id/textView_tab_1_Notes"
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:gravity="center"
-        android:background="@color/primary"
-        android:text="@string/additionnal"
-        android:elevation="3dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-    <bhouse.radiovolumes.NonScrollListView
-        android:id="@+id/listView_additional_notes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_tab_1_Notes">
-    </bhouse.radiovolumes.NonScrollListView>
-
-    <ImageButton
-        android:id="@+id/button_to_scan"
-        android:layout_width="@dimen/floating_button_size"
-        android:layout_height="@dimen/floating_button_size"
-        android:layout_gravity="right"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
-        android:alpha="0.0"
-        android:background="@drawable/btn_background"
-        android:contentDescription="@null"
-        android:elevation="@dimen/button_elevation" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/textView_tab_1_T"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@color/primary"
+            android:elevation="3dp"
+            android:gravity="center"
+            android:text="@string/lRtumorLocation"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <bhouse.radiovolumes.NonScrollListView
+            android:id="@+id/listView_invaded_T"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_tab_1_T"></bhouse.radiovolumes.NonScrollListView>
+
+        <TextView
+            android:id="@+id/textView_tab_1_N"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@color/primary"
+            android:elevation="3dp"
+            android:gravity="center"
+            android:text="@string/lRnodeLocation"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <bhouse.radiovolumes.NonScrollListView
+            android:id="@+id/listView_invaded_N"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_tab_1_T"></bhouse.radiovolumes.NonScrollListView>
+
+        <TextView
+            android:id="@+id/textView_tab_1_Notes"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@color/primary"
+            android:elevation="3dp"
+            android:gravity="center"
+            android:text="@string/additionnal"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <bhouse.radiovolumes.NonScrollListView
+            android:id="@+id/listView_additional_notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_tab_1_Notes"></bhouse.radiovolumes.NonScrollListView>
+
+        <RelativeLayout android:id="@+id/relativeLayout1"
+            android:layout_height="wrap_content" android:gravity="center_horizontal"
+            android:layout_width="fill_parent" android:layout_gravity="fill">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:id="@+id/button_to_scan"
+                android:layout_width="@dimen/floating_button_size"
+                android:layout_height="@dimen/floating_button_size"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:alpha="0.0"
+                android:background="@drawable/btn_background"
+                android:contentDescription="@null"
+                android:layout_alignParentEnd="true"
+                android:elevation="@dimen/button_elevation" />
+
+            <ImageButton
+                android:id="@+id/button_to_mail"
+                android:layout_width="@dimen/floating_button_size"
+                android:layout_height="@dimen/floating_button_size"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:alpha="0.0"
+                android:background="@drawable/btn_background"
+                android:contentDescription="@null"
+                android:layout_toLeftOf="@id/button_to_scan"
+                android:elevation="@dimen/button_elevation" />
+
+            <ImageButton
+                android:id="@+id/button_save"
+                android:layout_width="@dimen/floating_button_size"
+                android:layout_height="@dimen/floating_button_size"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:alpha="0.0"
+                android:background="@drawable/btn_background"
+                android:contentDescription="@null"
+                android:layout_toLeftOf="@id/button_to_mail"
+                android:elevation="@dimen/button_elevation" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
 
 </ScrollView>
 

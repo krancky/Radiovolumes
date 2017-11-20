@@ -59,20 +59,20 @@
     <string name="cavum">Cavum</string>
     <string name="paroipharyngeeposterieure">Paroi Pharyngée Postérieure</string>
     <string name="voile">Voile</string>
-    <string name="trigoneretromolairesuperieur">Trigone Rétromolaire Inférieur</string>
+    <string name="trigoneretromolairesuperieur">Trigone Rétromolaire Supérieur</string>
     <string name="carrefourdestroisreplis">Carrefour des Trois replis</string>
-    <string name="racinedelangue">Racine de de Langue</string>
+    <string name="racinedelangue">Racine de Langue</string>
     <string name="glandesousmaxillaire">Glande Sous-Maxillaire</string>
     <string name="gencive">Gencive</string>
     <string name="mandibule">Mandibule</string>
     <string name="langue">Langue Mobile</string>
-    <string name="joue">IX</string>
+    <string name="joue">Joue</string>
     <string name="trigoneretromolaireinferieur">Trigone rétromolaire Inférieur</string>
     <string name="espacegraisseux">Espace Graisseux</string>
     <string name="gencivesuperieure">Gencive Supérieure</string>
     <string name="espaceparotidien">Espace Parotidien</string>
     <string name="fossepterygomaxillaire">Fosse Pterygo-Maxillaire</string>
-    <string name="plancherposterieur">Planche Postérieur</string>
+    <string name="plancherposterieur">Plancher Postérieur</string>
     <string name="langueposterieure">Langue Postérieure</string>
     <string name="replipharyngoepiglottique">Repli Pharyngo-épiglottique</string>
     <string name="facelingualedelepiglotte">Face linguale de l\'épiglotte</string>
@@ -121,6 +121,7 @@
     <string name="copyright">Tous droits reserves C.  Dupin et N. Leduc</string>
     <string name="bibliography_static">Bibliographie</string>
     <string name="copyright_static">Droits de propriete intellectuelle</string>
+    <string name="mandibuledeproximite">Mandibule de Proximite</string>
 
 
 </resources>
