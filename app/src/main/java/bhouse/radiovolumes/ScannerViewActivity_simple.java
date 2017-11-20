@@ -160,7 +160,7 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
                 List<String> sideMap = nodeMap.getValue();
                     for (String location:sideMap){
                         SliceVectorItem sliceVectorItem = new SliceVectorItem();
-                        sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() + "___" + String.valueOf(i));
+                        sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(i));
                         sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
                         sliceVectorItem.setSide(nodeMap.getKey());
                         slice.addVectorStorageLocation(sliceVectorItem);
