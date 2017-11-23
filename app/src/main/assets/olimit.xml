@@ -2,6 +2,7 @@
 <Organs>
     <Organ>
         <Name>amygdale</Name>
+        <Area>Oropharynx</Area>
         <CranialL>Caud. limit of the veil</CranialL>
         <CaudalL>Cran. part of the 3-fold crossroad</CaudalL>
         <AnteriorL>Post. limit of the anterior pilar</AnteriorL>
@@ -12,6 +13,7 @@
     </Organ>
     <Organ>
         <Name>basedelangue</Name>
+        <Area>Oropharynx</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -23,6 +25,7 @@
 
     <Organ>
         <Name>espacegraisseux</Name>
+        <Area>Oropharynx</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -33,6 +36,7 @@
     </Organ>
     <Organ>
         <Name>espaceparapharynge</Name>
+        <Area>Oropharynx</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -43,6 +47,7 @@
     </Organ>
     <Organ>
         <Name>glandesousmaxillaire</Name>
+        <Area>Oropharynx</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -53,6 +58,7 @@
     </Organ>
     <Organ>
         <Name>joue</Name>
+        <Area>Oropharynx</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -63,6 +69,7 @@
     </Organ>
     <Organ>
         <Name>languemobile</Name>
+        <Area>Cavite Buccale</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -73,6 +80,7 @@
     </Organ>
     <Organ>
         <Name>mandibule</Name>
+        <Area>Cavite Buccale</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -83,6 +91,7 @@
     </Organ>
     <Organ>
         <Name>palaisdur</Name>
+        <Area>Oropharynx</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -93,6 +102,7 @@
     </Organ>
     <Organ>
         <Name>pilieranterieur</Name>
+        <Area>Oropharynx</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -103,6 +113,7 @@
     </Organ>
     <Organ>
         <Name>pilierposterieur</Name>
+        <Area>Oropharynx</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -112,7 +123,8 @@
         <Comment>A witty comment</Comment>
     </Organ>
     <Organ>
-        <Name>plancher</Name>
+        <Name>plancherbuccal</Name>
+        <Area>Oropharynx</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -123,6 +135,7 @@
     </Organ>
     <Organ>
         <Name>pterygoidienmedial</Name>
+        <Area>Oropharynx</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -133,6 +146,7 @@
     </Organ>
     <Organ>
         <Name>sillonamygdaloglosse</Name>
+        <Area>Cavite Buccale</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -143,6 +157,7 @@
     </Organ>
     <Organ>
         <Name>trigoneretromolaireinferieur</Name>
+        <Area>Oropharynx</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -153,6 +168,7 @@
     </Organ>
     <Organ>
         <Name>trigoneretromolairesuperieur</Name>
+        <Area>Oropharynx</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -161,10 +177,53 @@
         <LateralL>The lateral limit of the tonsil is...</LateralL>
         <Comment>A witty comment</Comment>
     </Organ>
-
-
     <Organ>
         <Name>voile</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>A witty comment</Comment>
+    </Organ>
+    <Organ>
+        <Name>foramenovale</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>A witty comment</Comment>
+    </Organ>
+    <Organ>
+        <Name>gangliondegasser</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>A witty comment</Comment>
+    </Organ>
+    <Organ>
+        <Name>langueposterieure</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>A witty comment</Comment>
+    </Organ>
+    <Organ>
+        <Name>carrefourdestroisreplis</Name>
+        <Area>Cavite Buccale</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>

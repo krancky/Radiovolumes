@@ -148,13 +148,13 @@ public class AreaDialog extends DialogFragment {
                 //int truc = context.getResources().getIdentifier(value.replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
                 String locationLocale = getActivity().getString(getActivity().getResources().getIdentifier(name.replaceAll("\\s+", "").toLowerCase(), "string", getActivity().getPackageName()));
                 tvName.setText(locationLocale);
-                tvCranialL.setText(entry.getValue().get(1));
-                tvCaudalL.setText(entry.getValue().get(2));
-                tvAnteriorL.setText(entry.getValue().get(3));
-                tvPosteriorL.setText(entry.getValue().get(4));
-                tvMedialL.setText(entry.getValue().get(5));
-                tvLateralL.setText(entry.getValue().get(6));
-                tvComment.setText(entry.getValue().get(7));
+                tvCranialL.setText(entry.getValue().get(2));
+                tvCaudalL.setText(entry.getValue().get(3));
+                tvAnteriorL.setText(entry.getValue().get(4));
+                tvPosteriorL.setText(entry.getValue().get(5));
+                tvMedialL.setText(entry.getValue().get(6));
+                tvLateralL.setText(entry.getValue().get(7));
+                tvComment.setText(entry.getValue().get(8));
                 tvName.setTextColor(Color.parseColor(colors.get(entry.getKey())));
 
 

@@ -68,6 +68,8 @@ public class OLimitsXMLHandler {
                         } else if (tagname.equalsIgnoreCase("Name")) {
                             oName = text;
                             singleOrganLimits.add(text);
+                        } else if (tagname.equalsIgnoreCase("Area")) {
+                            singleOrganLimits.add(text);
                         } else if (tagname.equalsIgnoreCase("CranialL")) {
                             singleOrganLimits.add(text);
                         } else if (tagname.equalsIgnoreCase("CaudalL")) {

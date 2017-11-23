@@ -203,4 +203,11 @@ public class Cancer implements Serializable{
 
     }
 
+    public HashMap<String, HashMap<String, List<String>>> getCancerTTarData() {
+        return cancerTTarData;
+    }
+
+    public HashMap<String, List<String>> getCancerNTarData() {
+        return cancerNTarData;
+    }
 }

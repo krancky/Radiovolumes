@@ -122,6 +122,7 @@
     <string name="bibliography_static">Bibliographie</string>
     <string name="copyright_static">Droits de propriete intellectuelle</string>
     <string name="mandibuledeproximite">Mandibule de Proximite</string>
+    <string name="perschangestitle">Modifications ponctuelles</string>
 
 
 </resources>

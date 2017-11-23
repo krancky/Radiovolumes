@@ -1,8 +1,11 @@
 package bhouse.radiovolumes;
 
+//import android.app.FragmentManager;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.FragmentManager;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -16,13 +19,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 import bhouse.radiovolumes.processor.CTV56NUCase;
 import bhouse.radiovolumes.processor.Cancer;
 
-public class TabFragment2 extends Fragment {
+public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompleteListener, MyNDialogFragment.OnCompleteListener {
 
     private HashMap<String, HashMap<String, List<String>>> cancerTData;
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
@@ -32,6 +36,52 @@ public class TabFragment2 extends Fragment {
     private Cancer cancer;
 
     private TabbedActivity activity;
+
+    public void onCompleteN(HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyNDialogFragment.Item> items) {
+
+    }
+
+    public void onComplete(HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyV4DialogFragment.Item> items) {
+        // After the dialog fragment completes, it calls this callback.
+        // use the string here
+
+        this.cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
+
+        Integer i = 0;
+        ArrayList<Integer> sectionList = new ArrayList<>();
+        for (MyV4DialogFragment.Item item : items){
+            if (item.isSection()){
+                sectionList.add(i);
+            }
+            i++;
+        }
+
+        for (Integer section : sectionList){
+            List<String> listG = new ArrayList<String>();
+            List<String> listD = new ArrayList<String>();
+            HashMap<String, List<String>> map = new HashMap<String, List<String>>();
+            for (Integer j = section; j<sectionList.get(sectionList.lastIndexOf(section)+1); j++){
+                if (displayedListG.get(items.get(section).getTitle()).equals(1)){
+                    listG.add(items.get(section).getTitle());
+                }
+                if (displayedListD.get(items.get(section).getTitle()).equals(1)){
+                    listD.add(items.get(section).getTitle());
+                }
+            }
+            if (!listG.isEmpty()){
+                map.put("Gauche", listG);
+            }
+            if (!listD.isEmpty()){
+                map.put("Droite", listD);
+            }
+            this.cancerTTarData.put(items.get(section).getTitle(),map);
+            Toast.makeText(getContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+            // Pb: ajouter des modifiers a partir des trucs AJOUTES ou RETIRES.
+            // Renvoyer olddisplayedG et D et ainsi comparer avec le nouveau... chiantissime.
+            // On peut eventuellement enregister les differences dans une structure pour a terme mettre des couleurs dans les TextView...
+        }
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -59,11 +109,6 @@ public class TabFragment2 extends Fragment {
 
     public void perform(View v){
 
-        //List<String> modiferPrint = new ArrayList<String>();
-        //Map<String,String> modifiers_label = ModifierHashOperator.getHashMapResource(getContext(), R.xml.map);
-        //for (String modifier: modifiers){
-           // modiferPrint.add(modifiers_label.get(modifier));
-       // }
 
         NonScrollListView lvT = (NonScrollListView) v.findViewById(R.id.listView_invaded_T);
 
@@ -109,6 +154,8 @@ public class TabFragment2 extends Fragment {
         toSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cancer.setCancerTTarData(cancerTTarData);
+                cancer.saveToFile(getContext());
                 //Sauver le cancer, mais aussi dedans les volumes target. Puis le charger aussi lors du chatgement. Du coup, si y a rien, on affiche que dalle,
                 // mais si y a qque chose, on affiche son existence, et puis on demande si on garde. Si c est le cas, on recalcule pas et on affuche direct
             }
@@ -144,6 +191,11 @@ public class TabFragment2 extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                //Log.i("long clicked","pos: " + pos);
+                //Toast.makeText(getApplicationContext(),"Long click position" + pos, Toast.LENGTH_SHORT).show();
+                FragmentManager fm = getFragmentManager();
+                MyV4DialogFragment dialogFragment = MyV4DialogFragment.newInstance ("T Changes");
+                dialogFragment.show(fm, "Sample Fragment");
                 //Cursor cursor = (Cursor) listView.getItemAtPosition(position);
                 //iD = cursor.getLong(cursor.getColumnIndexOrThrow("_id"));
                 Toast.makeText(getContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
@@ -155,17 +207,14 @@ public class TabFragment2 extends Fragment {
             }
         });
 
+
         lvN.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                //Cursor cursor = (Cursor) listView.getItemAtPosition(position);
-                //iD = cursor.getLong(cursor.getColumnIndexOrThrow("_id"));
-                Toast.makeText(getContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-                //Toast.makeText(getActivity(), iD + "", Toast.LENGTH_LONG).show();
-                //Intent result = new Intent(getApplicationContext(), ResultClass.class);
-                // intent.putExtra("ID", iD);
-                //startActivity(result);
+                FragmentManager fm = getFragmentManager();
+                MyNDialogFragment dialogFragment = MyNDialogFragment.newInstance ("N changes");
+                dialogFragment.show(fm, "Sample Fragment");
 
             }
         });
