@@ -146,7 +146,7 @@
     </Organ>
     <Organ>
         <Name>sillonamygdaloglosse</Name>
-        <Area>Cavite Buccale</Area>
+        <Area>Oropharynx</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
@@ -223,7 +223,7 @@
     </Organ>
     <Organ>
         <Name>carrefourdestroisreplis</Name>
-        <Area>Cavite Buccale</Area>
+        <Area>Oropharynx</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
         <AnteriorL>The anterior limit of the tonsil is</AnteriorL>

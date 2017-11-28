@@ -22,20 +22,20 @@
     <string name="contralateral">Contralateral</string>
 
 
-    <string name="ia">Ia</string>
-    <string name="ib">Ib</string>
-    <string name="ii">II</string>
-    <string name="iii">III</string>
-    <string name="iva">IVa</string>
-    <string name="ivb">IVb</string>
-    <string name="vab">Vab</string>
-    <string name="vc">Vc</string>
-    <string name="via">VIa</string>
-    <string name="vib">VIb</string>
-    <string name="viia">VIIa</string>
-    <string name="viib">VIIb</string>
-    <string name="viii">VIII</string>
-    <string name="ix">IX</string>
+    <string name="ia">Submental</string>
+    <string name="ib">Sub Mandibular</string>
+    <string name="ii">Upper Jugular</string>
+    <string name="iii">Median Jugular</string>
+    <string name="iva">Lower Jugular</string>
+    <string name="ivb">Median Supraclavicular</string>
+    <string name="vab">Posterior Triangle</string>
+    <string name="vc">Lateral Supraclavicular</string>
+    <string name="via">Anterior Jugular</string>
+    <string name="vib">Pre-Laryngeal</string>
+    <string name="viia">Retro-Pharyngian</string>
+    <string name="viib">Retrostyloïd</string>
+    <string name="viii">Parotidian</string>
+    <string name="ix">Bucco-Facial</string>
 
 
 
@@ -62,7 +62,7 @@
     <string name="glandesousmaxillaire">Sub-Maxillary gland</string>
     <string name="gencive">Gingiva</string>
     <string name="mandibule">Mandible</string>
-    <string name="joue">IX</string>
+    <string name="joue">Cheek</string>
     <string name="trigoneretromolaireinferieur">Lower Retromolar Triangle</string>
     <string name="espacegraisseux">Bichat\'s fat pad</string>
     <string name="gencivesuperieure">Upper Gingiva</string>
@@ -121,7 +121,7 @@
     <string name="mandibuledeproximite">Proximal mandible</string>
     <string name="perschangestitle">Case by Case Sublocation Changes</string>
     <string name="aireganglionnaire">Lymph node area</string>
-    <string name="x">x</string>
+    <string name="x">Posterior Skull</string>
     <string name="sinussphenoidal">Sphenoid Sine</string>
     <string name="sinuspiriforme">Piriform sine</string>
     <string name="paroipharyngeelaterale">Lateral side of pharyngeal wall</string>

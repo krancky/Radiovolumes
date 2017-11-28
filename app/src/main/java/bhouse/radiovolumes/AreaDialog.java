@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 
@@ -155,7 +156,12 @@ public class AreaDialog extends DialogFragment {
                 tvMedialL.setText(entry.getValue().get(6));
                 tvLateralL.setText(entry.getValue().get(7));
                 tvComment.setText(entry.getValue().get(8));
-                tvName.setTextColor(Color.parseColor(colors.get(entry.getKey())));
+                try {
+                    tvName.setTextColor(Color.parseColor(colors.get(entry.getKey())));
+                }
+                catch (Error e){
+                    Log.i("No color", "no color");
+                }
 
 
             }

@@ -6,13 +6,13 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.app.AlertDialog;
 import android.view.Menu;
 
-        import android.os.Bundle;
-        import android.support.design.widget.TabLayout;
-        import android.support.v4.view.ViewPager;
-        import android.support.v7.app.AppCompatActivity;
-        import android.support.v7.widget.Toolbar;
-        import android.view.Menu;
-        import android.view.MenuItem;
+import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -42,7 +42,7 @@ import bhouse.radiovolumes.processor.TumorAreaTemplate;
 import static bhouse.radiovolumes.R.xml.map;
 
 
-public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragment.OnCompleteListener,MyNDialogFragment.OnCompleteListener {
+public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragment.OnCompleteListener, MyNDialogFragment.OnCompleteListener {
 
     private HashMap<String, HashMap<String, List<String>>> cancerTData;
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
@@ -55,8 +55,9 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
     private PagerAdapter adapter;
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private Context context;
 
-    public void onCompleteN( HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyNDialogFragment.Item> items) {
+    public void onCompleteN(HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyNDialogFragment.Item> items) {
         this.cancerNTarData = new HashMap<String, List<String>>();
 
         Integer i = 0;
@@ -64,13 +65,13 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         List<String> listD = new ArrayList<String>();
         HashMap<String, List<String>> map = new HashMap<String, List<String>>();
 
-        for (i =1; i < items.size(); i++) {
+        for (i = 1; i < items.size(); i++) {
 
             if (displayedListG.get(items.get(i).getTitle().replaceAll("\\s+", "").toLowerCase()).equals(1)) {
                 listG.add(items.get(i).getTitle());
             }
             if (displayedListD.get(items.get(i).getTitle().replaceAll("\\s+", "").toLowerCase()).equals(1)) {
-                 listD.add(items.get(i).getTitle());
+                listD.add(items.get(i).getTitle());
             }
 
         }
@@ -80,13 +81,19 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         if (!listG.isEmpty()) {
             this.cancerNTarData.put("Droite", listD);
         }
-        adapter.notifyDataSetChanged();
+        //adapter.notifyDataSetChanged();
         viewPager = (ViewPager) findViewById(R.id.pager);
         adapter = new PagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.setCurrentItem(1);
+
+        cancer.setCancerTData(cancerTData);
+        cancer.setCancerNData(cancerNData);
+        cancer.setCancerTTarData(this.cancerTTarData);
+        cancer.setCancerNTarData(this.cancerNTarData);
+        cancer.saveToFile(TabbedActivity.this);
 
     }
 
@@ -139,6 +146,13 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.setCurrentItem(1);
+
+        cancer.setCancerTData(cancerTData);
+        cancer.setCancerNData(cancerNData);
+        cancer.setCancerTTarData(this.cancerTTarData);
+        cancer.setCancerNTarData(this.cancerNTarData);
+        cancer.saveToFile(TabbedActivity.this);
+
     }
 
     @Override
@@ -147,9 +161,10 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         setContentView(R.layout.activity_tabbed);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_tab);
         setSupportActionBar(toolbar);
+        this.context = TabbedActivity.this;
 
         Intent i = getIntent();
-        this.cancer = (Cancer) i.getSerializableExtra("cancer");
+        cancer = (Cancer) i.getSerializableExtra("cancer");
         CTV56TCase ctv56TCase = (CTV56TCase) i.getSerializableExtra("CTV56TCase");
         ctv56NCase = (CTV56NCase) i.getSerializableExtra("CTV56NCase");
         cancerTData = new HashMap<String, HashMap<String, List<String>>>();
@@ -157,25 +172,25 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         cancerNData = new HashMap<String, List<String>>();
         cancerNTarData = new HashMap<String, List<String>>();
 
-        if (cancer.getCancerTTarData().isEmpty() || cancer.getCancerNTarData().isEmpty()){
+        if (cancer.getCancerTTarData().isEmpty() || cancer.getCancerNTarData().isEmpty()) {
             prepareCancerTData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
             prepareCancerTTarData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
             prepareCancerNData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
             prepareCancerNTarData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
-        } else{
+        } else {
             prepareCancerTData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
             prepareCancerTTarData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
             prepareCancerNData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
             prepareCancerNTarData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
 
 
-            if (cancer.getCancerTData().equals(this.cancerTData) && cancer.getCancerNData().equals(this.cancerNData)) {
-                if (!cancer.getCancerTTarData().equals(this.cancerTTarData) || !cancer.getCancerNTarData().equals(this.cancerNTarData)){
+            if (cancer.getCancerTData().equals(cancerTData) && cancer.getCancerNData().equals(cancerNData)) {
+                if (!cancer.getCancerTTarData().equals(cancerTTarData) || !cancer.getCancerNTarData().equals(cancerNTarData)) {
                     AlertDialog alertDialog = new AlertDialog.Builder(TabbedActivity.this).create();
                     alertDialog.setTitle("Modification of Target Volumes");
                     alertDialog.setMessage("Optional target volumes have been saved by the previous user. Keep changes?");
-                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener(){
-                        public void onClick(DialogInterface dialog, int which){
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
                             cancerTTarData = cancer.getCancerTTarData();
                             cancerNTarData = cancer.getCancerNTarData();
                             viewPager = (ViewPager) findViewById(R.id.pager);
@@ -187,8 +202,8 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
                             dialog.dismiss();
                         }
                     });
-                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "CANCEL", new DialogInterface.OnClickListener(){
-                        public void onClick(DialogInterface dialog, int which){
+                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "CANCEL", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
                             cancer.setCancerTData(cancerTData);
                             cancer.setCancerNData(cancerNData);
                             cancer.setCancerTTarData(cancerTTarData);
@@ -198,10 +213,10 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
                     });
                     alertDialog.show();
                     //Cas ou des volumes Tar on ete modifie. Les volumes envahis sont identiques.
-                } else{
+                } else {
                     // Cas normal de chargement sans modif des volumes.
                 }
-            } else{
+            } else {
                 // Cas ou l utilisateur charge mais modifie les volumes envahis: Reset des modifs.
             }
         }
@@ -256,12 +271,12 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
                 HashMap<String, List<String>> map = new HashMap<String, List<String>>();
                 if (cancerTVolumes.getLeftContent().equals("1")) {
                     List<String> list = new ArrayList<String>();
-                    list.add(cancerTVolumes.getLocation());
+                    list.add(cancerTVolumes.getLocation().replaceAll("\\s+", "").toLowerCase());
                     map.put("Gauche", list);
                 }
                 if (cancerTVolumes.getRightContent().equals("1")) {
                     List<String> list = new ArrayList<String>();
-                    list.add(cancerTVolumes.getLocation());
+                    list.add(cancerTVolumes.getLocation().replaceAll("\\s+", "").toLowerCase());
                     map.put("Droite", list);
                 }
                 cancerTData.put(cancerTVolumes.getArea(), map);
@@ -270,7 +285,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
                 HashMap<String, List<String>> map = new HashMap<String, List<String>>();
                 map = cancerTData.get(cancerTVolumes.getArea());
                 List<String> list = new ArrayList<String>();
-                list.add(cancerTVolumes.getLocation());
+                list.add(cancerTVolumes.getLocation().replaceAll("\\s+", "").toLowerCase());
                 map.put("Gauche", list);
                 cancerTData.put(cancerTVolumes.getArea(), map);
 
@@ -278,7 +293,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
                 HashMap<String, List<String>> map = new HashMap<String, List<String>>();
                 map = cancerTData.get(cancerTVolumes.getArea());
                 List<String> list = new ArrayList<String>();
-                list.add(cancerTVolumes.getLocation());
+                list.add(cancerTVolumes.getLocation().replaceAll("\\s+", "").toLowerCase());
                 map.put("Droite", list);
                 cancerTData.put(cancerTVolumes.getArea(), map);
 
@@ -288,12 +303,12 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
                 map = cancerTData.get(cancerTVolumes.getArea());
                 if (cancerTVolumes.getLeftContent().equals("1")) {
                     list = map.get("Gauche");
-                    list.add(cancerTVolumes.getLocation());
+                    list.add(cancerTVolumes.getLocation().replaceAll("\\s+", "").toLowerCase());
                     map.put("Gauche", list);
                 }
                 if (cancerTVolumes.getRightContent().equals("1")) {
                     list = map.get("Droite");
-                    list.add(cancerTVolumes.getLocation());
+                    list.add(cancerTVolumes.getLocation().replaceAll("\\s+", "").toLowerCase());
                     map.put("Droite", list);
                 }
                 cancerTData.put(cancerTVolumes.getArea(), map);
@@ -307,14 +322,14 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
             if (!cancerTTarData.containsKey(lrTumorTargetVolume.getArea())) {
                 HashMap<String, List<String>> map = new HashMap<String, List<String>>();
                 List<String> list = new ArrayList<String>();
-                list.add(lrTumorTargetVolume.getLocation());
+                list.add(lrTumorTargetVolume.getLocation().replaceAll("\\s+", "").toLowerCase());
                 map.put(lrTumorTargetVolume.getSide(), list);
                 cancerTTarData.put(lrTumorTargetVolume.getArea(), map);
             } else if (!cancerTTarData.get(lrTumorTargetVolume.getArea()).containsKey(lrTumorTargetVolume.getSide())) {
                 List<String> list = new ArrayList<String>();
                 HashMap<String, List<String>> map = new HashMap<String, List<String>>();
                 map = cancerTTarData.get(lrTumorTargetVolume.getArea());
-                list.add(lrTumorTargetVolume.getLocation());
+                list.add(lrTumorTargetVolume.getLocation().replaceAll("\\s+", "").toLowerCase());
                 map.put(lrTumorTargetVolume.getSide(), list);
                 cancerTTarData.put(lrTumorTargetVolume.getArea(), map);
             } else {
@@ -322,7 +337,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
                 HashMap<String, List<String>> map = new HashMap<String, List<String>>();
                 map = cancerTTarData.get(lrTumorTargetVolume.getArea());
                 list = map.get(lrTumorTargetVolume.getSide());
-                list.add(lrTumorTargetVolume.getLocation());
+                list.add(lrTumorTargetVolume.getLocation().replaceAll("\\s+", "").toLowerCase());
                 map.put(lrTumorTargetVolume.getSide(), list);
                 cancerTTarData.put(lrTumorTargetVolume.getArea(), map);
             }
@@ -335,40 +350,41 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
             if (nodeAreaTemplate.getLeftContent().equals("1")) {
                 if (!cancerNData.containsKey("Gauche")) {
                     List<String> list = new ArrayList<String>();
-                    list.add(nodeAreaTemplate.getNodeLocation());
+                    list.add(nodeAreaTemplate.getNodeLocation().replaceAll("\\s+", "").toLowerCase());
                     cancerNData.put("Gauche", list);
                 } else {
                     List<String> list = new ArrayList<String>();
                     list = cancerNData.get("Gauche");
-                    list.add(nodeAreaTemplate.getNodeLocation());
+                    list.add(nodeAreaTemplate.getNodeLocation().replaceAll("\\s+", "").toLowerCase());
                     cancerNData.put("Gauche", list);
                 }
             }
             if (nodeAreaTemplate.getRightContent().equals("1")) {
                 if (!cancerNData.containsKey("Droite")) {
                     List<String> list = new ArrayList<String>();
-                    list.add(nodeAreaTemplate.getNodeLocation());
+                    list.add(nodeAreaTemplate.getNodeLocation().replaceAll("\\s+", "").toLowerCase());
                     cancerNData.put("Droite", list);
                 } else {
                     List<String> list = new ArrayList<String>();
                     list = cancerNData.get("Droite");
-                    list.add(nodeAreaTemplate.getNodeLocation());
+                    list.add(nodeAreaTemplate.getNodeLocation().replaceAll("\\s+", "").toLowerCase());
                     cancerNData.put("Droite", list);
                 }
             }
         }
     }
+
     public void prepareCancerNTarData(HashMap<String, HashMap<String, List<String>>> cancerTData, HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNData, Cancer cancer, CTV56TCase ctv56TCase, CTV56NCase ctv56NCase) {
 
         for (LRNodeTargetVolume lrNodeTargetVolume : ctv56NCase.getCaseNTarVolumes()) {
             if (!cancerNTarData.containsKey(lrNodeTargetVolume.getSide())) {
                 List<String> list = new ArrayList<String>();
-                list.add(lrNodeTargetVolume.getLocation());
+                list.add(lrNodeTargetVolume.getLocation().replaceAll("\\s+", "").toLowerCase());
                 cancerNTarData.put(lrNodeTargetVolume.getSide(), list);
             } else {
                 List<String> list = new ArrayList<String>();
                 list = cancerNTarData.get(lrNodeTargetVolume.getSide());
-                list.add(lrNodeTargetVolume.getLocation());
+                list.add(lrNodeTargetVolume.getLocation().replaceAll("\\s+", "").toLowerCase());
                 cancerNTarData.put(lrNodeTargetVolume.getSide(), list);
             }
         }
@@ -424,24 +440,24 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
     }
 
 
-    void prepareDisplayList(){
-        for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()){
+    void prepareDisplayList() {
+        for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()) {
             HashMap<String, List<String>> sideMap = areaMap.getValue();
-            for (HashMap.Entry<String, List<String>> map: sideMap.entrySet()){
-                for (String location:map.getValue()){
-                    displayedList.put(location.replaceAll("\\s+", "").toLowerCase()+ " " + map.getKey().replaceAll("\\s+", "").toLowerCase(),1);
+            for (HashMap.Entry<String, List<String>> map : sideMap.entrySet()) {
+                for (String location : map.getValue()) {
+                    displayedList.put(location.replaceAll("\\s+", "").toLowerCase() + " " + map.getKey().replaceAll("\\s+", "").toLowerCase(), 1);
                 }
             }
         }
-        for (HashMap.Entry<String, List<String>> nodeMap : cancerNTarData.entrySet()){
+        for (HashMap.Entry<String, List<String>> nodeMap : cancerNTarData.entrySet()) {
             List<String> sideMap = nodeMap.getValue();
-            for (String location:sideMap){
-                displayedList.put(location.replaceAll("\\s+", "").toLowerCase()+ " " + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase(),1);
+            for (String location : sideMap) {
+                displayedList.put(location.replaceAll("\\s+", "").toLowerCase() + " " + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase(), 1);
             }
         }
     }
 
-    void prepareSublocationDifferences(HashMap<String, HashMap<String, List<String>>> cancerTTarData1, HashMap<String, HashMap<String, List<String>>> cancerTTarData2){
+    void prepareSublocationDifferences(HashMap<String, HashMap<String, List<String>>> cancerTTarData1, HashMap<String, HashMap<String, List<String>>> cancerTTarData2) {
 
     }
 

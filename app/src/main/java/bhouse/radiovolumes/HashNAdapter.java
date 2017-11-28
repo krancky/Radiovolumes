@@ -126,7 +126,7 @@ public class HashNAdapter extends BaseAdapter {
         for (String value : mapValues){
             //int locale = context.getResources().getIdentifier(value.replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
             String locationLocale = context.getString(context.getResources().getIdentifier(value.replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
-            locString = locString + value +", ";
+            locString = locString + value.toUpperCase() +", ";
         }
         locString = removeLastChar(locString);
         locString = locString + ".";

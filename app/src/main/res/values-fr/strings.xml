@@ -25,20 +25,20 @@
     <string name="contralateral">Controlatéral</string>
 
 
-    <string name="ia">Ia</string>
-    <string name="ib">Ib</string>
-    <string name="ii">II</string>
-    <string name="iii">III</string>
-    <string name="iva">IVa</string>
-    <string name="ivb">IVb</string>
-    <string name="vab">Vab</string>
-    <string name="vc">Vc</string>
-    <string name="via">VIa</string>
-    <string name="vib">VIb</string>
-    <string name="viia">VIIa</string>
-    <string name="viib">VIIb</string>
-    <string name="viii">VIII</string>
-    <string name="ix">IX</string>
+    <string name="ia">Sous Mentonniers</string>
+    <string name="ib">Sous-Mandibulaires</string>
+    <string name="ii">Jugulaires Supérieurs</string>
+    <string name="iii">Jugulaires Moyens</string>
+    <string name="iva">Jugulaires Inférieurs</string>
+    <string name="ivb">Supraclaviculaires Médian</string>
+    <string name="vab">Triangle Posterieur</string>
+    <string name="vc">supra-Claviculaires Latéraux</string>
+    <string name="via">Jugulaires Antérieurs</string>
+    <string name="vib">Pré-Laryngés</string>
+    <string name="viia">Rétro-Pharyngés</string>
+    <string name="viib">Rétro-Styloïdiens</string>
+    <string name="viii">Parotidiens</string>
+    <string name="ix">Bucco-Faciaux</string>
 
 
 
@@ -89,7 +89,7 @@
     <string name="french">Français</string>
     <string name="anteriorjugular">Jugulaires Antérieurs</string>
     <string name="buccofacial">Bucco-Faciaux</string>
-    <string name="lateralsupraclavicular">Supraclavicualires Latéraux</string>
+    <string name="lateralsupraclavicular">Supraclaviculaires Latéraux</string>
     <string name="lowerjugular">Jugulaires Inférieurs</string>
     <string name="medialsupraclavicular">Sus-Clavicualires Medians</string>
     <string name="parotid">Parotidiens</string>
@@ -124,7 +124,7 @@
     <string name="mandibuledeproximite">Mandibule de Proximite</string>
     <string name="perschangestitle">Modifications ponctuelles</string>
     <string name="aireganglionnaire">Aire ganglionnaire</string>
-    <string name="x">x</string>
+    <string name="x">Crâniens postérieurs</string>
     <string name="sinussphenoidal">Sinus sphenoidal</string>
     <string name="sinuspiriforme">Sinus Piriforme</string>
     <string name="paroipharyngeelaterale">Paroi pharyngee laterale</string>

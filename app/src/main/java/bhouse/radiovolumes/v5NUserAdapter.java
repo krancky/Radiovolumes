@@ -91,6 +91,16 @@ public class v5NUserAdapter extends BaseAdapter {
                 holder.cbRight.setTag(position);
                 holder.cbRight.setOnCheckedChangeListener(cbRightChangeListener);
                 holder.cbRight.setChecked(checkboxRightStatus.get(position));
+                if (holder.cbLeft.isChecked()){
+                    displayedlistG.put(mKeys[position], 1);
+                } else{
+                    displayedlistG.put(mKeys[position], 0);
+                }
+                if (holder.cbRight.isChecked()){
+                    displayedlistD.put(mKeys[position], 1);
+                } else{
+                    displayedlistD.put(mKeys[position], 0);
+                }
             }
             convertView.setTag(holder);
 

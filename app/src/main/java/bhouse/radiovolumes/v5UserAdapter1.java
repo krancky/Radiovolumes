@@ -22,8 +22,8 @@ import java.util.Map;
  */
 
 public class v5UserAdapter1 extends BaseAdapter {
-    private LinkedHashMap displayedlistG;
-    private LinkedHashMap displayedlistD;
+    private LinkedHashMap<String, Integer> displayedlistG;
+    private LinkedHashMap<String, Integer> displayedlistD;
     private ArrayList<Boolean> checkboxLeftStatus = new ArrayList();
     private ArrayList<Boolean> checkboxRightStatus = new ArrayList();
     private String[] mKeys;
@@ -92,6 +92,17 @@ public class v5UserAdapter1 extends BaseAdapter {
                 holder.cbRight.setTag(position);
                 holder.cbRight.setOnCheckedChangeListener(cbRightChangeListener);
                 holder.cbRight.setChecked(checkboxRightStatus.get(position));
+                if (holder.cbLeft.isChecked()){
+                    displayedlistG.put(mKeys[position], 1);
+                } else{
+                    displayedlistG.put(mKeys[position], 0);
+                }
+                if (holder.cbRight.isChecked()){
+                    displayedlistD.put(mKeys[position], 1);
+                } else{
+                    displayedlistD.put(mKeys[position], 0);
+                }
+
             }
             convertView.setTag(holder);
 
