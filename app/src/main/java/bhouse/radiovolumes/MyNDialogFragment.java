@@ -26,12 +26,12 @@ import bhouse.radiovolumes.processor.OLimitsXMLHandler;
 public class MyNDialogFragment extends DialogFragment {
 
     public static interface OnCompleteListener {
-        public abstract void onCompleteN(HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyNDialogFragment.Item> items);
+        public abstract void onCompleteN( HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyNDialogFragment.Item> items);
     }
 
 
     private OnCompleteListener mListener;
-    private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
+    //private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     private HashMap<String, List<String>> cancerNTarData;
     private TabbedActivity activity;
     private LinkedHashMap<String, Integer> displayedListG;
@@ -75,10 +75,10 @@ public class MyNDialogFragment extends DialogFragment {
 
 
         this.activity = (TabbedActivity) getActivity();
-        cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
+        //cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
         cancerNTarData = new HashMap<String, List<String>>();
         cancerNTarData = activity.getCancerNTarData();
-        cancerTTarData = activity.getCancerTTarData();
+        //cancerTTarData = activity.getCancerTTarData();
         displayedListG = new LinkedHashMap<>();
         displayedListD = new LinkedHashMap<>();
         //displayedListG = activity.getDisplayedList();
@@ -112,7 +112,7 @@ public class MyNDialogFragment extends DialogFragment {
 
             @Override
             public void onClick(View v) {
-                mListener.onCompleteN(cancerTTarData, cancerNTarData, displayedListG, displayedListD, countryList);
+                mListener.onCompleteN( cancerNTarData, displayedListG, displayedListD, countryList);
                 dismiss();
             }
         });
@@ -145,18 +145,9 @@ public class MyNDialogFragment extends DialogFragment {
 
     public  void prepareSublocationList(){
         int sectionNumber = 1;
-        this.countryList.add(new SectionItem("Oropharynx", sectionNumber));
+        this.countryList.add(new SectionItem("Aire ganglionnaire", sectionNumber));
         for (Map.Entry<String, ArrayList<String>> stringArray : oLimits.entrySet()){
-            if (stringArray.getValue().get(1).equals("Oropharynx")){
-                this.countryList.add(new EntryItem(stringArray.getValue().get(0), sectionNumber));
-                displayedListG.put(stringArray.getValue().get(0).replaceAll("\\s+", "").toLowerCase(), 0);
-                displayedListD.put(stringArray.getValue().get(0).replaceAll("\\s+", "").toLowerCase(), 0);
-            };
-        }
-        sectionNumber = 1;
-        this.countryList.add(new SectionItem("Cavite Buccale", sectionNumber));
-        for (Map.Entry<String, ArrayList<String>> stringArray : oLimits.entrySet()){
-            if (stringArray.getValue().get(1).equals("Cavite Buccale")){
+            if (stringArray.getValue().get(1).equals("Aire Ganglionnaire")){
                 this.countryList.add(new EntryItem(stringArray.getValue().get(0), sectionNumber));
                 displayedListG.put(stringArray.getValue().get(0).replaceAll("\\s+", "").toLowerCase(), 0);
                 displayedListD.put(stringArray.getValue().get(0).replaceAll("\\s+", "").toLowerCase(), 0);
@@ -164,28 +155,6 @@ public class MyNDialogFragment extends DialogFragment {
         }
     }
 
-    public void prepareTData() {
-        int sectionNumber = 0;
-        for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()) {
-            HashMap<String, List<String>> sideMap = areaMap.getValue();
-            sectionNumber = sectionNumber + 1;
-            this.countryList.add(new SectionItem(areaMap.getKey(), sectionNumber));
-            for (HashMap.Entry<String, List<String>> map : sideMap.entrySet()) {
-                for (String subLocation : map.getValue()) {
-                    this.countryList.add(new EntryItem(subLocation, sectionNumber));
-                }
-            }
-        }
-        if (!cancerNTarData.isEmpty()) {
-            sectionNumber = sectionNumber +1;
-            this.countryList.add(new SectionItem("Lymph Nodes Areas", sectionNumber));
-            for (HashMap.Entry<String, List<String>> nodemap : cancerNTarData.entrySet()) {
-                for (String nodeLocation : nodemap.getValue()) {
-                    this.countryList.add(new EntryItem(nodeLocation, sectionNumber));
-                }
-            }
-        }
-    }
 
     /**
      * row item
@@ -261,18 +230,17 @@ public class MyNDialogFragment extends DialogFragment {
     }
 
     void prepareDisplayList(){
-        for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()){
-            HashMap<String, List<String>> sideMap = areaMap.getValue();
-            for (HashMap.Entry<String, List<String>> map: sideMap.entrySet()){
-                for (String location:map.getValue()){
-                    if (map.getKey().equalsIgnoreCase("Gauche")){
-                        displayedListG.put(location.replaceAll("\\s+", "").toLowerCase(),1);
+        for (HashMap.Entry<String,  List<String>> areaMap : cancerNTarData.entrySet()){
+            List<String> sideMap = areaMap.getValue();
+            for (String node : sideMap){
+                    if (areaMap.getKey().equalsIgnoreCase("Gauche")){
+                        displayedListG.put(node.replaceAll("\\s+", "").toLowerCase(),1);
                     //}else{
                         //
                         // displayedList.put(location.replaceAll("\\s+", "").toLowerCase(),2);
                     }
-                    if (map.getKey().equalsIgnoreCase("Droite")) {
-                        displayedListD.put(location.replaceAll("\\s+", "").toLowerCase(), 1);
+                    if (areaMap.getKey().equalsIgnoreCase("Droite")) {
+                        displayedListD.put(node.replaceAll("\\s+", "").toLowerCase(), 1);
                     }
 
                 }
@@ -280,5 +248,5 @@ public class MyNDialogFragment extends DialogFragment {
         }
     }
 
-}
+
 

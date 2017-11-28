@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.FragmentManager;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -21,9 +20,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
-import bhouse.radiovolumes.processor.CTV56NUCase;
 import bhouse.radiovolumes.processor.Cancer;
 
 public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompleteListener, MyNDialogFragment.OnCompleteListener {
@@ -37,7 +34,7 @@ public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompl
 
     private TabbedActivity activity;
 
-    public void onCompleteN(HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyNDialogFragment.Item> items) {
+    public void onCompleteN( HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyNDialogFragment.Item> items) {
 
     }
 
@@ -89,12 +86,14 @@ public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompl
         this.activity = (TabbedActivity) getActivity();
         cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
         cancerNTarData = new HashMap<String, List<String>>();
+        cancerTData = activity.getCancerTData();
+        cancerNData = activity.getCancerNData();
         cancerNTarData = activity.getCancerNTarData();
         cancerTTarData = activity.getCancerTTarData();
         this.cancer = activity.getCancer();
 
-        modifiers = activity.getCtv56NCase();
-        //for (CTV56NUCase ctv56NUCase:activity.getCtv56NCase()){
+        modifiers = activity.getCtv56NCaseModifiers();
+        //for (CTV56NUCase ctv56NUCase:activity.getCtv56NCaseModifiers()){
 
         //}
 
@@ -154,7 +153,10 @@ public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompl
         toSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cancer.setCancerTData(cancerTData);
+                cancer.setCancerNData(cancerNData);
                 cancer.setCancerTTarData(cancerTTarData);
+                cancer.setCancerNTarData(cancerNTarData);
                 cancer.saveToFile(getContext());
                 //Sauver le cancer, mais aussi dedans les volumes target. Puis le charger aussi lors du chatgement. Du coup, si y a rien, on affiche que dalle,
                 // mais si y a qque chose, on affiche son existence, et puis on demande si on garde. Si c est le cas, on recalcule pas et on affuche direct

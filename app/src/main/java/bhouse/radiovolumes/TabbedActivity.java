@@ -1,7 +1,9 @@
 package bhouse.radiovolumes;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.design.widget.TabLayout;
+import android.support.v7.app.AlertDialog;
 import android.view.Menu;
 
         import android.os.Bundle;
@@ -40,7 +42,7 @@ import bhouse.radiovolumes.processor.TumorAreaTemplate;
 import static bhouse.radiovolumes.R.xml.map;
 
 
-public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragment.OnCompleteListener {
+public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragment.OnCompleteListener,MyNDialogFragment.OnCompleteListener {
 
     private HashMap<String, HashMap<String, List<String>>> cancerTData;
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
@@ -53,6 +55,41 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
     private PagerAdapter adapter;
     private ViewPager viewPager;
     private TabLayout tabLayout;
+
+    public void onCompleteN( HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyNDialogFragment.Item> items) {
+        this.cancerNTarData = new HashMap<String, List<String>>();
+
+        Integer i = 0;
+        List<String> listG = new ArrayList<String>();
+        List<String> listD = new ArrayList<String>();
+        HashMap<String, List<String>> map = new HashMap<String, List<String>>();
+
+        for (i =1; i < items.size(); i++) {
+
+            if (displayedListG.get(items.get(i).getTitle().replaceAll("\\s+", "").toLowerCase()).equals(1)) {
+                listG.add(items.get(i).getTitle());
+            }
+            if (displayedListD.get(items.get(i).getTitle().replaceAll("\\s+", "").toLowerCase()).equals(1)) {
+                 listD.add(items.get(i).getTitle());
+            }
+
+        }
+        if (!listG.isEmpty()) {
+            this.cancerNTarData.put("Gauche", listG);
+        }
+        if (!listG.isEmpty()) {
+            this.cancerNTarData.put("Droite", listD);
+        }
+        adapter.notifyDataSetChanged();
+        viewPager = (ViewPager) findViewById(R.id.pager);
+        adapter = new PagerAdapter
+                (getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        viewPager.setCurrentItem(1);
+
+    }
+
 
     public void onComplete(HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyV4DialogFragment.Item> items) {
         // After the dialog fragment completes, it calls this callback.
@@ -92,7 +129,6 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
                     map.put("Droite", listD);
                 }
                 this.cancerTTarData.put(items.get(section).getTitle(), map);
-                Toast.makeText(getApplicationContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -103,7 +139,6 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.setCurrentItem(1);
-        Toast.makeText(getApplicationContext(), "Changes dones", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -122,16 +157,53 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         cancerNData = new HashMap<String, List<String>>();
         cancerNTarData = new HashMap<String, List<String>>();
 
-        if (cancer.getCancerTTarData().isEmpty()){
+        if (cancer.getCancerTTarData().isEmpty() || cancer.getCancerNTarData().isEmpty()){
             prepareCancerTData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
             prepareCancerTTarData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
             prepareCancerNData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
+            prepareCancerNTarData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
         } else{
-            // Compare two hashmaps
-            // alertDialog to take modifs into account or not
             prepareCancerTData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
-            this.cancerTTarData = cancer.getCancerTTarData();
+            prepareCancerTTarData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
             prepareCancerNData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
+            prepareCancerNTarData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
+
+
+            if (cancer.getCancerTData().equals(this.cancerTData) && cancer.getCancerNData().equals(this.cancerNData)) {
+                if (!cancer.getCancerTTarData().equals(this.cancerTTarData) || !cancer.getCancerNTarData().equals(this.cancerNTarData)){
+                    AlertDialog alertDialog = new AlertDialog.Builder(TabbedActivity.this).create();
+                    alertDialog.setTitle("Modification of Target Volumes");
+                    alertDialog.setMessage("Optional target volumes have been saved by the previous user. Keep changes?");
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener(){
+                        public void onClick(DialogInterface dialog, int which){
+                            cancerTTarData = cancer.getCancerTTarData();
+                            cancerNTarData = cancer.getCancerNTarData();
+                            viewPager = (ViewPager) findViewById(R.id.pager);
+                            adapter = new PagerAdapter
+                                    (getSupportFragmentManager(), tabLayout.getTabCount());
+                            viewPager.setAdapter(adapter);
+                            viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+                            viewPager.setCurrentItem(0);
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "CANCEL", new DialogInterface.OnClickListener(){
+                        public void onClick(DialogInterface dialog, int which){
+                            cancer.setCancerTData(cancerTData);
+                            cancer.setCancerNData(cancerNData);
+                            cancer.setCancerTTarData(cancerTTarData);
+                            cancer.setCancerNTarData(cancerNTarData);
+                            dialog.dismiss();
+                        }
+                    });
+                    alertDialog.show();
+                    //Cas ou des volumes Tar on ete modifie. Les volumes envahis sont identiques.
+                } else{
+                    // Cas normal de chargement sans modif des volumes.
+                }
+            } else{
+                // Cas ou l utilisateur charge mais modifie les volumes envahis: Reset des modifs.
+            }
         }
 
 
@@ -285,6 +357,8 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
                 }
             }
         }
+    }
+    public void prepareCancerNTarData(HashMap<String, HashMap<String, List<String>>> cancerTData, HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNData, Cancer cancer, CTV56TCase ctv56TCase, CTV56NCase ctv56NCase) {
 
         for (LRNodeTargetVolume lrNodeTargetVolume : ctv56NCase.getCaseNTarVolumes()) {
             if (!cancerNTarData.containsKey(lrNodeTargetVolume.getSide())) {
@@ -341,7 +415,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         this.ctv56NCase = ctv56NCase;
     }
 
-    public List<String> getCtv56NCase() {
+    public List<String> getCtv56NCaseModifiers() {
         return ctv56NCase.getModifier();
     }
 
@@ -365,6 +439,10 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
                 displayedList.put(location.replaceAll("\\s+", "").toLowerCase()+ " " + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase(),1);
             }
         }
+    }
+
+    void prepareSublocationDifferences(HashMap<String, HashMap<String, List<String>>> cancerTTarData1, HashMap<String, HashMap<String, List<String>>> cancerTTarData2){
+
     }
 
 

@@ -154,7 +154,7 @@ public class MyV4DialogFragment extends DialogFragment {
                 displayedListD.put(stringArray.getValue().get(0).replaceAll("\\s+", "").toLowerCase(), 0);
             };
         }
-        sectionNumber = 1;
+        sectionNumber = 2;
         this.countryList.add(new SectionItem("Cavite Buccale", sectionNumber));
         for (Map.Entry<String, ArrayList<String>> stringArray : oLimits.entrySet()){
             if (stringArray.getValue().get(1).equals("Cavite Buccale")){

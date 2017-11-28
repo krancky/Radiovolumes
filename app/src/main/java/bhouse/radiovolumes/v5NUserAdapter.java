@@ -102,8 +102,6 @@ public class v5NUserAdapter extends BaseAdapter {
         if (items.get(position).isSection()) {
             String locationLocale = context.getString(context.getResources().getIdentifier(items.get(position).getTitle().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
             holder.tvSectionTitle.setText(locationLocale);
-
-            //holder.tvSectionTitle.setText(((MyV4DialogFragment.SectionItem) items.get(position)).getTitle());
             Log.i("position", "section");
         } else {
 
@@ -117,7 +115,7 @@ public class v5NUserAdapter extends BaseAdapter {
             holder.cbLeft.setChecked(checkboxLeftStatus.get(position - sectionNumber));
             holder.cbRight.setTag(position - sectionNumber);
             holder.cbRight.setChecked(checkboxRightStatus.get(position - sectionNumber));
-            String truc = colors.get(mKeys[position - sectionNumber]);
+            //String truc = colors.get(mKeys[position - sectionNumber]);
 
 
             //try {

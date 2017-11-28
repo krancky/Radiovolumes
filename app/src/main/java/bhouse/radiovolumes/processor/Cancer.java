@@ -31,6 +31,9 @@ public class Cancer implements Serializable{
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData =  new HashMap<String, HashMap<String, List<String>>>();
     private HashMap<String, List<String>> cancerNTarData = new HashMap<String, List<String>>();
 
+    private HashMap<String, HashMap<String, List<String>>> cancerTData;
+    private HashMap<String, List<String>> cancerNData;
+
 
     // Main side of Cancer
     private String mainSide;
@@ -205,6 +208,22 @@ public class Cancer implements Serializable{
 
     public HashMap<String, HashMap<String, List<String>>> getCancerTTarData() {
         return cancerTTarData;
+    }
+
+    public HashMap<String, HashMap<String, List<String>>> getCancerTData() {
+        return cancerTData;
+    }
+
+    public void setCancerTData(HashMap<String, HashMap<String, List<String>>> cancerTData) {
+        this.cancerTData = cancerTData;
+    }
+
+    public HashMap<String, List<String>> getCancerNData() {
+        return cancerNData;
+    }
+
+    public void setCancerNData(HashMap<String, List<String>> cancerNData) {
+        this.cancerNData = cancerNData;
     }
 
     public HashMap<String, List<String>> getCancerNTarData() {

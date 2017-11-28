@@ -123,6 +123,11 @@
     <string name="copyright_static">Droits de propriete intellectuelle</string>
     <string name="mandibuledeproximite">Mandibule de Proximite</string>
     <string name="perschangestitle">Modifications ponctuelles</string>
+    <string name="aireganglionnaire">Aire ganglionnaire</string>
+    <string name="x">x</string>
+    <string name="sinussphenoidal">Sinus sphenoidal</string>
+    <string name="sinuspiriforme">Sinus Piriforme</string>
+    <string name="paroipharyngeelaterale">Paroi pharyngee laterale</string>
 
 
 </resources>
