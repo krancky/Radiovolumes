@@ -163,7 +163,11 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
                         sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(i));
                         sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
                         sliceVectorItem.setSide(nodeMap.getKey());
-                        slice.addVectorStorageLocation(sliceVectorItem);
+                        int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
+
+                        if (resId!=0){
+                            slice.addVectorStorageLocation(sliceVectorItem);
+                        }
                         //slice.addVectorStorageLocation(location.replaceAll("\\s+", "").toLowerCase()+ "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() +"___"+String.valueOf(i));
                     }
                 }

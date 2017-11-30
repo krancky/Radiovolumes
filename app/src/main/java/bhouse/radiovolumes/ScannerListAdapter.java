@@ -112,11 +112,10 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
 
         for (int i = 0; i < item.getVectorStorageLocation().size(); i++) {
             imageView = new ImageView(context);
-            String truc = item.getVectorStorageLocation().get(i).getFilename();
             int resId = context.getResources().getIdentifier(item.getVectorStorageLocation().get(i).getFilename(), "drawable", context.getPackageName());
 
 
-            if (resId != 0) {
+            //if (resId != 0) {
                 imageView.setImageResource(resId);
                 imageView.setTag(item.getVectorStorageLocation().get(i));
                 imageView.setClickable(false);
@@ -149,7 +148,7 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
                 });
 
                 holder.frameLayout.addView(imageView);
-            }
+            //}
 
 
 

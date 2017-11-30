@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -15,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 
 /**
@@ -50,7 +52,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
         final ViewHolder holder;
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.list_view_scan, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.list_view_scan_static, parent, false);
             convertView.setMinimumHeight(parent.getMeasuredHeight());
             holder = new ViewHolder();
 
@@ -58,6 +60,17 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
             holder.scanView.setTag("scan");
             holder.zoomview = (ZoomView) convertView.findViewById(R.id.zoomView);
             holder.frameLayout = (FrameLayout) convertView.findViewById(R.id.zoomLayout);
+            holder.i1 = (ImageView) convertView.findViewById(R.id.i1);
+            holder.i2 = (ImageView) convertView.findViewById(R.id.i2);
+            holder.i3 = (ImageView) convertView.findViewById(R.id.i3);
+            holder.i4 = (ImageView) convertView.findViewById(R.id.i4);
+            holder.i5 = (ImageView) convertView.findViewById(R.id.15);
+            holder.i6 = (ImageView) convertView.findViewById(R.id.i6);
+            holder.i7 = (ImageView) convertView.findViewById(R.id.i7);
+            holder.i8 = (ImageView) convertView.findViewById(R.id.i8);
+            holder.i9 = (ImageView) convertView.findViewById(R.id.i9);
+            holder.i10 = (ImageView) convertView.findViewById(R.id.101);
+            holder.i11 = (ImageView) convertView.findViewById(R.id.i11);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -65,7 +78,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
         }
 
         Slice item = getItem(position);
-        holder.frameLayout.removeAllViews();
+        //holder.frameLayout.removeAllViews();
 
         holder.frameLayout.setClickable(true);
         holder.frameLayout.setOnTouchListener(new FrameLayout.OnTouchListener()
@@ -97,31 +110,27 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
             }
         });
         int resIdScan = this.context.getResources().getIdentifier(item.getScanStorageLocation(), "drawable", context.getPackageName());
-        //Picasso
-        //.with(context)
-        //.load(resIdScan)
-        //.error(R.drawable.borabora)
-        //.into(holder.scanView);
 
-        ImageView imageView = new ImageView(context);
-        imageView.setTag(resIdScan);
 
-        imageView.setImageResource(resIdScan);
+        //ImageView imageView = new ImageView(context);
+        //imageView.setTag(resIdScan);
 
-        holder.frameLayout.addView(imageView);
+        holder.scanView.setImageResource(resIdScan);
+
+        //holder.frameLayout.addView(imageView);
 
         for (int i = 0; i < item.getVectorStorageLocation().size(); i++) {
-            imageView = new ImageView(context);
-            String truc = item.getVectorStorageLocation().get(i).getFilename();
+            //imageView = new ImageView(context);
+            //String truc = item.getVectorStorageLocation().get(i).getFilename();
             int resId = context.getResources().getIdentifier(item.getVectorStorageLocation().get(i).getFilename(), "drawable", context.getPackageName());
 
 
-            if (resId != 0) {
-                imageView.setImageResource(resId);
-                imageView.setTag(item.getVectorStorageLocation().get(i));
-                imageView.setClickable(false);
-                imageView.setDrawingCacheEnabled(true);
-                imageView.setOnTouchListener(new View.OnTouchListener() {
+            //if (resId != 0) {
+                holder.arlist.get(i).setImageResource(resId);
+                holder.arlist.get(i).setTag(item.getVectorStorageLocation().get(i));
+                holder.arlist.get(i).setClickable(false);
+                holder.arlist.get(i).setDrawingCacheEnabled(true);
+                holder.arlist.get(i).setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         try {
@@ -148,8 +157,8 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
                     }
                 });
 
-                holder.frameLayout.addView(imageView);
-            }
+                //holder.frameLayout.addView(imageView);
+            //}
 
 
 
@@ -164,22 +173,24 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
         ZoomView zoomview;
         FrameLayout frameLayout;
         ImageView scanView;
-        ImageView amygdale;
-        ImageView ia;
-        ImageView ib;
-        ImageView ii;
-        ImageView iii;
-        ImageView iva;
-        ImageView ivb;
-        ImageView vab;
-        ImageView vc;
-        ImageView via;
-        ImageView vib;
-        ImageView viia;
-        ImageView viib;
-        ImageView viii;
-        ImageView ix;
-        ImageView x;
+        ImageView i1;
+        ImageView i2;
+        ImageView i3;
+        ImageView i4;
+        ImageView i5;
+        ImageView i6;
+        ImageView i7;
+        ImageView i8;
+        ImageView i9;
+        ImageView i10;
+        ImageView i11;
+        ImageView i12;
+        ImageView i13;
+        ImageView i14;
+        ImageView i15;
+
+        ArrayList<ImageView> arlist = new ArrayList<ImageView>(Arrays.asList(i1, i2, i3, i4, i5, i6, i7, i8, i9, i10));
+
 
     }
 }
