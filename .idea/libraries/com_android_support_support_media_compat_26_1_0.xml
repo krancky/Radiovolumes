@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="support-media-compat-26.1.0">
+  <library name="com.android.support:support-media-compat-26.1.0">
     <CLASSES>
       <root url="file://$USER_HOME$/.android/build-cache/2d6cce5f764309f17a5301c6e37199be65ba1354/output/res" />
       <root url="jar://$USER_HOME$/.android/build-cache/2d6cce5f764309f17a5301c6e37199be65ba1354/output/jars/classes.jar!/" />

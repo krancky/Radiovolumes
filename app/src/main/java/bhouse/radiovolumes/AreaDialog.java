@@ -157,7 +157,7 @@ public class AreaDialog extends DialogFragment {
                 tvLateralL.setText(entry.getValue().get(7));
                 tvComment.setText(entry.getValue().get(8));
                 try {
-                    tvName.setTextColor(Color.parseColor(colors.get(entry.getKey())));
+                    //tvName.setTextColor(Color.parseColor(colors.get(entry.getKey())));
                 }
                 catch (Error e){
                     Log.i("No color", "no color");

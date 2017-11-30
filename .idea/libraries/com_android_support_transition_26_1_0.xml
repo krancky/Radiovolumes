@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="transition-26.1.0">
+  <library name="com.android.support:transition-26.1.0">
     <CLASSES>
       <root url="file://$USER_HOME$/.android/build-cache/2bceacb94a04dd5e6aae3654c8705812a3e6f13b/output/res" />
       <root url="jar://$USER_HOME$/.android/build-cache/2bceacb94a04dd5e6aae3654c8705812a3e6f13b/output/jars/classes.jar!/" />
