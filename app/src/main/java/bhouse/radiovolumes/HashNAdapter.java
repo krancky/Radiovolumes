@@ -112,11 +112,11 @@ public class HashNAdapter extends BaseAdapter {
 
 
         if (sideMap.isEmpty()){
-            ((TextView) result.findViewById(R.id.text_left)).setText("None");
+            ((TextView) result.findViewById(R.id.text)).setText(R.string.none);
         }
 
         if (sideMap.isEmpty()){
-            ((TextView) result.findViewById(R.id.text_right)).setText("None");
+            ((TextView) result.findViewById(R.id.text)).setText(R.string.none);
         }
         return result;
     }
@@ -135,7 +135,10 @@ public class HashNAdapter extends BaseAdapter {
     }
 
     private static String removeLastChar(String str) {
-        return str.substring(0, str.length() - 2);
+        if (!str.isEmpty()){
+            return str.substring(0, str.length() - 2);
+        } else
+            return "None";
     }
 }
 

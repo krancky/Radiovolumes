@@ -38,7 +38,9 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
     private SingleScrollListView mContentView;
     private ArrayList<Slice> slices;
     private LinkedHashMap<String, Integer> displayedList = new LinkedHashMap<String, Integer>();
-    private ScannerListAdapter scannerListAdapter;
+
+
+    private ScannerListAdapterStatic scannerListAdapterStatic;
 
     private LinkedHashMap<String, ArrayList<String>> oLimits;
 
@@ -61,7 +63,7 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
         this.displayedList = displayedList;
         //Toast.makeText(getApplicationContext(),"I got back with new information" + cancerTTarData, Toast.LENGTH_SHORT).show();
         prepare_scan_data();
-        scannerListAdapter.notifyDataSetChanged();
+        scannerListAdapterStatic.notifyDataSetChanged();
 
     }
 
@@ -99,8 +101,8 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
         prepareDisplayList();
         prepare_scan_data();
 
-        scannerListAdapter = new ScannerListAdapter(this, slices, mContentView, this.oLimits);
-        mContentView.setAdapter(scannerListAdapter);
+        scannerListAdapterStatic = new ScannerListAdapterStatic(this, slices, mContentView, this.oLimits);
+        mContentView.setAdapter(scannerListAdapterStatic);
 
         //mContentView.setDivider(new ColorDrawable(0x99F10529));   //0xAARRGGBB
         //mContentView.setDividerHeight(1);
@@ -194,7 +196,7 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
 
     @Override
     public void onCancel(SliceVectorItem tag, int imageID){
-        this.scannerListAdapter.notifyDataSetChanged();
+        this.scannerListAdapterStatic.notifyDataSetChanged();
 
     }
 

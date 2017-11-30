@@ -60,17 +60,34 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
             holder.scanView.setTag("scan");
             holder.zoomview = (ZoomView) convertView.findViewById(R.id.zoomView);
             holder.frameLayout = (FrameLayout) convertView.findViewById(R.id.zoomLayout);
+
+            holder.i0 = (ImageView) convertView.findViewById(R.id.i0);
             holder.i1 = (ImageView) convertView.findViewById(R.id.i1);
             holder.i2 = (ImageView) convertView.findViewById(R.id.i2);
             holder.i3 = (ImageView) convertView.findViewById(R.id.i3);
             holder.i4 = (ImageView) convertView.findViewById(R.id.i4);
-            holder.i5 = (ImageView) convertView.findViewById(R.id.15);
+            holder.i5 = (ImageView) convertView.findViewById(R.id.i5);
             holder.i6 = (ImageView) convertView.findViewById(R.id.i6);
             holder.i7 = (ImageView) convertView.findViewById(R.id.i7);
             holder.i8 = (ImageView) convertView.findViewById(R.id.i8);
             holder.i9 = (ImageView) convertView.findViewById(R.id.i9);
-            holder.i10 = (ImageView) convertView.findViewById(R.id.101);
+            holder.i10 = (ImageView) convertView.findViewById(R.id.i10);
             holder.i11 = (ImageView) convertView.findViewById(R.id.i11);
+
+            holder.arlist.add(holder.i0);
+            holder.arlist.add(holder.i1);
+            holder.arlist.add(holder.i2);
+            holder.arlist.add(holder.i3);
+            holder.arlist.add(holder.i4);
+            holder.arlist.add(holder.i5);
+            holder.arlist.add(holder.i6);
+            holder.arlist.add(holder.i7);
+            holder.arlist.add(holder.i8);
+            holder.arlist.add(holder.i9);
+            holder.arlist.add(holder.i10);
+            holder.arlist.add(holder.i11);
+
+
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -173,6 +190,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
         ZoomView zoomview;
         FrameLayout frameLayout;
         ImageView scanView;
+        ImageView i0;
         ImageView i1;
         ImageView i2;
         ImageView i3;
@@ -189,7 +207,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
         ImageView i14;
         ImageView i15;
 
-        ArrayList<ImageView> arlist = new ArrayList<ImageView>(Arrays.asList(i1, i2, i3, i4, i5, i6, i7, i8, i9, i10));
+        ArrayList<ImageView> arlist = new ArrayList<ImageView>();
 
 
     }

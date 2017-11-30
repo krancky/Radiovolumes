@@ -81,11 +81,11 @@ public class HashAdapter extends BaseAdapter {
         }
 
         if (!sideMap.containsKey("Gauche")){
-            ((TextView) result.findViewById(R.id.text_left)).setText("None");
+            ((TextView) result.findViewById(R.id.text_left)).setText(R.string.none);
         }
 
         if (!sideMap.containsKey("Droite")){
-            ((TextView) result.findViewById(R.id.text_right)).setText("None");
+            ((TextView) result.findViewById(R.id.text_right)).setText(R.string.none);
         }
         return result;
     }

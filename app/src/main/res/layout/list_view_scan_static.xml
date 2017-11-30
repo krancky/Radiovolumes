@@ -23,6 +23,12 @@
                 android:scrollbars="none">
             </ImageView>
             <ImageView
+                android:id="@+id/i0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+            </ImageView>
+            <ImageView
                 android:id="@+id/i1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -36,12 +42,6 @@
             </ImageView>
             <ImageView
                 android:id="@+id/i3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="none">
-            </ImageView>
-            <ImageView
-                android:id="@+id/i4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="none">
@@ -83,7 +83,13 @@
                 android:scrollbars="none">
             </ImageView>
             <ImageView
-                android:id="@+id/i10"
+            android:id="@+id/i10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+        </ImageView>
+            <ImageView
+                android:id="@+id/i11"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="none">
