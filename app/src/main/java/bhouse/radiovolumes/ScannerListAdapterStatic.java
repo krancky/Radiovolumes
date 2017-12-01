@@ -62,17 +62,29 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
             holder.frameLayout = (FrameLayout) convertView.findViewById(R.id.zoomLayout);
 
             holder.i0 = (ImageView) convertView.findViewById(R.id.i0);
+            holder.i0.setTag("none");
             holder.i1 = (ImageView) convertView.findViewById(R.id.i1);
+            holder.i1.setTag("none");
             holder.i2 = (ImageView) convertView.findViewById(R.id.i2);
+            holder.i2.setTag("none");
             holder.i3 = (ImageView) convertView.findViewById(R.id.i3);
+            holder.i3.setTag("none");
             holder.i4 = (ImageView) convertView.findViewById(R.id.i4);
+            holder.i4.setTag("none");
             holder.i5 = (ImageView) convertView.findViewById(R.id.i5);
+            holder.i5.setTag("none");
             holder.i6 = (ImageView) convertView.findViewById(R.id.i6);
+            holder.i6.setTag("none");
             holder.i7 = (ImageView) convertView.findViewById(R.id.i7);
+            holder.i7.setTag("none");
             holder.i8 = (ImageView) convertView.findViewById(R.id.i8);
+            holder.i8.setTag("none");
             holder.i9 = (ImageView) convertView.findViewById(R.id.i9);
+            holder.i9.setTag("none");
             holder.i10 = (ImageView) convertView.findViewById(R.id.i10);
+            holder.i10.setTag("none");
             holder.i11 = (ImageView) convertView.findViewById(R.id.i11);
+            holder.i11.setTag("none");
 
             holder.arlist.add(holder.i0);
             holder.arlist.add(holder.i1);
@@ -104,9 +116,9 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
             public boolean onTouch(View view, MotionEvent motionEvent) {
 
                 ImageView child;
-                for (int i = 1; i<=holder.frameLayout.getChildCount()-1;i++){
+                for (int i = 0; i<=holder.frameLayout.getChildCount()-1;i++){
                     child = (ImageView) holder.frameLayout.getChildAt(i);
-                    if(!child.getTag().equals("scan")) {
+                    if(!child.getTag().equals("scan") && !child.getTag().equals("none")) {
                         SliceVectorItem sliceVectorItem = (SliceVectorItem) child.getTag();
                         Bitmap bmp = Bitmap.createBitmap(child.getDrawingCache());
                         int color = bmp.getPixel((int) motionEvent.getX(), (int) motionEvent.getY());
@@ -135,7 +147,6 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
         holder.scanView.setImageResource(resIdScan);
 
         //holder.frameLayout.addView(imageView);
-
         for (int i = 0; i < item.getVectorStorageLocation().size(); i++) {
             //imageView = new ImageView(context);
             //String truc = item.getVectorStorageLocation().get(i).getFilename();
@@ -179,6 +190,11 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
 
 
 
+        }
+
+        for (int i = item.getVectorStorageLocation().size(); i < holder.arlist.size(); i++){
+            holder.arlist.get(i).setTag("none");
+            holder.arlist.get(i).setImageResource(0);
         }
         holder.zoomview.setLv(this.lv);
         return convertView;
