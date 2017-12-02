@@ -103,15 +103,9 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
 
         scannerListAdapterStatic = new ScannerListAdapterStatic(this, slices, mContentView, this.oLimits);
         mContentView.setAdapter(scannerListAdapterStatic);
-
-        //mContentView.setDivider(new ColorDrawable(0x99F10529));   //0xAARRGGBB
-        //mContentView.setDividerHeight(1);
         mContentView.setFastScrollEnabled(true);
         mContentView.setSingleScroll(true);
 
-
-        //mContentView.setLongClickable(true);
-        //mContentView.setOverScrollMode(View.OVER_SCROLL_NEVER);
         mContentView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
@@ -157,8 +151,6 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
                             if (resId!=0){
                                 slice.addVectorStorageLocation(sliceVectorItem);
                             }
-
-                            //slice.addVectorStorageLocation(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() + "___" + String.valueOf(i));
                         }
                     }
                 }

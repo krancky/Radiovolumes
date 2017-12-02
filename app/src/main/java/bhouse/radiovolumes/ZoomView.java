@@ -301,17 +301,10 @@ public class ZoomView extends FrameLayout {
                         if (smoothZoom == 1.0f) {
                             int [] location = new int[2];
                             this.getLocationOnScreen(location);
-                            //this.setY(0);
-                            //invalidate();
-                            //this.getLocationOnScreen(location);
-                            //this.getParent().getParent().setSelection();
-                            //this.getParent().requestFitSystemWindows();
                             smoothZoomTo(maxZoom, x, y);
                             isZoomed = true;
-                            this.setMiniMapEnabled(true);
+                            //this.setMiniMapEnabled(true);
                             this.lv.setFastScrollEnabled(false);
-                            //getParent().requestDisallowInterceptTouchEvent(true);
-                            //this.setVerticalScrollBarEnabled(false);
                         } else {
                             smoothZoomTo(1.0f, getWidth() / 2.0f,
                                     getHeight() / 2.0f);
@@ -493,9 +486,9 @@ public class ZoomView extends FrameLayout {
         }
 
         // redraw
-        // if (animating) {
+        if (animating) {
         getRootView().invalidate();
         invalidate();
-        // }
+        }
     }
 }
