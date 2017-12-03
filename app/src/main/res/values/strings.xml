@@ -126,6 +126,29 @@
     <string name="sinuspiriforme">Piriform sine</string>
     <string name="paroipharyngeelaterale">Lateral side of pharyngeal wall</string>
     <string name="none">None</string>
+    <string name="brain">Brain</string>
+    <string name="brainstem">Brain Stem</string>
+    <string name="anteriorsegment">Anterior Segment</string>
+    <string name="posteriorsegment">Posterior Segment</string>
+    <string name="lacrimalgland">Lacrimal Gland</string>
+    <string name="chiasm">Chiasm</string>
+    <string name="opticnerve">Optic Nerve</string>
+    <string name="pituitarygland">Pituitary Gland</string>
+    <string name="carotid">Carotid Artery</string>
+    <string name="cochlea">Cochlea</string>
+    <string name="mandible">Mandible</string>
+    <string name="extendedoralcavity">Extended Oral Cavity</string>
+    <string name="submandibulargland">Submandibular gland</string>
+    <string name="pharyngealconstrictormuscles">Pharyngeal Constrictor Muscles</string>
+    <string name="cricopharyngealinlet">Crico Pharyngeal Inlet</string>
+    <string name="cervicalesophagus">Cervical Esophagus</string>
+    <string name="lips">Lips</string>
+    <string name="buccalmucosa">Buccal Mucosa</string>
+    <string name="glotticlarynx">Glottic Larynx</string>
+    <string name="supraglotticlarynx">Supra Glottic Larynx</string>
+    <string name="thyroid">Thyroid</string>
+    <string name="spinalcord">Spinal Cord</string>
+    <string name="brachialplexus">Brachial Plexus</string>
 
 
 </resources>

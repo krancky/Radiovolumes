@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -29,7 +30,13 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+
+import bhouse.radiovolumes.processor.OARTemplate;
+import bhouse.radiovolumes.processor.OARXMLHandler;
 
 /**
  * Created by megha on 15-03-10.
@@ -51,8 +58,10 @@ public class DetailActivity extends Activity implements View.OnClickListener {
   private InputMethodManager mInputManager;
   private MainPageItem mMainPageItem;
   private ArrayList<String> mTodoList;
-  private ArrayAdapter mToDoAdapter;
+  private OARSelectionAdapter mToDoAdapter;
+  private ArrayList<OARTemplate> OARTemplateList;
   int defaultColorForRipple;
+  private ArrayList<Item> allIncludedList = new ArrayList<Item>();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -78,8 +87,22 @@ public class DetailActivity extends Activity implements View.OnClickListener {
     isEditTextVisible = false;
 
     mTodoList = new ArrayList<>();
-    mToDoAdapter = new ArrayAdapter(this, R.layout.row_todo, mTodoList);
+    //mToDoAdapter = new ArrayAdapter(this, R.layout.row_todo, mTodoList);
+
+
+    OARTemplateList = new ArrayList<OARTemplate>();
+    try {
+      OARXMLHandler parser = new OARXMLHandler();
+      OARTemplateList = parser.parse(getAssets().open("OARlimits.xml"));
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    prepareOARData();
+    mToDoAdapter = new OARSelectionAdapter(getApplicationContext(),this.allIncludedList, this.OARTemplateList);
     mList.setAdapter(mToDoAdapter);
+
 
     loadPlace();
     windowTransition();
@@ -149,13 +172,20 @@ public class DetailActivity extends Activity implements View.OnClickListener {
     switch (v.getId()) {
       case R.id.btn_add:
         if (!isEditTextVisible) {
-          revealEditText(mRevealView);
-          mEditTextTodo.requestFocus();
-          mInputManager.showSoftInput(mEditTextTodo, InputMethodManager.SHOW_IMPLICIT);
+          //revealEditText(mRevealView);
+          //mEditTextTodo.requestFocus();
+          //mInputManager.showSoftInput(mEditTextTodo, InputMethodManager.SHOW_IMPLICIT);
           mAddButton.setImageResource(R.drawable.icn_morp);
           mAnimatable = (Animatable) (mAddButton).getDrawable();
           mAnimatable.start();
           applyRippleColor(getResources().getColor(R.color.light_green), getResources().getColor(R.color.dark_green));
+          Intent transitionIntent = new Intent(DetailActivity.this, ScannerOARViewActivity_simple.class);
+          transitionIntent.putExtra("OAR", this.OARTemplateList);
+          if(!((Activity) v.getContext()).isFinishing())
+          {
+            startActivity(transitionIntent);//show dialog
+          }
+
         } else {
           addToDo(mEditTextTodo.getText().toString());
           mToDoAdapter.notifyDataSetChanged();
@@ -218,5 +248,73 @@ public class DetailActivity extends Activity implements View.OnClickListener {
 
       }
     });
+  }
+
+  public void prepareOARData(){
+    int sectionNumber = 0;
+    for (OARTemplate oarTemplate :this.OARTemplateList){
+        this.allIncludedList.add(new EntryItem(oarTemplate.getLocation(), sectionNumber));
+      }
+    }
+
+
+  public interface Item {
+    public boolean isSection();
+    public String getTitle();
+    public int getSectionNumber();
+  }
+
+  /**
+   * Section Item
+   */
+  public class SectionItem implements Item {
+    private final String title;
+    public final int sectionNumber;
+
+    public int getSectionNumber() {
+      return sectionNumber;
+    }
+
+
+    public SectionItem(String title, int sectionNumber) {
+      this.title = title;
+      this.sectionNumber = sectionNumber;
+    }
+
+    public String getTitle() {
+      return title;
+    }
+
+    @Override
+    public boolean isSection() {
+      return true;
+    }
+  }
+
+  /**
+   * Entry Item
+   */
+  public class EntryItem implements Item {
+    public final String title;
+    public final int sectionNumber;
+
+    public int getSectionNumber() {
+      return sectionNumber;
+    }
+
+
+    public EntryItem(String title, int sectionNumber) {
+      this.title = title;
+      this.sectionNumber = sectionNumber;
+    }
+
+    public String getTitle() {
+      return title;
+    }
+
+    @Override
+    public boolean isSection() {
+      return false;
+    }
   }
 }

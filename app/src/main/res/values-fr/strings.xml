@@ -129,6 +129,29 @@
     <string name="sinuspiriforme">Sinus Piriforme</string>
     <string name="paroipharyngeelaterale">Paroi pharyngee laterale</string>
     <string name="none">Néant</string>
+    <string name="brain">Encephale</string>
+    <string name="brainstem">Tronc Cerebral</string>
+    <string name="anteriorsegment">Segment anterieur de l\'oeil</string>
+    <string name="posteriorsegment">Segment Posterieur de l\'oeil</string>
+    <string name="lacrimalgland">Glande Lacrimale</string>
+    <string name="chiasm">chiasma Optique</string>
+    <string name="opticnerve">Nerf Optique</string>
+    <string name="pituitarygland">Hypophyse</string>
+    <string name="carotid">Artere carotidienne</string>
+    <string name="cochlea">Cochlee</string>
+    <string name="mandible">Mandibule</string>
+    <string name="extendedoralcavity">Cavite Buccale Etendue</string>
+    <string name="submandibulargland">Glande Sous-maxillaire</string>
+    <string name="pharyngealconstrictormuscles">Muscles Constricteurs du Pharynx</string>
+    <string name="cricopharyngealinlet">Entonnoir Pharynge</string>
+    <string name="cervicalesophagus">Oesophage Cervical</string>
+    <string name="lips">Levres</string>
+    <string name="buccalmucosa">Muqueuse Buccale</string>
+    <string name="glotticlarynx">Larynx glottique</string>
+    <string name="supraglotticlarynx">Larynx Supra-glottique</string>
+    <string name="thyroid">Thyroide</string>
+    <string name="spinalcord">Moelle</string>
+    <string name="brachialplexus">Plexus Brachial</string>
 
 
 </resources>
