@@ -1,5 +1,6 @@
 package bhouse.radiovolumes;
 
+import android.app.Dialog;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -22,7 +23,7 @@ import bhouse.radiovolumes.processor.OARTemplate;
  * Created by kranck on 8/3/2017.
  */
 
-public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements AreaDialog.OnCancelListener {
+public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements OARDialog.OnCancelListener {
     private Context context;
     private LayoutInflater inflater;
     private ArrayList<Slice> slices;
@@ -87,10 +88,10 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
                             if (color == Color.TRANSPARENT) {
                             } else {
                                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-                                    FragmentManager fm = ((ScannerViewActivity_simple) context).getFragmentManager();
+                                    FragmentManager fm = ((ScannerOARViewActivity_simple) context).getFragmentManager();
                                     int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_selected", "drawable", context.getPackageName());
                                     child.setImageResource(resID);
-                                    AreaDialog dialogFragment = AreaDialog.newInstance((SliceVectorItem) child.getTag(), child.getId());
+                                    OARDialog dialogFragment = OARDialog.newInstance((SliceVectorItem) child.getTag(), child.getId());
                                     dialogFragment.show(fm, String.valueOf(child.getTag()));
                                 }
                                 return false;

@@ -23,7 +23,7 @@ import bhouse.radiovolumes.processor.OLimitsXMLHandler;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class ScannerOARViewActivity_simple extends Activity implements MyDialogFragment.OnCompleteListener, AreaDialog.OnCancelListener {
+public class ScannerOARViewActivity_simple extends Activity implements MyDialogFragment.OnCompleteListener, OARDialog.OnCancelListener {
     private SingleScrollListView mContentView;
     private ArrayList<Slice> slices;
     private LinkedHashMap<String, Integer> displayedList = new LinkedHashMap<String, Integer>();
@@ -76,7 +76,6 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
 
 
         slices = new ArrayList<Slice>();
-        prepareDisplayList();
         prepare_scan_data();
 
         scannerOARListAdapterStatic = new ScannerOARListAdapterStatic(this, slices, mContentView, this.OARTemplateList);
@@ -114,7 +113,7 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
             String formatted = String.format("%05d", i + 1);
             slice.setStorageLocation("scan_" + String.valueOf(formatted));
             for (OARTemplate oarTemplate : OARTemplateList) {
-                if (oarTemplate.getLeftContent().equals(1)) {
+                if (oarTemplate.getLeftContent().equals("1")) {
                     SliceVectorItem sliceVectorItem = new SliceVectorItem();
                     sliceVectorItem.setFilename(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "gauche" + "_" + String.valueOf(i));
                     int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
@@ -122,9 +121,9 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
                         slice.addVectorStorageLocation(sliceVectorItem);
                     }
                 }
-                if (oarTemplate.getRightContent().equals(1)) {
+                if (oarTemplate.getRightContent().equals("1")) {
                     SliceVectorItem sliceVectorItem = new SliceVectorItem();
-                    sliceVectorItem.setFilename(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "gauche" + "_" + String.valueOf(i));
+                    sliceVectorItem.setFilename(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "droite" + "_" + String.valueOf(i));
                     int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
                     if (resId != 0) {
                         slice.addVectorStorageLocation(sliceVectorItem);
@@ -137,7 +136,12 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
 
     }
 
-    void prepareDisplayList() {
+    public ArrayList<OARTemplate> getOARTemplateList() {
+        return OARTemplateList;
+    }
+
+    public void setOARTemplateList(ArrayList<OARTemplate> OARTemplateList) {
+        this.OARTemplateList = OARTemplateList;
     }
 
     @Override

@@ -253,7 +253,12 @@ public class DetailActivity extends Activity implements View.OnClickListener {
   public void prepareOARData(){
     int sectionNumber = 0;
     for (OARTemplate oarTemplate :this.OARTemplateList){
+      if(oarTemplate.getLateralized().equals("1")){
         this.allIncludedList.add(new EntryItem(oarTemplate.getLocation(), sectionNumber));
+      } else {
+        this.allIncludedList.add(new MedianItem(oarTemplate.getLocation(), sectionNumber));
+      }
+
       }
     }
 
@@ -262,6 +267,7 @@ public class DetailActivity extends Activity implements View.OnClickListener {
     public boolean isSection();
     public String getTitle();
     public int getSectionNumber();
+    public boolean isMedian();
   }
 
   /**
@@ -289,6 +295,39 @@ public class DetailActivity extends Activity implements View.OnClickListener {
     public boolean isSection() {
       return true;
     }
+
+    @Override
+    public boolean isMedian() {
+      return false;
+    }
+  }
+
+  public class MedianItem implements Item {
+    private final String title;
+    public final int sectionNumber;
+
+    public int getSectionNumber() {
+      return sectionNumber;
+    }
+
+
+    public MedianItem(String title, int sectionNumber) {
+      this.title = title;
+      this.sectionNumber = sectionNumber;
+    }
+
+    public String getTitle() {
+      return title;
+    }
+
+    @Override
+    public boolean isSection() { return false;
+    }
+
+    @Override
+    public boolean isMedian() {
+      return true;
+    }
   }
 
   /**
@@ -297,6 +336,7 @@ public class DetailActivity extends Activity implements View.OnClickListener {
   public class EntryItem implements Item {
     public final String title;
     public final int sectionNumber;
+
 
     public int getSectionNumber() {
       return sectionNumber;
@@ -316,5 +356,12 @@ public class DetailActivity extends Activity implements View.OnClickListener {
     public boolean isSection() {
       return false;
     }
+
+    @Override
+    public boolean isMedian() {
+      return false;
+    }
+
   }
+
 }

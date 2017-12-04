@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 public class OARTemplate implements Serializable{
 
-    String location,leftContent, rightContent, otherConstraints, side; String constraints; String complications;
+    String location,leftContent, rightContent, otherConstraints, side; String constraints; String complications; String lateralized; String comment;
     int color;
 
     public int getColor() {
@@ -35,6 +35,22 @@ public class OARTemplate implements Serializable{
 
     public void setLeftContent(String leftContent) {
         this.leftContent = leftContent;
+    }
+
+    public void setLateralized(String lateralized) {
+        this.lateralized = lateralized;
+    }
+
+    public String getLateralized() {
+        return lateralized;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public String getRightContent() {

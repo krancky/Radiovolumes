@@ -88,13 +88,19 @@ public class OARXMLHandler {
                                 OARTemplate.setLocation(text.replaceAll("\\s+", "").toLowerCase());
                             }
                             else if (tagname.equalsIgnoreCase("RisqueComplications")) {
-                                OARTemplate.setComplications(text.replaceAll("\\s+", "").toLowerCase());
+                                OARTemplate.setComplications(text);
                             }
                             else if (tagname.equalsIgnoreCase("ContraintesPlanification")) {
-                                OARTemplate.setConstraints(text.replaceAll("\\s+", "").toLowerCase());
+                                OARTemplate.setConstraints(text);
                             }
                             else if (tagname.equalsIgnoreCase("AutresContraintes")) {
-                                OARTemplate.setOtherconstraints(text.replaceAll("\\s+", "").toLowerCase());
+                                OARTemplate.setOtherconstraints(text);
+                            }
+                            else if (tagname.equalsIgnoreCase("Lateralized")) {
+                                OARTemplate.setLateralized(text);
+                            }
+                            else if (tagname.equalsIgnoreCase("Comment")) {
+                                OARTemplate.setComment(text);
                             }
 
 

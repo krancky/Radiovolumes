@@ -82,12 +82,18 @@ public class OARSelectionAdapter extends BaseAdapter {
 
             }
             else{
-                // if item
-                convertView = inflater.inflate(R.layout.layout_item, parent, false);
-                //holder.tumorPhoto = (ImageView) convertView.findViewById(R.id.node_photo);
-                holder.tv = (TextView) convertView.findViewById(R.id.textView2);
-                holder.cbLeft =(CheckBox) convertView.findViewById(R.id.checkLeft);
-                holder.cbRight =(CheckBox) convertView.findViewById(R.id.checkRight);
+                if (getItemViewType(position) == 1){
+                    convertView = inflater.inflate(R.layout.layout_item, parent, false);
+                    //holder.tumorPhoto = (ImageView) convertView.findViewById(R.id.node_photo);
+                    holder.tv = (TextView) convertView.findViewById(R.id.textView2);
+                    holder.cbLeft =(CheckBox) convertView.findViewById(R.id.checkLeft);
+                    holder.cbRight =(CheckBox) convertView.findViewById(R.id.checkRight);
+                } else {
+                    convertView = inflater.inflate(R.layout.layout_median_item, parent, false);
+                    //holder.tumorPhoto = (ImageView) convertView.findViewById(R.id.node_photo);
+                    holder.tv = (TextView) convertView.findViewById(R.id.textView2);
+                    holder.cbLeft =(CheckBox) convertView.findViewById(R.id.checkLeft);
+                }
             }
 
 
@@ -108,25 +114,31 @@ public class OARSelectionAdapter extends BaseAdapter {
             holder.tvSectionTitle.setText(locationLocale);
         }
         else{
-            ImageView tumorPhoto = (ImageView) convertView.findViewById(R.id.node_photo);
-            int sectionNumber = items.get(position).getSectionNumber();
-            OARTemplate h = tList.get(position-sectionNumber);
-            int truc = context.getResources().getIdentifier(h.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
-            String locationLocale = context.getString(context.getResources().getIdentifier(h.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
-            holder.tv.setText(locationLocale);
-            holder.cbLeft.setTag(position - sectionNumber);
-            holder.cbRight.setTag(position - sectionNumber);
-            holder.cbLeft.setChecked(checkboxStatus_left.get(position- sectionNumber));
-            holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
-            holder.cbRight.setChecked(checkboxStatus_right.get(position -sectionNumber));
-            holder.cbRight.setOnCheckedChangeListener(cbRightChangeListener);
-            //tumorPhoto.setImageResource(h.getImageResourceId(this.context, ));
-            //if(holder.cbLeft.isChecked() || holder.cbRight.isChecked() ){
-              //  holder.tumorPhoto.setImageResource(h.getImageResourceId(this.context, true));
-            //}
-            //else{
-              //  holder.tumorPhoto.setImageResource(h.getImageResourceId(this.context, false));
-            //}
+
+            if (items.get(position).isMedian()){
+                ImageView tumorPhoto = (ImageView) convertView.findViewById(R.id.node_photo);
+                int sectionNumber = items.get(position).getSectionNumber();
+                OARTemplate h = tList.get(position-sectionNumber);
+                int truc = context.getResources().getIdentifier(h.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
+                String locationLocale = context.getString(context.getResources().getIdentifier(h.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
+                holder.tv.setText(locationLocale);
+                holder.cbLeft.setTag(position - sectionNumber);
+                holder.cbLeft.setChecked(checkboxStatus_left.get(position- sectionNumber));
+                holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
+            } else {
+                ImageView tumorPhoto = (ImageView) convertView.findViewById(R.id.node_photo);
+                int sectionNumber = items.get(position).getSectionNumber();
+                OARTemplate h = tList.get(position-sectionNumber);
+                int truc = context.getResources().getIdentifier(h.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
+                String locationLocale = context.getString(context.getResources().getIdentifier(h.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
+                holder.tv.setText(locationLocale);
+                holder.cbLeft.setTag(position - sectionNumber);
+                holder.cbRight.setTag(position - sectionNumber);
+                holder.cbLeft.setChecked(checkboxStatus_left.get(position- sectionNumber));
+                holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
+                holder.cbRight.setChecked(checkboxStatus_right.get(position -sectionNumber));
+                holder.cbRight.setOnCheckedChangeListener(cbRightChangeListener);
+            }
         }
 
 
@@ -142,7 +154,6 @@ public class OARSelectionAdapter extends BaseAdapter {
             int position = (Integer) checkBoxView.getTag();
             checkboxStatus_left.set(position, isChecked);
             OARTemplate h = (OARTemplate) tList.get(position);
-            Toast.makeText(context,"Click on item position " + position, Toast.LENGTH_SHORT).show();
             if(checkBoxView.isChecked()){
                 h.setLeftContent("1");
             }
@@ -178,14 +189,19 @@ public class OARSelectionAdapter extends BaseAdapter {
             return 0;
         }
         else{
-            return 1;
+            if(items.get(position).isMedian()){
+                return 2;
+            } else {
+                return 1;
+            }
+
         }
         // Define a way to determine which layout to use, here it's just evens and odds.
     }
 
     @Override
     public int getViewTypeCount() {
-        return 2; // Count of different layouts
+        return 3; // Count of different layouts
     }
 
     public Filter getFilter()

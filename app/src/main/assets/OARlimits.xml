@@ -2,6 +2,7 @@
 <OARs>
     <OAR>
         <Name>Brain</Name>
+        <Lateralized>0</Lateralized>
         <Naming>Brain=Cerveau</Naming>
         <RisqueComplications>Risque de complications à 5 ans de 5 % : V60 Gy inf 33%</RisqueComplications>
         <ContraintesPlanification>V60 Gy inf 33% </ContraintesPlanification>
@@ -11,6 +12,7 @@
 
     <OAR>
       <Name>BrainStem</Name>
+        <Lateralized>0</Lateralized>
         <Naming>BrainStem=Tronc Cérébral</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification>Dmax inf54Gy</ContraintesPlanification>
@@ -20,6 +22,7 @@
 
     <OAR>
       <Name>anteriorsegment</Name>
+        <Lateralized>1</Lateralized>
         <Naming>Ant Segment = Segment antérieur de l’oeil</Naming>
         <RisqueComplications>Risque de cataracte à 5 ans :
  5 % : Dmax = 10Gy
@@ -35,6 +38,7 @@
 
     <OAR>
       <Name>posteriorsegment</Name>
+        <Lateralized>1</Lateralized>
         <Naming>Post Segment = Segment postérieur de l’oeil</Naming>
         <RisqueComplications>OEil-rétine 
 Risque de cécité à 5 ans 
@@ -56,6 +60,7 @@ Risque de rétinopathie à 5 ans :
 
     <OAR>
       <Name>Lacrimal gland</Name>
+        <Lateralized>1</Lateralized>
         <Naming>Lacrimal gland = Glande Lacrymale</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
@@ -65,6 +70,7 @@ Risque de rétinopathie à 5 ans :
 
     <OAR>
       <Name>Chiasm</Name>
+        <Lateralized>1</Lateralized>
         <Naming>Chiasm = Chiasma</Naming>
         <RisqueComplications>Risque de cécité si Dmax sup 54Gy</RisqueComplications>
         <ContraintesPlanification>Dmax = 54Gy
@@ -76,6 +82,7 @@ D1 % inf 45 Gy
 
     <OAR>
       <Name>Optic Nerve</Name>
+        <Lateralized>1</Lateralized>
         <Naming>Optic Nerve = Nerf optique</Naming>
         <RisqueComplications>Risque de cécité à 5 ans :
 0-5% : Dmax = 50-60Gy
@@ -94,6 +101,7 @@ D1 % inf  54Gy
 
     <OAR>
       <Name>Pituitary Gland</Name>
+        <Lateralized>0</Lateralized>
         <Naming>Pituitary Gland = Hypophyse</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification>Dmax = 45-50Gy</ContraintesPlanification>
@@ -103,6 +111,7 @@ D1 % inf  54Gy
 
     <OAR>
       <Name>Carotid</Name>
+        <Lateralized>1</Lateralized>
         <Naming>A Carotid = a carotide</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
@@ -112,6 +121,7 @@ D1 % inf  54Gy
 
     <OAR>
       <Name>Cochlea</Name>
+        <Lateralized>1</Lateralized>
         <Naming>Cochlea = cochlée</Naming>
         <RisqueComplications>Risque de surdité si Dmax sup 60Gy</RisqueComplications>
         <ContraintesPlanification>Dmoyenne inf 40-45 Gy 
@@ -123,6 +133,7 @@ Si conservation audition primordiale : Dmoyenne inf 35 Gy
 
     <OAR>
       <Name>Mandible</Name>
+        <Lateralized>0</Lateralized>
         <Naming>Mandible=Mandibule</Naming>
         <RisqueComplications>Risque de radionécrose de 5% à 5 ans si : 
 patient édenté: Dmoyenne sup 60–65Gy;
@@ -137,6 +148,7 @@ Dmoyenne inf 60Gy
 
     <OAR>
       <Name>Parotid</Name>
+        <Lateralized>1</Lateralized>
         <Naming>Parotid = Parotide</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification>Dose moyenne(2 parotides)inf26Gy</ContraintesPlanification>
@@ -149,6 +161,7 @@ V45 Gy inf 24-26%
 
     <OAR>
       <Name>Extended oral cavity</Name>
+        <Lateralized>0</Lateralized>
         <Naming>Extended oral cavity = cavité buccale</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification>V20 Gy inf 80% 
@@ -160,6 +173,7 @@ V30 Gy inf 46%
 
     <OAR>
       <Name>Submandibular Gland</Name>
+        <Lateralized>1</Lateralized>
         <Naming>Submandibular Gland : Glande sous maxillaire</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
@@ -169,6 +183,7 @@ V30 Gy inf 46%
 
     <OAR>
       <Name>Pharyngeal Constrictor muscles</Name>
+        <Lateralized>0</Lateralized>
         <Naming>Pharyngeal Constrictor muscles = muscles constricteurs du pharynx</Naming>
         <RisqueComplications>Risque de dysphagie si Dmoyenne sup 45-66Gy</RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
@@ -182,6 +197,7 @@ V65 Gy inf 50%
 
     <OAR>
       <Name>Cricopharyngeal inlet</Name>
+        <Lateralized>0</Lateralized>
         <Naming>Crico-pharyngeal inlet= entonnoir pharyngé</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
@@ -191,6 +207,7 @@ V65 Gy inf 50%
 
     <OAR>
       <Name>Cervical esophagus</Name>
+        <Lateralized>0</Lateralized>
         <Naming>Cervical esophagus=oesophage cervical</Naming>
         <RisqueComplications>Risque oesophagite sévère si V60 Gy ≥ 30 %</RisqueComplications>
         <ContraintesPlanification>Radiothérapie seule : Dmax inf 69Gy 
@@ -209,6 +226,7 @@ V70 Gy inf 8,8%
 
     <OAR>
       <Name>Lips</Name>
+        <Lateralized>0</Lateralized>
         <Naming>Lips=lèvres/Naming</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
@@ -218,6 +236,7 @@ V70 Gy inf 8,8%
 
     <OAR>
       <Name>Buccal Mucosa</Name>
+        <Lateralized>0</Lateralized>
         <Naming>Buccal Mucosa=muqueuse jugale</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
@@ -227,6 +246,7 @@ V70 Gy inf 8,8%
 
     <OAR>
       <Name>Supra GLottic Larynx</Name>
+        <Lateralized>0</Lateralized>
         <Naming>Supra GLottic Larynx = Larynx supra-glottique</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
@@ -236,6 +256,7 @@ V70 Gy inf 8,8%
 
     <OAR>
       <Name>Larynx </Name>
+        <Lateralized>1</Lateralized>
         <Naming>Larynx= Larynx </Naming>
         <RisqueComplications>Risque de dysfonction vocale pour des doses supérieures à 60-65Gy 
 Risque d’oedème laryngé pour des doses supérieures à 45Gy
@@ -250,6 +271,7 @@ V50 Gy inf 27%
 
     <OAR>
       <Name>Thyroid</Name>
+        <Lateralized>0</Lateralized>
         <Naming>Thyroid=Thyroïde</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
@@ -261,6 +283,7 @@ V50 Gy inf 30%
 
     <OAR>
       <Name>Spinal Cord</Name>
+        <Lateralized>0</Lateralized>
         <Naming>Spinal Cord = Moelle épinière</Naming>
         <RisqueComplications>Risque de myélite radique Dmax = 50-50,4Gy
 Si association avec la chimiothérapie Dmax = 40-45Gy
@@ -273,6 +296,7 @@ Si association chimioradiothérapie Dmax inf 45 Gy </ContraintesPlanification>
 
     <OAR>
       <Name>Brachial Plexus</Name>
+        <Lateralized>1</Lateralized>
         <Naming>Brachial Plexus = Plexus Brachial</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
