@@ -185,7 +185,7 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
             holder = (ViewHolder) convertView.getTag();
 
         }
-        Slice item = getItem(position);
+        Slice item = getItem(position+1);
 
         // Setting Scanner Slice Background
         int resIdScan = this.context.getResources().getIdentifier(item.getScanStorageLocation(), "drawable", context.getPackageName());

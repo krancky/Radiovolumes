@@ -4,9 +4,10 @@
         <Name>Brain</Name>
         <Lateralized>0</Lateralized>
         <Naming>Brain=Cerveau</Naming>
-        <RisqueComplications>Risque de complications à 5 ans de 5 % : V60 Gy inf 33%</RisqueComplications>
-        <ContraintesPlanification>V60 Gy inf 33% </ContraintesPlanification>
-        <AutresContraintes>D33 % inf 72Gy </AutresContraintes>
+        <RisqueComplications>&lt;i&gt;Risque de complications à 5 ans de 5 % :
+V60 Gy = 33%&lt;/i&gt;</RisqueComplications>
+        <ContraintesPlanification>V60 Gy &lt; 33% </ContraintesPlanification>
+        <AutresContraintes>D33 % &lt; 72Gy </AutresContraintes>
         <Comment>None</Comment>
     </OAR>
 
@@ -15,7 +16,7 @@
         <Lateralized>0</Lateralized>
         <Naming>BrainStem=Tronc Cérébral</Naming>
         <RisqueComplications></RisqueComplications>
-        <ContraintesPlanification>Dmax inf54Gy</ContraintesPlanification>
+        <ContraintesPlanification>Dmax &lt; 54Gy</ContraintesPlanification>
         <AutresContraintes>Dmax = 64Gy(surface)</AutresContraintes>
         <Comment>None</Comment>
     </OAR>
@@ -25,13 +26,13 @@
         <Lateralized>1</Lateralized>
         <Naming>Ant Segment = Segment antérieur de l’oeil</Naming>
         <RisqueComplications>Risque de cataracte à 5 ans :
- 5 % : Dmax = 10Gy
+5 % : Dmax = 10Gy
 18%:Dmax = 14Gy
 50%:Dmax = 18Gy
 70%  :10 Gy en 1 fraction
-100%: Dmax = 20-40Gy 
-</RisqueComplications>
-        <ContraintesPlanification>Cristallin : Dmax inf 10-15Gy</ContraintesPlanification>
+100%: Dmax = 20-40Gy
+        </RisqueComplications>
+        <ContraintesPlanification>Cristallin : Dmax &lt; 10-15Gy</ContraintesPlanification>
         <AutresContraintes>OEil-cornée : Dmax = 30-50Gy</AutresContraintes>
         <Comment>None</Comment>
     </OAR>
@@ -41,19 +42,19 @@
         <Lateralized>1</Lateralized>
         <Naming>Post Segment = Segment postérieur de l’oeil</Naming>
         <RisqueComplications>OEil-rétine 
-Risque de cécité à 5 ans 
+Risque de cécité à 5 ans:
 5 % : Dmoyenne = 45Gy 
 50% : Dmoyenne = 65Gy 
 Risque de rétinopathie à 5ans: 
-0 % : Dmoyenne inf 40-45Gy
+0 % : Dmoyenne &lt; 40-45Gy
 Risque de rétinopathie à 5 ans : 
-0 % : Dmoyenne inf 40-45Gy 
+0 % : Dmoyenne &lt; 40-45Gy
 50%:Dmoyenne = 45-55Gy 
 83%:Dmoyenne = 55-65Gy 
-100%:Dmoyenne sup 65Gy
+100%:Dmoyenne &gt; 65Gy
 </RisqueComplications>
         <ContraintesPlanification>Oeil-rétine : Dmoyenne inf 45 Gy
-        OEil total : V30 Gy inf 50% V50 Gy inf 30%</ContraintesPlanification>
+        OEil total : V30 Gy &lt; 50% V50 Gy &lt; 30%</ContraintesPlanification>
         <AutresContraintes></AutresContraintes>
         <Comment>None</Comment>
     </OAR>
@@ -64,7 +65,7 @@ Risque de rétinopathie à 5 ans :
         <Naming>Lacrimal gland = Glande Lacrymale</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
-        <AutresContraintes>Dmoyenne inf 32Gy</AutresContraintes>
+        <AutresContraintes>Dmoyenne &lt; 32Gy</AutresContraintes>
         <Comment>None</Comment>
     </OAR>
 
@@ -72,11 +73,11 @@ Risque de rétinopathie à 5 ans :
       <Name>Chiasm</Name>
         <Lateralized>1</Lateralized>
         <Naming>Chiasm = Chiasma</Naming>
-        <RisqueComplications>Risque de cécité si Dmax sup 54Gy</RisqueComplications>
+        <RisqueComplications>Risque de cécité si Dmax &gt; 54Gy</RisqueComplications>
         <ContraintesPlanification>Dmax = 54Gy
-D1 % inf 45 Gy 
+D1 % &lt; 45 Gy
 </ContraintesPlanification>
-        <AutresContraintes>V50 Gy inf 10 %</AutresContraintes>
+        <AutresContraintes>V50 Gy &lt; 10 %</AutresContraintes>
         <Comment>None</Comment>
     </OAR>
 
@@ -87,14 +88,14 @@ D1 % inf 45 Gy
         <RisqueComplications>Risque de cécité à 5 ans :
 0-5% : Dmax = 50-60Gy
 50% : Dmax = 65Gy
-Risque de 5 % de neuropathie à 10 ans si Dmax sup 60Gy
+Risque de 5 % de neuropathie à 10 ans si Dmax &gt; 60Gy
 Risque de névrite inhabituel à 5 ans
 3-7%:Dmax = 55-60Gy
 7-20%:Dmax sup 60Gy
 </RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
-        <AutresContraintes>D25 % inf 60Gy 
-D1 % inf  54Gy
+        <AutresContraintes>D25 % &lt; 60Gy
+D1 % &lt;  54Gy
 </AutresContraintes>
         <Comment>None</Comment>
     </OAR>
@@ -123,11 +124,11 @@ D1 % inf  54Gy
       <Name>Cochlea</Name>
         <Lateralized>1</Lateralized>
         <Naming>Cochlea = cochlée</Naming>
-        <RisqueComplications>Risque de surdité si Dmax sup 60Gy</RisqueComplications>
-        <ContraintesPlanification>Dmoyenne inf 40-45 Gy 
-Si conservation audition primordiale : Dmoyenne inf 35 Gy 
+        <RisqueComplications>Risque de surdité si Dmax &gt; 60Gy</RisqueComplications>
+        <ContraintesPlanification>Dmoyenne &lt; 40-45 Gy
+Si conservation audition primordiale : Dmoyenne &lt; 35 Gy
 </ContraintesPlanification>
-        <AutresContraintes>Dmoyenne inf 10 Gy</AutresContraintes>
+        <AutresContraintes>Dmoyenne &lt;10 Gy</AutresContraintes>
         <Comment>None</Comment>
     </OAR>
 
@@ -136,11 +137,11 @@ Si conservation audition primordiale : Dmoyenne inf 35 Gy
         <Lateralized>0</Lateralized>
         <Naming>Mandible=Mandibule</Naming>
         <RisqueComplications>Risque de radionécrose de 5% à 5 ans si : 
-patient édenté: Dmoyenne sup 60–65Gy;
-Patient non édenté :Dmoyenne sup 60Gy
+patient édenté: Dmoyenne &gt; 60–65Gy;
+Patient non édenté :Dmoyenne &gt; 60Gy
 </RisqueComplications>
-        <ContraintesPlanification>Dmax inf 65Gy 
-Dmoyenne inf 60Gy
+        <ContraintesPlanification>Dmax &lt; 65Gy
+Dmoyenne &lt; 60Gy
 </ContraintesPlanification>
         <AutresContraintes></AutresContraintes>
         <Comment>None</Comment>
@@ -151,10 +152,10 @@ Dmoyenne inf 60Gy
         <Lateralized>1</Lateralized>
         <Naming>Parotid = Parotide</Naming>
         <RisqueComplications></RisqueComplications>
-        <ContraintesPlanification>Dose moyenne(2 parotides)inf26Gy</ContraintesPlanification>
-        <AutresContraintes>V15 Gy inf 66-67% 
-V30 Gy inf 43-45% 
-V45 Gy inf 24-26%
+        <ContraintesPlanification>Dose moyenne(2 parotides) &lt; 26Gy</ContraintesPlanification>
+        <AutresContraintes>V15 Gy &lt; 66-67%
+V30 Gy &lt; 43-45%
+V45 Gy &lt; 24-26%
 </AutresContraintes>
         <Comment>None</Comment>
     </OAR>
@@ -164,8 +165,8 @@ V45 Gy inf 24-26%
         <Lateralized>0</Lateralized>
         <Naming>Extended oral cavity = cavité buccale</Naming>
         <RisqueComplications></RisqueComplications>
-        <ContraintesPlanification>V20 Gy inf 80% 
-V30 Gy inf 46%
+        <ContraintesPlanification>V20 Gy &lt; 80%
+V30 Gy &lt; 46%
 </ContraintesPlanification>
         <AutresContraintes></AutresContraintes>
         <Comment>None</Comment>
@@ -177,7 +178,7 @@ V30 Gy inf 46%
         <Naming>Submandibular Gland : Glande sous maxillaire</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
-        <AutresContraintes>Dmoyenne inf 32Gy</AutresContraintes>
+        <AutresContraintes>Dmoyenne &lt; 32Gy</AutresContraintes>
         <Comment>None</Comment>
     </OAR>
 
@@ -185,12 +186,12 @@ V30 Gy inf 46%
       <Name>Pharyngeal Constrictor muscles</Name>
         <Lateralized>0</Lateralized>
         <Naming>Pharyngeal Constrictor muscles = muscles constricteurs du pharynx</Naming>
-        <RisqueComplications>Risque de dysphagie si Dmoyenne sup 45-66Gy</RisqueComplications>
+        <RisqueComplications>Risque de dysphagie si Dmoyenne &gt; 45-66Gy</RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
-        <AutresContraintes>V40 Gy inf 90%
-V50 Gy inf 80%
-V60 Gy inf 70%
-V65 Gy inf 50%
+        <AutresContraintes>V40 Gy &lt; 90%
+V50 Gy &lt; 80%
+V60 Gy &lt; 70%
+V65 Gy &lt; 50%
 </AutresContraintes>
         <Comment>None</Comment>
     </OAR>
@@ -210,16 +211,16 @@ V65 Gy inf 50%
         <Lateralized>0</Lateralized>
         <Naming>Cervical esophagus=oesophage cervical</Naming>
         <RisqueComplications>Risque oesophagite sévère si V60 Gy ≥ 30 %</RisqueComplications>
-        <ContraintesPlanification>Radiothérapie seule : Dmax inf 69Gy 
-Radiothérapie–CT :Dmax inf 69Gy
+        <ContraintesPlanification>Radiothérapie seule : Dmax &lt; 69Gy
+Radiothérapie–CT :Dmax &lt; 69Gy
 </ContraintesPlanification>
         <AutresContraintes>V20 Gy inf 35 % 
-Ou V40 Gy inf 37%
-V45 Gy inf 34% 
-V55 Gy inf 27% 
-V60 Gy inf 24% 
-V65 Gy inf 15%
-V70 Gy inf 8,8%
+Ou V40 Gy &lt; 37%
+V45 Gy &lt; 34%
+V55 Gy &lt; 27%
+V60 Gy &lt; 24%
+V65 Gy &lt; 15%
+V70 Gy &lt; 8,8%
 </AutresContraintes>
         <Comment>None</Comment>
     </OAR>
@@ -262,9 +263,9 @@ V70 Gy inf 8,8%
 Risque d’oedème laryngé pour des doses supérieures à 45Gy
 </RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
-        <AutresContraintes>Dmax inf 63-66Gy
-Dmoyenne inf 43,5Gy
-V50 Gy inf 27%
+        <AutresContraintes>Dmax &lt; 63-66Gy
+Dmoyenne &lt; 43,5Gy
+V50 Gy &lt; 27%
 </AutresContraintes>
         <Comment>None</Comment>
     </OAR>
@@ -275,8 +276,8 @@ V50 Gy inf 27%
         <Naming>Thyroid=Thyroïde</Naming>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
-        <AutresContraintes>Dmoyenne inf 30Gy 
-V50 Gy inf 30%
+        <AutresContraintes>Dmoyenne &lt; 30Gy
+V50 Gy &lt; 30%
 </AutresContraintes>
         <Comment>None</Comment>
     </OAR>
@@ -288,8 +289,8 @@ V50 Gy inf 30%
         <RisqueComplications>Risque de myélite radique Dmax = 50-50,4Gy
 Si association avec la chimiothérapie Dmax = 40-45Gy
 </RisqueComplications>
-        <ContraintesPlanification>Dmax inf 50 Gy
-Si association chimioradiothérapie Dmax inf 45 Gy </ContraintesPlanification>
+        <ContraintesPlanification>Dmax &lt; 50 Gy
+Si association chimioradiothérapie Dmax &lt; 45 Gy </ContraintesPlanification>
         <AutresContraintes></AutresContraintes>
         <Comment>None</Comment>
     </OAR>

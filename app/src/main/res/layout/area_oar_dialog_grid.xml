@@ -160,7 +160,7 @@
         <TextView
             android:id="@+id/tvOtherConstraints_static"
             android:layout_column="0"
-            android:text=" Other Constraints : "
+            android:text="Other Constraints : "
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@android:color/holo_blue_dark" />
 

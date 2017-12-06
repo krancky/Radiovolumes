@@ -11,6 +11,7 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.method.ScrollingMovementMethod;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -182,8 +183,8 @@ public class OARDialog extends DialogFragment {
                 //tvMedialL.setText(entry.getValue().get(6));
                 //tvLateralL.setText(entry.getValue().get(7));
                 tvComment.setText(oarTemplate.getComment());
-                tvRisk.setText(oarTemplate.getComplications());
-                tvConstraints.setText(oarTemplate.getConstraints());
+                tvRisk.setText(Html.fromHtml(oarTemplate.getComplications()));
+                tvConstraints.setText(Html.fromHtml(oarTemplate.getConstraints()));
                 tvOtherConstraints.setText(oarTemplate.getOtherConstraints());
                 try {
                     //tvName.setTextColor(Color.parseColor(colors.get(entry.getKey())));

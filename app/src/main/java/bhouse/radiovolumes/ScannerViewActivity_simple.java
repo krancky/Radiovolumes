@@ -143,7 +143,7 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
                         String value = location.replaceAll("\\s+", "").toLowerCase()+ " " + map.getKey().replaceAll("\\s+", "").toLowerCase();
                         if (displayedList.get(value).equals(1)) {
                             SliceVectorItem sliceVectorItem = new SliceVectorItem();
-                            sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(i));
+                            sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(i-1));
                             sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
                             sliceVectorItem.setSide(map.getKey());
                             int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
@@ -159,7 +159,7 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
                 List<String> sideMap = nodeMap.getValue();
                     for (String location:sideMap){
                         SliceVectorItem sliceVectorItem = new SliceVectorItem();
-                        sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(i));
+                        sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(i-1));
                         sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
                         sliceVectorItem.setSide(nodeMap.getKey());
                         int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());

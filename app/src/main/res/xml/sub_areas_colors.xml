@@ -36,22 +36,23 @@
     <entry key="sinuspiriforme">#FFF500</entry>
     <entry key="paroipharyngeelaterale">#FFF500</entry>
     <entry key="paroipharyngeeposterieure">#FFF500</entry>
+    <entry key="voile">#FFF500</entry>
 
 
-    <entry key="Ia">#1400FF</entry>
-    <entry key="Ib">#1400FF</entry>
-    <entry key="II">#52FF00</entry>
-    <entry key="III">#FF007A</entry>
-    <entry key="IVa">#FF0000</entry>
-    <entry key="IVb">#00FF29</entry>
+    <entry key="ia">#0029FF</entry>
+    <entry key="ib">#1400FF</entry>
+    <entry key="ii">#5200FF</entry>
+    <entry key="iii">#8FFF00</entry>
+    <entry key="iva">#0029FF</entry>
+    <entry key="ivb">#0029FF</entry>
     <entry key="joue">#8F00FF</entry>
-    <entry key="Vab">#8F00FF</entry>
-    <entry key="Vc">#FFF500</entry>
-    <entry key="VIa">#00FFE0</entry>
-    <entry key="VIb">#00FFA3</entry>
-    <entry key="VIIa">#0029FF</entry>
-    <entry key="VIIb">#1400FF</entry>
-    <entry key="VIII">#5200FF</entry>
-    <entry key="IX">#8FFF00</entry>
-    <entry key="X">#0029FF</entry>
+    <entry key="vab">#CCFF00</entry>
+    <entry key="vc">#5200FF</entry>
+    <entry key="via">#14FF00</entry>
+    <entry key="vib">#00A3FF</entry>
+    <entry key="viia">#00FFE0</entry>
+    <entry key="viib">#FF007A</entry>
+    <entry key="viii">#FF7A00</entry>
+    <entry key="ix">#FFF500</entry>
+    <entry key="x">#00FFE0</entry>
 </map>

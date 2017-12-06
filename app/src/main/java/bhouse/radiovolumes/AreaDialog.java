@@ -144,7 +144,7 @@ public class AreaDialog extends DialogFragment {
         Map<String,String> colors = ModifierHashOperator.getHashMapResource(getContext(), R.xml.sub_areas_colors);
         for (HashMap.Entry<String, ArrayList<String>> entry: oLimits.entrySet()){
             //if (this.title.toLowerCase().replaceAll("\\s+", "").replaceAll("_", "").contains(entry.getKey().toLowerCase().replaceAll("\\s+", "").replaceAll("_", ""))){
-            if (this.title.toLowerCase().replaceAll("\\s+", "").replaceAll("_", "").contains(entry.getKey().toLowerCase().replaceAll("\\s+", "").replaceAll("_", ""))){
+            if (this.title.toLowerCase().replaceAll("\\s+", "").replaceAll("_", "").equalsIgnoreCase(entry.getKey().toLowerCase().replaceAll("\\s+", "").replaceAll("_", ""))){
                 String name  = entry.getValue().get(0);
                 name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
                 //int truc = context.getResources().getIdentifier(value.replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
@@ -158,7 +158,7 @@ public class AreaDialog extends DialogFragment {
                 tvLateralL.setText(entry.getValue().get(7));
                 tvComment.setText(entry.getValue().get(8));
                 try {
-                    //tvName.setTextColor(Color.parseColor(colors.get(entry.getKey())));
+                    tvName.setTextColor(Color.parseColor(colors.get(entry.getKey().toLowerCase())));
                 }
                 catch (Error e){
                     Log.i("No color", "no color");
