@@ -4,8 +4,8 @@
         <Name>Brain</Name>
         <Lateralized>0</Lateralized>
         <Naming>Brain=Cerveau</Naming>
-        <RisqueComplications>&lt;i&gt;Risque de complications à 5 ans de 5 % :
-V60 Gy = 33%&lt;/i&gt;</RisqueComplications>
+        <RisqueComplications>&lt;b&gt;Risque de complications à 5 ans de 5 % :&lt;/b&gt;&lt;br&gt;
+V60 Gy = 33%</RisqueComplications>
         <ContraintesPlanification>V60 Gy &lt; 33% </ContraintesPlanification>
         <AutresContraintes>D33 % &lt; 72Gy </AutresContraintes>
         <Comment>None</Comment>
@@ -25,17 +25,18 @@ V60 Gy = 33%&lt;/i&gt;</RisqueComplications>
       <Name>anteriorsegment</Name>
         <Lateralized>1</Lateralized>
         <Naming>Ant Segment = Segment antérieur de l’oeil</Naming>
-        <RisqueComplications>Risque de cataracte à 5 ans :
-5 % : Dmax = 10Gy
-18%:Dmax = 14Gy
-50%:Dmax = 18Gy
-70%  :10 Gy en 1 fraction
-100%: Dmax = 20-40Gy
-        </RisqueComplications>
+        <RisqueComplications>&lt;b&gt;Risque de cataracte à 5 ans :&lt;/b&gt;&lt;br&gt;
+            &lt;i&gt;5 % :&lt;/i&gt; Dmax = 10Gy&lt;br&gt;
+            &lt;i&gt;18% :&lt;/i&gt;Dmax = 14Gy&lt;br&gt;
+            &lt;i&gt;50%:&lt;/i&gt;Dmax = 18Gy&lt;br&gt;
+            &lt;i&gt;70%  :&lt;/i&gt;10 Gy en 1 fraction&lt;br&gt;
+            &lt;i&gt;100%:&lt;/i&gt; Dmax = 20-40Gy</RisqueComplications>
         <ContraintesPlanification>Cristallin : Dmax &lt; 10-15Gy</ContraintesPlanification>
         <AutresContraintes>OEil-cornée : Dmax = 30-50Gy</AutresContraintes>
         <Comment>None</Comment>
     </OAR>
+
+
 
     <OAR>
       <Name>posteriorsegment</Name>

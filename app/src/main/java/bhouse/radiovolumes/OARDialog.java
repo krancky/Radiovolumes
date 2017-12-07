@@ -184,7 +184,7 @@ public class OARDialog extends DialogFragment {
                 //tvLateralL.setText(entry.getValue().get(7));
                 tvComment.setText(oarTemplate.getComment());
                 tvRisk.setText(Html.fromHtml(oarTemplate.getComplications()));
-                tvConstraints.setText(Html.fromHtml(oarTemplate.getConstraints()));
+                tvConstraints.setText(oarTemplate.getConstraints());
                 tvOtherConstraints.setText(oarTemplate.getOtherConstraints());
                 try {
                     //tvName.setTextColor(Color.parseColor(colors.get(entry.getKey())));

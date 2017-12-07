@@ -2,25 +2,24 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ScrollView01"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
         android:id="@+id/rlayout"
-        android:background="@color/black_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:alignmentMode="alignBounds"
-        android:columnCount="2"
-        android:paddingBottom="5dp"
-        android:paddingEnd="5dp"
-        android:paddingLeft="5dp"
-        android:paddingTop="5dp">
+        android:background="@color/black_overlay"
+        android:padding="10dp"
+        android:columnCount="2">
 
 
         <TextView
             android:id="@+id/tvName"
+            android:layout_width="wrap_content"
             android:layout_column="0"
+            android:layout_columnSpan="2"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/white" />
 
@@ -28,15 +27,14 @@
         <TextView
             android:id="@+id/tvCranialL_static"
             android:layout_column="0"
-            android:paddingRight="15dp"
             android:text="Cranial limit: "
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@android:color/holo_blue_dark" />
 
         <TextView
             android:id="@+id/tvCranialL"
-            android:layout_column="1"
             android:layout_below="@id/tvName"
+            android:layout_column="1"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@android:color/white" />
 
@@ -78,8 +76,8 @@
 
         <TextView
             android:id="@+id/tvPosteriorL"
-            android:layout_column="1"
             android:layout_below="@id/tvAnteriorL"
+            android:layout_column="1"
             android:layout_toRightOf="@id/tvPosteriorL_static"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@android:color/white" />
@@ -114,8 +112,8 @@
 
         <TextView
             android:id="@+id/tvComment_static"
-            android:layout_column="0"
             android:layout_below="@id/tvLateralL_static"
+            android:layout_column="0"
             android:paddingRight="19dp"
             android:text="Comments : "
             android:textAppearance="?android:attr/textAppearanceSmall"
@@ -136,9 +134,9 @@
 
         <TextView
             android:id="@+id/tvRisk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_column="1"
-            android:layout_width="0dp"
-            android:layout_gravity="fill_horizontal"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@android:color/white" />
 
@@ -152,7 +150,6 @@
         <TextView
             android:id="@+id/tvConstraints"
             android:layout_column="1"
-            android:layout_width="0dp"
             android:layout_gravity="fill_horizontal"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@android:color/white" />
@@ -172,5 +169,7 @@
 
 
     </GridLayout>
+
+
 
 </ScrollView>
