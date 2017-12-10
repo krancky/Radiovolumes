@@ -176,7 +176,8 @@ public class OARDialog extends DialogFragment {
         Map<String,String> colors = ModifierHashOperator.getHashMapResource(getContext(), R.xml.sub_areas_colors);
         for (OARTemplate oarTemplate: this.oLimits){
             //if (this.title.toLowerCase().replaceAll("\\s+", "").replaceAll("_", "").contains(entry.getKey().toLowerCase().replaceAll("\\s+", "").replaceAll("_", ""))){
-            if (this.title.toLowerCase().replaceAll("\\s+", "").replaceAll("_", "").contains(oarTemplate.getLocation())){
+            String truc = this.title.toLowerCase().replaceAll("\\s+", "").split("_")[0];
+            if (this.title.toLowerCase().replaceAll("\\s+", "").split("_")[0].equals(oarTemplate.getLocation())){
                 //String name  = entry.getValue().get(0);
                 //name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
                 //int truc = context.getResources().getIdentifier(value.replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
