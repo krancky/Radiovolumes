@@ -102,6 +102,24 @@ public class OARXMLHandler {
                             else if (tagname.equalsIgnoreCase("Comment")) {
                                 OARTemplate.setComment(text);
                             }
+                            else if (tagname.equalsIgnoreCase("Cranial")) {
+                                OARTemplate.setCranial(text);
+                            }
+                            else if (tagname.equalsIgnoreCase("Caudal")) {
+                                OARTemplate.setCaudal(text);
+                            }
+                            else if (tagname.equalsIgnoreCase("Anterior")) {
+                                OARTemplate.setAnterior(text);
+                            }
+                            else if (tagname.equalsIgnoreCase("Posterior")) {
+                                OARTemplate.setPosterior(text);
+                            }
+                            else if (tagname.equalsIgnoreCase("Lateral")) {
+                                OARTemplate.setLateral(text);
+                            }
+                            else if (tagname.equalsIgnoreCase("Medial")) {
+                                OARTemplate.setMedial(text);
+                            }
 
 
                             default:

@@ -115,7 +115,7 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
             for (OARTemplate oarTemplate : OARTemplateList) {
                 if (oarTemplate.getLeftContent().equals("1")) {
                     SliceVectorItem sliceVectorItem = new SliceVectorItem();
-                    sliceVectorItem.setFilename(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "gauche" + "_" + String.valueOf(i-1));
+                    sliceVectorItem.setFilename(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "gauche" + "_" + String.valueOf(i));
                     int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
                     if (resId != 0) {
                         slice.addVectorStorageLocation(sliceVectorItem);
@@ -123,7 +123,7 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
                 }
                 if (oarTemplate.getRightContent().equals("1")) {
                     SliceVectorItem sliceVectorItem = new SliceVectorItem();
-                    sliceVectorItem.setFilename(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "droite" + "_" + String.valueOf(i-1));
+                    sliceVectorItem.setFilename(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "droite" + "_" + String.valueOf(i));
                     int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
                     if (resId != 0) {
                         slice.addVectorStorageLocation(sliceVectorItem);

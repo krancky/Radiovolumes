@@ -18,6 +18,7 @@ import android.transition.Fade;
 import android.transition.Transition;
 import android.view.View;
 import android.view.ViewAnimationUtils;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -102,6 +103,9 @@ public class DetailActivity extends Activity implements View.OnClickListener {
     prepareOARData();
     mToDoAdapter = new OARSelectionAdapter(getApplicationContext(),this.allIncludedList, this.OARTemplateList);
     mList.setAdapter(mToDoAdapter);
+
+    ViewGroup tHeader = (ViewGroup)getLayoutInflater().inflate(R.layout.header_oar, mList, false);
+    mList.addHeaderView(tHeader, null, false);
 
 
     loadPlace();
@@ -261,6 +265,11 @@ public class DetailActivity extends Activity implements View.OnClickListener {
 
       }
     }
+
+  @Override
+  protected void attachBaseContext(Context base) {
+    super.attachBaseContext(LocaleHelper.onAttach(base));
+  }
 
 
   public interface Item {

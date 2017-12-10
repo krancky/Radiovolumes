@@ -1,309 +1,494 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <OARs>
     <OAR>
         <Name>Brain</Name>
         <Lateralized>0</Lateralized>
         <Naming>Brain=Cerveau</Naming>
+        <Cranial>NA</Cranial>
+        <Caudal>NA</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
         <RisqueComplications>&lt;b&gt;Risque de complications à 5 ans de 5 % :&lt;/b&gt;&lt;br&gt;
-V60 Gy = 33%</RisqueComplications>
-        <ContraintesPlanification>V60 Gy &lt; 33% </ContraintesPlanification>
-        <AutresContraintes>D33 % &lt; 72Gy </AutresContraintes>
-        <Comment>None</Comment>
+            V60 Gy = 33%
+        </RisqueComplications>
+        <ContraintesPlanification>V60 Gy &lt; 33%</ContraintesPlanification>
+        <AutresContraintes>D33 % &lt; 72Gy</AutresContraintes>
+        <Comment>The delineation of the brain includes brain vessels, and excludes the brainstem.
+        </Comment>
     </OAR>
 
     <OAR>
-      <Name>BrainStem</Name>
+        <Name>BrainStem</Name>
         <Lateralized>0</Lateralized>
         <Naming>BrainStem=Tronc Cérébral</Naming>
-        <RisqueComplications></RisqueComplications>
+        <Cranial>Bottom of lateral ventricles</Cranial>
+        <Caudal>Tip of the dens of C2</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
+        <RisqueComplications>NA</RisqueComplications>
         <ContraintesPlanification>Dmax &lt; 54Gy</ContraintesPlanification>
-        <AutresContraintes>Dmax = 64Gy(surface)</AutresContraintes>
-        <Comment>None</Comment>
+        <AutresContraintes>Dmax = 64Gy &lt;i&gt;(surface)&lt;/i&gt;</AutresContraintes>
+        <Comment>MRI is recommended for delineation of the brainstem.</Comment>
     </OAR>
 
     <OAR>
-      <Name>anteriorsegment</Name>
+        <Name>anteriorsegment</Name>
         <Lateralized>1</Lateralized>
-        <Naming>Ant Segment = Segment antérieur de l’oeil</Naming>
-        <RisqueComplications>&lt;b&gt;Risque de cataracte à 5 ans :&lt;/b&gt;&lt;br&gt;
-            &lt;i&gt;5 % :&lt;/i&gt; Dmax = 10Gy&lt;br&gt;
-            &lt;i&gt;18% :&lt;/i&gt;Dmax = 14Gy&lt;br&gt;
-            &lt;i&gt;50%:&lt;/i&gt;Dmax = 18Gy&lt;br&gt;
-            &lt;i&gt;70%  :&lt;/i&gt;10 Gy en 1 fraction&lt;br&gt;
-            &lt;i&gt;100%:&lt;/i&gt; Dmax = 20-40Gy</RisqueComplications>
+        <Naming>Ant Segment = Segment antérieur de l'oeil</Naming>
+        <Cranial>NA</Cranial>
+        <Caudal>NA</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>Vitreous humor</Posterior>
+        <RisqueComplications>&lt;b&gt;Risque de cataracte à 5 ans :&lt;/b&gt;&lt;br&gt; &lt;i&gt;5 %
+            :&lt;/i&gt; Dmax = 10Gy&lt;br&gt; &lt;i&gt;18% :&lt;/i&gt;Dmax = 14Gy&lt;br&gt; &lt;i&gt;50%:&lt;/i&gt;Dmax
+            = 18Gy&lt;br&gt; &lt;i&gt;70% :&lt;/i&gt;10 Gy en 1 fraction&lt;br&gt; &lt;i&gt;100%:&lt;/i&gt;
+            Dmax = 20-40Gy
+        </RisqueComplications>
         <ContraintesPlanification>Cristallin : Dmax &lt; 10-15Gy</ContraintesPlanification>
         <AutresContraintes>OEil-cornée : Dmax = 30-50Gy</AutresContraintes>
-        <Comment>None</Comment>
+        <Comment>The anterior segment of the eyeball consists of the structures ventral from the
+            vitreous humor, including the cornea, iris, ciliary body, and lens.
+        </Comment>
     </OAR>
 
 
-
     <OAR>
-      <Name>posteriorsegment</Name>
+        <Name>posteriorsegment</Name>
         <Lateralized>1</Lateralized>
-        <Naming>Post Segment = Segment postérieur de l’oeil</Naming>
-        <RisqueComplications>OEil-rétine 
-Risque de cécité à 5 ans:
-5 % : Dmoyenne = 45Gy 
-50% : Dmoyenne = 65Gy 
-Risque de rétinopathie à 5ans: 
-0 % : Dmoyenne &lt; 40-45Gy
-Risque de rétinopathie à 5 ans : 
-0 % : Dmoyenne &lt; 40-45Gy
-50%:Dmoyenne = 45-55Gy 
-83%:Dmoyenne = 55-65Gy 
-100%:Dmoyenne &gt; 65Gy
-</RisqueComplications>
-        <ContraintesPlanification>Oeil-rétine : Dmoyenne inf 45 Gy
-        OEil total : V30 Gy &lt; 50% V50 Gy &lt; 30%</ContraintesPlanification>
+        <Naming>Post Segment = Segment postérieur de l'oeil</Naming>
+        <Cranial>NA</Cranial>
+        <Caudal>NA</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>Lens</Anterior>
+        <Posterior>Retina (incl.)</Posterior>
+        <RisqueComplications>
+            &lt;b&gt;Risque de cécité à 5 ans:&lt;/b&gt;&lt;br&gt;
+            &lt;i&gt;5 % : &lt;/i&gt;Dmoyenne = 45Gy&lt;br&gt;
+            &lt;i&gt;50% : &lt;/i&gt;Dmoyenne = 65Gy&lt;br&gt;
+            &lt;b&gt;Risque de rétinopathie à 5ans:&lt;/b&gt;&lt;br&gt;
+            &lt;i&gt;0 % :&lt;/i&gt; Dmoyenne &lt; 40-45Gy&lt;br&gt;
+            &lt;b&gt;Risque de rétinopathie à 5 ans :&lt;/b&gt;&lt;br&gt;
+            &lt;i&gt;0 % : &lt;/i&gt;Dmoyenne &lt; 40-45Gy&lt;br&gt;
+            &lt;i&gt;50% : &lt;/i&gt;Dmoyenne = 45-55Gy&lt;br&gt;
+            &lt;i&gt;83% : &lt;/i&gt;Dmoyenne = 55-65Gy&lt;br&gt;
+            &lt;i&gt;100% : &lt;/i&gt;Dmoyenne &gt; 65Gy
+        </RisqueComplications>
+        <ContraintesPlanification>&lt;b&gt;Oeil-rétine :&lt;/b&gt;&lt;br&gt; Dmoyenne inf 45 Gy&lt;br&gt;
+            &lt;b&gt;OEil total :&lt;/b&gt;&lt;br&gt; V30 Gy &lt; 50% V50 Gy &lt; 30%
+        </ContraintesPlanification>
         <AutresContraintes></AutresContraintes>
-        <Comment>None</Comment>
+        <Comment>The posterior segment of the eyeball is located posteriorly to the lens, and
+            consists of the anterior hyaloid membrane and all of the posterior optical structures
+            including the vitreous humor, retina, and choroid. The optic nerve is excluded.
+        </Comment>
     </OAR>
 
     <OAR>
-      <Name>Lacrimal gland</Name>
+        <Name>Lacrimal gland</Name>
         <Lateralized>1</Lateralized>
         <Naming>Lacrimal gland = Glande Lacrymale</Naming>
-        <RisqueComplications></RisqueComplications>
-        <ContraintesPlanification></ContraintesPlanification>
+        <Cranial>NA</Cranial>
+        <Caudal>Eye</Caudal>
+        <Medial>Eye</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
+        <RisqueComplications>NA</RisqueComplications>
+        <ContraintesPlanification>NA</ContraintesPlanification>
         <AutresContraintes>Dmoyenne &lt; 32Gy</AutresContraintes>
         <Comment>None</Comment>
     </OAR>
 
     <OAR>
-      <Name>Chiasm</Name>
-        <Lateralized>1</Lateralized>
+        <Name>Chiasm</Name>
+        <Lateralized>0</Lateralized>
         <Naming>Chiasm = Chiasma</Naming>
+        <Cranial>1 cm superior to the pituitary gland</Cranial>
+        <Caudal>NA</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
         <RisqueComplications>Risque de cécité si Dmax &gt; 54Gy</RisqueComplications>
-        <ContraintesPlanification>Dmax = 54Gy
-D1 % &lt; 45 Gy
-</ContraintesPlanification>
+        <ContraintesPlanification>Dmax = 54Gy&lt;br&gt;
+            D1 % &lt; 45 Gy
+        </ContraintesPlanification>
         <AutresContraintes>V50 Gy &lt; 10 %</AutresContraintes>
-        <Comment>None</Comment>
+        <Comment>MRI is recommended for delineation.</Comment>
     </OAR>
 
     <OAR>
-      <Name>Optic Nerve</Name>
+        <Name>Optic Nerve</Name>
         <Lateralized>1</Lateralized>
         <Naming>Optic Nerve = Nerf optique</Naming>
-        <RisqueComplications>Risque de cécité à 5 ans :
-0-5% : Dmax = 50-60Gy
-50% : Dmax = 65Gy
-Risque de 5 % de neuropathie à 10 ans si Dmax &gt; 60Gy
-Risque de névrite inhabituel à 5 ans
-3-7%:Dmax = 55-60Gy
-7-20%:Dmax sup 60Gy
-</RisqueComplications>
+        <Cranial>NA</Cranial>
+        <Caudal>NA</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
+        <RisqueComplications>&lt;b&gt;Risque de cécité à 5 ans :&lt;/b&gt;&lt;br&gt;
+            0-5% : Dmax = 50-60Gy
+            50% : Dmax = 65Gy
+            &lt;b&gt;Risque de 5 % de neuropathie à 10 ans &lt;/b&gt;&lt;br&gt;si Dmax &gt; 60Gy&lt;br&gt;
+            &lt;b&gt;Risque de névrite inhabituel à 5 ans&lt;/b&gt;&lt;br&gt;
+            3-7%:Dmax = 55-60Gy
+            7-20%:Dmax sup 60Gy
+        </RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
         <AutresContraintes>D25 % &lt; 60Gy
-D1 % &lt;  54Gy
-</AutresContraintes>
-        <Comment>None</Comment>
+            D1 % &lt; 54Gy
+        </AutresContraintes>
+        <Comment>It has to be contoured all the way from the posterior edge of the eyeball, through
+            the bony optic canal to the optic chiasm. MRI is recommended for a better delineation of
+            the optic nerve
+        </Comment>
     </OAR>
 
     <OAR>
-      <Name>Pituitary Gland</Name>
+        <Name>Pituitary Gland</Name>
         <Lateralized>0</Lateralized>
         <Naming>Pituitary Gland = Hypophyse</Naming>
-        <RisqueComplications></RisqueComplications>
+        <Cranial>NA</Cranial>
+        <Caudal>NA</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
+        <RisqueComplications>NA</RisqueComplications>
         <ContraintesPlanification>Dmax = 45-50Gy</ContraintesPlanification>
-        <AutresContraintes></AutresContraintes>
-        <Comment>None</Comment>
+        <AutresContraintes>NA</AutresContraintes>
+        <Comment>The inner part of the sella turcica can be used as surrogate anatomical bony
+            structure.
+        </Comment>
     </OAR>
 
     <OAR>
-      <Name>Carotid</Name>
+        <Name>Carotid</Name>
         <Lateralized>1</Lateralized>
         <Naming>A Carotid = a carotide</Naming>
-        <RisqueComplications></RisqueComplications>
-        <ContraintesPlanification></ContraintesPlanification>
-        <AutresContraintes></AutresContraintes>
-        <Comment>None</Comment>
+        <Cranial>Lower part of the optic chiasm.</Cranial>
+        <Caudal>NA</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
+        <RisqueComplications>NA</RisqueComplications>
+        <ContraintesPlanification>NA</ContraintesPlanification>
+        <AutresContraintes>NA</AutresContraintes>
+        <Comment>The carotid arteries include the common and internal carotid artery</Comment>
     </OAR>
 
     <OAR>
-      <Name>Cochlea</Name>
+        <Name>Cochlea</Name>
         <Lateralized>1</Lateralized>
         <Naming>Cochlea = cochlée</Naming>
+        <Cranial>NA</Cranial>
+        <Caudal>NA</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
         <RisqueComplications>Risque de surdité si Dmax &gt; 60Gy</RisqueComplications>
-        <ContraintesPlanification>Dmoyenne &lt; 40-45 Gy
-Si conservation audition primordiale : Dmoyenne &lt; 35 Gy
-</ContraintesPlanification>
+        <ContraintesPlanification>Dmoyenne &lt; 40-45 Gy&lt;br&gt;
+            Si conservation audition primordiale : &lt;br&gt;Dmoyenne &lt; 35 Gy
+        </ContraintesPlanification>
         <AutresContraintes>Dmoyenne &lt;10 Gy</AutresContraintes>
-        <Comment>None</Comment>
+        <Comment>The cochlea is embedded in the temporal bone, located lateral to the internal
+            auditory meatus, which can best be recognized in CT bone view settings
+        </Comment>
     </OAR>
 
     <OAR>
-      <Name>Mandible</Name>
+        <Name>Mandible</Name>
         <Lateralized>0</Lateralized>
         <Naming>Mandible=Mandibule</Naming>
-        <RisqueComplications>Risque de radionécrose de 5% à 5 ans si : 
-patient édenté: Dmoyenne &gt; 60–65Gy;
-Patient non édenté :Dmoyenne &gt; 60Gy
-</RisqueComplications>
+        <Cranial>NA</Cranial>
+        <Caudal>NA</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
+        <RisqueComplications>&lt;b&gt;tRisque de radionécrose de 5% à 5 ans si :&lt;/b&gt;&lt;br&gt;
+            &lt;i&gt;patient édenté: &lt;/i&gt;Dmoyenne &gt; 60 à 65Gy
+            &lt;i&gt;Patient non édenté :&lt;/i&gt;Dmoyenne &gt; 60Gy
+        </RisqueComplications>
         <ContraintesPlanification>Dmax &lt; 65Gy
-Dmoyenne &lt; 60Gy
-</ContraintesPlanification>
-        <AutresContraintes></AutresContraintes>
-        <Comment>None</Comment>
+            Dmoyenne &lt; 60Gy
+        </ContraintesPlanification>
+        <AutresContraintes>NA</AutresContraintes>
+        <Comment>The mandible was defined as the entire mandible bone, without teeth.</Comment>
     </OAR>
 
     <OAR>
-      <Name>Parotid</Name>
+        <Name>Parotid</Name>
         <Lateralized>1</Lateralized>
         <Naming>Parotid = Parotide</Naming>
+        <Cranial>External auditory canal, mastoid process</Cranial>
+        <Caudal>Post. part submandibular space</Caudal>
+        <Medial>Post. belly digastric m., styloid process, parapharyngeal space</Medial>
+        <Lateral>Subcutaneous fat, platysma</Lateral>
+        <Anterior>Masseter m., post. border mandibular bone, med. and lat. pterygoid m.</Anterior>
+        <Posterior>Ant. belly sternocleidomastoid m., lat. side post. belly of the digastric m.
+            (posteriormedial
+        </Posterior>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification>Dose moyenne(2 parotides) &lt; 26Gy</ContraintesPlanification>
         <AutresContraintes>V15 Gy &lt; 66-67%
-V30 Gy &lt; 43-45%
-V45 Gy &lt; 24-26%
-</AutresContraintes>
-        <Comment>None</Comment>
+            V30 Gy &lt; 43-45%
+            V45 Gy &lt; 24-26%
+        </AutresContraintes>
+        <Comment>Include carotid artery, retromandibular vein and extracranial facial nerve
+        </Comment>
     </OAR>
 
     <OAR>
-      <Name>Extended oral cavity</Name>
+        <Name>Extended oral cavity</Name>
         <Lateralized>0</Lateralized>
         <Naming>Extended oral cavity = cavité buccale</Naming>
-        <RisqueComplications></RisqueComplications>
-        <ContraintesPlanification>V20 Gy &lt; 80%
-V30 Gy &lt; 46%
-</ContraintesPlanification>
-        <AutresContraintes></AutresContraintes>
+        <Cranial>Hard palate mucosa and mucosal reflections near the maxilla</Cranial>
+        <Caudal>The base of tongue mucosa and hyoid posteriorly and the mylohyoid m. and ant. belly
+            of the digastric m. anteriorly
+        </Caudal>
+        <Medial>Na</Medial>
+        <Lateral>Inner surface of the mandible and maxilla</Lateral>
+        <Anterior>Inner surface of the mandible and maxilla</Anterior>
+        <Posterior>Post. borders of soft palate, uvula, and more inferiorly the base of tongue
+        </Posterior>
+        <RisqueComplications>NA</RisqueComplications>
+        <ContraintesPlanification>V20 Gy &lt; 80%&lt;br&gt;
+            V30 Gy &lt; 46%
+        </ContraintesPlanification>
+        <AutresContraintes>NA</AutresContraintes>
         <Comment>None</Comment>
     </OAR>
 
     <OAR>
-      <Name>Submandibular Gland</Name>
+        <Name>Submandibular Gland</Name>
         <Lateralized>1</Lateralized>
         <Naming>Submandibular Gland : Glande sous maxillaire</Naming>
-        <RisqueComplications></RisqueComplications>
-        <ContraintesPlanification></ContraintesPlanification>
+        <Cranial>Med.pterygoid m.,mylohyoid m.</Cranial>
+        <Caudal>Fatty tissue</Caudal>
+        <Medial>Lat. surface mylohyoid m.,hyoglossus m., superior and middle pharyngeal constrictor
+            m., anterior belly of the digastric m.
+        </Medial>
+        <Lateral>Med. surface med.pterygoid m., med.surface mandibular bone, platysma</Lateral>
+        <Anterior>Lat. Surface mylohyoid m., hyoglossus m.</Anterior>
+        <Posterior>Parapharyngeal space, sternocleidomastoid m.</Posterior>
+        <RisqueComplications>NA</RisqueComplications>
+        <ContraintesPlanification>NA</ContraintesPlanification>
         <AutresContraintes>Dmoyenne &lt; 32Gy</AutresContraintes>
-        <Comment>None</Comment>
+        <Comment>Posterior to mandible and maxilla, no inner surface of the lips</Comment>
     </OAR>
 
     <OAR>
-      <Name>Pharyngeal Constrictor muscles</Name>
+        <Name>Pharyngeal Constrictor muscles</Name>
         <Lateralized>0</Lateralized>
         <Naming>Pharyngeal Constrictor muscles = muscles constricteurs du pharynx</Naming>
-        <RisqueComplications>Risque de dysphagie si Dmoyenne &gt; 45-66Gy</RisqueComplications>
+        <Cranial>Caudal tips of pterygoid plates</Cranial>
+        <Caudal>Caudal edge of arytenoid cartilages</Caudal>
+        <Medial>Na</Medial>
+        <Lateral>&lt;i&gt;Superior:&lt;/i&gt; medial pterygoid muscle. &lt;i&gt;Middle:&lt;/i&gt; greater horn of hyoid bone. &lt;i&gt;Inferior:&lt;/i&gt;
+            superior horn of thyroid cartilage
+        </Lateral>
+        <Anterior>&lt;i&gt;Superior:&lt;/i&gt; hamulus of pterygoid plate; mandibula; base of tongue; pharyngeal lumen.
+            &lt;i&gt;Middle:&lt;/i&gt; base of tongue; hyoid. Inferior: soft tissue of supraglottic/glottic larynx
+        </Anterior>
+        <Posterior>Prevertebral muscle</Posterior>
+        <RisqueComplications>&lt;b&gt;Risque de dysphagie si : &lt;/b&gt;&lt;br&gt; Dmoyenne &gt; 45-66Gy</RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
-        <AutresContraintes>V40 Gy &lt; 90%
-V50 Gy &lt; 80%
-V60 Gy &lt; 70%
-V65 Gy &lt; 50%
-</AutresContraintes>
-        <Comment>None</Comment>
+        <AutresContraintes>V40 Gy &lt; 90%&lt;br&gt;
+            V50 Gy &lt; 80%&lt;br&gt;
+            V60 Gy &lt; 70%&lt;br&gt;
+            V65 Gy &lt; 50%
+        </AutresContraintes>
+        <Comment>Thickness ~3 mm</Comment>
     </OAR>
 
     <OAR>
-      <Name>Cricopharyngeal inlet</Name>
+        <Name>Cricopharyngeal inlet</Name>
         <Lateralized>0</Lateralized>
         <Naming>Crico-pharyngeal inlet= entonnoir pharyngé</Naming>
+        <Cranial>Caudal edge of arytenoid cartilages</Cranial>
+        <Caudal>1 cm caudal to the lower edge of the cricoid cartilage</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>Tracheal lumen</Anterior>
+        <Posterior>Vertebral body</Posterior>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
         <AutresContraintes></AutresContraintes>
-        <Comment>None</Comment>
+        <Comment>The crico-pharyngeal inlet represents the transition from the PCM to the cervical
+            esophagus
+        </Comment>
     </OAR>
 
     <OAR>
-      <Name>Cervical esophagus</Name>
+        <Name>Cervical esophagus</Name>
         <Lateralized>0</Lateralized>
         <Naming>Cervical esophagus=oesophage cervical</Naming>
-        <RisqueComplications>Risque oesophagite sévère si V60 Gy ≥ 30 %</RisqueComplications>
+        <Cranial>1 cm caudal to the lower edge of the cricoid cartilage</Cranial>
+        <Caudal>Caudal edge of C7</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
+        <RisqueComplications>Risque oesophagite sévère si V60 Gy &gt; 30 %</RisqueComplications>
         <ContraintesPlanification>Radiothérapie seule : Dmax &lt; 69Gy
-Radiothérapie–CT :Dmax &lt; 69Gy
-</ContraintesPlanification>
-        <AutresContraintes>V20 Gy inf 35 % 
-Ou V40 Gy &lt; 37%
-V45 Gy &lt; 34%
-V55 Gy &lt; 27%
-V60 Gy &lt; 24%
-V65 Gy &lt; 15%
-V70 Gy &lt; 8,8%
-</AutresContraintes>
+            Radiothérapie + CT :Dmax &lt; 69Gy
+        </ContraintesPlanification>
+        <AutresContraintes>V20 Gy &lt; 35 %&lt;br&gt;
+            &lt;i&gt;Ou&lt;/i&gt; V40 Gy &lt; 37%&lt;/i&gt;
+            V45 Gy &lt; 34%&lt;br&gt;
+            V55 Gy &lt; 27%&lt;br&gt;
+            V60 Gy &lt; 24%&lt;br&gt;
+            V65 Gy &lt; 15%&lt;br&gt;
+            V70 Gy &lt; 8,8%
+        </AutresContraintes>
         <Comment>None</Comment>
     </OAR>
 
     <OAR>
-      <Name>Lips</Name>
+        <Name>Lips</Name>
         <Lateralized>0</Lateralized>
         <Naming>Lips=lèvres/Naming</Naming>
-        <RisqueComplications></RisqueComplications>
-        <ContraintesPlanification></ContraintesPlanification>
-        <AutresContraintes></AutresContraintes>
+        <Cranial>Hard palate &lt;i&gt;(lateral)&lt;/i&gt;, anterior nasal spine &lt;i&gt;(at the midline)&lt;/i&gt;</Cranial>
+        <Caudal>Lower edge teeth sockets, cranial edge mandibular body</Caudal>
+        <Medial>Na</Medial>
+        <Lateral>Depressor anguli oris m., buccinator m., levator anguli oris m./risorius m.
+            Buccinator
+        </Lateral>
+        <Anterior>Outer surface of the skin</Anterior>
+        <Posterior>Mandibular body,teeth, tongue, air &lt;i&gt;(if present)&lt;/i&gt;</Posterior>
+        <RisqueComplications>NA</RisqueComplications>
+        <ContraintesPlanification>NA</ContraintesPlanification>
+        <AutresContraintes>NA</AutresContraintes>
         <Comment>None</Comment>
     </OAR>
 
     <OAR>
-      <Name>Buccal Mucosa</Name>
+        <Name>Buccal Mucosa</Name>
         <Lateralized>0</Lateralized>
         <Naming>Buccal Mucosa=muqueuse jugale</Naming>
-        <RisqueComplications></RisqueComplications>
-        <ContraintesPlanification></ContraintesPlanification>
-        <AutresContraintes></AutresContraintes>
-        <Comment>None</Comment>
+        <Cranial>Bottom ofmaxillary sinus</Cranial>
+        <Caudal>Upper edge teeth sockets</Caudal>
+        <Medial>Outer surface of the mandible and maxilla, oral cavity/base of tongue/soft pallate
+        </Medial>
+        <Lateral>Buccal fat</Lateral>
+        <Anterior>Lips, teeth</Anterior>
+        <Posterior>Med. pterygoid m.</Posterior>
+        <RisqueComplications>NA</RisqueComplications>
+        <ContraintesPlanification>NA</ContraintesPlanification>
+        <AutresContraintes>NA</AutresContraintes>
+        <Comment>&lt;a "https://www.ncbi.nlm.nih.gov/pubmed/19853316"&gt;Van de Water, &lt;i&gt;Radiother. Oncol.&lt;/i&gt;, 2009&lt;/a&gt;</Comment>
+        <Comment>&lt;a href="https://www.ncbi.nlm.nih.gov/pubmed/19853316"&gt;Van de Water, &lt;i&gt;Radiother. Oncol.&lt;/i&gt;, 2009&lt;/a&gt;</Comment>
     </OAR>
 
     <OAR>
-      <Name>Supra GLottic Larynx</Name>
+        <Name>Supra Glottic Larynx</Name>
         <Lateralized>0</Lateralized>
         <Naming>Supra GLottic Larynx = Larynx supra-glottique</Naming>
+        <Cranial>Tip of epiglottis</Cranial>
+        <Caudal>Cranial edge of arytenoid cartilages</Caudal>
+        <Medial>Pharyngeal lumen (lumen excluded)</Medial>
+        <Lateral>Thyroid cartilage</Lateral>
+        <Anterior>Hyoid bone, pre-epiglottic space, thyroid cartilage</Anterior>
+        <Posterior>Inferior PCM, pharyngeal lumen</Posterior>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
         <AutresContraintes></AutresContraintes>
-        <Comment>None</Comment>
+        <Comment>Christianen et al. [</Comment>
     </OAR>
 
     <OAR>
-      <Name>Larynx </Name>
-        <Lateralized>1</Lateralized>
-        <Naming>Larynx= Larynx </Naming>
-        <RisqueComplications>Risque de dysfonction vocale pour des doses supérieures à 60-65Gy 
-Risque d’oedème laryngé pour des doses supérieures à 45Gy
-</RisqueComplications>
+        <Name>Glotticlarynx</Name>
+        <Lateralized>0</Lateralized>
+        <Naming>Larynx= Larynx</Naming>
+        <Cranial>Cranial edge of arytenoid cartilages</Cranial>
+        <Caudal>Caudal edge of ant. part of thyroid cartilage</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>Cricoid, anterior border arytenoids</Posterior>
+        <RisqueComplications>Risque de dysfonction vocale pour des doses supérieures à 60-65Gy&lt;br&gt;
+            Risque d'oedème laryngé pour des doses supérieures à 45Gy
+        </RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
-        <AutresContraintes>Dmax &lt; 63-66Gy
-Dmoyenne &lt; 43,5Gy
-V50 Gy &lt; 27%
-</AutresContraintes>
-        <Comment>None</Comment>
+        <AutresContraintes>Dmax &lt; 63-66Gy&lt;br&gt;
+            Dmoyenne &lt; 43,5Gy&lt;br&gt;
+            V50 Gy &lt; 27%
+        </AutresContraintes>
+        <Comment>Includes thevocal cords and paraglottic fat.</Comment>
     </OAR>
 
     <OAR>
-      <Name>Thyroid</Name>
+        <Name>Thyroid</Name>
         <Lateralized>0</Lateralized>
         <Naming>Thyroid=Thyroïde</Naming>
-        <RisqueComplications></RisqueComplications>
-        <ContraintesPlanification></ContraintesPlanification>
+        <Cranial>NA</Cranial>
+        <Caudal>NA</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
+        <RisqueComplications>NA</RisqueComplications>
+        <ContraintesPlanification>NA</ContraintesPlanification>
         <AutresContraintes>Dmoyenne &lt; 30Gy
-V50 Gy &lt; 30%
-</AutresContraintes>
-        <Comment>None</Comment>
+            V50 Gy &lt; 30%
+        </AutresContraintes>
+        <Comment>The thyroid gland has two connected lobes and is located below the thyroid
+            cartilage. It has considerable contrast compared to its surrounding tissues.
+        </Comment>
     </OAR>
 
     <OAR>
-      <Name>Spinal Cord</Name>
+        <Name>Spinal Cord</Name>
         <Lateralized>0</Lateralized>
         <Naming>Spinal Cord = Moelle épinière</Naming>
-        <RisqueComplications>Risque de myélite radique Dmax = 50-50,4Gy
-Si association avec la chimiothérapie Dmax = 40-45Gy
-</RisqueComplications>
-        <ContraintesPlanification>Dmax &lt; 50 Gy
-Si association chimioradiothérapie Dmax &lt; 45 Gy </ContraintesPlanification>
-        <AutresContraintes></AutresContraintes>
-        <Comment>None</Comment>
+        <Cranial>Tip of the dens of C2</Cranial>
+        <Caudal>Upper edge of T3.</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
+        <RisqueComplications>&lt;b&gt;;Risque de myélite radique :&lt;/b&gt;&lt;br&gt;
+            Dmax = 50-50,4Gy&lt;/i&gt;
+            &lt;b&gt;Si association avec la chimiothérapie :&lt;/b&gt;&lt;br&gt;
+            Dmax = 40-45Gy
+        </RisqueComplications>
+        <ContraintesPlanification>Dmax &lt; 50 Gy&lt;br&gt;
+            Si association chimioradiothérapie Dmax &lt; 45 Gy
+        </ContraintesPlanification>
+        <AutresContraintes>NA</AutresContraintes>
+        <Comment>The spinal cord is delineated as the true spinal cord, not the spinal canal. Extend
+            by at least 5 cm caudal to the PTV.
+        </Comment>
     </OAR>
 
     <OAR>
-      <Name>Brachial Plexus</Name>
+        <Name>Brachial Plexus</Name>
         <Lateralized>1</Lateralized>
         <Naming>Brachial Plexus = Plexus Brachial</Naming>
-        <RisqueComplications></RisqueComplications>
-        <ContraintesPlanification></ContraintesPlanification>
+        <Cranial>Cranial border of C5, vertebral body</Cranial>
+        <Caudal>Cranial border of T3, vertebral body</Caudal>
+        <Medial>Inter vertebral foramen &lt;i&gt;(bony vertebral body)&lt;/i&gt;, lat. border of 1st rib</Medial>
+        <Lateral>&lt;i&gt;Lat. border of:&lt;/i&gt; ant. and middle scalene m., pectoralis major, teres major</Lateral>
+        <Anterior>&lt;i&gt;Post. border of:&lt;/i&gt; anterior scalene m.,subclavian artery, axillary vein</Anterior>
+        <Posterior>&lt;i&gt;Ant. border of&lt;/i&gt;middle scalene m., seratus anterior m., subscapularis m.
+        </Posterior>
+        <RisqueComplications>NA</RisqueComplications>
+        <ContraintesPlanification>NA</ContraintesPlanification>
         <AutresContraintes>Dmax inf 60-66Gy</AutresContraintes>
-        <Comment>None</Comment>
+        <Comment>If the brachial plexus is wrapped around the vascular bundle on the most inferior
+            slices, the vascular structure is included in the contour
+        </Comment>
     </OAR>
 
 </OARs>

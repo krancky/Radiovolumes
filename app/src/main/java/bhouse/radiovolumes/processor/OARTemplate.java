@@ -11,6 +11,68 @@ import java.io.Serializable;
 public class OARTemplate implements Serializable{
 
     String location,leftContent, rightContent, otherConstraints, side; String constraints; String complications; String lateralized; String comment;
+    String cranial; String caudal; String anterior; String posterior; String lateral ; String medial;
+
+    public void setOtherConstraints(String otherConstraints) {
+        this.otherConstraints = otherConstraints;
+    }
+
+    public String getSide() {
+        return side;
+    }
+
+    public void setSide(String side) {
+        this.side = side;
+    }
+
+    public String getCranial() {
+        return cranial;
+    }
+
+    public void setCranial(String cranial) {
+        this.cranial = cranial;
+    }
+
+    public String getCaudal() {
+        return caudal;
+    }
+
+    public void setCaudal(String caudal) {
+        this.caudal = caudal;
+    }
+
+    public String getAnterior() {
+        return anterior;
+    }
+
+    public void setAnterior(String anterior) {
+        this.anterior = anterior;
+    }
+
+    public String getPosterior() {
+        return posterior;
+    }
+
+    public void setPosterior(String posterior) {
+        this.posterior = posterior;
+    }
+
+    public String getLateral() {
+        return lateral;
+    }
+
+    public void setLateral(String lateral) {
+        this.lateral = lateral;
+    }
+
+    public String getMedial() {
+        return medial;
+    }
+
+    public void setMedial(String medial) {
+        this.medial = medial;
+    }
+
     int color;
 
     public int getColor() {

@@ -12,6 +12,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.text.method.ScrollingMovementMethod;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -21,6 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Scroller;
 import android.widget.TextView;
@@ -113,9 +115,13 @@ public class OARDialog extends DialogFragment {
         tvMedialL = (TextView) v.findViewById(R.id.tvMedialL) ;
         tvLateralL = (TextView) v.findViewById(R.id.tvLateralL) ;
         tvComment = (TextView) v.findViewById(R.id.tvComment) ;
+        tvComment.setMovementMethod(LinkMovementMethod.getInstance());
+        tvComment.setFocusable(true);
         tvRisk = (TextView) v.findViewById(R.id.tvRisk) ;
         tvConstraints = (TextView) v.findViewById(R.id.tvConstraints) ;
         tvOtherConstraints = (TextView) v.findViewById(R.id.tvOtherConstraints) ;
+
+
 
         chooseDisplay();
 
@@ -167,7 +173,7 @@ public class OARDialog extends DialogFragment {
     }
     public void chooseDisplay(){
         this.title = this.slice.getFilename();
-        //Map<String,String> colors = ModifierHashOperator.getHashMapResource(getContext(), R.xml.sub_areas_colors);
+        Map<String,String> colors = ModifierHashOperator.getHashMapResource(getContext(), R.xml.sub_areas_colors);
         for (OARTemplate oarTemplate: this.oLimits){
             //if (this.title.toLowerCase().replaceAll("\\s+", "").replaceAll("_", "").contains(entry.getKey().toLowerCase().replaceAll("\\s+", "").replaceAll("_", ""))){
             if (this.title.toLowerCase().replaceAll("\\s+", "").replaceAll("_", "").contains(oarTemplate.getLocation())){
@@ -176,18 +182,19 @@ public class OARDialog extends DialogFragment {
                 //int truc = context.getResources().getIdentifier(value.replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
                 String locationLocale = getActivity().getString(getActivity().getResources().getIdentifier(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", getActivity().getPackageName()));
                 tvName.setText(locationLocale);
-                //tvCranialL.setText(entry.getValue().get(2));
-                //tvCaudalL.setText(entry.getValue().get(3));
-                //tvAnteriorL.setText(entry.getValue().get(4));
-                //tvPosteriorL.setText(entry.getValue().get(5));
-                //tvMedialL.setText(entry.getValue().get(6));
-                //tvLateralL.setText(entry.getValue().get(7));
-                tvComment.setText(oarTemplate.getComment());
+                tvCranialL.setText(Html.fromHtml(oarTemplate.getCranial()));
+                tvCaudalL.setText(Html.fromHtml(oarTemplate.getCaudal()));
+                tvAnteriorL.setText(Html.fromHtml(oarTemplate.getAnterior()));
+                tvPosteriorL.setText(Html.fromHtml(oarTemplate.getPosterior()));
+                tvMedialL.setText(Html.fromHtml(oarTemplate.getMedial()));
+                tvLateralL.setText(Html.fromHtml(oarTemplate.getLateral()));
+                tvComment.setText(Html.fromHtml(oarTemplate.getComment()));
+
                 tvRisk.setText(Html.fromHtml(oarTemplate.getComplications()));
-                tvConstraints.setText(oarTemplate.getConstraints());
-                tvOtherConstraints.setText(oarTemplate.getOtherConstraints());
+                tvConstraints.setText(Html.fromHtml(oarTemplate.getConstraints()));
+                tvOtherConstraints.setText(Html.fromHtml(oarTemplate.getOtherConstraints()));
                 try {
-                    //tvName.setTextColor(Color.parseColor(colors.get(entry.getKey())));
+                    tvName.setTextColor(Color.parseColor(colors.get(oarTemplate.getLocation())));
                 }
                 catch (Error e){
                     Log.i("No color", "no color");

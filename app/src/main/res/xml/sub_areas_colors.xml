@@ -55,4 +55,34 @@
     <entry key="viii">#FF7A00</entry>
     <entry key="ix">#FFF500</entry>
     <entry key="x">#00FFE0</entry>
+
+
+    <entry key="anteriorsegment">#1400FF</entry>
+    <entry key="arytenoid">#FF007A</entry>
+    <entry key="brachialplexus">#FF007A</entry>
+    <entry key="brain">#00E0FF</entry>
+    <entry key="brainstem">#FFB800</entry>
+    <entry key="buccalmucosa">#FFB800</entry>
+    <entry key="carotid">#FFB800</entry>
+    <entry key="cervicalesophagus">#8FFF00</entry>
+    <entry key="chiasm">#FF00F5</entry>
+    <entry key="cochlea">#8FFF00</entry>
+    <entry key="cricopharyngealinlet">#8FFF00</entry>
+    <entry key="extendedoralcavity">#CC00FF</entry>
+    <entry key="glotticlarynx">#CC00FF</entry>
+    <entry key="lacrimalgland">#8FFF00</entry>
+    <entry key="lips">#FF007A</entry>
+    <entry key="mandible">#CC00FF</entry>
+    <entry key="opticnerve">#14FF00</entry>
+    <entry key="pharyngealconstrictormuscles">#8FFF00</entry>
+    <entry key="pituitarygland">#8FFF00</entry>
+    <entry key="parotid">#FFF500</entry>
+    <entry key="posteriorsegment">#0066FF</entry>
+    <entry key="spinalcord">#00FFA3</entry>
+    <entry key="submandibulargland">#00FFA3</entry>
+    <entry key="supraglotticlarynx">#14FF00</entry>
+    <entry key="thyroid">#5200FF</entry>
+
+
+
 </map>
