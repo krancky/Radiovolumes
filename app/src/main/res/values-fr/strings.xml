@@ -14,8 +14,8 @@
 
 
     <string name="ctv56n">CTV56N_short</string>
-    <string name="left">"Gauche :  "</string>
-    <string name="right">"Droite :     "</string>
+    <string name="left">"Gauche :"</string>
+    <string name="right">"Droite :"</string>
     <string name="invaded">Envahi</string>
     <string name="toIrradiate">A IRRADIER</string>
     <string name="newCase">Nouveau Cas</string>
@@ -152,6 +152,7 @@
     <string name="thyroid">Thyroïde</string>
     <string name="spinalcord">Moëlle</string>
     <string name="brachialplexus">Plexus Brachial</string>
+    <string name="arytenoid">Arytenoide</string>
 
 
 </resources>

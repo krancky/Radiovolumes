@@ -1,39 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OARs>
-    <OAR>
-        <Name>Brain</Name>
-        <Lateralized>0</Lateralized>
-        <Naming>Brain=Cerveau</Naming>
-        <Cranial>NA</Cranial>
-        <Caudal>NA</Caudal>
-        <Medial>NA</Medial>
-        <Lateral>NA</Lateral>
-        <Anterior>NA</Anterior>
-        <Posterior>NA</Posterior>
-        <RisqueComplications>&lt;b&gt;Risque de complications à 5 ans de 5 % :&lt;/b&gt;&lt;br&gt;
-            V60 Gy = 33%
-        </RisqueComplications>
-        <ContraintesPlanification>V60 Gy &lt; 33%</ContraintesPlanification>
-        <AutresContraintes>D33 % &lt; 72Gy</AutresContraintes>
-        <Comment>The delineation of the brain includes brain vessels, and excludes the brainstem.
-        </Comment>
-    </OAR>
-
-    <OAR>
-        <Name>BrainStem</Name>
-        <Lateralized>0</Lateralized>
-        <Naming>BrainStem=Tronc Cérébral</Naming>
-        <Cranial>Bottom of lateral ventricles</Cranial>
-        <Caudal>Tip of the dens of C2</Caudal>
-        <Medial>NA</Medial>
-        <Lateral>NA</Lateral>
-        <Anterior>NA</Anterior>
-        <Posterior>NA</Posterior>
-        <RisqueComplications>NA</RisqueComplications>
-        <ContraintesPlanification>Dmax &lt; 54Gy</ContraintesPlanification>
-        <AutresContraintes>Dmax = 64Gy &lt;i&gt;(surface)&lt;/i&gt;</AutresContraintes>
-        <Comment>MRI is recommended for delineation of the brainstem.</Comment>
-    </OAR>
 
     <OAR>
         <Name>anteriorsegment</Name>
@@ -89,6 +55,43 @@
             including the vitreous humor, retina, and choroid. The optic nerve is excluded.
         </Comment>
     </OAR>
+
+    <OAR>
+        <Name>Brain</Name>
+        <Lateralized>0</Lateralized>
+        <Naming>Brain=Cerveau</Naming>
+        <Cranial>NA</Cranial>
+        <Caudal>NA</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
+        <RisqueComplications>&lt;b&gt;Risque de complications à 5 ans de 5 % :&lt;/b&gt;&lt;br&gt;
+            V60 Gy = 33%
+        </RisqueComplications>
+        <ContraintesPlanification>V60 Gy &lt; 33%</ContraintesPlanification>
+        <AutresContraintes>D33 % &lt; 72Gy</AutresContraintes>
+        <Comment>The delineation of the brain includes brain vessels, and excludes the brainstem.
+        </Comment>
+    </OAR>
+
+    <OAR>
+        <Name>BrainStem</Name>
+        <Lateralized>0</Lateralized>
+        <Naming>BrainStem=Tronc Cérébral</Naming>
+        <Cranial>Bottom of lateral ventricles</Cranial>
+        <Caudal>Tip of the dens of C2</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
+        <RisqueComplications>NA</RisqueComplications>
+        <ContraintesPlanification>Dmax &lt; 54Gy</ContraintesPlanification>
+        <AutresContraintes>Dmax = 64Gy &lt;i&gt;(surface)&lt;/i&gt;</AutresContraintes>
+        <Comment>MRI is recommended for delineation of the brainstem.</Comment>
+    </OAR>
+
+
 
     <OAR>
         <Name>Lacrimal gland</Name>
@@ -445,6 +448,24 @@
         </AutresContraintes>
         <Comment>The thyroid gland has two connected lobes and is located below the thyroid
             cartilage. It has considerable contrast compared to its surrounding tissues.
+        </Comment>
+    </OAR>
+
+    <OAR>
+        <Name>Arytenoid</Name>
+        <Lateralized>1</Lateralized>
+        <Naming>Arytenoid=Arytenoide</Naming>
+        <Cranial>NA</Cranial>
+        <Caudal>NA</Caudal>
+        <Medial>NA</Medial>
+        <Lateral>NA</Lateral>
+        <Anterior>NA</Anterior>
+        <Posterior>NA</Posterior>
+        <RisqueComplications>NA</RisqueComplications>
+        <ContraintesPlanification>NA</ContraintesPlanification>
+        <AutresContraintes>NA
+        </AutresContraintes>
+        <Comment>NA
         </Comment>
     </OAR>
 
