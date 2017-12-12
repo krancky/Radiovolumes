@@ -207,7 +207,8 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
         }
 
 
-
+        //convertView.setScrollBarFadeDuration(1000000000);
+        //convertView.setScrollbarFadingEnabled(false);
         return convertView;
     }
 

@@ -9,6 +9,8 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -82,11 +84,6 @@ public class AreaDialog extends DialogFragment {
         // set "origin" to top left corner, so to speak
         window.setGravity(Gravity.BOTTOM|Gravity.LEFT);
 
-        // after that, setting values for x and y works "naturally"
-        WindowManager.LayoutParams params = window.getAttributes();
-        params.x = 50;
-        params.y = 50;
-        window.setAttributes(params);
 
 
         this.activity = (ScannerViewActivity_simple) getActivity();
@@ -103,6 +100,8 @@ public class AreaDialog extends DialogFragment {
         tvMedialL = (TextView) v.findViewById(R.id.tvMedialL) ;
         tvLateralL = (TextView) v.findViewById(R.id.tvLateralL) ;
         tvComment = (TextView) v.findViewById(R.id.tvComment) ;
+        tvComment.setMovementMethod(LinkMovementMethod.getInstance());
+        tvComment.setFocusable(true);
 
 
 
@@ -139,6 +138,16 @@ public class AreaDialog extends DialogFragment {
             throw new ClassCastException(activity.toString() + " must implement OnCompleteListener");
         }
     }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        int width = ViewGroup.LayoutParams.MATCH_PARENT;
+        int height = ViewGroup.LayoutParams.MATCH_PARENT;
+        getDialog().getWindow().setLayout(width, 500);
+    }
+
     public void chooseDisplay(){
         this.title = this.slice.getLocation();
         Map<String,String> colors = ModifierHashOperator.getHashMapResource(getContext(), R.xml.sub_areas_colors);
@@ -156,7 +165,7 @@ public class AreaDialog extends DialogFragment {
                 tvPosteriorL.setText(entry.getValue().get(5));
                 tvMedialL.setText(entry.getValue().get(6));
                 tvLateralL.setText(entry.getValue().get(7));
-                tvComment.setText(entry.getValue().get(8));
+                tvComment.setText(Html.fromHtml(entry.getValue().get(8)));
                 try {
                     tvName.setTextColor(Color.parseColor(colors.get(entry.getKey().toLowerCase())));
                 }

@@ -88,8 +88,6 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int pos, long id) {
                 // TODO Auto-generated method stub
-
-                Log.i("long clicked", "pos: " + pos);
                 Toast.makeText(getApplicationContext(), "Long click position" + pos, Toast.LENGTH_SHORT).show();
                 FragmentManager fm = getFragmentManager();
                 MyDialogFragment dialogFragment = MyDialogFragment.newInstance("Displayed Locations");

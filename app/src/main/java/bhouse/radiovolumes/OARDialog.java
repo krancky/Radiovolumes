@@ -93,11 +93,6 @@ public class OARDialog extends DialogFragment {
         // set "origin" to top left corner, so to speak
         window.setGravity(Gravity.BOTTOM|Gravity.LEFT);
 
-        // after that, setting values for x and y works "naturally"
-        //WindowManager.LayoutParams params = window.getAttributes();
-        //params.x = 50;
-        //params.y = 50;
-        //window.setAttributes(params);
 
 
         this.activity = (ScannerOARViewActivity_simple) getActivity();
@@ -136,14 +131,6 @@ public class OARDialog extends DialogFragment {
     @Override
     public void onResume() {
         super.onResume();
-        //int width = getResources().getDimensionPixelSize(R.dimen.popup_width);
-        //int height = getResources().getDimensionPixelSize(R.dimen.popup_height);
-        DisplayMetrics displayMetrics = getActivity().getResources().getDisplayMetrics();
-        float dpHeight = displayMetrics.heightPixels / displayMetrics.density;
-        float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
-        Configuration configuration = getActivity().getResources().getConfiguration();
-        int screenWidthDp = configuration.screenWidthDp; //The current width of the available screen space, in dp units, corresponding to screen width resource qualifier.
-        int smallestScreenWidthDp = configuration.smallestScreenWidthDp;
         int width = ViewGroup.LayoutParams.MATCH_PARENT;
         int height = ViewGroup.LayoutParams.MATCH_PARENT;
         getDialog().getWindow().setLayout(width, 500);

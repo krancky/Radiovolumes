@@ -446,166 +446,176 @@
     <Organ>
         <Name>IA</Name>
         <Area>Aire Ganglionnaire</Area>
-        <CranialL>The cranial limit of the tonsil is...</CranialL>
-        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-        <MedialL>The medial limit of the tonsil is</MedialL>
-        <LateralL>The lateral limit of the tonsil is...</LateralL>
-        <Comment>A witty comment</Comment>
+        <CranialL>Mylo-hyoid m.</CranialL>
+        <CaudalL>Platysma m. (caudal edge of the anterior belly of digastric mm)</CaudalL>
+        <AnteriorL>Symphysis menti</AnteriorL>
+        <PosteriorL>Body of hyoid bone/mylo-hyoid m.</PosteriorL>
+        <MedialL>NA</MedialL>
+        <LateralL>Medial edge of ant. belly of digastric </LateralL>
+        <Comment>submental group</Comment>
     </Organ>
     <Organ>
         <Name>IB</Name>
         <Area>Aire Ganglionnaire</Area>
-        <CranialL>The cranial limit of the tonsil is...</CranialL>
-        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-        <MedialL>The medial limit of the tonsil is</MedialL>
-        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <CranialL>Cranial edge of submandibular gland; anteriorly, mylo-hyoid m.</CranialL>
+        <CaudalL>Plane through caudal edge of hyoid bone and caudal edge of mandible; alternatively caudal edge of submandibular gland (whichever is more caudal)/platysma m.</CaudalL>
+        <AnteriorL>Symphysis menti</AnteriorL>
+        <PosteriorL>Posterior edge of submandibular gland (caudally)/posterior belly of digastric m. (cranially)</PosteriorL>
+        <MedialL>Lateral edge of ant. belly of digastric m. (caudally)/posterior belly of digastric m. (cranially)</MedialL>
+        <LateralL>Medial aspect (innerside) of mandible down to caudal edge/platysma m. (caudal)/medial pterygoid m.(posteriorly)</LateralL>
         <Comment>A witty comment</Comment>
     </Organ>
     <Organ>
         <Name>II</Name>
         <Area>Aire Ganglionnaire</Area>
-        <CranialL>The cranial limit of the tonsil is...</CranialL>
-        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-        <MedialL>The medial limit of the tonsil is</MedialL>
-        <LateralL>The lateral limit of the tonsil is...</LateralL>
-        <Comment>A witty comment</Comment>
+        <CranialL>Caudal edge of the lateral process of C1.</CranialL>
+        <CaudalL>Caudal edge of the body of the hyoid bone</CaudalL>
+        <AnteriorL>Posterior edge of the submandibular gland/posterior edge of posterior belly of digastric m.</AnteriorL>
+        <PosteriorL>Posterior edge of sternocleidomastoid m</PosteriorL>
+        <MedialL>Medial edge of internal carotid artery/scalenius m.</MedialL>
+        <LateralL>Deep (medial) surface of sternocleidomastoid m./platysma m./ parotid gland/ posterior belly of digastric m</LateralL>
+        <Comment></Comment>
     </Organ>
     <Organ>
         <Name>III</Name>
         <Area>Aire Ganglionnaire</Area>
-        <CranialL>The cranial limit of the tonsil is...</CranialL>
-        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-        <MedialL>The medial limit of the tonsil is</MedialL>
-        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <CranialL>Caudal edge of the body of the hyoid bone</CranialL>
+        <CaudalL>Caudal edge of cricoid cartilage.</CaudalL>
+        <AnteriorL>Anterior edge of sternocleidomastoid m./posterior third of thyro-hyoid m.</AnteriorL>
+        <PosteriorL>Posterior edge of sternocleidomastoid m.</PosteriorL>
+        <MedialL>Medial edge of common carotid artery/scalenius mm.</MedialL>
+        <LateralL>TDeep (medial) surface of sternocleidomastoid m</LateralL>
         <Comment>A witty comment</Comment>
     </Organ>
     <Organ>
         <Name>IVa</Name>
         <Area>Aire Ganglionnaire</Area>
-        <CranialL>The cranial limit of the tonsil is...</CranialL>
-        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-        <MedialL>The medial limit of the tonsil is</MedialL>
-        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <CranialL>Caudal edge of cricoid cartilage</CranialL>
+        <CaudalL>2 cm cranial to sternal manubrium</CaudalL>
+        <AnteriorL>Anterior edge of sternocleidomastoid m. (cranially)/body of sternocleidomastoid m. (caudally)</AnteriorL>
+        <PosteriorL>Posterior edge of sternocleidomastoid m. (cranially)/scalenius mm. (caudally)</PosteriorL>
+        <MedialL>Medial edge of common carotid artery/lateral edge of thyroid gland/ scalenius mm. (cranially)/medial edge of sternocleidomastoid m. (caudally)</MedialL>
+        <LateralL>Deep (medial) surface of sternocleidomastoid m. (cranially)/lateral edge of sternocleidomastoid m. (caudally)</LateralL>
         <Comment>A witty comment</Comment>
     </Organ>
+
     <Organ>
         <Name>IVb</Name>
         <Area>Aire Ganglionnaire</Area>
-        <CranialL>The cranial limit of the tonsil is...</CranialL>
-        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-        <MedialL>The medial limit of the tonsil is</MedialL>
-        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <CranialL>Caudal border of
+            level IVa (2 cm
+            cranial to sternal
+            manubrium)</CranialL>
+        <CaudalL>Cranial edge of sternal
+            manubrium</CaudalL>
+        <AnteriorL>Deep surface of
+            sternocleidomastoid
+            m./deep aspect of
+            clavicle</AnteriorL>
+        <PosteriorL>Anterior edge of scalenius mm. (cranially)/apex of lung, the brachiocephalic vein, the brachiocephalic trunc (right side) and the common carotid artery and subclavian artery on the left side (caudally)</PosteriorL>
+        <MedialL>Lateral border of level VI (pre-tracheal component)/medial edge of common carotid artery</MedialL>
+        <LateralL>Lateral edge of scalenius m.</LateralL>
         <Comment>A witty comment</Comment>
     </Organ>
     <Organ>
         <Name>Vab</Name>
         <Area>Aire Ganglionnaire</Area>
-        <CranialL>The cranial limit of the tonsil is...</CranialL>
-        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-        <MedialL>The medial limit of the tonsil is</MedialL>
-        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <CranialL>Cranial edge of the body of hyoid bone</CranialL>
+        <CaudalL>Plane just below transverse cervical vessels</CaudalL>
+        <AnteriorL>Posterior edge of sternocleidomastoid m.</AnteriorL>
+        <PosteriorL>Anterior border of trapezius m</PosteriorL>
+        <MedialL>Levator scapulae m./scalenius m. (caudally)</MedialL>
+        <LateralL>Platysma m./skin.</LateralL>
         <Comment>A witty comment</Comment>
     </Organ>
     <Organ>
     <Name>Vc</Name>
     <Area>Aire Ganglionnaire</Area>
-    <CranialL>The cranial limit of the tonsil is...</CranialL>
-    <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-    <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-    <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-    <MedialL>The medial limit of the tonsil is</MedialL>
-    <LateralL>The lateral limit of the tonsil is...</LateralL>
+    <CranialL>Plane just below transverse cervical vessels (caudal border of level V).</CranialL>
+    <CaudalL>2 cm cranial to sternal manubrium, i.e. caudal border of level IVa</CaudalL>
+    <AnteriorL>Skin</AnteriorL>
+    <PosteriorL>Anterior border of trapezius m. (cranially)/±1 cm anterior to serratus anterior m. (caudally)</PosteriorL>
+    <MedialL>Scalenius m./lateral edge of sternocleidomastoid m, lateral edge of level IVa</MedialL>
+    <LateralL>Trapezius m (cranially)/clavicle (caudally)</LateralL>
     <Comment>A witty comment</Comment>
 </Organ>
     <Organ>
         <Name>VIa</Name>
         <Area>Aire Ganglionnaire</Area>
-        <CranialL>The cranial limit of the tonsil is...</CranialL>
-        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-        <MedialL>The medial limit of the tonsil is</MedialL>
-        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <CranialL>Caudal edge of the hyoid bone or caudal edge of the sub-
+            mandibular gland, whichever is more caudal</CranialL>
+        <CaudalL>Cranial edge of the sternal manubrium.</CaudalL>
+        <AnteriorL>Skin/platysma m.</AnteriorL>
+        <PosteriorL>nterior aspect of the infrahyoid (strap) mm.</PosteriorL>
+        <MedialL>NA</MedialL>
+        <LateralL>Anterior edges of both sternocleidomastoid mm.</LateralL>
         <Comment>A witty comment</Comment>
     </Organ>
     <Organ>
         <Name>VIb</Name>
         <Area>Aire Ganglionnaire</Area>
-        <CranialL>The cranial limit of the tonsil is...</CranialL>
-        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-        <MedialL>The medial limit of the tonsil is</MedialL>
-        <LateralL>The lateral limit of the tonsil is...</LateralL>
-        <Comment>A witty comment</Comment>
+        <CranialL>Caudal edge of the thyroid cartilage (a)</CranialL>
+        <CaudalL>Cranial edge of the sternal manubrium</CaudalL>
+        <AnteriorL>TPosterior aspect of infrahyoid (strap) mm.</AnteriorL>
+        <PosteriorL>Anterior aspect of larynx, thyroid gland and trachea (pre-laryngeal and pre-tracheal nodes)/pre-vertebral m. (right side)/esophagus (left side)</PosteriorL>
+        <MedialL>Lateral aspect of trachea and esophagus (caudally)</MedialL>
+        <LateralL>Common carotid artery on both sides</LateralL>
+        <Comment>(a) For tumors located on the anterior floor of month, tip of the tongue and lower lip, caudal edge of the body of the hyoid bone.</Comment>
     </Organ>
     <Organ>
         <Name>VIIa</Name>
         <Area>Aire Ganglionnaire</Area>
-        <CranialL>The cranial limit of the tonsil is...</CranialL>
-        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-        <MedialL>The medial limit of the tonsil is</MedialL>
-        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <CranialL>Upper edge of body of c1/hard palate</CranialL>
+        <CaudalL>Cranial edge of the body of the hyoid bone.</CaudalL>
+        <AnteriorL>Posterior edge of the superior or middle pharyngeal constrictor m.</AnteriorL>
+        <PosteriorL>Longus capitis m. and longus colli m.</PosteriorL>
+        <MedialL>A line parallel to the lateral edge of the longus capiti muscle</MedialL>
+        <LateralL>Medial edge of the internal carotid artery</LateralL>
         <Comment>A witty comment</Comment>
     </Organ>
     <Organ>
         <Name>VIIb</Name>
         <Area>Aire Ganglionnaire</Area>
-        <CranialL>The cranial limit of the tonsil is...</CranialL>
-        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-        <MedialL>The medial limit of the tonsil is</MedialL>
-        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <CranialL>Base of skull (jugular foramen)</CranialL>
+        <CaudalL>Caudal edge of the lateral process of C1 (upper limit of level II)</CaudalL>
+        <AnteriorL>Posterior edge of prestyloid para-pharyngeal space</AnteriorL>
+        <PosteriorL>Vertebral body of C1, base of skull</PosteriorL>
+        <MedialL>Medial edge of the internal carotid artery</MedialL>
+        <LateralL>Styloid process/deep parotid lobe</LateralL>
         <Comment>A witty comment</Comment>
     </Organ>
     <Organ>
         <Name>VIII</Name>
         <Area>Aire Ganglionnaire</Area>
-        <CranialL>The cranial limit of the tonsil is...</CranialL>
-        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-        <MedialL>The medial limit of the tonsil is</MedialL>
-        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <CranialL>Zygomatic arch, external auditory canal</CranialL>
+        <CaudalL>Angle of the mandible</CaudalL>
+        <AnteriorL>Posterior edge of mandidular ramus and posterior edge of masseter m. (laterally) medial pterygoid muscle (medially)</AnteriorL>
+        <PosteriorL>Anterior edge of sternocleidomastoid m. (laterally), posterior
+            belly of digastric m. (medially)</PosteriorL>
+        <MedialL>Styloid process and styloid m</MedialL>
+        <LateralL>SMAS layer in sub-cutaneous tissue</LateralL>
         <Comment>A witty comment</Comment>
     </Organ>
     <Organ>
         <Name>IX</Name>
         <Area>Aire Ganglionnaire</Area>
-        <CranialL>The cranial limit of the tonsil is...</CranialL>
-        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-        <MedialL>The medial limit of the tonsil is</MedialL>
-        <LateralL>The lateral limit of the tonsil is...</LateralL>
-        <Comment>A witty comment</Comment>
+        <CranialL>Caudal edge of the orbit</CranialL>
+        <CaudalL>Caudal edge of the mandible</CaudalL>
+        <AnteriorL>SMAS layer in sub-cutaneous tissue</AnteriorL>
+        <PosteriorL>nterior edge of masseter m. and corpus adiposum buccae (bichat’s fat pad)</PosteriorL>
+        <MedialL>Buccinator m.</MedialL>
+        <LateralL>SMAS layer in sub-cutaneous tissue</LateralL>
+        <Comment>&lt;a href="https://www.ncbi.nlm.nih.gov/pubmed/24183870"&gt;Grégoire, &lt;i&gt;Radiother. Oncol.&lt;/i&gt;, 2017&lt;/a&gt;</Comment>
     </Organ>
     <Organ>
         <Name>X</Name>
         <Area>Aire Ganglionnaire</Area>
-        <CranialL>The cranial limit of the tonsil is...</CranialL>
-        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
-        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
-        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
-        <MedialL>The medial limit of the tonsil is</MedialL>
-        <LateralL>The lateral limit of the tonsil is...</LateralL>
-        <Comment>A witty comment</Comment>
+        <CranialL>NA</CranialL>
+        <CaudalL>NA</CaudalL>
+        <AnteriorL>NA</AnteriorL>
+        <PosteriorL>NA</PosteriorL>
+        <MedialL>NA</MedialL>
+        <LateralL>NA</LateralL>
+        <Comment>NA</Comment>
     </Organ>
 </Organs>

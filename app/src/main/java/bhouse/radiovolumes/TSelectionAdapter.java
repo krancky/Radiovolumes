@@ -161,7 +161,6 @@ public class TSelectionAdapter extends BaseAdapter {
             int position = (Integer) checkBoxView.getTag();
             checkboxStatus_left.set(position, isChecked);
             TumorAreaTemplate h = (TumorAreaTemplate) tList.get(position);
-            Toast.makeText(context,"Click on item position " + position, Toast.LENGTH_SHORT).show();
             if(checkBoxView.isChecked()){
                 h.setLeftContent("1");
             }
