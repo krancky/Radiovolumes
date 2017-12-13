@@ -175,6 +175,16 @@ public class NSelectionAdapter extends BaseAdapter {
             else{
                 h.setLeftContent("0");
             }
+
+            if (h.getLateralized().equals("0")){
+                if(checkBoxView.isChecked()){
+                    h.setRightContent("1");
+                }
+                else{
+                    h.setRightContent("0");
+                }
+            }
+
             notifyDataSetChanged(); //"this" is the adapter
         }
     };
