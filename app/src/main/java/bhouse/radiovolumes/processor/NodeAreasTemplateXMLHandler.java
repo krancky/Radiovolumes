@@ -89,6 +89,9 @@ public class NodeAreasTemplateXMLHandler {
                             }   else if (tagname.equalsIgnoreCase("Long")) {
                                 // reads the name of the node
                                 nodeAreaTemplate.setCompleteName(text);
+                            }   else if (tagname.equalsIgnoreCase("Lateralized")) {
+                                // reads the name of the node
+                                nodeAreaTemplate.setLateralized(text);
                             }
 
 

@@ -64,7 +64,6 @@ public class NewCaseActivity extends Activity {
     List<CTV56NCase> ctv56NCaseList;
 
 
-
     // Same for T
     List<CTV56TUCase> ctv56TUCaseList;
     List<TumorAreaTemplate> tumorAreaTemplateList;
@@ -85,6 +84,7 @@ public class NewCaseActivity extends Activity {
     LinkedHashMap<String, List<String>> nexpandableListDetail;
 
     ArrayList<Item> countryList = new ArrayList<Item>();
+    ArrayList<Item> nItemList = new ArrayList<Item>();
 
     private ImageView mImageView;
     private ImageView headerView;
@@ -116,17 +116,16 @@ public class NewCaseActivity extends Activity {
         newParam = "1";
         newParam = (String) i.getSerializableExtra("newParam");
         cancer = new Cancer();
-        if ( newParam.equalsIgnoreCase("0")){
+        if (newParam.equalsIgnoreCase("0")) {
             cancer = (Cancer) i.getSerializableExtra("cancer");
         }
 
 
         mImageView = (ImageView) findViewById(R.id.NewCaseImage);
         mTitle = (TextView) findViewById(R.id.textView);
-        if ( newParam.equalsIgnoreCase("0")){
+        if (newParam.equalsIgnoreCase("0")) {
             mTitle.setText(R.string.loadedCase);
-        }
-        else{
+        } else {
             mTitle.setText(R.string.newCase);
         }
 
@@ -149,7 +148,6 @@ public class NewCaseActivity extends Activity {
         spinner.setAdapter(spinnerAdapter);
 
 
-
         ArrayAdapter<CharSequence> spinnerAdapterSide = ArrayAdapter.createFromResource(this, R.array.main_side_array, R.layout.spinner_item);
         spinnerAdapterSide.setDropDownViewResource(R.layout.spinner_dropdown_item);// default layouts for now
         spinnerSide = (MaterialSpinner) findViewById(R.id.MainSideSpinner);
@@ -158,19 +156,18 @@ public class NewCaseActivity extends Activity {
         tClickTv = (TextView) findViewById(R.id.tClickTv);
         nClickTv = (TextView) findViewById(R.id.nClickTv);
 
-        if (newParam.equals("1")){
+        if (newParam.equals("1")) {
             //mImageView.setImageDrawable(R.id.);
-        }
-        else{
+        } else {
             //mImageView
             mEditTextName.setText(cancer.getName());
 
             //int spinnerPosition = spinnerAdapter.getPosition("Oropharynx");
             //int spinnerPosition = spinnerAdapter.getPosition(cancer.getMainArea());
             //CharSequence truc = spinnerAdapter.getItem(0);
-            spinner.setSelection(Integer.valueOf(cancer.getMainArea())+1);
+            spinner.setSelection(Integer.valueOf(cancer.getMainArea()) + 1);
             //int spinnerSidePosition = spinnerAdapterSide.getPosition(cancer.getMainSide());
-            spinnerSide.setSelection(Integer.valueOf(cancer.getMainSide())+1);
+            spinnerSide.setSelection(Integer.valueOf(cancer.getMainSide()) + 1);
         }
 
         // Generates elementary N cases (CTV56NUCase) catalog and
@@ -211,7 +208,6 @@ public class NewCaseActivity extends Activity {
         //targetVolumesView.setAdapter(target_adapter);
 
 
-
         // Same thing for T
         ctv56TCaseList = new ArrayList<CTV56TCase>();
 
@@ -237,7 +233,6 @@ public class NewCaseActivity extends Activity {
         }
 
 
-
         // Generates list of T locations to be irradiated
         ctv56TCase = new CTV56TCase();
         hashMapOperator.cTV56TCase(ctv56TUCaseList, cancer, ctv56TCase, isAdvanced);
@@ -245,25 +240,26 @@ public class NewCaseActivity extends Activity {
         nExpandableListView = (ListView) findViewById(R.id.nExpandableListView);
         nexpandableListDetail = ExpandableListDataPump.getNData(nodeAreaTemplateList);
         nexpandableListTitle = new ArrayList<String>(nexpandableListDetail.keySet());
-        nExpandableListAdapter = new NSelectionAdapter(this, nexpandableListTitle, nexpandableListDetail, nodeAreaTemplateList, cancer);
+        prepareNData();
+        nExpandableListAdapter = new NSelectionAdapter(this, nexpandableListTitle, nexpandableListDetail, nodeAreaTemplateList, cancer, nItemList);
         tExpandableListView = (ListView) findViewById(R.id.tExpandableListView);
         texpandableListDetail = ExpandableListDataPump.getTData(tumorAreaTemplateList);
         texpandableListTitle = new ArrayList<String>(texpandableListDetail.keySet());
 
         prepareTData();
-        tExpandableListAdapter = new TSelectionAdapter(this,countryList, tumorAreaTemplateList, cancer);
 
+        tExpandableListAdapter = new TSelectionAdapter(this, countryList, tumorAreaTemplateList, cancer);
 
 
         nExpandableListView.setAdapter(nExpandableListAdapter);
 
         LayoutInflater inflater = getLayoutInflater();
-        ViewGroup tHeader = (ViewGroup)inflater.inflate(R.layout.list_expandable_group, tExpandableListView, false);
+        ViewGroup tHeader = (ViewGroup) inflater.inflate(R.layout.list_expandable_group, tExpandableListView, false);
         headerView = (ImageView) tHeader.findViewById(R.id.header_photo);
         headerView.setImageResource(R.drawable.ic_t);
 
 
-        ViewGroup nHeader = (ViewGroup)inflater.inflate(R.layout.list_expandable_group, tExpandableListView, false);
+        ViewGroup nHeader = (ViewGroup) inflater.inflate(R.layout.list_expandable_group, tExpandableListView, false);
         headerView = (ImageView) nHeader.findViewById(R.id.header_photo);
         headerView.setImageResource(R.drawable.ic_n);
 
@@ -276,7 +272,6 @@ public class NewCaseActivity extends Activity {
         mAddButton.animate().alpha(1.0f);
 
 
-
         mAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -285,11 +280,10 @@ public class NewCaseActivity extends Activity {
                 NewCaseActivity.this.update();
                 if (sCaseName.matches("") || spinner.getLastVisiblePosition() == 0 || spinnerSide.getLastVisiblePosition() == 0 || ctv56TCase.getCaseTTarVolumes().isEmpty()) {
                     Toast.makeText(v.getContext(), getResources().getString(R.string.enterInfo), Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    NewCaseActivity.this.cancer.setName(sCaseName.substring(0,1).toUpperCase()+sCaseName.substring(1));
-                    NewCaseActivity.this.cancer.setMainArea(String.valueOf(spinner.getSelectedItemPosition()-1));
-                    NewCaseActivity.this.cancer.setMainSide(String.valueOf(spinnerSide.getSelectedItemPosition()-1));
+                } else {
+                    NewCaseActivity.this.cancer.setName(sCaseName.substring(0, 1).toUpperCase() + sCaseName.substring(1));
+                    NewCaseActivity.this.cancer.setMainArea(String.valueOf(spinner.getSelectedItemPosition() - 1));
+                    NewCaseActivity.this.cancer.setMainSide(String.valueOf(spinnerSide.getSelectedItemPosition() - 1));
                     save();
                     Intent transitionIntent = new Intent(NewCaseActivity.this, TabbedActivity.class);
                     transitionIntent.putExtra("cancer", cancer);
@@ -297,8 +291,7 @@ public class NewCaseActivity extends Activity {
                     transitionIntent.putExtra("CTV56NCase", NewCaseActivity.this.ctv56NCase);
                     String Truc = spinner.getSelectedItem().toString();
 
-                    if(!((Activity) v.getContext()).isFinishing())
-                    {
+                    if (!((Activity) v.getContext()).isFinishing()) {
                         startActivity(transitionIntent);//show dialog
                     }
 
@@ -307,27 +300,24 @@ public class NewCaseActivity extends Activity {
             }
         });
 
-        
-
 
         nClickTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 LinearLayout myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
-                if (isExpandedN){
+                if (isExpandedN) {
                     nExpandableListView.setVisibility(View.GONE);
                     myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
                     myLayout.setVisibility(View.VISIBLE);
-                    int imageResource = getResources().getIdentifier("ic_expand_more_black_24dp" , "drawable", getPackageName());
-                    nClickTv.setCompoundDrawablesWithIntrinsicBounds( imageResource, 0, 0, 0);
+                    int imageResource = getResources().getIdentifier("ic_expand_more_black_24dp", "drawable", getPackageName());
+                    nClickTv.setCompoundDrawablesWithIntrinsicBounds(imageResource, 0, 0, 0);
                     isExpandedN = false;
-                }
-                else{
+                } else {
                     nExpandableListView.setVisibility(View.VISIBLE);
                     myLayout.setVisibility(View.GONE);
-                    int imageResource = getResources().getIdentifier("ic_expand_less_black_24dp" , "drawable", getPackageName());
+                    int imageResource = getResources().getIdentifier("ic_expand_less_black_24dp", "drawable", getPackageName());
                     //Drawable img = getApplicationContext().getDrawable(R.drawable.ic_expand_less_black_24dp );
-                    nClickTv.setCompoundDrawablesWithIntrinsicBounds( imageResource, 0, 0, 0);
+                    nClickTv.setCompoundDrawablesWithIntrinsicBounds(imageResource, 0, 0, 0);
                     isExpandedN = true;
                 }
             }
@@ -338,21 +328,20 @@ public class NewCaseActivity extends Activity {
             @Override
             public void onClick(View v) {
                 LinearLayout myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
-                if (isExpandedT){
-                        tExpandableListView.setVisibility(View.GONE);
-                        myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
-                        myLayout.setVisibility(View.VISIBLE);
-                    int imageResource = getResources().getIdentifier("ic_expand_more_black_24dp" , "drawable", getPackageName());
-                    tClickTv.setCompoundDrawablesWithIntrinsicBounds( imageResource, 0, 0, 0);
+                if (isExpandedT) {
+                    tExpandableListView.setVisibility(View.GONE);
+                    myLayout = (LinearLayout) findViewById(R.id.ui_to_hide);
+                    myLayout.setVisibility(View.VISIBLE);
+                    int imageResource = getResources().getIdentifier("ic_expand_more_black_24dp", "drawable", getPackageName());
+                    tClickTv.setCompoundDrawablesWithIntrinsicBounds(imageResource, 0, 0, 0);
                     isExpandedT = false;
-                }
-                else{
+                } else {
                     tExpandableListView.setVisibility(View.VISIBLE);
                     myLayout.setVisibility(View.GONE);
 
-                    int imageResource = getResources().getIdentifier("ic_expand_less_black_24dp" , "drawable", getPackageName());
+                    int imageResource = getResources().getIdentifier("ic_expand_less_black_24dp", "drawable", getPackageName());
                     //Drawable img = getApplicationContext().getDrawable(R.drawable.ic_expand_less_black_24dp );
-                    tClickTv.setCompoundDrawablesWithIntrinsicBounds( imageResource, 0, 0, 0);
+                    tClickTv.setCompoundDrawablesWithIntrinsicBounds(imageResource, 0, 0, 0);
                     isExpandedT = true;
                 }
             }
@@ -361,18 +350,30 @@ public class NewCaseActivity extends Activity {
 
     }
 
-    public void prepareTData(){
+    public void prepareTData() {
         int sectionNumber = 0;
-        for (LinkedHashMap.Entry<String, List<String>> areaMap: texpandableListDetail.entrySet()){
-            sectionNumber = sectionNumber +1 ;
+        for (LinkedHashMap.Entry<String, List<String>> areaMap : texpandableListDetail.entrySet()) {
+            sectionNumber = sectionNumber + 1;
             this.countryList.add(new SectionItem(areaMap.getKey(), sectionNumber));
-            for (String areaLocation : areaMap.getValue()){
+            for (String areaLocation : areaMap.getValue()) {
                 this.countryList.add(new EntryItem(areaLocation, sectionNumber));
             }
         }
     }
 
-    public void update (){
+    public void prepareNData() {
+        int sectionNumber = 0;
+        for (NodeAreaTemplate nodeAreaTemplate : nodeAreaTemplateList) {
+            if (nodeAreaTemplate.getLateralized().equals("0")) {
+                this.nItemList.add(new MedianItem(nodeAreaTemplate.getNodeLocation(), sectionNumber));
+            }
+            if (nodeAreaTemplate.getLateralized().equals("1")) {
+                this.nItemList.add(new EntryItem(nodeAreaTemplate.getNodeLocation(), sectionNumber));
+            }
+        }
+    }
+
+    public void update() {
 
         cancer.nClear();
         cancer.tClear();
@@ -397,14 +398,13 @@ public class NewCaseActivity extends Activity {
         NewCaseActivity.this.ctv56NCaseList.add(NewCaseActivity.this.ctv56NCase);
 
 
-
     }
 
-    public void save(){
+    public void save() {
         Calendar c = Calendar.getInstance();
         NewCaseActivity.this.cancer.setTime(c.getTime());
 
-        File file = new File(getFilesDir() +"/" + "stuff");
+        File file = new File(getFilesDir() + "/" + "stuff");
         String dir = file.getParent();
         NewCaseActivity.this.cancer.saveToFile(NewCaseActivity.this);
     }
@@ -418,17 +418,17 @@ public class NewCaseActivity extends Activity {
     public boolean dispatchTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             View v = getCurrentFocus();
-            if ( v instanceof EditText) {
+            if (v instanceof EditText) {
                 Rect outRect = new Rect();
                 v.getGlobalVisibleRect(outRect);
-                if (!outRect.contains((int)event.getRawX(), (int)event.getRawY())) {
+                if (!outRect.contains((int) event.getRawX(), (int) event.getRawY())) {
                     v.clearFocus();
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                 }
             }
         }
-        return super.dispatchTouchEvent( event );
+        return super.dispatchTouchEvent(event);
     }
 
     /**
@@ -436,8 +436,12 @@ public class NewCaseActivity extends Activity {
      */
     public interface Item {
         public boolean isSection();
+
         public String getTitle();
+
         public int getSectionNumber();
+
+        public boolean isMedian();
     }
 
     /**
@@ -465,6 +469,40 @@ public class NewCaseActivity extends Activity {
         public boolean isSection() {
             return true;
         }
+
+        @Override
+        public boolean isMedian() {
+            return false;
+        }
+    }
+
+    public class MedianItem implements Item {
+        private final String title;
+        public final int sectionNumber;
+
+        public int getSectionNumber() {
+            return sectionNumber;
+        }
+
+
+        public MedianItem(String title, int sectionNumber) {
+            this.title = title;
+            this.sectionNumber = sectionNumber;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        @Override
+        public boolean isSection() {
+            return false;
+        }
+
+        @Override
+        public boolean isMedian() {
+            return true;
+        }
     }
 
     /**
@@ -490,6 +528,11 @@ public class NewCaseActivity extends Activity {
 
         @Override
         public boolean isSection() {
+            return false;
+        }
+
+        @Override
+        public boolean isMedian() {
             return false;
         }
     }

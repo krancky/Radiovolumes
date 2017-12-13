@@ -27,16 +27,18 @@ public class NSelectionAdapter extends BaseAdapter {
     private ArrayList<Boolean> checkboxStatus_left = new ArrayList();
     private ArrayList<Boolean> checkboxStatus_right = new ArrayList();
     List<NodeAreaTemplate> nList;
+    private ArrayList<NewCaseActivity.Item> items;
 
 
 
 
     public NSelectionAdapter(Context context, List<String> expandableListTitle,
-                             LinkedHashMap<String, List<String>> expandableListDetail, List<NodeAreaTemplate> nodeAreaTemplateList, Cancer cancer ) {
+                             LinkedHashMap<String, List<String>> expandableListDetail, List<NodeAreaTemplate> nodeAreaTemplateList, Cancer cancer, ArrayList<NewCaseActivity.Item> items ) {
         this.context = context;
         this.nList = nodeAreaTemplateList;
         this.expandableListTitle = expandableListTitle;
         this.expandableListDetail =expandableListDetail;
+        this.items = items;
 
 
         int groupCount = nodeAreaTemplateList.size();
@@ -87,49 +89,72 @@ public class NSelectionAdapter extends BaseAdapter {
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) this.context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.list_expandable_child, null);
-
-            //NodeAreaTemplate h = nList.get(expandedListPosition);
             holder = new ViewHolder();
-            holder.nodePhoto = (ImageView) convertView.findViewById(R.id.node_photo);
-            holder.tv = (TextView) convertView.findViewById(R.id.textView1);
-            holder.cbLeft =(CheckBox) convertView.findViewById(R.id.checkLeft);
-            holder.cbRight =(CheckBox) convertView.findViewById(R.id.checkRight);
-
-            holder.cbLeft.setChecked(checkboxStatus_left.get(position));
-            holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
-            holder.cbRight.setChecked(checkboxStatus_right.get(position));
-            holder.cbRight.setOnCheckedChangeListener(cbRightChangeListener);
+            if (getItemViewType(position) == 1) {
+                convertView = layoutInflater.inflate(R.layout.layout_item, parent, false);
+                holder.nodePhoto = (ImageView) convertView.findViewById(R.id.node_photo);
+                holder.tv = (TextView) convertView.findViewById(R.id.textView2);
+                holder.cbLeft =(CheckBox) convertView.findViewById(R.id.checkLeft);
+                holder.cbRight =(CheckBox) convertView.findViewById(R.id.checkRight);
+                holder.cbLeft.setChecked(checkboxStatus_left.get(position));
+                holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
+                holder.cbRight.setChecked(checkboxStatus_right.get(position));
+                holder.cbRight.setOnCheckedChangeListener(cbRightChangeListener);
+            }
+            if (getItemViewType(position) == 2) {
+                convertView = layoutInflater.inflate(R.layout.layout_median_item, parent, false);
+                //holder.tumorPhoto = (ImageView) convertView.findViewById(R.id.node_photo);
+                holder.nodePhoto = (ImageView) convertView.findViewById(R.id.node_photo);
+                holder.tv = (TextView) convertView.findViewById(R.id.textView2);
+                holder.cbLeft =(CheckBox) convertView.findViewById(R.id.checkLeft);
+                holder.cbLeft.setChecked(checkboxStatus_left.get(position));
+                holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
+            }
 
             convertView.setTag(holder);
+
 
         }
         else {
         holder = (ViewHolder) convertView.getTag();
 
         }
-        TextView expandedListTextView = (TextView) convertView
-                .findViewById(R.id.textView1);
-        expandedListTextView.setText(nList.get(position).getCompleteName());
-        //ImageView nodePhoto = (ImageView) convertView.findViewById(R.id.node_photo);
+        if (items.get(position).isMedian()) {
 
-        NodeAreaTemplate h = nList.get(position);
-        //holder.nodePhoto.setImageResource(h.getImageResourceId(this.context));
-        int truc = context.getResources().getIdentifier(h.getCompleteName().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
-        String locationLocale = context.getString(context.getResources().getIdentifier(h.getCompleteName().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
-        holder.tv.setText(locationLocale);
-        //holder.tv.setText(h.getCompleteName());
-        holder.cbLeft.setTag(position);
-        holder.cbRight.setTag(position);
-        holder.cbLeft.setChecked(checkboxStatus_left.get(position));
-        holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
-        holder.cbRight.setChecked(checkboxStatus_right.get(position));
-        holder.cbRight.setOnCheckedChangeListener(cbRightChangeListener);
-        if(holder.cbLeft.isChecked() || holder.cbRight.isChecked() ){
-            holder.nodePhoto.setImageResource(h.getImageResourceId(this.context, true));
-        }
-        else{
-            holder.nodePhoto.setImageResource(h.getImageResourceId(this.context, false));
+            NodeAreaTemplate h = nList.get(position);
+            int truc = context.getResources().getIdentifier(h.getCompleteName().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
+            String locationLocale = context.getString(context.getResources().getIdentifier(h.getCompleteName().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
+            holder.tv.setText(locationLocale);
+            //holder.tv.setText(h.getCompleteName());
+            holder.cbLeft.setTag(position);
+            //holder.cbRight.setTag(position);
+            holder.cbLeft.setChecked(checkboxStatus_left.get(position));
+            holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
+            //holder.cbRight.setChecked(checkboxStatus_right.get(position));
+            //holder.cbRight.setOnCheckedChangeListener(cbRightChangeListener);
+            if (holder.cbLeft.isChecked()) {
+                holder.nodePhoto.setImageResource(h.getImageResourceId(this.context, true));
+            } else {
+                holder.nodePhoto.setImageResource(h.getImageResourceId(this.context, false));
+            }
+        } else {
+
+            NodeAreaTemplate h = nList.get(position);
+            int truc = context.getResources().getIdentifier(h.getCompleteName().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
+            String locationLocale = context.getString(context.getResources().getIdentifier(h.getCompleteName().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
+            holder.tv.setText(locationLocale);
+            //holder.tv.setText(h.getCompleteName());
+            holder.cbLeft.setTag(position);
+            holder.cbRight.setTag(position);
+            holder.cbLeft.setChecked(checkboxStatus_left.get(position));
+            holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
+            holder.cbRight.setChecked(checkboxStatus_right.get(position));
+            holder.cbRight.setOnCheckedChangeListener(cbRightChangeListener);
+            if (holder.cbLeft.isChecked() || holder.cbRight.isChecked()) {
+                holder.nodePhoto.setImageResource(h.getImageResourceId(this.context, true));
+            } else {
+                holder.nodePhoto.setImageResource(h.getImageResourceId(this.context, false));
+            }
         }
 
         return convertView;
@@ -170,6 +195,25 @@ public class NSelectionAdapter extends BaseAdapter {
             notifyDataSetChanged();
         }
     };
+
+    @Override
+    public int getItemViewType(int position) {
+        if (items.get(position).isSection()) {
+            return 0;
+        } else {
+            if (items.get(position).isMedian()) {
+                return 2;
+            } else {
+                return 1;
+            }
+            // Define a way to determine which layout to use, here it's just evens and odds.
+        }
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        return 3; // Count of different layouts
+    }
 
 
     static class ViewHolder

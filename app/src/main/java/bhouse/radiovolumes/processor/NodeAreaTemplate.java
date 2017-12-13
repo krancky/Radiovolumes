@@ -14,6 +14,7 @@ public class NodeAreaTemplate implements Serializable {
     String title;
     String leftContent;
     String rightContent;
+    String Lateralized;
 
     public String getLeftContent() {
         return leftContent;
@@ -47,7 +48,13 @@ public class NodeAreaTemplate implements Serializable {
         this.nodeLocation = nodeLocation;
     }
 
+    public String getLateralized() {
+        return Lateralized;
+    }
 
+    public void setLateralized(String lateralized) {
+        Lateralized = lateralized;
+    }
 
     public int getColor() {
         return color;

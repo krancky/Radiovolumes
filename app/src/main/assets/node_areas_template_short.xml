@@ -3,62 +3,77 @@
     <Volume>
         <Short>Ia</Short>
         <Long>Submental</Long>
+        <Lateralized>0</Lateralized>
     </Volume>
     <Volume>
         <Short>Ib</Short>
         <Long>Submandibular</Long>
+        <Lateralized>1</Lateralized>
     </Volume>
     <Volume>
         <Short>II</Short>
         <Long>Upper Jugular</Long>
+        <Lateralized>1</Lateralized>
     </Volume>
     <Volume>
         <Short>III</Short>
         <Long>Middle Jugular</Long>
+        <Lateralized>1</Lateralized>
     </Volume>
     <Volume>
         <Short>IVa</Short>
         <Long>Lower Jugular</Long>
+        <Lateralized>1</Lateralized>
     </Volume>
     <Volume>
         <Short>IVb</Short>
         <Long>Medial SupraClavicular</Long>
+        <Lateralized>1</Lateralized>
     </Volume>
     <Volume>
         <Short>Vab</Short>
         <Long>Posterior Triangle</Long>
+        <Lateralized>1</Lateralized>
     </Volume>
     <Volume>
         <Short>Vc</Short>
         <Long>Lateral SupraClavicular</Long>
+        <Lateralized>1</Lateralized>
     </Volume>
     <Volume>
         <Short>VIa</Short>
         <Long>Anterior Jugular</Long>
+        <Lateralized>0</Lateralized>
     </Volume>
     <Volume>
     <Short>VIb</Short>
     <Long>PreLaryngeal</Long>
+        <Lateralized>0</Lateralized>
 </Volume>
     <Volume>
         <Short>VIIa</Short>
         <Long>RetroPharyngeal</Long>
+        <Lateralized>1</Lateralized>
     </Volume>
     <Volume>
         <Short>VIIb</Short>
         <Long>RetroStyloid</Long>
+        <Lateralized>1</Lateralized>
     </Volume>
     <Volume>
         <Short>VIII</Short>
         <Long>Parotid</Long>
+        <Lateralized>1</Lateralized>
     </Volume>
     <Volume>
         <Short>IX</Short>
         <Long>BuccoFacial</Long>
+        <Lateralized>1</Lateralized>
     </Volume>
     <Volume>
         <Short>X</Short>
         <Long>Posterior Skull</Long>
+        <Lateralized>1</Lateralized>
     </Volume>
 
 
