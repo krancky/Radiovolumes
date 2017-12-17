@@ -297,7 +297,7 @@ public class ZoomView extends FrameLayout {
                 // tap
                 if (l < 30.0f) {
                     // check double tap
-                    if (System.currentTimeMillis() - lastTapTime < 500) {
+                    if (System.currentTimeMillis() - lastTapTime < 1000) {
                         if (smoothZoom == 1.0f) {
                             int [] location = new int[2];
                             this.getLocationOnScreen(location);
@@ -338,7 +338,6 @@ public class ZoomView extends FrameLayout {
     }
 
     private void processDoubleTouchEvent(final MotionEvent ev) {
-        Toast.makeText(getContext(),"double click position", Toast.LENGTH_SHORT).show();
         final float x1 = ev.getX(0);
         final float dx1 = x1 - lastdx1;
         lastdx1 = x1;

@@ -152,6 +152,26 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
             holder.i23.setTag("none");
             holder.i24 = (ImageView) convertView.findViewById(R.id.i24);
             holder.i24.setTag("none");
+            holder.i25 = (ImageView) convertView.findViewById(R.id.i14);
+            holder.i25.setTag("none");
+            holder.i26 = (ImageView) convertView.findViewById(R.id.i15);
+            holder.i26.setTag("none");
+            holder.i27 = (ImageView) convertView.findViewById(R.id.i16);
+            holder.i27.setTag("none");
+            holder.i28 = (ImageView) convertView.findViewById(R.id.i18);
+            holder.i28.setTag("none");
+            holder.i29 = (ImageView) convertView.findViewById(R.id.i19);
+            holder.i29.setTag("none");
+            holder.i30 = (ImageView) convertView.findViewById(R.id.i20);
+            holder.i30.setTag("none");
+            holder.i31 = (ImageView) convertView.findViewById(R.id.i21);
+            holder.i31.setTag("none");
+            holder.i32 = (ImageView) convertView.findViewById(R.id.i22);
+            holder.i32.setTag("none");
+            holder.i33 = (ImageView) convertView.findViewById(R.id.i23);
+            holder.i33.setTag("none");
+            holder.i34 = (ImageView) convertView.findViewById(R.id.i24);
+            holder.i34.setTag("none");
 
             holder.arlist.add(holder.i0);
             holder.arlist.add(holder.i1);
@@ -179,6 +199,16 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
             holder.arlist.add(holder.i22);
             holder.arlist.add(holder.i23);
             holder.arlist.add(holder.i24);
+            holder.arlist.add(holder.i25);
+            holder.arlist.add(holder.i26);
+            holder.arlist.add(holder.i27);
+            holder.arlist.add(holder.i28);
+            holder.arlist.add(holder.i29);
+            holder.arlist.add(holder.i30);
+            holder.arlist.add(holder.i31);
+            holder.arlist.add(holder.i32);
+            holder.arlist.add(holder.i33);
+            holder.arlist.add(holder.i34);
 
             convertView.setTag(holder);
         } else {
@@ -241,6 +271,16 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
         ImageView i22;
         ImageView i23;
         ImageView i24;
+        ImageView i25;
+        ImageView i26;
+        ImageView i27;
+        ImageView i28;
+        ImageView i29;
+        ImageView i30;
+        ImageView i31;
+        ImageView i32;
+        ImageView i33;
+        ImageView i34;
 
         ArrayList<ImageView> arlist = new ArrayList<ImageView>();
 
