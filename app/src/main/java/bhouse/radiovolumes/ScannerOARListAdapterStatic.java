@@ -227,13 +227,14 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
             int resId = context.getResources().getIdentifier(item.getVectorStorageLocation().get(i).getFilename(), "drawable", context.getPackageName());
             holder.arlist.get(i).setImageResource(resId);
             holder.arlist.get(i).setTag(item.getVectorStorageLocation().get(i));
+            //holder.arlist.get(i).setX(200);
             //holder.arlist.get(i).setClickable(false);
         }
 
         // Remaining ImageView slots (that are not needed for vector asset display) are set to None
         for (int i = item.getVectorStorageLocation().size(); i < holder.arlist.size(); i++) {
             holder.arlist.get(i).setTag("none");
-            holder.arlist.get(i).setImageResource(android.R.color.transparent);
+            holder.arlist.get(i).setImageDrawable(null);
         }
 
 
