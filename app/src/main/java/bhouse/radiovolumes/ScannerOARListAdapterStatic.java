@@ -5,13 +5,17 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Point;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -63,6 +67,8 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
 
 
             holder.scanView = (ImageView) convertView.findViewById(R.id.view_scan);
+
+
             holder.scanView.setTag("scan");
             holder.zoomview = (ZoomView) convertView.findViewById(R.id.zoomView);
 
@@ -220,6 +226,19 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
         // Setting Scanner Slice Background
         int resIdScan = this.context.getResources().getIdentifier(item.getScanStorageLocation(), "drawable", context.getPackageName());
         holder.scanView.setImageResource(resIdScan);
+        int[] img_coordinates = new int[2];
+
+        holder.scanView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+        int widht = holder.scanView.getMeasuredWidth();
+        int height = holder.scanView.getMeasuredHeight();
+
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int screen_width = size.x;
+        int screen_height = size.y;
+
 
         // Setting superimposed vector images.
         // As many as the size of VectorStorageLocation array.
@@ -227,6 +246,8 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
             int resId = context.getResources().getIdentifier(item.getVectorStorageLocation().get(i).getFilename(), "drawable", context.getPackageName());
             holder.arlist.get(i).setImageResource(resId);
             holder.arlist.get(i).setTag(item.getVectorStorageLocation().get(i));
+            //holder.arlist.get(i).setX(284);
+            //holder.arlist.get(i).setY(284);
             //holder.arlist.get(i).setX(200);
             //holder.arlist.get(i).setClickable(false);
         }
