@@ -8,22 +8,22 @@ public class SliceVectorItem {
     private String filename;
     private String side;
     private String location;
-    private int xMargin;
-    private int yMargin;
+    private double xMargin;
+    private double yMargin;
 
-    public int getxMargin() {
+    public double getxMargin() {
         return xMargin;
     }
 
-    public void setxMargin(int xMargin) {
+    public void setxMargin(double xMargin) {
         this.xMargin = xMargin;
     }
 
-    public int getyMargin() {
+    public double getyMargin() {
         return yMargin;
     }
 
-    public void setyMargin(int yMargin) {
+    public void setyMargin(double yMargin) {
         this.yMargin = yMargin;
     }
 

@@ -7,30 +7,30 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 
 /**
  * Created by kranck on 9/28/2017.
  */
 
 public class XYXMLHandler {
-    private LinkedHashMap<String, LinkedHashMap<String, Pair<String,String>>> xyValues;
+    private HashMap<String, HashMap<String, Pair<String,String>>> xyValues;
     private String text;
     /**
      * Instantiates a new Xml pull parser handler.
      */
     public XYXMLHandler() {
-        this.xyValues = new LinkedHashMap<String, LinkedHashMap<String, Pair<String, String>>>();
+        this.xyValues = new HashMap<String, HashMap<String, Pair<String, String>>>();
     }
 
 
 
-    public LinkedHashMap<String, LinkedHashMap<String, Pair<String, String>>> parse(InputStream is) {
+    public HashMap<String, HashMap<String, Pair<String, String>>> parse(InputStream is) {
         XmlPullParserFactory factory = null;
         XmlPullParser parser = null;
         try {
             // Creates parser
-            LinkedHashMap<String, Pair<String, String>> singleOrganXY = new LinkedHashMap<String, Pair<String, String>>();
+            HashMap<String, Pair<String, String>> singleOrganXY = new HashMap<String, Pair<String, String>>();
             String oName = new String();
             Pair<String, String> xyPair = new Pair<>(null,null);
             String ymin = new String();
@@ -51,7 +51,7 @@ public class XYXMLHandler {
                         if (tagname.equalsIgnoreCase("Organ")) {
                             // Creates a new instance of CTV56NUCase
                             oName = new String();
-                            singleOrganXY = new LinkedHashMap<String, Pair<String, String>>();
+                            singleOrganXY = new HashMap<String, Pair<String, String>>();
                         }
 
                     case XmlPullParser.TEXT:
@@ -96,7 +96,7 @@ public class XYXMLHandler {
         return this.xyValues;
     }
 
-    public LinkedHashMap<String, LinkedHashMap<String, Pair<String,String>>> getxyValues() {
+    public HashMap<String, HashMap<String, Pair<String,String>>> getxyValues() {
         return xyValues;
     }
 }

@@ -33,7 +33,7 @@ import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.List;
 
 import bhouse.radiovolumes.processor.OARTemplate;
@@ -65,7 +65,7 @@ public class DetailActivity extends Activity implements View.OnClickListener {
   private ArrayList<OARTemplate> OARTemplateList;
   int defaultColorForRipple;
   private ArrayList<Item> allIncludedList = new ArrayList<Item>();
-  private LinkedHashMap<String, LinkedHashMap<String, Pair<String,String>>> xyValues;
+  private HashMap<String, HashMap<String, Pair<String,String>>> xyValues;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

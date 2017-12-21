@@ -28,7 +28,7 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
     private SingleScrollListView mContentView;
     private ArrayList<Slice> slices;
     private LinkedHashMap<String, Integer> displayedList = new LinkedHashMap<String, Integer>();
-    private LinkedHashMap<String, LinkedHashMap<String, Pair<String,String>>> xyValues;
+    private HashMap<String, HashMap<String, Pair<String,String>>> xyValues;
 
     private ScannerOARListAdapterStatic scannerOARListAdapterStatic;
 
@@ -69,7 +69,7 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
 
 
         this.OARTemplateList = (ArrayList<OARTemplate>) i.getSerializableExtra("OAR");
-        this.xyValues = (LinkedHashMap<String, LinkedHashMap<String, Pair<String,String>>>) i.getSerializableExtra("XY");
+        this.xyValues = (HashMap<String, HashMap<String, Pair<String,String>>>) i.getSerializableExtra("XY");
         //cancerNTarData = (HashMap<String, List<String>>) i.getSerializableExtra("cancerNTarData");
 
         mVisible = false;
@@ -116,21 +116,27 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
                 if (oarTemplate.getLeftContent().equals("1")) {
                     SliceVectorItem sliceVectorItem = new SliceVectorItem();
                     sliceVectorItem.setFilename(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "gauche" + "_" + String.valueOf(i));
-                    sliceVectorItem.setxMargin(Integer.valueOf(this.xyValues.get(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "gauche").get(i).getFirst()));
-                    sliceVectorItem.setyMargin(Integer.valueOf(this.xyValues.get(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "gauche").get(i).getSecond()));
                     int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
                     if (resId != 0) {
                         slice.addVectorStorageLocation(sliceVectorItem);
+                        sliceVectorItem.setxMargin(Integer.valueOf(this.xyValues.get(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "gauche").get(i).getFirst()));
+                        sliceVectorItem.setyMargin(Integer.valueOf(this.xyValues.get(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "gauche").get(i).getSecond()));
+
                     }
                 }
                 if (oarTemplate.getRightContent().equals("1")) {
                     SliceVectorItem sliceVectorItem = new SliceVectorItem();
-                    sliceVectorItem.setFilename(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "droite" + "_" + String.valueOf(i));
-                    sliceVectorItem.setxMargin(Integer.valueOf(this.xyValues.get(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "droite").get(i).getFirst()));
-                    sliceVectorItem.setyMargin(Integer.valueOf(this.xyValues.get(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "droite").get(i).getSecond()));
+                    String fileName = oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() ;
+                    sliceVectorItem.setFilename(fileName + "_" + "droite" + "_" + String.valueOf(i));
                     int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
                     if (resId != 0) {
                         slice.addVectorStorageLocation(sliceVectorItem);
+                        Pair truc = this.xyValues.get(fileName + "_" + "droite").get(String.valueOf(i));
+                        double bidule =  Double.parseDouble( (String) truc.getFirst());
+                        double bidule2 = Double.parseDouble( (String)truc.getSecond());
+                        sliceVectorItem.setxMargin(bidule);
+                        sliceVectorItem.setyMargin(bidule2);
+
                     }
                 }
 
