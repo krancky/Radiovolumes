@@ -38,6 +38,8 @@ import java.util.List;
 
 import bhouse.radiovolumes.processor.OARTemplate;
 import bhouse.radiovolumes.processor.OARXMLHandler;
+import bhouse.radiovolumes.processor.Pair;
+import bhouse.radiovolumes.processor.XYXMLHandler;
 
 /**
  * Created by megha on 15-03-10.
@@ -63,6 +65,7 @@ public class DetailActivity extends Activity implements View.OnClickListener {
   private ArrayList<OARTemplate> OARTemplateList;
   int defaultColorForRipple;
   private ArrayList<Item> allIncludedList = new ArrayList<Item>();
+  private LinkedHashMap<String, LinkedHashMap<String, Pair<String,String>>> xyValues;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +99,13 @@ public class DetailActivity extends Activity implements View.OnClickListener {
       OARXMLHandler parser = new OARXMLHandler();
       OARTemplateList = parser.parse(getAssets().open("OARlimits.xml"));
 
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    try {
+      XYXMLHandler parser = new XYXMLHandler();
+      this.xyValues = parser.parse(getAssets().open("xyvalues.xml"));
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -185,6 +195,7 @@ public class DetailActivity extends Activity implements View.OnClickListener {
           applyRippleColor(getResources().getColor(R.color.light_green), getResources().getColor(R.color.dark_green));
           Intent transitionIntent = new Intent(DetailActivity.this, ScannerOARViewActivity_simple.class);
           transitionIntent.putExtra("OAR", this.OARTemplateList);
+          transitionIntent.putExtra("XY", this.xyValues);
           if(!((Activity) v.getContext()).isFinishing())
           {
             startActivity(transitionIntent);//show dialog

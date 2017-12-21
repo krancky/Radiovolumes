@@ -14,24 +14,28 @@ import java.util.LinkedHashMap;
  */
 
 public class XYXMLHandler {
-    private LinkedHashMap<String, ArrayList<String>> OLimits;
+    private LinkedHashMap<String, LinkedHashMap<String, Pair<String,String>>> xyValues;
     private String text;
     /**
      * Instantiates a new Xml pull parser handler.
      */
     public XYXMLHandler() {
-        this.OLimits = new LinkedHashMap<String, ArrayList<String>>();
+        this.xyValues = new LinkedHashMap<String, LinkedHashMap<String, Pair<String, String>>>();
     }
 
 
 
-    public LinkedHashMap<String, ArrayList<String>> parse(InputStream is) {
+    public LinkedHashMap<String, LinkedHashMap<String, Pair<String, String>>> parse(InputStream is) {
         XmlPullParserFactory factory = null;
         XmlPullParser parser = null;
         try {
             // Creates parser
-            ArrayList<String> singleOrganLimits = new ArrayList<>();
+            LinkedHashMap<String, Pair<String, String>> singleOrganXY = new LinkedHashMap<String, Pair<String, String>>();
             String oName = new String();
+            Pair<String, String> xyPair = new Pair<>(null,null);
+            String ymin = new String();
+            String z = new String();
+            String xmin = new String();
             factory = XmlPullParserFactory.newInstance();
             factory.setNamespaceAware(true);
             parser = factory.newPullParser();
@@ -47,11 +51,8 @@ public class XYXMLHandler {
                         if (tagname.equalsIgnoreCase("Organ")) {
                             // Creates a new instance of CTV56NUCase
                             oName = new String();
-                            singleOrganLimits = new ArrayList<>();
+                            singleOrganXY = new LinkedHashMap<String, Pair<String, String>>();
                         }
-                        if (tagname.equalsIgnoreCase("TVolume")) {
-                        }
-                        break;
 
                     case XmlPullParser.TEXT:
                         // Stores in text content between START and END tags
@@ -61,28 +62,21 @@ public class XYXMLHandler {
                     case XmlPullParser.END_TAG:
                         if (tagname.equalsIgnoreCase("Organ")) {
                             // add CTV56NUCase object to catalog
-                            this.OLimits.put(oName, singleOrganLimits);
+                            this.xyValues.put(oName, singleOrganXY);
                         } else if (tagname.equalsIgnoreCase("Name")) {
                             oName = text;
-                            singleOrganLimits.add(text);
-                        } else if (tagname.equalsIgnoreCase("Area")) {
-                            singleOrganLimits.add(text);
-                        } else if (tagname.equalsIgnoreCase("CranialL")) {
-                            singleOrganLimits.add(text);
-                        } else if (tagname.equalsIgnoreCase("CaudalL")) {
-                            singleOrganLimits.add(text);
-                        } else if (tagname.equalsIgnoreCase("AnteriorL")) {
-                            singleOrganLimits.add(text);
-                        } else if (tagname.equalsIgnoreCase("PosteriorL")) {
-                            singleOrganLimits.add(text);
-                        } else if (tagname.equalsIgnoreCase("MedialL")) {
-                            singleOrganLimits.add(text);;
-                        } else if (tagname.equalsIgnoreCase("LateralL")) {
-                            // Adds unique target volume of CTV56NU cases
-                            singleOrganLimits.add(text);
-                        } else if (tagname.equalsIgnoreCase("Comment")) {
-                            // Adds unique target volume of CTV56NU cases
-                            singleOrganLimits.add(text);
+                            //singleOrganXY.add(text);
+                        } else if (tagname.equalsIgnoreCase("z")) {
+                            z = text;
+                            //singleOrganXY.add(text);
+                        } else if (tagname.equalsIgnoreCase("xmin")) {
+                            xmin = text;
+                        } else if (tagname.equalsIgnoreCase("ymin")) {
+                            ymin = text;
+                        } else if (tagname.equalsIgnoreCase("slice")) {
+                            xyPair.setFirst(xmin);
+                            xyPair.setSecond(ymin);
+                            singleOrganXY.put(z,xyPair);
                         }
                         break;
 
@@ -99,11 +93,11 @@ public class XYXMLHandler {
             e.printStackTrace();
         }
         // returns a catalog of elementary CTV56N objects
-        return this.OLimits;
+        return this.xyValues;
     }
 
-    public LinkedHashMap<String, ArrayList<String>> getOLimits() {
-        return OLimits;
+    public LinkedHashMap<String, LinkedHashMap<String, Pair<String,String>>> getxyValues() {
+        return xyValues;
     }
 }
 
