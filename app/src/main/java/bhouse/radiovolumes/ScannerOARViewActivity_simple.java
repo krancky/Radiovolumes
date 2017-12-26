@@ -115,12 +115,16 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
             for (OARTemplate oarTemplate : OARTemplateList) {
                 if (oarTemplate.getLeftContent().equals("1")) {
                     SliceVectorItem sliceVectorItem = new SliceVectorItem();
+                    String fileName = oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() ;
                     sliceVectorItem.setFilename(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "gauche" + "_" + String.valueOf(i));
                     int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
                     if (resId != 0) {
                         slice.addVectorStorageLocation(sliceVectorItem);
-                        sliceVectorItem.setxMargin(Integer.valueOf(this.xyValues.get(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "gauche").get(i).getFirst()));
-                        sliceVectorItem.setyMargin(Integer.valueOf(this.xyValues.get(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "gauche").get(i).getSecond()));
+                        Pair truc = this.xyValues.get(fileName + "_" + "gauche").get(String.valueOf(i));
+                        float bidule =  Float.parseFloat( (String) truc.getFirst());
+                        float bidule2 = Float.parseFloat( (String)truc.getSecond());
+                        sliceVectorItem.setxMargin(bidule);
+                        sliceVectorItem.setyMargin(bidule2);
 
                     }
                 }
@@ -132,11 +136,10 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
                     if (resId != 0) {
                         slice.addVectorStorageLocation(sliceVectorItem);
                         Pair truc = this.xyValues.get(fileName + "_" + "droite").get(String.valueOf(i));
-                        double bidule =  Double.parseDouble( (String) truc.getFirst());
-                        double bidule2 = Double.parseDouble( (String)truc.getSecond());
+                        float bidule =  Float.parseFloat( (String) truc.getFirst());
+                        float bidule2 = Float.parseFloat( (String)truc.getSecond());
                         sliceVectorItem.setxMargin(bidule);
                         sliceVectorItem.setyMargin(bidule2);
-
                     }
                 }
 

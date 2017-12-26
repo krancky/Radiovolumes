@@ -53,6 +53,9 @@ public class XYXMLHandler {
                             oName = new String();
                             singleOrganXY = new HashMap<String, Pair<String, String>>();
                         }
+                        if (tagname.equalsIgnoreCase("slice")) {
+                            xyPair = new Pair<>(null,null);
+                        }
 
                     case XmlPullParser.TEXT:
                         // Stores in text content between START and END tags

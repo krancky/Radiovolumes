@@ -378,7 +378,7 @@
 
     <OAR>
         <Name>Buccal Mucosa</Name>
-        <Lateralized>0</Lateralized>
+        <Lateralized>1</Lateralized>
         <Naming>Buccal Mucosa=muqueuse jugale</Naming>
         <Cranial>Bottom ofmaxillary sinus</Cranial>
         <Caudal>Upper edge teeth sockets</Caudal>
