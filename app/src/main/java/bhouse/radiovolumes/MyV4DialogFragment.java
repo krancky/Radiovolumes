@@ -163,6 +163,7 @@ public class MyV4DialogFragment extends DialogFragment {
                 displayedListD.put(stringArray.getValue().get(0).replaceAll("\\s+", "").toLowerCase(), 0);
             };
         }
+        sectionNumber = 3;
     }
 
     public void prepareTData() {
@@ -254,7 +255,7 @@ public class MyV4DialogFragment extends DialogFragment {
     public void prepareOLimitsData(){
         try {
             OLimitsXMLHandler oLimitsXMLHandler = new OLimitsXMLHandler();
-            this.oLimits = oLimitsXMLHandler.parse(activity.getAssets().open("olimit.xml"));
+            this.oLimits = oLimitsXMLHandler.parse(activity.getAssets().open("TNOrganlimit.xml"));
         }
         catch (IOException e){
             e.printStackTrace();
@@ -279,6 +280,7 @@ public class MyV4DialogFragment extends DialogFragment {
                 }
             }
         }
+        int i = 1;
     }
 
 }

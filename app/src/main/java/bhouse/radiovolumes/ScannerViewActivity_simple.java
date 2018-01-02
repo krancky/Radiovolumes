@@ -1,18 +1,12 @@
 package bhouse.radiovolumes;
 
-import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
@@ -23,8 +17,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import bhouse.radiovolumes.processor.OLimitsXMLHandler;
-
-import static bhouse.radiovolumes.R.xml.map;
+import bhouse.radiovolumes.processor.Pair;
+import bhouse.radiovolumes.processor.XYXMLHandler;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -38,6 +32,9 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
     private SingleScrollListView mContentView;
     private ArrayList<Slice> slices;
     private LinkedHashMap<String, Integer> displayedList = new LinkedHashMap<String, Integer>();
+    private HashMap<String, HashMap<String, Pair<String,String>>> txyValues;
+    private HashMap<String, HashMap<String, Pair<String,String>>> nxyValues;
+
 
 
     private ScannerListAdapterStatic scannerListAdapterStatic;
@@ -88,6 +85,15 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
         prepareOLimitsData();
         Intent i = getIntent();
 
+        this.txyValues = (HashMap<String, HashMap<String, Pair<String,String>>>) i.getSerializableExtra("TXY");
+        //this.nxyValues = (HashMap<String, HashMap<String, Pair<String,String>>>) i.getSerializableExtra("NXY");
+
+        try {
+            XYXMLHandler parser = new XYXMLHandler();
+            this.nxyValues = parser.parse(getAssets().open("nxyvalues.xml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         cancerTTarData = (HashMap<String, HashMap<String, List<String>>>)i.getSerializableExtra("cancerTTarData");
         cancerNTarData = (HashMap<String, List<String>>) i.getSerializableExtra("cancerNTarData");
@@ -131,47 +137,72 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
     public void prepare_scan_data(){
         int i;
         slices.clear();
+
         for (i =0; i<222; i++ ){
             Slice slice = new Slice();
             slice.setNumber(String.valueOf(i));
             String formatted = String.format("%05d", i+1);
             slice.setStorageLocation("scan_"+String.valueOf(formatted));
-            for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()){
-                HashMap<String, List<String>> sideMap = areaMap.getValue();
-                for (HashMap.Entry<String, List<String>> map: sideMap.entrySet()){
-                    for (String location:map.getValue()){
-                        String value = location.replaceAll("\\s+", "").toLowerCase()+ " " + map.getKey().replaceAll("\\s+", "").toLowerCase();
-                        if (displayedList.get(value).equals(1)) {
+            slices.add(slice);
+        }
+
+        for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()) {
+            HashMap<String, List<String>> sideMap = areaMap.getValue();
+            for (HashMap.Entry<String, List<String>> map : sideMap.entrySet()) {
+                for (String location : map.getValue()) {
+                    String value = location.replaceAll("\\s+", "").toLowerCase() + " " + map.getKey().replaceAll("\\s+", "").toLowerCase();
+                    if (displayedList.get(value).equals(1)) {
+                        HashMap<String, Pair<String, String>> txyOrgan = this.txyValues.get(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase());
+                        for (HashMap.Entry<String, Pair<String, String>> txySlice : txyOrgan.entrySet()) {
                             SliceVectorItem sliceVectorItem = new SliceVectorItem();
-                            sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(i-1));
-                            sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
-                            sliceVectorItem.setSide(map.getKey());
+                            sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(txySlice.getKey()));
                             int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
 
-                            if (resId!=0){
-                                slice.addVectorStorageLocation(sliceVectorItem);
+                            if (resId != 0) {
+                                sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
+                                sliceVectorItem.setSide(map.getKey());
+                                String machin = sliceVectorItem.getFilename().toLowerCase();
+                                Pair truc = this.txyValues.get(sliceVectorItem.getLocation() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase()).get(String.valueOf(txySlice.getKey()));
+                                float bidule = Float.parseFloat((String) truc.getFirst());
+                                float bidule2 = Float.parseFloat((String) truc.getSecond());
+                                sliceVectorItem.setxMargin(bidule);
+                                sliceVectorItem.setyMargin(bidule2);
+                                slices.get(Integer.valueOf(txySlice.getKey()) + 1).addVectorStorageLocation(sliceVectorItem);
                             }
                         }
                     }
                 }
             }
-            for (HashMap.Entry<String, List<String>> nodeMap : cancerNTarData.entrySet()){
-                List<String> sideMap = nodeMap.getValue();
-                    for (String location:sideMap){
-                        SliceVectorItem sliceVectorItem = new SliceVectorItem();
-                        sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(i-1));
+        }
+
+        for (HashMap.Entry<String, List<String>> nodeMap : cancerNTarData.entrySet()) {
+            List<String> sideMap = nodeMap.getValue();
+            for (String location : sideMap) {
+                String value = location.replaceAll("\\s+", "").toLowerCase() + " " + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase();
+                HashMap<String, Pair<String, String>> nxyOrgan = this.nxyValues.get(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase());
+                for (HashMap.Entry<String, Pair<String, String>> nxySlice : nxyOrgan.entrySet()) {
+                    SliceVectorItem sliceVectorItem = new SliceVectorItem();
+                    sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(nxySlice.getKey()));
+                    int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
+
+                    if (resId != 0) {
                         sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
                         sliceVectorItem.setSide(nodeMap.getKey());
-                        int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
-
-                        if (resId!=0){
-                            slice.addVectorStorageLocation(sliceVectorItem);
-                        }
-                        //slice.addVectorStorageLocation(location.replaceAll("\\s+", "").toLowerCase()+ "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() +"___"+String.valueOf(i));
+                        String machin = sliceVectorItem.getFilename().toLowerCase();
+                        Pair truc = this.nxyValues.get(sliceVectorItem.getLocation() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase()).get(String.valueOf(nxySlice.getKey()));
+                        float bidule = Float.parseFloat((String) truc.getFirst());
+                        float bidule2 = Float.parseFloat((String) truc.getSecond());
+                        sliceVectorItem.setxMargin(bidule);
+                        sliceVectorItem.setyMargin(bidule2);
+                        slices.get(Integer.valueOf(nxySlice.getKey()) + 1).addVectorStorageLocation(sliceVectorItem);
                     }
                 }
-            slices.add(slice);
+            }
+
         }
+
+
+
     }
 
     void prepareDisplayList(){
@@ -206,7 +237,7 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
     public void prepareOLimitsData(){
         try {
             OLimitsXMLHandler oLimitsXMLHandler = new OLimitsXMLHandler();
-            this.oLimits = oLimitsXMLHandler.parse(getAssets().open("olimit.xml"));
+            this.oLimits = oLimitsXMLHandler.parse(getAssets().open("TNOrganlimit.xml"));
         }
         catch (IOException e){
             e.printStackTrace();

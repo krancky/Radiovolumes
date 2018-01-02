@@ -222,7 +222,7 @@ public class MyNDialogFragment extends DialogFragment {
     public void prepareOLimitsData(){
         try {
             OLimitsXMLHandler oLimitsXMLHandler = new OLimitsXMLHandler();
-            this.oLimits = oLimitsXMLHandler.parse(activity.getAssets().open("olimit.xml"));
+            this.oLimits = oLimitsXMLHandler.parse(activity.getAssets().open("TNOrganlimit.xml"));
         }
         catch (IOException e){
             e.printStackTrace();

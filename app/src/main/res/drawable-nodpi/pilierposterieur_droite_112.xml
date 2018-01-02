@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="512.000dp"
-    android:height="512.000dp"
-    android:viewportWidth="512.000"
-    android:viewportHeight="512.000">
-
-    <path
-        android:fillColor="#000000"
-        android:fillAlpha="0.01"
-        android:strokeColor="#0029FF"
-        android:strokeWidth="1"
-        android:pathData="M 224.500000 211.815789 L 226.500000 211.333333 L 228.000000 212.500000 L 228.437500 214.500000 L 228.437500 216.500000 L 228.437500 218.500000 L 228.437500 220.500000 L 228.437500 222.500000 L 228.088235 224.500000 L 226.916667 226.500000 L 226.500000 226.794118 L 224.500000 227.062500 L 222.500000 227.062500 L 220.500000 227.222222 L 219.571429 226.500000 L 219.187500 224.500000 L 219.187500 222.500000 L 219.187500 220.500000 L 219.312500 218.500000 L 220.205882 216.500000 L 220.500000 216.045455 L 221.309524 214.500000 L 222.500000 212.576923 L 222.642857 212.500000 Z" />
-</vector>
+<?xml version="1.0" encoding="utf-8"?><vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="12.000000px" android:height="15.000000px" android:viewportWidth="12.000000" android:viewportHeight="15.000000"><path android:fillColor="#000000" android:fillAlpha="0.01" android:strokeColor="#0029FF" android:strokeWidth="1" android:pathData="M  6.333333 0.000000 L 8.395833 0.411765 L 10.395833 4.411765 L 11.166667 6.411765 L 11.645833 8.411765 L 11.645833 10.411765 L 11.122807 12.411765 L 10.333333 13.245098 L 8.333333 14.099265 L 6.333333 14.224265 L 2.333333 14.099265 L 0.333333 12.780186 L 0.000000 12.411765 L 2.724638 4.411765 L 4.070175 2.411765 L 5.921569 0.411765 L  Z" /> </vector>

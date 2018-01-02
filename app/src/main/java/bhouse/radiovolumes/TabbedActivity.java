@@ -25,6 +25,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -37,7 +38,9 @@ import bhouse.radiovolumes.processor.Cancer;
 import bhouse.radiovolumes.processor.LRNodeTargetVolume;
 import bhouse.radiovolumes.processor.LRTumorTargetVolume;
 import bhouse.radiovolumes.processor.NodeAreaTemplate;
+import bhouse.radiovolumes.processor.Pair;
 import bhouse.radiovolumes.processor.TumorAreaTemplate;
+import bhouse.radiovolumes.processor.XYXMLHandler;
 
 import static bhouse.radiovolumes.R.xml.map;
 
@@ -56,6 +59,8 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private Context context;
+    private HashMap<String, HashMap<String, Pair<String,String>>> txyValues;
+    private HashMap<String, HashMap<String, Pair<String,String>>> nxyValues;
 
     public void onCompleteN(HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyNDialogFragment.Item> items) {
         this.cancerNTarData = new HashMap<String, List<String>>();
@@ -171,6 +176,20 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
         cancerNData = new HashMap<String, List<String>>();
         cancerNTarData = new HashMap<String, List<String>>();
+
+        try {
+            XYXMLHandler parser = new XYXMLHandler();
+            this.txyValues = parser.parse(getAssets().open("txyvalues.xml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            XYXMLHandler parser = new XYXMLHandler();
+            this.nxyValues = parser.parse(getAssets().open("nxyvalues.xml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         if (cancer.getCancerTTarData().isEmpty() || cancer.getCancerNTarData().isEmpty()) {
             prepareCancerTData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
@@ -395,41 +414,24 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         return cancerTData;
     }
 
-    public void setCancerTData(HashMap<String, HashMap<String, List<String>>> cancerTData) {
-        this.cancerTData = cancerTData;
-    }
-
     public HashMap<String, HashMap<String, List<String>>> getCancerTTarData() {
         return cancerTTarData;
     }
 
-    public void setCancerTTarData(HashMap<String, HashMap<String, List<String>>> cancerTTarData) {
-        this.cancerTTarData = cancerTTarData;
-    }
 
     public HashMap<String, List<String>> getCancerNData() {
         return cancerNData;
-    }
-
-    public void setCancerNData(HashMap<String, List<String>> cancerNData) {
-        this.cancerNData = cancerNData;
     }
 
     public HashMap<String, List<String>> getCancerNTarData() {
         return cancerNTarData;
     }
 
-    public void setCancerNTarData(HashMap<String, List<String>> cancerNTarData) {
-        this.cancerNTarData = cancerNTarData;
-    }
 
     public Cancer getCancer() {
         return this.cancer;
     }
 
-    public void setCtv56NCase(CTV56NCase ctv56NCase) {
-        this.ctv56NCase = ctv56NCase;
-    }
 
     public List<String> getCtv56NCaseModifiers() {
         return ctv56NCase.getModifier();
@@ -440,26 +442,11 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
     }
 
 
-    void prepareDisplayList() {
-        for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()) {
-            HashMap<String, List<String>> sideMap = areaMap.getValue();
-            for (HashMap.Entry<String, List<String>> map : sideMap.entrySet()) {
-                for (String location : map.getValue()) {
-                    displayedList.put(location.replaceAll("\\s+", "").toLowerCase() + " " + map.getKey().replaceAll("\\s+", "").toLowerCase(), 1);
-                }
-            }
-        }
-        for (HashMap.Entry<String, List<String>> nodeMap : cancerNTarData.entrySet()) {
-            List<String> sideMap = nodeMap.getValue();
-            for (String location : sideMap) {
-                displayedList.put(location.replaceAll("\\s+", "").toLowerCase() + " " + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase(), 1);
-            }
-        }
+    public HashMap<String, HashMap<String, Pair<String, String>>> getTxyValues() {
+        return txyValues;
     }
 
-    void prepareSublocationDifferences(HashMap<String, HashMap<String, List<String>>> cancerTTarData1, HashMap<String, HashMap<String, List<String>>> cancerTTarData2) {
-
+    public HashMap<String, HashMap<String, Pair<String, String>>> getNxyValues() {
+        return nxyValues;
     }
-
-
 }

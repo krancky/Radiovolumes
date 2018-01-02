@@ -22,6 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import bhouse.radiovolumes.processor.Cancer;
+import bhouse.radiovolumes.processor.Pair;
 
 public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompleteListener, MyNDialogFragment.OnCompleteListener {
 
@@ -31,6 +32,9 @@ public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompl
     private HashMap<String, List<String>> cancerNTarData;
     private List<String> modifiers;
     private Cancer cancer;
+
+    private HashMap<String, HashMap<String, Pair<String,String>>> txyValues;
+    private HashMap<String, HashMap<String, Pair<String,String>>> nxyValues;
 
     private TabbedActivity activity;
 
@@ -72,7 +76,6 @@ public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompl
                 map.put("Droite", listD);
             }
             this.cancerTTarData.put(items.get(section).getTitle(),map);
-            Toast.makeText(getContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
             // Pb: ajouter des modifiers a partir des trucs AJOUTES ou RETIRES.
             // Renvoyer olddisplayedG et D et ainsi comparer avec le nouveau... chiantissime.
             // On peut eventuellement enregister les differences dans une structure pour a terme mettre des couleurs dans les TextView...
@@ -91,6 +94,10 @@ public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompl
         cancerNTarData = activity.getCancerNTarData();
         cancerTTarData = activity.getCancerTTarData();
         this.cancer = activity.getCancer();
+
+        this.txyValues = activity.getTxyValues();
+        this.nxyValues = activity.getNxyValues();
+
 
         modifiers = activity.getCtv56NCaseModifiers();
         //for (CTV56NUCase ctv56NUCase:activity.getCtv56NCaseModifiers()){
@@ -144,6 +151,8 @@ public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompl
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), ScannerViewActivity_simple.class);
+                i.putExtra("TXY", txyValues);
+                //i.putExtra("NXY", nxyValues);
                 i.putExtra("cancerTTarData", cancerTTarData);
                 i.putExtra("cancerNTarData", cancerNTarData);
                 startActivity(i);
@@ -200,7 +209,6 @@ public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompl
                 dialogFragment.show(fm, "Sample Fragment");
                 //Cursor cursor = (Cursor) listView.getItemAtPosition(position);
                 //iD = cursor.getLong(cursor.getColumnIndexOrThrow("_id"));
-                Toast.makeText(getContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
                 //Toast.makeText(getActivity(), iD + "", Toast.LENGTH_LONG).show();
                 //Intent result = new Intent(getApplicationContext(), ResultClass.class);
                 // intent.putExtra("ID", iD);
