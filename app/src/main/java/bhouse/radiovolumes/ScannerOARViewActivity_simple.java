@@ -85,7 +85,7 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
         mContentView.setFastScrollEnabled(true);
         mContentView.setSingleScroll(true);
 
-        mContentView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+/*        mContentView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int pos, long id) {
@@ -96,7 +96,7 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
                 dialogFragment.show(fm, "Sample Fragment");
                 return true;
             }
-        });
+        });*/
     }
 
 

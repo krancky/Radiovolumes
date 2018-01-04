@@ -267,8 +267,8 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
             holder.arlist.get(i).getLayoutParams().height = intrinsicHeight * screen_width / 512;
             holder.arlist.get(i).getLayoutParams().width = intrinsicWidth * screen_width / 512;
             //holder.arlist.get(i).setX(284);
-            holder.arlist.get(i).setY(item.getVectorStorageLocation().get(i).getyMargin() * screen_width / 512 + (parent.getMeasuredHeight() - screen_width) / 2);
-            holder.arlist.get(i).setX(item.getVectorStorageLocation().get(i).getxMargin() * screen_width / 512);
+            holder.arlist.get(i).setY((item.getVectorStorageLocation().get(i).getyMargin() -1) * screen_width / 512 + (parent.getMeasuredHeight() - screen_width) / 2);
+            holder.arlist.get(i).setX((item.getVectorStorageLocation().get(i).getxMargin() -1) * screen_width / 512);
             //holder.arlist.get(i).setClickable(false);
         }
 

@@ -23,7 +23,6 @@ import android.view.Window;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -34,7 +33,7 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Locale;
 
 import bhouse.radiovolumes.processor.OARTemplate;
 import bhouse.radiovolumes.processor.OARXMLHandler;
@@ -95,9 +94,17 @@ public class DetailActivity extends Activity implements View.OnClickListener {
 
 
     OARTemplateList = new ArrayList<OARTemplate>();
+    Locale current = getResources().getConfiguration().locale;
     try {
-      OARXMLHandler parser = new OARXMLHandler();
-      OARTemplateList = parser.parse(getAssets().open("OARlimits.xml"));
+      if (current.toLanguageTag().equals("fr")){
+        OARXMLHandler parser = new OARXMLHandler();
+        OARTemplateList = parser.parse(getAssets().open("OARlimits_FR.xml"));
+      }
+      else {
+        OARXMLHandler parser = new OARXMLHandler();
+        OARTemplateList = parser.parse(getAssets().open("OARlimits_EN.xml"));
+      }
+
 
     } catch (IOException e) {
       e.printStackTrace();

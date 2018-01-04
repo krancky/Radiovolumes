@@ -619,7 +619,18 @@
         <Comment>&lt;a href="https://www.ncbi.nlm.nih.gov/pubmed/24183870"&gt;Grégoire, &lt;i&gt;Radiother. Oncol.&lt;/i&gt;, 2017&lt;/a&gt;</Comment>
     </Organ>
     <Organ>
-        <Name>X</Name>
+        <Name>Xa</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>NA</CranialL>
+        <CaudalL>NA</CaudalL>
+        <AnteriorL>NA</AnteriorL>
+        <PosteriorL>NA</PosteriorL>
+        <MedialL>NA</MedialL>
+        <LateralL>NA</LateralL>
+        <Comment>NA</Comment>
+    </Organ>
+    <Organ>
+        <Name>Xb</Name>
         <Area>Aire Ganglionnaire</Area>
         <CranialL>NA</CranialL>
         <CaudalL>NA</CaudalL>
