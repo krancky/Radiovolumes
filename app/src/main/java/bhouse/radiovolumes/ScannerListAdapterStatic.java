@@ -1,16 +1,11 @@
 package bhouse.radiovolumes;
 
-import android.app.Dialog;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Point;
-import android.os.SystemClock;
-import android.provider.ContactsContract;
 import android.support.v4.graphics.BitmapCompat;
-import android.test.TouchUtils;
-import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -23,24 +18,24 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-import bhouse.radiovolumes.processor.Pair;
+import bhouse.radiovolumes.processor.XYPair;
+import bhouse.radiovolumes.helpLibraries.ZoomView;
 
 /**
  * Created by kranck on 8/3/2017.
  */
 
-public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements AreaDialog.OnCancelListener {
+public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNAreaDialog.OnCancelListener {
     private Context context;
     private LayoutInflater inflater;
     private ArrayList<Slice> slices;
     private ListView lv;
     private LinkedHashMap<String, ArrayList<String>> oLimits;
-    private HashMap<String, HashMap<String, Pair<String,String>>> txyValues;
-    private HashMap<String, HashMap<String, Pair<String,String>>> nxyValues;
+    private HashMap<String, HashMap<String, XYPair<String,String>>> txyValues;
+    private HashMap<String, HashMap<String, XYPair<String,String>>> nxyValues;
 
 
     public ScannerListAdapterStatic(Context context, ArrayList<Slice> slices, ListView lv, LinkedHashMap<String, ArrayList<String>> oLimits) {
@@ -349,7 +344,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements Are
                         FragmentManager fm = ((ScannerViewActivity_simple) context).getFragmentManager();
                         int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_selected", "drawable", context.getPackageName());
                         child.setImageResource(resID);
-                        AreaDialog dialogFragment = AreaDialog.newInstance((SliceVectorItem) child.getTag(), child.getId());
+                        TNAreaDialog dialogFragment = TNAreaDialog.newInstance((SliceVectorItem) child.getTag(), child.getId());
                         dialogFragment.show(fm, String.valueOf(child.getTag()));
                     }
                 }

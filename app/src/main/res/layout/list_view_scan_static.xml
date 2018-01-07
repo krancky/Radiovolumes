@@ -3,7 +3,7 @@
     android:longClickable="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <bhouse.radiovolumes.ZoomView
+    <bhouse.radiovolumes.helpLibraries.ZoomView
         android:id="@+id/zoomView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -175,5 +175,5 @@
             </ImageView>
         </FrameLayout>
 
-    </bhouse.radiovolumes.ZoomView>
+    </bhouse.radiovolumes.helpLibraries.ZoomView>
 </LinearLayout>

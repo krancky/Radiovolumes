@@ -14,12 +14,12 @@
         android:text="@string/tumorLocation"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    <bhouse.radiovolumes.NonScrollListView
+    <bhouse.radiovolumes.processor.NonScrollListView
         android:id="@+id/listView_invaded_T"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_tab_1_T">
-    </bhouse.radiovolumes.NonScrollListView>
+    </bhouse.radiovolumes.processor.NonScrollListView>
 
     <TextView
         android:id="@+id/textView_tab_1_N"
@@ -30,12 +30,12 @@
         android:text="@string/nodeLocation"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    <bhouse.radiovolumes.NonScrollListView
+    <bhouse.radiovolumes.processor.NonScrollListView
         android:id="@+id/listView_invaded_N"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_tab_1_T">
-    </bhouse.radiovolumes.NonScrollListView>
+    </bhouse.radiovolumes.processor.NonScrollListView>
 
 
 </LinearLayout>

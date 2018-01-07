@@ -5,9 +5,6 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.app.Activity;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,7 +15,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,16 +26,16 @@ import java.util.Calendar;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import bhouse.radiovolumes.helpLibraries.LocaleHelper;
 import bhouse.radiovolumes.processor.CTV56NCase;
 import bhouse.radiovolumes.processor.CTV56NUCase;
 import bhouse.radiovolumes.processor.CTV56TCase;
 import bhouse.radiovolumes.processor.CTV56TUCase;
 import bhouse.radiovolumes.processor.Cancer;
-import bhouse.radiovolumes.processor.HashMapOperator;
+import bhouse.radiovolumes.processor.NewCaseActivityHashMapOperator;
 import bhouse.radiovolumes.processor.NUCaseXMLHandler;
 import bhouse.radiovolumes.processor.NodeAreaTemplate;
 import bhouse.radiovolumes.processor.NodeAreasTemplateXMLHandler;
-import bhouse.radiovolumes.processor.OLimitsXMLHandler;
 import bhouse.radiovolumes.processor.TumorAreasTemplateXMLHandler;
 import bhouse.radiovolumes.processor.TUCaseXMLHandler;
 import bhouse.radiovolumes.processor.TumorAreaTemplate;
@@ -199,10 +195,10 @@ public class NewCaseActivity extends Activity {
         // Generates list of lymph nodes to be irradiated
         // Stores in list
         // Displays in listView with adapter
-        HashMapOperator hashMapOperator = new HashMapOperator();
+        NewCaseActivityHashMapOperator newCaseActivityHashMapOperator = new NewCaseActivityHashMapOperator();
         ctv56NCase = new CTV56NCase();
 
-        hashMapOperator.cTV56NCase(ctv56NUCaseList, cancer, ctv56NCase);
+        newCaseActivityHashMapOperator.cTV56NCase(ctv56NUCaseList, cancer, ctv56NCase);
         ArrayAdapter<CTV56NCase> target_adapter =
                 new ArrayAdapter<CTV56NCase>(this, R.layout.test_target_list_item, ctv56NCaseList);
         //targetVolumesView.setAdapter(target_adapter);
@@ -235,7 +231,7 @@ public class NewCaseActivity extends Activity {
 
         // Generates list of T locations to be irradiated
         ctv56TCase = new CTV56TCase();
-        hashMapOperator.cTV56TCase(ctv56TUCaseList, cancer, ctv56TCase, isAdvanced);
+        newCaseActivityHashMapOperator.cTV56TCase(ctv56TUCaseList, cancer, ctv56TCase, isAdvanced);
 
         nExpandableListView = (ListView) findViewById(R.id.nExpandableListView);
         nexpandableListDetail = ExpandableListDataPump.getNData(nodeAreaTemplateList);
@@ -390,8 +386,8 @@ public class NewCaseActivity extends Activity {
         NewCaseActivity.this.ctv56TCaseList.clear();
         NewCaseActivity.this.ctv56TCase = new CTV56TCase();
         NewCaseActivity.this.ctv56NCase = new CTV56NCase();
-        HashMapOperator hashMapOperator = new HashMapOperator();
-        hashMapOperator.update(NewCaseActivity.this.ctv56TUCaseList, NewCaseActivity.this.ctv56NUCaseList, NewCaseActivity.this.cancer, NewCaseActivity.this.ctv56TCase, ctv56NCase, this.isAdvanced);
+        NewCaseActivityHashMapOperator newCaseActivityHashMapOperator = new NewCaseActivityHashMapOperator();
+        newCaseActivityHashMapOperator.update(NewCaseActivity.this.ctv56TUCaseList, NewCaseActivity.this.ctv56NUCaseList, NewCaseActivity.this.cancer, NewCaseActivity.this.ctv56TCase, ctv56NCase, this.isAdvanced);
         ctv56TCase.removeTarVolumesDuplicates();
         ctv56NCase.removeTarVolumesDuplicates();
         NewCaseActivity.this.ctv56TCaseList.add(NewCaseActivity.this.ctv56TCase);

@@ -10,13 +10,11 @@ import android.widget.CompoundButton;
 import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import bhouse.radiovolumes.processor.Cancer;
 import bhouse.radiovolumes.processor.OARTemplate;
 
 /**
@@ -24,9 +22,9 @@ import bhouse.radiovolumes.processor.OARTemplate;
  */
 public class OARSelectionAdapter extends BaseAdapter {
     private Context context;
-    private ArrayList<DetailActivity.Item> items;
+    private ArrayList<OARSelectionActivity.Item> items;
     List<OARTemplate> tList;
-    private ArrayList<DetailActivity.Item> originalItem;
+    private ArrayList<OARSelectionActivity.Item> originalItem;
     private ArrayList<Boolean> checkboxStatus_left = new ArrayList<Boolean>();
     private ArrayList<Boolean> checkboxStatus_right = new ArrayList<Boolean>();
 
@@ -35,7 +33,7 @@ public class OARSelectionAdapter extends BaseAdapter {
         super();
     }
 
-    public OARSelectionAdapter(Context context, ArrayList<DetailActivity.Item> items, List<OARTemplate> OARTemplateList) {
+    public OARSelectionAdapter(Context context, ArrayList<OARSelectionActivity.Item> items, List<OARTemplate> OARTemplateList) {
         this.context = context;
         this.items = items;
         this.tList = OARTemplateList;
@@ -102,7 +100,7 @@ public class OARSelectionAdapter extends BaseAdapter {
                 convertView.setTag(holder);
                 //TextView tvItemTitle = (TextView) convertView.findViewById(R.id.tvItemTitle);
 
-                //tvItemTitle.setText(((DetailActivity.EntryItem) item.get(position)).getTitle());
+                //tvItemTitle.setText(((OARSelectionActivity.EntryItem) item.get(position)).getTitle());
 
         }
         else {
@@ -212,7 +210,7 @@ public class OARSelectionAdapter extends BaseAdapter {
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
 
-                items = (ArrayList<DetailActivity.Item>) results.values;
+                items = (ArrayList<OARSelectionActivity.Item>) results.values;
                 notifyDataSetChanged();
             }
 
@@ -221,12 +219,12 @@ public class OARSelectionAdapter extends BaseAdapter {
             protected FilterResults performFiltering(CharSequence constraint) {
 
                 FilterResults results = new FilterResults();
-                ArrayList<DetailActivity.Item> filteredArrayList = new ArrayList<DetailActivity.Item>();
+                ArrayList<OARSelectionActivity.Item> filteredArrayList = new ArrayList<OARSelectionActivity.Item>();
 
 
                 if(originalItem == null || originalItem.size() == 0)
                 {
-                    originalItem = new ArrayList<DetailActivity.Item>(items);
+                    originalItem = new ArrayList<OARSelectionActivity.Item>(items);
                 }
 
                     /*

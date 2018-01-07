@@ -1,25 +1,18 @@
 package bhouse.radiovolumes;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
         import android.os.Bundle;
         import android.support.v4.app.Fragment;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.view.ViewGroup;
 
 import java.util.HashMap;
 import java.util.List;
 
 import bhouse.radiovolumes.processor.Cancer;
+import bhouse.radiovolumes.processor.NonScrollListView;
 
 public class TabFragment1 extends Fragment {
 
@@ -53,8 +46,8 @@ public class TabFragment1 extends Fragment {
     public void perform(View v){
         NonScrollListView lvT = (NonScrollListView) v.findViewById(R.id.listView_invaded_T);
         NonScrollListView lvN = (NonScrollListView) v.findViewById(R.id.listView_invaded_N);
-        HashAdapter mAdapterT = new HashAdapter(getActivity(), cancerTData, this.cancer);
-        HashNAdapter mAdapterN = new HashNAdapter(getContext(), cancerNData, this.cancer);
+        NewCaseActivityTHashAdapter mAdapterT = new NewCaseActivityTHashAdapter(getActivity(), cancerTData, this.cancer);
+        NewCaseActivityNHashAdapter mAdapterN = new NewCaseActivityNHashAdapter(getContext(), cancerNData, this.cancer);
         lvT.setAdapter(mAdapterT);
         lvN.setAdapter(mAdapterN);
 

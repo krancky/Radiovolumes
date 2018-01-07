@@ -23,11 +23,11 @@
             android:text="@string/lRtumorLocation"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <bhouse.radiovolumes.NonScrollListView
+        <bhouse.radiovolumes.processor.NonScrollListView
             android:id="@+id/listView_invaded_T"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView_tab_1_T"></bhouse.radiovolumes.NonScrollListView>
+            android:layout_below="@id/textView_tab_1_T"></bhouse.radiovolumes.processor.NonScrollListView>
 
         <TextView
             android:id="@+id/textView_tab_1_N"
@@ -39,11 +39,11 @@
             android:text="@string/lRnodeLocation"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <bhouse.radiovolumes.NonScrollListView
+        <bhouse.radiovolumes.processor.NonScrollListView
             android:id="@+id/listView_invaded_N"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView_tab_1_T"></bhouse.radiovolumes.NonScrollListView>
+            android:layout_below="@id/textView_tab_1_T"></bhouse.radiovolumes.processor.NonScrollListView>
 
         <TextView
             android:id="@+id/textView_tab_1_Notes"
@@ -55,11 +55,11 @@
             android:text="@string/additionnal"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <bhouse.radiovolumes.NonScrollListView
+        <bhouse.radiovolumes.processor.NonScrollListView
             android:id="@+id/listView_additional_notes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView_tab_1_Notes"></bhouse.radiovolumes.NonScrollListView>
+            android:layout_below="@id/textView_tab_1_Notes"></bhouse.radiovolumes.processor.NonScrollListView>
 
         <RelativeLayout android:id="@+id/relativeLayout1"
             android:layout_height="wrap_content" android:gravity="center_horizontal"

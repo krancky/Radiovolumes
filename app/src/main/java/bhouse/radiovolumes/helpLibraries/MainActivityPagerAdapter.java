@@ -1,4 +1,4 @@
-package bhouse.radiovolumes;
+package bhouse.radiovolumes.helpLibraries;
 
 import android.support.v4.app.FragmentStatePagerAdapter;
 
@@ -9,10 +9,10 @@ import bhouse.radiovolumes.TabFragment2;
         import android.support.v4.app.FragmentManager;
         import android.support.v4.app.FragmentStatePagerAdapter;
 
-public class PagerAdapter extends FragmentStatePagerAdapter {
+public class MainActivityPagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;
 
-    public PagerAdapter(FragmentManager fm, int NumOfTabs) {
+    public MainActivityPagerAdapter(FragmentManager fm, int NumOfTabs) {
         super(fm);
         this.mNumOfTabs = NumOfTabs;
     }

@@ -4,13 +4,10 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
-import android.support.v7.app.ActionBar;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
@@ -20,11 +17,10 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 import android.widget.Toolbar;
 
-import java.util.Locale;
-
+import bhouse.radiovolumes.helpLibraries.LocaleHelper;
+import bhouse.radiovolumes.helpLibraries.MainPageListAdapter;
 import bhouse.radiovolumes.processor.HelpFragment;
 
 
@@ -76,8 +72,8 @@ public class MainActivity extends Activity {
           startActivity(transitionIntent);
         }
         else if (itemPosition == 2){
-          Intent transitionIntent = new Intent(MainActivity.this, DetailActivity.class);
-          transitionIntent.putExtra(DetailActivity.EXTRA_PARAM_ID, position);
+          Intent transitionIntent = new Intent(MainActivity.this, OARSelectionActivity.class);
+          transitionIntent.putExtra(OARSelectionActivity.EXTRA_PARAM_ID, position);
           ImageView placeImage = (ImageView) v.findViewById(R.id.placeImage);
           LinearLayout placeNameHolder = (LinearLayout) v.findViewById(R.id.placeNameHolder);
 
@@ -88,7 +84,7 @@ public class MainActivity extends Activity {
           Pair<View, String> holderPair = Pair.create((View) placeNameHolder, "tNameHolder");
           // This code generate app crush when onClick.
           // TODO: Find out why.
-          //Pair<View, String> navPair = Pair.create(navigationBar, Window.NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME);
+          //XYPair<View, String> navPair = XYPair.create(navigationBar, Window.NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME);
           Pair<View, String> statusPair = Pair.create(statusBar, Window.STATUS_BAR_BACKGROUND_TRANSITION_NAME);
           Pair<View, String> toolbarPair = Pair.create((View)toolbar, "tActionBar");
 
@@ -100,7 +96,7 @@ public class MainActivity extends Activity {
 
         else if (itemPosition == 1){
           Intent transitionIntent = new Intent(MainActivity.this, LoadCaseActivity.class);
-          transitionIntent.putExtra(DetailActivity.EXTRA_PARAM_ID, position);
+          transitionIntent.putExtra(OARSelectionActivity.EXTRA_PARAM_ID, position);
           ImageView placeImage = (ImageView) v.findViewById(R.id.placeImage);
           LinearLayout placeNameHolder = (LinearLayout) v.findViewById(R.id.placeNameHolder);
 
@@ -111,7 +107,7 @@ public class MainActivity extends Activity {
           Pair<View, String> holderPair = Pair.create((View) placeNameHolder, "tNameHolder");
           // This code generate app crush when onClick.
           // TODO: Find out why.
-          //Pair<View, String> navPair = Pair.create(navigationBar, Window.NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME);
+          //XYPair<View, String> navPair = XYPair.create(navigationBar, Window.NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME);
           Pair<View, String> statusPair = Pair.create(statusBar, Window.STATUS_BAR_BACKGROUND_TRANSITION_NAME);
           Pair<View, String> toolbarPair = Pair.create((View)toolbar, "tActionBar");
 

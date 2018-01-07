@@ -6,11 +6,11 @@ import java.io.Serializable;
  * Created by kranck on 12/21/2017.
  */
 
-public class Pair<F, S> implements Serializable{
+public class XYPair<F, S> implements Serializable{
     private F first;
     private S second;
 
-    public Pair(F first, S second){
+    public XYPair(F first, S second){
         this.first = first;
         this.second = second;
     }

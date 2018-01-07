@@ -35,15 +35,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 
+import bhouse.radiovolumes.helpLibraries.LocaleHelper;
+import bhouse.radiovolumes.helpLibraries.MainPageItem;
+import bhouse.radiovolumes.helpLibraries.MainPageItemsData;
+import bhouse.radiovolumes.helpLibraries.TransitionAdapter;
 import bhouse.radiovolumes.processor.OARTemplate;
-import bhouse.radiovolumes.processor.OARXMLHandler;
-import bhouse.radiovolumes.processor.Pair;
+import bhouse.radiovolumes.processor.OARListXMLHandler;
+import bhouse.radiovolumes.processor.XYPair;
 import bhouse.radiovolumes.processor.XYXMLHandler;
 
 /**
  * Created by megha on 15-03-10.
  */
-public class DetailActivity extends Activity implements View.OnClickListener {
+public class OARSelectionActivity extends Activity implements View.OnClickListener {
 
   public static final String EXTRA_PARAM_ID = "place_id";
   public static final String NAV_BAR_VIEW_NAME = Window.NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME;
@@ -64,7 +68,7 @@ public class DetailActivity extends Activity implements View.OnClickListener {
   private ArrayList<OARTemplate> OARTemplateList;
   int defaultColorForRipple;
   private ArrayList<Item> allIncludedList = new ArrayList<Item>();
-  private HashMap<String, HashMap<String, Pair<String,String>>> xyValues;
+  private HashMap<String, HashMap<String, XYPair<String,String>>> xyValues;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -97,11 +101,11 @@ public class DetailActivity extends Activity implements View.OnClickListener {
     Locale current = getResources().getConfiguration().locale;
     try {
       if (current.toLanguageTag().equals("fr")){
-        OARXMLHandler parser = new OARXMLHandler();
+        OARListXMLHandler parser = new OARListXMLHandler();
         OARTemplateList = parser.parse(getAssets().open("OARlimits_FR.xml"));
       }
       else {
-        OARXMLHandler parser = new OARXMLHandler();
+        OARListXMLHandler parser = new OARListXMLHandler();
         OARTemplateList = parser.parse(getAssets().open("OARlimits_EN.xml"));
       }
 
@@ -200,7 +204,7 @@ public class DetailActivity extends Activity implements View.OnClickListener {
           mAnimatable = (Animatable) (mAddButton).getDrawable();
           mAnimatable.start();
           applyRippleColor(getResources().getColor(R.color.light_green), getResources().getColor(R.color.dark_green));
-          Intent transitionIntent = new Intent(DetailActivity.this, ScannerOARViewActivity_simple.class);
+          Intent transitionIntent = new Intent(OARSelectionActivity.this, ScannerOARViewActivity_simple.class);
           transitionIntent.putExtra("OAR", this.OARTemplateList);
           transitionIntent.putExtra("XY", this.xyValues);
           if(!((Activity) v.getContext()).isFinishing())

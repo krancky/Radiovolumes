@@ -60,7 +60,7 @@ public class LoadCaseRViewAdapter extends RecyclerView.Adapter<LoadCaseRViewAdap
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(mContext, NewCaseActivity.class);
-                //transitionIntent.putExtra(DetailActivity.EXTRA_PARAM_ID, position);
+                //transitionIntent.putExtra(OARSelectionActivity.EXTRA_PARAM_ID, position);
                 intent.putExtra("cancer", cancer);
                 intent.putExtra("newParam", "0");
                 mContext.startActivity(intent);

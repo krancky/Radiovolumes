@@ -6,7 +6,6 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -14,25 +13,25 @@ import java.util.HashMap;
  */
 
 public class XYXMLHandler {
-    private HashMap<String, HashMap<String, Pair<String,String>>> xyValues;
+    private HashMap<String, HashMap<String, XYPair<String,String>>> xyValues;
     private String text;
     /**
      * Instantiates a new Xml pull parser handler.
      */
     public XYXMLHandler() {
-        this.xyValues = new HashMap<String, HashMap<String, Pair<String, String>>>();
+        this.xyValues = new HashMap<String, HashMap<String, XYPair<String, String>>>();
     }
 
 
 
-    public HashMap<String, HashMap<String, Pair<String, String>>> parse(InputStream is) {
+    public HashMap<String, HashMap<String, XYPair<String, String>>> parse(InputStream is) {
         XmlPullParserFactory factory = null;
         XmlPullParser parser = null;
         try {
             // Creates parser
-            HashMap<String, Pair<String, String>> singleOrganXY = new HashMap<String, Pair<String, String>>();
+            HashMap<String, XYPair<String, String>> singleOrganXY = new HashMap<String, XYPair<String, String>>();
             String oName = new String();
-            Pair<String, String> xyPair = new Pair<>(null,null);
+            XYPair<String, String> xyXYPair = new XYPair<>(null,null);
             String ymin = new String();
             String z = new String();
             String xmin = new String();
@@ -51,10 +50,10 @@ public class XYXMLHandler {
                         if (tagname.equalsIgnoreCase("Organ")) {
                             // Creates a new instance of CTV56NUCase
                             oName = new String();
-                            singleOrganXY = new HashMap<String, Pair<String, String>>();
+                            singleOrganXY = new HashMap<String, XYPair<String, String>>();
                         }
                         if (tagname.equalsIgnoreCase("slice")) {
-                            xyPair = new Pair<>(null,null);
+                            xyXYPair = new XYPair<>(null,null);
                         }
 
                     case XmlPullParser.TEXT:
@@ -77,9 +76,9 @@ public class XYXMLHandler {
                         } else if (tagname.equalsIgnoreCase("ymin")) {
                             ymin = text;
                         } else if (tagname.equalsIgnoreCase("slice")) {
-                            xyPair.setFirst(xmin);
-                            xyPair.setSecond(ymin);
-                            singleOrganXY.put(z,xyPair);
+                            xyXYPair.setFirst(xmin);
+                            xyXYPair.setSecond(ymin);
+                            singleOrganXY.put(z, xyXYPair);
                         }
                         break;
 
@@ -99,7 +98,7 @@ public class XYXMLHandler {
         return this.xyValues;
     }
 
-    public HashMap<String, HashMap<String, Pair<String,String>>> getxyValues() {
+    public HashMap<String, HashMap<String, XYPair<String,String>>> getxyValues() {
         return xyValues;
     }
 }

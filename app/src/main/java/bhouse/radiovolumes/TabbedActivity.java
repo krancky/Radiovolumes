@@ -7,23 +7,10 @@ import android.support.v7.app.AlertDialog;
 import android.view.Menu;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.os.Bundle;
-import android.app.Activity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,20 +19,20 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 
+import bhouse.radiovolumes.helpLibraries.LocaleHelper;
+import bhouse.radiovolumes.helpLibraries.MainActivityPagerAdapter;
 import bhouse.radiovolumes.processor.CTV56NCase;
 import bhouse.radiovolumes.processor.CTV56TCase;
 import bhouse.radiovolumes.processor.Cancer;
 import bhouse.radiovolumes.processor.LRNodeTargetVolume;
 import bhouse.radiovolumes.processor.LRTumorTargetVolume;
 import bhouse.radiovolumes.processor.NodeAreaTemplate;
-import bhouse.radiovolumes.processor.Pair;
+import bhouse.radiovolumes.processor.XYPair;
 import bhouse.radiovolumes.processor.TumorAreaTemplate;
 import bhouse.radiovolumes.processor.XYXMLHandler;
 
-import static bhouse.radiovolumes.R.xml.map;
 
-
-public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragment.OnCompleteListener, MyNDialogFragment.OnCompleteListener {
+public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragment.OnCompleteListener, Tab2NDialogFragment.OnCompleteListener {
 
     private HashMap<String, HashMap<String, List<String>>> cancerTData;
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
@@ -55,14 +42,14 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
     private CTV56NCase ctv56NCase;
     private LinkedHashMap<String, Integer> displayedList = new LinkedHashMap<String, Integer>();
 
-    private PagerAdapter adapter;
+    private MainActivityPagerAdapter adapter;
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private Context context;
-    private HashMap<String, HashMap<String, Pair<String,String>>> txyValues;
-    private HashMap<String, HashMap<String, Pair<String,String>>> nxyValues;
+    private HashMap<String, HashMap<String, XYPair<String,String>>> txyValues;
+    private HashMap<String, HashMap<String, XYPair<String,String>>> nxyValues;
 
-    public void onCompleteN(HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyNDialogFragment.Item> items) {
+    public void onCompleteN(HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<Tab2NDialogFragment.Item> items) {
         this.cancerNTarData = new HashMap<String, List<String>>();
 
         Integer i = 0;
@@ -88,7 +75,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         }
         //adapter.notifyDataSetChanged();
         viewPager = (ViewPager) findViewById(R.id.pager);
-        adapter = new PagerAdapter
+        adapter = new MainActivityPagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -146,7 +133,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         }
         adapter.notifyDataSetChanged();
         viewPager = (ViewPager) findViewById(R.id.pager);
-        adapter = new PagerAdapter
+        adapter = new MainActivityPagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -213,7 +200,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
                             cancerTTarData = cancer.getCancerTTarData();
                             cancerNTarData = cancer.getCancerNTarData();
                             viewPager = (ViewPager) findViewById(R.id.pager);
-                            adapter = new PagerAdapter
+                            adapter = new MainActivityPagerAdapter
                                     (getSupportFragmentManager(), tabLayout.getTabCount());
                             viewPager.setAdapter(adapter);
                             viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -249,7 +236,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
 
 
         viewPager = (ViewPager) findViewById(R.id.pager);
-        adapter = new PagerAdapter
+        adapter = new MainActivityPagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -442,11 +429,11 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
     }
 
 
-    public HashMap<String, HashMap<String, Pair<String, String>>> getTxyValues() {
+    public HashMap<String, HashMap<String, XYPair<String, String>>> getTxyValues() {
         return txyValues;
     }
 
-    public HashMap<String, HashMap<String, Pair<String, String>>> getNxyValues() {
+    public HashMap<String, HashMap<String, XYPair<String, String>>> getNxyValues() {
         return nxyValues;
     }
 }

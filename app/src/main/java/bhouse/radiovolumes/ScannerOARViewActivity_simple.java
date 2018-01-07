@@ -1,34 +1,30 @@
 package bhouse.radiovolumes;
 
 import android.app.Activity;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Toast;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import bhouse.radiovolumes.helpLibraries.LocaleHelper;
 import bhouse.radiovolumes.processor.OARTemplate;
-import bhouse.radiovolumes.processor.OLimitsXMLHandler;
-import bhouse.radiovolumes.processor.Pair;
+import bhouse.radiovolumes.helpLibraries.SingleScrollListView;
+import bhouse.radiovolumes.processor.XYPair;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class ScannerOARViewActivity_simple extends Activity implements MyDialogFragment.OnCompleteListener, OARDialog.OnCancelListener {
+public class ScannerOARViewActivity_simple extends Activity implements Tab2TDialogFragment.OnCompleteListener, OARDialog.OnCancelListener {
     private SingleScrollListView mContentView;
     private ArrayList<Slice> slices;
     private LinkedHashMap<String, Integer> displayedList = new LinkedHashMap<String, Integer>();
-    private HashMap<String, HashMap<String, Pair<String,String>>> xyValues;
+    private HashMap<String, HashMap<String, XYPair<String,String>>> xyValues;
 
     private ScannerOARListAdapterStatic scannerOARListAdapterStatic;
 
@@ -69,7 +65,7 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
 
 
         this.OARTemplateList = (ArrayList<OARTemplate>) i.getSerializableExtra("OAR");
-        this.xyValues = (HashMap<String, HashMap<String, Pair<String,String>>>) i.getSerializableExtra("XY");
+        this.xyValues = (HashMap<String, HashMap<String, XYPair<String,String>>>) i.getSerializableExtra("XY");
         //cancerNTarData = (HashMap<String, List<String>>) i.getSerializableExtra("cancerNTarData");
 
         mVisible = false;
@@ -92,7 +88,7 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
                 // TODO Auto-generated method stub
                 Toast.makeText(getApplicationContext(), "Long click position" + pos, Toast.LENGTH_SHORT).show();
                 FragmentManager fm = getFragmentManager();
-                MyDialogFragment dialogFragment = MyDialogFragment.newInstance("Displayed Locations");
+                Tab2TDialogFragment dialogFragment = Tab2TDialogFragment.newInstance("Displayed Locations");
                 dialogFragment.show(fm, "Sample Fragment");
                 return true;
             }
@@ -120,7 +116,7 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
                     int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
                     if (resId != 0) {
                         slice.addVectorStorageLocation(sliceVectorItem);
-                        Pair truc = this.xyValues.get(fileName + "_" + "gauche").get(String.valueOf(i));
+                        XYPair truc = this.xyValues.get(fileName + "_" + "gauche").get(String.valueOf(i));
                         float bidule =  Float.parseFloat( (String) truc.getFirst());
                         float bidule2 = Float.parseFloat( (String)truc.getSecond());
                         sliceVectorItem.setxMargin(bidule);
@@ -135,7 +131,7 @@ public class ScannerOARViewActivity_simple extends Activity implements MyDialogF
                     int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
                     if (resId != 0) {
                         slice.addVectorStorageLocation(sliceVectorItem);
-                        Pair truc = this.xyValues.get(fileName + "_" + "droite").get(String.valueOf(i));
+                        XYPair truc = this.xyValues.get(fileName + "_" + "droite").get(String.valueOf(i));
                         float bidule =  Float.parseFloat( (String) truc.getFirst());
                         float bidule2 = Float.parseFloat( (String)truc.getSecond());
                         sliceVectorItem.setxMargin(bidule);

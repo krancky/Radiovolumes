@@ -17,7 +17,7 @@ import java.util.List;
  * The type Xml pull parser handler.
  * Handles Xml parsing for Tumor template
  */
-public class OARXMLHandler {
+public class OARListXMLHandler {
     /**
      * The Ctv 56 nu case catalog.
      * Stores all elementary CTV56N cases
@@ -29,7 +29,7 @@ public class OARXMLHandler {
     /**
      * Instantiates a new Xml pull parser handler.
      */
-    public OARXMLHandler() {
+    public OARListXMLHandler() {
             OARTemplateList = new ArrayList<OARTemplate>();
         }
 

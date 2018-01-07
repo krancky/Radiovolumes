@@ -28,9 +28,9 @@ public class UserAdapter1 extends BaseAdapter {
     private List<Slice> slices;
     private Map<String, String> colors;
     private Context context;
-    private ArrayList<MyDialogFragment.Item> items;
+    private ArrayList<Tab2TDialogFragment.Item> items;
 
-    public UserAdapter1(Context context, LinkedHashMap<String, Integer> displayedlist, List<Slice> slices, Map<String, String> colors, ArrayList<MyDialogFragment.Item> items) {
+    public UserAdapter1(Context context, LinkedHashMap<String, Integer> displayedlist, List<Slice> slices, Map<String, String> colors, ArrayList<Tab2TDialogFragment.Item> items) {
         this.displayedList = displayedlist;
         mKeys = displayedlist.keySet().toArray(new String[displayedlist.size()]);
         this.slices = slices;
@@ -92,7 +92,7 @@ public class UserAdapter1 extends BaseAdapter {
         }
 
         if (items.get(position).isSection()) {
-            holder.tvSectionTitle.setText(((MyDialogFragment.SectionItem) items.get(position)).getTitle());
+            holder.tvSectionTitle.setText(((Tab2TDialogFragment.SectionItem) items.get(position)).getTitle());
             Log.i("position", "section");
         } else {
 

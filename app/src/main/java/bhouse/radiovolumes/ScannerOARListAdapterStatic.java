@@ -1,14 +1,11 @@
 package bhouse.radiovolumes;
 
-import android.app.Dialog;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Point;
-import android.graphics.drawable.Drawable;
 import android.support.v4.graphics.BitmapCompat;
-import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -18,13 +15,13 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 import bhouse.radiovolumes.processor.OARTemplate;
+import bhouse.radiovolumes.helpLibraries.ZoomView;
 
 /**
  * Created by kranck on 8/3/2017.

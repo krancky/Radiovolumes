@@ -10,7 +10,7 @@ import java.util.List;
  * Deals with the computation of CTV56N  and CTV56T target lymph nodes computation, from CANCER spread lymph nodes data and CATALOG of elementary target volumes
  * Computation of target volumes is assumed to be a linear combination of elementary target volumes associated to elementary spread lymph nodes areas.
  */
-public class HashMapOperator {
+public class NewCaseActivityHashMapOperator {
 
     /**
      * C tv 56 n case ctv 56 n case.

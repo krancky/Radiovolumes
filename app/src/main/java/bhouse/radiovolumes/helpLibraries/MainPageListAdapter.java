@@ -1,4 +1,4 @@
-package bhouse.radiovolumes;
+package bhouse.radiovolumes.helpLibraries;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+
+import bhouse.radiovolumes.R;
 
 /**
  * Created by megha on 15-03-06.

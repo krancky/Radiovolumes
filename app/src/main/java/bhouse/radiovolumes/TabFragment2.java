@@ -22,9 +22,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import bhouse.radiovolumes.processor.Cancer;
-import bhouse.radiovolumes.processor.Pair;
+import bhouse.radiovolumes.processor.NonScrollListView;
+import bhouse.radiovolumes.processor.XYPair;
 
-public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompleteListener, MyNDialogFragment.OnCompleteListener {
+public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompleteListener, Tab2NDialogFragment.OnCompleteListener {
 
     private HashMap<String, HashMap<String, List<String>>> cancerTData;
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
@@ -33,12 +34,12 @@ public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompl
     private List<String> modifiers;
     private Cancer cancer;
 
-    private HashMap<String, HashMap<String, Pair<String,String>>> txyValues;
-    private HashMap<String, HashMap<String, Pair<String,String>>> nxyValues;
+    private HashMap<String, HashMap<String, XYPair<String,String>>> txyValues;
+    private HashMap<String, HashMap<String, XYPair<String,String>>> nxyValues;
 
     private TabbedActivity activity;
 
-    public void onCompleteN( HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyNDialogFragment.Item> items) {
+    public void onCompleteN( HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<Tab2NDialogFragment.Item> items) {
 
     }
 
@@ -122,8 +123,8 @@ public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompl
 
         NonScrollListView lvNotes = (NonScrollListView) v.findViewById(R.id.listView_additional_notes);
 
-        HashAdapter mAdapterT = new HashAdapter(getActivity(), cancerTTarData, this.cancer);
-        HashNAdapter mAdapterN = new HashNAdapter(getContext(), cancerNTarData, this.cancer);
+        NewCaseActivityTHashAdapter mAdapterT = new NewCaseActivityTHashAdapter(getActivity(), cancerTTarData, this.cancer);
+        NewCaseActivityNHashAdapter mAdapterN = new NewCaseActivityNHashAdapter(getContext(), cancerNTarData, this.cancer);
         ArrayAdapter<String> notesAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, modifiers);
         lvT.setAdapter(mAdapterT);
         lvT.setClickable(true);
@@ -223,7 +224,7 @@ public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompl
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 FragmentManager fm = getFragmentManager();
-                MyNDialogFragment dialogFragment = MyNDialogFragment.newInstance ("N changes");
+                Tab2NDialogFragment dialogFragment = Tab2NDialogFragment.newInstance ("N changes");
                 dialogFragment.show(fm, "Sample Fragment");
 
             }

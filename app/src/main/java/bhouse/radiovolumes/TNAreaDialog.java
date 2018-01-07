@@ -19,7 +19,6 @@ import android.app.DialogFragment;
         import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -28,7 +27,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 
-public class AreaDialog extends DialogFragment {
+public class TNAreaDialog extends DialogFragment {
 
     public static interface OnCancelListener {
         public void onCancel(SliceVectorItem tag, int resID);
@@ -53,8 +52,8 @@ public class AreaDialog extends DialogFragment {
 
 
 
-    public static AreaDialog newInstance(SliceVectorItem slice, int resID) {
-        AreaDialog dialog = new AreaDialog();
+    public static TNAreaDialog newInstance(SliceVectorItem slice, int resID) {
+        TNAreaDialog dialog = new TNAreaDialog();
         Bundle args = new Bundle();
         //args.putString("title", title);
         //args.putBundle("sliceVectorItem", slice);

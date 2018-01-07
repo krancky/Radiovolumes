@@ -16,15 +16,17 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import bhouse.radiovolumes.helpLibraries.LocaleHelper;
 import bhouse.radiovolumes.processor.OLimitsXMLHandler;
-import bhouse.radiovolumes.processor.Pair;
+import bhouse.radiovolumes.helpLibraries.SingleScrollListView;
+import bhouse.radiovolumes.processor.XYPair;
 import bhouse.radiovolumes.processor.XYXMLHandler;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class ScannerViewActivity_simple extends Activity implements MyDialogFragment.OnCompleteListener, AreaDialog.OnCancelListener  {
+public class ScannerViewActivity_simple extends Activity implements Tab2TDialogFragment.OnCompleteListener, TNAreaDialog.OnCancelListener  {
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     private HashMap<String, List<String>> cancerNTarData;
 
@@ -32,8 +34,8 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
     private SingleScrollListView mContentView;
     private ArrayList<Slice> slices;
     private LinkedHashMap<String, Integer> displayedList = new LinkedHashMap<String, Integer>();
-    private HashMap<String, HashMap<String, Pair<String,String>>> txyValues;
-    private HashMap<String, HashMap<String, Pair<String,String>>> nxyValues;
+    private HashMap<String, HashMap<String, XYPair<String,String>>> txyValues;
+    private HashMap<String, HashMap<String, XYPair<String,String>>> nxyValues;
 
 
 
@@ -85,8 +87,8 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
         prepareOLimitsData();
         Intent i = getIntent();
 
-        this.txyValues = (HashMap<String, HashMap<String, Pair<String,String>>>) i.getSerializableExtra("TXY");
-        //this.nxyValues = (HashMap<String, HashMap<String, Pair<String,String>>>) i.getSerializableExtra("NXY");
+        this.txyValues = (HashMap<String, HashMap<String, XYPair<String,String>>>) i.getSerializableExtra("TXY");
+        //this.nxyValues = (HashMap<String, HashMap<String, XYPair<String,String>>>) i.getSerializableExtra("NXY");
 
         try {
             XYXMLHandler parser = new XYXMLHandler();
@@ -121,7 +123,7 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
                 Log.i("long clicked","pos: " + pos);
                 Toast.makeText(getApplicationContext(),"Long click position" + pos, Toast.LENGTH_SHORT).show();
                 FragmentManager fm = getFragmentManager();
-                MyDialogFragment dialogFragment = MyDialogFragment.newInstance ("Displayed Locations");
+                Tab2TDialogFragment dialogFragment = Tab2TDialogFragment.newInstance ("Displayed Locations");
                 dialogFragment.show(fm, "Sample Fragment");
                 return true;
             }
@@ -152,8 +154,8 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
                 for (String location : map.getValue()) {
                     String value = location.replaceAll("\\s+", "").toLowerCase() + " " + map.getKey().replaceAll("\\s+", "").toLowerCase();
                     if (displayedList.get(value).equals(1)) {
-                        HashMap<String, Pair<String, String>> txyOrgan = this.txyValues.get(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase());
-                        for (HashMap.Entry<String, Pair<String, String>> txySlice : txyOrgan.entrySet()) {
+                        HashMap<String, XYPair<String, String>> txyOrgan = this.txyValues.get(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase());
+                        for (HashMap.Entry<String, XYPair<String, String>> txySlice : txyOrgan.entrySet()) {
                             SliceVectorItem sliceVectorItem = new SliceVectorItem();
                             sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(txySlice.getKey()));
                             int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
@@ -162,7 +164,7 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
                                 sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
                                 sliceVectorItem.setSide(map.getKey());
                                 String machin = sliceVectorItem.getFilename().toLowerCase();
-                                Pair truc = this.txyValues.get(sliceVectorItem.getLocation() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase()).get(String.valueOf(txySlice.getKey()));
+                                XYPair truc = this.txyValues.get(sliceVectorItem.getLocation() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase()).get(String.valueOf(txySlice.getKey()));
                                 float bidule = Float.parseFloat((String) truc.getFirst());
                                 float bidule2 = Float.parseFloat((String) truc.getSecond());
                                 sliceVectorItem.setxMargin(bidule);
@@ -179,8 +181,8 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
             List<String> sideMap = nodeMap.getValue();
             for (String location : sideMap) {
                 String value = location.replaceAll("\\s+", "").toLowerCase() + " " + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase();
-                HashMap<String, Pair<String, String>> nxyOrgan = this.nxyValues.get(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase());
-                for (HashMap.Entry<String, Pair<String, String>> nxySlice : nxyOrgan.entrySet()) {
+                HashMap<String, XYPair<String, String>> nxyOrgan = this.nxyValues.get(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase());
+                for (HashMap.Entry<String, XYPair<String, String>> nxySlice : nxyOrgan.entrySet()) {
                     SliceVectorItem sliceVectorItem = new SliceVectorItem();
                     sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(nxySlice.getKey()));
                     int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
@@ -189,7 +191,7 @@ public class ScannerViewActivity_simple extends Activity implements MyDialogFrag
                         sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
                         sliceVectorItem.setSide(nodeMap.getKey());
                         String machin = sliceVectorItem.getFilename().toLowerCase();
-                        Pair truc = this.nxyValues.get(sliceVectorItem.getLocation() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase()).get(String.valueOf(nxySlice.getKey()));
+                        XYPair truc = this.nxyValues.get(sliceVectorItem.getLocation() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase()).get(String.valueOf(nxySlice.getKey()));
                         float bidule = Float.parseFloat((String) truc.getFirst());
                         float bidule2 = Float.parseFloat((String) truc.getSecond());
                         sliceVectorItem.setxMargin(bidule);

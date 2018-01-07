@@ -4,18 +4,15 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Animatable;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.RippleDrawable;
-import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -30,8 +27,6 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.Window;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -45,6 +40,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import bhouse.radiovolumes.helpLibraries.LocaleHelper;
+import bhouse.radiovolumes.helpLibraries.MainPageItem;
+import bhouse.radiovolumes.helpLibraries.MainPageItemsData;
+import bhouse.radiovolumes.helpLibraries.TransitionAdapter;
 import bhouse.radiovolumes.processor.Cancer;
 
 /**

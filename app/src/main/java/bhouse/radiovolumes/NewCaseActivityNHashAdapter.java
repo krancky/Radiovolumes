@@ -21,12 +21,12 @@ import static bhouse.radiovolumes.R.xml.map;
  * Created by kranck on 8/3/2017.
  */
 
-public class HashNAdapter extends BaseAdapter {
+public class NewCaseActivityNHashAdapter extends BaseAdapter {
     private final ArrayList mData;
     private Cancer cancer;
     private Context context;
 
-    public HashNAdapter(Context context, HashMap<String,  List<String>> map, Cancer cancer) {
+    public NewCaseActivityNHashAdapter(Context context, HashMap<String,  List<String>> map, Cancer cancer) {
         mData = new ArrayList();
         mData.addAll(map.entrySet());
         this.cancer = cancer;

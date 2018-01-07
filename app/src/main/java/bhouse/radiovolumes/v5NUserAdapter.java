@@ -28,9 +28,9 @@ public class v5NUserAdapter extends BaseAdapter {
     private String[] mKeys;
     private Map<String, String> colors;
     private Context context;
-    private ArrayList<MyNDialogFragment.Item> items;
+    private ArrayList<Tab2NDialogFragment.Item> items;
 
-    public v5NUserAdapter(Context context, LinkedHashMap<String, Integer> displayedlistG, LinkedHashMap<String, Integer> displayedlistD, List<Slice> slices, Map<String, String> colors, ArrayList<MyNDialogFragment.Item> items) {
+    public v5NUserAdapter(Context context, LinkedHashMap<String, Integer> displayedlistG, LinkedHashMap<String, Integer> displayedlistD, List<Slice> slices, Map<String, String> colors, ArrayList<Tab2NDialogFragment.Item> items) {
         this.displayedlistG = displayedlistG;
         this.displayedlistD = displayedlistD;
         mKeys = displayedlistG.keySet().toArray(new String[displayedlistG.size()]);

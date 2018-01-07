@@ -17,11 +17,13 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+import bhouse.radiovolumes.helpLibraries.ZoomView;
+
 /**
  * Created by kranck on 8/3/2017.
  */
 
-public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialog.OnCancelListener {
+public class ScannerListAdapter extends ArrayAdapter<Slice> implements TNAreaDialog.OnCancelListener {
     private Context context;
     private LayoutInflater inflater;
     private ArrayList<Slice> slices;
@@ -86,7 +88,7 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
                                 FragmentManager fm = ((ScannerViewActivity_simple) context).getFragmentManager();
                                 int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_ok", "drawable", context.getPackageName());
                                 child.setImageResource(resID);
-                                AreaDialog dialogFragment = AreaDialog.newInstance((SliceVectorItem) child.getTag(), child.getId());
+                                TNAreaDialog dialogFragment = TNAreaDialog.newInstance((SliceVectorItem) child.getTag(), child.getId());
                                 dialogFragment.show(fm, String.valueOf(child.getTag()));
                             }
                             return false;
@@ -135,7 +137,7 @@ public class ScannerListAdapter extends ArrayAdapter<Slice> implements AreaDialo
                                     FragmentManager fm = ((ScannerViewActivity_simple)context).getFragmentManager();
                                     int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_selected", "drawable", context.getPackageName());
                                     imageView.setImageResource(resID);
-                                    AreaDialog dialogFragment = AreaDialog.newInstance ((SliceVectorItem) v.getTag(), v.getId());
+                                    TNAreaDialog dialogFragment = TNAreaDialog.newInstance ((SliceVectorItem) v.getTag(), v.getId());
                                     dialogFragment.show(fm, String.valueOf(v.getTag()));
                                 }
                                 return true;
