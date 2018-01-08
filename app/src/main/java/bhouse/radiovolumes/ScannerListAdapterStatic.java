@@ -1,7 +1,9 @@
 package bhouse.radiovolumes;
 
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -20,6 +22,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 import bhouse.radiovolumes.processor.XYPair;
 import bhouse.radiovolumes.helpLibraries.ZoomView;
@@ -65,6 +68,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
         display.getSize(size);
         int screen_width = size.x;
         int screen_height = size.y;
+        final List<SliceVectorItem> touchedVector = new ArrayList<>();
 
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.list_view_scan_static, parent, false);
@@ -80,6 +84,64 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
 
             holder.zoomview.setLv(lv);
             holder.frameLayout = (FrameLayout) convertView.findViewById(R.id.zoomLayout);
+            holder.frameLayout.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View view, MotionEvent motionEvent) {
+                    int j = 0;
+                    ImageView child;
+                    for (j = 0 ; j < holder.frameLayout.getChildCount(); j++) {
+                        child = (ImageView) holder.frameLayout.getChildAt(j);
+                        if (!child.getTag().equals("none")) {
+                            SliceVectorItem sliceVectorItem = (SliceVectorItem) child.getTag();
+                            child.setDrawingCacheEnabled(true);
+                            child.buildDrawingCache(true);
+                            Bitmap bmp = Bitmap.createBitmap(child.getDrawingCache());
+                            Bitmap viewBmp = bmp.copy(Bitmap.Config.ARGB_8888, true);
+                            int bitmapByteCount= BitmapCompat.getAllocationByteCount(viewBmp) /1024;
+                            child.destroyDrawingCache();
+                            child.setDrawingCacheEnabled(false);
+                            if (motionEvent.getX() < viewBmp.getWidth() && motionEvent.getY() < viewBmp.getHeight()){
+                                int color = viewBmp.getPixel((int) motionEvent.getX(), (int) motionEvent.getY());
+                                if (color == Color.TRANSPARENT) {
+                                } else {
+                                    if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                                        touchedVector.add(sliceVectorItem);
+/*                                        FragmentManager fm = ((ScannerOARViewActivity_simple) context).getFragmentManager();
+                                        int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_selected", "drawable", context.getPackageName());
+                                        child.setImageResource(resID);
+                                        OARDialog dialogFragment = OARDialog.newInstance((SliceVectorItem) child.getTag(), child.getId());
+                                        dialogFragment.show(fm, String.valueOf(child.getTag()));*/
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setTitle("Choose an animal");
+
+// add a list
+                    String[] animals = {"horse", "cow", "camel", "sheep", "goat"};
+                    builder.setItems(animals, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            switch (which) {
+                                case 0: // horse
+                                case 1: // cow
+                                case 2: // camel
+                                case 3: // sheep
+                                case 4: // goat
+                            }
+                        }
+                    });
+
+// create and show the alert dialog
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+
+                    return false;
+                }
+            });
             holder.zoomview.setAnimationCacheEnabled(false);
 
 

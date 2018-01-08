@@ -86,25 +86,25 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
                 public boolean onTouch(View view, MotionEvent motionEvent) {
                     ImageView child = (ImageView) view;
                     if (!child.getTag().equals("none")) {
-                    SliceVectorItem sliceVectorItem = (SliceVectorItem) child.getTag();
-                    child.setDrawingCacheEnabled(true);
-                    child.buildDrawingCache(true);
-                    Bitmap bmp = Bitmap.createBitmap(child.getDrawingCache());
-                    Bitmap viewBmp = bmp.copy(Bitmap.Config.ARGB_8888, true);
-                    int bitmapByteCount= BitmapCompat.getAllocationByteCount(viewBmp) /1024;
-                    child.destroyDrawingCache();
-                    child.setDrawingCacheEnabled(false);
-                    int color = viewBmp.getPixel((int) motionEvent.getX(), (int) motionEvent.getY());
-                    if (color == Color.TRANSPARENT) {
-                    } else {
-                        if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-                            FragmentManager fm = ((ScannerOARViewActivity_simple) context).getFragmentManager();
-                            int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_selected", "drawable", context.getPackageName());
-                            child.setImageResource(resID);
-                            OARDialog dialogFragment = OARDialog.newInstance((SliceVectorItem) child.getTag(), child.getId());
-                            dialogFragment.show(fm, String.valueOf(child.getTag()));
+                        SliceVectorItem sliceVectorItem = (SliceVectorItem) child.getTag();
+                        child.setDrawingCacheEnabled(true);
+                        child.buildDrawingCache(true);
+                        Bitmap bmp = Bitmap.createBitmap(child.getDrawingCache());
+                        Bitmap viewBmp = bmp.copy(Bitmap.Config.ARGB_8888, true);
+                        int bitmapByteCount= BitmapCompat.getAllocationByteCount(viewBmp) /1024;
+                        child.destroyDrawingCache();
+                        child.setDrawingCacheEnabled(false);
+                        int color = viewBmp.getPixel((int) motionEvent.getX(), (int) motionEvent.getY());
+                        if (color == Color.TRANSPARENT) {
+                        } else {
+                            if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                                FragmentManager fm = ((ScannerOARViewActivity_simple) context).getFragmentManager();
+                                int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_selected", "drawable", context.getPackageName());
+                                child.setImageResource(resID);
+                                OARDialog dialogFragment = OARDialog.newInstance((SliceVectorItem) child.getTag(), child.getId());
+                                dialogFragment.show(fm, String.valueOf(child.getTag()));
+                            }
                         }
-                    }
                     }
                     return false;
                 }
