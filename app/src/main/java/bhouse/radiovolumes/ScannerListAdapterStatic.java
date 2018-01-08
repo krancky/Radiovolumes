@@ -39,6 +39,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
     private LinkedHashMap<String, ArrayList<String>> oLimits;
     private HashMap<String, HashMap<String, XYPair<String,String>>> txyValues;
     private HashMap<String, HashMap<String, XYPair<String,String>>> nxyValues;
+    private Integer touchedVector;
 
 
     public ScannerListAdapterStatic(Context context, ArrayList<Slice> slices, ListView lv, LinkedHashMap<String, ArrayList<String>> oLimits) {
@@ -50,6 +51,11 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
         inflater = LayoutInflater.from(context);
     }
 
+    public void displayDialog(ViewHolder holder, Integer touchVector){
+
+
+    }
+
     @Override
     public void onCancel(SliceVectorItem tag, int imageID) {
         int resID = context.getResources().getIdentifier(tag.getFilename(), "drawable", context.getPackageName());
@@ -58,7 +64,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, final ViewGroup parent) {
 
         final ViewHolder holder;
 
@@ -66,9 +72,10 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
         Display display = wm.getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        int screen_width = size.x;
+        final int screen_width = size.x;
         int screen_height = size.y;
-        final List<SliceVectorItem> touchedVector = new ArrayList<>();
+        final List<SliceVectorItem> touchedVectors = new ArrayList<>();
+
 
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.list_view_scan_static, parent, false);
@@ -91,7 +98,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
                     ImageView child;
                     for (j = 0 ; j < holder.frameLayout.getChildCount(); j++) {
                         child = (ImageView) holder.frameLayout.getChildAt(j);
-                        if (!child.getTag().equals("none")) {
+                        if (!child.getTag().equals("none") && !child.getTag().equals("scan") ) {
                             SliceVectorItem sliceVectorItem = (SliceVectorItem) child.getTag();
                             child.setDrawingCacheEnabled(true);
                             child.buildDrawingCache(true);
@@ -100,12 +107,21 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
                             int bitmapByteCount= BitmapCompat.getAllocationByteCount(viewBmp) /1024;
                             child.destroyDrawingCache();
                             child.setDrawingCacheEnabled(false);
-                            if (motionEvent.getX() < viewBmp.getWidth() && motionEvent.getY() < viewBmp.getHeight()){
-                                int color = viewBmp.getPixel((int) motionEvent.getX(), (int) motionEvent.getY());
+                            int x = viewBmp.getWidth();
+                            float sety = (sliceVectorItem.getyMargin() -1) * screen_width / 512 + (parent.getMeasuredHeight() - screen_width) / 2;
+                            float setx = (sliceVectorItem.getxMargin() -1) * screen_width / 512;
+
+                            int y = viewBmp.getHeight();
+                            float xmargin = sliceVectorItem.getxMargin();
+                            float ymargin = sliceVectorItem.getyMargin();
+                            float mx = motionEvent.getX();
+                            float my = motionEvent.getY();
+                            if (motionEvent.getX() < viewBmp.getWidth() + setx && motionEvent.getX() > setx && motionEvent.getY() < viewBmp.getHeight() + sety && motionEvent.getY() > sety){
+                                int color = viewBmp.getPixel((int) motionEvent.getX() - (int)setx, (int) motionEvent.getY() - (int) sety);
                                 if (color == Color.TRANSPARENT) {
                                 } else {
                                     if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-                                        touchedVector.add(sliceVectorItem);
+                                        touchedVectors.add(sliceVectorItem);
 /*                                        FragmentManager fm = ((ScannerOARViewActivity_simple) context).getFragmentManager();
                                         int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_selected", "drawable", context.getPackageName());
                                         child.setImageResource(resID);
@@ -116,30 +132,33 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
                             }
                         }
                     }
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                    builder.setTitle("Choose an animal");
-
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setTitle("Selected Contours");
 // add a list
                     String[] animals = {"horse", "cow", "camel", "sheep", "goat"};
                     builder.setItems(animals, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            switch (which) {
-                                case 0: // horse
-                                case 1: // cow
-                                case 2: // camel
-                                case 3: // sheep
-                                case 4: // goat
-                            }
+                                touchedVector = which;
                         }
                     });
 
-// create and show the alert dialog
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
+                    builder.setOnDismissListener(new DialogInterface.OnDismissListener(){
+                        public void onDismiss(DialogInterface dialog){
+                            FragmentManager fm = ((ScannerViewActivity_simple) context).getFragmentManager();
+                            int resID = context.getResources().getIdentifier(touchedVectors.get(0).getFilename() + "_selected", "drawable", context.getPackageName());
+                            holder.arlist.get(2).setImageResource(resID);
+                            TNAreaDialog dialogFragment = TNAreaDialog.newInstance((SliceVectorItem) holder.arlist.get(2).getTag(), holder.arlist.get(2).getId());
 
-                    return false;
+                            dialog.dismiss();
+                            //dialog.cancel();
+                            dialogFragment.show(fm, String.valueOf(holder.arlist.get(touchedVector).getTag()));
+                        }
+                    });
+// create and show the alert dialog
+                    //AlertDialog dialog_ad = builder.create();
+                    AlertDialog dlg = builder.show();
+                    return true;
                 }
             });
             holder.zoomview.setAnimationCacheEnabled(false);
@@ -147,52 +166,52 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
 
             holder.i0 = (ImageView) convertView.findViewById(R.id.i0);
             holder.i0.setTag("none");
-            holder.i0.setOnTouchListener(new MyTouchListener());
+            //holder.i0.setOnTouchListener(new MyTouchListener());
             holder.i1 = (ImageView) convertView.findViewById(R.id.i1);
             holder.i1.setTag("none");
-            holder.i1.setOnTouchListener(new MyTouchListener());
+            //holder.i1.setOnTouchListener(new MyTouchListener());
             holder.i2 = (ImageView) convertView.findViewById(R.id.i2);
             holder.i2.setTag("none");
-            holder.i2.setOnTouchListener(new MyTouchListener());
+            //holder.i2.setOnTouchListener(new MyTouchListener());
             holder.i3 = (ImageView) convertView.findViewById(R.id.i3);
             holder.i3.setTag("none");
-            holder.i3.setOnTouchListener(new MyTouchListener());
+            //holder.i3.setOnTouchListener(new MyTouchListener());
             holder.i4 = (ImageView) convertView.findViewById(R.id.i4);
             holder.i4.setTag("none");
-            holder.i4.setOnTouchListener(new MyTouchListener());
+            //holder.i4.setOnTouchListener(new MyTouchListener());
             holder.i5 = (ImageView) convertView.findViewById(R.id.i5);
             holder.i5.setTag("none");
-            holder.i5.setOnTouchListener(new MyTouchListener());
+            //holder.i5.setOnTouchListener(new MyTouchListener());
             holder.i6 = (ImageView) convertView.findViewById(R.id.i6);
             holder.i6.setTag("none");
-            holder.i6.setOnTouchListener(new MyTouchListener());
+            //holder.i6.setOnTouchListener(new MyTouchListener());
             holder.i7 = (ImageView) convertView.findViewById(R.id.i7);
             holder.i7.setTag("none");
-            holder.i7.setOnTouchListener(new MyTouchListener());
+            //holder.i7.setOnTouchListener(new MyTouchListener());
             holder.i8 = (ImageView) convertView.findViewById(R.id.i8);
             holder.i8.setTag("none");
-            holder.i8.setOnTouchListener(new MyTouchListener());
+            //holder.i8.setOnTouchListener(new MyTouchListener());
             holder.i9 = (ImageView) convertView.findViewById(R.id.i9);
             holder.i9.setTag("none");
-            holder.i9.setOnTouchListener(new MyTouchListener());
+            //holder.i9.setOnTouchListener(new MyTouchListener());
             holder.i10 = (ImageView) convertView.findViewById(R.id.i10);
             holder.i10.setTag("none");
-            holder.i10.setOnTouchListener(new MyTouchListener());
+            //holder.i10.setOnTouchListener(new MyTouchListener());
             holder.i11 = (ImageView) convertView.findViewById(R.id.i11);
             holder.i11.setTag("none");
-            holder.i11.setOnTouchListener(new MyTouchListener());
+            //holder.i11.setOnTouchListener(new MyTouchListener());
             holder.i12 = (ImageView) convertView.findViewById(R.id.i12);
             holder.i12.setTag("none");
-            holder.i12.setOnTouchListener(new MyTouchListener());
+            //holder.i12.setOnTouchListener(new MyTouchListener());
             holder.i13 = (ImageView) convertView.findViewById(R.id.i13);
             holder.i13.setTag("none");
-            holder.i13.setOnTouchListener(new MyTouchListener());
+            //holder.i13.setOnTouchListener(new MyTouchListener());
             holder.i14 = (ImageView) convertView.findViewById(R.id.i14);
             holder.i14.setTag("none");
-            holder.i14.setOnTouchListener(new MyTouchListener());
+            //holder.i14.setOnTouchListener(new MyTouchListener());
             holder.i15 = (ImageView) convertView.findViewById(R.id.i15);
             holder.i15.setTag("none");
-            holder.i15.setOnTouchListener(new MyTouchListener());
+            //holder.i15.setOnTouchListener(new MyTouchListener());
             holder.i16 = (ImageView) convertView.findViewById(R.id.i16);
             holder.i16.setTag("none");
             holder.i16.setOnTouchListener(new MyTouchListener());
@@ -341,6 +360,8 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
     }
 
 
+
+
     static class ViewHolder {
         ZoomView zoomview;
         FrameLayout frameLayout;
@@ -403,16 +424,18 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
                 if (color == Color.TRANSPARENT) {
                 } else {
                     if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-                        FragmentManager fm = ((ScannerViewActivity_simple) context).getFragmentManager();
+/*                        FragmentManager fm = ((ScannerViewActivity_simple) context).getFragmentManager();
                         int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_selected", "drawable", context.getPackageName());
                         child.setImageResource(resID);
                         TNAreaDialog dialogFragment = TNAreaDialog.newInstance((SliceVectorItem) child.getTag(), child.getId());
-                        dialogFragment.show(fm, String.valueOf(child.getTag()));
+                        dialogFragment.show(fm, String.valueOf(child.getTag()));*/
                     }
                 }
             }
             return false;
         }
     }
+
+
 }
 
