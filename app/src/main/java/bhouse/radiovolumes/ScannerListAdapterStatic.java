@@ -39,7 +39,10 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
     private LinkedHashMap<String, ArrayList<String>> oLimits;
     private HashMap<String, HashMap<String, XYPair<String,String>>> txyValues;
     private HashMap<String, HashMap<String, XYPair<String,String>>> nxyValues;
-
+    private ArrayList<SliceVectorItem> touchedVectors = new ArrayList<>();
+    private ArrayList<Integer> touchedVectorsArlistRank = new ArrayList<>();;
+    private int screen_width;
+    private int screen_height;
 
 
     public ScannerListAdapterStatic(Context context, ArrayList<Slice> slices, ListView lv, LinkedHashMap<String, ArrayList<String>> oLimits) {
@@ -49,14 +52,31 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
         this.slices = slices;
         this.oLimits = oLimits;
         inflater = LayoutInflater.from(context);
+
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        screen_width = size.x;
+        screen_height = size.y;
     }
 
-    public void onCompleteChoice(SliceVectorItem contourChoice, ViewHolder holder){
+    public void onCompleteChoice(SliceVectorItem contourChoice, Integer arlistRank, ViewHolder holder){
+
         FragmentManager fm = ((ScannerViewActivity_simple) context).getFragmentManager();
-        //int resID = context.getResources().getIdentifier(touchedVectors.get(0).getFilename() + "_selected", "drawable", context.getPackageName());
-        //holder.arlist.get(2).setImageResource(resID);
+        int resID = context.getResources().getIdentifier(contourChoice.getFilename() + "_selected", "drawable", context.getPackageName());
+        holder.arlist.get(arlistRank).setImageResource(resID);
+        int intrinsicHeight = holder.arlist.get(arlistRank).getDrawable().getIntrinsicHeight();
+        int intrinsicWidth = holder.arlist.get(arlistRank).getDrawable().getIntrinsicWidth();
+        holder.arlist.get(arlistRank).setAdjustViewBounds(true);
+        holder.arlist.get(arlistRank).getLayoutParams().height = intrinsicHeight * screen_width / 512;
+        holder.arlist.get(arlistRank).getLayoutParams().width = intrinsicWidth * screen_width / 512;
+        holder.arlist.get(arlistRank).setY((contourChoice.getyMargin() -1) * screen_width / 512 + (holder.frameLayout.getMeasuredHeight() - screen_width) / 2);
+        holder.arlist.get(arlistRank).setX((contourChoice.getxMargin() -1) * screen_width / 512);        holder.arlist.get(arlistRank).setImageResource(resID);
         TNAreaDialog dialogFragment = TNAreaDialog.newInstance(contourChoice, holder.arlist.get(0).getId());
         dialogFragment.show(fm, String.valueOf(contourChoice));
+        touchedVectors.clear();
+        touchedVectorsArlistRank.clear();
 
     }
 
@@ -76,15 +96,6 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
     public View getView(int position, View convertView, final ViewGroup parent) {
 
         final ViewHolder holder;
-
-        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        Display display = wm.getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        final int screen_width = size.x;
-        int screen_height = size.y;
-        final ArrayList<SliceVectorItem> touchedVectors = new ArrayList<>();
-
 
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.list_view_scan_static, parent, false);
@@ -132,54 +143,41 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
                                     } else {
                                         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                                             touchedVectors.add(sliceVectorItem);
-/*                                        FragmentManager fm = ((ScannerOARViewActivity_simple) context).getFragmentManager();
-                                        int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_selected", "drawable", context.getPackageName());
-                                        child.setImageResource(resID);
-                                        OARDialog dialogFragment = OARDialog.newInstance((SliceVectorItem) child.getTag(), child.getId());
-                                        dialogFragment.show(fm, String.valueOf(child.getTag()));*/
+                                            touchedVectorsArlistRank.add(j-1);
                                         }
                                     }
                                 }
                             }
                         }
 
-                        if (!touchedVectors.isEmpty()) {
+                        if (!touchedVectors.isEmpty() && touchedVectors.size() != 1) {
                             FragmentManager manager = ((ScannerViewActivity_simple) context).getFragmentManager();
 
                             ContourChoiceDialog dialog = new ContourChoiceDialog();
                             dialog.setListener(ScannerListAdapterStatic.this);
                             dialog.setListitems(touchedVectors);
+                            dialog.setListRankitems(touchedVectorsArlistRank);
                             dialog.setHolder(holder);
                             dialog.show(manager, "dialog");
-
-
-/*                    final AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                    builder.setTitle("Selected Contours");
-                    // add a list
-                    String[] animals = {"horse", "cow", "camel", "sheep", "goat"};
-                    builder.setItems(animals, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                                touchedVector = which;
                         }
-                    });
-                    builder.setOnDismissListener(new DialogInterface.OnDismissListener(){
-                        public void onDismiss(DialogInterface dialog){
+
+                        if (touchedVectors.size() == 1){
                             FragmentManager fm = ((ScannerViewActivity_simple) context).getFragmentManager();
                             int resID = context.getResources().getIdentifier(touchedVectors.get(0).getFilename() + "_selected", "drawable", context.getPackageName());
-                            holder.arlist.get(2).setImageResource(resID);
-                            TNAreaDialog dialogFragment = TNAreaDialog.newInstance((SliceVectorItem) holder.arlist.get(2).getTag(), holder.arlist.get(2).getId());
+                            holder.arlist.get(touchedVectorsArlistRank.get(0)).setImageResource(resID);
+                            int intrinsicHeight = holder.arlist.get(touchedVectorsArlistRank.get(0)).getDrawable().getIntrinsicHeight();
+                            int intrinsicWidth = holder.arlist.get(touchedVectorsArlistRank.get(0)).getDrawable().getIntrinsicWidth();
+                            holder.arlist.get(touchedVectorsArlistRank.get(0)).setAdjustViewBounds(true);
+                            holder.arlist.get(touchedVectorsArlistRank.get(0)).getLayoutParams().height = intrinsicHeight * screen_width / 512;
+                            holder.arlist.get(touchedVectorsArlistRank.get(0)).getLayoutParams().width = intrinsicWidth * screen_width / 512;
+                            holder.arlist.get(touchedVectorsArlistRank.get(0)).setY((touchedVectors.get(0).getyMargin() -1) * screen_width / 512 + (parent.getMeasuredHeight() - screen_width) / 2);
+                            holder.arlist.get(touchedVectorsArlistRank.get(0)).setX((touchedVectors.get(0).getxMargin() -1) * screen_width / 512);
+                            TNAreaDialog dialogFragment = TNAreaDialog.newInstance(touchedVectors.get(0), holder.arlist.get(0).getId());
+                            dialogFragment.show(fm, String.valueOf(touchedVectors.get(0)));
+                            touchedVectors.clear();
+                            touchedVectorsArlistRank.clear();
+                        }
 
-                            dialog.dismiss();
-                            //dialog.cancel();
-                            dialogFragment.show(fm, String.valueOf(holder.arlist.get(touchedVector).getTag()));
-                        }
-                    });
-                    // create and show the alert dialog
-                    //AlertDialog dialog_ad = builder.create();
-                    AlertDialog dlg = builder.show();*/
-                        }
-                        touchedVectors.clear();
                     }
                     return false;
                 }

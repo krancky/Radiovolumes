@@ -1,7 +1,5 @@
 package bhouse.radiovolumes;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.DialogFragment;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -14,40 +12,33 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
 
-import bhouse.radiovolumes.R;
+public class OARContourChoiceDialog extends DialogFragment implements OnItemClickListener {
 
-public class ContourChoiceDialog extends DialogFragment implements OnItemClickListener {
-
-    private OnCompleteListener mListener;
+    private OnOARCompleteListener mListener;
     private ArrayList<SliceVectorItem> touchedVectors = new ArrayList<>();
     private ArrayList<Integer> touchedVectorsArlistRank = new ArrayList<>();;
 
-    public static interface OnCompleteListener {
-        public abstract void onCompleteChoice(SliceVectorItem contourChoice,  Integer arlistRank, ScannerListAdapterStatic.ViewHolder holder);
+    public static interface OnOARCompleteListener {
+        public abstract void onCompleteChoice(SliceVectorItem contourChoice, Integer arlistRank, ScannerOARListAdapterStatic.ViewHolder holder);
     }
 
     ArrayList listitems = new ArrayList();
 
     ListView mylist;
 
-    ScannerListAdapterStatic.ViewHolder holder;
+    ScannerOARListAdapterStatic.ViewHolder holder;
 
 
 
-    public static ContourChoiceDialog newInstance(Integer position, ArrayList<SliceVectorItem> touchedVectors) {
-        ContourChoiceDialog dialog = new ContourChoiceDialog();
+    public static OARContourChoiceDialog newInstance(Integer position, ArrayList<SliceVectorItem> touchedVectors) {
+        OARContourChoiceDialog dialog = new OARContourChoiceDialog();
         Bundle args = new Bundle();
         args.putInt("position", position);
         //args.putParcelableArray("touchedVectors", touchedVectors);
         dialog.setArguments(args);
-
 
         return dialog;
     }
@@ -58,7 +49,6 @@ public class ContourChoiceDialog extends DialogFragment implements OnItemClickLi
 
         View view = inflater.inflate(R.layout.contour_choice_dialog, null, false);
         mylist = (ListView) view.findViewById(R.id.list);
-
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         getDialog().setCanceledOnTouchOutside(true);
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
@@ -68,7 +58,7 @@ public class ContourChoiceDialog extends DialogFragment implements OnItemClickLi
         return view;
     }
 
-    public void setListener(OnCompleteListener listener) {
+    public void setListener(OnOARCompleteListener listener) {
         mListener = listener;
     }
 
@@ -85,7 +75,7 @@ public class ContourChoiceDialog extends DialogFragment implements OnItemClickLi
         }
     }
 
-    public void setHolder (ScannerListAdapterStatic.ViewHolder holder){
+    public void setHolder (ScannerOARListAdapterStatic.ViewHolder holder){
         this.holder = holder;
     }
 
@@ -98,7 +88,6 @@ public class ContourChoiceDialog extends DialogFragment implements OnItemClickLi
                 R.layout.contour_choice_item, listitems);
 
         mylist.setAdapter(adapter);
-
 
         mylist.setOnItemClickListener(this);
 

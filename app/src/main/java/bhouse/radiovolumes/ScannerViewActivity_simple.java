@@ -159,7 +159,7 @@ public class ScannerViewActivity_simple extends Activity implements Tab2TDialogF
                             SliceVectorItem sliceVectorItem = new SliceVectorItem();
                             sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(txySlice.getKey()));
                             int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
-
+                            sliceVectorItem.setLocation(location);
                             if (resId != 0) {
                                 sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
                                 sliceVectorItem.setSide(map.getKey());
@@ -186,7 +186,7 @@ public class ScannerViewActivity_simple extends Activity implements Tab2TDialogF
                     SliceVectorItem sliceVectorItem = new SliceVectorItem();
                     sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(nxySlice.getKey()));
                     int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
-
+                    sliceVectorItem.setLocation(location);
                     if (resId != 0) {
                         sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
                         sliceVectorItem.setSide(nodeMap.getKey());

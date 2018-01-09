@@ -113,6 +113,7 @@ public class ScannerOARViewActivity_simple extends Activity implements Tab2TDial
                     SliceVectorItem sliceVectorItem = new SliceVectorItem();
                     String fileName = oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() ;
                     sliceVectorItem.setFilename(oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() + "_" + "gauche" + "_" + String.valueOf(i));
+                    sliceVectorItem.setLocation(oarTemplate.getLocation());
                     int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
                     if (resId != 0) {
                         slice.addVectorStorageLocation(sliceVectorItem);
@@ -129,6 +130,7 @@ public class ScannerOARViewActivity_simple extends Activity implements Tab2TDial
                     String fileName = oarTemplate.getLocation().replaceAll("\\s+", "").toLowerCase() ;
                     sliceVectorItem.setFilename(fileName + "_" + "droite" + "_" + String.valueOf(i));
                     int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
+                    sliceVectorItem.setLocation(oarTemplate.getLocation());
                     if (resId != 0) {
                         slice.addVectorStorageLocation(sliceVectorItem);
                         XYPair truc = this.xyValues.get(fileName + "_" + "droite").get(String.valueOf(i));
