@@ -74,7 +74,9 @@ public class ContourChoiceDialog extends DialogFragment implements OnItemClickLi
 
     public void setListitems(ArrayList<SliceVectorItem> touchedVectors){
         for (SliceVectorItem sliceVectorItem: touchedVectors){
-            listitems.add(sliceVectorItem.getLocation());
+            String locationLocale = getActivity().getString(getActivity().getResources().getIdentifier(sliceVectorItem.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", getActivity().getPackageName()));
+
+            listitems.add(locationLocale);
             this.touchedVectors.add(sliceVectorItem);
         }
     }
@@ -95,7 +97,7 @@ public class ContourChoiceDialog extends DialogFragment implements OnItemClickLi
         super.onActivityCreated(savedInstanceState);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                R.layout.contour_choice_item, listitems);
+                android.R.layout.simple_list_item_1, listitems);
 
         mylist.setAdapter(adapter);
 

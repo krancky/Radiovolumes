@@ -34,11 +34,18 @@ public class MainActivity extends Activity {
   private boolean isListView;
   private Menu menu;
 
+  public static String PACKAGE_NAME;
+
+  public static Context CONTEXT;
+
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
+    PACKAGE_NAME = getApplicationContext().getPackageName();
+    CONTEXT = getApplicationContext();
 
 
     toolbar = (Toolbar) findViewById(R.id.toolbar);
