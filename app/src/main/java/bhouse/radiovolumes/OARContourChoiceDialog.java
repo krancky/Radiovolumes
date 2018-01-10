@@ -64,7 +64,11 @@ public class OARContourChoiceDialog extends DialogFragment implements OnItemClic
 
     public void setListitems(ArrayList<SliceVectorItem> touchedVectors){
         for (SliceVectorItem sliceVectorItem: touchedVectors){
-            listitems.add(sliceVectorItem.getLocation());
+            String truc = sliceVectorItem.getLocation().replaceAll("\\s+", "").toLowerCase();
+            int bidule = MainActivity.CONTEXT.getResources().getIdentifier(truc, "string", MainActivity.PACKAGE_NAME);
+            String locationLocale = MainActivity.CONTEXT.getString(MainActivity.CONTEXT.getResources().getIdentifier(sliceVectorItem.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", MainActivity.PACKAGE_NAME));
+
+            listitems.add(locationLocale);
             this.touchedVectors.add(sliceVectorItem);
         }
     }
@@ -85,7 +89,7 @@ public class OARContourChoiceDialog extends DialogFragment implements OnItemClic
         super.onActivityCreated(savedInstanceState);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                R.layout.contour_choice_item, listitems);
+                android.R.layout.simple_list_item_1, listitems);
 
         mylist.setAdapter(adapter);
 
