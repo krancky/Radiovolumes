@@ -11,7 +11,7 @@
     <ImageView
       android:id="@+id/placeImage"
       android:layout_width="match_parent"
-      android:layout_height="220dp"
+      android:layout_height="160dp"
       android:scaleType="centerCrop"
       android:transitionName="tImage" />
 
@@ -20,9 +20,6 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:background="#95000000">
-
-
-
     </LinearLayout>
 
     <include
@@ -38,7 +35,7 @@
     <LinearLayout
       android:id="@+id/placeNameHolder"
       android:layout_width="match_parent"
-      android:layout_height="60dp"
+      android:layout_height="50dp"
       android:transitionName="tNameHolder">
 
       <TextView
@@ -58,7 +55,7 @@
       android:layout_height="@dimen/floating_button_size"
       android:layout_gravity="end"
       android:layout_marginEnd="10dp"
-      android:layout_marginTop="28dp"
+      android:layout_marginTop="18dp"
       android:alpha="0.0"
       android:background="@drawable/btn_background"
       android:contentDescription="@null"
@@ -66,27 +63,19 @@
 
   </FrameLayout>
 
-  <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="15dp"
-    android:layout_marginTop="-10dp"
-    android:text="Sélection"
-    android:textAppearance="?android:attr/textAppearanceSmall"
-    android:textColor="@android:color/white" />
-
   <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="start"
+      android:layout_margin="0dp">
 
     <Switch
         android:id="@+id/itemListSwitch"
         android:layout_width="wrap_content"
-        android:text="@string/allselectedSwitch"
-        android:layout_gravity="right"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:paddingEnd="10dp"
+        android:text="@string/allSelectedSwitch"
+        android:textColor="@color/white"
+        android:paddingLeft="30dp"
+        android:paddingBottom="20dp"
         android:layout_height="wrap_content" />
   </LinearLayout>
 

@@ -97,12 +97,7 @@ public class OARSelectionActivity extends Activity implements View.OnClickListen
     isEditTextVisible = false;
 
     selectAll = (Switch) findViewById(R.id.itemListSwitch);
-    selectAll.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-      @Override
-      public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
 
-      }
-    });
 
     mTodoList = new ArrayList<>();
     //mToDoAdapter = new ArrayAdapter(this, R.layout.row_todo, mTodoList);
@@ -139,6 +134,14 @@ public class OARSelectionActivity extends Activity implements View.OnClickListen
     ViewGroup tHeader = (ViewGroup)getLayoutInflater().inflate(R.layout.header_oar, mList, false);
     mList.addHeaderView(tHeader, null, false);
 
+
+    selectAll.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+      @Override
+      public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+          mToDoAdapter.setCheckboxes(b);
+          mToDoAdapter.notifyDataSetChanged();
+      }
+    });
 
     loadPlace();
     windowTransition();

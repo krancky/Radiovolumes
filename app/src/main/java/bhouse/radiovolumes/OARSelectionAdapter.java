@@ -48,11 +48,22 @@ public class OARSelectionAdapter extends BaseAdapter {
 
     public void setCheckboxes(boolean onOff){
         int groupCount = this.tList.size();
+        checkboxStatus_left.clear();
+        checkboxStatus_right.clear();
         for (int i = 0; i<groupCount; i++){
             checkboxStatus_left.add(onOff);
             checkboxStatus_right.add(onOff);
+            if (onOff == true) {
+                this.tList.get(i).setLeftContent("1");
+                this.tList.get(i).setRightContent("1");
+            } else{
+                this.tList.get(i).setLeftContent("0");
+                this.tList.get(i).setRightContent("0");
+            }
+
         }
         notifyDataSetChanged();
+        notifyDataSetInvalidated();
     }
 
         //this.originalItem = item;
