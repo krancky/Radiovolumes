@@ -39,13 +39,20 @@ public class OARSelectionAdapter extends BaseAdapter {
         this.tList = OARTemplateList;
 
         int groupCount = OARTemplateList.size();
-        ArrayList<Boolean> childStatus_left = new ArrayList<Boolean>();
-        ArrayList<Boolean> childStatus_right = new ArrayList<Boolean>();
         for (int i = 0; i<groupCount; i++){
             checkboxStatus_left.add(false);
             checkboxStatus_right.add(false);
         }
 
+    }
+
+    public void setCheckboxes(boolean onOff){
+        int groupCount = this.tList.size();
+        for (int i = 0; i<groupCount; i++){
+            checkboxStatus_left.add(onOff);
+            checkboxStatus_right.add(onOff);
+        }
+        notifyDataSetChanged();
     }
 
         //this.originalItem = item;

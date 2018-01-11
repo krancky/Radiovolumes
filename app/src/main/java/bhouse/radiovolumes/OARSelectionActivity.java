@@ -23,11 +23,13 @@ import android.view.Window;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -69,6 +71,7 @@ public class OARSelectionActivity extends Activity implements View.OnClickListen
   int defaultColorForRipple;
   private ArrayList<Item> allIncludedList = new ArrayList<Item>();
   private HashMap<String, HashMap<String, XYPair<String,String>>> xyValues;
+  private Switch selectAll;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +95,14 @@ public class OARSelectionActivity extends Activity implements View.OnClickListen
     mInputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
     mRevealView.setVisibility(View.INVISIBLE);
     isEditTextVisible = false;
+
+    selectAll = (Switch) findViewById(R.id.itemListSwitch);
+    selectAll.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+      @Override
+      public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+      }
+    });
 
     mTodoList = new ArrayList<>();
     //mToDoAdapter = new ArrayAdapter(this, R.layout.row_todo, mTodoList);

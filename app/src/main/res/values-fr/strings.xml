@@ -155,6 +155,8 @@
     <string name="spinalcord">Moëlle</string>
     <string name="brachialplexus">Plexus Brachial</string>
     <string name="arytenoid">Arytenoide</string>
+    <string name="allSelectedSwitch">Tout selectionner</string>
+
 
 
 </resources>

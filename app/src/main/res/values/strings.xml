@@ -153,6 +153,7 @@
     <string name="spinalcord">Spinal Cord</string>
     <string name="brachialplexus">Brachial Plexus</string>
     <string name="arytenoid">Arytenoid</string>
+    <string name="allSelectedSwitch">Select All</string>
 
 
 </resources>
