@@ -100,7 +100,7 @@ public class LoadCaseActivity extends Activity implements View.OnClickListener {
         isEditTextVisible = false;
 
         mTodoList = new ArrayList<>();
-        mToDoAdapter = new ArrayAdapter(this, R.layout.row_todo, mTodoList);
+        mToDoAdapter = new ArrayAdapter(this, R.layout.list_view_load_case, mTodoList);
 
         eraseAll = (ImageButton) findViewById(R.id.btn_erase_all);
 

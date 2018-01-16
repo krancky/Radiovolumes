@@ -40,7 +40,7 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
     private int screen_height;
 
     public ScannerOARListAdapterStatic(Context context, ArrayList<Slice> slices, ListView lv, ArrayList<OARTemplate> oarTemplateList) {
-        super(context, R.layout.list_view_scan, slices);
+        super(context, R.layout.list_view_scan_static, slices);
         this.lv = lv;
         this.context = context;
         this.slices = slices;

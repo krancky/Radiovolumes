@@ -521,7 +521,7 @@
             <TVolume>
                 <TLocation>Palais dur</TLocation>
                 <TSide>Gauche</TSide>
-                <TArea>Cavite Cavite Buccale</TArea>
+                <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Gencive superieure</TLocation>
@@ -552,7 +552,7 @@
             <TVolume>
                 <TLocation>Palais dur</TLocation>
                 <TSide>Droite</TSide>
-                <TArea>Cavite Cavite Buccale</TArea>
+                <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Gencive superieure</TLocation>
@@ -699,7 +699,7 @@
             <TVolume>
                 <TLocation>Palais dur</TLocation>
                 <TSide>Gauche</TSide>
-                <TArea>Cavite Cavite Buccale</TArea>
+                <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Gencive superieure</TLocation>
@@ -760,7 +760,7 @@
             <TVolume>
                 <TLocation>Palais dur</TLocation>
                 <TSide>Droite</TSide>
-                <TArea>Cavite Cavite Buccale</TArea>
+                <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Gencive superieure</TLocation>
@@ -823,7 +823,7 @@
             <TVolume>
                 <TLocation>Plancher posterieur</TLocation>
                 <TSide>Gauche</TSide>
-                <TArea>Cavite Cavite Buccale</TArea>
+                <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Glande sousmaxillaire</TLocation>
@@ -879,7 +879,7 @@
             <TVolume>
                 <TLocation>Plancher posterieur</TLocation>
                 <TSide>Droite</TSide>
-                <TArea>Cavite Cavite Buccale</TArea>
+                <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
                 <TLocation>Glande sousmaxillaire</TLocation>

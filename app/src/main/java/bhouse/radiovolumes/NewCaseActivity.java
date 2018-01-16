@@ -46,12 +46,12 @@ import android.widget.ImageView;
 public class NewCaseActivity extends Activity {
 
 
-    // Views used for display
-    ListView spreadNInputListView; // View of N templates selection
-    ListView targetVolumesView; // View of target volumes (N and T)
+
     private Cancer cancer; // Storing current cancer data
     private CTV56TCase ctv56TCase;
     private CTV56NCase ctv56NCase;
+
+    private LinkedHashMap<String, ArrayList<String>> oLimits;
 
 
     //Volume lists for N
@@ -66,20 +66,19 @@ public class NewCaseActivity extends Activity {
     List<CTV56TCase> ctv56TCaseList;
 
 
+    // Displayed items
     Switch itemListSwitch;
-
     ListView nExpandableListView;
-    //ExpandableListView tExpandableListView;
     ListView tExpandableListView;
     NSelectionAdapter nExpandableListAdapter;
-    //ExpandableListAdapter tExpandableListAdapter;
     TSelectionAdapter tExpandableListAdapter;
+
     List<String> texpandableListTitle;
     List<String> nexpandableListTitle;
     LinkedHashMap<String, List<String>> texpandableListDetail;
     LinkedHashMap<String, List<String>> nexpandableListDetail;
 
-    ArrayList<Item> countryList = new ArrayList<Item>();
+    ArrayList<Item> tItemList = new ArrayList<Item>();
     ArrayList<Item> nItemList = new ArrayList<Item>();
 
     private ImageView mImageView;
@@ -95,19 +94,21 @@ public class NewCaseActivity extends Activity {
     private TextView tClickTv;
     private TextView nClickTv;
 
-    private String newParam;
+    // Dealing with custom expandable views T and N
     private boolean isExpandedT = false;
     private boolean isExpandedN = false;
     private boolean isAdvanced = false;
 
+    // Is the Case New or Charged?
+    private String newParam;
 
-    private LinkedHashMap<String, ArrayList<String>> oLimits;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_case_2);
+        setContentView(R.layout.activity_new_case);
 
+        // Is the case new or charged?
         Intent i = getIntent();
         newParam = "1";
         newParam = (String) i.getSerializableExtra("newParam");
@@ -117,6 +118,7 @@ public class NewCaseActivity extends Activity {
         }
 
 
+        // Primary Display
         mImageView = (ImageView) findViewById(R.id.NewCaseImage);
         mTitle = (TextView) findViewById(R.id.textView);
         if (newParam.equalsIgnoreCase("0")) {
@@ -124,47 +126,39 @@ public class NewCaseActivity extends Activity {
         } else {
             mTitle.setText(R.string.newCase);
         }
-
-        //mImageView.setImageResource(mPlace.getImageResourceId(this));
         mImageView.setImageResource(R.drawable.newcase);
-
         itemListSwitch = (Switch) findViewById(R.id.itemListSwitch);
-
         mAddButton = (ImageButton) findViewById(R.id.btn_add);
-        //mRevealView = (LinearLayout) findViewById(R.id.llEditTextHolder);
         mEditTextName = (EditText) findViewById(R.id.CaseName);
 
         mAddButton = (ImageButton) findViewById(R.id.btn_add);
         mAddButton.setImageResource(R.drawable.icn_morph_reverse);
 
+        // Main Area Spinner
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.main_areas_array, R.layout.spinner_item);
         spinnerAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);// default layouts for now
         spinner = (MaterialSpinner) findViewById(R.id.CaseMainAreaSpinner);
-
         spinner.setAdapter(spinnerAdapter);
 
-
+        // Main Side Spinner
         ArrayAdapter<CharSequence> spinnerAdapterSide = ArrayAdapter.createFromResource(this, R.array.main_side_array, R.layout.spinner_item);
         spinnerAdapterSide.setDropDownViewResource(R.layout.spinner_dropdown_item);// default layouts for now
         spinnerSide = (MaterialSpinner) findViewById(R.id.MainSideSpinner);
         spinnerSide.setAdapter(spinnerAdapterSide);
 
-        tClickTv = (TextView) findViewById(R.id.tClickTv);
-        nClickTv = (TextView) findViewById(R.id.nClickTv);
-
         if (newParam.equals("1")) {
-            //mImageView.setImageDrawable(R.id.);
         } else {
             //mImageView
             mEditTextName.setText(cancer.getName());
-
-            //int spinnerPosition = spinnerAdapter.getPosition("Oropharynx");
-            //int spinnerPosition = spinnerAdapter.getPosition(cancer.getMainArea());
-            //CharSequence truc = spinnerAdapter.getItem(0);
             spinner.setSelection(Integer.valueOf(cancer.getMainArea()) + 1);
-            //int spinnerSidePosition = spinnerAdapterSide.getPosition(cancer.getMainSide());
             spinnerSide.setSelection(Integer.valueOf(cancer.getMainSide()) + 1);
         }
+
+        // Expandable Click
+        tClickTv = (TextView) findViewById(R.id.tClickTv);
+        nClickTv = (TextView) findViewById(R.id.nClickTv);
+
+
 
         // Generates elementary N cases (CTV56NUCase) catalog and
         // Stores in CaseList
@@ -172,9 +166,6 @@ public class NewCaseActivity extends Activity {
         try {
             NUCaseXMLHandler parser = new NUCaseXMLHandler();
             ctv56NUCaseList = parser.parse(getAssets().open("CTV56N_short_1.xml"));
-            String truc = getString(R.string.ctv56n);
-            ctv56NUCaseList = parser.parse(getAssets().open(getString(R.string.ctv56n)));
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -199,10 +190,6 @@ public class NewCaseActivity extends Activity {
         ctv56NCase = new CTV56NCase();
 
         newCaseActivityHashMapOperator.cTV56NCase(ctv56NUCaseList, cancer, ctv56NCase);
-        ArrayAdapter<CTV56NCase> target_adapter =
-                new ArrayAdapter<CTV56NCase>(this, R.layout.test_target_list_item, ctv56NCaseList);
-        //targetVolumesView.setAdapter(target_adapter);
-
 
         // Same thing for T
         ctv56TCaseList = new ArrayList<CTV56TCase>();
@@ -244,9 +231,7 @@ public class NewCaseActivity extends Activity {
 
         prepareTData();
 
-        tExpandableListAdapter = new TSelectionAdapter(this, countryList, tumorAreaTemplateList, cancer);
-
-
+        tExpandableListAdapter = new TSelectionAdapter(this, tItemList, tumorAreaTemplateList, cancer);
         nExpandableListView.setAdapter(nExpandableListAdapter);
 
         LayoutInflater inflater = getLayoutInflater();
@@ -350,9 +335,9 @@ public class NewCaseActivity extends Activity {
         int sectionNumber = 0;
         for (LinkedHashMap.Entry<String, List<String>> areaMap : texpandableListDetail.entrySet()) {
             sectionNumber = sectionNumber + 1;
-            this.countryList.add(new SectionItem(areaMap.getKey(), sectionNumber));
+            this.tItemList.add(new SectionItem(areaMap.getKey(), sectionNumber));
             for (String areaLocation : areaMap.getValue()) {
-                this.countryList.add(new EntryItem(areaLocation, sectionNumber));
+                this.tItemList.add(new EntryItem(areaLocation, sectionNumber));
             }
         }
     }

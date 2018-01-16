@@ -76,7 +76,7 @@ public class OARSelectionActivity extends Activity implements View.OnClickListen
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_detail);
+    setContentView(R.layout.activity_oar_selection);
     MainPageItemsData mainPageItemsData = new MainPageItemsData(getApplicationContext());
 
     mMainPageItem = mainPageItemsData.placeList().get(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
@@ -100,7 +100,7 @@ public class OARSelectionActivity extends Activity implements View.OnClickListen
 
 
     mTodoList = new ArrayList<>();
-    //mToDoAdapter = new ArrayAdapter(this, R.layout.row_todo, mTodoList);
+    //mToDoAdapter = new ArrayAdapter(this, R.layout.list_view_load_case, mTodoList);
 
 
     OARTemplateList = new ArrayList<OARTemplate>();

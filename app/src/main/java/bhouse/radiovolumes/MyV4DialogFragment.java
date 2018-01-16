@@ -94,7 +94,7 @@ public class MyV4DialogFragment extends DialogFragment {
         //prepareTData();
         prepareDisplayList();
         //ArrayAdapter<String> changeAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, displayedList);
-        //v5UserAdapter1 changeAdapter = new v5UserAdapter1(getActivity(), displayedList, cancerTTarData, countryList);
+        //v5UserAdapter1 changeAdapter = new v5UserAdapter1(getActivity(), displayedList, cancerTTarData, tItemList);
         v5UserAdapter1 changeAdapter = new v5UserAdapter1(this.getContext(), displayedListG, displayedListD, slices, colors, countryList);
         lvChange.setAdapter(changeAdapter);
 

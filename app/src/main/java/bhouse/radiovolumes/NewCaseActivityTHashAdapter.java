@@ -15,9 +15,6 @@ import android.widget.TextView;
 
 import bhouse.radiovolumes.processor.Cancer;
 
-import static android.R.attr.value;
-import static bhouse.radiovolumes.R.xml.map;
-
 
 /**
  * Created by kranck on 8/3/2017.
@@ -57,7 +54,7 @@ public class NewCaseActivityTHashAdapter extends BaseAdapter {
         Context context = parent.getContext();
 
         if (convertView == null) {
-            result = LayoutInflater.from(parent.getContext()).inflate(R.layout.listview_tab_items, parent, false);
+            result = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_tab_items, parent, false);
         } else {
             result = convertView;
         }

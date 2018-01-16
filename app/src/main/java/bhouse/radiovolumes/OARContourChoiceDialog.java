@@ -65,7 +65,6 @@ public class OARContourChoiceDialog extends DialogFragment implements OnItemClic
     public void setListitems(ArrayList<SliceVectorItem> touchedVectors){
         for (SliceVectorItem sliceVectorItem: touchedVectors){
             String truc = sliceVectorItem.getLocation().replaceAll("\\s+", "").toLowerCase();
-            int bidule = MainActivity.CONTEXT.getResources().getIdentifier(truc, "string", MainActivity.PACKAGE_NAME);
             String locationLocale = MainActivity.CONTEXT.getString(MainActivity.CONTEXT.getResources().getIdentifier(sliceVectorItem.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", MainActivity.PACKAGE_NAME));
 
             listitems.add(locationLocale);

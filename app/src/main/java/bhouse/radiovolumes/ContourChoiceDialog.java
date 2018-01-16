@@ -74,7 +74,9 @@ public class ContourChoiceDialog extends DialogFragment implements OnItemClickLi
 
     public void setListitems(ArrayList<SliceVectorItem> touchedVectors){
         for (SliceVectorItem sliceVectorItem: touchedVectors){
-            String locationLocale = getActivity().getString(getActivity().getResources().getIdentifier(sliceVectorItem.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", getActivity().getPackageName()));
+            //String locationLocale = getActivity().getString(getActivity().getResources().getIdentifier(sliceVectorItem.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", getActivity().getPackageName()));
+            String truc = sliceVectorItem.getLocation().replaceAll("\\s+", "").toLowerCase();
+            String locationLocale = MainActivity.CONTEXT.getString(MainActivity.CONTEXT.getResources().getIdentifier(sliceVectorItem.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", MainActivity.PACKAGE_NAME));
 
             listitems.add(locationLocale);
             this.touchedVectors.add(sliceVectorItem);

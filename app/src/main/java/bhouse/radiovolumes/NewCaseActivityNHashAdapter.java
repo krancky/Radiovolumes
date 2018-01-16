@@ -14,8 +14,6 @@ import java.util.List;
 
 import bhouse.radiovolumes.processor.Cancer;
 
-import static bhouse.radiovolumes.R.xml.map;
-
 
 /**
  * Created by kranck on 8/3/2017.
@@ -55,7 +53,7 @@ public class NewCaseActivityNHashAdapter extends BaseAdapter {
         Context context = parent.getContext();
 
         if (convertView == null) {
-            result = LayoutInflater.from(parent.getContext()).inflate(R.layout.listview_tab_items_n, parent, false);
+            result = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_tab_items_n, parent, false);
         } else {
             result = convertView;
         }
