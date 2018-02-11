@@ -4,6 +4,8 @@
         <Area>Cavite Buccale</Area>
         <AreaLocale>Cavite Buccale</AreaLocale>
         <Location>Plancher Buccal</Location>
+        <SubLocation>Plancher Buccal Med</SubLocation>
+        <SubLocation>Plancher Buccal Lat</SubLocation>
     </Volume>
     <Volume>
         <Area>Cavite Buccale</Area>
@@ -13,23 +15,31 @@
     <Volume>
         <Area>Cavite Buccale</Area>
         <AreaLocale>Cavite Buccale</AreaLocale>
-        <Location>Face Interne de Joue</Location>
+        <Location>Face Interne de Joue</Location>*
+        <SubLocation>Face Interne de Joue Med</SubLocation>
+        <SubLocation>Face Interne de Joue Lat</SubLocation>
     </Volume>
     <Volume>
         <Area>Cavite Buccale</Area>
         <AreaLocale>Cavite Buccale</AreaLocale>
         <Location>Gencive Inferieure</Location>
+        <SubLocation>Gencive Inferieure Med</SubLocation>
+        <SubLocation>Gencive Inferieure Lat</SubLocation>
     </Volume>
     <Volume>
         <Area>Cavite Buccale</Area>
         <AreaLocale>Cavite Buccale</AreaLocale>
         <Location>Gencive Superieure</Location>
+        <SubLocation>Gencive Superieure Med</SubLocation>
+        <SubLocation>Gencive Superieure Lat</SubLocation>
     </Volume>
     <Volume>
         <Area>Cavite Buccale</Area>
         <AreaLocale>Cavite Buccale</AreaLocale>
         <Location>Palais Dur</Location>
         <LocationLocale>Palais dur</LocationLocale>
+        <SubLocation>Palais Dur Med</SubLocation>
+        <SubLocation>Palais Dur Lat</SubLocation>
     </Volume>
     <Volume>
         <Area>Cavite Buccale</Area>

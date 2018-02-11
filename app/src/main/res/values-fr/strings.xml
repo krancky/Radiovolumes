@@ -156,7 +156,8 @@
     <string name="brachialplexus">Plexus Brachial</string>
     <string name="arytenoid">Arytenoide</string>
     <string name="allSelectedSwitch">Tout selectionner</string>
-
+    <string name="iia">Jugulaires Supérieurs (antérieurs)</string>
+    <string name="iib">Jugulaires Supérieurs (postérieurs)</string>
 
 
 </resources>

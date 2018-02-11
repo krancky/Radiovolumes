@@ -154,6 +154,8 @@
     <string name="brachialplexus">Brachial Plexus</string>
     <string name="arytenoid">Arytenoid</string>
     <string name="allSelectedSwitch">Select All</string>
+    <string name="iia">Upper Jugular nodes (anterior)</string>
+    <string name="iib">Upper Jugular Nodes (posterior)</string>
 
 
 </resources>

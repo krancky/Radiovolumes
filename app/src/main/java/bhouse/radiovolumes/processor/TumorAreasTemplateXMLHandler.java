@@ -97,7 +97,9 @@ public class TumorAreasTemplateXMLHandler {
                             else if (tagname.equalsIgnoreCase("Area")) {
                                 tumorAreaTemplate.setArea(text);
                             }
-
+                            else if (tagname.equalsIgnoreCase("SubLocation")) {
+                                tumorAreaTemplate.setSubLocation(text);
+                            }
 
                             default:
                             break;
