@@ -1,0 +1,115 @@
+package bhouse.radiovolumes;
+
+import android.content.Context;
+import android.graphics.Color;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import bhouse.radiovolumes.processor.TumorAreaTemplate;
+
+/**
+ * Created by kranck on 8/27/2017.
+ */
+
+public class NewCaseSubLocSelectionDialogAdapter extends BaseAdapter {
+    private LinkedHashMap displayedList;
+    private ArrayList<Boolean> checkboxStatus = new ArrayList();
+    private Context context;
+    private ArrayList<String> items;
+    private ArrayList<String> itemsContent;
+
+    public NewCaseSubLocSelectionDialogAdapter(Context context, List<TumorAreaTemplate> tList, String title) {
+
+        for (TumorAreaTemplate tumorAreaTemplate : tList) {
+            if (tumorAreaTemplate.getLocation().equals(title)) {
+                for (String subLocation : tumorAreaTemplate.getSubLocation()) {
+                    items.add(subLocation);
+                    checkboxStatus.add(false);
+                }
+            }
+        }
+    }
+
+    @Override
+    public int getCount() {
+        return items.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return items.get(position);
+    }
+
+    @Override
+    public long getItemId(int arg0) {
+        return arg0;
+    }
+
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+        if (convertView == null) {
+            holder = new ViewHolder();
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            convertView = LayoutInflater.from(context).inflate(R.layout.list_view_dialog, parent, false);
+            holder.locString = (TextView) convertView.findViewById(R.id.locString);
+            holder.cb = (CheckBox) convertView.findViewById(R.id.checkBox);
+            holder.cb.setTag(position);
+            holder.cb.setOnCheckedChangeListener(cbChangeListener);
+            holder.cb.setChecked(checkboxStatus.get(position));
+            convertView.setTag(holder);
+
+    } else
+
+    {
+        holder = (ViewHolder) convertView.getTag();
+    }
+
+        holder.tvSectionTitle.setText(items.get(position));
+        Log.i("position", "section");
+        // Populate the data into the template view using the data object
+        holder.locString.setText(items.get(position));
+        holder.cb.setTag(position);
+        holder.cb.setChecked(checkboxStatus.get(position));
+        holder.cb.setOnCheckedChangeListener(cbChangeListener);
+        // Return the completed
+
+
+        return convertView;
+}
+
+
+
+    private CompoundButton.OnCheckedChangeListener cbChangeListener = new CompoundButton.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(CompoundButton checkBoxView, boolean isChecked) {
+            int position = (Integer) checkBoxView.getTag();
+            checkboxStatus.set(position, isChecked);
+            if (checkBoxView.isChecked()) {
+                itemsContent.add(position, "1");
+            } else {
+                itemsContent.add(position, "0");
+            }
+            //notifyDataSetChanged();
+        }
+    };
+
+static class ViewHolder {
+    TextView locString;
+    ImageView nodePhoto;
+    TextView tvSectionTitle;
+    CheckBox cb;
+}
+}

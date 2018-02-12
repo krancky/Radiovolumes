@@ -62,7 +62,7 @@ public class NewCaseActivity extends Activity {
 
     // Same for T
     List<CTV56TUCase> ctv56TUCaseList;
-    List<TumorAreaTemplate> tumorAreaTemplateList;
+    private List<TumorAreaTemplate> tumorAreaTemplateList;
     List<CTV56TCase> ctv56TCaseList;
 
 
@@ -254,6 +254,7 @@ public class NewCaseActivity extends Activity {
         mAddButton.animate().alpha(1.0f);
 
 
+
         mAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -412,6 +413,10 @@ public class NewCaseActivity extends Activity {
         }
         return super.dispatchTouchEvent(event);
     }
+
+    public List<TumorAreaTemplate> getTumorAreaTemplateList() {
+        return tumorAreaTemplateList;};
+
 
     /**
      * row item

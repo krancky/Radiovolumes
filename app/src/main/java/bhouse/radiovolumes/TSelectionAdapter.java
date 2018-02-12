@@ -150,7 +150,7 @@ public class TSelectionAdapter extends BaseAdapter {
 
             if (!h.getSubLocation().equals(null)){
                 FragmentManager fm = getFragmentManager();
-                Tab2TDialogFragment dialogFragment = Tab2TDialogFragment.newInstance ("N changes");
+                NewCaseSubLocSelectionDialog dialogFragment = NewCaseSubLocSelectionDialog.newInstance (h.getLocation());
                 dialogFragment.show(fm, "Sample Fragment");
             }
 
