@@ -493,17 +493,15 @@ public class NewCaseActivity extends Activity {
     public class EntryItem implements Item {
         public final String title;
         public final int sectionNumber;
-        public final ArrayList<String> subLocation;
 
         public int getSectionNumber() {
             return sectionNumber;
         }
 
 
-        public EntryItem(String title, int sectionNumber, ArrayList<String> subLocation) {
+        public EntryItem(String title, int sectionNumber) {
             this.title = title;
             this.sectionNumber = sectionNumber;
-            this.subLocation = subLocation;
         }
 
         public String getTitle() {

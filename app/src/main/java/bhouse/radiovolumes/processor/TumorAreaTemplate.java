@@ -13,6 +13,7 @@ public class TumorAreaTemplate implements Serializable{
 
     String location,leftContent, rightContent, area, side; String locationLocale; String areaLocale;
     ArrayList<String> subLocation = new ArrayList<>();
+    ArrayList<String> subLocationContent = new ArrayList<>();
     int color;
 
     public int getColor() {
@@ -71,9 +72,10 @@ public class TumorAreaTemplate implements Serializable{
         this.locationLocale = locationLocale;
     }
 
-    public void setSubLocation(String subLocation){this.subLocation.add(subLocation);}
+    public void setSubLocation(String subLocation){this.subLocation.add(subLocation); this.subLocationContent.add("0");}
 
     public ArrayList<String> getSubLocation(){return this.subLocation;};
+    public ArrayList<String> getSubLocationContent(){return this.subLocationContent;};
 
     public int getImageResourceId(Context context, boolean isChecked) {
         if  (isChecked){

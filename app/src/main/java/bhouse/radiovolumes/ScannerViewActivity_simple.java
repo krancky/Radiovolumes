@@ -120,8 +120,6 @@ public class ScannerViewActivity_simple extends Activity implements Tab2TDialogF
                                            int pos, long id) {
                 // TODO Auto-generated method stub
 
-                Log.i("long clicked","pos: " + pos);
-                Toast.makeText(getApplicationContext(),"Long click position" + pos, Toast.LENGTH_SHORT).show();
                 FragmentManager fm = getFragmentManager();
                 Tab2TDialogFragment dialogFragment = Tab2TDialogFragment.newInstance ("Displayed Locations");
                 dialogFragment.show(fm, "Sample Fragment");
@@ -181,29 +179,30 @@ public class ScannerViewActivity_simple extends Activity implements Tab2TDialogF
             List<String> sideMap = nodeMap.getValue();
             for (String location : sideMap) {
                 String value = location.replaceAll("\\s+", "").toLowerCase() + " " + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase();
-                HashMap<String, XYPair<String, String>> nxyOrgan = this.nxyValues.get(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase());
-                for (HashMap.Entry<String, XYPair<String, String>> nxySlice : nxyOrgan.entrySet()) {
-                    SliceVectorItem sliceVectorItem = new SliceVectorItem();
-                    sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(nxySlice.getKey()));
-                    int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
-                    sliceVectorItem.setLocation(location);
-                    if (resId != 0) {
-                        sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
-                        sliceVectorItem.setSide(nodeMap.getKey());
-                        String machin = sliceVectorItem.getFilename().toLowerCase();
-                        XYPair truc = this.nxyValues.get(sliceVectorItem.getLocation() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase()).get(String.valueOf(nxySlice.getKey()));
-                        float bidule = Float.parseFloat((String) truc.getFirst());
-                        float bidule2 = Float.parseFloat((String) truc.getSecond());
-                        sliceVectorItem.setxMargin(bidule);
-                        sliceVectorItem.setyMargin(bidule2);
-                        slices.get(Integer.valueOf(nxySlice.getKey()) + 1).addVectorStorageLocation(sliceVectorItem);
+                if (displayedList.get(value).equals(1)) {
+                    HashMap<String, XYPair<String, String>> nxyOrgan = this.nxyValues.get(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase());
+                    for (HashMap.Entry<String, XYPair<String, String>> nxySlice : nxyOrgan.entrySet()) {
+                        SliceVectorItem sliceVectorItem = new SliceVectorItem();
+                        sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(nxySlice.getKey()));
+                        int resId = getApplicationContext().getResources().getIdentifier(sliceVectorItem.getFilename(), "drawable", getApplicationContext().getPackageName());
+                        sliceVectorItem.setLocation(location);
+                        if (resId != 0) {
+                            sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
+                            sliceVectorItem.setSide(nodeMap.getKey());
+                            String machin = sliceVectorItem.getFilename().toLowerCase();
+                            XYPair truc = this.nxyValues.get(sliceVectorItem.getLocation() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase()).get(String.valueOf(nxySlice.getKey()));
+                            float bidule = Float.parseFloat((String) truc.getFirst());
+                            float bidule2 = Float.parseFloat((String) truc.getSecond());
+                            sliceVectorItem.setxMargin(bidule);
+                            sliceVectorItem.setyMargin(bidule2);
+                            slices.get(Integer.valueOf(nxySlice.getKey()) + 1).addVectorStorageLocation(sliceVectorItem);
+                        }
                     }
                 }
+
             }
 
         }
-
-
 
     }
 

@@ -15,11 +15,14 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import bhouse.radiovolumes.processor.ContourChoiceAdapter;
+
 public class OARContourChoiceDialog extends DialogFragment implements OnItemClickListener {
 
     private OnOARCompleteListener mListener;
     private ArrayList<SliceVectorItem> touchedVectors = new ArrayList<>();
     private ArrayList<Integer> touchedVectorsArlistRank = new ArrayList<>();;
+    private ContourChoiceAdapter contourChoiceAdapter;
 
     public static interface OnOARCompleteListener {
         public abstract void onCompleteChoice(SliceVectorItem contourChoice, Integer arlistRank, ScannerOARListAdapterStatic.ViewHolder holder);
@@ -67,7 +70,7 @@ public class OARContourChoiceDialog extends DialogFragment implements OnItemClic
             String truc = sliceVectorItem.getLocation().replaceAll("\\s+", "").toLowerCase();
             String locationLocale = MainActivity.CONTEXT.getString(MainActivity.CONTEXT.getResources().getIdentifier(sliceVectorItem.getLocation().replaceAll("\\s+", "").toLowerCase(), "string", MainActivity.PACKAGE_NAME));
 
-            listitems.add(locationLocale);
+            listitems.add(sliceVectorItem.getLocation().replaceAll("\\s+", "").toLowerCase());
             this.touchedVectors.add(sliceVectorItem);
         }
     }
@@ -90,7 +93,9 @@ public class OARContourChoiceDialog extends DialogFragment implements OnItemClic
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 R.layout.contour_choice_item, listitems);
 
-        mylist.setAdapter(adapter);
+        contourChoiceAdapter = new ContourChoiceAdapter(getActivity(), listitems);
+        mylist.setAdapter(contourChoiceAdapter);
+        //mylist.setAdapter(adapter);
 
         mylist.setOnItemClickListener(this);
 

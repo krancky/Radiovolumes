@@ -1,5 +1,6 @@
 package bhouse.radiovolumes;
 
+import android.app.FragmentManager;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -146,6 +147,13 @@ public class TSelectionAdapter extends BaseAdapter {
             else{
                 holder.tumorPhoto.setImageResource(h.getImageResourceId(this.context, false));
             }
+
+            if (!h.getSubLocation().equals(null)){
+                FragmentManager fm = getFragmentManager();
+                Tab2TDialogFragment dialogFragment = Tab2TDialogFragment.newInstance ("N changes");
+                dialogFragment.show(fm, "Sample Fragment");
+            }
+
         }
 
 

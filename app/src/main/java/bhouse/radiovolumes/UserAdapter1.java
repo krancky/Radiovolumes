@@ -70,6 +70,7 @@ public class UserAdapter1 extends BaseAdapter {
         if (convertView == null) {
             holder = new ViewHolder();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            int sectionNumber = items.get(position).getSectionNumber();
 
             if (items.get(position).isSection()) {
                 convertView = inflater.inflate(R.layout.layout_section, parent, false);
@@ -80,9 +81,9 @@ public class UserAdapter1 extends BaseAdapter {
                 convertView = LayoutInflater.from(context).inflate(R.layout.list_view_dialog, parent, false);
                 holder.locString = (TextView) convertView.findViewById(R.id.locString);
                 holder.cb = (CheckBox) convertView.findViewById(R.id.checkBox);
-                holder.cb.setTag(position);
+                holder.cb.setTag(position - sectionNumber);
                 holder.cb.setOnCheckedChangeListener(cbChangeListener);
-                holder.cb.setChecked(checkboxStatus.get(position));
+                holder.cb.setChecked(checkboxStatus.get(position - sectionNumber));
             }
             convertView.setTag(holder);
 
