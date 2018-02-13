@@ -148,17 +148,7 @@ public class TSelectionAdapter extends BaseAdapter {
                 holder.tumorPhoto.setImageResource(h.getImageResourceId(this.context, false));
             }
 
-            if (!h.getSubLocation().equals(null)){
-                //FragmentManager fm = ((NewCaseActivity) context).getFragmentManager();
-                //NewCaseSubLocSelectionDialog dialogFragment = NewCaseSubLocSelectionDialog.newInstance (h.getLocation());
-                //dialogFragment.show(fm, "Sample Fragment");
-            }
-
         }
-
-
-
-
         return convertView;
     }
 
@@ -171,6 +161,12 @@ public class TSelectionAdapter extends BaseAdapter {
             TumorAreaTemplate h = (TumorAreaTemplate) tList.get(position);
             if(checkBoxView.isChecked()){
                 h.setLeftContent("1");
+
+                if (!h.getSubLocation().equals(null)){
+                    FragmentManager fm = ((NewCaseActivity) context).getFragmentManager();
+                    NewCaseSubLocSelectionDialog dialogFragment = NewCaseSubLocSelectionDialog.newInstance (h.getLocation());
+                    dialogFragment.show(fm, "Sample Fragment");
+                }
             }
             else{
                 h.setLeftContent("0");

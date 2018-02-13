@@ -24,18 +24,19 @@ import bhouse.radiovolumes.processor.TumorAreaTemplate;
  */
 
 public class NewCaseSubLocSelectionDialogAdapter extends BaseAdapter {
-    private LinkedHashMap displayedList;
     private ArrayList<Boolean> checkboxStatus = new ArrayList();
     private Context context;
     private ArrayList<String> items;
     private ArrayList<String> itemsContent;
 
     public NewCaseSubLocSelectionDialogAdapter(Context context, List<TumorAreaTemplate> tList, String title) {
-
+        this.items = new ArrayList<String>();
+        this.itemsContent = new ArrayList<String>();
+        this.context = context;
         for (TumorAreaTemplate tumorAreaTemplate : tList) {
             if (tumorAreaTemplate.getLocation().equals(title)) {
                 for (String subLocation : tumorAreaTemplate.getSubLocation()) {
-                    items.add(subLocation);
+                    this.items.add(subLocation);
                     checkboxStatus.add(false);
                 }
             }
@@ -44,12 +45,12 @@ public class NewCaseSubLocSelectionDialogAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return items.size();
+        return this.items.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return items.get(position);
+        return this.items.get(position);
     }
 
     @Override
@@ -76,11 +77,11 @@ public class NewCaseSubLocSelectionDialogAdapter extends BaseAdapter {
     {
         holder = (ViewHolder) convertView.getTag();
     }
-
-        holder.tvSectionTitle.setText(items.get(position));
+        String truc = this.items.get(position);
+        holder.locString.setText(truc);
         Log.i("position", "section");
         // Populate the data into the template view using the data object
-        holder.locString.setText(items.get(position));
+
         holder.cb.setTag(position);
         holder.cb.setChecked(checkboxStatus.get(position));
         holder.cb.setOnCheckedChangeListener(cbChangeListener);
@@ -108,7 +109,6 @@ public class NewCaseSubLocSelectionDialogAdapter extends BaseAdapter {
 
 static class ViewHolder {
     TextView locString;
-    ImageView nodePhoto;
     TextView tvSectionTitle;
     CheckBox cb;
 }
