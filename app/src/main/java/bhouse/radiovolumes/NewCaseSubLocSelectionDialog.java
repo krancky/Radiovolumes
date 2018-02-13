@@ -24,7 +24,7 @@ import bhouse.radiovolumes.processor.TumorAreaTemplate;
 public class NewCaseSubLocSelectionDialog extends DialogFragment {
 
     public static interface OnCompleteListener {
-        public abstract void onComplete(HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedList);
+        public abstract void onComplete(List<TumorAreaTemplate> tList);
     }
 
     private String title;

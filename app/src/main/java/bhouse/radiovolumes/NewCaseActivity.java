@@ -43,7 +43,7 @@ import fr.ganfra.materialspinner.MaterialSpinner;
 
 import android.widget.ImageView;
 
-public class NewCaseActivity extends Activity {
+public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionDialog.OnCompleteListener{
 
 
 
@@ -417,6 +417,9 @@ public class NewCaseActivity extends Activity {
     public List<TumorAreaTemplate> getTumorAreaTemplateList() {
         return tumorAreaTemplateList;};
 
+    public void onComplete(List<TumorAreaTemplate> tumorAreaTemplateList){
+        this.tumorAreaTemplateList = tumorAreaTemplateList;
+    }
 
     /**
      * row item
