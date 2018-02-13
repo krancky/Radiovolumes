@@ -149,9 +149,9 @@ public class TSelectionAdapter extends BaseAdapter {
             }
 
             if (!h.getSubLocation().equals(null)){
-                FragmentManager fm = ((NewCaseActivity) context).getFragmentManager();
-                NewCaseSubLocSelectionDialog dialogFragment = NewCaseSubLocSelectionDialog.newInstance (h.getLocation());
-                dialogFragment.show(fm, "Sample Fragment");
+                //FragmentManager fm = ((NewCaseActivity) context).getFragmentManager();
+                //NewCaseSubLocSelectionDialog dialogFragment = NewCaseSubLocSelectionDialog.newInstance (h.getLocation());
+                //dialogFragment.show(fm, "Sample Fragment");
             }
 
         }
