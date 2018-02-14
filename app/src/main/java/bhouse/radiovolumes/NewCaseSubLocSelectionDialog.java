@@ -63,7 +63,7 @@ public class NewCaseSubLocSelectionDialog extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_dialog, container, false);
+        View v = inflater.inflate(R.layout.fragment_subloc_dialog, container, false);
 
         this.title = getArguments().getString("title");
         Button dismiss = (Button) v.findViewById(R.id.dismiss);
@@ -100,8 +100,8 @@ public class NewCaseSubLocSelectionDialog extends DialogFragment {
         });
 
         getDialog().setTitle(getArguments().getString("title"));
-        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        getDialog().setCanceledOnTouchOutside(true);
+        //getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        //getDialog().setCanceledOnTouchOutside(true);
 
         return v;
     }
@@ -110,16 +110,16 @@ public class NewCaseSubLocSelectionDialog extends DialogFragment {
     public void onResume()
     {
         super.onResume();
-        int width = getResources().getDimensionPixelSize(R.dimen.popup_width);
-        int height = getResources().getDimensionPixelSize(R.dimen.popup_height);
+        //int width = getResources().getDimensionPixelSize(R.dimen.popup_width);
+        //int height = getResources().getDimensionPixelSize(R.dimen.popup_height);
 
         //getDialog().getWindow().setLayout(
           //      getResources().getDisplayMetrics().widthPixels,
             //    getResources().getDisplayMetrics().heightPixels
         //);
-        Window window = getDialog().getWindow();
-        window.setLayout(width, height);
-        window.setGravity(Gravity.CENTER);
+        //Window window = getDialog().getWindow();
+        //window.setLayout(width, height);
+        //window.setGravity(Gravity.CENTER);
         //TODO:
     }
 

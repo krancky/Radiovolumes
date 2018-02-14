@@ -162,7 +162,7 @@ public class TSelectionAdapter extends BaseAdapter {
             if(checkBoxView.isChecked()){
                 h.setLeftContent("1");
 
-                if (!h.getSubLocation().equals(null)){
+                if (h.getSubLocation().size() !=0){
                     FragmentManager fm = ((NewCaseActivity) context).getFragmentManager();
                     NewCaseSubLocSelectionDialog dialogFragment = NewCaseSubLocSelectionDialog.newInstance (h.getLocation());
                     dialogFragment.show(fm, "Sample Fragment");

@@ -74,6 +74,10 @@ public class TumorAreaTemplate implements Serializable{
 
     public void setSubLocation(String subLocation){this.subLocation.add(subLocation); this.subLocationContent.add("0");}
 
+    public void setSublocationContent(int position, String onOff){
+        this.subLocationContent.set(position,onOff);
+    }
+
     public ArrayList<String> getSubLocation(){return this.subLocation;};
     public ArrayList<String> getSubLocationContent(){return this.subLocationContent;};
 

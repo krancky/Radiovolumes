@@ -28,14 +28,19 @@ public class NewCaseSubLocSelectionDialogAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<String> items;
     private ArrayList<String> itemsContent;
+    int tumorPosition;
+    private List<TumorAreaTemplate> tList;
 
     public NewCaseSubLocSelectionDialogAdapter(Context context, List<TumorAreaTemplate> tList, String title) {
         this.items = new ArrayList<String>();
         this.itemsContent = new ArrayList<String>();
         this.context = context;
-        for (TumorAreaTemplate tumorAreaTemplate : tList) {
-            if (tumorAreaTemplate.getLocation().equals(title)) {
-                for (String subLocation : tumorAreaTemplate.getSubLocation()) {
+        this.tList = tList;
+        int i = 0;
+        for (i = 0; i< tList.size(); i++) {
+            if (tList.get(i).getLocation().equals(title)) {
+                this.tumorPosition = i;
+                for (String subLocation : tList.get(i).getSubLocation()) {
                     this.items.add(subLocation);
                     checkboxStatus.add(false);
                 }
@@ -79,8 +84,6 @@ public class NewCaseSubLocSelectionDialogAdapter extends BaseAdapter {
     }
         String truc = this.items.get(position);
         holder.locString.setText(truc);
-        Log.i("position", "section");
-        // Populate the data into the template view using the data object
 
         holder.cb.setTag(position);
         holder.cb.setChecked(checkboxStatus.get(position));
@@ -100,8 +103,11 @@ public class NewCaseSubLocSelectionDialogAdapter extends BaseAdapter {
             checkboxStatus.set(position, isChecked);
             if (checkBoxView.isChecked()) {
                 itemsContent.add(position, "1");
+                tList.get(position).setSublocationContent(position,"1");
+
             } else {
                 itemsContent.add(position, "0");
+                tList.get(position).setSublocationContent(position,"0");
             }
             //notifyDataSetChanged();
         }

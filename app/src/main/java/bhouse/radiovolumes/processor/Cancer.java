@@ -28,6 +28,9 @@ public class Cancer implements Serializable{
     private List<NodeAreaTemplate> cancerNVolumes = new ArrayList<NodeAreaTemplate>();
     private List<TumorAreaTemplate> cancerTVolumes = new ArrayList<TumorAreaTemplate>();
 
+    private List<TumorAreaTemplate> cancerTDeveloppedVolumes = new ArrayList<TumorAreaTemplate>();
+
+
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData =  new HashMap<String, HashMap<String, List<String>>>();
     private HashMap<String, List<String>> cancerNTarData = new HashMap<String, List<String>>();
 
@@ -109,12 +112,31 @@ public class Cancer implements Serializable{
      *
      * @param spreadTVolume the spread t volume
      */
-    public void addTVolume (TumorAreaTemplate tumorAreaTemplate){
-        if (tumorAreaTemplate.getLeftContent() != "0" || tumorAreaTemplate.getRightContent() != "0"){
+    public void addTVolume (TumorAreaTemplate tumorAreaTemplate) {
+        if (tumorAreaTemplate.getLeftContent() != "0" || tumorAreaTemplate.getRightContent() != "0") {
             cancerTVolumes.add(tumorAreaTemplate);
         }
-
     }
+
+    public void setDeveloppedVolumes(){
+            this.cancerTDeveloppedVolumes = this.cancerTVolumes;
+            for (TumorAreaTemplate tumorAreaTemplate : this.cancerTVolumes){
+                if (tumorAreaTemplate.getSubLocation().size() != 0){
+                    for (String sublocation : tumorAreaTemplate.getSubLocation()){
+                        TumorAreaTemplate newTAT = new TumorAreaTemplate();
+                        newTAT.setLocation(sublocation);;
+                        if (tumorAreaTemplate.getLeftContent().equals("1")){
+                            newTAT.setLeftContent("1");
+                        }
+                        if (tumorAreaTemplate.getRightContent().equals("1")){
+                            newTAT.setRightContent("1");
+                        }
+                        this.cancerTVolumes.add(newTAT);
+                    }
+                }
+            }
+    }
+
 
     /**
      * Gets cancer n volumes.

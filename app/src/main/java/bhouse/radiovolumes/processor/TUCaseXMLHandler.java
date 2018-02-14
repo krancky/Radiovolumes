@@ -70,7 +70,6 @@ TUCaseXMLHandler {
                             if (tagname.equalsIgnoreCase("LRTCTVUCase")) {
                                 // Creates a new instance of CTV56NUCase
                                 ctv56TUCase = new CTV56TUCase();
-                                Log.i("hop","New TV56NUCase");
                             }
                             if (tagname.equalsIgnoreCase("TVolume")) {
                                 // Creates a new instance of CTV56NUCase
