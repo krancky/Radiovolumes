@@ -640,4 +640,26 @@
         <LateralL>NA</LateralL>
         <Comment>NA</Comment>
     </Organ>
+    <Organ>
+        <Name>IIa</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>NA</CranialL>
+        <CaudalL>NA</CaudalL>
+        <AnteriorL>NA</AnteriorL>
+        <PosteriorL>NA</PosteriorL>
+        <MedialL>NA</MedialL>
+        <LateralL>NA</LateralL>
+        <Comment>NA</Comment>
+    </Organ>
+    <Organ>
+        <Name>IIb</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>NA</CranialL>
+        <CaudalL>NA</CaudalL>
+        <AnteriorL>NA</AnteriorL>
+        <PosteriorL>NA</PosteriorL>
+        <MedialL>NA</MedialL>
+        <LateralL>NA</LateralL>
+        <Comment>NA</Comment>
+    </Organ>
 </Organs>

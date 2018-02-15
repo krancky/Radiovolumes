@@ -103,11 +103,12 @@ public class NewCaseSubLocSelectionDialogAdapter extends BaseAdapter {
             checkboxStatus.set(position, isChecked);
             if (checkBoxView.isChecked()) {
                 itemsContent.add(position, "1");
-                tList.get(position).setSublocationContent(position,"1");
+                tList.get(tumorPosition).setSublocationContent(position,"1");
+                Log.i("duck","dick");
 
             } else {
                 itemsContent.add(position, "0");
-                tList.get(position).setSublocationContent(position,"0");
+                tList.get(tumorPosition).setSublocationContent(position,"0");
             }
             //notifyDataSetChanged();
         }

@@ -70,7 +70,6 @@ public class NUCaseXMLHandler {
                             if (tagname.equalsIgnoreCase("CTV56NUCase")) {
                                 // Creates a new instance of CTV56NUCase
                                 cTV56NUCase = new CTV56NUCase();
-                                Log.i("hop","New TV56NUCase");
                             }
                             if (tagname.equalsIgnoreCase("SVolume")) {
                                 // Creates a new instance of the two strings defining Target LN Volume
@@ -95,7 +94,6 @@ public class NUCaseXMLHandler {
                                 cTV56NUCase.setLocation(text);
                             } else if (tagname.equalsIgnoreCase("Notification")) {
                                 cTV56NUCase.setModifier(text);
-                                Log.i("truc","truc");
                             } else if (tagname.equalsIgnoreCase("Identifier")) {
                                 cTV56NUCase.setIdentifier(Integer.parseInt(text));
                             } else if (tagname.equalsIgnoreCase("Side")) {

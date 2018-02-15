@@ -22,7 +22,7 @@ import bhouse.radiovolumes.R;
  * Harbors cancer input information.
  * Provided by Template cases after user input
  */
-public class Cancer implements Serializable{
+public class Cancer implements Serializable {
     //private String area;
     // Private hashmaps store cancer data
     private List<NodeAreaTemplate> cancerNVolumes = new ArrayList<NodeAreaTemplate>();
@@ -31,7 +31,7 @@ public class Cancer implements Serializable{
     private List<TumorAreaTemplate> cancerTDeveloppedVolumes = new ArrayList<TumorAreaTemplate>();
 
 
-    private HashMap<String, HashMap<String, List<String>>> cancerTTarData =  new HashMap<String, HashMap<String, List<String>>>();
+    private HashMap<String, HashMap<String, List<String>>> cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
     private HashMap<String, List<String>> cancerNTarData = new HashMap<String, List<String>>();
 
     private HashMap<String, HashMap<String, List<String>>> cancerTData;
@@ -89,8 +89,8 @@ public class Cancer implements Serializable{
      * @param spreadVolume the spread volume
      * @param integer      the integer
      */
-    public void addNVolume (NodeAreaTemplate nodeAreaTemplate) {
-        if (nodeAreaTemplate.getLeftContent() != "0" || nodeAreaTemplate.getRightContent()!="0") {
+    public void addNVolume(NodeAreaTemplate nodeAreaTemplate) {
+        if (nodeAreaTemplate.getLeftContent() != "0" || nodeAreaTemplate.getRightContent() != "0") {
             cancerNVolumes.add(nodeAreaTemplate);
         }
     }
@@ -104,7 +104,7 @@ public class Cancer implements Serializable{
      */
     public int getImageResourceId(Context context) {
         String[] mainSideArray = context.getResources().getStringArray(R.array.main_areas_array);
-        return context.getResources().getIdentifier(mainSideArray[Integer.valueOf(this.mainArea)].replaceAll("\\s+", "").replaceAll("é","e").toLowerCase(), "drawable", context.getPackageName());
+        return context.getResources().getIdentifier(mainSideArray[Integer.valueOf(this.mainArea)].replaceAll("\\s+", "").replaceAll("é", "e").toLowerCase(), "drawable", context.getPackageName());
     }
 
     /**
@@ -112,31 +112,42 @@ public class Cancer implements Serializable{
      *
      * @param spreadTVolume the spread t volume
      */
-    public void addTVolume (TumorAreaTemplate tumorAreaTemplate) {
+    public void addTVolume(TumorAreaTemplate tumorAreaTemplate) {
         if (tumorAreaTemplate.getLeftContent() != "0" || tumorAreaTemplate.getRightContent() != "0") {
             cancerTVolumes.add(tumorAreaTemplate);
         }
     }
 
-    public void setDeveloppedVolumes(){
-            this.cancerTDeveloppedVolumes = this.cancerTVolumes;
-            for (TumorAreaTemplate tumorAreaTemplate : this.cancerTVolumes){
-                if (tumorAreaTemplate.getSubLocation().size() != 0){
-                    for (String sublocation : tumorAreaTemplate.getSubLocation()){
-                        TumorAreaTemplate newTAT = new TumorAreaTemplate();
-                        newTAT.setLocation(sublocation);;
-                        if (tumorAreaTemplate.getLeftContent().equals("1")){
-                            newTAT.setLeftContent("1");
-                        }
-                        if (tumorAreaTemplate.getRightContent().equals("1")){
-                            newTAT.setRightContent("1");
-                        }
-                        this.cancerTVolumes.add(newTAT);
+    public void setDeveloppedVolumes() {
+        //this.cancerTDeveloppedVolumes = this.cancerTVolumes;
+        for (TumorAreaTemplate tumorAreaTemplate : this.cancerTVolumes) {
+            if (tumorAreaTemplate.getSubLocation().size() != 0) {
+                for (String sublocation : tumorAreaTemplate.getSubLocation()) {
+                    TumorAreaTemplate newTAT = new TumorAreaTemplate();
+                    newTAT.setLocation(sublocation);
+                    ;
+                    if (tumorAreaTemplate.getLeftContent().equals("1")) {
+                        newTAT.setLeftContent("1");
+                    } else {
+                        newTAT.setLeftContent("0");
                     }
+                    if (tumorAreaTemplate.getRightContent().equals("1")) {
+                        newTAT.setRightContent("1");
+                    } else {
+                        newTAT.setRightContent("0");
+                    }
+                    this.cancerTDeveloppedVolumes.add(newTAT);
                 }
+            } else {
+                this.cancerTDeveloppedVolumes.add(tumorAreaTemplate);
             }
+        }
     }
 
+
+    public List<TumorAreaTemplate> getCancerTDeveloppedVolumes() {
+        return cancerTDeveloppedVolumes;
+    }
 
     /**
      * Gets cancer n volumes.
@@ -159,18 +170,19 @@ public class Cancer implements Serializable{
     /**
      * Clears cancer volumes.
      */
-    public void nClear(){
+    public void nClear() {
         cancerNVolumes.clear();
     }
-    public void tClear(){
+
+    public void tClear() {
         cancerTVolumes.clear();
     }
 
-    public void setCancerTTarData(HashMap<String, HashMap<String, List<String>>> cancerTTarData){
+    public void setCancerTTarData(HashMap<String, HashMap<String, List<String>>> cancerTTarData) {
         this.cancerTTarData = cancerTTarData;
     }
 
-    public void setCancerNTarData(HashMap<String, List<String>> cancerNTarData){
+    public void setCancerNTarData(HashMap<String, List<String>> cancerNTarData) {
         this.cancerNTarData = cancerNTarData;
     }
 
@@ -180,15 +192,14 @@ public class Cancer implements Serializable{
      *
      * @param context
      */
-    public void saveToFile (Context context){
-        try{
-            FileOutputStream fileOutputStream = context.openFileOutput(this.name +".duc", Context.MODE_PRIVATE);
+    public void saveToFile(Context context) {
+        try {
+            FileOutputStream fileOutputStream = context.openFileOutput(this.name + ".duc", Context.MODE_PRIVATE);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(this);
             objectOutputStream.close();
             fileOutputStream.close();
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -201,25 +212,23 @@ public class Cancer implements Serializable{
      * @param name
      * @return
      */
-    public static Cancer readFromFile(Context context, String name){
+    public static Cancer readFromFile(Context context, String name) {
         Cancer cancer = null;
-        try{
+        try {
             FileInputStream fileInputStream = new FileInputStream(new File(name));
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             cancer = (Cancer) objectInputStream.readObject();
             objectInputStream.close();
             fileInputStream.close();
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        catch (ClassNotFoundException e){
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
         return cancer;
     }
 
-    public void removeCancer (Context context){
+    public void removeCancer(Context context) {
 
 
         File dir = context.getFilesDir();

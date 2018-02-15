@@ -23,8 +23,9 @@ public class NewCaseActivityHashMapOperator {
     public void cTV56NCase(List<CTV56NUCase> ctv56NUCaseList, Cancer cancer, CTV56NCase cTV56NCase){
         // Sets the name of structure holding the lymph nodes to irradiate
         cTV56NCase.setCaseName("Lymph nodes to irradiate");
+        cancer.setDeveloppedVolumes();
         // Iterates on all elementary cases to associate to spread volumes in actual cancer, then computes linear combination of target volumes and returns final CTV56NCase
-        for (TumorAreaTemplate cancerTVolumes : cancer.getCancerTVolumes()){
+        for (TumorAreaTemplate cancerTVolumes : cancer.getCancerTDeveloppedVolumes()){
             for (CTV56NUCase ctv56NUCase:ctv56NUCaseList) {
                 // Case when N0
                 if (cancer.getCancerNVolumes().isEmpty()) {

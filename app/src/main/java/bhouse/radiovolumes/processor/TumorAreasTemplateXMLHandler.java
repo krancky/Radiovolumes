@@ -68,7 +68,6 @@ public class TumorAreasTemplateXMLHandler {
                             if (tagname.equalsIgnoreCase("Volume")) {
                                 // Creates a new instance of CTV56NUCase
                                 tumorAreaTemplate = new TumorAreaTemplate();
-                                Log.i("hop","New Template Volume");
                             }
                             break;
 
