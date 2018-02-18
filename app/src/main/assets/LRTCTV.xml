@@ -331,7 +331,7 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Fosse pterygomaxillaire</TLocation>
+                <TLocation>Fosse pterygopalatine</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -402,7 +402,7 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Fosse pterygomaxillaire</TLocation>
+                <TLocation>Fosse pterygopalatine</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>

@@ -122,21 +122,24 @@ public class Cancer implements Serializable {
         //this.cancerTDeveloppedVolumes = this.cancerTVolumes;
         for (TumorAreaTemplate tumorAreaTemplate : this.cancerTVolumes) {
             if (tumorAreaTemplate.getSubLocation().size() != 0) {
-                for (String sublocation : tumorAreaTemplate.getSubLocation()) {
+                int i;
+                for (i=0;i<tumorAreaTemplate.getSubLocation().size();i++) {
                     TumorAreaTemplate newTAT = new TumorAreaTemplate();
-                    newTAT.setLocation(sublocation);
-                    ;
-                    if (tumorAreaTemplate.getLeftContent().equals("1")) {
+                    newTAT.setLocation(tumorAreaTemplate.getSubLocation().get(i));
+                    if (tumorAreaTemplate.getLeftContent().equals("1") && tumorAreaTemplate.getSubLocationContent().get(i).equals("1")) {
                         newTAT.setLeftContent("1");
                     } else {
                         newTAT.setLeftContent("0");
                     }
-                    if (tumorAreaTemplate.getRightContent().equals("1")) {
+                    if (tumorAreaTemplate.getRightContent().equals("1") && tumorAreaTemplate.getSubLocationContent().get(i).equals("1")) {
                         newTAT.setRightContent("1");
                     } else {
                         newTAT.setRightContent("0");
                     }
-                    this.cancerTDeveloppedVolumes.add(newTAT);
+
+                    if (newTAT.getRightContent().equals("1") | newTAT.getLeftContent().equals("1")){
+                        this.cancerTDeveloppedVolumes.add(newTAT);
+                    }
                 }
             } else {
                 this.cancerTDeveloppedVolumes.add(tumorAreaTemplate);

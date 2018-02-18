@@ -82,8 +82,8 @@ public class NewCaseSubLocSelectionDialogAdapter extends BaseAdapter {
     {
         holder = (ViewHolder) convertView.getTag();
     }
-        String truc = this.items.get(position);
-        holder.locString.setText(truc);
+        String truc = this.items.get(position).replaceAll("\\s+", "").toLowerCase();
+        holder.locString.setText(context.getString(context.getResources().getIdentifier(truc, "string", context.getPackageName())));
 
         holder.cb.setTag(position);
         holder.cb.setChecked(checkboxStatus.get(position));
@@ -102,12 +102,12 @@ public class NewCaseSubLocSelectionDialogAdapter extends BaseAdapter {
             int position = (Integer) checkBoxView.getTag();
             checkboxStatus.set(position, isChecked);
             if (checkBoxView.isChecked()) {
-                itemsContent.add(position, "1");
+                //itemsContent.add(position, "1");
                 tList.get(tumorPosition).setSublocationContent(position,"1");
                 Log.i("duck","dick");
 
             } else {
-                itemsContent.add(position, "0");
+                //itemsContent.add(position, "0");
                 tList.get(tumorPosition).setSublocationContent(position,"0");
             }
             //notifyDataSetChanged();
