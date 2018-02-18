@@ -157,12 +157,12 @@ public class TSelectionAdapter extends BaseAdapter {
         @Override
         public void onCheckedChanged(CompoundButton checkBoxView, boolean isChecked) {
             int position = (Integer) checkBoxView.getTag();
-            checkboxStatus_left.set(position, isChecked);
+
             TumorAreaTemplate h = (TumorAreaTemplate) tList.get(position);
             if(checkBoxView.isChecked()){
                 h.setLeftContent("1");
 
-                if (h.getSubLocation().size() !=0){
+                if (h.getSubLocation().size() !=0 && checkboxStatus_left.get(position).equals(false)){
                     FragmentManager fm = ((NewCaseActivity) context).getFragmentManager();
                     NewCaseSubLocSelectionDialog dialogFragment = NewCaseSubLocSelectionDialog.newInstance (h.getLocation());
                     dialogFragment.show(fm, "Sample Fragment");
@@ -181,6 +181,7 @@ public class TSelectionAdapter extends BaseAdapter {
                 }
 
             }
+            checkboxStatus_left.set(position, isChecked);
             notifyDataSetChanged();
         }
     };

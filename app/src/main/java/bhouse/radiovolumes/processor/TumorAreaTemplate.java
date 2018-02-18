@@ -72,7 +72,7 @@ public class TumorAreaTemplate implements Serializable{
         this.locationLocale = locationLocale;
     }
 
-    public void setSubLocation(String subLocation){this.subLocation.add(subLocation); this.subLocationContent.add("0");}
+    public void setSubLocation(String subLocation){this.subLocation.add(subLocation); this.subLocationContent.add("0");this.subLocationContent.add("0");this.subLocationContent.add("0");}
 
     public void setSublocationContent(int position, String onOff){
         this.subLocationContent.set(position,onOff);
