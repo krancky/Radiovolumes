@@ -156,6 +156,28 @@
     <string name="allSelectedSwitch">Select All</string>
     <string name="iia">Upper Jugular nodes (anterior)</string>
     <string name="iib">Upper Jugular Nodes (posterior)</string>
+    <string name="fossepterygopalatine">Pterygomaxillary Fossa</string>
+    <string name="plancherbuccalmed">Tongue Floor (median)</string>
+    <string name="plancherbuccallat">Tongue Floor (lateral</string>
+
+    <string name="gencivesuperieuremed">Upper Gum (Median)</string>
+    <string name="gencivesuperieurelat">Upper Gum (Lateral)</string>
+
+    <string name="faceinternedejouemed">Inner Face of Cheek (Median)</string>
+    <string name="faceinternedejouelat">Inner Face of Cheek (Lateral)</string>
+
+    <string name="genciveinferieuremed">Lower Gum (Median)</string>
+    <string name="genciveinferieurelat">Lower Gum (Lateral)</string>
+
+    <string name="palaisdurmed">Hard Palate (Median)</string>
+    <string name="palaisdurlat">Hard Palate (Lateral)</string>
+    <string name="amygdaleautre">Other</string>
+    <string name="amygdalet13base">T1 -T3 with limited extension to Tongue Floor (inf 1/3)</string>
+    <string name="amygdalet13vellaire">T1-T3 with limited extension to Veil (inf 1/3)</string>
+    <string name="amygdalet13fosse">T1-T3 limited to the Tonsillar Fossa</string>
+    <string name="amygdalet1sanspilier">T1 with extension to Pilars</string>
+    <string name="voilet1">Soft Palate T1</string>
+    <string name="voilet24">Soft Palate T2-4</string>
 
 
 </resources>

@@ -170,6 +170,16 @@ public class TSelectionAdapter extends BaseAdapter {
             }
             else{
                 h.setLeftContent("0");
+                if (h.getSubLocation().size() !=0){
+                    h.getSubLocationContent().set(0,"0");
+                    h.getSubLocationContent().set(1,"0");
+                    h.getSubLocationContent().set(2,"0");
+                    h.getSubLocationContent().set(3,"0");
+                    h.getSubLocationContent().set(4,"0");
+
+
+                }
+
             }
             notifyDataSetChanged();
         }

@@ -23,7 +23,7 @@
     <entry key="gencivesuperieure">#FFF500</entry>
     <entry key="genciveinferieure">#FFF500</entry>
     <entry key="espaceparotidien">#FFF500</entry>
-    <entry key="fossepterygomaxillaire">#FFF500</entry>
+    <entry key="fossepterygopalatine">#FFF500</entry>
     <entry key="plancherposterieur">#FFF500</entry>
     <entry key="branchemontantedemandibule">#FFF500</entry>
     <entry key="espacecarotidien">#FFF500</entry>
@@ -56,6 +56,8 @@
     <entry key="ix">#FFF500</entry>
     <entry key="xa">#00FFE0</entry>
     <entry key="xb">#00FFE0</entry>
+    <entry key="iia">#5200FF</entry>
+    <entry key="iib">#5200FF</entry>
 
 
     <entry key="anteriorsegment">#1400FF</entry>

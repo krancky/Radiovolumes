@@ -60,6 +60,11 @@
         <Area>Oropharynx</Area>
         <AreaLocale>Oropharynx</AreaLocale>
         <Location>Amygdale</Location>
+        <SubLocation>AmygdaleT1SansPilier</SubLocation>
+        <SubLocation>AmygdaleT13Fosse</SubLocation>
+        <SubLocation>AmygdaleT13Vellaire</SubLocation>
+        <SubLocation>AmygdaleT13Base</SubLocation>
+        <SubLocation>AmygdaleAutre</SubLocation>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>
@@ -71,6 +76,8 @@
         <AreaLocale>Oropharynx</AreaLocale>
         <Location>Voile</Location>
         <LocationLocale>Voile</LocationLocale>
+        <SubLocation>VoileT1</SubLocation>
+        <SubLocation>VoileT24</SubLocation>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>

@@ -74,6 +74,7 @@
     <string name="gencivesuperieure">Gencive Supérieure</string>
     <string name="espaceparotidien">Espace Parotidien</string>
     <string name="fossepterygomaxillaire">Fosse Pterygo-Maxillaire</string>
+    <string name="fossepterygopalatine">Fosse Pterygo-Palatine</string>
     <string name="plancherposterieur">Plancher Postérieur</string>
     <string name="langueposterieure">Langue Postérieure</string>
     <string name="replipharyngoepiglottique">Repli Pharyngo-épiglottique</string>
@@ -158,6 +159,28 @@
     <string name="allSelectedSwitch">Tout selectionner</string>
     <string name="iia">Jugulaires Supérieurs (antérieurs)</string>
     <string name="iib">Jugulaires Supérieurs (postérieurs)</string>
+
+    <string name="plancherbuccalmed">Plancher buccal Median</string>
+    <string name="plancherbuccallat">Plancher buccal Latéral</string>
+
+    <string name="gencivesuperieuremed">Gencive Supérieure Médiane</string>
+    <string name="gencivesuperieurelat">Gencive Supérieure Latérale</string>
+
+    <string name="faceinternedejouemed">Face interne de joue médiane</string>
+    <string name="faceinternedejouelat">Face interne de joue latérale</string>
+
+    <string name="genciveinferieuremed">Gencive Inférieure Médiane</string>
+    <string name="genciveinferieurelat">Gencive Inférieure Latérale</string>
+
+    <string name="palaisdurmed">Palais Dur Médian</string>
+    <string name="palaisdurlat">Palais Dur Latéral</string>
+    <string name="amygdaleautre">Autre</string>
+    <string name="amygdalet13base">T1-T3 avec extension limitée au tiers de la base de langue</string>
+    <string name="amygdalet13vellaire">T1-T3 avec extension limitée au tiers du voile homolateral</string>
+    <string name="amygdalet13fosse">T1-T3 avec extension limitée à la fosse amygdalienne</string>
+    <string name="amygdalet1sanspilier">T1 sans extension aux piliers</string>
+    <string name="voilet1">Voile T1</string>
+    <string name="voilet24">Voile T2-4</string>
 
 
 </resources>
