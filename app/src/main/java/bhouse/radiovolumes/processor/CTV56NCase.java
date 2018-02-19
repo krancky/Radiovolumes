@@ -90,6 +90,10 @@ public class CTV56NCase implements Serializable{
         this.cTV56NTarVolumes.addAll(TVolumes);
     }
 
+    public void addAllModifiers(List<String> modifiers){
+        this.modifier.addAll(modifiers);
+    }
+
     /**
      * Removes duplicates in computed target volumes
      */
@@ -100,6 +104,15 @@ public class CTV56NCase implements Serializable{
         List<LRNodeTargetVolume> list = new ArrayList<LRNodeTargetVolume>();
         list.addAll(s);
         this.addAllTVolumeToMap(list);
+    }
+
+    public void removeModifiersDuplicates(){
+        Set<String> s = new LinkedHashSet<>();
+        s.addAll(this.getModifier());
+        this.modifier.clear();
+        List<String> list = new ArrayList<String>();
+        list.addAll(s);
+        this.addAllModifiers(list);
     }
 
     @Override

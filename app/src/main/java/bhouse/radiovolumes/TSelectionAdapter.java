@@ -2,7 +2,6 @@ package bhouse.radiovolumes;
 
 import android.app.FragmentManager;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Filter;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +18,6 @@ import java.util.Locale;
 
 import bhouse.radiovolumes.processor.Cancer;
 import bhouse.radiovolumes.processor.TumorAreaTemplate;
-
-import static android.R.attr.value;
 
 /**
  * Adapter
@@ -161,21 +157,20 @@ public class TSelectionAdapter extends BaseAdapter {
             TumorAreaTemplate h = (TumorAreaTemplate) tList.get(position);
             if(checkBoxView.isChecked()){
                 h.setLeftContent("1");
-
                 if (h.getSubLocation().size() !=0 && checkboxStatus_left.get(position).equals(false)){
                     FragmentManager fm = ((NewCaseActivity) context).getFragmentManager();
-                    NewCaseSubLocSelectionDialog dialogFragment = NewCaseSubLocSelectionDialog.newInstance (h.getLocation());
+                    NewCaseSubLocSelectionDialog dialogFragment = NewCaseSubLocSelectionDialog.newInstance (h.getLocation(), "gauche");
                     dialogFragment.show(fm, "Sample Fragment");
                 }
             }
             else{
                 h.setLeftContent("0");
                 if (h.getSubLocation().size() !=0){
-                    h.getSubLocationContent().set(0,"0");
-                    h.getSubLocationContent().set(1,"0");
-                    h.getSubLocationContent().set(2,"0");
-                    h.getSubLocationContent().set(3,"0");
-                    h.getSubLocationContent().set(4,"0");
+                    h.getSubLocationLeftContent().set(0,"0");
+                    h.getSubLocationLeftContent().set(1,"0");
+                    h.getSubLocationLeftContent().set(2,"0");
+                    h.getSubLocationLeftContent().set(3,"0");
+                    h.getSubLocationLeftContent().set(4,"0");
 
 
                 }
@@ -190,14 +185,28 @@ public class TSelectionAdapter extends BaseAdapter {
         @Override
         public void onCheckedChanged(CompoundButton checkBoxView, boolean isChecked) {
             int position = (Integer) checkBoxView.getTag();
-            checkboxStatus_right.set(position, isChecked);
+
             TumorAreaTemplate h = (TumorAreaTemplate) tList.get(position);
             if(checkBoxView.isChecked()){
                 h.setRightContent("1");
+
+                if (h.getSubLocation().size() !=0 && checkboxStatus_right.get(position).equals(false)){
+                    FragmentManager fm = ((NewCaseActivity) context).getFragmentManager();
+                    NewCaseSubLocSelectionDialog dialogFragment = NewCaseSubLocSelectionDialog.newInstance (h.getLocation(), "droite");
+                    dialogFragment.show(fm, "Sample Fragment");
+                }
             }
             else{
                 h.setRightContent("0");
+                if (h.getSubLocation().size() !=0){
+                    h.getSubLocationRightContent().set(0,"0");
+                    h.getSubLocationRightContent().set(1,"0");
+                    h.getSubLocationRightContent().set(2,"0");
+                    h.getSubLocationRightContent().set(3,"0");
+                    h.getSubLocationRightContent().set(4,"0");
+                }
             }
+            checkboxStatus_right.set(position, isChecked);
             notifyDataSetChanged();
         }
     };

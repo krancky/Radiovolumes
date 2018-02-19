@@ -377,6 +377,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
         newCaseActivityHashMapOperator.update(NewCaseActivity.this.ctv56TUCaseList, NewCaseActivity.this.ctv56NUCaseList, NewCaseActivity.this.cancer, NewCaseActivity.this.ctv56TCase, ctv56NCase, this.isAdvanced);
         ctv56TCase.removeTarVolumesDuplicates();
         ctv56NCase.removeTarVolumesDuplicates();
+        ctv56NCase.removeModifiersDuplicates();
         NewCaseActivity.this.ctv56TCaseList.add(NewCaseActivity.this.ctv56TCase);
         NewCaseActivity.this.ctv56NCaseList.add(NewCaseActivity.this.ctv56NCase);
 

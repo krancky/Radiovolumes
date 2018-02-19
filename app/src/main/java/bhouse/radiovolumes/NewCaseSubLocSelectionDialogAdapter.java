@@ -30,12 +30,14 @@ public class NewCaseSubLocSelectionDialogAdapter extends BaseAdapter {
     private ArrayList<String> itemsContent;
     int tumorPosition;
     private List<TumorAreaTemplate> tList;
+    private String side;
 
-    public NewCaseSubLocSelectionDialogAdapter(Context context, List<TumorAreaTemplate> tList, String title) {
+    public NewCaseSubLocSelectionDialogAdapter(Context context, List<TumorAreaTemplate> tList, String title, String side) {
         this.items = new ArrayList<String>();
         this.itemsContent = new ArrayList<String>();
         this.context = context;
         this.tList = tList;
+        this.side = side;
         int i = 0;
         for (i = 0; i< tList.size(); i++) {
             if (tList.get(i).getLocation().equals(title)) {
@@ -101,15 +103,29 @@ public class NewCaseSubLocSelectionDialogAdapter extends BaseAdapter {
         public void onCheckedChanged(CompoundButton checkBoxView, boolean isChecked) {
             int position = (Integer) checkBoxView.getTag();
             checkboxStatus.set(position, isChecked);
-            if (checkBoxView.isChecked()) {
-                //itemsContent.add(position, "1");
-                tList.get(tumorPosition).setSublocationContent(position,"1");
-                Log.i("duck","dick");
+            if (side.equals("gauche")){
+                if (checkBoxView.isChecked()) {
+                    //itemsContent.add(position, "1");
+                    tList.get(tumorPosition).setSublocationLeftContent(position,"1");
+                    Log.i("duck","dick");
 
-            } else {
-                //itemsContent.add(position, "0");
-                tList.get(tumorPosition).setSublocationContent(position,"0");
+                } else {
+                    //itemsContent.add(position, "0");
+                    tList.get(tumorPosition).setSublocationLeftContent(position,"0");
+                }
             }
+            if(side.equals("droite")){
+                if (checkBoxView.isChecked()) {
+                    //itemsContent.add(position, "1");
+                    tList.get(tumorPosition).setSublocationRightContent(position,"1");
+                    Log.i("duck","dick");
+
+                } else {
+                    //itemsContent.add(position, "0");
+                    tList.get(tumorPosition).setSublocationRightContent(position,"0");
+                }
+            }
+
             //notifyDataSetChanged();
         }
     };

@@ -85,7 +85,7 @@ public class TumorAreasTemplateXMLHandler {
                                 tumorAreaTemplateList.add(tumorAreaTemplate);
                             }
                             else if (tagname.equalsIgnoreCase("Location")) {
-                                tumorAreaTemplate.setLocation(text);
+                                tumorAreaTemplate.setLocation(text.replaceAll("\\s+", "").toLowerCase());
                             }
                             else if (tagname.equalsIgnoreCase("LocationLocale")) {
                                 tumorAreaTemplate.setLocationLocale(text);

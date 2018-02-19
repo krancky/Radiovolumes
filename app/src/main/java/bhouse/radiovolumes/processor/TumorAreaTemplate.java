@@ -13,7 +13,8 @@ public class TumorAreaTemplate implements Serializable{
 
     String location,leftContent, rightContent, area, side; String locationLocale; String areaLocale;
     ArrayList<String> subLocation = new ArrayList<>();
-    ArrayList<String> subLocationContent = new ArrayList<>();
+    ArrayList<String> subLocationLeftContent = new ArrayList<>();
+    ArrayList<String> subLocationRightContent = new ArrayList<>();
     int color;
 
     public int getColor() {
@@ -72,14 +73,25 @@ public class TumorAreaTemplate implements Serializable{
         this.locationLocale = locationLocale;
     }
 
-    public void setSubLocation(String subLocation){this.subLocation.add(subLocation); this.subLocationContent.add("0");this.subLocationContent.add("0");this.subLocationContent.add("0");}
+    public void setSubLocation(String subLocation){this.subLocation.add(subLocation); this.subLocationLeftContent.add("0");this.subLocationLeftContent.add("0");this.subLocationLeftContent.add("0");
+    this.subLocationRightContent.add("0");this.subLocationRightContent.add("0");;this.subLocationRightContent.add("0");
+    }
 
-    public void setSublocationContent(int position, String onOff){
-        this.subLocationContent.set(position,onOff);
+    public void setSublocationLeftContent(int position, String onOff){
+        this.subLocationLeftContent.set(position,onOff);
+    }
+
+
+    public void setSublocationRightContent(int position, String onOff){
+        this.subLocationRightContent.set(position,onOff);
     }
 
     public ArrayList<String> getSubLocation(){return this.subLocation;};
-    public ArrayList<String> getSubLocationContent(){return this.subLocationContent;};
+    public ArrayList<String> getSubLocationLeftContent(){return this.subLocationLeftContent;};
+
+    public ArrayList<String> getSubLocationRightContent() {
+        return subLocationRightContent;
+    }
 
     public int getImageResourceId(Context context, boolean isChecked) {
         if  (isChecked){

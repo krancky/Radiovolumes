@@ -1,7 +1,6 @@
 package bhouse.radiovolumes.processor;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -126,12 +125,12 @@ public class Cancer implements Serializable {
                 for (i=0;i<tumorAreaTemplate.getSubLocation().size();i++) {
                     TumorAreaTemplate newTAT = new TumorAreaTemplate();
                     newTAT.setLocation(tumorAreaTemplate.getSubLocation().get(i));
-                    if (tumorAreaTemplate.getLeftContent().equals("1") && tumorAreaTemplate.getSubLocationContent().get(i).equals("1")) {
+                    if (tumorAreaTemplate.getLeftContent().equals("1") && tumorAreaTemplate.getSubLocationLeftContent().get(i).equals("1")) {
                         newTAT.setLeftContent("1");
                     } else {
                         newTAT.setLeftContent("0");
                     }
-                    if (tumorAreaTemplate.getRightContent().equals("1") && tumorAreaTemplate.getSubLocationContent().get(i).equals("1")) {
+                    if (tumorAreaTemplate.getRightContent().equals("1") && tumorAreaTemplate.getSubLocationRightContent().get(i).equals("1")) {
                         newTAT.setRightContent("1");
                     } else {
                         newTAT.setRightContent("0");

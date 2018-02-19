@@ -87,7 +87,7 @@ TUCaseXMLHandler {
                                 // add CTV56NUCase object to catalog
                                 ctv56TUCaseList.add(ctv56TUCase);
                             } else if (tagname.equalsIgnoreCase("Location")) {
-                                ctv56TUCase.setLocation(text);
+                                ctv56TUCase.setLocation(text.replaceAll("\\s+", "").toLowerCase());
                             } else if (tagname.equalsIgnoreCase("Side")) {
                                 ctv56TUCase.setSide(text);
                             } else if (tagname.equalsIgnoreCase("Identifier")) {
@@ -95,7 +95,7 @@ TUCaseXMLHandler {
                             } else if (tagname.equalsIgnoreCase("Advanced")) {
                                 ctv56TUCase.setAdvanced(Boolean.valueOf(text));
                             } else if (tagname.equalsIgnoreCase("TLocation")) {
-                                lrTumorTargetVolume.setLocation(text);
+                                lrTumorTargetVolume.setLocation(text.replaceAll("\\s+", "").toLowerCase());
                             } else if (tagname.equalsIgnoreCase("TArea")) {
                                 lrTumorTargetVolume.setArea(text);
                             } else if (tagname.equalsIgnoreCase("TSide")) {

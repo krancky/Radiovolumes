@@ -2,23 +2,16 @@ package bhouse.radiovolumes;
 
 import android.app.Activity;
 import android.app.DialogFragment;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import bhouse.radiovolumes.processor.TumorAreaTemplate;
 
@@ -30,6 +23,7 @@ public class NewCaseSubLocSelectionDialog extends DialogFragment {
     }
 
     private String title;
+    private String side;
     private OnCompleteListener mListener;
     //private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     //private HashMap<String, List<String>> cancerNTarData;
@@ -42,10 +36,11 @@ public class NewCaseSubLocSelectionDialog extends DialogFragment {
 
 
 
-    public static NewCaseSubLocSelectionDialog newInstance(String title) {
+    public static NewCaseSubLocSelectionDialog newInstance(String title, String side) {
         NewCaseSubLocSelectionDialog dialog = new NewCaseSubLocSelectionDialog();
         Bundle args = new Bundle();
         args.putString("title", title);
+        args.putString("side", side);
         dialog.setArguments(args);
 
 
@@ -71,6 +66,7 @@ public class NewCaseSubLocSelectionDialog extends DialogFragment {
         View v = inflater.inflate(R.layout.fragment_subloc_dialog, container, false);
 
         this.title = getArguments().getString("title");
+        this.side = getArguments().getString("side");
         Button dismiss = (Button) v.findViewById(R.id.dismiss);
 
 
@@ -90,7 +86,7 @@ public class NewCaseSubLocSelectionDialog extends DialogFragment {
         ListView lvChange = (ListView)v.findViewById(R.id.list_display);
 
         //ArrayAdapter<String> changeAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, displayedList);
-        NewCaseSubLocSelectionDialogAdapter  changeAdapter = new NewCaseSubLocSelectionDialogAdapter(getContext(), tList, title);
+        NewCaseSubLocSelectionDialogAdapter  changeAdapter = new NewCaseSubLocSelectionDialogAdapter(getContext(), tList, title, side);
         lvChange.setAdapter(changeAdapter);
 
         //Button cancel = (Button) v.findViewById(R.id.cancel);
@@ -104,12 +100,23 @@ public class NewCaseSubLocSelectionDialog extends DialogFragment {
             @Override
             public void onClick(View v) {
                 int i = 0;
-                if (tList.get(tumorPosition).getSubLocationContent().get(0).equals("0") && tList.get(tumorPosition).getSubLocationContent().get(1).equals("0") && tList.get(tumorPosition).getSubLocationContent().get(2).equals("0") && tList.get(tumorPosition).getSubLocationContent().get(4).equals("0") && tList.get(tumorPosition).getSubLocationContent().get(1).equals("0")){
-                    Toast.makeText(v.getContext(), "Select at least one subLocation", Toast.LENGTH_SHORT).show();
-                } else{
-                    mListener.onComplete(tList);
-                    dismiss();
+                if (side.equals("droite")){
+                    if (tList.get(tumorPosition).getSubLocationRightContent().get(0).equals("0") && tList.get(tumorPosition).getSubLocationRightContent().get(1).equals("0") && tList.get(tumorPosition).getSubLocationRightContent().get(2).equals("0") && tList.get(tumorPosition).getSubLocationRightContent().get(4).equals("0") && tList.get(tumorPosition).getSubLocationRightContent().get(1).equals("0")){
+                        Toast.makeText(v.getContext(), "Select at least one subLocation", Toast.LENGTH_SHORT).show();
+                    } else{
+                        mListener.onComplete(tList);
+                        dismiss();
+                    }
                 }
+                if (side.equals("gauche")){
+                    if (tList.get(tumorPosition).getSubLocationLeftContent().get(0).equals("0") && tList.get(tumorPosition).getSubLocationLeftContent().get(1).equals("0") && tList.get(tumorPosition).getSubLocationLeftContent().get(2).equals("0") && tList.get(tumorPosition).getSubLocationLeftContent().get(4).equals("0") && tList.get(tumorPosition).getSubLocationLeftContent().get(1).equals("0")){
+                        Toast.makeText(v.getContext(), "Select at least one subLocation", Toast.LENGTH_SHORT).show();
+                    } else{
+                        mListener.onComplete(tList);
+                        dismiss();
+                    }
+                }
+
             }
         });
 
