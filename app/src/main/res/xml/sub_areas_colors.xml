@@ -15,28 +15,28 @@
     <entry key="pterygoidienmedial">#5200FF</entry>
     <entry key="sillonamygdaloglosse">#8FFF00</entry>
     <entry key="trigoneretromolaireinferieur">#0029FF</entry>
-    <entry key="trigoneretromolairesuperieur">#0029FF</entry>
+    <entry key="trigoneretromolairesuperieur">#C55D5D</entry>
     <entry key="foramenovale">#FFF500</entry>
-    <entry key="gangliondegasser">#FFF500</entry>
-    <entry key="carrefourdestroisreplis">#FFF500</entry>
-    <entry key="mandibuledeproximite">#FFF500</entry>
-    <entry key="gencivesuperieure">#FFF500</entry>
-    <entry key="genciveinferieure">#FFF500</entry>
-    <entry key="espaceparotidien">#FFF500</entry>
-    <entry key="fossepterygopalatine">#FFF500</entry>
-    <entry key="plancherposterieur">#FFF500</entry>
-    <entry key="branchemontantedemandibule">#FFF500</entry>
-    <entry key="espacecarotidien">#FFF500</entry>
-    <entry key="sinuscaverneux">#FFF500</entry>
+    <entry key="gangliondegasser">#27E3E0</entry>
+    <entry key="carrefourdestroisreplis">#926F56</entry>
+    <entry key="mandibuledeproximite">#435440</entry>
+    <entry key="gencivesuperieure">#44355b</entry>
+    <entry key="genciveinferieure">#eca72c</entry>
+    <entry key="espaceparotidien">#284183</entry>
+    <entry key="fossepterygomaxillaire">#8c0f2a</entry>
+    <entry key="plancherposterieur">#a38d3c</entry>
+    <entry key="branchemontantedemandibule">#f8b379</entry>
+    <entry key="espacecarotidien">#a8e7ea</entry>
+    <entry key="sinuscaverneux">#8fff9f</entry>
     <entry key="cavum">#FFF500</entry>
     <entry key="sinussphenoidal">#FFF500</entry>
-    <entry key="vallecule">#FFF500</entry>
-    <entry key="espacepreepiglottique">#FFF500</entry>
-    <entry key="facelingualedelepiglotte">#FFF500</entry>
+    <entry key="vallecule">#c195ff</entry>
+    <entry key="espacepreepiglottique">#dd9220</entry>
+    <entry key="facelingualedelepiglotte">#892222</entry>
     <entry key="sinuspiriforme">#FFF500</entry>
     <entry key="paroipharyngeelaterale">#FFF500</entry>
-    <entry key="paroipharyngeeposterieure">#FFF500</entry>
-    <entry key="voile">#FFF500</entry>
+    <entry key="paroipharyngeeposterieure">#d6b906</entry>
+    <entry key="voile">#745e75</entry>
 
 
     <entry key="ia">#0029FF</entry>
@@ -54,10 +54,7 @@
     <entry key="viib">#FF007A</entry>
     <entry key="viii">#FF7A00</entry>
     <entry key="ix">#FFF500</entry>
-    <entry key="xa">#00FFE0</entry>
-    <entry key="xb">#00FFE0</entry>
-    <entry key="iia">#5200FF</entry>
-    <entry key="iib">#5200FF</entry>
+    <entry key="x">#00FFE0</entry>
 
 
     <entry key="anteriorsegment">#1400FF</entry>

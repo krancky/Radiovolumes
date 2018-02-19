@@ -11,12 +11,12 @@
         </Modifiers>
         <TVolumes>
             <TVolume>
-                <TLocation>Racine de langue</TLocation>
+                <TLocation>Plancher Buccal</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Racine de langue</TLocation>
+                <TLocation>Plancher Buccal</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -47,12 +47,12 @@
         </Modifiers>
         <TVolumes>
             <TVolume>
-                <TLocation>racine de langue</TLocation>
+                <TLocation>Plancher Buccal</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>racine de langue</TLocation>
+                <TLocation>Plancher Buccal</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -95,12 +95,12 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Racine de langue</TLocation>
+                <TLocation>Plancher Buccal</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Racine de langue</TLocation>
+                <TLocation>Plancher Buccal</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -146,12 +146,12 @@
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Racine de langue</TLocation>
+                <TLocation>Plancher Buccal</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Racine de langue</TLocation>
+                <TLocation>Plancher Buccal</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -1272,7 +1272,7 @@
             <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Branche montante de mandibule</TLocation>
+            <TLocation>Branche montante</TLocation>
             <TSide>Gauche</TSide>
             <TArea>Oropharynx</TArea>
         </TVolume>
