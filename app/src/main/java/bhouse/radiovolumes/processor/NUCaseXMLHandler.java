@@ -91,7 +91,7 @@ public class NUCaseXMLHandler {
                             if (tagname.equalsIgnoreCase("CTV56NUCase")) {
                                 CTV56NUCaseCatalog.add(cTV56NUCase);
                             } else if (tagname.equalsIgnoreCase("Location")) {
-                                cTV56NUCase.setLocation(text);
+                                cTV56NUCase.setLocation(text.replaceAll("\\s+", "").toLowerCase());
                             } else if (tagname.equalsIgnoreCase("Notification")) {
                                 cTV56NUCase.setModifier(text);
                             } else if (tagname.equalsIgnoreCase("Identifier")) {

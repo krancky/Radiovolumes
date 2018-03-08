@@ -75,8 +75,8 @@
     </LRTCTVUCase>
     </Plancher>
     <LangueM>
-    <LRTCTVUCase>Langue Mobile 1
-        <Location>Langue Mobile</Location>
+    <LRTCTVUCase>Langue 1
+        <Location>Langue</Location>
         <Side>Gauche</Side>
         <Area>Cavite Buccale</Area>
         <Identifier>1</Identifier>
@@ -85,12 +85,12 @@
         </Modifiers>
         <TVolumes>
             <TVolume>
-                <TLocation>Langue Mobile</TLocation>
+                <TLocation>Langue</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Langue Mobile</TLocation>
+                <TLocation>Langue</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -126,8 +126,8 @@
             </TVolume>
         </TVolumes>
     </LRTCTVUCase>
-    <LRTCTVUCase>Langue Mobile 2
-        <Location>Langue Mobile</Location>
+    <LRTCTVUCase>Langue 2
+        <Location>Langue</Location>
         <Side>Droite</Side>
         <Area>Cavite Buccale</Area>
         <Identifier>1</Identifier>
@@ -136,12 +136,12 @@
         </Modifiers>
         <TVolumes>
             <TVolume>
-                <TLocation>Langue Mobile</TLocation>
+                <TLocation>Langue</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Langue Mobile</TLocation>
+                <TLocation>Langue</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -1650,7 +1650,7 @@
             <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Langue Mobile</TLocation>
+            <TLocation>Langue</TLocation>
             <TSide>Gauche</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -1716,7 +1716,7 @@
             <TArea>Oropharynx</TArea>
         </TVolume>
         <TVolume>
-            <TLocation>Langue Mobile</TLocation>
+            <TLocation>Langue</TLocation>
             <TSide>Droite</TSide>
             <TArea>Cavite Buccale</TArea>
         </TVolume>
@@ -1773,7 +1773,7 @@
                 <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Langue Mobile</TLocation>
+                <TLocation>Langue</TLocation>
                 <TSide>Gauche</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>
@@ -1839,7 +1839,7 @@
                 <TArea>Oropharynx</TArea>
             </TVolume>
             <TVolume>
-                <TLocation>Langue Mobile</TLocation>
+                <TLocation>Langue</TLocation>
                 <TSide>Droite</TSide>
                 <TArea>Cavite Buccale</TArea>
             </TVolume>

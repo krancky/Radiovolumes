@@ -21,8 +21,10 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Set;
 
 import bhouse.radiovolumes.processor.XYPair;
 import bhouse.radiovolumes.helpLibraries.ZoomView;
@@ -37,10 +39,11 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
     private ArrayList<Slice> slices;
     private ListView lv;
     private LinkedHashMap<String, ArrayList<String>> oLimits;
-    private HashMap<String, HashMap<String, XYPair<String,String>>> txyValues;
-    private HashMap<String, HashMap<String, XYPair<String,String>>> nxyValues;
+    private HashMap<String, HashMap<String, XYPair<String, String>>> txyValues;
+    private HashMap<String, HashMap<String, XYPair<String, String>>> nxyValues;
     private ArrayList<SliceVectorItem> touchedVectors = new ArrayList<>();
-    private ArrayList<Integer> touchedVectorsArlistRank = new ArrayList<>();;
+    private ArrayList<Integer> touchedVectorsArlistRank = new ArrayList<>();
+    ;
     private int screen_width;
     private int screen_height;
 
@@ -61,7 +64,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
         screen_height = size.y;
     }
 
-    public void onCompleteChoice(SliceVectorItem contourChoice, Integer arlistRank, ViewHolder holder){
+    public void onCompleteChoice(SliceVectorItem contourChoice, Integer arlistRank, ViewHolder holder) {
 
         FragmentManager fm = ((ScannerViewActivity_simple) context).getFragmentManager();
         int resID = context.getResources().getIdentifier(contourChoice.getFilename() + "_selected", "drawable", context.getPackageName());
@@ -71,8 +74,9 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
         holder.arlist.get(arlistRank).setAdjustViewBounds(true);
         holder.arlist.get(arlistRank).getLayoutParams().height = intrinsicHeight * screen_width / 512;
         holder.arlist.get(arlistRank).getLayoutParams().width = intrinsicWidth * screen_width / 512;
-        holder.arlist.get(arlistRank).setY((contourChoice.getyMargin() -1) * screen_width / 512 + (holder.frameLayout.getMeasuredHeight() - screen_width) / 2);
-        holder.arlist.get(arlistRank).setX((contourChoice.getxMargin() -1) * screen_width / 512);        holder.arlist.get(arlistRank).setImageResource(resID);
+        holder.arlist.get(arlistRank).setY((contourChoice.getyMargin() - 1) * screen_width / 512 + (holder.frameLayout.getMeasuredHeight() - screen_width) / 2);
+        holder.arlist.get(arlistRank).setX((contourChoice.getxMargin() - 1) * screen_width / 512);
+        holder.arlist.get(arlistRank).setImageResource(resID);
         TNAreaDialog dialogFragment = TNAreaDialog.newInstance(contourChoice, holder.arlist.get(0).getId());
         dialogFragment.show(fm, String.valueOf(contourChoice));
         touchedVectors.clear();
@@ -80,7 +84,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
 
     }
 
-    public void displayDialog(ViewHolder holder, Integer touchVector){
+    public void displayDialog(ViewHolder holder, Integer touchVector) {
 
 
     }
@@ -143,7 +147,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
                                     } else {
                                         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                                             touchedVectors.add(sliceVectorItem);
-                                            touchedVectorsArlistRank.add(j-1);
+                                            touchedVectorsArlistRank.add(j - 1);
                                         }
                                     }
                                 }
@@ -151,6 +155,12 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
                         }
 
                         if (!touchedVectors.isEmpty() && touchedVectors.size() != 1) {
+                            if (touchedVectors.get(0).getLocation().equals(touchedVectors.get(1).getLocation())) {
+                                touchedVectors.remove(1);
+                            }
+                        }
+                        if (!touchedVectors.isEmpty() && touchedVectors.size() != 1) {
+
                             FragmentManager manager = ((ScannerViewActivity_simple) context).getFragmentManager();
 
                             ContourChoiceDialog dialog = new ContourChoiceDialog();
@@ -161,7 +171,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
                             dialog.show(manager, "dialog");
                         }
 
-                        if (touchedVectors.size() == 1){
+                        if (touchedVectors.size() == 1) {
                             FragmentManager fm = ((ScannerViewActivity_simple) context).getFragmentManager();
                             int resID = context.getResources().getIdentifier(touchedVectors.get(0).getFilename() + "_selected", "drawable", context.getPackageName());
                             holder.arlist.get(touchedVectorsArlistRank.get(0)).setImageResource(resID);
@@ -170,8 +180,8 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
                             holder.arlist.get(touchedVectorsArlistRank.get(0)).setAdjustViewBounds(true);
                             holder.arlist.get(touchedVectorsArlistRank.get(0)).getLayoutParams().height = intrinsicHeight * screen_width / 512;
                             holder.arlist.get(touchedVectorsArlistRank.get(0)).getLayoutParams().width = intrinsicWidth * screen_width / 512;
-                            holder.arlist.get(touchedVectorsArlistRank.get(0)).setY((touchedVectors.get(0).getyMargin() -1) * screen_width / 512 + (parent.getMeasuredHeight() - screen_width) / 2);
-                            holder.arlist.get(touchedVectorsArlistRank.get(0)).setX((touchedVectors.get(0).getxMargin() -1) * screen_width / 512);
+                            holder.arlist.get(touchedVectorsArlistRank.get(0)).setY((touchedVectors.get(0).getyMargin() - 1) * screen_width / 512 + (parent.getMeasuredHeight() - screen_width) / 2);
+                            holder.arlist.get(touchedVectorsArlistRank.get(0)).setX((touchedVectors.get(0).getxMargin() - 1) * screen_width / 512);
                             TNAreaDialog dialogFragment = TNAreaDialog.newInstance(touchedVectors.get(0), holder.arlist.get(0).getId());
                             dialogFragment.show(fm, String.valueOf(touchedVectors.get(0)));
                             touchedVectors.clear();
@@ -345,9 +355,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
         int height = holder.scanView.getMeasuredHeight();
 
 
-
         //holder.scanView.getLayoutParams().width = screen_width;
-
 
 
         // Setting superimposed vector images.
@@ -364,8 +372,8 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
             holder.arlist.get(i).getLayoutParams().height = intrinsicHeight * screen_width / 512;
             holder.arlist.get(i).getLayoutParams().width = intrinsicWidth * screen_width / 512;
             //holder.arlist.get(i).setX(284);
-            holder.arlist.get(i).setY((item.getVectorStorageLocation().get(i).getyMargin() -1) * screen_width / 512 + (parent.getMeasuredHeight() - screen_width) / 2);
-            holder.arlist.get(i).setX((item.getVectorStorageLocation().get(i).getxMargin() -1) * screen_width / 512);
+            holder.arlist.get(i).setY((item.getVectorStorageLocation().get(i).getyMargin() - 1) * screen_width / 512 + (parent.getMeasuredHeight() - screen_width) / 2);
+            holder.arlist.get(i).setX((item.getVectorStorageLocation().get(i).getxMargin() - 1) * screen_width / 512);
             //holder.arlist.get(i).setClickable(false);
         }
 
@@ -376,11 +384,8 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
         }
 
 
-
         return convertView;
     }
-
-
 
 
     static class ViewHolder {

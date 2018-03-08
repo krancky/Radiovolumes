@@ -70,16 +70,4 @@
         <Long>BuccoFacial</Long>
         <Lateralized>1</Lateralized>
     </Volume>
-    <Volume>
-        <Short>Xa</Short>
-        <Long>Retro &amp; Subauricular</Long>
-        <Lateralized>1</Lateralized>
-    </Volume>
-    <Volume>
-        <Short>Xb</Short>
-        <Long>Occipital</Long>
-        <Lateralized>1</Lateralized>
-    </Volume>
-
-
 </nodeAreasTemplate>

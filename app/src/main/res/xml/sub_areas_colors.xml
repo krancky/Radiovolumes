@@ -37,12 +37,17 @@
     <entry key="paroipharyngeelaterale">#FFF500</entry>
     <entry key="paroipharyngeeposterieure">#d6b906</entry>
     <entry key="voile">#745e75</entry>
+    <entry key="branchemontante">#52FF00</entry>
+    <entry key="glandesousmaxillaire">#00FF29</entry>
+
 
 
     <entry key="ia">#0029FF</entry>
     <entry key="ib">#1400FF</entry>
     <entry key="ii">#5200FF</entry>
-    <entry key="iii">#8FFF00</entry>
+    <entry key="iia">#5200FF</entry>
+    <entry key="iib">#1400FF</entry>
+    <entry key="iii">#1400FF</entry>
     <entry key="iva">#0029FF</entry>
     <entry key="ivb">#0029FF</entry>
     <entry key="joue">#8F00FF</entry>

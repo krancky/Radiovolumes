@@ -2,8 +2,8 @@
 <UCaseCatalog>
     <Langue>
 
-        <CTV56NUCase>Langue Mobile N0
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue N0
+            <Location>Langue</Location>
             <Area>CaviteBuccale</Area>
             <Side>Gauche</Side>
             <Identifier>0</Identifier>
@@ -61,8 +61,8 @@
             <Notifications></Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile13G123D
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue13G123D
+            <Location>Langue</Location>
             <Area>CaviteBuccale</Area>
             <Side>Gauche</Side>
             <Identifier>0</Identifier>
@@ -157,8 +157,8 @@
             <Notifications></Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile2G
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue2G
+            <Location>Langue</Location>
             <Area>CaviteBuccale</Area>
             <Side>Gauche</Side>
             <Identifier>0</Identifier>
@@ -231,8 +231,8 @@
             </Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile4ab5abcG
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue4ab5abcG
+            <Location>Langue</Location>
             <Area>Cavite Buccale</Area>
             <Side>Gauche</Side>
             <Identifier>0</Identifier>
@@ -323,8 +323,8 @@
             <Notifications></Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile6
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue6
+            <Location>Langue</Location>
             <Area>CaviteBuccale</Area>
             <Side>Gauche</Side>
             <Identifier>0</Identifier>
@@ -407,8 +407,8 @@
             <Notifications></Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile7abG
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue7abG
+            <Location>Langue</Location>
             <Area>Cavite Buccale</Area>
             <Side>Gauche</Side>
             <Identifier>0</Identifier>
@@ -491,8 +491,8 @@
             <Notifications></Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile9G
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue9G
+            <Location>Langue</Location>
             <Area>CaviteBuccale</Area>
             <Side>Gauche</Side>
             <Identifier>0</Identifier>
@@ -569,8 +569,8 @@
             </Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile4abVabcD
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue4abVabcD
+            <Location>Langue</Location>
             <Area>CaviteBuccale</Area>
             <Side>Gauche</Side>
             <Identifier>0</Identifier>
@@ -661,8 +661,8 @@
             <Notifications></Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile9D
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue9D
+            <Location>Langue</Location>
             <Area>CaviteBuccale</Area>
             <Side>Gauche</Side>
             <Identifier>0</Identifier>
@@ -737,8 +737,8 @@
             <Notifications></Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile7abD
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue7abD
+            <Location>Langue</Location>
             <Area>Cavite Buccale</Area>
             <Side>Gauche</Side>
             <Identifier>0</Identifier>
@@ -830,8 +830,8 @@
         </CTV56NUCase>
 
 
-        <CTV56NUCase>Langue Mobile N0
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue N0
+            <Location>Langue</Location>
             <Area>CaviteBuccale</Area>
             <Side>Droite</Side>
             <Identifier>0</Identifier>
@@ -889,8 +889,8 @@
             <Notifications></Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile13G123D
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue13G123D
+            <Location>Langue</Location>
             <Area>CaviteBuccale</Area>
             <Side>Droite</Side>
             <Identifier>0</Identifier>
@@ -985,8 +985,8 @@
             <Notifications></Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile2G
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue2G
+            <Location>Langue</Location>
             <Area>CaviteBuccale</Area>
             <Side>Droite</Side>
             <Identifier>0</Identifier>
@@ -1059,8 +1059,8 @@
             </Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile4ab5abcG
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue4ab5abcG
+            <Location>Langue</Location>
             <Area>Cavite Buccale</Area>
             <Side>Droite</Side>
             <Identifier>0</Identifier>
@@ -1151,8 +1151,8 @@
             <Notifications></Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile6
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue6
+            <Location>Langue</Location>
             <Area>CaviteBuccale</Area>
             <Side>Droite</Side>
             <Identifier>0</Identifier>
@@ -1235,8 +1235,8 @@
             <Notifications></Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile7abG
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue7abG
+            <Location>Langue</Location>
             <Area>Cavite Buccale</Area>
             <Side>Droite</Side>
             <Identifier>0</Identifier>
@@ -1319,8 +1319,8 @@
             <Notifications></Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile9G
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue9G
+            <Location>Langue</Location>
             <Area>CaviteBuccale</Area>
             <Side>Droite</Side>
             <Identifier>0</Identifier>
@@ -1397,8 +1397,8 @@
             </Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile4abVabcD
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue4abVabcD
+            <Location>Langue</Location>
             <Area>CaviteBuccale</Area>
             <Side>Droite</Side>
             <Identifier>0</Identifier>
@@ -1489,8 +1489,8 @@
             <Notifications></Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile9D
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue9D
+            <Location>Langue</Location>
             <Area>CaviteBuccale</Area>
             <Side>Droite</Side>
             <Identifier>0</Identifier>
@@ -1565,8 +1565,8 @@
             <Notifications></Notifications>
         </CTV56NUCase>
 
-        <CTV56NUCase>Langue Mobile7abD
-            <Location>Langue Mobile</Location>
+        <CTV56NUCase>Langue7abD
+            <Location>Langue</Location>
             <Area>Cavite Buccale</Area>
             <Side>Droite</Side>
             <Identifier>0</Identifier>

@@ -360,6 +360,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
 
         cancer.nClear();
         cancer.tClear();
+        cancer.tDClear();
         NewCaseActivity.this.ctv56NCaseList.clear();
 
         this.isAdvanced = itemListSwitch.isChecked();

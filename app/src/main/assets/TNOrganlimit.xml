@@ -376,7 +376,7 @@
         <Comment>A witty comment</Comment>
     </Organ>
     <Organ>
-        <Name>sinussphenoidal</Name>
+        <Name>sphenoide</Name>
         <Area>Cavite Buccale</Area>
         <CranialL>The cranial limit of the tonsil is...</CranialL>
         <CaudalL>The caudal limit of the tonsil is...</CaudalL>
@@ -452,7 +452,17 @@
         <LateralL>The lateral limit of the tonsil is...</LateralL>
         <Comment>A witty comment</Comment>
     </Organ>
-
+    <Organ>
+        <Name>branchemontante</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>A witty comment</Comment>
+    </Organ>
 
     <Organ>
         <Name>IA</Name>
@@ -477,15 +487,26 @@
         <Comment>A witty comment</Comment>
     </Organ>
     <Organ>
-        <Name>II</Name>
+        <Name>IIa</Name>
         <Area>Aire Ganglionnaire</Area>
         <CranialL>Caudal edge of the lateral process of C1.</CranialL>
         <CaudalL>Caudal edge of the body of the hyoid bone</CaudalL>
         <AnteriorL>Posterior edge of the submandibular gland/posterior edge of posterior belly of digastric m.</AnteriorL>
+        <PosteriorL>NA</PosteriorL>
+        <MedialL>Medial edge of internal carotid artery/scalenius m.</MedialL>
+        <LateralL>Deep (medial) surface of sternocleidomastoid m./platysma m./ parotid gland/ posterior belly of digastric m</LateralL>
+        <Comment>NA</Comment>
+    </Organ>
+    <Organ>
+        <Name>IIb</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Caudal edge of the lateral process of C1.</CranialL>
+        <CaudalL>Caudal edge of the body of the hyoid bone</CaudalL>
+        <AnteriorL>NA</AnteriorL>
         <PosteriorL>Posterior edge of sternocleidomastoid m</PosteriorL>
         <MedialL>Medial edge of internal carotid artery/scalenius m.</MedialL>
         <LateralL>Deep (medial) surface of sternocleidomastoid m./platysma m./ parotid gland/ posterior belly of digastric m</LateralL>
-        <Comment></Comment>
+        <Comment>NA</Comment>
     </Organ>
     <Organ>
         <Name>III</Name>
@@ -631,28 +652,6 @@
     </Organ>
     <Organ>
         <Name>Xb</Name>
-        <Area>Aire Ganglionnaire</Area>
-        <CranialL>NA</CranialL>
-        <CaudalL>NA</CaudalL>
-        <AnteriorL>NA</AnteriorL>
-        <PosteriorL>NA</PosteriorL>
-        <MedialL>NA</MedialL>
-        <LateralL>NA</LateralL>
-        <Comment>NA</Comment>
-    </Organ>
-    <Organ>
-        <Name>IIa</Name>
-        <Area>Aire Ganglionnaire</Area>
-        <CranialL>NA</CranialL>
-        <CaudalL>NA</CaudalL>
-        <AnteriorL>NA</AnteriorL>
-        <PosteriorL>NA</PosteriorL>
-        <MedialL>NA</MedialL>
-        <LateralL>NA</LateralL>
-        <Comment>NA</Comment>
-    </Organ>
-    <Organ>
-        <Name>IIb</Name>
         <Area>Aire Ganglionnaire</Area>
         <CranialL>NA</CranialL>
         <CaudalL>NA</CaudalL>

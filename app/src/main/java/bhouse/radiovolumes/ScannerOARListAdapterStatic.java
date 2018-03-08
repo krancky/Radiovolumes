@@ -18,7 +18,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.Set;
 
 import bhouse.radiovolumes.processor.OARTemplate;
 import bhouse.radiovolumes.helpLibraries.ZoomView;
@@ -35,7 +37,8 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
     private LinkedHashMap<String, ArrayList<String>> oLimits;
     private ArrayList<OARTemplate> OARTemplateList;
     private ArrayList<SliceVectorItem> touchedVectors = new ArrayList<>();
-    private ArrayList<Integer> touchedVectorsArlistRank = new ArrayList<>();;
+    private ArrayList<Integer> touchedVectorsArlistRank = new ArrayList<>();
+    ;
     private int screen_width;
     private int screen_height;
 
@@ -58,7 +61,7 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
         //this.lv.setSelection(24);
     }
 
-    public void onCompleteChoice(SliceVectorItem contourChoice, Integer arlistRank, ViewHolder holder){
+    public void onCompleteChoice(SliceVectorItem contourChoice, Integer arlistRank, ViewHolder holder) {
         FragmentManager fm = ((ScannerOARViewActivity_simple) context).getFragmentManager();
         int resID = context.getResources().getIdentifier(contourChoice.getFilename() + "_selected", "drawable", context.getPackageName());
         holder.arlist.get(arlistRank).setImageResource(resID);
@@ -67,8 +70,9 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
         holder.arlist.get(arlistRank).setAdjustViewBounds(true);
         holder.arlist.get(arlistRank).getLayoutParams().height = intrinsicHeight * screen_width / 512;
         holder.arlist.get(arlistRank).getLayoutParams().width = intrinsicWidth * screen_width / 512;
-        holder.arlist.get(arlistRank).setY((contourChoice.getyMargin() -1) * screen_width / 512 + (holder.frameLayout.getMeasuredHeight() - screen_width) / 2);
-        holder.arlist.get(arlistRank).setX((contourChoice.getxMargin() -1) * screen_width / 512);        holder.arlist.get(arlistRank).setImageResource(resID);
+        holder.arlist.get(arlistRank).setY((contourChoice.getyMargin() - 1) * screen_width / 512 + (holder.frameLayout.getMeasuredHeight() - screen_width) / 2);
+        holder.arlist.get(arlistRank).setX((contourChoice.getxMargin() - 1) * screen_width / 512);
+        holder.arlist.get(arlistRank).setImageResource(resID);
         OARDialog dialogFragment = OARDialog.newInstance(contourChoice, holder.arlist.get(0).getId());
         dialogFragment.show(fm, String.valueOf(contourChoice));
         touchedVectors.clear();
@@ -89,16 +93,11 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
         final ViewHolder holder;
 
 
-
-
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.list_view_scan_static, parent, false);
             convertView.setMinimumHeight(parent.getMeasuredHeight());
             //convertView.setMinimumWidth(parent.getMeasuredWidth());
             holder = new ViewHolder();
-
-
-
 
 
             holder.scanView = (ImageView) convertView.findViewById(R.id.view_scan);
@@ -141,12 +140,13 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
                                     } else {
                                         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                                             touchedVectors.add(sliceVectorItem);
-                                            touchedVectorsArlistRank.add(j-1);
+                                            touchedVectorsArlistRank.add(j - 1);
                                         }
                                     }
                                 }
                             }
                         }
+
 
                         if (!touchedVectors.isEmpty() && touchedVectors.size() != 1) {
                             FragmentManager manager = ((ScannerOARViewActivity_simple) context).getFragmentManager();
@@ -159,7 +159,7 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
                             dialog.show(manager, "dialog");
                         }
 
-                        if (touchedVectors.size() == 1){
+                        if (touchedVectors.size() == 1) {
                             FragmentManager fm = ((ScannerOARViewActivity_simple) context).getFragmentManager();
                             int resID = context.getResources().getIdentifier(touchedVectors.get(0).getFilename() + "_selected", "drawable", context.getPackageName());
                             holder.arlist.get(touchedVectorsArlistRank.get(0)).setImageResource(resID);
@@ -168,8 +168,8 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
                             holder.arlist.get(touchedVectorsArlistRank.get(0)).setAdjustViewBounds(true);
                             holder.arlist.get(touchedVectorsArlistRank.get(0)).getLayoutParams().height = intrinsicHeight * screen_width / 512;
                             holder.arlist.get(touchedVectorsArlistRank.get(0)).getLayoutParams().width = intrinsicWidth * screen_width / 512;
-                            holder.arlist.get(touchedVectorsArlistRank.get(0)).setY((touchedVectors.get(0).getyMargin() -1) * screen_width / 512 + (parent.getMeasuredHeight() - screen_width) / 2);
-                            holder.arlist.get(touchedVectorsArlistRank.get(0)).setX((touchedVectors.get(0).getxMargin() -1) * screen_width / 512);
+                            holder.arlist.get(touchedVectorsArlistRank.get(0)).setY((touchedVectors.get(0).getyMargin() - 1) * screen_width / 512 + (parent.getMeasuredHeight() - screen_width) / 2);
+                            holder.arlist.get(touchedVectorsArlistRank.get(0)).setX((touchedVectors.get(0).getxMargin() - 1) * screen_width / 512);
                             OARDialog dialogFragment = OARDialog.newInstance(touchedVectors.get(0), holder.arlist.get(0).getId());
                             dialogFragment.show(fm, String.valueOf(touchedVectors.get(0)));
                             touchedVectors.clear();
@@ -371,8 +371,6 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
         int height = holder.scanView.getMeasuredHeight();
 
 
-
-
         // Setting superimposed vector images.
         // As many as the size of VectorStorageLocation array.
         for (int i = 0; i < item.getVectorStorageLocation().size(); i++) {
@@ -387,8 +385,8 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
             holder.arlist.get(i).getLayoutParams().height = intrinsicHeight * screen_width / 512;
             holder.arlist.get(i).getLayoutParams().width = intrinsicWidth * screen_width / 512;
             //holder.arlist.get(i).setX(284);
-            holder.arlist.get(i).setY((item.getVectorStorageLocation().get(i).getyMargin() -1) * screen_width / 512 + (parent.getMeasuredHeight() - screen_width) / 2);
-            holder.arlist.get(i).setX((item.getVectorStorageLocation().get(i).getxMargin() -1) * screen_width / 512);
+            holder.arlist.get(i).setY((item.getVectorStorageLocation().get(i).getyMargin() - 1) * screen_width / 512 + (parent.getMeasuredHeight() - screen_width) / 2);
+            holder.arlist.get(i).setX((item.getVectorStorageLocation().get(i).getxMargin() - 1) * screen_width / 512);
             //holder.arlist.get(i).setClickable(false);
         }
 
@@ -398,7 +396,6 @@ public class ScannerOARListAdapterStatic extends ArrayAdapter<Slice> implements 
             holder.arlist.get(i).setImageDrawable(null);
         }
         //convertView.setMinimumHeight(parent.getMeasuredHeight());
-
 
 
         return convertView;

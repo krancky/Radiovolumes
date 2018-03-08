@@ -124,7 +124,7 @@ public class Cancer implements Serializable {
                 int i;
                 for (i=0;i<tumorAreaTemplate.getSubLocation().size();i++) {
                     TumorAreaTemplate newTAT = new TumorAreaTemplate();
-                    newTAT.setLocation(tumorAreaTemplate.getSubLocation().get(i));
+                    newTAT.setLocation(tumorAreaTemplate.getSubLocation().get(i).replaceAll("\\s+", "").toLowerCase());
                     if (tumorAreaTemplate.getLeftContent().equals("1") && tumorAreaTemplate.getSubLocationLeftContent().get(i).equals("1")) {
                         newTAT.setLeftContent("1");
                     } else {
@@ -179,6 +179,8 @@ public class Cancer implements Serializable {
     public void tClear() {
         cancerTVolumes.clear();
     }
+
+    public void tDClear () {cancerTDeveloppedVolumes.clear();}
 
     public void setCancerTTarData(HashMap<String, HashMap<String, List<String>>> cancerTTarData) {
         this.cancerTTarData = cancerTTarData;
