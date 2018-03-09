@@ -181,6 +181,10 @@
     <string name="amygdalet1sanspilier">T1 sans extension aux piliers</string>
     <string name="voilet1">Voile T1</string>
     <string name="voilet24">Voile T2-4</string>
+    <string name="larynxglottique">Larynx glottique</string>
+    <string name="larynxsusglottique">Larynx Sus-Glottique</string>
+    <string name="larynxsousglottique">Larynx Sous-Glottique</string>
+    <string name="cordevocale">Corde Vocale</string>
 
 
 </resources>

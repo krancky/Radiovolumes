@@ -181,6 +181,7 @@ public class ScannerViewActivity_simple extends Activity implements Tab2TDialogF
                 String value = location.replaceAll("\\s+", "").toLowerCase() + " " + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase();
                 if (displayedList.get(value).equals(1)) {
                     HashMap<String, XYPair<String, String>> nxyOrgan = this.nxyValues.get(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase());
+
                     for (HashMap.Entry<String, XYPair<String, String>> nxySlice : nxyOrgan.entrySet()) {
                         SliceVectorItem sliceVectorItem = new SliceVectorItem();
                         sliceVectorItem.setFilename(location.replaceAll("\\s+", "").toLowerCase() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase() + "_" + String.valueOf(nxySlice.getKey()));

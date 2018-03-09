@@ -2105,4 +2105,58 @@
     </LRTCTVUCase>
     </PPP>
 
+    <Larynx>
+    <LRTCTVUCase>Larynx sus glottique
+        <Location>Larynx sus glottique</Location>
+        <Side>Gauche</Side>
+        <Area>Larynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod9>1</mod9>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Paroi pharyngee posterieure</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Paroi pharyngee posterieure</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier posterieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier posterieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+        </TVolumes>
+        <TVolume>
+            <TLocation>Espace retropharynge</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Espace parapharynge</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Cavum</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Voile</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+    </LRTCTVUCase>
+</Larynx>
+
 </UCaseCatalog>

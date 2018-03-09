@@ -128,7 +128,7 @@ public class OARSelectionActivity extends Activity implements View.OnClickListen
     }
 
     prepareOARData();
-    mToDoAdapter = new OARSelectionAdapter(getApplicationContext(),this.allIncludedList, this.OARTemplateList);
+    mToDoAdapter = new OARSelectionAdapter(this,this.allIncludedList, this.OARTemplateList);
     mList.setAdapter(mToDoAdapter);
 
     ViewGroup tHeader = (ViewGroup)getLayoutInflater().inflate(R.layout.header_oar, mList, false);

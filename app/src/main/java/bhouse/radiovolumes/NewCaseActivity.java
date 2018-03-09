@@ -261,7 +261,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
                 EditText caseName = (EditText) findViewById(R.id.CaseName);
                 String sCaseName = caseName.getText().toString();
                 NewCaseActivity.this.update();
-                if (sCaseName.matches("") || spinner.getLastVisiblePosition() == 0 || spinnerSide.getLastVisiblePosition() == 0 || ctv56TCase.getCaseTTarVolumes().isEmpty()) {
+                if (sCaseName.matches("") || spinner.getLastVisiblePosition() == 0 || spinnerSide.getLastVisiblePosition() == 0 || cancer.getCancerTData().isEmpty()){//ctv56TCase.getCaseTTarVolumes().isEmpty()) {
                     Toast.makeText(v.getContext(), getResources().getString(R.string.enterInfo), Toast.LENGTH_SHORT).show();
                 } else {
                     NewCaseActivity.this.cancer.setName(sCaseName.substring(0, 1).toUpperCase() + sCaseName.substring(1));

@@ -99,4 +99,19 @@
         <AreaLocale>Oropharynx</AreaLocale>
         <Location>Paroi pharyngee Posterieure</Location>
     </Volume>
+    <Volume>
+        <Area>Larynx</Area>
+        <AreaLocale>Larynx</AreaLocale>
+        <Location>Larynx susglottique</Location>
+    </Volume>
+    <Volume>
+        <Area>Larynx</Area>
+        <AreaLocale>Larynx</AreaLocale>
+        <Location>Larynx sousglottique</Location>
+    </Volume>
+    <Volume>
+        <Area>Larynx</Area>
+        <AreaLocale>Larynx</AreaLocale>
+        <Location>Corde vocale</Location>
+    </Volume>
 </TumorsAreasTemplate>

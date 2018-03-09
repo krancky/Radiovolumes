@@ -87,6 +87,7 @@ public class OARSelectionAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
+        Locale current = context.getResources().getConfiguration().locale;
         ViewHolder holder;
         if (convertView == null){
             holder = new ViewHolder();
