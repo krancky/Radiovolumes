@@ -100,18 +100,20 @@
         <Location>Paroi pharyngee Posterieure</Location>
     </Volume>
     <Volume>
-        <Area>Larynx</Area>
+        <Area>LarynxHypopharynx</Area>
         <AreaLocale>Larynx</AreaLocale>
-        <Location>Larynx susglottique</Location>
+        <Location>Larynx</Location>
+        <Sublocation>LarynxT12</Sublocation>
+        <Sublocation>LarynxT34</Sublocation>
     </Volume>
     <Volume>
-        <Area>Larynx</Area>
+        <Area>LarynxHypopharynx</Area>
         <AreaLocale>Larynx</AreaLocale>
-        <Location>Larynx sousglottique</Location>
+        <Location>PPPhypoP</Location>
     </Volume>
     <Volume>
-        <Area>Larynx</Area>
-        <AreaLocale>Larynx</AreaLocale>
-        <Location>Corde vocale</Location>
-    </Volume>
+    <Area>LarynxHypopharynx</Area>
+    <AreaLocale>Larynx</AreaLocale>
+    <Location>SinusPi</Location>
+</Volume>
 </TumorsAreasTemplate>

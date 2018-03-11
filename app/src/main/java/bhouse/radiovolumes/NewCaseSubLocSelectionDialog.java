@@ -101,7 +101,7 @@ public class NewCaseSubLocSelectionDialog extends DialogFragment {
             public void onClick(View v) {
                 int i = 0;
                 if (side.equals("droite")){
-                    if (tList.get(tumorPosition).getSubLocationRightContent().get(0).equals("0") && tList.get(tumorPosition).getSubLocationRightContent().get(1).equals("0") && tList.get(tumorPosition).getSubLocationRightContent().get(2).equals("0") && tList.get(tumorPosition).getSubLocationRightContent().get(4).equals("0") && tList.get(tumorPosition).getSubLocationRightContent().get(1).equals("0")){
+                    if (tList.get(tumorPosition).getSubLocationRightContent().get(0).equals("0") && tList.get(tumorPosition).getSubLocationRightContent().get(1).equals("0") && tList.get(tumorPosition).getSubLocationRightContent().get(2).equals("0") && tList.get(tumorPosition).getSubLocationRightContent().get(3).equals("0") && tList.get(tumorPosition).getSubLocationRightContent().get(4).equals("0") && tList.get(tumorPosition).getSubLocationRightContent().get(1).equals("0")){
                         Toast.makeText(v.getContext(), "Select at least one subLocation", Toast.LENGTH_SHORT).show();
                     } else{
                         mListener.onComplete(tList);
@@ -109,7 +109,7 @@ public class NewCaseSubLocSelectionDialog extends DialogFragment {
                     }
                 }
                 if (side.equals("gauche")){
-                    if (tList.get(tumorPosition).getSubLocationLeftContent().get(0).equals("0") && tList.get(tumorPosition).getSubLocationLeftContent().get(1).equals("0") && tList.get(tumorPosition).getSubLocationLeftContent().get(2).equals("0") && tList.get(tumorPosition).getSubLocationLeftContent().get(4).equals("0") && tList.get(tumorPosition).getSubLocationLeftContent().get(1).equals("0")){
+                    if (tList.get(tumorPosition).getSubLocationLeftContent().get(0).equals("0") && tList.get(tumorPosition).getSubLocationLeftContent().get(1).equals("0") && tList.get(tumorPosition).getSubLocationLeftContent().get(2).equals("0")&& tList.get(tumorPosition).getSubLocationLeftContent().get(3).equals("0")&& tList.get(tumorPosition).getSubLocationLeftContent().get(4).equals("0") && tList.get(tumorPosition).getSubLocationLeftContent().get(1).equals("0")){
                         Toast.makeText(v.getContext(), "Select at least one subLocation", Toast.LENGTH_SHORT).show();
                     } else{
                         mListener.onComplete(tList);

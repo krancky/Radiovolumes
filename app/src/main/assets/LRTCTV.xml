@@ -2106,57 +2106,62 @@
     </PPP>
 
     <Larynx>
-    <LRTCTVUCase>Larynx sus glottique
-        <Location>Larynx sus glottique</Location>
+    <LRTCTVUCase>Larynx
+        <Location>Larynx</Location>
         <Side>Gauche</Side>
-        <Area>Larynx</Area>
+        <Area>LarynxHypopharynx</Area>
         <Identifier>1</Identifier>
         <Modifiers>
             <mod9>1</mod9>
         </Modifiers>
         <TVolumes>
             <TVolume>
-                <TLocation>Paroi pharyngee posterieure</TLocation>
+                <TLocation>Not Available for Larynx</TLocation>
                 <TSide>Gauche</TSide>
-                <TArea>Oropharynx</TArea>
-            </TVolume>
-            <TVolume>
-                <TLocation>Paroi pharyngee posterieure</TLocation>
-                <TSide>Droite</TSide>
-                <TArea>Oropharynx</TArea>
-            </TVolume>
-            <TVolume>
-                <TLocation>Pilier posterieur</TLocation>
-                <TSide>Gauche</TSide>
-                <TArea>Oropharynx</TArea>
-            </TVolume>
-            <TVolume>
-                <TLocation>Pilier posterieur</TLocation>
-                <TSide>Droite</TSide>
                 <TArea>Oropharynx</TArea>
             </TVolume>
         </TVolumes>
-        <TVolume>
-            <TLocation>Espace retropharynge</TLocation>
-            <TSide>Droite</TSide>
-            <TArea>Cavite Buccale</TArea>
-        </TVolume>
-        <TVolume>
-            <TLocation>Espace parapharynge</TLocation>
-            <TSide>Droite</TSide>
-            <TArea>Cavite Buccale</TArea>
-        </TVolume>
-        <TVolume>
-            <TLocation>Cavum</TLocation>
-            <TSide>Droite</TSide>
-            <TArea>Cavite Buccale</TArea>
-        </TVolume>
-        <TVolume>
-            <TLocation>Voile</TLocation>
-            <TSide>Droite</TSide>
-            <TArea>Cavite Buccale</TArea>
-        </TVolume>
     </LRTCTVUCase>
 </Larynx>
+
+    <Larynx>
+        <LRTCTVUCase>PPPhypoP
+            <Location>PPPhypoP</Location>
+            <Side>Gauche</Side>
+            <Area>LarynxHypopharynx</Area>
+            <Identifier>1</Identifier>
+            <Modifiers>
+                <mod9>1</mod9>
+            </Modifiers>
+            <TVolumes>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Gauche</TSide>
+                    <TArea>Oropharynx</TArea>
+                </TVolume>
+            </TVolumes>
+        </LRTCTVUCase>
+    </Larynx>
+
+    <Larynx>
+        <LRTCTVUCase>SinusPi
+            <Location>SinusPi</Location>
+            <Side>Gauche</Side>
+            <Area>LarynxHypopharynx</Area>
+            <Identifier>1</Identifier>
+            <Modifiers>
+                <mod9>1</mod9>
+            </Modifiers>
+            <TVolumes>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Gauche</TSide>
+                    <TArea>Oropharynx</TArea>
+                </TVolume>
+            </TVolumes>
+        </LRTCTVUCase>
+    </Larynx>
+
+
 
 </UCaseCatalog>

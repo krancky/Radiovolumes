@@ -182,6 +182,12 @@
     <string name="larynxsousglottique">Infra Glottic Larynx</string>
     <string name="larynxglottique">Glottic Larynx</string>
     <string name="cordevocale">Vocal Cord</string>
+    <string name="notavailableforlarynx">Target Volume Delineation Not Availlable For Larynx</string>
+    <string name="larynxhypopharynx">Larynx - Hypopharynx</string>
+    <string name="larynxt12">Larynx T1-2</string>
+    <string name="larynxt34">Larynx T3-4</string>
+    <string name="ppphypop">Posterior Wall of Hypopharynx</string>
+    <string name="sinuspi">Piriforme Sine</string>
 
 
 </resources>
