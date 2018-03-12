@@ -185,11 +185,13 @@
     <string name="larynxsusglottique">Larynx Sus-Glottique</string>
     <string name="larynxsousglottique">Larynx Sous-Glottique</string>
     <string name="cordevocale">Corde Vocale</string>
-    <string name="notavailableforlarynx">Pas De Contour Disponible pour Larynx</string>
+
+    <string name="sphenoide">Sinus Sphenoidal</string>
     <string name="larynxhypopharynx">Larynx - Hypopharynx</string>
     <string name="larynxt12">Larynx T1-2</string>
     <string name="larynxt34">Larynx T3-4</string>
-    <string name="ppphypop">Paroi Hypopharyngee Posterieure</string>
+    <string name="notavailableforlarynx">Pas de contours disponibles pour Larynx - Hypopharynx</string>
+    <string name="ppphypop">Paroi Hypopharyngée postérieure</string>
     <string name="sinuspi">Sinus Piriforme</string>
 
 
