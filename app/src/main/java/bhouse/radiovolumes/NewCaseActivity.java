@@ -216,6 +216,11 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
             e.printStackTrace();
         }
 
+        //if (newParam.equals("0")){
+            //tumorAreaTemplateList.addAll(cancer.getCancerTVolumes());
+        //}
+
+
 
         // Generates list of T locations to be irradiated
         ctv56TCase = new CTV56TCase();

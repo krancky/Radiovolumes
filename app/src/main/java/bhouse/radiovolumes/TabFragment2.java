@@ -23,6 +23,7 @@ import java.util.List;
 
 import bhouse.radiovolumes.processor.Cancer;
 import bhouse.radiovolumes.processor.NonScrollListView;
+import bhouse.radiovolumes.processor.TumorAreaTemplate;
 import bhouse.radiovolumes.processor.XYPair;
 
 public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompleteListener, Tab2NDialogFragment.OnCompleteListener {
@@ -33,6 +34,7 @@ public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompl
     private HashMap<String, List<String>> cancerNTarData;
     private List<String> modifiers;
     private Cancer cancer;
+    private List<TumorAreaTemplate> cancerTVolumes;
 
     private HashMap<String, HashMap<String, XYPair<String,String>>> txyValues;
     private HashMap<String, HashMap<String, XYPair<String,String>>> nxyValues;
@@ -94,6 +96,7 @@ public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompl
         cancerNData = activity.getCancerNData();
         cancerNTarData = activity.getCancerNTarData();
         cancerTTarData = activity.getCancerTTarData();
+        cancerTVolumes = activity.getCancerTVolumes();
         this.cancer = activity.getCancer();
 
         this.txyValues = activity.getTxyValues();
@@ -167,6 +170,7 @@ public class TabFragment2 extends Fragment implements MyV4DialogFragment.OnCompl
                 cancer.setCancerNData(cancerNData);
                 cancer.setCancerTTarData(cancerTTarData);
                 cancer.setCancerNTarData(cancerNTarData);
+                cancer.setCancerTVolumes(cancerTVolumes);
                 cancer.saveToFile(getContext());
                 //Sauver le cancer, mais aussi dedans les volumes target. Puis le charger aussi lors du chatgement. Du coup, si y a rien, on affiche que dalle,
                 // mais si y a qque chose, on affiche son existence, et puis on demande si on garde. Si c est le cas, on recalcule pas et on affuche direct

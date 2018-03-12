@@ -41,6 +41,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
     private Cancer cancer;
     private CTV56NCase ctv56NCase;
     private LinkedHashMap<String, Integer> displayedList = new LinkedHashMap<String, Integer>();
+    private List<TumorAreaTemplate> cancerTVolumes;
 
     private MainActivityPagerAdapter adapter;
     private ViewPager viewPager;
@@ -85,6 +86,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         cancer.setCancerNData(cancerNData);
         cancer.setCancerTTarData(this.cancerTTarData);
         cancer.setCancerNTarData(this.cancerNTarData);
+        cancer.setCancerTVolumes(this.cancerTVolumes);
         cancer.saveToFile(TabbedActivity.this);
 
     }
@@ -143,6 +145,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         cancer.setCancerNData(cancerNData);
         cancer.setCancerTTarData(this.cancerTTarData);
         cancer.setCancerNTarData(this.cancerNTarData);
+        cancer.setCancerTVolumes(this.cancerTVolumes);
         cancer.saveToFile(TabbedActivity.this);
 
     }
@@ -163,6 +166,8 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
         cancerNData = new HashMap<String, List<String>>();
         cancerNTarData = new HashMap<String, List<String>>();
+
+        cancerTVolumes = cancer.getCancerTVolumes();
 
         try {
             XYXMLHandler parser = new XYXMLHandler();
@@ -436,4 +441,6 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
     public HashMap<String, HashMap<String, XYPair<String, String>>> getNxyValues() {
         return nxyValues;
     }
+
+    public List<TumorAreaTemplate> getCancerTVolumes(){return cancer.getCancerTVolumes();}
 }

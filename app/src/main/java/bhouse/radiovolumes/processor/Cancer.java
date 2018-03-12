@@ -264,4 +264,8 @@ public class Cancer implements Serializable {
     public HashMap<String, List<String>> getCancerNTarData() {
         return cancerNTarData;
     }
+
+    public void setCancerTVolumes(List<TumorAreaTemplate> cancerTVolumes) {
+        this.cancerTVolumes = cancerTVolumes;
+    }
 }
