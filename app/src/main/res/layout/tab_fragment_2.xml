@@ -95,18 +95,6 @@
                 android:layout_toLeftOf="@id/button_to_scan"
                 android:elevation="@dimen/button_elevation" />
 
-            <ImageButton
-                android:id="@+id/button_save"
-                android:layout_width="@dimen/floating_button_size"
-                android:layout_height="@dimen/floating_button_size"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:alpha="0.0"
-                android:background="@drawable/btn_background"
-                android:contentDescription="@null"
-                android:layout_toLeftOf="@id/button_to_mail"
-                android:elevation="@dimen/button_elevation" />
 
             <Space
                 android:layout_width="match_parent"

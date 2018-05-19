@@ -61,8 +61,6 @@ public class Tab2TDialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        //getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         View v = inflater.inflate(R.layout.fragment_dialog, container, false);
 
 

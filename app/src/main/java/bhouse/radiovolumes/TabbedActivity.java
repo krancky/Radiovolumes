@@ -56,7 +56,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         Integer i = 0;
         List<String> listG = new ArrayList<String>();
         List<String> listD = new ArrayList<String>();
-        HashMap<String, List<String>> map = new HashMap<String, List<String>>();
+        //HashMap<String, List<String>> map = new HashMap<String, List<String>>();
 
         for (i = 1; i < items.size(); i++) {
 
@@ -74,7 +74,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         if (!listG.isEmpty()) {
             this.cancerNTarData.put("Droite", listD);
         }
-        //adapter.notifyDataSetChanged();
+
         viewPager = (ViewPager) findViewById(R.id.pager);
         adapter = new MainActivityPagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());

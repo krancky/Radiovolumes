@@ -61,17 +61,19 @@ public class NewCaseActivityNHashAdapter extends BaseAdapter {
         HashMap.Entry<String, List<String>> item = getItem(position);
         String[] mainAreaArray = context.getResources().getStringArray(R.array.main_side_array);
 
-        // Putting "ipsilatera" first
-        if (position == 0){
-        if (!((item.getKey().equals("Gauche") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.left_alone))) || ((item.getKey().equals("Droite") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.right_alone)))))){
-            item = getItem(position+1);
+        // Putting "ipsilateral" first
+        if (mData.size() > 1){
+            if (position == 0) {
+                if (!((item.getKey().equals("Gauche") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.left_alone))) || ((item.getKey().equals("Droite") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.right_alone)))))) {
+                    item = getItem(position + 1);
+                }
+            }
+        if (position == 1) {
+            if ((item.getKey().equals("Gauche") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.left_alone))) || ((item.getKey().equals("Droite") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.right_alone))))) {
+                item = getItem(position - 1);
             }
         }
-        if (position == 1){
-            if ((item.getKey().equals("Gauche") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.left_alone))) || ((item.getKey().equals("Droite") && mainAreaArray[Integer.valueOf(this.cancer.getMainSide())].equalsIgnoreCase(context.getString(R.string.right_alone))))){
-                item = getItem(position-1);
-            }
-        }
+    }
 
 
         List<String> sideMap = item.getValue();

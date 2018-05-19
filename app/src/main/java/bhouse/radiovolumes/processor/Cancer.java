@@ -28,6 +28,7 @@ public class Cancer implements Serializable {
     private List<TumorAreaTemplate> cancerTVolumes = new ArrayList<TumorAreaTemplate>();
 
     private List<TumorAreaTemplate> cancerTDeveloppedVolumes = new ArrayList<TumorAreaTemplate>();
+    private List<NodeAreaTemplate> cancerNDeveloppedVolumes = new ArrayList<NodeAreaTemplate>();
 
 
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
@@ -122,7 +123,7 @@ public class Cancer implements Serializable {
         for (TumorAreaTemplate tumorAreaTemplate : this.cancerTVolumes) {
             if (tumorAreaTemplate.getSubLocation().size() != 0) {
                 int i;
-                for (i=0;i<tumorAreaTemplate.getSubLocation().size();i++) {
+                for (i = 0; i < tumorAreaTemplate.getSubLocation().size(); i++) {
                     TumorAreaTemplate newTAT = new TumorAreaTemplate();
                     newTAT.setLocation(tumorAreaTemplate.getSubLocation().get(i).replaceAll("\\s+", "").toLowerCase());
                     if (tumorAreaTemplate.getLeftContent().equals("1") && tumorAreaTemplate.getSubLocationLeftContent().get(i).equals("1")) {
@@ -136,7 +137,7 @@ public class Cancer implements Serializable {
                         newTAT.setRightContent("0");
                     }
 
-                    if (newTAT.getRightContent().equals("1") | newTAT.getLeftContent().equals("1")){
+                    if (newTAT.getRightContent().equals("1") | newTAT.getLeftContent().equals("1")) {
                         this.cancerTDeveloppedVolumes.add(newTAT);
                     }
                 }
@@ -180,7 +181,9 @@ public class Cancer implements Serializable {
         cancerTVolumes.clear();
     }
 
-    public void tDClear () {cancerTDeveloppedVolumes.clear();}
+    public void tDClear() {
+        cancerTDeveloppedVolumes.clear();
+    }
 
     public void setCancerTTarData(HashMap<String, HashMap<String, List<String>>> cancerTTarData) {
         this.cancerTTarData = cancerTTarData;
@@ -268,4 +271,25 @@ public class Cancer implements Serializable {
     public void setCancerTVolumes(List<TumorAreaTemplate> cancerTVolumes) {
         this.cancerTVolumes = cancerTVolumes;
     }
+
+    public void setVI() {
+        for (NodeAreaTemplate nodeAreaTemplate : this.cancerNVolumes) {
+            NodeAreaTemplate newNAT = new NodeAreaTemplate();
+            if (nodeAreaTemplate.getNodeLocation().equalsIgnoreCase("VIa") || nodeAreaTemplate.getNodeLocation().equalsIgnoreCase("VIb")) {
+                newNAT = new NodeAreaTemplate();
+                newNAT.setNodeLocation("VI");
+                newNAT.setLeftContent(nodeAreaTemplate.getLeftContent());
+                newNAT.setRightContent(nodeAreaTemplate.getRightContent());
+                this.cancerNDeveloppedVolumes.add(newNAT);
+            }
+                this.cancerNDeveloppedVolumes.add(nodeAreaTemplate);
+
+        }
+    }
+
+    public List<NodeAreaTemplate> getCancerNDeveloppedVolumes() {
+        return cancerNDeveloppedVolumes;
+    }
 }
+
+
