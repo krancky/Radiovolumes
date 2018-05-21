@@ -116,8 +116,8 @@
     <string name="adaro">ADARO</string>
     <string name="leduc">N. Leduc</string>
     <string name="dupin">C. Dupin</string>
-    <string name="explanation">The ADARO software allows users to compute and visualize Low Risk Target Volume for the irradiation of Oropharynx and Buccal Cavity cancers.</string>
-    <string name="bibliography">Lapeyre 2005 Cancer/Radiotherapie</string>
+    <string name="explanation">The ADARO software allows users to compute and visualize Low Risk Target Volume for the irradiation of Oropharynx, Larynx-Hypopharynx and Buccal Cavity cancers.</string>
+    <string name="bibliography">Lapeyre and al., 2005, Cancer/Radiotherapie, Lapeyre and al., 2013, Cancer/Radiotherapie, Gregoire and al., 2014, Radiation Oncology</string>
     <string name="copyright">All rights reserved C. Dupin and N. Leduc</string>
     <string name="bibliography_static">Bibliography</string>
     <string name="copyright_static">Copyright</string>

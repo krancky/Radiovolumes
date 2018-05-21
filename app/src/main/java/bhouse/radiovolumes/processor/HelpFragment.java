@@ -37,7 +37,7 @@ public class HelpFragment extends DialogFragment {
 
         Window window = getDialog().getWindow();
 
-        window.setDimAmount(0);
+        window.setDimAmount(50);
 
         return v;
     }

@@ -119,8 +119,8 @@
     <string name="adaro">ADARO</string>
     <string name="dupin">C. Dupin</string>
     <string name="leduc">N. Leduc</string>
-    <string name="explanation">L\' application ADARO permet aux utilisateurs le calcul ainsi que la visualisation des volumes cibles de l\'irradiation des zones prophylactiques a bas risque des cancers de l\'oropharynx et de la cavite buccale.</string>
-    <string name="bibliography">Lapeyre 2005 Cancer/Radiotherapie</string>
+    <string name="explanation">L\' application ADARO permet aux utilisateurs le calcul ainsi que la visualisation des volumes cibles de l\'irradiation des zones prophylactiques a bas risque des cancers de l\'oropharynx, larynx-hypopharynx et de la cavite buccale.</string>
+    <string name="bibliography">Lapeyre and al., 2005, Cancer/Radiotherapie, Lapeyre and al., 2013, Cancer/Radiotherapie, Gregoire and al., 2014, Radiation Oncology </string>
     <string name="copyright">Tous droits reserves C.  Dupin et N. Leduc</string>
     <string name="bibliography_static">Bibliographie</string>
     <string name="copyright_static">Droits de propriete intellectuelle</string>
