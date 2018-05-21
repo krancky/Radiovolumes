@@ -1,7 +1,6 @@
 package bhouse.radiovolumes;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,17 +20,17 @@ import java.util.Map;
  * Created by kranck on 8/27/2017.
  */
 
-public class v5UserAdapter1 extends BaseAdapter {
-    private LinkedHashMap<String, Integer> displayedlistG;
-    private LinkedHashMap<String, Integer> displayedlistD;
+public class Tab2NDialogAdpapterAdapter extends BaseAdapter {
+    private LinkedHashMap displayedlistG;
+    private LinkedHashMap displayedlistD;
     private ArrayList<Boolean> checkboxLeftStatus = new ArrayList();
     private ArrayList<Boolean> checkboxRightStatus = new ArrayList();
     private String[] mKeys;
     private Map<String, String> colors;
     private Context context;
-    private ArrayList<MyV4DialogFragment.Item> items;
+    private ArrayList<Tab2NDialogFragment.Item> items;
 
-    public v5UserAdapter1(Context context, LinkedHashMap<String, Integer> displayedlistG, LinkedHashMap<String, Integer> displayedlistD, List<Slice> slices, Map<String, String> colors, ArrayList<MyV4DialogFragment.Item> items) {
+    public Tab2NDialogAdpapterAdapter(Context context, LinkedHashMap<String, Integer> displayedlistG, LinkedHashMap<String, Integer> displayedlistD, List<Slice> slices, Map<String, String> colors, ArrayList<Tab2NDialogFragment.Item> items) {
         this.displayedlistG = displayedlistG;
         this.displayedlistD = displayedlistD;
         mKeys = displayedlistG.keySet().toArray(new String[displayedlistG.size()]);
@@ -102,7 +101,6 @@ public class v5UserAdapter1 extends BaseAdapter {
                 } else{
                     displayedlistD.put(mKeys[position], 0);
                 }
-
             }
             convertView.setTag(holder);
 
@@ -114,8 +112,6 @@ public class v5UserAdapter1 extends BaseAdapter {
         if (items.get(position).isSection()) {
             String locationLocale = context.getString(context.getResources().getIdentifier(items.get(position).getTitle().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
             holder.tvSectionTitle.setText(locationLocale);
-
-            //holder.tvSectionTitle.setText(((MyV4DialogFragment.SectionItem) items.get(position)).getTitle());
             Log.i("position", "section");
         } else {
 
@@ -129,7 +125,7 @@ public class v5UserAdapter1 extends BaseAdapter {
             holder.cbLeft.setChecked(checkboxLeftStatus.get(position - sectionNumber));
             holder.cbRight.setTag(position - sectionNumber);
             holder.cbRight.setChecked(checkboxRightStatus.get(position - sectionNumber));
-            String truc = colors.get(mKeys[position - sectionNumber]);
+            //String truc = colors.get(mKeys[position - sectionNumber]);
 
 
             //try {

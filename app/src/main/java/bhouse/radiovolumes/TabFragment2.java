@@ -16,9 +16,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import org.w3c.dom.Node;
+
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 import bhouse.radiovolumes.processor.Cancer;
@@ -106,6 +106,11 @@ public class TabFragment2 extends Fragment  {
                 //i.putExtra("NXY", nxyValues);
                 i.putExtra("cancerTTarData", cancerTTarData);
                 i.putExtra("cancerNTarData", cancerNTarData);
+                cancer.setCancerTData(cancerTData);
+                cancer.setCancerNData(cancerNData);
+                cancer.setCancerTTarData(cancerTTarData);
+                cancer.setCancerNTarData(cancerNTarData);
+                cancer.saveToFile(activity);
                 startActivity(i);
             }
         });
@@ -141,7 +146,7 @@ public class TabFragment2 extends Fragment  {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 FragmentManager fm = getFragmentManager();
-                MyV4DialogFragment dialogFragment = MyV4DialogFragment.newInstance ("T Changes");
+                Tab2TDialogFragment dialogFragment = Tab2TDialogFragment.newInstance ("T Changes");
                 dialogFragment.show(fm, "Sample Fragment");
 
             }
@@ -166,21 +171,39 @@ public class TabFragment2 extends Fragment  {
         String text = "";
         text = "<p><b>ADARO contours ";
         text = text + this.cancer.getName() + "</b></p>";
-        text = text + "<b>Tumor sublocations to irradiate : </b><br/>";
+        String str = MainActivity.CONTEXT.getString(MainActivity.CONTEXT.getResources().getIdentifier("lRtumorLocation", "string", MainActivity.CONTEXT.getPackageName()));
+
+        text = text + "<b>" + str + ": </b><br/>";
 
         for (HashMap.Entry<String, HashMap<String, List<String>>> map : cancerTTarData.entrySet()){
-            text = "<br/>" + text  + "<u>"+ map.getKey() + "</u><br/>" ;
+            str = MainActivity.CONTEXT.getString(MainActivity.CONTEXT.getResources().getIdentifier(map.getKey().replaceAll("\\s+", "").toLowerCase(), "string", MainActivity.CONTEXT.getPackageName()));
+
+            text = "<br/>" + text  + "<u>"+ str + "</u><br/>" ;
             for (HashMap.Entry<String, List<String>> sideMap: map.getValue().entrySet()){
-                text =  text + "<i>" + sideMap.getKey()+ " : </i>";
-                text = text + sideMap.getValue().toString() + "<br/>";
+                str = MainActivity.CONTEXT.getString(MainActivity.CONTEXT.getResources().getIdentifier(sideMap.getKey().replaceAll("\\s+", "").toLowerCase(), "string", MainActivity.CONTEXT.getPackageName()));
+
+                text =  text + "<i>" + str + " : </i>";
+                //text = text + sideMap.getValue().toString() + "<br/>";
+                for (String value : sideMap.getValue()){
+                    str = MainActivity.CONTEXT.getString(MainActivity.CONTEXT.getResources().getIdentifier(value.replaceAll("\\s+", "").toLowerCase(), "string", MainActivity.CONTEXT.getPackageName()));
+                    text = text + str + "; ";
+                }
+                text = text + "<br/>";
             }
             text = text + "<br/>";
         }
 
-        text = text + "<br/><b>Node locations to irradiate : </b><br/>";
+        str = MainActivity.CONTEXT.getString(MainActivity.CONTEXT.getResources().getIdentifier("lRnodeLocation", "string", MainActivity.CONTEXT.getPackageName()));
+
+        text = text + "<br/><b>" + str +"</b><br/>";
         for (HashMap.Entry<String, List<String>> map : cancerNTarData.entrySet()){
-            text = "<br/>" + text  + "<u>"+ map.getKey() + "</u><br/>" ;
+            text = "<br/>" + text  + "<u>"+ map.getKey() + " :" + "</u><br/>" ;
             text = text + map.getValue().toString() + "<br/>";
+            for (String value : map.getValue()){
+                str = MainActivity.CONTEXT.getString(MainActivity.CONTEXT.getResources().getIdentifier(value.replaceAll("\\s+", "").toLowerCase(), "string", MainActivity.CONTEXT.getPackageName()));
+                text = text + str + "; ";
+            }
+            text = text + "<br/>";
             }
             text = text + "<br/>";
 

@@ -93,8 +93,8 @@ public class Tab2NDialogFragment extends DialogFragment {
         //prepareTData();
         prepareDisplayList();
         //ArrayAdapter<String> changeAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, displayedList);
-        //v5UserAdapter1 changeAdapter = new v5UserAdapter1(getActivity(), displayedList, cancerTTarData, tItemList);
-        v5NUserAdapter changeAdapter = new v5NUserAdapter(this.getContext(), displayedListG, displayedListD, slices, colors, countryList);
+        //Tab2TDialogAdapter changeAdapter = new Tab2TDialogAdapter(getActivity(), displayedList, cancerTTarData, tItemList);
+        Tab2NDialogAdpapterAdapter changeAdapter = new Tab2NDialogAdpapterAdapter(this.getContext(), displayedListG, displayedListD, slices, colors, countryList);
         lvChange.setAdapter(changeAdapter);
 
         Button cancel = (Button) v.findViewById(R.id.cancel);

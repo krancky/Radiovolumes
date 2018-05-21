@@ -21,16 +21,16 @@ import java.util.Map;
  * Created by kranck on 8/27/2017.
  */
 
-public class UserAdapter1 extends BaseAdapter {
+public class ScannerViewDialogAdapter extends BaseAdapter {
     private LinkedHashMap displayedList;
     private ArrayList<Boolean> checkboxStatus = new ArrayList();
     private String[] mKeys;
     private List<Slice> slices;
     private Map<String, String> colors;
     private Context context;
-    private ArrayList<Tab2TDialogFragment.Item> items;
+    private ArrayList<ScannerViewDialogFragment.Item> items;
 
-    public UserAdapter1(Context context, LinkedHashMap<String, Integer> displayedlist, List<Slice> slices, Map<String, String> colors, ArrayList<Tab2TDialogFragment.Item> items) {
+    public ScannerViewDialogAdapter(Context context, LinkedHashMap<String, Integer> displayedlist, List<Slice> slices, Map<String, String> colors, ArrayList<ScannerViewDialogFragment.Item> items) {
         this.displayedList = displayedlist;
         mKeys = displayedlist.keySet().toArray(new String[displayedlist.size()]);
         this.slices = slices;
@@ -93,7 +93,7 @@ public class UserAdapter1 extends BaseAdapter {
         }
 
         if (items.get(position).isSection()) {
-            holder.tvSectionTitle.setText(((Tab2TDialogFragment.SectionItem) items.get(position)).getTitle());
+            holder.tvSectionTitle.setText(((ScannerViewDialogFragment.SectionItem) items.get(position)).getTitle());
             Log.i("position", "section");
         } else {
 
@@ -128,7 +128,6 @@ public class UserAdapter1 extends BaseAdapter {
         else{
             return 1;
         }
-        // Define a way to determine which layout to use, here it's just evens and odds.
     }
 
 

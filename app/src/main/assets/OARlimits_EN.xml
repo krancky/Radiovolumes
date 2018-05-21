@@ -15,7 +15,7 @@
             = 18Gy&lt;br&gt; &lt;i&gt;70% :&lt;/i&gt;10 Gy in 1 fraction&lt;br&gt; &lt;i&gt;100%:&lt;/i&gt;
             Dmax = 20-40Gy
         </RisqueComplications>
-        <ContraintesPlanification>Cristallin : Dmax &lt; 10-15Gy</ContraintesPlanification>
+        <ContraintesPlanification>Lens : Dmax &lt; 10-15Gy</ContraintesPlanification>
         <AutresContraintes>Eye-Cornea : Dmax = 30-50Gy</AutresContraintes>
         <Comment>The anterior segment of the eyeball consists of the structures ventral from the
             vitreous humor, including the cornea, iris, ciliary body, and lens.&lt;br&gt;
@@ -39,9 +39,8 @@
             &lt;b&gt;Risk of blindness at 5 years:&lt;/b&gt;&lt;br&gt;
             &lt;i&gt;5 % : &lt;/i&gt;Dmean = 45Gy&lt;br&gt;
             &lt;i&gt;50% : &lt;/i&gt;Dmean = 65Gy&lt;br&gt;
-            &lt;b&gt;Risque de rétinopathie à 5ans:&lt;/b&gt;&lt;br&gt;
+            &lt;b&gt;Risk de retinopathy at 5 years:&lt;/b&gt;&lt;br&gt;
             &lt;i&gt;0 % :&lt;/i&gt; Dmean &lt; 40-45Gy&lt;br&gt;
-            &lt;b&gt;Risque de rétinopathie à 5 ans :&lt;/b&gt;&lt;br&gt;
             &lt;i&gt;0 % : &lt;/i&gt;Dmean &lt; 40-45Gy&lt;br&gt;
             &lt;i&gt;50% : &lt;/i&gt;Dmean = 45-55Gy&lt;br&gt;
             &lt;i&gt;83% : &lt;/i&gt;Dmean = 55-65Gy&lt;br&gt;
@@ -110,7 +109,7 @@
         <Posterior>NA</Posterior>
         <RisqueComplications>NA</RisqueComplications>
         <ContraintesPlanification>NA</ContraintesPlanification>
-        <AutresContraintes>Dmoyenne &lt; 32Gy</AutresContraintes>
+        <AutresContraintes>Dmean &lt; 32Gy</AutresContraintes>
         <Comment>None</Comment>
     </OAR>
 
@@ -424,7 +423,7 @@
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
         <AutresContraintes></AutresContraintes>
-        <Comment>Christiansen et al. [</Comment>
+        <Comment>Christiansen et al. </Comment>
     </OAR>
 
     <OAR>

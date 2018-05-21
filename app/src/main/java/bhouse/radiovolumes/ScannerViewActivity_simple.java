@@ -5,10 +5,8 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,7 +24,7 @@ import bhouse.radiovolumes.processor.XYXMLHandler;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class ScannerViewActivity_simple extends Activity implements Tab2TDialogFragment.OnCompleteListener, TNAreaDialog.OnCancelListener  {
+public class ScannerViewActivity_simple extends Activity implements ScannerViewDialogFragment.OnCompleteListener, TNAreaDialog.OnCancelListener  {
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     private HashMap<String, List<String>> cancerNTarData;
 
@@ -121,7 +119,7 @@ public class ScannerViewActivity_simple extends Activity implements Tab2TDialogF
                 // TODO Auto-generated method stub
 
                 FragmentManager fm = getFragmentManager();
-                Tab2TDialogFragment dialogFragment = Tab2TDialogFragment.newInstance ("Displayed Locations");
+                ScannerViewDialogFragment dialogFragment = ScannerViewDialogFragment.newInstance ("Displayed Locations");
                 dialogFragment.show(fm, "Sample Fragment");
                 return true;
             }

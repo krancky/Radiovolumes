@@ -20,7 +20,7 @@ import bhouse.radiovolumes.processor.XYPair;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class ScannerOARViewActivity_simple extends Activity implements Tab2TDialogFragment.OnCompleteListener, OARDialog.OnCancelListener {
+public class ScannerOARViewActivity_simple extends Activity implements ScannerViewDialogFragment.OnCompleteListener, OARDialog.OnCancelListener {
     private SingleScrollListView mContentView;
     private ArrayList<Slice> slices;
     private LinkedHashMap<String, Integer> displayedList = new LinkedHashMap<String, Integer>();
@@ -88,7 +88,7 @@ public class ScannerOARViewActivity_simple extends Activity implements Tab2TDial
                 // TODO Auto-generated method stub
                 Toast.makeText(getApplicationContext(), "Long click position" + pos, Toast.LENGTH_SHORT).show();
                 FragmentManager fm = getFragmentManager();
-                Tab2TDialogFragment dialogFragment = Tab2TDialogFragment.newInstance("Displayed Locations");
+                ScannerViewDialogFragment dialogFragment = ScannerViewDialogFragment.newInstance("Displayed Locations");
                 dialogFragment.show(fm, "Sample Fragment");
                 return true;
             }

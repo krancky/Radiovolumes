@@ -22,7 +22,7 @@ import bhouse.radiovolumes.processor.TumorAreaTemplate;
 /**
  * Adapter
  */
-public class TSelectionAdapter extends BaseAdapter {
+public class NewCaseTSelectionAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<NewCaseActivity.Item> items;
     List<TumorAreaTemplate> tList;
@@ -31,11 +31,11 @@ public class TSelectionAdapter extends BaseAdapter {
     private ArrayList<Boolean> checkboxStatus_right = new ArrayList<Boolean>();
 
 
-    public TSelectionAdapter() {
+    public NewCaseTSelectionAdapter() {
         super();
     }
 
-    public TSelectionAdapter(Context context, ArrayList<NewCaseActivity.Item> items, List<TumorAreaTemplate> tumorAreaTemplateList, Cancer cancer) {
+    public NewCaseTSelectionAdapter(Context context, ArrayList<NewCaseActivity.Item> items, List<TumorAreaTemplate> tumorAreaTemplateList, Cancer cancer) {
         this.context = context;
         this.items = items;
         this.tList = tumorAreaTemplateList;

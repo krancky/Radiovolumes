@@ -5,12 +5,12 @@
         <Name>anteriorsegment</Name>
         <Lateralized>1</Lateralized>
         <Naming>Ant Segment = Segment antérieur de l'oeil</Naming>
-        <Cranial>NA blabla</Cranial>
+        <Cranial>NA</Cranial>
         <Caudal>NA</Caudal>
         <Medial>NA</Medial>
         <Lateral>NA</Lateral>
         <Anterior>NA</Anterior>
-        <Posterior>Vitreous humor</Posterior>
+        <Posterior>Humeur vitrée</Posterior>
         <RisqueComplications>&lt;b&gt;Risque de cataracte à 5 ans :&lt;/b&gt;&lt;br&gt; &lt;i&gt;5 %
             :&lt;/i&gt; Dmax = 10Gy&lt;br&gt; &lt;i&gt;18% :&lt;/i&gt;Dmax = 14Gy&lt;br&gt; &lt;i&gt;50%:&lt;/i&gt;Dmax
             = 18Gy&lt;br&gt; &lt;i&gt;70% :&lt;/i&gt;10 Gy en 1 fraction&lt;br&gt; &lt;i&gt;100%:&lt;/i&gt;
@@ -18,9 +18,7 @@
         </RisqueComplications>
         <ContraintesPlanification>Cristallin : Dmax &lt; 10-15Gy</ContraintesPlanification>
         <AutresContraintes>OEil-cornée : Dmax = 30-50Gy</AutresContraintes>
-        <Comment>The anterior segment of the eyeball consists of the structures ventral from the
-            vitreous humor, including the cornea, iris, ciliary body, and lens.
-        </Comment>
+        <Comment> La chambre antérieure de l'oeil contient les structures antérieures à l'humeur vitrée : cornée, iris, corps ciliaires et cristallin.</Comment>
     </OAR>
 
 
@@ -32,8 +30,8 @@
         <Caudal>NA</Caudal>
         <Medial>NA</Medial>
         <Lateral>NA</Lateral>
-        <Anterior>Lens</Anterior>
-        <Posterior>Retina (incl.)</Posterior>
+        <Anterior>Cristallin</Anterior>
+        <Posterior>Rétine (incl.)</Posterior>
         <RisqueComplications>
             &lt;b&gt;Risque de cécité à 5 ans:&lt;/b&gt;&lt;br&gt;
             &lt;i&gt;5 % : &lt;/i&gt;Dmoyenne = 45Gy&lt;br&gt;
@@ -50,10 +48,8 @@
             &lt;b&gt;OEil total :&lt;/b&gt;&lt;br&gt; V30 Gy &lt; 50% V50 Gy &lt; 30%
         </ContraintesPlanification>
         <AutresContraintes></AutresContraintes>
-        <Comment>The posterior segment of the eyeball is located posteriorly to the lens, and
-            consists of the anterior hyaloid membrane and all of the posterior optical structures
-            including the vitreous humor, retina, and choroid. The optic nerve is excluded.
-        </Comment>
+        <Comment>La chambre postérieure est située postérieurement au cristallin et contient la membrane hyaline antérieure ainsi
+            que toutes les structures qui lui sont postérieures : humeur vitrée, rétine et choroïde. Le nerf optique est exclu.</Comment>
     </OAR>
 
     <OAR>
@@ -71,7 +67,7 @@
         </RisqueComplications>
         <ContraintesPlanification>V60 Gy &lt; 33%</ContraintesPlanification>
         <AutresContraintes>D33 % &lt; 72Gy</AutresContraintes>
-        <Comment>The delineation of the brain includes brain vessels, and excludes the brainstem.
+        <Comment>La délinéation de l'encéphale inclut les vaisseaux et exclut le tronc cérébral.
         </Comment>
     </OAR>
 
@@ -79,8 +75,8 @@
         <Name>BrainStem</Name>
         <Lateralized>0</Lateralized>
         <Naming>BrainStem=Tronc Cérébral</Naming>
-        <Cranial>Bottom of lateral ventricles</Cranial>
-        <Caudal>Tip of the dens of C2</Caudal>
+        <Cranial>Extrémité caudale des ventricules latéraux.</Cranial>
+        <Caudal>Extrémité céphalique de l'odontoïde</Caudal>
         <Medial>NA</Medial>
         <Lateral>NA</Lateral>
         <Anterior>NA</Anterior>
@@ -88,7 +84,7 @@
         <RisqueComplications>NA</RisqueComplications>
         <ContraintesPlanification>Dmax &lt; 54Gy</ContraintesPlanification>
         <AutresContraintes>Dmax = 64Gy &lt;i&gt;(surface)&lt;/i&gt;</AutresContraintes>
-        <Comment>MRI is recommended for delineation of the brainstem.</Comment>
+        <Comment>La délinéation du tronc cérébral est facilitée par l'IRM..</Comment>
     </OAR>
 
 
@@ -98,8 +94,8 @@
         <Lateralized>1</Lateralized>
         <Naming>Lacrimal gland = Glande Lacrymale</Naming>
         <Cranial>NA</Cranial>
-        <Caudal>Eye</Caudal>
-        <Medial>Eye</Medial>
+        <Caudal>Oeil</Caudal>
+        <Medial>Oeil</Medial>
         <Lateral>NA</Lateral>
         <Anterior>NA</Anterior>
         <Posterior>NA</Posterior>
@@ -113,8 +109,8 @@
         <Name>Chiasm</Name>
         <Lateralized>0</Lateralized>
         <Naming>Chiasm = Chiasma</Naming>
-        <Cranial>1 cm superior to the pituitary gland</Cranial>
-        <Caudal>NA</Caudal>
+        <Cranial>1 cm au-dessus de l'hypophyse</Cranial>
+        <Caudal>Hypophyse</Caudal>
         <Medial>NA</Medial>
         <Lateral>NA</Lateral>
         <Anterior>NA</Anterior>
@@ -124,7 +120,7 @@
             D1 % &lt; 45 Gy
         </ContraintesPlanification>
         <AutresContraintes>V50 Gy &lt; 10 %</AutresContraintes>
-        <Comment>MRI is recommended for delineation.</Comment>
+        <Comment>La délinéation est facilitée par l'IRM.</Comment>
     </OAR>
 
     <OAR>
@@ -135,8 +131,8 @@
         <Caudal>NA</Caudal>
         <Medial>NA</Medial>
         <Lateral>NA</Lateral>
-        <Anterior>NA</Anterior>
-        <Posterior>NA</Posterior>
+        <Anterior>Extrémité postérieure de l'oeil.</Anterior>
+        <Posterior>Chiasma optique</Posterior>
         <RisqueComplications>&lt;b&gt;Risque de cécité à 5 ans :&lt;/b&gt;&lt;br&gt;
             0-5% : Dmax = 50-60Gy
             50% : Dmax = 65Gy
@@ -149,9 +145,7 @@
         <AutresContraintes>D25 % &lt; 60Gy
             D1 % &lt; 54Gy
         </AutresContraintes>
-        <Comment>It has to be contoured all the way from the posterior edge of the eyeball, through
-            the bony optic canal to the optic chiasm. MRI is recommended for a better delineation of
-            the optic nerve
+        <Comment>Doit être contouré depuis l'extrémité postérieure de l'oeil, à travers la partie osseuse du canal optique jusqu'au chiasma optique. L'IRM est recommandé.
         </Comment>
     </OAR>
 
@@ -168,8 +162,7 @@
         <RisqueComplications>NA</RisqueComplications>
         <ContraintesPlanification>Dmax = 45-50Gy</ContraintesPlanification>
         <AutresContraintes>NA</AutresContraintes>
-        <Comment>The inner part of the sella turcica can be used as surrogate anatomical bony
-            structure.
+        <Comment>La partie interne de la selle turcique peut être utilisée comme substitut à visée de délinéation.
         </Comment>
     </OAR>
 
@@ -177,7 +170,7 @@
         <Name>Carotid</Name>
         <Lateralized>1</Lateralized>
         <Naming>A Carotid = a carotide</Naming>
-        <Cranial>Lower part of the optic chiasm.</Cranial>
+        <Cranial>Partie inférieure du chiasma optique</Cranial>
         <Caudal>NA</Caudal>
         <Medial>NA</Medial>
         <Lateral>NA</Lateral>
@@ -186,7 +179,7 @@
         <RisqueComplications>NA</RisqueComplications>
         <ContraintesPlanification>NA</ContraintesPlanification>
         <AutresContraintes>NA</AutresContraintes>
-        <Comment>The carotid arteries include the common and internal carotid artery</Comment>
+        <Comment>L'artère carotide inclut artère commune et interne.</Comment>
     </OAR>
 
     <OAR>
@@ -204,8 +197,7 @@
             Si conservation audition primordiale : &lt;br&gt;Dmoyenne &lt; 35 Gy
         </ContraintesPlanification>
         <AutresContraintes>Dmoyenne &lt;10 Gy</AutresContraintes>
-        <Comment>The cochlea is embedded in the temporal bone, located lateral to the internal
-            auditory meatus, which can best be recognized in CT bone view settings
+        <Comment>La cochlée est incluse au sein de l'os temporal. Elle est située latéralement au méat auditif interne, dont la visualisaiton est facilitée en fenêtre osseuse du CT.
         </Comment>
     </OAR>
 
@@ -227,20 +219,19 @@
             Dmoyenne &lt; 60Gy
         </ContraintesPlanification>
         <AutresContraintes>NA</AutresContraintes>
-        <Comment>The mandible was defined as the entire mandible bone, without teeth.</Comment>
+        <Comment>La mandibule est définie comme l'ensemble de l'os mandibulaire, dents exclues.</Comment>
     </OAR>
 
     <OAR>
         <Name>Parotid</Name>
         <Lateralized>1</Lateralized>
         <Naming>Parotid = Parotide</Naming>
-        <Cranial>External auditory canal, mastoid process</Cranial>
-        <Caudal>Post. part submandibular space</Caudal>
-        <Medial>Post. belly digastric m., styloid process, parapharyngeal space</Medial>
-        <Lateral>Subcutaneous fat, platysma</Lateral>
-        <Anterior>Masseter m., post. border mandibular bone, med. and lat. pterygoid m.</Anterior>
-        <Posterior>Ant. belly sternocleidomastoid m., lat. side post. belly of the digastric m.
-            (posteriormedial
+        <Cranial>Canal auditif externe, processus mastoïde.</Cranial>
+        <Caudal>Parite postérieure de l'espace sous-mandibulaire.</Caudal>
+        <Medial>Ventre postérieur du muscle digasstrique, processus styloïde, espace parapharyngé.</Medial>
+        <Lateral>Graisse sous-cutanée, platysma.</Lateral>
+        <Anterior>Masseter , bord postérieur de la mandibule, muscles ptérygoïdiens médial et latéral.</Anterior>
+        <Posterior>Ventre antérieur du sternocloïdomastoïdien puis ventre postérieur du muscle digastrique (posteriormedial)
         </Posterior>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification>Dose moyenne(2 parotides) &lt; 26Gy</ContraintesPlanification>
@@ -248,7 +239,7 @@
             V30 Gy &lt; 43-45%
             V45 Gy &lt; 24-26%
         </AutresContraintes>
-        <Comment>Include carotid artery, retromandibular vein and extracranial facial nerve
+        <Comment>Includ l'artère carotide, la veine rétromandibulaire et le nerf facial extracranien.
         </Comment>
     </OAR>
 
@@ -256,14 +247,13 @@
         <Name>Extended oral cavity</Name>
         <Lateralized>0</Lateralized>
         <Naming>Extended oral cavity = cavité buccale</Naming>
-        <Cranial>Hard palate mucosa and mucosal reflections near the maxilla</Cranial>
-        <Caudal>The base of tongue mucosa and hyoid posteriorly and the mylohyoid m. and ant. belly
-            of the digastric m. anteriorly
+        <Cranial>Muqueuse du palais dur et replis muqueux à proximité du maxillaire.</Cranial>
+        <Caudal>Muqueuse de la base de langue et os hyoïde (postérieur); Mylohyoïde et ventre antérieur du digastrique (antérieur).
         </Caudal>
         <Medial>Na</Medial>
-        <Lateral>Inner surface of the mandible and maxilla</Lateral>
-        <Anterior>Inner surface of the mandible and maxilla</Anterior>
-        <Posterior>Post. borders of soft palate, uvula, and more inferiorly the base of tongue
+        <Lateral>Surface interne de la mandibule et du maxillaire.</Lateral>
+        <Anterior>Surface interne de la mandibule et du maxillaire.</Anterior>
+        <Posterior>Bord postérieur du palais mou, de l'uvula, et de manière plus caudale, la base de langue.
         </Posterior>
         <RisqueComplications>NA</RisqueComplications>
         <ContraintesPlanification>V20 Gy &lt; 80%&lt;br&gt;
@@ -277,34 +267,33 @@
         <Name>Submandibular Gland</Name>
         <Lateralized>1</Lateralized>
         <Naming>Submandibular Gland : Glande sous maxillaire</Naming>
-        <Cranial>Med.pterygoid m.,mylohyoid m.</Cranial>
-        <Caudal>Fatty tissue</Caudal>
-        <Medial>Lat. surface mylohyoid m.,hyoglossus m., superior and middle pharyngeal constrictor
-            m., anterior belly of the digastric m.
+        <Cranial>Ptérygoïde médian et mylohyoïde..</Cranial>
+        <Caudal>Tissu graisseux</Caudal>
+        <Medial>Surface latérale du mylohyoïde, muscle hyoglosse, constricteurs du pharynx supérieur et médian, ventre antérieur du muscle digastrique.
         </Medial>
-        <Lateral>Med. surface med.pterygoid m., med.surface mandibular bone, platysma</Lateral>
-        <Anterior>Lat. Surface mylohyoid m., hyoglossus m.</Anterior>
-        <Posterior>Parapharyngeal space, sternocleidomastoid m.</Posterior>
+        <Lateral>Surface médiane du ptérygoïde médian, de l'os mandubulaire et du platysma.</Lateral>
+        <Anterior>Surface latérale du muscle mylohyoïde, muscle hyoglosse.</Anterior>
+        <Posterior>Espace parapharyngé, muscle sterno-cloïdo-mastoïdien.</Posterior>
         <RisqueComplications>NA</RisqueComplications>
         <ContraintesPlanification>NA</ContraintesPlanification>
         <AutresContraintes>Dmoyenne &lt; 32Gy</AutresContraintes>
-        <Comment>Posterior to mandible and maxilla, no inner surface of the lips</Comment>
+        <Comment>Posterieur à l amandibule et au maxillaire.</Comment>
     </OAR>
 
     <OAR>
         <Name>Pharyngeal Constrictor muscles</Name>
         <Lateralized>0</Lateralized>
         <Naming>Pharyngeal Constrictor muscles = muscles constricteurs du pharynx</Naming>
-        <Cranial>Caudal tips of pterygoid plates</Cranial>
-        <Caudal>Caudal edge of arytenoid cartilages</Caudal>
+        <Cranial>Extrémité caudale des apophyses ptérygoïdiennes.</Cranial>
+        <Caudal>Extrémité caudale de l'aryténoïde.</Caudal>
         <Medial>Na</Medial>
-        <Lateral>&lt;i&gt;Superior:&lt;/i&gt; medial pterygoid muscle. &lt;i&gt;Middle:&lt;/i&gt; greater horn of hyoid bone. &lt;i&gt;Inferior:&lt;/i&gt;
-            superior horn of thyroid cartilage
+        <Lateral>&lt;i&gt;Cranialement:&lt;/i&gt; Ptérygoïde médial &lt;i&gt;Au centre:&lt;/i&gt; GRande corne de l'os hyoïde. &lt;i&gt;Caudalement:&lt;/i&gt;
+            Corne supérieure du cartilage thyroïde
         </Lateral>
-        <Anterior>&lt;i&gt;Superior:&lt;/i&gt; hamulus of pterygoid plate; mandibula; base of tongue; pharyngeal lumen.
-            &lt;i&gt;Middle:&lt;/i&gt; base of tongue; hyoid. Inferior: soft tissue of supraglottic/glottic larynx
+        <Anterior>&lt;i&gt;Cranialement:&lt;/i&gt; Hamulus ptérygoïdien; mandibule; base de langue; lumière pharyngée.
+            &lt;i&gt;Au centre:&lt;/i&gt; base de langue; hyoïde <i> Caudalement</i>: tissus mous du larynx supra-glottique et glottique
         </Anterior>
-        <Posterior>Prevertebral muscle</Posterior>
+        <Posterior>Muscles pré-vertébraux</Posterior>
         <RisqueComplications>&lt;b&gt;Risque de dysphagie si : &lt;/b&gt;&lt;br&gt; Dmoyenne &gt; 45-66Gy</RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
         <AutresContraintes>V40 Gy &lt; 90%&lt;br&gt;
@@ -312,24 +301,23 @@
             V60 Gy &lt; 70%&lt;br&gt;
             V65 Gy &lt; 50%
         </AutresContraintes>
-        <Comment>Thickness ~3 mm</Comment>
+        <Comment>Epaisseur ~3 mm</Comment>
     </OAR>
 
     <OAR>
         <Name>Cricopharyngeal inlet</Name>
         <Lateralized>0</Lateralized>
         <Naming>Crico-pharyngeal inlet= entonnoir pharyngé</Naming>
-        <Cranial>Caudal edge of arytenoid cartilages</Cranial>
-        <Caudal>1 cm caudal to the lower edge of the cricoid cartilage</Caudal>
+        <Cranial>Extrémité caudale des cartilages aryténoïdes</Cranial>
+        <Caudal>1 cm caudal de l'extrémité inférieure du cartilage crycoïde.</Caudal>
         <Medial>NA</Medial>
         <Lateral>NA</Lateral>
-        <Anterior>Tracheal lumen</Anterior>
-        <Posterior>Vertebral body</Posterior>
+        <Anterior>Lumière trachéale</Anterior>
+        <Posterior>Corps vertébral.</Posterior>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
         <AutresContraintes></AutresContraintes>
-        <Comment>The crico-pharyngeal inlet represents the transition from the PCM to the cervical
-            esophagus
+        <Comment>L'entonnoir crico-pharyngé représente la transition entre constricteurs du pharynx et oesophage cervical.
         </Comment>
     </OAR>
 
@@ -337,8 +325,8 @@
         <Name>Cervical esophagus</Name>
         <Lateralized>0</Lateralized>
         <Naming>Cervical esophagus=oesophage cervical</Naming>
-        <Cranial>1 cm caudal to the lower edge of the cricoid cartilage</Cranial>
-        <Caudal>Caudal edge of C7</Caudal>
+        <Cranial>1 cm caudal de l'extrémité inférieure du cartilage crycoïde.</Cranial>
+        <Caudal>Extrémité inférieure de C7</Caudal>
         <Medial>NA</Medial>
         <Lateral>NA</Lateral>
         <Anterior>NA</Anterior>
@@ -362,14 +350,14 @@
         <Name>Lips</Name>
         <Lateralized>0</Lateralized>
         <Naming>Lips=lèvres/Naming</Naming>
-        <Cranial>Hard palate &lt;i&gt;(lateral)&lt;/i&gt;, anterior nasal spine &lt;i&gt;(at the midline)&lt;/i&gt;</Cranial>
-        <Caudal>Lower edge teeth sockets, cranial edge mandibular body</Caudal>
+        <Cranial>Palais dur &lt;i&gt;(latéral)&lt;/i&gt;, Epine nasale antérieure &lt;i&gt;(médial)&lt;/i&gt;</Cranial>
+        <Caudal>Extrémité inférieure des fosses dentaires, extrémité supérieure du corps mandubulaire.</Caudal>
         <Medial>Na</Medial>
-        <Lateral>Depressor anguli oris m., buccinator m., levator anguli oris m./risorius m.
+        <Lateral> Muscle buccinateur et muscles abaisseur et élévateurs de la bouche?
             Buccinator
         </Lateral>
-        <Anterior>Outer surface of the skin</Anterior>
-        <Posterior>Mandibular body,teeth, tongue, air &lt;i&gt;(if present)&lt;/i&gt;</Posterior>
+        <Anterior>Surface externe de la peau.</Anterior>
+        <Posterior>Corps de la mandibule, dents, langue, air&lt;i&gt;(si présent)&lt;/i&gt;</Posterior>
         <RisqueComplications>NA</RisqueComplications>
         <ContraintesPlanification>NA</ContraintesPlanification>
         <AutresContraintes>NA</AutresContraintes>
@@ -380,13 +368,13 @@
         <Name>Buccal Mucosa</Name>
         <Lateralized>1</Lateralized>
         <Naming>Buccal Mucosa=muqueuse jugale</Naming>
-        <Cranial>Bottom ofmaxillary sinus</Cranial>
-        <Caudal>Upper edge teeth sockets</Caudal>
-        <Medial>Outer surface of the mandible and maxilla, oral cavity/base of tongue/soft pallate
+        <Cranial>Fond du sinus maxillaire</Cranial>
+        <Caudal>Extrémité supérieure des fosses dentaires</Caudal>
+        <Medial>Surface externe de la mandibule et du maxillaire, cavité buccale / base de langue / palais mou
         </Medial>
-        <Lateral>Buccal fat</Lateral>
-        <Anterior>Lips, teeth</Anterior>
-        <Posterior>Med. pterygoid m.</Posterior>
+        <Lateral>Graisse buccale</Lateral>
+        <Anterior>Lèvres, dents</Anterior>
+        <Posterior>Mmsucle ptérygoïde médial</Posterior>
         <RisqueComplications>NA</RisqueComplications>
         <ContraintesPlanification>NA</ContraintesPlanification>
         <AutresContraintes>NA</AutresContraintes>
@@ -397,28 +385,28 @@
         <Name>Supra Glottic Larynx</Name>
         <Lateralized>0</Lateralized>
         <Naming>Supra GLottic Larynx = Larynx supra-glottique</Naming>
-        <Cranial>Tip of epiglottis</Cranial>
-        <Caudal>Cranial edge of arytenoid cartilages</Caudal>
-        <Medial>Pharyngeal lumen (lumen excluded)</Medial>
-        <Lateral>Thyroid cartilage</Lateral>
-        <Anterior>Hyoid bone, pre-epiglottic space, thyroid cartilage</Anterior>
-        <Posterior>Inferior PCM, pharyngeal lumen</Posterior>
+        <Cranial>Extrémité de l'épiglotte</Cranial>
+        <Caudal>Extrémité craniale des cartilages aryténoïdes</Caudal>
+        <Medial>Lumière pharyngée (lumière exclue)</Medial>
+        <Lateral>Cartilage thyroïde</Lateral>
+        <Anterior>Os hyoïde, espace pré-épiglottique, cartilage thyroïde.</Anterior>
+        <Posterior>Muscle constricteur du pharynx inférieur, lumière pharyngée</Posterior>
         <RisqueComplications></RisqueComplications>
         <ContraintesPlanification></ContraintesPlanification>
         <AutresContraintes></AutresContraintes>
-        <Comment>Christianen et al. [</Comment>
+        <Comment>Christiansen et al. </Comment>
     </OAR>
 
     <OAR>
         <Name>Glotticlarynx</Name>
         <Lateralized>0</Lateralized>
         <Naming>Larynx= Larynx</Naming>
-        <Cranial>Cranial edge of arytenoid cartilages</Cranial>
-        <Caudal>Caudal edge of ant. part of thyroid cartilage</Caudal>
+        <Cranial>Extrémité supérieur du cartilage aryténoïde.</Cranial>
+        <Caudal>Extrémité caudale de la partie antérieure du cartilage thyroïde. </Caudal>
         <Medial>NA</Medial>
         <Lateral>NA</Lateral>
         <Anterior>NA</Anterior>
-        <Posterior>Cricoid, anterior border arytenoids</Posterior>
+        <Posterior>Cricoïde, bord antérieur des aryténoïdes.</Posterior>
         <RisqueComplications>Risque de dysfonction vocale pour des doses supérieures à 60-65Gy&lt;br&gt;
             Risque d'oedème laryngé pour des doses supérieures à 45Gy
         </RisqueComplications>
@@ -427,7 +415,7 @@
             Dmoyenne &lt; 43,5Gy&lt;br&gt;
             V50 Gy &lt; 27%
         </AutresContraintes>
-        <Comment>Includes thevocal cords and paraglottic fat.</Comment>
+        <Comment>Inclus les cordes vocales et la graisse paraglottique.</Comment>
     </OAR>
 
     <OAR>
@@ -445,8 +433,7 @@
         <AutresContraintes>Dmoyenne &lt; 30Gy
             V50 Gy &lt; 30%
         </AutresContraintes>
-        <Comment>The thyroid gland has two connected lobes and is located below the thyroid
-            cartilage. It has considerable contrast compared to its surrounding tissues.
+        <Comment>La glande thyroïde possède deux lobes connectés et est située sous le cartilage thyroïde. Sa prise de contraste est intense en comparaison des autres organes.
         </Comment>
     </OAR>
 
@@ -472,8 +459,8 @@
         <Name>Spinal Cord</Name>
         <Lateralized>0</Lateralized>
         <Naming>Spinal Cord = Moelle épinière</Naming>
-        <Cranial>Tip of the dens of C2</Cranial>
-        <Caudal>Upper edge of T3.</Caudal>
+        <Cranial>Extrémité supérieure de l'odontoïde</Cranial>
+        <Caudal>Extrémité supérieure de T3</Caudal>
         <Medial>NA</Medial>
         <Lateral>NA</Lateral>
         <Anterior>NA</Anterior>
@@ -487,8 +474,7 @@
             Si association chimioradiothérapie Dmax &lt; 45 Gy
         </ContraintesPlanification>
         <AutresContraintes>NA</AutresContraintes>
-        <Comment>The spinal cord is delineated as the true spinal cord, not the spinal canal. Extend
-            by at least 5 cm caudal to the PTV.
+        <Comment>La moëlle est délinéée comme telle et non pas la canal médullaire. A étendre au moins 5 cm sous le PTV.
         </Comment>
     </OAR>
 
@@ -496,18 +482,17 @@
         <Name>Brachial Plexus</Name>
         <Lateralized>1</Lateralized>
         <Naming>Brachial Plexus = Plexus Brachial</Naming>
-        <Cranial>Cranial border of C5, vertebral body</Cranial>
-        <Caudal>Cranial border of T3, vertebral body</Caudal>
-        <Medial>Inter vertebral foramen &lt;i&gt;(bony vertebral body)&lt;/i&gt;, lat. border of 1st rib</Medial>
-        <Lateral>&lt;i&gt;Lat. border of:&lt;/i&gt; ant. and middle scalene m., pectoralis major, teres major</Lateral>
-        <Anterior>&lt;i&gt;Post. border of:&lt;/i&gt; anterior scalene m.,subclavian artery, axillary vein</Anterior>
-        <Posterior>&lt;i&gt;Ant. border of&lt;/i&gt;middle scalene m., seratus anterior m., subscapularis m.
+        <Cranial>Extrémité supérieure de C5, corps vertébral</Cranial>
+        <Caudal>Bord supérieur de T3, crops vertébral.</Caudal>
+        <Medial>foramen inter-vertébral&lt;i&gt;(corps vertébral osseux)&lt;/i&gt;, bord latéral de la première côte</Medial>
+        <Lateral>&lt;i&gt;Bord latéral de: &lt;/i&gt; scalènes antérieur et moyen, pectoralis major, teres major</Lateral>
+        <Anterior>&lt;i&gt;Bord postérieur de: &lt;/i&gt; scalène antérieur,artère sous-clavière, veine axillaire</Anterior>
+        <Posterior>&lt;i&gt;Bord antéreiur de: &lt;/i&gt;scalène moyen, seratus anterieurr , muscle sous-épineux.
         </Posterior>
         <RisqueComplications>NA</RisqueComplications>
         <ContraintesPlanification>NA</ContraintesPlanification>
         <AutresContraintes>Dmax inf 60-66Gy</AutresContraintes>
-        <Comment>If the brachial plexus is wrapped around the vascular bundle on the most inferior
-            slices, the vascular structure is included in the contour
+        <Comment>Si le plexus brachial s'enroule autour du paquet vasculaire sur les coupes les olus inférieures, celui-ci est à inclure dans le contour.
         </Comment>
     </OAR>
 

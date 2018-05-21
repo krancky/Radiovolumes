@@ -32,7 +32,7 @@ import bhouse.radiovolumes.processor.TumorAreaTemplate;
 import bhouse.radiovolumes.processor.XYXMLHandler;
 
 
-public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragment.OnCompleteListener, Tab2NDialogFragment.OnCompleteListener {
+public class TabbedActivity extends AppCompatActivity implements Tab2TDialogFragment.OnCompleteListener, Tab2NDialogFragment.OnCompleteListener {
 
     private HashMap<String, HashMap<String, List<String>>> cancerTData;
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
@@ -82,17 +82,17 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.setCurrentItem(1);
 
-        cancer.setCancerTData(cancerTData);
-        cancer.setCancerNData(cancerNData);
-        cancer.setCancerTTarData(this.cancerTTarData);
-        cancer.setCancerNTarData(this.cancerNTarData);
-        cancer.setCancerTVolumes(this.cancerTVolumes);
-        cancer.saveToFile(TabbedActivity.this);
+        //cancer.setCancerTData(cancerTData);
+        //cancer.setCancerNData(cancerNData);
+        //cancer.setCancerTTarData(this.cancerTTarData);
+        //cancer.setCancerNTarData(this.cancerNTarData);
+        //cancer.setCancerTVolumes(this.cancerTVolumes);
+        //cancer.saveToFile(TabbedActivity.this);
 
     }
 
 
-    public void onComplete(HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyV4DialogFragment.Item> items) {
+    public void onCompleteT(HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<Tab2TDialogFragment.Item> items) {
         // After the dialog fragment completes, it calls this callback.
         // use the string here
 
@@ -100,7 +100,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
 
         Integer i = 0;
         ArrayList<Integer> sectionList = new ArrayList<>();
-        for (MyV4DialogFragment.Item item : items) {
+        for (Tab2TDialogFragment.Item item : items) {
             if (item.isSection()) {
                 sectionList.add(i);
             }
@@ -141,12 +141,12 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.setCurrentItem(1);
 
-        cancer.setCancerTData(cancerTData);
-        cancer.setCancerNData(cancerNData);
-        cancer.setCancerTTarData(this.cancerTTarData);
-        cancer.setCancerNTarData(this.cancerNTarData);
-        cancer.setCancerTVolumes(this.cancerTVolumes);
-        cancer.saveToFile(TabbedActivity.this);
+        //cancer.setCancerTData(cancerTData);
+        //cancer.setCancerNData(cancerNData);
+        //cancer.setCancerTTarData(this.cancerTTarData);
+        //cancer.setCancerNTarData(this.cancerNTarData);
+        //cancer.setCancerTVolumes(this.cancerTVolumes);
+        //cancer.saveToFile(TabbedActivity.this);
 
     }
 
@@ -219,6 +219,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
                             cancer.setCancerNData(cancerNData);
                             cancer.setCancerTTarData(cancerTTarData);
                             cancer.setCancerNTarData(cancerNTarData);
+                            cancer.saveToFile(context);
                             dialog.dismiss();
                         }
                     });
@@ -228,6 +229,7 @@ public class TabbedActivity extends AppCompatActivity implements MyV4DialogFragm
                     // Cas normal de chargement sans modif des volumes.
                 }
             } else {
+
                 // Cas ou l utilisateur charge mais modifie les volumes envahis: Reset des modifs.
             }
         }

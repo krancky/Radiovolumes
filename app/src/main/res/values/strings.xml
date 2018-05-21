@@ -22,22 +22,22 @@
     <string name="contralateral">Contralateral</string>
 
 
-    <string name="ia">Submental</string>
-    <string name="ib">Sub Mandibular</string>
-    <string name="ii">Upper Jugular</string>
-    <string name="iii">Median Jugular</string>
-    <string name="iva">Lower Jugular</string>
-    <string name="ivb">Median Supraclavicular</string>
+    <string name="ia">Ia: Submental</string>
+    <string name="ib">Ib: Sub Mandibular</string>
+    <string name="ii">II: Upper Jugular</string>
+    <string name="iii">III: Median Jugular</string>
+    <string name="iva">IVa: Lower Jugular</string>
+    <string name="ivb">IVb: Median Supraclavicular</string>
     <string name="vab">Posterior Triangle</string>
-    <string name="vc">Lateral Supraclavicular</string>
-    <string name="via">Anterior Jugular</string>
-    <string name="vib">Pre-Laryngeal</string>
-    <string name="viia">Retro-Pharyngian</string>
-    <string name="viib">Retrostyloïd</string>
-    <string name="viii">Parotidian</string>
-    <string name="ix">Bucco-Facial</string>
-    <string name="xa">Retro &amp; Subauricular</string>
-    <string name="xb">Occipital</string>
+    <string name="vc">Vc: Lateral Supraclavicular</string>
+    <string name="via">VIa : Anterior Jugular</string>
+    <string name="vib">VIb: Pre-Laryngeal</string>
+    <string name="viia">VIIa: Retro-Pharyngian</string>
+    <string name="viib">VIIb: Retrostyloïd</string>
+    <string name="viii">VIII: Parotidian</string>
+    <string name="ix">IX: Bucco-Facial</string>
+    <string name="xa">Xa: Retro &amp; Subauricular</string>
+    <string name="xb">Xb: Occipital</string>
 
 
 
@@ -47,7 +47,7 @@
     <string name="pilierposterieur">Pharyngopalatine Arch</string>
     <string name="pilieranterieur">Glossopalatine Arch</string>
     <string name="basedelangue">Base of Tongue</string>
-    <string name="sillonamygdaloglosse">Inconnu</string>
+    <string name="sillonamygdaloglosse">Tonsillolingual sulcus</string>
     <string name="espaceparapharynge">Parapharyngeal Space</string>
     <string name="foramenovale">Foramen Ovale</string>
     <string name="gangliondegasser">Trigeminal ganglia</string>
@@ -60,7 +60,7 @@
     <string name="paroipharyngeeposterieure">Posterior Pharyngeal Wall</string>
     <string name="voile">Soft Palate</string>
     <string name="trigoneretromolairesuperieur">Upper Retromolar Triangle</string>
-    <string name="carrefourdestroisreplis">Inconnu</string>
+    <string name="carrefourdestroisreplis">Confluence of ary/ glosso/ pharyngo - epiglottic folds</string>
     <string name="racinedelangue">Root of Tongue</string>
     <string name="glandesousmaxillaire">Sub-Maxillary gland</string>
     <string name="gencive">Gingiva</string>
@@ -74,8 +74,8 @@
     <string name="plancherposterieur">Posterior Floor</string>
     <string name="langueposterieure">Posterior Tongue</string>
     <string name="replipharyngoepiglottique">Epiglotticopalatine Fold</string>
-    <string name="facelingualedelepiglotte">Inconnu</string>
-    <string name="espacepreepiglottique">Inconnu</string>
+    <string name="facelingualedelepiglotte">Anterior surface of Epiglottis</string>
+    <string name="espacepreepiglottique">Pre-epiglottic Space</string>
     <string name="palaisdur">Hard Palate</string>
     <string name="vallecule">Vallecula</string>
     <string name="languemobile">Mobile Tongue</string>
@@ -83,7 +83,7 @@
     <string name="faceinternedejoue">Inner Face of Cheek</string>
     <string name="genciveinferieure">Lower Gingiva</string>
     <string name="genciveposterieure">Posterior Gingiva</string>
-    <string name="facedelepiglotte">Inconnu</string>
+    <string name="facedelepiglotte">Surface of Epiglottis</string>
     <string name="langue">Mobile Tongue</string>
     <string name="english">English</string>
     <string name="french">French</string>
@@ -124,7 +124,7 @@
     <string name="mandibuledeproximite">Proximal mandible</string>
     <string name="perschangestitle">Case by Case Sublocation Changes</string>
     <string name="aireganglionnaire">Lymph node area</string>
-    <string name="x">Posterior Skull</string>
+    <string name="x">X: Posterior Skull</string>
     <string name="sinussphenoidal">Sphenoid Sine</string>
     <string name="sinuspiriforme">Piriform sine</string>
     <string name="paroipharyngeelaterale">Lateral side of pharyngeal wall</string>
@@ -154,8 +154,8 @@
     <string name="brachialplexus">Brachial Plexus</string>
     <string name="arytenoid">Arytenoid</string>
     <string name="allSelectedSwitch">Select All</string>
-    <string name="iia">Upper Jugular nodes (anterior)</string>
-    <string name="iib">Upper Jugular Nodes (posterior)</string>
+    <string name="iia">IIa: Upper Jugular nodes (anterior)</string>
+    <string name="iib">IIb: Upper Jugular Nodes (posterior)</string>
     <string name="fossepterygopalatine">Pterygomaxillary Fossa</string>
     <string name="plancherbuccalmed">Tongue Floor (median)</string>
     <string name="plancherbuccallat">Tongue Floor (lateral</string>
@@ -189,6 +189,8 @@
     <string name="ppphypop">Posterior Wall of Hypopharynx</string>
     <string name="sinuspi">Piriforme Sine</string>
     <string name="sphenoide">Sphenoid Sine</string>
+    <string name="droite">Right</string>
+    <string name="gauche">Left</string>
 
 
 </resources>

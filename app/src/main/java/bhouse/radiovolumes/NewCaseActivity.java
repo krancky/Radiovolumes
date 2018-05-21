@@ -71,7 +71,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
     ListView nExpandableListView;
     ListView tExpandableListView;
     NSelectionAdapter nExpandableListAdapter;
-    TSelectionAdapter tExpandableListAdapter;
+    NewCaseTSelectionAdapter tExpandableListAdapter;
 
     List<String> texpandableListTitle;
     List<String> nexpandableListTitle;
@@ -106,6 +106,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_new_case);
 
         // Is the case new or charged?
@@ -237,7 +238,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
 
         prepareTData();
 
-        tExpandableListAdapter = new TSelectionAdapter(this, tItemList, tumorAreaTemplateList, cancer);
+        tExpandableListAdapter = new NewCaseTSelectionAdapter(this, tItemList, tumorAreaTemplateList, cancer);
         nExpandableListView.setAdapter(nExpandableListAdapter);
 
         LayoutInflater inflater = getLayoutInflater();
@@ -366,6 +367,22 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
         cancer.nClear();
         cancer.tClear();
         cancer.tDClear();
+        cancer.nDClear();
+        File f = getFilesDir();
+        File[] files =f.listFiles();
+        String filepath = f.getPath() + "/" + cancer.getName() +".duc";
+        Cancer cancerReload = new Cancer();
+        try {
+            cancerReload = Cancer.readFromFile(MainActivity.CONTEXT, filepath);
+            //cancer.setCancerTVolumes(cancerReload.getCancerTVolumes());
+            cancer.setCancerNData(cancerReload.getCancerNData());
+            cancer.setCancerTData(cancerReload.getCancerTData());
+            cancer.setCancerNTarData(cancerReload.getCancerNTarData());
+            cancer.setCancerTTarData(cancerReload.getCancerTTarData());
+        }
+        catch (Exception e) {
+
+        }
         NewCaseActivity.this.ctv56NCaseList.clear();
 
         this.isAdvanced = itemListSwitch.isChecked();

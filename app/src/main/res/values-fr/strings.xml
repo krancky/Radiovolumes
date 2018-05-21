@@ -25,22 +25,22 @@
     <string name="contralateral">Controlatéral</string>
 
 
-    <string name="ia">Sous Mentonniers</string>
-    <string name="ib">Sous-Mandibulaires</string>
-    <string name="ii">Jugulaires Supérieurs</string>
-    <string name="iii">Jugulaires Moyens</string>
-    <string name="iva">Jugulaires Inférieurs</string>
-    <string name="ivb">Supraclaviculaires Médian</string>
+    <string name="ia">Ia: Sous Mentonniers</string>
+    <string name="ib">Ib: Sous-Mandibulaires</string>
+    <string name="ii">II: Jugulaires Supérieurs</string>
+    <string name="iii">III: Jugulaires Moyens</string>
+    <string name="iva">IVa: Jugulaires Inférieurs</string>
+    <string name="ivb">IVb: Supraclaviculaires Médian</string>
     <string name="vab">Triangle Posterieur</string>
-    <string name="vc">supra-Claviculaires Latéraux</string>
-    <string name="via">Jugulaires Antérieurs</string>
-    <string name="vib">Pré-Laryngés</string>
-    <string name="viia">Rétro-Pharyngés</string>
-    <string name="viib">Rétro-Styloïdiens</string>
-    <string name="viii">Parotidiens</string>
-    <string name="ix">Bucco-Faciaux</string>
-    <string name="xa">Rétro &amp; Subauriculaires</string>
-    <string name="xb">Occipitaux</string>
+    <string name="vc">Vc: supra-Claviculaires Latéraux</string>
+    <string name="via">VIa: Jugulaires Antérieurs</string>
+    <string name="vib">VIb: Pré-Laryngés</string>
+    <string name="viia">VIIa: Rétro-Pharyngés</string>
+    <string name="viib">VIIb: Rétro-Styloïdiens</string>
+    <string name="viii">VIII: Parotidiens</string>
+    <string name="ix">IX: Bucco-Faciaux</string>
+    <string name="xa">Xa: Rétro &amp; Subauriculaires</string>
+    <string name="xb">Xb: Occipitaux</string>
 
 
 
@@ -127,7 +127,7 @@
     <string name="mandibuledeproximite">Mandibule de Proximite</string>
     <string name="perschangestitle">Modifications ponctuelles</string>
     <string name="aireganglionnaire">Aire ganglionnaire</string>
-    <string name="x">Crâniens postérieurs</string>
+    <string name="x">X: Crâniens postérieurs</string>
     <string name="sinussphenoidal">Sinus sphénoïdal</string>
     <string name="sinuspiriforme">Sinus Piriforme</string>
     <string name="paroipharyngeelaterale">Paroi pharyngée latérale</string>
@@ -157,8 +157,8 @@
     <string name="brachialplexus">Plexus Brachial</string>
     <string name="arytenoid">Arytenoide</string>
     <string name="allSelectedSwitch">Tout selectionner</string>
-    <string name="iia">Jugulaires Supérieurs (antérieurs)</string>
-    <string name="iib">Jugulaires Supérieurs (postérieurs)</string>
+    <string name="iia">IIa: Jugulaires Supérieurs (antérieurs)</string>
+    <string name="iib">IIb: Jugulaires Supérieurs (postérieurs)</string>
 
     <string name="plancherbuccalmed">Plancher buccal Median</string>
     <string name="plancherbuccallat">Plancher buccal Latéral</string>
@@ -193,6 +193,8 @@
     <string name="notavailableforlarynx">Pas de contours disponibles pour Larynx - Hypopharynx</string>
     <string name="ppphypop">Paroi Hypopharyngée postérieure</string>
     <string name="sinuspi">Sinus Piriforme</string>
+    <string name="droite">Droite</string>
+    <string name="gauche">Gauche</string>
 
 
 </resources>

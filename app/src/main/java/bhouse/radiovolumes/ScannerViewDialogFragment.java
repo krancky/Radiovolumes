@@ -1,11 +1,10 @@
 package bhouse.radiovolumes;
 
 import android.app.Activity;
-
+import android.app.DialogFragment;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,37 +13,32 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ListView;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import bhouse.radiovolumes.processor.OLimitsXMLHandler;
 
-
-public class MyV4DialogFragment extends DialogFragment {
+public class ScannerViewDialogFragment extends DialogFragment {
 
     public static interface OnCompleteListener {
-        public abstract void onComplete(HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<MyV4DialogFragment.Item> items);
+        public abstract void onComplete(HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedList);
     }
 
 
     private OnCompleteListener mListener;
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     private HashMap<String, List<String>> cancerNTarData;
-    private TabbedActivity activity;
-    private LinkedHashMap<String, Integer> displayedListG;
-    private LinkedHashMap<String, Integer> displayedListD;
+    private ScannerViewActivity_simple activity;
+    private LinkedHashMap<String, Integer> displayedList;
     private List<Slice> slices;
-    private LinkedHashMap<String, ArrayList<String>> oLimits;
     ArrayList<Item> countryList = new ArrayList<Item>();
 
 
 
-    public static MyV4DialogFragment newInstance(String title) {
-        MyV4DialogFragment dialog = new MyV4DialogFragment();
+    public static ScannerViewDialogFragment newInstance(String title) {
+        ScannerViewDialogFragment dialog = new ScannerViewDialogFragment();
         Bundle args = new Bundle();
         args.putString("title", title);
         dialog.setArguments(args);
@@ -67,35 +61,28 @@ public class MyV4DialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        //getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        View v = inflater.inflate(R.layout.fragment_dialog_v4, container, false);
+        View v = inflater.inflate(R.layout.fragment_dialog, container, false);
 
 
         Button dismiss = (Button) v.findViewById(R.id.dismiss);
 
 
-        this.activity = (TabbedActivity) getActivity();
+        this.activity = (ScannerViewActivity_simple) getActivity();
         cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
         cancerNTarData = new HashMap<String, List<String>>();
         cancerNTarData = activity.getCancerNTarData();
         cancerTTarData = activity.getCancerTTarData();
-        displayedListG = new LinkedHashMap<>();
-        displayedListD = new LinkedHashMap<>();
-        //displayedListG = activity.getDisplayedList();
-        //slices = activity.getSlices();
+        displayedList = new LinkedHashMap<>();
+        displayedList = activity.getDisplayedList();
+        slices = activity.getSlices();
 
 
         Map<String,String> colors = ModifierHashOperator.getHashMapResource(getContext(), R.xml.sub_areas_colors);
 
         ListView lvChange = (ListView)v.findViewById(R.id.list_display);
-        prepareOLimitsData();
-        prepareSublocationList();
-        //prepareTData();
-        prepareDisplayList();
+        prepareTData();
         //ArrayAdapter<String> changeAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, displayedList);
-        //v5UserAdapter1 changeAdapter = new v5UserAdapter1(getActivity(), displayedList, cancerTTarData, tItemList);
-        v5UserAdapter1 changeAdapter = new v5UserAdapter1(this.getContext(), displayedListG, displayedListD, slices, colors, countryList);
+        ScannerViewDialogAdapter changeAdapter = new ScannerViewDialogAdapter(this.getContext(), displayedList, slices, colors, countryList);
         lvChange.setAdapter(changeAdapter);
 
         Button cancel = (Button) v.findViewById(R.id.cancel);
@@ -113,7 +100,7 @@ public class MyV4DialogFragment extends DialogFragment {
 
             @Override
             public void onClick(View v) {
-                mListener.onComplete(cancerTTarData, cancerNTarData, displayedListG, displayedListD, countryList);
+                mListener.onComplete(cancerTTarData, cancerNTarData, displayedList);
                 dismiss();
             }
         });
@@ -121,8 +108,6 @@ public class MyV4DialogFragment extends DialogFragment {
         getDialog().setTitle(getArguments().getString("title"));
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         getDialog().setCanceledOnTouchOutside(true);
-
-
 
         return v;
     }
@@ -142,28 +127,6 @@ public class MyV4DialogFragment extends DialogFragment {
         window.setLayout(width, height);
         window.setGravity(Gravity.CENTER);
         //TODO:
-    }
-
-    public  void prepareSublocationList(){
-        int sectionNumber = 1;
-        this.countryList.add(new SectionItem("Oropharynx", sectionNumber));
-        for (Map.Entry<String, ArrayList<String>> stringArray : oLimits.entrySet()){
-            if (stringArray.getValue().get(1).equals("Oropharynx")){
-                this.countryList.add(new EntryItem(stringArray.getValue().get(0), sectionNumber));
-                displayedListG.put(stringArray.getValue().get(0).replaceAll("\\s+", "").toLowerCase(), 0);
-                displayedListD.put(stringArray.getValue().get(0).replaceAll("\\s+", "").toLowerCase(), 0);
-            };
-        }
-        sectionNumber = 2;
-        this.countryList.add(new SectionItem("Cavite Buccale", sectionNumber));
-        for (Map.Entry<String, ArrayList<String>> stringArray : oLimits.entrySet()){
-            if (stringArray.getValue().get(1).equals("Cavite Buccale")){
-                this.countryList.add(new EntryItem(stringArray.getValue().get(0), sectionNumber));
-                displayedListG.put(stringArray.getValue().get(0).replaceAll("\\s+", "").toLowerCase(), 0);
-                displayedListD.put(stringArray.getValue().get(0).replaceAll("\\s+", "").toLowerCase(), 0);
-            };
-        }
-        sectionNumber = 3;
     }
 
     public void prepareTData() {
@@ -250,37 +213,6 @@ public class MyV4DialogFragment extends DialogFragment {
         public boolean isSection() {
             return false;
         }
-    }
-
-    public void prepareOLimitsData(){
-        try {
-            OLimitsXMLHandler oLimitsXMLHandler = new OLimitsXMLHandler();
-            this.oLimits = oLimitsXMLHandler.parse(activity.getAssets().open("TNOrganlimit.xml"));
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-
-    void prepareDisplayList(){
-        for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()){
-            HashMap<String, List<String>> sideMap = areaMap.getValue();
-            for (HashMap.Entry<String, List<String>> map: sideMap.entrySet()){
-                for (String location:map.getValue()){
-                    if (map.getKey().equalsIgnoreCase("Gauche")){
-                        displayedListG.put(location.replaceAll("\\s+", "").toLowerCase(),1);
-                    //}else{
-                        //
-                        // displayedList.put(location.replaceAll("\\s+", "").toLowerCase(),2);
-                    }
-                    if (map.getKey().equalsIgnoreCase("Droite")) {
-                        displayedListD.put(location.replaceAll("\\s+", "").toLowerCase(), 1);
-                    }
-
-                }
-            }
-        }
-        int i = 1;
     }
 
 }

@@ -1,10 +1,11 @@
 package bhouse.radiovolumes;
 
 import android.app.Activity;
-import android.app.DialogFragment;
+
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,26 +14,32 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import bhouse.radiovolumes.processor.OLimitsXMLHandler;
+
 
 public class Tab2TDialogFragment extends DialogFragment {
 
     public static interface OnCompleteListener {
-        public abstract void onComplete(HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedList);
+        //Attention interface is sent back to the activity
+        public abstract void onCompleteT(HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNTarData, LinkedHashMap<String, Integer> displayedListG, LinkedHashMap<String, Integer> displayedListD, ArrayList<Tab2TDialogFragment.Item> items);
     }
 
 
     private OnCompleteListener mListener;
     private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     private HashMap<String, List<String>> cancerNTarData;
-    private ScannerViewActivity_simple activity;
-    private LinkedHashMap<String, Integer> displayedList;
+    private TabbedActivity activity;
+    private LinkedHashMap<String, Integer> displayedListG;
+    private LinkedHashMap<String, Integer> displayedListD;
     private List<Slice> slices;
+    private LinkedHashMap<String, ArrayList<String>> oLimits;
     ArrayList<Item> countryList = new ArrayList<Item>();
 
 
@@ -61,28 +68,35 @@ public class Tab2TDialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_dialog, container, false);
+        //getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        //getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        View v = inflater.inflate(R.layout.fragment_dialog_v4, container, false);
 
 
         Button dismiss = (Button) v.findViewById(R.id.dismiss);
 
 
-        this.activity = (ScannerViewActivity_simple) getActivity();
+        this.activity = (TabbedActivity) getActivity();
         cancerTTarData = new HashMap<String, HashMap<String, List<String>>>();
         cancerNTarData = new HashMap<String, List<String>>();
         cancerNTarData = activity.getCancerNTarData();
         cancerTTarData = activity.getCancerTTarData();
-        displayedList = new LinkedHashMap<>();
-        displayedList = activity.getDisplayedList();
-        slices = activity.getSlices();
+        displayedListG = new LinkedHashMap<>();
+        displayedListD = new LinkedHashMap<>();
+        //displayedListG = activity.getDisplayedList();
+        //slices = activity.getSlices();
 
 
         Map<String,String> colors = ModifierHashOperator.getHashMapResource(getContext(), R.xml.sub_areas_colors);
 
         ListView lvChange = (ListView)v.findViewById(R.id.list_display);
-        prepareTData();
+        prepareOLimitsData();
+        prepareSublocationList();
+        //prepareTData();
+        prepareDisplayList();
         //ArrayAdapter<String> changeAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, displayedList);
-        UserAdapter1 changeAdapter = new UserAdapter1(this.getContext(), displayedList, slices, colors, countryList);
+        //Tab2TDialogAdapter changeAdapter = new Tab2TDialogAdapter(getActivity(), displayedList, cancerTTarData, tItemList);
+        Tab2TDialogAdapter changeAdapter = new Tab2TDialogAdapter(this.getContext(), displayedListG, displayedListD, slices, colors, countryList);
         lvChange.setAdapter(changeAdapter);
 
         Button cancel = (Button) v.findViewById(R.id.cancel);
@@ -100,7 +114,7 @@ public class Tab2TDialogFragment extends DialogFragment {
 
             @Override
             public void onClick(View v) {
-                mListener.onComplete(cancerTTarData, cancerNTarData, displayedList);
+                mListener.onCompleteT(cancerTTarData, cancerNTarData, displayedListG, displayedListD, countryList);
                 dismiss();
             }
         });
@@ -108,6 +122,8 @@ public class Tab2TDialogFragment extends DialogFragment {
         getDialog().setTitle(getArguments().getString("title"));
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         getDialog().setCanceledOnTouchOutside(true);
+
+
 
         return v;
     }
@@ -127,6 +143,28 @@ public class Tab2TDialogFragment extends DialogFragment {
         window.setLayout(width, height);
         window.setGravity(Gravity.CENTER);
         //TODO:
+    }
+
+    public  void prepareSublocationList(){
+        int sectionNumber = 1;
+        this.countryList.add(new SectionItem("Oropharynx", sectionNumber));
+        for (Map.Entry<String, ArrayList<String>> stringArray : oLimits.entrySet()){
+            if (stringArray.getValue().get(1).equals("Oropharynx")){
+                this.countryList.add(new EntryItem(stringArray.getValue().get(0), sectionNumber));
+                displayedListG.put(stringArray.getValue().get(0).replaceAll("\\s+", "").toLowerCase(), 0);
+                displayedListD.put(stringArray.getValue().get(0).replaceAll("\\s+", "").toLowerCase(), 0);
+            };
+        }
+        sectionNumber = 2;
+        this.countryList.add(new SectionItem("Cavite Buccale", sectionNumber));
+        for (Map.Entry<String, ArrayList<String>> stringArray : oLimits.entrySet()){
+            if (stringArray.getValue().get(1).equals("Cavite Buccale")){
+                this.countryList.add(new EntryItem(stringArray.getValue().get(0), sectionNumber));
+                displayedListG.put(stringArray.getValue().get(0).replaceAll("\\s+", "").toLowerCase(), 0);
+                displayedListD.put(stringArray.getValue().get(0).replaceAll("\\s+", "").toLowerCase(), 0);
+            };
+        }
+        sectionNumber = 3;
     }
 
     public void prepareTData() {
@@ -213,6 +251,37 @@ public class Tab2TDialogFragment extends DialogFragment {
         public boolean isSection() {
             return false;
         }
+    }
+
+    public void prepareOLimitsData(){
+        try {
+            OLimitsXMLHandler oLimitsXMLHandler = new OLimitsXMLHandler();
+            this.oLimits = oLimitsXMLHandler.parse(activity.getAssets().open("TNOrganlimit.xml"));
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    void prepareDisplayList(){
+        for (HashMap.Entry<String, HashMap<String, List<String>>> areaMap : cancerTTarData.entrySet()){
+            HashMap<String, List<String>> sideMap = areaMap.getValue();
+            for (HashMap.Entry<String, List<String>> map: sideMap.entrySet()){
+                for (String location:map.getValue()){
+                    if (map.getKey().equalsIgnoreCase("Gauche")){
+                        displayedListG.put(location.replaceAll("\\s+", "").toLowerCase(),1);
+                    //}else{
+                        //
+                        // displayedList.put(location.replaceAll("\\s+", "").toLowerCase(),2);
+                    }
+                    if (map.getKey().equalsIgnoreCase("Droite")) {
+                        displayedListD.put(location.replaceAll("\\s+", "").toLowerCase(), 1);
+                    }
+
+                }
+            }
+        }
+        int i = 1;
     }
 
 }

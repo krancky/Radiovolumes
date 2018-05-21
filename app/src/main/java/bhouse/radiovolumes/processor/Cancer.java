@@ -185,6 +185,8 @@ public class Cancer implements Serializable {
         cancerTDeveloppedVolumes.clear();
     }
 
+    public void nDClear() {cancerNDeveloppedVolumes.clear();}
+
     public void setCancerTTarData(HashMap<String, HashMap<String, List<String>>> cancerTTarData) {
         this.cancerTTarData = cancerTTarData;
     }
@@ -219,6 +221,8 @@ public class Cancer implements Serializable {
      * @param name
      * @return
      */
+
+
     public static Cancer readFromFile(Context context, String name) {
         Cancer cancer = null;
         try {
