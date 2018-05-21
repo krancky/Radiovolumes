@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ADARO</string>
-    <string name="main_title">Radiovolumes</string>
+    <string name="main_title">ADARO</string>
     <string name="tClickTv">Tumor Sublocation</string>
     <string name="nClickTv">Invaded Lymph Nodes</string>
     <string name="addSwitch">Advanced Tumor</string>
