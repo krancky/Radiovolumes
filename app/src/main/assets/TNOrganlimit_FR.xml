@@ -1,0 +1,645 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Organs>
+    <Organ>
+        <Name>amygdale</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>Caud. limit of the veil</CranialL>
+        <CaudalL>Cran. part of the 3-fold crossroad</CaudalL>
+        <AnteriorL>Post. limit of the anterior pilar</AnteriorL>
+        <PosteriorL>Ant. limit of the post. pilar</PosteriorL>
+        <MedialL>Luminal pharynx</MedialL>
+        <LateralL>Med. part of the parapharyng. space</LateralL>
+        <Comment>None</Comment>
+    </Organ>
+    <Organ>
+        <Name>basedelangue</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+
+    <Organ>
+        <Name>espacegraisseux</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>espaceparapharynge</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>glandesousmaxillaire</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>joue</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>languemobile</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>mandibule</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>palaisdur</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>pilieranterieur</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>pilierposterieur</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>plancherbuccal</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>pterygoidienmedial</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>sillonamygdaloglosse</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>trigoneretromolaireinferieur</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>trigoneretromolairesuperieur</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>voile</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>foramenovale</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>gangliondegasser</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>langueposterieure</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>carrefourdestroisreplis</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>mandibuledeproximite</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>gencivesuperieure</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>genciveinferieure</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>genciveposterieure</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>espaceparotidien</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>fossepterygopalatine</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>plancherposterieur</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>branchemontante</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>espacecarotidien</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>sinuscaverneux</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>espaceretropharynge</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>cavum</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>replipharyngoepiglottique</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>sphenoide</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>vallecule</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>facelingualedelepiglotte</Name>
+        <Area>Oropharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>espacepreepiglottique</Name>
+        <Area>Cavite Buccale</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>sinuspiriforme</Name>
+        <Area>LarynxHypopharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>paroipharyngeelaterale</Name>
+        <Area>LarynxHypopharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>paroipharyngeeposterieure</Name>
+        <Area>LarynxHypopharynx</Area>
+        <CranialL>The cranial limit of the tonsil is...</CranialL>
+        <CaudalL>The caudal limit of the tonsil is...</CaudalL>
+        <AnteriorL>The anterior limit of the tonsil is</AnteriorL>
+        <PosteriorL>The posterior limit of the tonsil is</PosteriorL>
+        <MedialL>The medial limit of the tonsil is</MedialL>
+        <LateralL>The lateral limit of the tonsil is...</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+
+
+    <Organ>
+        <Name>IA</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Muscle Mylo-Hyoide</CranialL>
+        <CaudalL>Muscle Platysma (Extremite caudale du ventre anterieur du muscle digastrique)</CaudalL>
+        <AnteriorL>Symphyse mentale</AnteriorL>
+        <PosteriorL>Corps du hyoide / muscle mylo-hoide</PosteriorL>
+        <MedialL>NA</MedialL>
+        <LateralL>Extremite mediale du ventre anterieur du digatrique </LateralL>
+        <Comment>Groupe Sous-Mental</Comment>
+    </Organ>
+    <Organ>
+        <Name>IB</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Extremite craniale de la glande sous-mandibulaire; Anterieurement : muscle mylo-hyoide.</CranialL>
+        <CaudalL>Plan passant par l'extremite caudale de l'os hoide et l'extremite caudale de la mandibule; ou bien extremite caudale de la glande sous-mandibulaire (choisir l'option la plus caudale)/platysma m.</CaudalL>
+        <AnteriorL>Symphyse mentale</AnteriorL>
+        <PosteriorL>Extremite posterieure de la glande sous-mandibulaire (caudalement)/ ventre posterieur du digastrique (cranialement)</PosteriorL>
+        <MedialL>Extremite laterale du ventre anterieur du muscle digastrique (caudally)/ ventre posterieur du muscle digastrique (cranialement)</MedialL>
+        <LateralL>Face mediale de la mandibule jusqu'a son extremite caudale/platysma (caudalement)/muscle pterygoide medial(posterieurement)</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>IIa</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Extremite caudale du processus lateral de C1.</CranialL>
+        <CaudalL>Extremite caudale du corps de l'os hyoide.</CaudalL>
+        <AnteriorL>Extremite posterieure de la glande sous-mandibulaire / Extremite posterieure du ventre posterieur du muscle digastrique.</AnteriorL>
+        <PosteriorL>Nerf accessoire (XI)</PosteriorL>
+        <MedialL>Extremite mediale de l'artere carotide interne /muscle scalene.</MedialL>
+        <LateralL>Surface profonde (mediale)du muscle sterno-cloido-mastoidien/platysma/ glande parotide/ ventre posterieur du digastrique</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>IIb</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Extremite caudale du processus lateral de C1..</CranialL>
+        <CaudalL>Extremite caudale du corps de l'os hyoide.</CaudalL>
+        <AnteriorL>Nerf accessoire (XI)</AnteriorL>
+        <PosteriorL>Posterior edge of sternocleidomastoid m</PosteriorL>
+        <MedialL>Extremite mediale de l'artere carotide interne /muscle scalene.</MedialL>
+        <LateralL>Surface profonde (mediale)du muscle sterno-cloido-mastoidien/platysma/ glande parotide/ ventre posterieur du digastrique</LateralL>
+        <Comment>NA</Comment>
+    </Organ>
+    <Organ>
+        <Name>III</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Extremite caudale du corps de l'os hyoide.</CranialL>
+        <CaudalL>Extremite caudale du cartilage cricoide.</CaudalL>
+        <AnteriorL>Extremite anterieure du muscle sterno-cloido-mastoidien / Tiers posterieur du muscle thyro-hyoide</AnteriorL>
+        <PosteriorL>Extremite posterieure du muscle sterno-cloido-mastoidien.</PosteriorL>
+        <MedialL>Bord medial de l'artere carotide commune / Muscles scalenes</MedialL>
+        <LateralL>Surface profonde du muscle sterno-cloido-mastoidien</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>IVa</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Extremite caudale du cartilage cricoide.</CranialL>
+        <CaudalL>2 cm au-dessus du manubrium sternal</CaudalL>
+        <AnteriorL>Bord anterieur du muscle sterno-cloido-mastoidien (cranialement)/Corps du muscle sterno-cloido-mastoidien (caudalement)</AnteriorL>
+        <PosteriorL>Bord posterieur du muscle sterno-cloido-mastoidien (cranialement)/muscles scalenes (caudalement)</PosteriorL>
+        <MedialL>Extremite mediale de l'artere carotide interne /muscles scalenes / Bord lateral de la thyroide</MedialL>
+        <LateralL>Surface profonde (mediane) du muscle sterno-cloido-mastoidien (cranialement)/ Bord lateral du muscle sterno-cloido-mastoidien (caudalement)</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+
+    <Organ>
+        <Name>IVb</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Limite caudale du niveau IVa (2 cm au-dessus du manubrium sternal)</CranialL>
+        <CaudalL>Extremite craniale du manubrium sternal</CaudalL>
+        <AnteriorL>Surface profonde du muscle sterno-cloido-mastoidien/Surface posterieure de la clavicule</AnteriorL>
+        <PosteriorL>Bord anterieur des muscles scalenes (cranialement)/apex du poumon, veine brachio-cephalique, tronc brachio-cephalique (a droite) et artere carotide commune ainsi que l'artere sous-claviere a gauche (caudalement)</PosteriorL>
+        <MedialL>Bord lateral de l'aire VI (partie pre-tracheale)/Bord medial de la carotide commune</MedialL>
+        <LateralL>Bord lateral du muscle scalene</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>Vab</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Extremite craniale du corps de l'os hyoide</CranialL>
+        <CaudalL>Plan juste inferieur aux vaisseaux cervicaux transverses</CaudalL>
+        <AnteriorL>Extrenite posterieure du muscle sterno-cloido-mastoidien</AnteriorL>
+        <PosteriorL>Bord anterieur du muscle trapeze</PosteriorL>
+        <MedialL>Levator scapulae m./ muscles scalenes (caudalement</MedialL>
+        <LateralL>Platysma / Peau</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+    <Name>Vc</Name>
+    <Area>Aire Ganglionnaire</Area>
+    <CranialL>Plan juste inferieur aux vaisseaux cervicaux transverses.</CranialL>
+    <CaudalL>2 cm au-dessus du manubrium sternal</CaudalL>
+    <AnteriorL>Peau</AnteriorL>
+    <PosteriorL>Bord anterieur du muscle trapeze (cranialement)/±1 cm anterieur au muscle serratus anterior (caudalement)</PosteriorL>
+    <MedialL>Muscle scalene/Bord lateral du muscle sterno-cloido-mastoidien, Bord lateral de IVa</MedialL>
+    <LateralL>Muscle trapeze (cranialement)/clavicule (caudalement)</LateralL>
+    <Comment>Aucun</Comment>
+</Organ>
+    <Organ>
+        <Name>VIa</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Extremite caudale de l'os hyoide ou de la glande sous-maxillaire (au choix, selectionner le plus caudal).</CranialL>
+        <CaudalL>Extremite superieure du manubrium sternal.</CaudalL>
+        <AnteriorL>Platysma / Peau</AnteriorL>
+        <PosteriorL>Surface interne des muscles infra-hyoides</PosteriorL>
+        <MedialL>NA</MedialL>
+        <LateralL>Bords anterieurs des deux muscles sterno-cloido-mastoidiens</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>VIb</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Extremite caudale du cartilage thyroide</CranialL>
+        <CaudalL>Extremite superieure du manubrium sternal</CaudalL>
+        <AnteriorL>Surface posterieure des muscles infra-hyoides</AnteriorL>
+        <PosteriorL>Surface anterieure du larynx, glande thyroide et trachee (ganglions pre-tracheaux et pre-larynges)/muscle pre-vertebral (cote droit)/oesophage (cote gauche)</PosteriorL>
+        <MedialL>Surface laterale de la trachee et de l'oesophage (caudalement)</MedialL>
+        <LateralL>Artere carotide commune</LateralL>
+        <Comment>(a) Pour les tumeurs du plancher buccal anterieur, bord de langue et levre inferieure, prendre jusqu'a l'extremite caudale de l'os hyoide.</Comment>
+    </Organ>
+    <Organ>
+        <Name>VIIa</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Bord superieur du corps de C1 / Palais dur</CranialL>
+        <CaudalL>Extrenite superieure du corps de l'os hyoide.</CaudalL>
+        <AnteriorL>Bord posterieur du muscle constricteur du pharynx.</AnteriorL>
+        <PosteriorL>Muscles Longus capitis et longus colli.</PosteriorL>
+        <MedialL> Ligne parallele au bord lateral du muscle longus capitis.</MedialL>
+        <LateralL>Bord medial de l'artere carotide interne</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>VIIb</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Base de crane (foramen jugulaire)</CranialL>
+        <CaudalL>Extremite caudale du processus lateral de C1 (limite superieure de l'aire II)</CaudalL>
+        <AnteriorL>Bord posterieur de l'espace parapharynge pre-styloide</AnteriorL>
+        <PosteriorL>Corps vertebral de C1, base de crane</PosteriorL>
+        <MedialL>Bord medial de l'artere carotide interne</MedialL>
+        <LateralL>Processus styloide / Lobe parotidien profond</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>VIII</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Arche zygomatique, canal auditif interne</CranialL>
+        <CaudalL>Angle de la mandibule</CaudalL>
+        <AnteriorL>Bord posterieur du ramus mandibulaire et bord posterieur du masseter (lateralement), muscle pterygoidien medial (medialement).</AnteriorL>
+        <PosteriorL>Bord anterieur du sterno-cloido-mastoidien (lateralement), ventre posterieur du muscle digastrique (medialement)</PosteriorL>
+        <MedialL>Processus et muscle styloides</MedialL>
+        <LateralL>Aponevrose sous-cutanee superficielle</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>IX</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Extremite caudale de l'orbite</CranialL>
+        <CaudalL>Extremite caudale de la mandibule</CaudalL>
+        <AnteriorL>Aponevrose sous-cutanee superficielle</AnteriorL>
+        <PosteriorL>Bord anterieur du muscle masseter et corps adipeux buccal  (boule de Bichat)</PosteriorL>
+        <MedialL>Muscle buccinateur</MedialL>
+        <LateralL>Aponevrose sous-cutanee superficielle</LateralL>
+        <Comment>&lt;a href="https://www.ncbi.nlm.nih.gov/pubmed/24183870"&gt;Grégoire, &lt;i&gt;Radiother. Oncol.&lt;/i&gt;, 2017&lt;/a&gt;</Comment>
+    </Organ>
+    <Organ>
+        <Name>Xa</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Bord inferieur du conduit auditif externe</CranialL>
+        <CaudalL>Mastoide</CaudalL>
+        <AnteriorL>Bord posterieur du conduit auditif externe / Bord anterieur de la mastoide</AnteriorL>
+        <PosteriorL>Bord posterieur du sterno-cloido-mastoidien</PosteriorL>
+        <MedialL>Os Temporal</MedialL>
+        <LateralL>Tissus sous-cutanes</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+    <Organ>
+        <Name>Xb</Name>
+        <Area>Aire Ganglionnaire</Area>
+        <CranialL>Protuberance occipitale</CranialL>
+        <CaudalL>Bord inferieur de l'aire V.</CaudalL>
+        <AnteriorL>Bord posterieur du sterno-cloido-mastoidien</AnteriorL>
+        <PosteriorL>Bord anterieur du muscle trapeze</PosteriorL>
+        <MedialL>Muscles longs du cou</MedialL>
+        <LateralL>Tissus sous-cutanes</LateralL>
+        <Comment>Aucun</Comment>
+    </Organ>
+</Organs>

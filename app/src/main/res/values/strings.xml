@@ -191,6 +191,13 @@
     <string name="sphenoide">Sphenoid Sine</string>
     <string name="droite">Right</string>
     <string name="gauche">Left</string>
+    <string name="cranial">Cranial Limit</string>
+    <string name="caudal">Caudal Limit</string>
+    <string name="anterior">Anterior Limit</string>
+    <string name="posterior">Posterior Limit</string>
+    <string name="lateral">Lateral Limit</string>
+    <string name="medial">Medial Limit</string>
+    <string name="comment">Comments</string>
 
 
 </resources>

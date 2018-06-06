@@ -195,6 +195,13 @@
     <string name="sinuspi">Sinus Piriforme</string>
     <string name="droite">Droite</string>
     <string name="gauche">Gauche</string>
+    <string name="cranial">Limite Superieure</string>
+    <string name="lateral">Limite Med.</string>
+    <string name="medial">Limite Med.</string>
+    <string name="posterior">Limite Post.</string>
+    <string name="anterior">Limite ant.</string>
+    <string name="caudal">Limite Caudale</string>
+    <string name="comment">Commentaire:</string>
 
 
 </resources>

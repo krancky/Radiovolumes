@@ -46,6 +46,14 @@ public class TNAreaDialog extends DialogFragment {
     TextView tvMedialL;
     TextView tvLateralL;
     TextView tvComment;
+    TextView tvCommentStatic;
+    TextView tvCranialStatic;
+    TextView tvCaudalStatic;
+    TextView tvAnteriorStatic;
+    TextView tvPosteriorStatic;
+    TextView tvMedialStatic;
+    TextView tvLateralStatic;
+
     private OnCancelListener mListener;
     private SliceVectorItem slice;
 
@@ -72,7 +80,14 @@ public class TNAreaDialog extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.area_dialog, container, false);
+        View v;
+        if (slice.getType().equals("T")){
+            v = inflater.inflate(R.layout.area_dialog_t, container, false);
+        }
+        else {
+            v = inflater.inflate(R.layout.area_dialog_n, container, false);
+        }
+
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         getDialog().setCanceledOnTouchOutside(true);
 
@@ -102,8 +117,13 @@ public class TNAreaDialog extends DialogFragment {
         tvComment.setMovementMethod(LinkMovementMethod.getInstance());
         tvComment.setFocusable(true);
 
-
-
+        tvCommentStatic = (TextView) v.findViewById(R.id.tvComment_static) ;
+        tvCranialStatic = (TextView) v.findViewById(R.id.tvCranialL_static) ;
+        tvCaudalStatic = (TextView) v.findViewById(R.id.tvCaudal_static) ;
+        tvAnteriorStatic = (TextView) v.findViewById(R.id.tvAnteriorL_static) ;
+        tvPosteriorStatic = (TextView) v.findViewById(R.id.tvPosteriorL_static) ;
+        tvMedialStatic = (TextView) v.findViewById(R.id.tvMedialL_static) ;
+        tvLateralStatic = (TextView) v.findViewById(R.id.tvLateralL_static) ;
 
         chooseDisplay();
 
@@ -158,12 +178,22 @@ public class TNAreaDialog extends DialogFragment {
                 //int truc = context.getResources().getIdentifier(value.replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
                 String locationLocale = getActivity().getString(getActivity().getResources().getIdentifier(name.replaceAll("\\s+", "").toLowerCase(), "string", getActivity().getPackageName()));
                 tvName.setText(locationLocale);
-                tvCranialL.setText(entry.getValue().get(2));
-                tvCaudalL.setText(entry.getValue().get(3));
-                tvAnteriorL.setText(entry.getValue().get(4));
-                tvPosteriorL.setText(entry.getValue().get(5));
-                tvMedialL.setText(entry.getValue().get(6));
-                tvLateralL.setText(entry.getValue().get(7));
+                if(slice.getType().equals("N")){
+                    tvCranialL.setText(entry.getValue().get(2));
+                    tvCaudalL.setText(entry.getValue().get(3));
+                    tvAnteriorL.setText(entry.getValue().get(4));
+                    tvPosteriorL.setText(entry.getValue().get(5));
+                    tvMedialL.setText(entry.getValue().get(6));
+                    tvLateralL.setText(entry.getValue().get(7));
+                    tvCranialStatic.setText(R.string.cranial);
+                    tvCaudalStatic.setText(R.string.caudal);
+                    tvPosteriorStatic.setText(R.string.posterior);
+                    tvAnteriorStatic.setText(R.string.anterior);
+                    tvMedialStatic.setText(R.string.medial);
+                    tvLateralStatic.setText(R.string.lateral);
+                    tvCommentStatic.setText(R.string.comment);
+
+                }
                 tvComment.setText(Html.fromHtml(entry.getValue().get(8)));
                 try {
                     tvName.setTextColor(Color.parseColor(colors.get(entry.getKey().toLowerCase())));
@@ -171,8 +201,6 @@ public class TNAreaDialog extends DialogFragment {
                 catch (Error e){
                     Log.i("No color", "no color");
                 }
-
-
             }
         }
     }

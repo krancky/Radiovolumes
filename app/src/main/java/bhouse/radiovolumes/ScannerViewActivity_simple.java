@@ -13,8 +13,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 
 import bhouse.radiovolumes.helpLibraries.LocaleHelper;
+import bhouse.radiovolumes.processor.OARListXMLHandler;
 import bhouse.radiovolumes.processor.OLimitsXMLHandler;
 import bhouse.radiovolumes.helpLibraries.SingleScrollListView;
 import bhouse.radiovolumes.processor.XYPair;
@@ -159,6 +161,7 @@ public class ScannerViewActivity_simple extends Activity implements ScannerViewD
                             if (resId != 0) {
                                 sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
                                 sliceVectorItem.setSide(map.getKey());
+                                sliceVectorItem.setType("T");
                                 String machin = sliceVectorItem.getFilename().toLowerCase();
                                 XYPair truc = this.txyValues.get(sliceVectorItem.getLocation() + "_" + map.getKey().replaceAll("\\s+", "").toLowerCase()).get(String.valueOf(txySlice.getKey()));
                                 float bidule = Float.parseFloat((String) truc.getFirst());
@@ -188,6 +191,7 @@ public class ScannerViewActivity_simple extends Activity implements ScannerViewD
                         if (resId != 0) {
                             sliceVectorItem.setLocation(location.replaceAll("\\s+", "").toLowerCase());
                             sliceVectorItem.setSide(nodeMap.getKey());
+                            sliceVectorItem.setType("N");
                             String machin = sliceVectorItem.getFilename().toLowerCase();
                             XYPair truc = this.nxyValues.get(sliceVectorItem.getLocation() + "_" + nodeMap.getKey().replaceAll("\\s+", "").toLowerCase()).get(String.valueOf(nxySlice.getKey()));
                             float bidule = Float.parseFloat((String) truc.getFirst());
@@ -235,13 +239,23 @@ public class ScannerViewActivity_simple extends Activity implements ScannerViewD
 
 
     public void prepareOLimitsData(){
+
+        Locale current = getResources().getConfiguration().locale;
         try {
-            OLimitsXMLHandler oLimitsXMLHandler = new OLimitsXMLHandler();
-            this.oLimits = oLimitsXMLHandler.parse(getAssets().open("TNOrganlimit.xml"));
+            if (current.toLanguageTag().equals("fr")){
+                OLimitsXMLHandler oLimitsXMLHandler = new OLimitsXMLHandler();
+                this.oLimits = oLimitsXMLHandler.parse(getAssets().open("TNOrganlimit_FR.xml"));
+            }
+            else {
+                OLimitsXMLHandler oLimitsXMLHandler = new OLimitsXMLHandler();
+                this.oLimits = oLimitsXMLHandler.parse(getAssets().open("TNOrganlimit_EN.xml"));
+            }
         }
-        catch (IOException e){
-            e.printStackTrace();
-        }
+
+                catch (IOException e){
+                e.printStackTrace();
+            }
+
     }
 
     public LinkedHashMap<String, ArrayList<String>> getoLimits() {
