@@ -204,4 +204,10 @@
     <string name="comment">Commentaire:</string>
 
 
+    <string name="rectumcontour">Atlas de Contourage Rectum</string>
+    <string name="rectumt">Selection stade T</string>
+    <string name="t3">T3</string>
+    <string name="t4">T4</string>
+
+
 </resources>

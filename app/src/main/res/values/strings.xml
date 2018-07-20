@@ -200,4 +200,16 @@
     <string name="comment">Comments</string>
 
 
+    <string name="rectumcontour">Contour Atlas for Rectum</string>
+    <string name="rectumt">Select Tumour T stage</string>
+    <string name="t3">T3</string>
+    <string name="t4">T4</string>
+    <string name="switchpsabdoln">Presacral Nodes in Abdominal Position</string>
+    <string name="switcht4anteriorpelvic">Anterior Pelvic Organ Invasion</string>
+    <string name="switcht4analsphincter">Anal Sphincter Invasion</string>
+    <string name="switcht3extramsnode">Extra Mesorectal Node</string>
+    <string name="switchirf">Direct Infiltration of IRF or EAS</string>
+    <string name="switchvagina">Infiltration of Inferior Third of Vagina</string>
+
+
 </resources>

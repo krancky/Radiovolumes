@@ -84,9 +84,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
     private ImageView mImageView;
     private ImageView headerView;
     private TextView mTitle;
-    private TextView headerText1;
-    private TextView headerText2;
-    private TextView headerText3;
+
     private ImageButton mAddButton;
     private EditText mEditTextName;
     private MaterialSpinner spinner;

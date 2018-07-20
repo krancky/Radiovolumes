@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ui_to_hide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/NewCaseImage"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"
+                android:transitionName="tImage" />
+
+            <LinearLayout
+                android:id="@+id/llEditTextHolder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#95000000">
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_detail" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/placeNameHolder"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:background="@color/primary"
+                android:orientation="vertical"
+                android:transitionName="tNameHolder">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical">
+
+                    <fr.ganfra.materialspinner.MaterialSpinner
+                        android:id="@+id/CaseMainAreaSpinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp"
+                        android:minWidth="180dp"
+                        app:ms_alignLabels="true"
+                        app:ms_arrowColor="@color/black_overlay"
+                        app:ms_arrowSize="16dp"
+                        app:ms_baseColor="@color/primary_light"
+                        app:ms_dropDownHintView="@layout/spinner_dropdown_item"
+                        app:ms_enableErrorLabel="false"
+                        app:ms_enableFloatingLabel="false"
+                        app:ms_errorColor="@color/black_htr"
+                        app:ms_floatingLabelColor="@color/blue"
+                        app:ms_floatingLabelText="floating label"
+                        app:ms_highlightColor="@color/secondary_light"
+                        app:ms_hint="@string/rectumt"
+                        app:ms_hintView="@layout/hint_dropdown_item"
+                        app:ms_multiline="false"
+                        app:ms_thickness="2dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <ImageButton
+                android:id="@+id/btn_add"
+                android:layout_width="@dimen/floating_button_size"
+                android:layout_height="@dimen/floating_button_size"
+                android:layout_gravity="end"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="75dp"
+                android:alpha="1.0"
+                android:background="@drawable/btn_background"
+                android:contentDescription="@null"
+                android:elevation="@dimen/button_elevation" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LvLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <Switch
+            android:id="@+id/switchpsabdoln"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/switchpsabdoln" />
+
+        <Switch
+            android:id="@+id/switcht3extramsnode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/switcht3extramsnode" />
+
+        <Switch
+            android:id="@+id/switcht4anteriorpelvic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/switcht4anteriorpelvic" />
+
+        <Switch
+            android:id="@+id/switcht4analsphincter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/switcht4analsphincter" />
+
+
+
+        <Switch
+            android:id="@+id/switchirf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/switchirf" />
+
+        <Switch
+            android:id="@+id/switchvagina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/switchvagina" />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+

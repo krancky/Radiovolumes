@@ -18,9 +18,12 @@ public class MainPageItemsData {
     String newCase = context.getString(R.string.newCase);
     String load = context.getString(R.string.load);
     String atlas = context.getString(R.string.atlas);
+    String rectumcontour = context.getString(R.string.rectumcontour);
     this.placeNameArray.add(newCase);
     this.placeNameArray.add(load);
     this.placeNameArray.add(atlas);
+    this.placeNameArray.add(rectumcontour);
+
   }
 
   //public String[] placeNameArray = {"New case", "Load", "Test"};

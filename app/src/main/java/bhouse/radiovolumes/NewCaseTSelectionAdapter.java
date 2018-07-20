@@ -119,7 +119,7 @@ public class NewCaseTSelectionAdapter extends BaseAdapter {
                 convertView.setTag(holder);
                 //TextView tvItemTitle = (TextView) convertView.findViewById(R.id.tvItemTitle);
 
-                //tvItemTitle.setText(((NewCaseActivity.EntryItem) item.get(position)).getTitle());
+                //tvItemTitle.setText(((RectumCaseActivity.EntryItem) item.get(position)).getTitle());
 
         }
         else {

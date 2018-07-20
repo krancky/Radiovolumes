@@ -27,6 +27,9 @@
             android:name=".NewCaseActivity"
             android:label="NewCase" />
         <activity
+            android:name=".rectum.RectumCaseActivity"
+            android:label="RectumCase" />
+        <activity
             android:name=".TabbedActivity"
             android:label="TabbedActivity" />
         <activity android:name=".LoadCaseActivity" />

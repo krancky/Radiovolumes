@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UCaseCatalog>
+    <T3>
+        <TUCase>T3
+            <Location>T3</Location>
+            <NVolumes>
+            </NVolumes>
+            <TVolumes>
+                <TVolume>M</TVolume>
+                <TVolume>PSpelvic</TVolume>
+                <TVolume>LLNpost</TVolume>
+                <TVolume>LLNant</TVolume>
+            </TVolumes>
+        </TUCase>
+        <TUCase>T3 PSabdo
+            <Location>T3</Location>
+            <NVolumes>
+                <NLoc>N2</NLoc>
+            </NVolumes>
+            <TVolumes>
+                <TVolume>M</TVolume>
+                <TVolume>PSpelvic</TVolume>
+                <TVolume>LLNpost</TVolume>
+                <TVolume>PSabdo</TVolume>
+            </TVolumes>
+        </TUCase>
+    <TUCase>T3 N2
+        <Location>T3</Location>
+        <NVolumes>
+            <NLoc>N2</NLoc>
+        </NVolumes>
+        <TVolumes>
+            <TVolume>M</TVolume>
+            <TVolume>PSpelvic</TVolume>
+            <TVolume>LLNpost</TVolume>
+            <TVolume>LLNant</TVolume>
+        </TVolumes>
+    </TUCase>
+    </T3>
+    <T4>
+        <TUCase>T4 APO
+            <Location>T4</Location>
+            <NVolumes>
+                <NLoc>APO</NLoc>
+            </NVolumes>
+            <TVolumes>
+                <TVolume>M</TVolume>
+                <TVolume>PSpelvic</TVolume>
+                <TVolume>LLNpost</TVolume>
+                <TVolume>LLNant</TVolume>
+                <TVolume>EIN</TVolume>
+            </TVolumes>
+        </TUCase>
+        <TUCase>T4 APO PSabdo
+            <Location>T4</Location>
+            <NVolumes>
+                <NLoc>APO</NLoc>
+            </NVolumes>
+            <TVolumes>
+                <TVolume>M</TVolume>
+                <TVolume>PSpelvic</TVolume>
+                <TVolume>PSant</TVolume>
+                <TVolume>LLNpost</TVolume>
+                <TVolume>LLNant</TVolume>
+                <TVolume>EIN</TVolume>
+            </TVolumes>
+        </TUCase>
+        <TUCase>T4 APO
+            <Location>T4</Location>
+            <NVolumes>
+                <NLoc>APO</NLoc>
+            </NVolumes>
+            <TVolumes>
+                <TVolume>M</TVolume>
+                <TVolume>PSpelvic</TVolume>
+                <TVolume>LLNpost</TVolume>
+                <TVolume>LLNant</TVolume>
+                <TVolume>EIN</TVolume>
+            </TVolumes>
+        </TUCase>
+    </T4>
+
+
+
+
+</UCaseCatalog>
