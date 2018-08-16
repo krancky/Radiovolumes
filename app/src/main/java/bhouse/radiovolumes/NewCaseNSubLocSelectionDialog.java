@@ -114,24 +114,24 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
         n3.setText("n3");
 
         checkBoxn1 = (CheckBox) v.findViewById(R.id.checkBoxn1);
-        checkBoxn1.setTag(1);
+        checkBoxn1.setTag(0);
         checkBoxn1.setOnCheckedChangeListener(cbChangeListener);
         checkBoxn1.setChecked(checkboxStatus.get(1));
 
         checkBoxn2a = (CheckBox) v.findViewById(R.id.checkBoxn2a);
-        checkBoxn2a.setTag(2);
+        checkBoxn2a.setTag(1);
         checkBoxn2a.setOnCheckedChangeListener(cbChangeListener);
         checkBoxn2a.setChecked(checkboxStatus.get(2));
 
 
         checkBoxn2b = (CheckBox) v.findViewById(R.id.checkBoxn2b);
-        checkBoxn2b.setTag(3);
+        checkBoxn2b.setTag(2);
         checkBoxn2b.setOnCheckedChangeListener(cbChangeListener);
         checkBoxn2b.setChecked(checkboxStatus.get(3));
 
 
         checkBoxn3 = (CheckBox) v.findViewById(R.id.checkBoxn3);
-        checkBoxn3.setTag(4);
+        checkBoxn3.setTag(3);
         checkBoxn3.setOnCheckedChangeListener(cbChangeListener);
         checkBoxn3.setChecked(checkboxStatus.get(4));
 
