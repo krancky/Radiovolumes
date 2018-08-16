@@ -43,7 +43,7 @@ import fr.ganfra.materialspinner.MaterialSpinner;
 
 import android.widget.ImageView;
 
-public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionDialog.OnCompleteListener{
+public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionDialog.OnCompleteListener, NewCaseNSubLocSelectionDialog.OnCompleteListener{
 
 
 
@@ -405,6 +405,14 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
 
     }
 
+    public List<NodeAreaTemplate> getNodeAreaTemplateList() {
+        return nodeAreaTemplateList;
+    }
+
+    public void setNodeAreaTemplateList(List<NodeAreaTemplate> nodeAreaTemplateList) {
+        this.nodeAreaTemplateList = nodeAreaTemplateList;
+    }
+
     public void save() {
         Calendar c = Calendar.getInstance();
         NewCaseActivity.this.cancer.setTime(c.getTime());
@@ -441,6 +449,10 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
 
     public void onComplete(List<TumorAreaTemplate> tumorAreaTemplateList){
         this.tumorAreaTemplateList = tumorAreaTemplateList;
+    }
+
+    public void onNComplete(List<NodeAreaTemplate> nodeAreaTemplateList){
+        this.nodeAreaTemplateList = nodeAreaTemplateList;
     }
 
     /**

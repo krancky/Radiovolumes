@@ -15,6 +15,9 @@ public class NodeAreaTemplate implements Serializable {
     String leftContent;
     String rightContent;
     String Lateralized;
+    Integer size;
+    Boolean unique;
+    String subLocation;
 
     public String getLeftContent() {
         return leftContent;
@@ -72,6 +75,29 @@ public class NodeAreaTemplate implements Serializable {
         this.title = title;
     }
 
+    public Integer getSize() {
+        return size;
+    }
+
+    public String getSublocation() {
+        return subLocation;
+    }
+
+    public void setSublocation(String sublocation) {
+        this.subLocation = sublocation;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public Boolean getUnique() {
+        return unique;
+    }
+
+    public void setUnique(Boolean unique) {
+        this.unique = unique;
+    }
 
     public String getCompleteName() {
         return completeName;

@@ -3,6 +3,8 @@ package bhouse.radiovolumes;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+
+import android.app.FragmentManager;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
@@ -169,6 +171,13 @@ public class NSelectionAdapter extends BaseAdapter {
             int position = (Integer) checkBoxView.getTag();
             checkboxStatus_left.set(position, isChecked);
             NodeAreaTemplate h = (NodeAreaTemplate) nList.get(position);
+
+
+            FragmentManager fm = ((NewCaseActivity) context).getFragmentManager();
+            NewCaseNSubLocSelectionDialog dialogFragment = NewCaseNSubLocSelectionDialog.newInstance (h.getCompleteName(), position, "gauche");
+            dialogFragment.show(fm, "Sample Fragment");
+
+
             if(checkBoxView.isChecked()){
                 h.setLeftContent("1");
             }
