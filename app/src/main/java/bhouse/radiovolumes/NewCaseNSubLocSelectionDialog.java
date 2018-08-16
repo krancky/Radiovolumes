@@ -29,7 +29,7 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
     private ArrayList<Boolean> checkboxStatus = new ArrayList();
     private String title;
     private String side;
-    private OnCompleteListener mListener;
+
     //private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
     //private HashMap<String, List<String>> cancerNTarData;
     private NewCaseActivity activity;
@@ -37,6 +37,8 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
     //private List<Slice> slices;
     private List<NodeAreaTemplate> nList;
     int tumorPosition;
+    private OnCompleteListener mListener;
+    private CheckBox checkBoxn3, checkBoxn1, checkBoxn2a, checkBoxn2b;
     //ArrayList<Item> countryList = new ArrayList<Item>();
 
 
@@ -74,6 +76,7 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
         this.title = getArguments().getString("title");
         this.side = getArguments().getString("side");
         this.tumorPosition = getArguments().getInt("position");
+
         Button dismiss = (Button) v.findViewById(R.id.dismiss);
         //
 
@@ -82,7 +85,7 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
         this.nList = this.activity.getNodeAreaTemplateList();
         int i;
 
-        for (i = 0; i< nList.size(); i++) {
+        for (i = 0; i< 4; i++) {
                     checkboxStatus.add(false);
 
         }
@@ -106,25 +109,28 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
         TextView uniquen2a = (TextView) v.findViewById(R.id.uniquen2a);
         uniquen2a.setText("n2a");
         TextView multiplen2b = (TextView) v.findViewById(R.id.multiplen2b);
+        multiplen2b.setText("n2b");
         TextView n3 = (TextView) v.findViewById(R.id.n3);
-        CheckBox checkBoxn1 = (CheckBox) v.findViewById(R.id.checkBoxn1);
+        n3.setText("n3");
+
+        checkBoxn1 = (CheckBox) v.findViewById(R.id.checkBoxn1);
         checkBoxn1.setTag(1);
         checkBoxn1.setOnCheckedChangeListener(cbChangeListener);
         checkBoxn1.setChecked(checkboxStatus.get(1));
 
-        CheckBox checkBoxn2a = (CheckBox) v.findViewById(R.id.checkBoxn2a);
+        checkBoxn2a = (CheckBox) v.findViewById(R.id.checkBoxn2a);
         checkBoxn2a.setTag(2);
         checkBoxn2a.setOnCheckedChangeListener(cbChangeListener);
         checkBoxn2a.setChecked(checkboxStatus.get(2));
 
 
-        CheckBox checkBoxn2b = (CheckBox) v.findViewById(R.id.checkBoxn2b);
+        checkBoxn2b = (CheckBox) v.findViewById(R.id.checkBoxn2b);
         checkBoxn2b.setTag(3);
         checkBoxn2b.setOnCheckedChangeListener(cbChangeListener);
         checkBoxn2b.setChecked(checkboxStatus.get(3));
 
 
-        CheckBox checkBoxn3 = (CheckBox) v.findViewById(R.id.checkBoxn3);
+        checkBoxn3 = (CheckBox) v.findViewById(R.id.checkBoxn3);
         checkBoxn3.setTag(4);
         checkBoxn3.setOnCheckedChangeListener(cbChangeListener);
         checkBoxn3.setChecked(checkboxStatus.get(4));
@@ -134,7 +140,12 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
 
             @Override
             public void onClick(View v) {
-
+                if (!checkBoxn1.isChecked()&&!checkBoxn2a.isChecked()&&!checkBoxn2b.isChecked()&&!checkBoxn3.isChecked()){
+                    Toast.makeText(v.getContext(), "Select lymph node invasion", Toast.LENGTH_SHORT).show();
+                } else{
+                    mListener.onNComplete(nList);
+                    dismiss();
+                }
 
             }
         });
@@ -168,23 +179,26 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
         @Override
         public void onCheckedChanged(CompoundButton checkBoxView, boolean isChecked) {
             int position = (Integer) checkBoxView.getTag();
-            checkboxStatus.set(position, isChecked);
+            checkboxStatus.set(tumorPosition, isChecked);
             if (side.equals("gauche")){
                 if (checkBoxView.isChecked()) {
                     //itemsContent.add(position, "1");
                     nList.get(tumorPosition).setLeftContent(String.valueOf(position));
+                    //checkboxStatus.set(tumorPosition, true);
                     //nList.get(tumorPosition).setSize(position);
                     Log.i("duck","dick");
 
                 } else {
                     //itemsContent.add(position, "0");
                     //nList.get(tumorPosition).setSublocationLeftContent(position,"0");
+                    //checkboxStatus.set(tumorPosition, false);
                 }
             }
             if(side.equals("droite")){
                 if (checkBoxView.isChecked()) {
                     //itemsContent.add(position, "1");
                     //nList.get(tumorPosition).setSublocationRightContent(position,"1");
+                    nList.get(tumorPosition).setRightContent(String.valueOf(position));
                     Log.i("duck","dick");
 
                 } else {
