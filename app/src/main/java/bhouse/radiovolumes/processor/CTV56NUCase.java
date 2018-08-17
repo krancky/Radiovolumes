@@ -19,6 +19,7 @@ public class CTV56NUCase {
     private String side;
     public String spreadLocation = new String();
     public String spreadSide;
+    public String NX;
 
 
 
@@ -37,6 +38,14 @@ public class CTV56NUCase {
      */
 
     List<String> modifier = new ArrayList<>();
+
+    public String getNX() {
+        return NX;
+    }
+
+    public void setNX(String NX) {
+        this.NX = NX;
+    }
 
     public List<String> getModifier() {
         return modifier;

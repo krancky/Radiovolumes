@@ -101,6 +101,9 @@ public class NUCaseXMLHandler {
                             } else if (tagname.equalsIgnoreCase("SLN")) {
                                 nodeAreaTemplate.setNodeLocation(text);
                                 cTV56NUCase.setSpreadLocation(text);
+                            } else if (tagname.equalsIgnoreCase("NX")) {
+                                //nodeAreaTemplate.setNodeLocation(text);
+                                cTV56NUCase.setNX(text);
                             } else if (tagname.equalsIgnoreCase("SLNSide")) {
                                 if (text.equals("Gauche")){
                                     nodeAreaTemplate.setLeftContent("1");

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -165,7 +166,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
         try {
             NUCaseXMLHandler parser = new NUCaseXMLHandler();
             //ctv56NUCaseList = parser.parse(getAssets().open("CTV56N_short_1.xml"));
-            ctv56NUCaseList = parser.parse(getAssets().open("CTV56N_short_3.xml"));
+            ctv56NUCaseList = parser.parse(getAssets().open("CTV56N_short_biau_08_18.xml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -206,18 +207,15 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
 
         // Generates a list of tumor areas template (TumorAreaTemplate) to be displayed for selection by the user
         // Stores in a list
-        // Displays in listview with adpater
+        // Displays in listview with adapter
         tumorAreaTemplateList = new ArrayList<TumorAreaTemplate>();
         try {
             TumorAreasTemplateXMLHandler parser = new TumorAreasTemplateXMLHandler();
-            tumorAreaTemplateList = parser.parse(getAssets().open("tumor_areas_template_short.xml"));
+            tumorAreaTemplateList = parser.parse(getAssets().open("tumor_areas_template_short_biau.xml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        //if (newParam.equals("0")){
-            //tumorAreaTemplateList.addAll(cancer.getCancerTVolumes());
-        //}
 
 
 
@@ -264,13 +262,21 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
             public void onClick(View v) {
                 EditText caseName = (EditText) findViewById(R.id.CaseName);
                 String sCaseName = caseName.getText().toString();
-                NewCaseActivity.this.update();
-                if (sCaseName.matches("") || spinner.getLastVisiblePosition() == 0 || spinnerSide.getLastVisiblePosition() == 0 || ctv56TCase.getCaseTTarVolumes().isEmpty()) {//cancer.getCancerTData().isEmpty()){//ctv56TCase.getCaseTTarVolumes().isEmpty()) {
+
+
+
+
+                if (sCaseName.matches("") || spinner.getLastVisiblePosition() == 0 || spinnerSide.getLastVisiblePosition() == 0 ){//|| ctv56TCase.getCaseTTarVolumes().isEmpty()) {
                     Toast.makeText(v.getContext(), getResources().getString(R.string.enterInfo), Toast.LENGTH_SHORT).show();
                 } else {
                     NewCaseActivity.this.cancer.setName(sCaseName.substring(0, 1).toUpperCase() + sCaseName.substring(1));
                     NewCaseActivity.this.cancer.setMainArea(String.valueOf(spinner.getSelectedItemPosition() - 1));
                     NewCaseActivity.this.cancer.setMainSide(String.valueOf(spinnerSide.getSelectedItemPosition() - 1));
+
+                    computeNX();
+                    NewCaseActivity.this.update();
+
+
                     save();
                     Intent transitionIntent = new Intent(NewCaseActivity.this, TabbedActivity.class);
                     transitionIntent.putExtra("cancer", cancer);
@@ -366,13 +372,14 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
         cancer.tClear();
         cancer.tDClear();
         cancer.nDClear();
+        cancer.nXClear();
         File f = getFilesDir();
         File[] files =f.listFiles();
         String filepath = f.getPath() + "/" + cancer.getName() +".duc";
         Cancer cancerReload = new Cancer();
         try {
             cancerReload = Cancer.readFromFile(MainActivity.CONTEXT, filepath);
-            //cancer.setCancerTVolumes(cancerReload.getCancerTVolumes());
+
             cancer.setCancerNData(cancerReload.getCancerNData());
             cancer.setCancerTData(cancerReload.getCancerTData());
             cancer.setCancerNTarData(cancerReload.getCancerNTarData());
@@ -381,6 +388,9 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
         catch (Exception e) {
 
         }
+
+
+
         NewCaseActivity.this.ctv56NCaseList.clear();
 
         this.isAdvanced = itemListSwitch.isChecked();
@@ -422,6 +432,62 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
         NewCaseActivity.this.cancer.saveToFile(NewCaseActivity.this);
     }
 
+    public void computeNX(){
+        // Check if N2C (controlateral nodes)
+        cancer.setN2c(false);
+        for (NodeAreaTemplate nodeAreaTemplate:nodeAreaTemplateList){
+            if (cancer.getMainSide().equals("0") && !nodeAreaTemplate.getLateralized().equals("0") && !nodeAreaTemplate.getRightContent().equals("0")){
+                cancer.setN2c(true);
+            }
+            if (cancer.getMainSide().equals("1")  && !nodeAreaTemplate.getLeftContent().equals("0")){
+                cancer.setN2c(true);
+            }
+            //Check if N3
+            if (nodeAreaTemplate.getLeftContent().equals("4") || nodeAreaTemplate.getRightContent().equals("4")){
+                cancer.setN3(true);
+            }
+            if (nodeAreaTemplate.getLeftContent().equals("3") || nodeAreaTemplate.getRightContent().equals("3")){
+                cancer.setN2b(true);
+            }
+            if (nodeAreaTemplate.getLeftContent().equals("2") || nodeAreaTemplate.getRightContent().equals("2")){
+                cancer.setN2a(true);
+            }
+        }
+        // Check if N1 or N2a or N2b
+/*        int ninf3Number = 0;
+        int n36Number = 0;
+        int nsup6Number = 0;
+        for (NodeAreaTemplate nodeAreaTemplate:nodeAreaTemplateList){
+            if (cancer.getMainSide().equals("0")){
+                if (nodeAreaTemplate.getLeftContent().equals("1")){
+                    ninf3Number = ninf3Number +1;
+                }
+                if (nodeAreaTemplate.getLeftContent().equals("2")){
+                    n36Number = n36Number +1;
+                }
+            }
+            if (cancer.getMainSide().equals("1")){
+                if (nodeAreaTemplate.getRightContent().equals("1")){
+                    ninf3Number = ninf3Number +1;
+                }
+                if (nodeAreaTemplate.getRightContent().equals("2")){
+                    n36Number = n36Number +1;
+                }
+            }
+        }
+        if (ninf3Number == 1){
+            cancer.setN1(true);
+        }
+        if (n36Number == 1){
+            cancer.setN2a(true);
+        }
+        if (n36Number > 1){
+            cancer.setN2b(true);
+        }*/
+
+
+    }
+
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(LocaleHelper.onAttach(base));
@@ -453,6 +519,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
 
     public void onNComplete(List<NodeAreaTemplate> nodeAreaTemplateList){
         this.nodeAreaTemplateList = nodeAreaTemplateList;
+        Log.i("duck", "dick");
     }
 
     /**

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TumorsAreasTemplate>
+    <Volume>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
+        <Location>Plancher Buccal</Location>
+        <SubLocation>Plancher Buccal Med</SubLocation>
+        <SubLocation>Plancher Buccal Lat</SubLocation>
+    </Volume>
+    <Volume>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
+        <Location>Langue</Location>
+        <SubLocation>Langue Mobile Med</SubLocation>
+        <SubLocation>Langue Mobile Lat</SubLocation>
+        <SubLocation>Langue Mobile Pointe</SubLocation>
+    </Volume>
+    <Volume>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
+        <Location>Face Interne de Joue</Location>*
+        <SubLocation>Face Interne de Joue Med</SubLocation>
+        <SubLocation>Face Interne de Joue Lat</SubLocation>
+    </Volume>
+    <Volume>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
+        <Location>Gencive Inferieure</Location>
+        <SubLocation>Gencive Inferieure Med</SubLocation>
+        <SubLocation>Gencive Inferieure Lat</SubLocation>
+    </Volume>
+    <Volume>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
+        <Location>Gencive Superieure</Location>
+        <SubLocation>Gencive Superieure Med</SubLocation>
+        <SubLocation>Gencive Superieure Lat</SubLocation>
+    </Volume>
+    <Volume>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
+        <Location>Palais Dur</Location>
+        <LocationLocale>Palais dur</LocationLocale>
+    </Volume>
+    <Volume>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
+        <Location>Trigone retromolaire Superieur</Location>
+    </Volume>
+    <Volume>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
+        <Location>Trigone retromolaire Inferieur</Location>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
+        <Location>Pilier Anterieur</Location>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
+        <Location>Amygdale</Location>
+        <SubLocation>AmygdaleT1SansPilier</SubLocation>
+        <SubLocation>AmygdaleT13Fosse</SubLocation>
+        <SubLocation>AmygdaleT13Vellaire</SubLocation>
+        <SubLocation>AmygdaleT13Base</SubLocation>
+        <SubLocation>AmygdaleAutre</SubLocation>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
+        <Location>Pilier Posterieur</Location>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
+        <Location>Voile</Location>
+        <LocationLocale>Voile</LocationLocale>
+        <SubLocation>VoileT1</SubLocation>
+        <SubLocation>VoileT24</SubLocation>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
+        <Location>Sillon Amygdaloglosse</Location>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
+        <Location>Base de Langue</Location>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
+        <Location>Vallecule</Location>
+    </Volume>
+    <Volume>
+        <Area>Oropharynx</Area>
+        <AreaLocale>Oropharynx</AreaLocale>
+        <Location>Paroi pharyngee Posterieure</Location>
+    </Volume>
+    <Volume>
+        <Area>LarynxHypopharynx</Area>
+        <AreaLocale>Larynx</AreaLocale>
+        <Location>Larynx</Location>
+        <Sublocation>LarynxT12</Sublocation>
+        <Sublocation>LarynxT34</Sublocation>
+    </Volume>
+    <Volume>
+        <Area>LarynxHypopharynx</Area>
+        <AreaLocale>Larynx</AreaLocale>
+        <Location>PPPhypoP</Location>
+    </Volume>
+    <Volume>
+    <Area>LarynxHypopharynx</Area>
+    <AreaLocale>Larynx</AreaLocale>
+    <Location>SinusPi</Location>
+</Volume>
+</TumorsAreasTemplate>

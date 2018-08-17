@@ -26,20 +26,18 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
     public static interface OnCompleteListener {
         public abstract void onNComplete(List<NodeAreaTemplate> nList);
     }
+
     private ArrayList<Boolean> checkboxStatus = new ArrayList();
     private String title;
     private String side;
 
-    //private HashMap<String, HashMap<String, List<String>>> cancerTTarData;
-    //private HashMap<String, List<String>> cancerNTarData;
+
     private NewCaseActivity activity;
-    //private LinkedHashMap<String, Integer> displayedList;
-    //private List<Slice> slices;
+
     private List<NodeAreaTemplate> nList;
     int tumorPosition;
     private OnCompleteListener mListener;
     private CheckBox checkBoxn3, checkBoxn1, checkBoxn2a, checkBoxn2b;
-    //ArrayList<Item> countryList = new ArrayList<Item>();
 
 
 
@@ -51,8 +49,6 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
         args.putInt("position", position);
         dialog.setArguments(args);
 
-
-
         return dialog;
     }
 
@@ -61,9 +57,8 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            this.mListener = (OnCompleteListener)activity;
-        }
-        catch (final ClassCastException e) {
+            this.mListener = (OnCompleteListener) activity;
+        } catch (final ClassCastException e) {
             throw new ClassCastException(activity.toString() + " must implement OnCompleteListener");
         }
     }
@@ -78,40 +73,29 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
         this.tumorPosition = getArguments().getInt("position");
 
         Button dismiss = (Button) v.findViewById(R.id.dismiss);
-        //
 
 
         this.activity = (NewCaseActivity) getActivity();
         this.nList = this.activity.getNodeAreaTemplateList();
         int i;
 
-        for (i = 0; i< 4; i++) {
-                    checkboxStatus.add(false);
-
+        for (i = 0; i < 4; i++) {
+            checkboxStatus.add(false);
         }
 
 
-
-        //ListView lvChange = (ListView)v.findViewById(R.id.list_display);
-
-        //ArrayAdapter<String> changeAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, displayedList);
-        //NewCaseNSubLocSelectionDialogAdapter  changeAdapter = new NewCaseNSubLocSelectionDialogAdapter(getContext(), nList, title, side);
-        //lvChange.setAdapter(changeAdapter);
-
-        //Button cancel = (Button) v.findViewById(R.id.cancel);
-
-        TextView textView = (TextView) v.findViewById(R.id.list_title) ;
+        TextView textView = (TextView) v.findViewById(R.id.list_title);
         textView.setText(getActivity().getString(getActivity().getResources().getIdentifier(title.replaceAll("\\s+", "").toLowerCase(), "string", getActivity().getPackageName())));
 
 
         TextView uniquen1 = (TextView) v.findViewById(R.id.uniquen1);
-        uniquen1.setText("n1");
+        uniquen1.setText(R.string.n1);
         TextView uniquen2a = (TextView) v.findViewById(R.id.uniquen2a);
-        uniquen2a.setText("n2a");
+        uniquen2a.setText(R.string.n2a);
         TextView multiplen2b = (TextView) v.findViewById(R.id.multiplen2b);
-        multiplen2b.setText("n2b");
+        multiplen2b.setText(R.string.n2b);
         TextView n3 = (TextView) v.findViewById(R.id.n3);
-        n3.setText("n3");
+        n3.setText(R.string.n3);
 
         checkBoxn1 = (CheckBox) v.findViewById(R.id.checkBoxn1);
         checkBoxn1.setTag(0);
@@ -133,16 +117,16 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
         checkBoxn3 = (CheckBox) v.findViewById(R.id.checkBoxn3);
         checkBoxn3.setTag(3);
         checkBoxn3.setOnCheckedChangeListener(cbChangeListener);
-        checkBoxn3.setChecked(checkboxStatus.get(4));
+        checkBoxn3.setChecked(checkboxStatus.get(3));
 
 
         dismiss.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                if (!checkBoxn1.isChecked()&&!checkBoxn2a.isChecked()&&!checkBoxn2b.isChecked()&&!checkBoxn3.isChecked()){
+                if (!checkBoxn1.isChecked() && !checkBoxn2a.isChecked() && !checkBoxn2b.isChecked() && !checkBoxn3.isChecked()) {
                     Toast.makeText(v.getContext(), "Select lymph node invasion", Toast.LENGTH_SHORT).show();
-                } else{
+                } else {
                     mListener.onNComplete(nList);
                     dismiss();
                 }
@@ -158,52 +142,52 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
     }
 
 
-    public void onResume()
-    {
+    public void onResume() {
         super.onResume();
-        //int width = getResources().getDimensionPixelSize(R.dimen.popup_width);
-        //int height = getResources().getDimensionPixelSize(R.dimen.popup_height);
-
-        //getDialog().getWindow().setLayout(
-          //      getResources().getDisplayMetrics().widthPixels,
-            //    getResources().getDisplayMetrics().heightPixels
-        //);
-        //Window window = getDialog().getWindow();
-        //window.setLayout(width, height);
-        //window.setGravity(Gravity.CENTER);
-        //TODO:
     }
 
 
     private CompoundButton.OnCheckedChangeListener cbChangeListener = new CompoundButton.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(CompoundButton checkBoxView, boolean isChecked) {
+            int i;
             int position = (Integer) checkBoxView.getTag();
-            checkboxStatus.set(tumorPosition, isChecked);
-            if (side.equals("gauche")){
+            for (i = 0; i < 4; i++) {
+                    checkboxStatus.add(false);
+            }
+            checkBoxn1.setChecked(false);
+            checkBoxn2a.setChecked(false);
+            checkBoxn2b.setChecked(false);
+            checkBoxn3.setChecked(false);
+            checkboxStatus.set(position, isChecked);
+            checkBoxView.setChecked(isChecked);
+            if (side.equals("gauche") ) {
                 if (checkBoxView.isChecked()) {
                     //itemsContent.add(position, "1");
-                    nList.get(tumorPosition).setLeftContent(String.valueOf(position));
+                    nList.get(tumorPosition).setLeftContent(String.valueOf(position + 1));
                     //checkboxStatus.set(tumorPosition, true);
                     //nList.get(tumorPosition).setSize(position);
-                    Log.i("duck","dick");
+                    Log.i("duck", "dick");
 
                 } else {
                     //itemsContent.add(position, "0");
+                    nList.get(tumorPosition).setLeftContent("0");
                     //nList.get(tumorPosition).setSublocationLeftContent(position,"0");
                     //checkboxStatus.set(tumorPosition, false);
                 }
             }
-            if(side.equals("droite")){
+            if (side.equals("droite")|| nList.get(tumorPosition).getLateralized().equals("0")) {
                 if (checkBoxView.isChecked()) {
                     //itemsContent.add(position, "1");
                     //nList.get(tumorPosition).setSublocationRightContent(position,"1");
-                    nList.get(tumorPosition).setRightContent(String.valueOf(position));
-                    Log.i("duck","dick");
+                    nList.get(tumorPosition).setRightContent(String.valueOf(position + 1));
+                    Log.i("duck", "dick");
 
                 } else {
+                    nList.get(tumorPosition).setRightContent("0");
                     //itemsContent.add(position, "0");
                     //nList.get(tumorPosition).setSublocationRightContent(position,"0");
+                    Log.i("duck", "dick");
                 }
             }
 

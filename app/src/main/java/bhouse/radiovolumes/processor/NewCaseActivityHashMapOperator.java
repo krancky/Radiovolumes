@@ -47,10 +47,11 @@ public class NewCaseActivityHashMapOperator {
                 } else {
                     for (NodeAreaTemplate uCaseSpreadNode : ctv56NUCase.getuCaseSVolumes()) {
                     for (NodeAreaTemplate nodeAreaTemplate : cancer.getCancerNDeveloppedVolumes()) {
-                        if (nodeAreaTemplate.getLeftContent().equals("1")) {
+                        if (!nodeAreaTemplate.getLeftContent().equals("0")) {
                             //Homolateral
-                            if (cancerTVolumes.getLeftContent().equals("1")) {
-                                if (cancerTVolumes.getLocation().equalsIgnoreCase(ctv56NUCase.getLocation()) && nodeAreaTemplate.getNodeLocation().equalsIgnoreCase(uCaseSpreadNode.getNodeLocation()) && ctv56NUCase.getSide().equalsIgnoreCase("Gauche") && uCaseSpreadNode.getLeftContent().equalsIgnoreCase("1")) {
+                            if (!cancerTVolumes.getLeftContent().equals("0")) {
+                                String a = cancer.getNX();
+                                if (cancerTVolumes.getLocation().equalsIgnoreCase(ctv56NUCase.getLocation()) && nodeAreaTemplate.getNodeLocation().equalsIgnoreCase(uCaseSpreadNode.getNodeLocation()) && ctv56NUCase.getSide().equalsIgnoreCase("Gauche") && uCaseSpreadNode.getLeftContent().equalsIgnoreCase("1") && cancer.getNX().equalsIgnoreCase(ctv56NUCase.getNX())) {
                                     LRNodeTargetVolume fromNodeToLR = new LRNodeTargetVolume();
                                     if (!uCaseSpreadNode.getNodeLocation().equals("II") && !uCaseSpreadNode.getNodeLocation().equalsIgnoreCase("VI")){
                                         fromNodeToLR.setLocation(uCaseSpreadNode.getNodeLocation());
@@ -62,7 +63,7 @@ public class NewCaseActivityHashMapOperator {
                                     cTV56NCase.setModifier(ctv56NUCase.getModifier());
                                 }
                             }
-                            if (cancerTVolumes.getRightContent().equals("1")) {
+                            if (!cancerTVolumes.getRightContent().equals("0")) {
                                 if (cancerTVolumes.getLocation().equalsIgnoreCase(ctv56NUCase.getLocation()) && nodeAreaTemplate.getNodeLocation().equalsIgnoreCase(uCaseSpreadNode.getNodeLocation()) && ctv56NUCase.getSide().equalsIgnoreCase("Droite") && uCaseSpreadNode.getLeftContent().equalsIgnoreCase("1")) {
                                     LRNodeTargetVolume fromNodeToLR = new LRNodeTargetVolume();
                                     if (!uCaseSpreadNode.getNodeLocation().equals("II") && !uCaseSpreadNode.getNodeLocation().equalsIgnoreCase("VI")){
@@ -77,8 +78,8 @@ public class NewCaseActivityHashMapOperator {
 
 
                         }
-                        if (nodeAreaTemplate.getRightContent().equals("1")) {
-                            if (cancerTVolumes.getLeftContent().equals("1")) {
+                        if (!nodeAreaTemplate.getRightContent().equals("0")) {
+                            if (!cancerTVolumes.getLeftContent().equals("0")) {
                                 if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && nodeAreaTemplate.getNodeLocation().equals(uCaseSpreadNode.getNodeLocation()) && ctv56NUCase.getSide().equals("Gauche") && uCaseSpreadNode.getRightContent().equals("1")) {
                                     LRNodeTargetVolume fromNodeToLR = new LRNodeTargetVolume();
                                     if (!uCaseSpreadNode.getNodeLocation().equals("II") && !uCaseSpreadNode.getNodeLocation().equalsIgnoreCase("VI")){
@@ -91,7 +92,7 @@ public class NewCaseActivityHashMapOperator {
                                     cTV56NCase.setModifier(ctv56NUCase.getModifier());
                                 }
                             }
-                            if (cancerTVolumes.getRightContent().equals("1")) {
+                            if (!cancerTVolumes.getRightContent().equals("0")) {
                                 if (cancerTVolumes.getLocation().equals(ctv56NUCase.getLocation()) && nodeAreaTemplate.getNodeLocation().equals(uCaseSpreadNode.getNodeLocation()) && ctv56NUCase.getSide().equals("Droite") && uCaseSpreadNode.getRightContent().equals("1")){//&& ctv56NUCase.getSpreadSide().equals("1")) {
                                     LRNodeTargetVolume fromNodeToLR = new LRNodeTargetVolume();
                                     if (!uCaseSpreadNode.getNodeLocation().equals("II") && !uCaseSpreadNode.getNodeLocation().equalsIgnoreCase("VI")) {

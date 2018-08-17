@@ -169,16 +169,20 @@ public class NSelectionAdapter extends BaseAdapter {
         @Override
         public void onCheckedChanged(CompoundButton checkBoxView, boolean isChecked) {
             int position = (Integer) checkBoxView.getTag();
-            checkboxStatus_left.set(position, isChecked);
+
             NodeAreaTemplate h = (NodeAreaTemplate) nList.get(position);
+            if (checkBoxView.isChecked()){
+                if (checkboxStatus_left.get(position).equals(false)) {
+                    FragmentManager fm = ((NewCaseActivity) context).getFragmentManager();
+                    NewCaseNSubLocSelectionDialog dialogFragment = NewCaseNSubLocSelectionDialog.newInstance(h.getCompleteName(), position, "gauche");
+                    dialogFragment.show(fm, "Sample Fragment");
+                }
+            } else{
+                h.setLeftContent("0");
+            }
 
-
-            FragmentManager fm = ((NewCaseActivity) context).getFragmentManager();
-            NewCaseNSubLocSelectionDialog dialogFragment = NewCaseNSubLocSelectionDialog.newInstance (h.getCompleteName(), position, "gauche");
-            dialogFragment.show(fm, "Sample Fragment");
-
-
-            if(checkBoxView.isChecked()){
+            checkboxStatus_left.set(position, isChecked);
+/*            if(checkBoxView.isChecked()){
                 h.setLeftContent("1");
             }
             else{
@@ -192,7 +196,7 @@ public class NSelectionAdapter extends BaseAdapter {
                 else{
                     h.setRightContent("0");
                 }
-            }
+            }*/
 
             notifyDataSetChanged(); //"this" is the adapter
         }

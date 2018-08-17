@@ -208,6 +208,14 @@
     <string name="rectumt">Selection stade T</string>
     <string name="t3">T3</string>
     <string name="t4">T4</string>
+    <string name="languemobilelat">Langue Mobile Laterale</string>
+    <string name="languemobilemed">Langue Mobile Mediane</string>
+    <string name="languemobilepointe">Pointe de Langue</string>
+    <string name="n1">Adenopathie unique &lt; 3cm</string>
+    <string name="n2a">Adenopathie entre 3 et 6 cm</string>
+    <string name="n2b">Adenopathies multiples &lt; 6cm</string>
+    <string name="n2c">Adenopathies bilaterales ou controlaterales &lt; 6cm</string>
+    <string name="n3">Au moins une adenopathie de 6 cm</string>
 
 
 </resources>

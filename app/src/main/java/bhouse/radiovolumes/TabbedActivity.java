@@ -360,7 +360,7 @@ public class TabbedActivity extends AppCompatActivity implements Tab2TDialogFrag
     public void prepareCancerNData(HashMap<String, HashMap<String, List<String>>> cancerTData, HashMap<String, HashMap<String, List<String>>> cancerTTarData, HashMap<String, List<String>> cancerNData, Cancer cancer, CTV56TCase ctv56TCase, CTV56NCase ctv56NCase) {
 
         for (NodeAreaTemplate nodeAreaTemplate : cancer.getCancerNVolumes()) {
-            if (nodeAreaTemplate.getLeftContent().equals("1")) {
+            if (!nodeAreaTemplate.getLeftContent().equals("0")) {
                 if (!cancerNData.containsKey("Gauche")) {
                     List<String> list = new ArrayList<String>();
                     list.add(nodeAreaTemplate.getNodeLocation().replaceAll("\\s+", "").toLowerCase());
@@ -372,7 +372,7 @@ public class TabbedActivity extends AppCompatActivity implements Tab2TDialogFrag
                     cancerNData.put("Gauche", list);
                 }
             }
-            if (nodeAreaTemplate.getRightContent().equals("1")) {
+            if (!nodeAreaTemplate.getRightContent().equals("0")) {
                 if (!cancerNData.containsKey("Droite")) {
                     List<String> list = new ArrayList<String>();
                     list.add(nodeAreaTemplate.getNodeLocation().replaceAll("\\s+", "").toLowerCase());

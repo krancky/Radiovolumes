@@ -210,6 +210,14 @@
     <string name="switcht3extramsnode">Extra Mesorectal Node</string>
     <string name="switchirf">Direct Infiltration of IRF or EAS</string>
     <string name="switchvagina">Infiltration of Inferior Third of Vagina</string>
+    <string name="languemobilemed">Median Mobile Tongue</string>
+    <string name="languemobilelat">Lateral Mobile Tongue</string>
+    <string name="languemobilepointe">Tip of the Tongue</string>
+    <string name="n1"> One node &lt; 3 cm</string>
+    <string name="n2a">One node between 3 and 6 cm</string>
+    <string name="n2b">  " Multiple nodes &lt;6 cm"</string>
+    <string name="n2c"> Multiple bilateral or controlateral nodes &lt; 6 cm</string>
+    <string name="n3">At least one node > 6cm</string>
 
 
 </resources>

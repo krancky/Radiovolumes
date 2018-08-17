@@ -50,6 +50,51 @@ public class Cancer implements Serializable {
     // Date of last access
     private Date time;
 
+    private boolean n2c;
+    private boolean n2a;
+    private boolean n1;
+    private boolean n3;
+    private boolean n2b;
+
+    public boolean isN2c() {
+        return n2c;
+    }
+
+    public void setN2c(boolean n2c) {
+        this.n2c = n2c;
+    }
+
+    public boolean isN2a() {
+        return n2a;
+    }
+
+    public void setN2a(boolean n2a) {
+        this.n2a = n2a;
+    }
+
+    public boolean isN1() {
+        return n1;
+    }
+
+    public void setN1(boolean n1) {
+        this.n1 = n1;
+    }
+
+    public boolean isN3() {
+        return n3;
+    }
+
+    public void setN3(boolean n3) {
+        this.n3 = n3;
+    }
+
+    public boolean isN2b() {
+        return n2b;
+    }
+
+    public void setN2b(boolean n2b) {
+        this.n2b = n2b;
+    }
 
     public String getName() {
         return name;
@@ -187,6 +232,8 @@ public class Cancer implements Serializable {
 
     public void nDClear() {cancerNDeveloppedVolumes.clear();}
 
+    public void nXClear() {setN1(false); setN2a(false); setN2b(false); setN2c(false); setN3(false);}
+
     public void setCancerTTarData(HashMap<String, HashMap<String, List<String>>> cancerTTarData) {
         this.cancerTTarData = cancerTTarData;
     }
@@ -195,6 +242,29 @@ public class Cancer implements Serializable {
         this.cancerNTarData = cancerNTarData;
     }
 
+    public String getNX(){
+        if (isN3()){
+            return "N3";
+        } else {
+            if (isN2c()){
+                return "N2c";
+            } else {
+                if (isN2b()){
+                    return "N2b";
+                } else {
+                    if (isN2a()){
+                        return "N2a";
+                    } else {
+                        if (isN1()){
+                            return "N1";
+                        } else {
+                            return "N0";
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     /**
      * Saves the cancer to file as a .duc file
