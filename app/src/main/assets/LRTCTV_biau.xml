@@ -1,0 +1,1626 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UCaseCatalog>
+    <Plancher>
+    <LRTCTVUCase>Plancher 1
+        <Location>Plancher buccal</Location>
+        <Side>Gauche</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod1>1</mod1>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Plancher Buccal</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Plancher Buccal</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Glande sousmaxillaire</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Gencive inferieure</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Mandibule de proximite</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Plancher 2
+        <Location>Plancher buccal</Location>
+        <Side>Droite</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod1>1</mod1>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Plancher Buccal</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Plancher Buccal</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>glande sousmaxillaire</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Gencive inferieure</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Mandibule de proximite</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    </Plancher>
+    <LangueM>
+    <LRTCTVUCase>Langue 1
+        <Location>Langue</Location>
+        <Side>Gauche</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod2>1</mod2>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Langue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Langue</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Plancher Buccal</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Plancher Buccal</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Glande sousmaxillaire</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Glande sousmaxillaire</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Sillon amygdaloglosse</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier anterieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Langue 2
+        <Location>Langue</Location>
+        <Side>Droite</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod2>1</mod2>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Langue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Langue</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Plancher Buccal</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Plancher Buccal</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Glande sousmaxillaire</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Glande sousmaxillaire</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Sillon amygdaloglosse</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier anterieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    </LangueM>
+    <FIJ>
+    <LRTCTVUCase>Face interne de joue 1
+        <Location>Face interne de joue</Location>
+        <Side>Gauche</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod3>1</mod3>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Joue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Glande sousmaxillaire</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire superieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire inferieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Espace graisseux</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Gencive superieure</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Gencive inferieure</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Face interne de joue 2
+        <Location>Face interne de joue</Location>
+        <Side>Droite</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod3>1</mod3>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Joue</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Glande sousmaxillaire</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire superieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire inferieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Espace graisseux</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Gencive superieure</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Gencive inferieure</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Face interne de joue 1 adv
+        <Location>Face interne de joue</Location>
+        <Side>Gauche</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <Advanced>true</Advanced>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Joue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Glande sousmaxillaire</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire superieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire inferieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Espace graisseux</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Gencive superieure</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Gencive inferieure</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Joue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Espace parotidien</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pterygoidien medial</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Fosse pterygopalatine</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Ganglion de Gasser</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Face interne de joue 2 adv
+        <Location>Face interne de joue</Location>
+        <Side>Droite</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <Advanced>true</Advanced>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Joue</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Glande sousmaxillaire</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire superieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire inferieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Espace graisseux</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Gencive superieure</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Gencive inferieure</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Joue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Espace parotidien</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pterygoidien medial</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Fosse pterygopalatine</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Ganglion de Gasser</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    </FIJ>
+    <Genciveinf>
+    <LRTCTVUCase>Gencive inferieure 1
+        <Location>Gencive inferieure</Location>
+        <Side>Gauche</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod4>1</mod4>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Trigone retromolaire inferieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Mandibule</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Plancher posterieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Glande sousmaxillaire</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Joue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Gencive inferieure</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Gencive inferieure 2
+        <Location>Gencive inferieure</Location>
+        <Side>Droite</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod4>1</mod4>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Trigone retromolaire inferieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Mandibule</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Plancher posterieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Glande sousmaxillaire</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Joue</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Gencive inferieure</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    </Genciveinf>
+    <Gencivesup>
+    <LRTCTVUCase>Gencive superieure 1
+        <Location>Gencive superieure</Location>
+        <Side>Gauche</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod4>1</mod4>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Trigone retromolaire superieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Joue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Palais dur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Gencive superieure</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Gencive superieure 2
+        <Location>Gencive superieure</Location>
+        <Side>Droite</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod4>1</mod4>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Trigone retromolaire superieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Joue</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Palais dur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Gencive superieure</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    </Gencivesup>
+    <Palais>
+    <LRTCTVUCase>Palais dur 1
+        <Location>Palais dur</Location>
+        <Side>Gauche</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod5>1</mod5>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Palais dur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Palais dur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire superieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire superieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire inferieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire inferieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        <TVolume>
+            <TLocation>Gencive superieure</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Voile</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Voile</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Palais dur 2
+        <Location>Palais dur</Location>
+        <Side>Droite</Side>
+        <Area>Cavite Buccale</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod5>1</mod5>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Palais dur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Palais dur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire superieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire superieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire inferieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Trigone retromolaire inferieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        <TVolume>
+            <TLocation>Gencive superieure</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Voile</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Voile</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    </Palais>
+    <Amygdale>
+    <LRTCTVUCase>Amygdale 1
+        <Location>Amygdale</Location>
+        <Side>Gauche</Side>
+        <Area>Oropharynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod9>1</mod9>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Amygdale</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier posterieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier anterieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Sillon amygdaloglosse</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+        </TVolumes>
+        <TVolume>
+            <TLocation>Base de langue</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Langue posterieure</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Voile</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Carrefour des trois replis</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Espace parapharynge</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Foramen ovale</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Ganglion de Gasser</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Amygdale 2
+        <Location>Amygdale</Location>
+        <Side>Droite</Side>
+        <Area>Oropharynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod9>1</mod9>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Amygdale</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier posterieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier anterieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Sillon amygdaloglosse</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+        </TVolumes>
+        <TVolume>
+            <TLocation>Base de langue</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Langue posterieure</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Voile</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Carrefour des trois replis</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Espace parapharynge</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Foramen ovale</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Ganglion de Gasser</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Amygdale 1
+        <Location>Amygdale</Location>
+        <Side>Gauche</Side>
+        <Area>Oropharynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <Advanced>true</Advanced>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Amygdale</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier posterieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier anterieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Sillon amygdaloglosse</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+        </TVolumes>
+        <TVolume>
+            <TLocation>Base de langue</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Langue posterieure</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Voile</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Carrefour des trois replis</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Espace parapharynge</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Foramen ovale</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Ganglion de Gasser</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pterygoidien medial</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Branche montante</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Espace carotidien</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Sinus caverneux</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Espace retropharynge</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Cavum</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+
+    </LRTCTVUCase>
+    <LRTCTVUCase>Amygdale 2
+        <Location>Amygdale</Location>
+        <Side>Droite</Side>
+        <Area>Oropharynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <Advanced>true</Advanced>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Amygdale</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier posterieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier anterieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Sillon amygdaloglosse</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+        </TVolumes>
+        <TVolume>
+            <TLocation>Base de langue</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Langue posterieure</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Voile</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Carrefour des trois replis</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Espace parapharynge</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Foramen ovale</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Ganglion de Gasser</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+    </LRTCTVUCase>
+    </Amygdale>
+    <Voile>
+    <LRTCTVUCase>Voile 1
+        <Location>Voile</Location>
+        <Side>Gauche</Side>
+        <Area>Oropharynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod9>1</mod9>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Voile</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Voile</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Amygdale</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Amygdale</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+        <TVolume>
+            <TLocation>Pilier anterieur</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pilier anterieur</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pilier posterieur</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pilier posterieur</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Cavum</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Trigone retromolaire superieur</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Espace parapharynge</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Voile 2
+        <Location>Voile</Location>
+        <Side>Droite</Side>
+        <Area>Oropharynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod9>1</mod9>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Voile</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Voile</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Amygdale</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Amygdale</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+        <TVolume>
+            <TLocation>Pilier anterieur</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pilier anterieur</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pilier posterieur</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pilier posterieur</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Cavum</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Trigone retromolaire superieur</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Espace parapharynge</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+    </Voile>
+    <Sillon>
+    <LRTCTVUCase>Sillon amygdaloglosse 1
+        <Location>Sillon amygdaloglosse</Location>
+        <Side>Gauche</Side>
+        <Area>Oropharynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod9>1</mod9>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Sillon amygdaloglosse</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier anterieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Amygdale</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier posterieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+        </TVolumes>
+        <TVolume>
+            <TLocation>Base de langue</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Langue</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Plancher posterieur</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Vallecule</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Larynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Carrefour des trois replis</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Face de l epiglotte</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Espace preepiglottique</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Sillon amygdaloglosse 2
+        <Location>Sillon amygdaloglosse</Location>
+        <Side>Droite</Side>
+        <Area>Oropharynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod9>1</mod9>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Sillon amygdaloglosse</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier anterieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Amygdale</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier posterieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+        </TVolumes>
+        <TVolume>
+            <TLocation>Base de langue</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Langue</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Plancher posterieur</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Vallecule</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Larynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Carrefour des trois replis</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Face de l epiglotte</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Espace preepiglottique</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+    </LRTCTVUCase>
+    </Sillon>
+    <BdL>
+    <LRTCTVUCase>Base de langue 1
+        <Location>Base de langue</Location>
+        <Side>Gauche</Side>
+        <Area>Oropharynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod9>1</mod9>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Base de langue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Base de langue</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Vallecule</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Langue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        </TVolumes>
+        <TVolume>
+            <TLocation>Sillon amygdaloglosse</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Amygdale</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Amygdale</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pilier anterieur</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pilier anterieur</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pilier posterieur</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pilier posterieur</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Base de langue 2
+        <Location>Base de langue</Location>
+        <Side>Droite</Side>
+        <Area>Oropharynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod9>1</mod9>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Base de langue</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Base de langue</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Vallecule</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Langue</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        </TVolumes>
+        <TVolume>
+            <TLocation>Sillon amygdaloglosse</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Amygdale</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Amygdale</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pilier anterieur</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pilier anterieur</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pilier posterieur</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Pilier posterieur</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Oropharynx</TArea>
+        </TVolume>
+    </LRTCTVUCase>
+    </BdL>
+    <PPP>
+    <LRTCTVUCase>Paroi pharyngee posterieure 1
+        <Location>Paroi pharyngee posterieure</Location>
+        <Side>Gauche</Side>
+        <Area>Oropharynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod9>1</mod9>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Paroi pharyngee posterieure</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Paroi pharyngee posterieure</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier posterieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier posterieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Espace parapharynge</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Cavite Buccale</TArea>
+            </TVolume>
+        </TVolumes>
+        <TVolume>
+            <TLocation>Espace retropharynge</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Espace parapharynge</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Cavum</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Voile</TLocation>
+            <TSide>Gauche</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+    </LRTCTVUCase>
+    <LRTCTVUCase>Paroi pharyngee posterieure 2
+        <Location>Paroi pharyngee posterieure</Location>
+        <Side>Droite</Side>
+        <Area>Oropharynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod9>1</mod9>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Paroi pharyngee posterieure</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Paroi pharyngee posterieure</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier posterieur</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Pilier posterieur</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>Oropharynx</TArea>
+            </TVolume>
+        </TVolumes>
+        <TVolume>
+            <TLocation>Espace retropharynge</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Espace parapharynge</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Cavum</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+        <TVolume>
+            <TLocation>Voile</TLocation>
+            <TSide>Droite</TSide>
+            <TArea>Cavite Buccale</TArea>
+        </TVolume>
+    </LRTCTVUCase>
+    </PPP>
+
+    <Larynx>
+    <LRTCTVUCase>Larynx 1
+        <Location>Larynx</Location>
+        <Side>Gauche</Side>
+        <Area>LarynxHypopharynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod9>1</mod9>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Not Available for Larynx</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>LarynxHypopharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Not Available for Larynx</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>LarynxHypopharynx</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+
+        <LRTCTVUCase>Larynx 2
+            <Location>Larynx</Location>
+            <Side>Droite</Side>
+            <Area>LarynxHypopharynx</Area>
+            <Identifier>1</Identifier>
+            <Modifiers>
+                <mod9>1</mod9>
+            </Modifiers>
+            <TVolumes>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Gauche</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Droite</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+            </TVolumes>
+        </LRTCTVUCase>
+</Larynx>
+
+    <PPPHypo>
+        <LRTCTVUCase>PPPhypoP
+        <Location>PPPhypoP</Location>
+        <Side>Gauche</Side>
+        <Area>LarynxHypopharynx</Area>
+        <Identifier>1</Identifier>
+        <Modifiers>
+            <mod9>1</mod9>
+        </Modifiers>
+        <TVolumes>
+            <TVolume>
+                <TLocation>Not Available for Larynx</TLocation>
+                <TSide>Gauche</TSide>
+                <TArea>LarynxHypopharynx</TArea>
+            </TVolume>
+            <TVolume>
+                <TLocation>Not Available for Larynx</TLocation>
+                <TSide>Droite</TSide>
+                <TArea>LarynxHypopharynx</TArea>
+            </TVolume>
+        </TVolumes>
+    </LRTCTVUCase>
+        <LRTCTVUCase>PPPhypoP
+            <Location>PPPhypoP</Location>
+            <Side>Droite</Side>
+            <Area>LarynxHypopharynx</Area>
+            <Identifier>1</Identifier>
+            <Modifiers>
+                <mod9>1</mod9>
+            </Modifiers>
+            <TVolumes>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Gauche</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Droite</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+            </TVolumes>
+        </LRTCTVUCase>
+    </PPPHypo>
+
+    <SinusPi>
+        <LRTCTVUCase>SinusPi
+            <Location>SinusPi</Location>
+            <Side>Gauche</Side>
+            <Area>LarynxHypopharynx</Area>
+            <Identifier>1</Identifier>
+            <Modifiers>
+                <mod9>1</mod9>
+            </Modifiers>
+            <TVolumes>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Gauche</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Droite</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+            </TVolumes>
+        </LRTCTVUCase>
+        <LRTCTVUCase>SinusPi
+            <Location>SinusPi</Location>
+            <Side>Droite</Side>
+            <Area>LarynxHypopharynx</Area>
+            <Identifier>1</Identifier>
+            <Modifiers>
+                <mod9>1</mod9>
+            </Modifiers>
+            <TVolumes>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Droite</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Gauche</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+            </TVolumes>
+        </LRTCTVUCase>
+    </SinusPi>
+
+
+
+</UCaseCatalog>

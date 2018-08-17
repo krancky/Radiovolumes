@@ -200,7 +200,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
         ctv56TUCaseList = new ArrayList<CTV56TUCase>();
         try {
             TUCaseXMLHandler parser = new TUCaseXMLHandler();
-            ctv56TUCaseList = parser.parse(getAssets().open("LRTCTV.xml"));
+            ctv56TUCaseList = parser.parse(getAssets().open("LRTCTV_biau.xml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -43,29 +43,9 @@
         <LocationLocale>Palais dur</LocationLocale>
     </Volume>
     <Volume>
-        <Area>Cavite Buccale</Area>
-        <AreaLocale>Cavite Buccale</AreaLocale>
-        <Location>Trigone retromolaire Superieur</Location>
-    </Volume>
-    <Volume>
-        <Area>Cavite Buccale</Area>
-        <AreaLocale>Cavite Buccale</AreaLocale>
-        <Location>Trigone retromolaire Inferieur</Location>
-    </Volume>
-    <Volume>
-        <Area>Oropharynx</Area>
-        <AreaLocale>Oropharynx</AreaLocale>
-        <Location>Pilier Anterieur</Location>
-    </Volume>
-    <Volume>
         <Area>Oropharynx</Area>
         <AreaLocale>Oropharynx</AreaLocale>
         <Location>Amygdale</Location>
-        <SubLocation>AmygdaleT1SansPilier</SubLocation>
-        <SubLocation>AmygdaleT13Fosse</SubLocation>
-        <SubLocation>AmygdaleT13Vellaire</SubLocation>
-        <SubLocation>AmygdaleT13Base</SubLocation>
-        <SubLocation>AmygdaleAutre</SubLocation>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>
@@ -83,17 +63,7 @@
     <Volume>
         <Area>Oropharynx</Area>
         <AreaLocale>Oropharynx</AreaLocale>
-        <Location>Sillon Amygdaloglosse</Location>
-    </Volume>
-    <Volume>
-        <Area>Oropharynx</Area>
-        <AreaLocale>Oropharynx</AreaLocale>
         <Location>Base de Langue</Location>
-    </Volume>
-    <Volume>
-        <Area>Oropharynx</Area>
-        <AreaLocale>Oropharynx</AreaLocale>
-        <Location>Vallecule</Location>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>
