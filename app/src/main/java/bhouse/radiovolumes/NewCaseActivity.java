@@ -390,7 +390,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
         }
 
 
-
+        computeNX();
         NewCaseActivity.this.ctv56NCaseList.clear();
 
         this.isAdvanced = itemListSwitch.isChecked();
@@ -434,6 +434,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
 
     public void computeNX(){
         // Check if N2C (controlateral nodes)
+        int nbn1 = 0;
         cancer.setN2c(false);
         for (NodeAreaTemplate nodeAreaTemplate:nodeAreaTemplateList){
             if (cancer.getMainSide().equals("0") && !nodeAreaTemplate.getLateralized().equals("0") && !nodeAreaTemplate.getRightContent().equals("0")){
@@ -450,8 +451,28 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
                 cancer.setN2b(true);
             }
             if (nodeAreaTemplate.getLeftContent().equals("2") || nodeAreaTemplate.getRightContent().equals("2")){
+                nbn1 = nbn1 +1;
                 cancer.setN2a(true);
             }
+            if (cancer.getMainSide().equals("0") && nodeAreaTemplate.getLeftContent().equals("1")){
+                nbn1 = nbn1 +1;
+                cancer.setN1(true);
+            }
+            if (cancer.getMainSide().equals("1") && nodeAreaTemplate.getRightContent().equals("1")){
+                nbn1 = nbn1 +1;
+                cancer.setN1(true);
+            }
+            if (cancer.getMainSide().equals("1") && nodeAreaTemplate.getLeftContent().equals("1") && nodeAreaTemplate.getLateralized().equals("0")){
+                nbn1 = nbn1 +1;
+                cancer.setN1(true);
+            }
+
+
+        }
+        if (nbn1 == 1){
+            cancer.setN1(true);
+        } else if (nbn1 > 1) {
+            cancer.setN2b(true);
         }
         // Check if N1 or N2a or N2b
 /*        int ninf3Number = 0;

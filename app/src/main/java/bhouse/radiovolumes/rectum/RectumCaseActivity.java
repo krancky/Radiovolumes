@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -12,11 +11,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import bhouse.radiovolumes.NewCaseActivity;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import bhouse.radiovolumes.R;
-import bhouse.radiovolumes.TabbedActivity;
 import fr.ganfra.materialspinner.MaterialSpinner;
 /**
  * Created by kranck on 7/19/2018.
@@ -41,10 +42,14 @@ public class RectumCaseActivity extends Activity{
     Switch switcht3extramsnode;
     Switch switchirf;
     Switch switchvagina;
+    Switch switchN2;
+
+    ArrayList<String> nodeList = new ArrayList();
 
     private boolean isT4APO = false;
     private boolean isT4AS = false ;
-    private boolean isT3EMSN = false;
+    private boolean isT3 = false;
+    private boolean isT3EMS = false;
     private boolean isPSAbdLN = false;
     private boolean isLLNN2 = false ;
     private boolean isIRF = false;
@@ -54,6 +59,12 @@ public class RectumCaseActivity extends Activity{
     private boolean isExpandedT = false;
     private boolean isExpandedN = false;
     private boolean isAdvanced = false;
+
+    public List<String> getNodeList() {
+        return nodeList;
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +85,7 @@ public class RectumCaseActivity extends Activity{
         switcht3extramsnode = (Switch) findViewById(R.id.switcht3extramsnode);
         switchirf = (Switch) findViewById(R.id.switchirf);
         switchvagina = (Switch) findViewById(R.id.switchvagina);
+        switchN2 = (Switch) findViewById(R.id.switchN2);
 
 
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.t_array, R.layout.spinner_item);
@@ -96,6 +108,8 @@ public class RectumCaseActivity extends Activity{
                     switchirf.setChecked(false);
                     switchvagina.setEnabled(false);
                     switchvagina.setChecked(false);
+                    switchN2.setEnabled(true);
+                    isT3 = true;
                 }
                 if(position == 1){
                     switcht3extramsnode.setChecked(false);
@@ -108,6 +122,8 @@ public class RectumCaseActivity extends Activity{
                     switcht4anteriorpelvic.setChecked(false);
                     switchirf.setEnabled(true);
                     switchirf.setChecked(false);
+                    switchN2.setEnabled(false);
+                    isT3 = false;
                 }
             }
             @Override
@@ -119,27 +135,26 @@ public class RectumCaseActivity extends Activity{
         mAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText caseName = (EditText) findViewById(R.id.CaseName);
-                String sCaseName = caseName.getText().toString();
+                //EditText caseName = (EditText) findViewById(R.id.CaseName);
+                //String sCaseName = caseName.getText().toString();
 
-                if (sCaseName.matches("") || spinner.getLastVisiblePosition() == 0 || spinnerSide.getLastVisiblePosition() == 0 ) {//cancer.getCancerTData().isEmpty()){//ctv56TCase.getCaseTTarVolumes().isEmpty()) {
-                    Toast.makeText(v.getContext(), getResources().getString(R.string.enterInfo), Toast.LENGTH_SHORT).show();
-                } else {
-                    RectumCaseActivity.this.update();
+                //if (sCaseName.matches("") || spinner.getLastVisiblePosition() == 0 || spinnerSide.getLastVisiblePosition() == 0 ) {//cancer.getCancerTData().isEmpty()){//ctv56TCase.getCaseTTarVolumes().isEmpty()) {
+                    //Toast.makeText(v.getContext(), getResources().getString(R.string.enterInfo), Toast.LENGTH_SHORT).show();
+                //} else {
+                    update();
 
-                    Intent transitionIntent = new Intent(RectumCaseActivity.this, TabbedActivity.class);
+                    Intent transitionIntent = new Intent(RectumCaseActivity.this, RectumTabbedActivity.class);
                     //transitionIntent.putExtra("cancer", cancer);
-                    transitionIntent.putExtra("isT3" +
-                            "", RectumCaseActivity.this.switcht4anteriorpelvic.isChecked());
-                    transitionIntent.putExtra("isT4APO", RectumCaseActivity.this.switcht4anteriorpelvic.isChecked());
+                    //transitionIntent.putExtra("isT4APO", RectumCaseActivity.this.switcht4anteriorpelvic.isChecked());
                     //transitionIntent.putExtra("CTV56NCase", RectumCaseActivity.this.ctv56NCase);
+                    transitionIntent.putStringArrayListExtra("nodelist", nodeList);
                     String Truc = spinner.getSelectedItem().toString();
 
                     if (!((Activity) v.getContext()).isFinishing()) {
                         startActivity(transitionIntent);//show dialog
                     }
 
-                }
+                //}
 
             }
         });
@@ -150,8 +165,37 @@ public class RectumCaseActivity extends Activity{
 
 
     private void update(){
-
+        if (isT3){
+            if (switcht3extramsnode.isChecked()){
+                nodeList.add("M");nodeList.add("PSP");nodeList.add("LLNPost");nodeList.add("LLNAnt");nodeList.add("EIN");
+            } else {
+                nodeList.add("M");nodeList.add("PSP");nodeList.add("LLNPost");
+                if (switchN2.isChecked()){
+                    nodeList.add("LLNAnt");
+                }
+            }
+        } else{
+            if (switcht4anteriorpelvic.isChecked()){
+                nodeList.add("M");nodeList.add("PSP");nodeList.add("LLNPost");nodeList.add("LLNAnt");nodeList.add("EIN");
+                if (switchvagina.isChecked()){
+                    nodeList.add("IN");
+                }
+            }
+            if (switcht4analsphincter.isChecked()){
+                nodeList.add("M");nodeList.add("PSP");nodeList.add("LLNPost");nodeList.add("LLNAnt");nodeList.add("EIN");
+                nodeList.add("IN");nodeList.add("SC");
+                if (switchirf.isChecked()){
+                    nodeList.add("IRF");
+                }
+            }
+        }
+        if (switchpsabdoln.isChecked())
+            nodeList.add("PSAbdo");
         //caler toutes les donnees dans des trucs a tranferer sur la prochaine activite
+        Set<String> hs = new HashSet<>();
+        hs.addAll(nodeList);
+        nodeList.clear();
+        nodeList.addAll(hs);
     }
 
 

@@ -218,6 +218,7 @@
     <string name="n2b">  " Multiple nodes &lt;6 cm"</string>
     <string name="n2c"> Multiple bilateral or controlateral nodes &lt; 6 cm</string>
     <string name="n3">At least one node > 6cm</string>
+    <string name="switchn2">Numerous Mesorectum Nodes (N2)</string>
 
 
 </resources>

@@ -108,6 +108,9 @@
         </FrameLayout>
 
     </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/LvLayout"
@@ -135,6 +138,16 @@
             android:paddingEnd="10dp"
             android:paddingTop="10dp"
             android:text="@string/switcht3extramsnode" />
+
+        <Switch
+            android:id="@+id/switchN2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/switchn2" />
 
         <Switch
             android:id="@+id/switcht4anteriorpelvic"
@@ -180,7 +193,7 @@
 
 
     </LinearLayout>
-
+</ScrollView>
 
 
 </LinearLayout>

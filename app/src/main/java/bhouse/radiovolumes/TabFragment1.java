@@ -7,6 +7,7 @@ import android.view.View;
         import android.os.Bundle;
         import android.support.v4.app.Fragment;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +24,7 @@ public class TabFragment1 extends Fragment {
     private Cancer cancer;
     private Context context;
     private TabbedActivity activity;
+    private TextView nSize;
 
 
     @Override
@@ -46,6 +48,10 @@ public class TabFragment1 extends Fragment {
     public void perform(View v){
         NonScrollListView lvT = (NonScrollListView) v.findViewById(R.id.listView_invaded_T);
         NonScrollListView lvN = (NonScrollListView) v.findViewById(R.id.listView_invaded_N);
+
+        nSize = (TextView) v.findViewById(R.id.textView_n_size);
+        nSize.setText(this.cancer.getNX());
+
         NewCaseActivityTHashAdapter mAdapterT = new NewCaseActivityTHashAdapter(getActivity(), cancerTData, this.cancer);
         NewCaseActivityNHashAdapter mAdapterN = new NewCaseActivityNHashAdapter(getContext(), cancerNData, this.cancer);
         lvT.setAdapter(mAdapterT);

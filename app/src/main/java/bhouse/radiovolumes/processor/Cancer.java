@@ -266,6 +266,50 @@ public class Cancer implements Serializable {
         }
     }
 
+    public boolean getValidNX(String n){
+        String cancerNX = getNX();
+        if (cancerNX.equals("N3")){
+            return true;
+        }
+        if (cancerNX.equals("N2c")){
+            if (n.equals("N3")){
+                return false;
+            } else{
+                return true;
+            }
+        }
+
+        if (cancerNX.equals("N2b")){
+            if (n.equals("N2b")){
+                return true;
+            }
+            if (n.equals("N2a")){
+                return true;
+            }
+            if (n.equals("N1")){
+                return true;
+            }
+        }
+
+        if (cancerNX.equals("N2a")){
+            if (n.equals("N2a")){
+                return true;
+            }
+            if (n.equals("N1")){
+                return true;
+            }
+        }
+        if (cancerNX.equals("N1")){
+            if (n.equals("N1")){
+                return true;
+            }
+            if (n.equals("N0")){
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * Saves the cancer to file as a .duc file
      *

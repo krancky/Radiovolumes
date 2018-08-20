@@ -181,7 +181,7 @@
     <string name="amygdalet1sanspilier">T1 sans extension aux piliers</string>
     <string name="voilet1">Voile T1</string>
     <string name="voilet24">Voile T2-4</string>
-    <string name="larynxglottique">Larynx glottique</string>
+    <string name="larynxglottique">Larynx Glottique</string>
     <string name="larynxsusglottique">Larynx Sus-Glottique</string>
     <string name="larynxsousglottique">Larynx Sous-Glottique</string>
     <string name="cordevocale">Corde Vocale</string>
@@ -216,6 +216,7 @@
     <string name="n2b">Adenopathies multiples &lt; 6cm</string>
     <string name="n2c">Adenopathies bilaterales ou controlaterales &lt; 6cm</string>
     <string name="n3">Au moins une adenopathie de 6 cm</string>
+    <string name="switchn2">Nombreuses Adénopathies Mésorectales (N2)</string>
 
 
 </resources>

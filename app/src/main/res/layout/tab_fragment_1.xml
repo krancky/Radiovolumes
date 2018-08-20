@@ -30,6 +30,13 @@
         android:text="@string/nodeLocation"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
+    <TextView
+        android:id="@+id/textView_n_size"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
     <bhouse.radiovolumes.processor.NonScrollListView
         android:id="@+id/listView_invaded_N"
         android:layout_width="match_parent"

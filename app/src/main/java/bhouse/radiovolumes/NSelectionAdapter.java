@@ -105,7 +105,6 @@ public class NSelectionAdapter extends BaseAdapter {
             }
             if (getItemViewType(position) == 2) {
                 convertView = layoutInflater.inflate(R.layout.layout_median_item, parent, false);
-                //holder.tumorPhoto = (ImageView) convertView.findViewById(R.id.node_photo);
                 holder.nodePhoto = (ImageView) convertView.findViewById(R.id.node_photo);
                 holder.tv = (TextView) convertView.findViewById(R.id.textView2);
                 holder.cbLeft =(CheckBox) convertView.findViewById(R.id.checkLeft);
@@ -127,13 +126,12 @@ public class NSelectionAdapter extends BaseAdapter {
             int truc = context.getResources().getIdentifier(h.getCompleteName().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
             String locationLocale = context.getString(context.getResources().getIdentifier(h.getCompleteName().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
             holder.tv.setText(locationLocale);
-            //holder.tv.setText(h.getCompleteName());
+
             holder.cbLeft.setTag(position);
-            //holder.cbRight.setTag(position);
+
             holder.cbLeft.setChecked(checkboxStatus_left.get(position));
             holder.cbLeft.setOnCheckedChangeListener(cbLeftChangeListener);
-            //holder.cbRight.setChecked(checkboxStatus_right.get(position));
-            //holder.cbRight.setOnCheckedChangeListener(cbRightChangeListener);
+
             if (holder.cbLeft.isChecked()) {
                 holder.nodePhoto.setImageResource(h.getImageResourceId(this.context, true));
             } else {
@@ -145,7 +143,6 @@ public class NSelectionAdapter extends BaseAdapter {
             int truc = context.getResources().getIdentifier(h.getCompleteName().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName());
             String locationLocale = context.getString(context.getResources().getIdentifier(h.getCompleteName().replaceAll("\\s+", "").toLowerCase(), "string", context.getPackageName()));
             holder.tv.setText(locationLocale);
-            //holder.tv.setText(h.getCompleteName());
             holder.cbLeft.setTag(position);
             holder.cbRight.setTag(position);
             holder.cbLeft.setChecked(checkboxStatus_left.get(position));
@@ -169,7 +166,6 @@ public class NSelectionAdapter extends BaseAdapter {
         @Override
         public void onCheckedChanged(CompoundButton checkBoxView, boolean isChecked) {
             int position = (Integer) checkBoxView.getTag();
-
             NodeAreaTemplate h = (NodeAreaTemplate) nList.get(position);
             if (checkBoxView.isChecked()){
                 if (checkboxStatus_left.get(position).equals(false)) {
@@ -182,23 +178,9 @@ public class NSelectionAdapter extends BaseAdapter {
             }
 
             checkboxStatus_left.set(position, isChecked);
-/*            if(checkBoxView.isChecked()){
-                h.setLeftContent("1");
-            }
-            else{
-                h.setLeftContent("0");
-            }
 
-            if (h.getLateralized().equals("0")){
-                if(checkBoxView.isChecked()){
-                    h.setRightContent("1");
-                }
-                else{
-                    h.setRightContent("0");
-                }
-            }*/
 
-            notifyDataSetChanged(); //"this" is the adapter
+            notifyDataSetChanged();
         }
     };
 
@@ -207,14 +189,20 @@ public class NSelectionAdapter extends BaseAdapter {
         @Override
         public void onCheckedChanged(CompoundButton checkBoxView, boolean isChecked) {
             int position = (Integer) checkBoxView.getTag();
-            checkboxStatus_right.set(position, isChecked);
             NodeAreaTemplate h = (NodeAreaTemplate) nList.get(position);
-            if(checkBoxView.isChecked()){
-                h.setRightContent("1");
-            }
-            else{
+            if (checkBoxView.isChecked()){
+                if (checkboxStatus_right.get(position).equals(false)) {
+                    FragmentManager fm = ((NewCaseActivity) context).getFragmentManager();
+                    NewCaseNSubLocSelectionDialog dialogFragment = NewCaseNSubLocSelectionDialog.newInstance(h.getCompleteName(), position, "droite");
+                    dialogFragment.show(fm, "Sample Fragment");
+                }
+            } else{
                 h.setRightContent("0");
             }
+
+            checkboxStatus_right.set(position, isChecked);
+
+
             notifyDataSetChanged();
         }
     };

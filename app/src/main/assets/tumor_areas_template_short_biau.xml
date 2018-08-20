@@ -3,18 +3,19 @@
     <Volume>
         <Area>Cavite Buccale</Area>
         <AreaLocale>Cavite Buccale</AreaLocale>
-        <Location>Plancher Buccal</Location>
-        <SubLocation>Plancher Buccal Med</SubLocation>
-        <SubLocation>Plancher Buccal Lat</SubLocation>
-    </Volume>
-    <Volume>
-        <Area>Cavite Buccale</Area>
-        <AreaLocale>Cavite Buccale</AreaLocale>
         <Location>Langue</Location>
         <SubLocation>Langue Mobile Med</SubLocation>
         <SubLocation>Langue Mobile Lat</SubLocation>
         <SubLocation>Langue Mobile Pointe</SubLocation>
     </Volume>
+    <Volume>
+        <Area>Cavite Buccale</Area>
+        <AreaLocale>Cavite Buccale</AreaLocale>
+        <Location>Plancher Buccal</Location>
+        <SubLocation>Plancher Buccal Med</SubLocation>
+        <SubLocation>Plancher Buccal Lat</SubLocation>
+    </Volume>
+
     <Volume>
         <Area>Cavite Buccale</Area>
         <AreaLocale>Cavite Buccale</AreaLocale>
@@ -50,15 +51,8 @@
     <Volume>
         <Area>Oropharynx</Area>
         <AreaLocale>Oropharynx</AreaLocale>
-        <Location>Pilier Posterieur</Location>
-    </Volume>
-    <Volume>
-        <Area>Oropharynx</Area>
-        <AreaLocale>Oropharynx</AreaLocale>
         <Location>Voile</Location>
         <LocationLocale>Voile</LocationLocale>
-        <SubLocation>VoileT1</SubLocation>
-        <SubLocation>VoileT24</SubLocation>
     </Volume>
     <Volume>
         <Area>Oropharynx</Area>
@@ -74,8 +68,9 @@
         <Area>LarynxHypopharynx</Area>
         <AreaLocale>Larynx</AreaLocale>
         <Location>Larynx</Location>
-        <Sublocation>LarynxT12</Sublocation>
-        <Sublocation>LarynxT34</Sublocation>
+        <Sublocation>LarynxSusGlottique</Sublocation>
+        <Sublocation>LarynxGlottique</Sublocation>
+        <Sublocation>LarynxSousGlottique</Sublocation>
     </Volume>
     <Volume>
         <Area>LarynxHypopharynx</Area>
@@ -86,5 +81,8 @@
     <Area>LarynxHypopharynx</Area>
     <AreaLocale>Larynx</AreaLocale>
     <Location>SinusPi</Location>
+        <Sublocation>T1lateral</Sublocation>
+        <Sublocation>InfiltrationApex</Sublocation>
+        <Sublocation>InfiltrationBouche</Sublocation>
 </Volume>
 </TumorsAreasTemplate>

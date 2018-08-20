@@ -32,6 +32,9 @@
         <activity
             android:name=".TabbedActivity"
             android:label="TabbedActivity" />
+        <activity
+            android:name=".rectum.RectumTabbedActivity"
+            android:label="TabbedActivity" />
         <activity android:name=".LoadCaseActivity" />
         <activity
             android:name=".ScannerViewActivity_simple"

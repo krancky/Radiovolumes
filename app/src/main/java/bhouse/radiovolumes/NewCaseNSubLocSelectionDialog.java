@@ -176,7 +176,7 @@ public class NewCaseNSubLocSelectionDialog extends DialogFragment {
                     //checkboxStatus.set(tumorPosition, false);
                 }
             }
-            if (side.equals("droite")|| nList.get(tumorPosition).getLateralized().equals("0")) {
+            if (side.equals("droite")) {
                 if (checkBoxView.isChecked()) {
                     //itemsContent.add(position, "1");
                     //nList.get(tumorPosition).setSublocationRightContent(position,"1");

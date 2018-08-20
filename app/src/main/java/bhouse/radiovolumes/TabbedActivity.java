@@ -87,7 +87,7 @@ public class TabbedActivity extends AppCompatActivity implements Tab2TDialogFrag
         //cancer.setCancerTTarData(this.cancerTTarData);
         //cancer.setCancerNTarData(this.cancerNTarData);
         //cancer.setCancerTVolumes(this.cancerTVolumes);
-        //cancer.saveToFile(TabbedActivity.this);
+        //cancer.saveToFile(RectumTabbedActivity.this);
 
     }
 
@@ -146,7 +146,7 @@ public class TabbedActivity extends AppCompatActivity implements Tab2TDialogFrag
         //cancer.setCancerTTarData(this.cancerTTarData);
         //cancer.setCancerNTarData(this.cancerNTarData);
         //cancer.setCancerTVolumes(this.cancerTVolumes);
-        //cancer.saveToFile(TabbedActivity.this);
+        //cancer.saveToFile(RectumTabbedActivity.this);
 
     }
 

@@ -7,6 +7,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/list_title"/>
 
@@ -21,13 +22,14 @@ android:paddingTop="16dp">
     android:layout_height="wrap_content"
     android:layout_toLeftOf="@id/checkBoxn1"
     android:layout_alignParentStart="true"
-    android:padding="5dp"
+    android:padding="10dp"
     android:singleLine="false" />
 
 <CheckBox
     android:layout_height="wrap_content"
     android:id="@+id/checkBoxn1"
     android:layout_width="wrap_content"
+    android:layout_marginEnd="10dp"
     android:layout_alignParentRight="true" />
 
 <TextView
@@ -35,7 +37,7 @@ android:paddingTop="16dp">
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_below="@+id/uniquen1"
-    android:padding="5dp"
+    android:padding="10dp"
     android:layout_toLeftOf="@id/checkBoxn2a"
     android:layout_alignParentStart="true"
     android:singleLine="false" />
@@ -45,6 +47,7 @@ android:paddingTop="16dp">
     android:id="@+id/checkBoxn2a"
     android:layout_below="@+id/uniquen1"
     android:layout_width="wrap_content"
+    android:layout_marginEnd="10dp"
     android:layout_alignParentRight="true" />
 
 <TextView
@@ -53,7 +56,7 @@ android:paddingTop="16dp">
     android:layout_height="wrap_content"
     android:layout_alignBaseline="@+id/checkBoxn2b"
     android:layout_below="@+id/uniquen2a"
-    android:padding="5dp"
+    android:padding="10dp"
     android:layout_toLeftOf="@id/checkBox"
     android:layout_alignParentStart="true"
     android:singleLine="false" />
@@ -63,6 +66,7 @@ android:paddingTop="16dp">
     android:id="@+id/checkBoxn2b"
     android:layout_below="@+id/uniquen2a"
     android:layout_width="wrap_content"
+    android:layout_marginEnd="10dp"
     android:layout_alignParentRight="true" />
 
 <TextView
@@ -71,7 +75,7 @@ android:paddingTop="16dp">
     android:layout_height="wrap_content"
     android:layout_below="@+id/multiplen2b"
     android:layout_toLeftOf="@id/checkBoxn3"
-    android:padding="5dp"
+    android:padding="10dp"
     android:layout_alignParentStart="true"
     android:singleLine="false" />
 
@@ -80,6 +84,7 @@ android:paddingTop="16dp">
     android:id="@+id/checkBoxn3"
     android:layout_width="wrap_content"
     android:layout_below="@+id/multiplen2b"
+    android:layout_marginEnd="10dp"
     android:layout_alignParentRight="true" />
 
 </RelativeLayout>
@@ -94,6 +99,8 @@ android:layout_height="wrap_content">
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:padding="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="10dp"
     android:layout_marginTop="10dp"
     android:layout_alignParentRight="true"
     android:text="OK" />
