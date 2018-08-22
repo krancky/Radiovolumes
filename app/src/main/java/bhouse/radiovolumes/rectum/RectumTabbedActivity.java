@@ -46,7 +46,7 @@ public class RectumTabbedActivity extends AppCompatActivity  {
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private Context context;
-    private HashMap<String, HashMap<String, XYPair<String,String>>> txyValues;
+
     private HashMap<String, HashMap<String, XYPair<String,String>>> nxyValues;
 
     ArrayList<String> nodeList;
@@ -72,14 +72,7 @@ public class RectumTabbedActivity extends AppCompatActivity  {
 
         try {
             XYXMLHandler parser = new XYXMLHandler();
-            this.txyValues = parser.parse(getAssets().open("txyvalues.xml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            XYXMLHandler parser = new XYXMLHandler();
-            this.nxyValues = parser.parse(getAssets().open("nxyvalues.xml"));
+            this.nxyValues = parser.parse(getAssets().open("rectumnxyvalues.xml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -88,8 +81,8 @@ public class RectumTabbedActivity extends AppCompatActivity  {
 
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.invaded)));
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.toIrradiate)));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.info)));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
 
@@ -135,5 +128,13 @@ public class RectumTabbedActivity extends AppCompatActivity  {
 
     public void setNodeList(ArrayList<String> nodeList) {
         this.nodeList = nodeList;
+    }
+
+    public HashMap<String, HashMap<String, XYPair<String, String>>> getNxyValues() {
+        return nxyValues;
+    }
+
+    public void setNxyValues(HashMap<String, HashMap<String, XYPair<String, String>>> nxyValues) {
+        this.nxyValues = nxyValues;
     }
 }

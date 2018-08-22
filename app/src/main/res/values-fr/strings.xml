@@ -217,6 +217,28 @@
     <string name="n2c">Adenopathies bilaterales ou controlaterales &lt; 6cm</string>
     <string name="n3">Au moins une adenopathie de 6 cm</string>
     <string name="switchn2">Nombreuses Adénopathies Mésorectales (N2)</string>
+    <string name="ppphypopinfiltrationbouche">Infiltration de l\'oesophage</string>
+    <string name="sinuspit234">Sinus Piriforme T2-3</string>
+    <string name="ppphypopt123">Paroi HypoPharyngee Posterieure T1-3</string>
+    <string name="sinuspiinfiltrationbouche">Infiltration de la bouche oesophagienne</string>
+    <string name="t1">T1</string>
+    <string name="t2">T2</string>
+    <string name="t2t3">T2-3</string>
+    <string name="t1t3">T1-3</string>
+    <string name="larynxsusglottiquet4">T4</string>
+    <string name="larynxsusglottiquet1t3">T1-3</string>
+    <string name="larynxglottiquet4">T4</string>
+    <string name="larynxglottiquet2t3">T2-3</string>
+    <string name="larynxglottiquet1">T1</string>
+    <string name="info">Informations Supplementaires</string>
+    <string name="sinuspiinfiltrationapex">Infiltration de l\'Apex</string>
+    <string name="sinuspit1">Sinus Piriforme T1 lateral</string>
+    <string name="switchirf">"Infiltration des fosses Ischiorectales ou du Sphincter Anal Externe "</string>
+    <string name="switchpsabdoln">Adenopathies PreSacreees Abdominales</string>
+    <string name="switcht3extramsnode">Adenopathie Extra-Mesorectale</string>
+    <string name="switcht4analsphincter">Invasion du Sphincter Anal</string>
+    <string name="switcht4anteriorpelvic">Invasion d\'Organe Pelvien Anterieur</string>
+    <string name="switchvagina">Infiltration du Tiers Inferieur du Vagin</string>
 
 
 </resources>

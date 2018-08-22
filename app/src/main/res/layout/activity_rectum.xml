@@ -43,7 +43,7 @@
             <LinearLayout
                 android:id="@+id/placeNameHolder"
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="90dp"
                 android:background="@color/primary"
                 android:orientation="vertical"
                 android:transitionName="tNameHolder">
@@ -53,9 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
-                    android:paddingBottom="10dp"
                     android:paddingLeft="10dp"
-                    android:paddingTop="10dp"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
@@ -99,7 +97,7 @@
                 android:layout_height="@dimen/floating_button_size"
                 android:layout_gravity="end"
                 android:layout_marginEnd="10dp"
-                android:layout_marginTop="75dp"
+                android:layout_marginTop="60dp"
                 android:alpha="1.0"
                 android:background="@drawable/btn_background"
                 android:contentDescription="@null"
@@ -121,74 +119,99 @@
 
         <Switch
             android:id="@+id/switchpsabdoln"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textAlignment="gravity"
             android:layout_gravity="right"
+            android:paddingLeft="30dp"
             android:paddingBottom="10dp"
-            android:paddingEnd="10dp"
-            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="30dp"
             android:text="@string/switchpsabdoln" />
 
         <Switch
             android:id="@+id/switcht3extramsnode"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textAlignment="gravity"
             android:layout_gravity="right"
+            android:paddingLeft="30dp"
             android:paddingBottom="10dp"
-            android:paddingEnd="10dp"
+            android:paddingEnd="20dp"
             android:paddingTop="10dp"
             android:text="@string/switcht3extramsnode" />
 
         <Switch
             android:id="@+id/switchN2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textAlignment="gravity"
             android:layout_gravity="right"
+            android:paddingLeft="30dp"
             android:paddingBottom="10dp"
-            android:paddingEnd="10dp"
+            android:paddingEnd="20dp"
             android:paddingTop="10dp"
             android:text="@string/switchn2" />
 
         <Switch
             android:id="@+id/switcht4anteriorpelvic"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textAlignment="gravity"
             android:layout_gravity="right"
+            android:paddingLeft="30dp"
             android:paddingBottom="10dp"
-            android:paddingEnd="10dp"
+            android:paddingEnd="20dp"
             android:paddingTop="10dp"
+            android:switchPadding="30dp"
             android:text="@string/switcht4anteriorpelvic" />
 
         <Switch
             android:id="@+id/switcht4analsphincter"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textAlignment="gravity"
             android:layout_gravity="right"
+            android:paddingLeft="30dp"
             android:paddingBottom="10dp"
-            android:paddingEnd="10dp"
+            android:paddingEnd="20dp"
             android:paddingTop="10dp"
+            android:switchPadding="30dp"
             android:text="@string/switcht4analsphincter" />
 
 
 
         <Switch
             android:id="@+id/switchirf"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textAlignment="gravity"
             android:layout_gravity="right"
+            android:paddingLeft="30dp"
             android:paddingBottom="10dp"
-            android:paddingEnd="10dp"
+            android:paddingEnd="20dp"
             android:paddingTop="10dp"
+            android:switchPadding="30dp"
             android:text="@string/switchirf" />
 
         <Switch
             android:id="@+id/switchvagina"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textAlignment="gravity"
             android:layout_gravity="right"
+            android:paddingLeft="30dp"
             android:paddingBottom="10dp"
-            android:paddingEnd="10dp"
+            android:paddingEnd="20dp"
             android:paddingTop="10dp"
+            android:switchPadding="30dp"
             android:text="@string/switchvagina" />
 
 

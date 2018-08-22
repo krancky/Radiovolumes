@@ -1351,31 +1351,32 @@
     </LRTCTVUCase>
     </PPP>
 
-    <Larynx>
-    <LRTCTVUCase>Larynx 1
-        <Location>Larynx</Location>
-        <Side>Gauche</Side>
-        <Area>LarynxHypopharynx</Area>
-        <Identifier>1</Identifier>
-        <Modifiers>
-            <mod9>1</mod9>
-        </Modifiers>
-        <TVolumes>
-            <TVolume>
-                <TLocation>Not Available for Larynx</TLocation>
-                <TSide>Gauche</TSide>
-                <TArea>LarynxHypopharynx</TArea>
-            </TVolume>
-            <TVolume>
-                <TLocation>Not Available for Larynx</TLocation>
-                <TSide>Droite</TSide>
-                <TArea>LarynxHypopharynx</TArea>
-            </TVolume>
-        </TVolumes>
-    </LRTCTVUCase>
 
-        <LRTCTVUCase>Larynx 2
-            <Location>Larynx</Location>
+    <LarynxSusGlottique>
+        <LRTCTVUCase>LarynxSusGlottique 1
+            <Location>LarynxSusGlottique</Location>
+            <Side>Gauche</Side>
+            <Area>LarynxHypopharynx</Area>
+            <Identifier>1</Identifier>
+            <Modifiers>
+                <mod9>1</mod9>
+            </Modifiers>
+            <TVolumes>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Gauche</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Droite</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+            </TVolumes>
+        </LRTCTVUCase>
+
+        <LRTCTVUCase>LarynxSusGlottique 2
+            <Location>LarynxSusGlottique</Location>
             <Side>Droite</Side>
             <Area>LarynxHypopharynx</Area>
             <Identifier>1</Identifier>
@@ -1395,7 +1396,97 @@
                 </TVolume>
             </TVolumes>
         </LRTCTVUCase>
-</Larynx>
+    </LarynxSusGlottique>
+    <LarynxGlottique>
+        <LRTCTVUCase>LarynxGlottique 1
+            <Location>LarynxGlottique</Location>
+            <Side>Gauche</Side>
+            <Area>LarynxHypopharynx</Area>
+            <Identifier>1</Identifier>
+            <Modifiers>
+                <mod9>1</mod9>
+            </Modifiers>
+            <TVolumes>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Gauche</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Droite</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+            </TVolumes>
+        </LRTCTVUCase>
+
+        <LRTCTVUCase>LarynxGlottique 2
+            <Location>LarynxGlottique</Location>
+            <Side>Droite</Side>
+            <Area>LarynxHypopharynx</Area>
+            <Identifier>1</Identifier>
+            <Modifiers>
+                <mod9>1</mod9>
+            </Modifiers>
+            <TVolumes>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Gauche</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Droite</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+            </TVolumes>
+        </LRTCTVUCase>
+    </LarynxGlottique>
+    <LarynxSousGlottique>
+        <LRTCTVUCase>LarynxSousGlottique 1
+            <Location>LarynxSousGlottique</Location>
+            <Side>Gauche</Side>
+            <Area>LarynxHypopharynx</Area>
+            <Identifier>1</Identifier>
+            <Modifiers>
+                <mod9>1</mod9>
+            </Modifiers>
+            <TVolumes>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Gauche</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Droite</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+            </TVolumes>
+        </LRTCTVUCase>
+
+        <LRTCTVUCase>LarynxSousGlottique 2
+            <Location>LarynxSousGlottique</Location>
+            <Side>Droite</Side>
+            <Area>LarynxHypopharynx</Area>
+            <Identifier>1</Identifier>
+            <Modifiers>
+                <mod9>1</mod9>
+            </Modifiers>
+            <TVolumes>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Gauche</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+                <TVolume>
+                    <TLocation>Not Available for Larynx</TLocation>
+                    <TSide>Droite</TSide>
+                    <TArea>LarynxHypopharynx</TArea>
+                </TVolume>
+            </TVolumes>
+        </LRTCTVUCase>
+    </LarynxSousGlottique>
 
     <PPPHypo>
         <LRTCTVUCase>PPPhypoP

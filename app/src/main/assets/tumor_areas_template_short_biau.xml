@@ -67,22 +67,37 @@
     <Volume>
         <Area>LarynxHypopharynx</Area>
         <AreaLocale>Larynx</AreaLocale>
-        <Location>Larynx</Location>
-        <Sublocation>LarynxSusGlottique</Sublocation>
-        <Sublocation>LarynxGlottique</Sublocation>
-        <Sublocation>LarynxSousGlottique</Sublocation>
+        <Location>LarynxSusGlottique</Location>
+        <Sublocation>LarynxSusGlottiqueT1T3</Sublocation>
+        <Sublocation>LarynxSusGlottiqueT4</Sublocation>
+    </Volume>
+    <Volume>
+        <Area>LarynxHypopharynx</Area>
+        <AreaLocale>Larynx</AreaLocale>
+        <Location>LarynxGlottique</Location>
+        <Sublocation>LarynxGlottiqueT1</Sublocation>
+        <Sublocation>LarynxGlottiqueT2T3</Sublocation>
+        <Sublocation>LarynxGlottiqueT4</Sublocation>
+    </Volume>
+    <Volume>
+        <Area>LarynxHypopharynx</Area>
+        <AreaLocale>Larynx</AreaLocale>
+        <Location>LarynxSousGlottique</Location>
     </Volume>
     <Volume>
         <Area>LarynxHypopharynx</Area>
         <AreaLocale>Larynx</AreaLocale>
         <Location>PPPhypoP</Location>
+        <Sublocation>PPPhypoPT123</Sublocation>
+        <Sublocation>PPPhypoPInfiltrationBouche</Sublocation>
     </Volume>
     <Volume>
     <Area>LarynxHypopharynx</Area>
     <AreaLocale>Larynx</AreaLocale>
     <Location>SinusPi</Location>
-        <Sublocation>T1lateral</Sublocation>
-        <Sublocation>InfiltrationApex</Sublocation>
-        <Sublocation>InfiltrationBouche</Sublocation>
+        <Sublocation>SinusPiT1</Sublocation>
+        <Sublocation>SinusPiT234</Sublocation>
+        <Sublocation>SinusPiInfiltrationApex</Sublocation>
+        <Sublocation>SinusPiInfiltrationBouche</Sublocation>
 </Volume>
 </TumorsAreasTemplate>

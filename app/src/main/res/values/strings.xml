@@ -208,7 +208,7 @@
     <string name="switcht4anteriorpelvic">Anterior Pelvic Organ Invasion</string>
     <string name="switcht4analsphincter">Anal Sphincter Invasion</string>
     <string name="switcht3extramsnode">Extra Mesorectal Node</string>
-    <string name="switchirf">Direct Infiltration of IRF or EAS</string>
+    <string name="switchirf">Infiltration of Ischiorectal fossa or External Anal Sphincter</string>
     <string name="switchvagina">Infiltration of Inferior Third of Vagina</string>
     <string name="languemobilemed">Median Mobile Tongue</string>
     <string name="languemobilelat">Lateral Mobile Tongue</string>
@@ -219,6 +219,22 @@
     <string name="n2c"> Multiple bilateral or controlateral nodes &lt; 6 cm</string>
     <string name="n3">At least one node > 6cm</string>
     <string name="switchn2">Numerous Mesorectum Nodes (N2)</string>
+    <string name="ppphypopinfiltrationbouche">Infiltration of Esophagus</string>
+    <string name="sinuspit234">Piriform Sinus T2-3</string>
+    <string name="ppphypopt123">Posterior Wall of HypoPharynx T1-3</string>
+    <string name="sinuspit1">Piriform Sinus T1 (Lateral)</string>
+    <string name="sinuspiinfiltrationapex">Infiltration of the Apex</string>
+    <string name="sinuspiinfiltrationbouche">Esophageal Inlet Invasion</string>
+    <string name="t1">T1</string>
+    <string name="t2">T2</string>
+    <string name="t2t3">T2-3</string>
+    <string name="t1t3">T1-3</string>
+    <string name="larynxsusglottiquet1t3">T1-3</string>
+    <string name="larynxsusglottiquet4">T4</string>
+    <string name="larynxglottiquet1">T1</string>
+    <string name="larynxglottiquet2t3">T2-3</string>
+    <string name="larynxglottiquet4">T4</string>
+    <string name="info">Additionnal Information</string>
 
 
 </resources>

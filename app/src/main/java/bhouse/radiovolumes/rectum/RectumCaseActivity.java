@@ -165,6 +165,7 @@ public class RectumCaseActivity extends Activity{
 
 
     private void update(){
+        nodeList.clear();
         if (isT3){
             if (switcht3extramsnode.isChecked()){
                 nodeList.add("M");nodeList.add("PSP");nodeList.add("LLNPost");nodeList.add("LLNAnt");nodeList.add("EIN");
@@ -189,8 +190,9 @@ public class RectumCaseActivity extends Activity{
                 }
             }
         }
-        if (switchpsabdoln.isChecked())
+        if (switchpsabdoln.isChecked()) {
             nodeList.add("PSAbdo");
+        }
         //caler toutes les donnees dans des trucs a tranferer sur la prochaine activite
         Set<String> hs = new HashSet<>();
         hs.addAll(nodeList);
