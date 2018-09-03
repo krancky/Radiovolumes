@@ -20,7 +20,7 @@ import bhouse.radiovolumes.ScannerListAdapterStatic;
 import bhouse.radiovolumes.ScannerViewDialogFragment;
 import bhouse.radiovolumes.Slice;
 import bhouse.radiovolumes.SliceVectorItem;
-import bhouse.radiovolumes.TNAreaDialog;
+import bhouse.radiovolumes.rectum.RTNAreaDialog;
 import bhouse.radiovolumes.helpLibraries.LocaleHelper;
 import bhouse.radiovolumes.helpLibraries.SingleScrollListView;
 import bhouse.radiovolumes.processor.OLimitsXMLHandler;
@@ -31,7 +31,7 @@ import bhouse.radiovolumes.processor.XYXMLHandler;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class RScannerViewActivity_simple extends Activity implements ScannerViewDialogFragment.OnCompleteListener, TNAreaDialog.OnCancelListener  {
+public class RScannerViewActivity_simple extends Activity implements ScannerViewDialogFragment.OnCompleteListener, RTNAreaDialog.OnCancelListener  {
 
 
 
@@ -43,7 +43,7 @@ public class RScannerViewActivity_simple extends Activity implements ScannerView
 
 
 
-    private ScannerListAdapterStatic scannerListAdapterStatic;
+    private RScannerListAdapterStatic scannerListAdapterStatic;
 
     private LinkedHashMap<String, ArrayList<String>> oLimits;
 
@@ -75,15 +75,12 @@ public class RScannerViewActivity_simple extends Activity implements ScannerView
         super.onCreate(savedInstanceState);
 
 
-        setContentView(R.layout.activity_scanner_view);
+        setContentView(R.layout.activity_rscanner_view);
 
         prepareOLimitsData();
         Intent i = getIntent();
 
         this.txyValues = (HashMap<String, HashMap<String, XYPair<String,String>>>) i.getSerializableExtra("NXY");
-
-        //this.nxyValues = (HashMap<String, HashMap<String, XYPair<String,String>>>) i.getSerializableExtra("NXY");
-
 
         nodeList = i.getStringArrayListExtra("nodelist");
 
@@ -103,7 +100,7 @@ public class RScannerViewActivity_simple extends Activity implements ScannerView
         prepareDisplayList();
         prepare_scan_data();
 
-        scannerListAdapterStatic = new ScannerListAdapterStatic(this, slices, mContentView, this.oLimits);
+        scannerListAdapterStatic = new RScannerListAdapterStatic(this, slices, mContentView, this.oLimits);
         mContentView.setAdapter(scannerListAdapterStatic);
         mContentView.setFastScrollEnabled(true);
         mContentView.setSingleScroll(true);
@@ -132,10 +129,11 @@ public class RScannerViewActivity_simple extends Activity implements ScannerView
         int i;
         slices.clear();
 
-        for (i =0; i<222; i++ ){
+        for (i =0; i<169; i++ ){
             Slice slice = new Slice();
             slice.setNumber(String.valueOf(i));
             String formatted = String.format("%05d", i+1);
+            //slice.setStorageLocation("scan_"+String.valueOf(formatted));
             slice.setStorageLocation("rectum"+String.valueOf(formatted));
             slices.add(slice);
         }
@@ -191,11 +189,11 @@ public class RScannerViewActivity_simple extends Activity implements ScannerView
         try {
             if (current.toLanguageTag().equals("fr")){
                 OLimitsXMLHandler oLimitsXMLHandler = new OLimitsXMLHandler();
-                this.oLimits = oLimitsXMLHandler.parse(getAssets().open("TNOrganlimit_FR.xml"));
+                this.oLimits = oLimitsXMLHandler.parse(getAssets().open("Rectumlimit_FR.xml"));
             }
             else {
                 OLimitsXMLHandler oLimitsXMLHandler = new OLimitsXMLHandler();
-                this.oLimits = oLimitsXMLHandler.parse(getAssets().open("TNOrganlimit_EN.xml"));
+                this.oLimits = oLimitsXMLHandler.parse(getAssets().open("Rectumlimit_EN.xml"));
             }
         }
 

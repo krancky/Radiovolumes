@@ -11,45 +11,24 @@
         android:layout_height="90dp"
         android:gravity="center"
         android:background="@color/primary"
-        android:text="@string/tumorLocation"
+        android:text="@string/nodestoirradiate"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    <bhouse.radiovolumes.processor.NonScrollListView
+    <ListView
         android:id="@+id/listView_invaded_T"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_tab_1_T">
-    </bhouse.radiovolumes.processor.NonScrollListView>
+    </ListView>
 
-    <TextView
-        android:id="@+id/textView_tab_1_N"
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:gravity="center"
-        android:background="@color/primary"
-        android:text="@string/nodeLocation"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    <TextView
-        android:id="@+id/textView_n_size"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:gravity="center"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
-
-    <bhouse.radiovolumes.processor.NonScrollListView
-        android:id="@+id/listView_invaded_N"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_tab_1_T">
-    </bhouse.radiovolumes.processor.NonScrollListView>
 
         <RelativeLayout android:id="@+id/relativeLayout1"
             android:layout_height="wrap_content" android:gravity="center_horizontal"
             android:layout_width="fill_parent" android:layout_gravity="fill">
 
             <Space
-                android:layout_width="0dp"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content" />
 
             <ImageButton

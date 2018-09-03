@@ -21,10 +21,8 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Set;
+
 
 import bhouse.radiovolumes.processor.XYPair;
 import bhouse.radiovolumes.helpLibraries.ZoomView;
@@ -192,7 +190,7 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
                     return false;
                 }
             });
-            holder.zoomview.setAnimationCacheEnabled(false);
+            holder.zoomview.setAnimationCacheEnabled(false); //evite staggering
 
 
             holder.i0 = (ImageView) convertView.findViewById(R.id.i0);
@@ -355,8 +353,6 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
         int height = holder.scanView.getMeasuredHeight();
 
 
-        //holder.scanView.getLayoutParams().width = screen_width;
-
 
         // Setting superimposed vector images.
         // As many as the size of VectorStorageLocation array.
@@ -368,13 +364,13 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
             height = holder.arlist.get(i).getMeasuredHeight();
             int intrinsicHeight = holder.arlist.get(i).getDrawable().getIntrinsicHeight();
             int intrinsicWidth = holder.arlist.get(i).getDrawable().getIntrinsicWidth();
-            holder.arlist.get(i).setAdjustViewBounds(true);
+            //holder.arlist.get(i).setAdjustViewBounds(true);
             holder.arlist.get(i).getLayoutParams().height = intrinsicHeight * screen_width / 512;
             holder.arlist.get(i).getLayoutParams().width = intrinsicWidth * screen_width / 512;
-            //holder.arlist.get(i).setX(284);
+
             holder.arlist.get(i).setY((item.getVectorStorageLocation().get(i).getyMargin() - 1) * screen_width / 512 + (parent.getMeasuredHeight() - screen_width) / 2);
             holder.arlist.get(i).setX((item.getVectorStorageLocation().get(i).getxMargin() - 1) * screen_width / 512);
-            //holder.arlist.get(i).setClickable(false);
+
         }
 
         // Remaining ImageView slots (that are not needed for vector asset display) are set to None
@@ -432,36 +428,6 @@ public class ScannerListAdapterStatic extends ArrayAdapter<Slice> implements TNA
 
 
     }
-
-    public class MyTouchListener implements View.OnTouchListener {
-        @Override
-        public boolean onTouch(View view, MotionEvent motionEvent) {
-            ImageView child = (ImageView) view;
-            if (!child.getTag().equals("none")) {
-                SliceVectorItem sliceVectorItem = (SliceVectorItem) child.getTag();
-                child.setDrawingCacheEnabled(true);
-                child.buildDrawingCache(true);
-                Bitmap bmp = Bitmap.createBitmap(child.getDrawingCache());
-                Bitmap viewBmp = bmp.copy(Bitmap.Config.ARGB_8888, true);
-                int bitmapByteCount = BitmapCompat.getAllocationByteCount(viewBmp) / 1024;
-                child.destroyDrawingCache();
-                child.setDrawingCacheEnabled(false);
-                int color = viewBmp.getPixel((int) motionEvent.getX(), (int) motionEvent.getY());
-                if (color == Color.TRANSPARENT) {
-                } else {
-                    if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-/*                        FragmentManager fm = ((ScannerViewActivity_simple) context).getFragmentManager();
-                        int resID = context.getResources().getIdentifier(sliceVectorItem.getFilename() + "_selected", "drawable", context.getPackageName());
-                        child.setImageResource(resID);
-                        TNAreaDialog dialogFragment = TNAreaDialog.newInstance((SliceVectorItem) child.getTag(), child.getId());
-                        dialogFragment.show(fm, String.valueOf(child.getTag()));*/
-                    }
-                }
-            }
-            return false;
-        }
-    }
-
 
 }
 

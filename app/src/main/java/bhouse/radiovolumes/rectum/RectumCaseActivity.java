@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -54,6 +55,8 @@ public class RectumCaseActivity extends Activity{
     private boolean isLLNN2 = false ;
     private boolean isIRF = false;
     private boolean isVagina = false;
+
+    private boolean itsago = false;
 
     // Dealing with custom expandable views T and N
     private boolean isExpandedT = false;
@@ -137,11 +140,11 @@ public class RectumCaseActivity extends Activity{
             public void onClick(View v) {
                 //EditText caseName = (EditText) findViewById(R.id.CaseName);
                 //String sCaseName = caseName.getText().toString();
+                update();
+                if (!itsago ) {//cancer.getCancerTData().isEmpty()){//ctv56TCase.getCaseTTarVolumes().isEmpty()) {
+                    Toast.makeText(v.getContext(), getResources().getString(R.string.enterInfo), Toast.LENGTH_SHORT).show();
+                } else {
 
-                //if (sCaseName.matches("") || spinner.getLastVisiblePosition() == 0 || spinnerSide.getLastVisiblePosition() == 0 ) {//cancer.getCancerTData().isEmpty()){//ctv56TCase.getCaseTTarVolumes().isEmpty()) {
-                    //Toast.makeText(v.getContext(), getResources().getString(R.string.enterInfo), Toast.LENGTH_SHORT).show();
-                //} else {
-                    update();
 
                     Intent transitionIntent = new Intent(RectumCaseActivity.this, RectumTabbedActivity.class);
                     //transitionIntent.putExtra("cancer", cancer);
@@ -154,7 +157,7 @@ public class RectumCaseActivity extends Activity{
                         startActivity(transitionIntent);//show dialog
                     }
 
-                //}
+                }
 
             }
         });
@@ -165,8 +168,10 @@ public class RectumCaseActivity extends Activity{
 
 
     private void update(){
+        itsago = false;
         nodeList.clear();
         if (isT3){
+            itsago = true;
             if (switcht3extramsnode.isChecked()){
                 nodeList.add("M");nodeList.add("PSP");nodeList.add("LLNPost");nodeList.add("LLNAnt");nodeList.add("EIN");
             } else {
@@ -177,12 +182,14 @@ public class RectumCaseActivity extends Activity{
             }
         } else{
             if (switcht4anteriorpelvic.isChecked()){
+                itsago = true;
                 nodeList.add("M");nodeList.add("PSP");nodeList.add("LLNPost");nodeList.add("LLNAnt");nodeList.add("EIN");
                 if (switchvagina.isChecked()){
                     nodeList.add("IN");
                 }
             }
             if (switcht4analsphincter.isChecked()){
+                itsago = true;
                 nodeList.add("M");nodeList.add("PSP");nodeList.add("LLNPost");nodeList.add("LLNAnt");nodeList.add("EIN");
                 nodeList.add("IN");nodeList.add("SC");
                 if (switchirf.isChecked()){

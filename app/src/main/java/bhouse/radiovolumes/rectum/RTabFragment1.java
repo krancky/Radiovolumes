@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class RTabFragment1 extends Fragment {
     private RectumTabbedActivity activity;
     private TextView nSize;
     ArrayList<String> nodeList = new ArrayList<String>();
+    ArrayList<String> expandedNodeList = new ArrayList<String>();
     private HashMap<String, HashMap<String, XYPair<String,String>>> nxyValues;
 
     @Override
@@ -52,8 +54,11 @@ public class RTabFragment1 extends Fragment {
     }
 
     public void perform(View v){
-        NonScrollListView lvT = (NonScrollListView) v.findViewById(R.id.listView_invaded_T);
-        NonScrollListView lvN = (NonScrollListView) v.findViewById(R.id.listView_invaded_N);
+        ListView lvT = (ListView) v.findViewById(R.id.listView_invaded_T);
+
+        //NonScrollListView lvT = (NonScrollListView) v.findViewById(R.id.listView_invaded_T);
+
+        //NonScrollListView lvN = (NonScrollListView) v.findViewById(R.id.listView_invaded_N);
 
 
         ImageButton toMail = (ImageButton) v.findViewById(R.id.button_to_mail);
@@ -70,7 +75,12 @@ public class RTabFragment1 extends Fragment {
 
         //NewCaseActivityTHashAdapter mAdapterT = new NewCaseActivityTHashAdapter(getActivity(), cancerTData, this.cancer);
         //NewCaseActivityNHashAdapter mAdapterN = new NewCaseActivityNHashAdapter(getContext(), cancerNData, this.cancer);
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, nodeList);
+        for (String node : nodeList){
+            String locationLocale = getActivity().getString(getActivity().getResources().getIdentifier(node.replaceAll("\\s+", "").toLowerCase(), "string", getActivity().getPackageName()));
+            expandedNodeList.add(locationLocale);
+        }
+
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, expandedNodeList);
         lvT.setAdapter(itemsAdapter);
         //lvN.setAdapter(mAdapterN);
 

@@ -235,6 +235,16 @@
     <string name="larynxglottiquet2t3">T2-3</string>
     <string name="larynxglottiquet4">T4</string>
     <string name="info">Additionnal Information</string>
+    <string name="ein">External Iliac Nodes</string>
+    <string name="in">Inguinal Nodes</string>
+    <string name="llnant">Lateral Lymph Nodes (Anterior)</string>
+    <string name="llnpost">Lateral Lymph Nodes (Posterior)</string>
+    <string name="m">Mesorectum</string>
+    <string name="sc">Sphincter Complex</string>
+    <string name="irf">IschioRectal Fossa</string>
+    <string name="psp">PreSacral Nodes (pelvic)</string>
+    <string name="psabdo">PreSacral Nodes (Abdominal)</string>
+    <string name="nodestoirradiate">Node Stations to Irradiate</string>
 
 
 </resources>

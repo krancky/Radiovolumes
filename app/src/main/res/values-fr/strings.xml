@@ -239,6 +239,16 @@
     <string name="switcht4analsphincter">Invasion du Sphincter Anal</string>
     <string name="switcht4anteriorpelvic">Invasion d\'Organe Pelvien Anterieur</string>
     <string name="switchvagina">Infiltration du Tiers Inferieur du Vagin</string>
+    <string name="ein">Adenopathies Iliaques Externes</string>
+    <string name="in">Adenopathies Inguinales</string>
+    <string name="llnant">Adenopathies Laterales (Partie Anterieure)</string>
+    <string name="llnpost">Adenopathies Laterales (Partie Posterieure)</string>
+    <string name="m">Mesorectum</string>
+    <string name="sc">Complexe Sphincterien</string>
+    <string name="irf">Fosse Ischio-Rectale</string>
+    <string name="psp">Adenopathies Presacrees (Niveau Pelvien)</string>
+    <string name="psabdo">Adenopathies Presacrees (Niveau Abdominal)</string>
+    <string name="nodestoirradiate">Niveaux Ganglionnaires a irradier</string>
 
 
 </resources>

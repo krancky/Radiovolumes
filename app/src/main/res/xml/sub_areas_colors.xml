@@ -90,5 +90,16 @@
     <entry key="thyroid">#5200FF</entry>
 
 
+    <entry key="psabdo">#14FF00</entry>
+    <entry key="psp">#a8e7ea</entry>
+    <entry key="m">#00FFA3</entry>
+    <entry key="llnpost">#FF00F5</entry>
+    <entry key="ein">#FFB800</entry>
+    <entry key="irf">#1400FF</entry>
+    <entry key="sc">#FFF500</entry>
+    <entry key="in">#CC00FF</entry>
+    <entry key="llnant">#eca72c</entry>
+
+
 
 </map>
