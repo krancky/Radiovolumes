@@ -57,7 +57,10 @@ public class NewCaseActivityHashMapOperator {
                                     if (!uCaseSpreadNode.getNodeLocation().equals("II") && !uCaseSpreadNode.getNodeLocation().equalsIgnoreCase("VI")){
                                         fromNodeToLR.setLocation(uCaseSpreadNode.getNodeLocation());
                                         fromNodeToLR.setSide("Gauche");
-                                        ctv56NUCase.addTVolumeToMap(fromNodeToLR);
+                                        //ctv56NUCase.addTVolumeToMap(fromNodeToLR);
+                                        CTV56NUCase ajoutNodeEnvahi = new CTV56NUCase();
+                                        ajoutNodeEnvahi.addTVolumeToMap(fromNodeToLR);
+                                        cTV56NCase.addAllTVolumeToMap(ajoutNodeEnvahi.getuCaseTVolumes());
                                     }
 
                                     cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());

@@ -166,7 +166,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
         try {
             NUCaseXMLHandler parser = new NUCaseXMLHandler();
             //ctv56NUCaseList = parser.parse(getAssets().open("CTV56N_short_1.xml"));
-            ctv56NUCaseList = parser.parse(getAssets().open("CTV56N_short_biau_08_18.xml"));
+            ctv56NUCaseList = parser.parse(getAssets().open("CTV56N_short_biau_09_01.xml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -366,8 +366,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
         }
     }
 
-    public void update() {
-
+    public void load(){
         cancer.nClear();
         cancer.tClear();
         cancer.tDClear();
@@ -389,9 +388,19 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
 
         }
 
-
         computeNX();
+    }
+
+    public void update() {
+
+        cancer.nClear();
+        cancer.tClear();
+        cancer.tDClear();
+        cancer.nDClear();
+        cancer.nXClear();
         NewCaseActivity.this.ctv56NCaseList.clear();
+        NewCaseActivity.this.ctv56NCase.clear();
+        computeNX();
 
         this.isAdvanced = itemListSwitch.isChecked();
 

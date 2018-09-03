@@ -47,6 +47,7 @@ public class TabbedActivity extends AppCompatActivity implements Tab2TDialogFrag
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private Context context;
+    Boolean noT = false;
     private HashMap<String, HashMap<String, XYPair<String,String>>> txyValues;
     private HashMap<String, HashMap<String, XYPair<String,String>>> nxyValues;
 
@@ -183,6 +184,7 @@ public class TabbedActivity extends AppCompatActivity implements Tab2TDialogFrag
             e.printStackTrace();
         }
 
+
         if (cancer.getCancerTTarData().isEmpty() || cancer.getCancerNTarData().isEmpty()) {
             prepareCancerTData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
             prepareCancerTTarData(cancerTData, cancerTTarData, cancerNData, cancer, ctv56TCase, ctv56NCase);
@@ -233,6 +235,56 @@ public class TabbedActivity extends AppCompatActivity implements Tab2TDialogFrag
                 // Cas ou l utilisateur charge mais modifie les volumes envahis: Reset des modifs.
             }
         }
+
+        AlertDialog alertDialogT = new AlertDialog.Builder(TabbedActivity.this).create();
+        alertDialogT.setTitle("Displaying Tumor Target Volumes");
+        alertDialogT.setMessage("Tumor Target Volumes are Computed according to Guidelines that refer to Anatomistic Evaluation of Tumor Expansion. These that may be Obsolete. Current Guidelines favor Volumetric expansion from GTV. Display anyway?");
+        alertDialogT.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                noT = false;
+                dialog.dismiss();
+            }
+        });
+        alertDialogT.setButton(AlertDialog.BUTTON_NEGATIVE, "CANCEL", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                //HashMap<String, HashMap<String, List<String>>> cancerTempT = new HashMap<String, HashMap<String, List<String>>>();
+                //cancer.setCancerTData();
+                noT = true;
+                if (noT == true){
+                    cancerTTarData.clear();
+                    HashMap<String, List<String>> map = new HashMap<String, List<String>>();
+                    List<String> list = new ArrayList<String>();
+                    list.add("notargetvolumesmessage");
+                    map.put("Gauche", list);
+                    map.put("Droite", list);
+                    cancerTTarData.put("alert", map );
+                    viewPager = (ViewPager) findViewById(R.id.pager);
+                    adapter = new MainActivityPagerAdapter
+                            (getSupportFragmentManager(), tabLayout.getTabCount());
+                    viewPager.setAdapter(adapter);
+                    viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+                    Locale current = getResources().getConfiguration().locale;
+                    tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+                        @Override
+                        public void onTabSelected(TabLayout.Tab tab) {
+                            viewPager.setCurrentItem(tab.getPosition());
+                        }
+
+                        @Override
+                        public void onTabUnselected(TabLayout.Tab tab) {
+
+                        }
+
+                        @Override
+                        public void onTabReselected(TabLayout.Tab tab) {
+
+                        }
+                    });
+                }
+                dialog.dismiss();
+            }
+        });
+        alertDialogT.show();
 
 
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);

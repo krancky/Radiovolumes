@@ -1,5 +1,21 @@
 <organs>
     <organ>
+        <name>notargetvolumesmessage_droite</name>
+        <slice>
+            <z>108</z>
+            <xmin>212.3235</xmin>
+            <ymin>201.0294</ymin>
+        </slice>
+    </organ>
+    <organ>
+        <name>notargetvolumesmessage_gauche</name>
+        <slice>
+            <z>108</z>
+            <xmin>212.3235</xmin>
+            <ymin>201.0294</ymin>
+        </slice>
+    </organ>
+    <organ>
         <name>notavailableforlarynx_gauche</name>
         <slice>
             <z>108</z>

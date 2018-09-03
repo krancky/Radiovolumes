@@ -119,5 +119,10 @@ public class CTV56NCase implements Serializable{
     public String toString() {
         return  "Case: " + caseName + "\n" + identifier + "-" + cTV56NTarVolumes.toString()  ;
     }
+
+    public void clear(){
+        this.cTV56NTarVolumes.clear();
+    }
+
 }
 

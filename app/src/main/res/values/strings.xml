@@ -245,6 +245,8 @@
     <string name="psp">PreSacral Nodes (pelvic)</string>
     <string name="psabdo">PreSacral Nodes (Abdominal)</string>
     <string name="nodestoirradiate">Node Stations to Irradiate</string>
-
+    <string name="alert">Alert</string>
+    <string name="notargetvolumes">No Tumor Target Volumes</string>
+    <string name="notargetvolumesmessage">No Tumor Target Volumes Will be Displayed</string>
 
 </resources>

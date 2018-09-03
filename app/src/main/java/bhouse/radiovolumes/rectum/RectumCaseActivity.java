@@ -1,14 +1,18 @@
 package bhouse.radiovolumes.rectum;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +23,8 @@ import java.util.List;
 import java.util.Set;
 
 import bhouse.radiovolumes.R;
+import bhouse.radiovolumes.helpLibraries.MainPageItem;
+import bhouse.radiovolumes.helpLibraries.MainPageItemsData;
 import fr.ganfra.materialspinner.MaterialSpinner;
 /**
  * Created by kranck on 7/19/2018.
@@ -29,6 +35,8 @@ public class RectumCaseActivity extends Activity{
     private ImageView mImageView;
     private ImageView headerView;
     private TextView mTitle;
+
+    private MainPageItem mMainPageItem;
 
     private ImageButton mAddButton;
     private EditText mEditTextName;
@@ -44,6 +52,8 @@ public class RectumCaseActivity extends Activity{
     Switch switchirf;
     Switch switchvagina;
     Switch switchN2;
+
+    public static final String EXTRA_PARAM_ID = "place_id";
 
     ArrayList<String> nodeList = new ArrayList();
 
@@ -75,6 +85,21 @@ public class RectumCaseActivity extends Activity{
 
         setContentView(R.layout.activity_rectum);
 
+
+
+
+        MainPageItemsData mainPageItemsData = new MainPageItemsData(getApplicationContext());
+
+        mMainPageItem = mainPageItemsData.placeList().get(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
+
+
+        mImageView = (ImageView) findViewById(R.id.placeImage);
+        mTitle = (TextView) findViewById(R.id.textView);
+
+
+        mImageView = (ImageView) findViewById(R.id.placeImage);
+
+
         itemListSwitch = (Switch) findViewById(R.id.itemListSwitch);
         mAddButton = (ImageButton) findViewById(R.id.btn_add);
         mEditTextName = (EditText) findViewById(R.id.CaseName);
@@ -89,6 +114,8 @@ public class RectumCaseActivity extends Activity{
         switchirf = (Switch) findViewById(R.id.switchirf);
         switchvagina = (Switch) findViewById(R.id.switchvagina);
         switchN2 = (Switch) findViewById(R.id.switchN2);
+
+        mImageView.setImageResource(mMainPageItem.getImageResourceId(this));
 
 
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.t_array, R.layout.spinner_item);
