@@ -166,7 +166,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
         try {
             NUCaseXMLHandler parser = new NUCaseXMLHandler();
             //ctv56NUCaseList = parser.parse(getAssets().open("CTV56N_short_1.xml"));
-            ctv56NUCaseList = parser.parse(getAssets().open("CTV56N_short_biau_09_01.xml"));
+            ctv56NUCaseList = parser.parse(getAssets().open("CTV56N_short_biau_09_06.xml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
