@@ -72,7 +72,7 @@ public class NewCaseActivityHashMapOperator {
                                     LRNodeTargetVolume fromNodeToLR = new LRNodeTargetVolume();
                                     if (!uCaseSpreadNode.getNodeLocation().equals("II") && !uCaseSpreadNode.getNodeLocation().equalsIgnoreCase("VI")){
                                         fromNodeToLR.setLocation(uCaseSpreadNode.getNodeLocation());
-                                        fromNodeToLR.setSide("Droite");
+                                        fromNodeToLR.setSide("Gauche");
                                         ctv56NUCase.addTVolumeToMap(fromNodeToLR);
                                     }
                                     cTV56NCase.addAllTVolumeToMap(ctv56NUCase.getuCaseTVolumes());
