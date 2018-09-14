@@ -449,7 +449,7 @@ public class NewCaseActivity extends Activity implements NewCaseSubLocSelectionD
             if (cancer.getMainSide().equals("0") && !nodeAreaTemplate.getLateralized().equals("0") && !nodeAreaTemplate.getRightContent().equals("0")){
                 cancer.setN2c(true);
             }
-            if (cancer.getMainSide().equals("1")  && !nodeAreaTemplate.getLeftContent().equals("0")){
+            if (cancer.getMainSide().equals("1") && !nodeAreaTemplate.getLateralized().equals("0") && !nodeAreaTemplate.getLeftContent().equals("0")){
                 cancer.setN2c(true);
             }
             //Check if N3
